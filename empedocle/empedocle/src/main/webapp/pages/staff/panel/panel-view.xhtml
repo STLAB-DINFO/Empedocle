@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"	
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<style>
+			.scrollable { width: 80%; }
+		</style>
+	
+		<h:form>
+			<h:panelGroup layout="block">
+				<h:panelGroup layout="block" styleClass="page-title">
+					<h2>
+						Profilo Utente
+						
+						<h:panelGroup layout="block" styleClass="pull-right align-btn">
+							<h:panelGroup class="btn-group" layout="block">
+								<h:commandLink class="btn btn-warning" 
+									action="#{panelView.edit()}">
+									<i class="fw-icon-pencil dist-right"></i> Modifica
+								</h:commandLink>	
+								<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li>
+										<a4j:commandLink
+			                            	oncomplete="#{rich:component('password-popup')}.show(); return false;"
+			                                execute="@this" render=":password-form:password-popup">
+			                                <i class="fw-icon-key dist-right"></i> Modifica password
+			                            </a4j:commandLink>									
+									</li>						
+								</ul>
+							</h:panelGroup>
+							
+							<h:commandLink class="btn dist-left"
+								action="#{panelView.close()}">
+								<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							</h:commandLink>	
+						</h:panelGroup>						
+					</h2>
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:form>
+		
+		<h:panelGroup layout="block" styleClass="container-fluid form-horizontal">
+			<div class="control-group">
+				<label class="control-label bold">Username</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.user.userid}" />
+				</div>
+			</div>		
+					
+			<div class="control-group">
+				<label class="control-label bold">Matricola</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.number}" />
+				</div>
+			</div>			
+			
+			<div class="control-group">
+				<label class="control-label bold">Nome</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.user.name}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Cognome</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.user.surname}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Telefono</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.user.phone}" />
+				</div>
+			</div>	
+				
+			<div class="control-group">
+				<label class="control-label bold">Email</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.user.mail}" />
+				</div>
+			</div>					
+			
+			<div class="control-group">
+				<label class="control-label bold">Qualifica</label>
+				<div class="controls">
+					<h:panelGroup id="qualification-list">
+						<rich:list value="#{panelView.current.user.listQualifications()}" var="_qual"
+							styleClass="unstyled align-txt itemList" rendered="#{not empty panelView.current.user.listQualifications()}">
+								<span class="itemName">
+									<h:outputText value="#{_qual.name}"/>
+								</span>
+						</rich:list>	
+					</h:panelGroup>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Ruoli</label>
+				<div class="controls">
+					<h:panelGroup id="role-list">
+						<rich:list value="#{panelView.current.user.listRoles()}" var="_role"
+							styleClass="unstyled align-txt itemList" rendered="#{not empty panelView.current.user.listRoles()}">
+								<span class="itemName">
+									<h:outputText value="#{_role.name}"/>
+								</span>
+						</rich:list>	
+					</h:panelGroup>
+				</div>
+			</div>			
+			
+			<div class="control-group">
+				<label class="control-label bold">Agenda di default</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelView.current.defaultAgenda}" />
+				</div>
+			</div>			
+			
+			<div class="control-group">
+				<label class="control-label bold">Agende preferite</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="favorite-agenda-list">
+						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty panelView.current.listFavoriteAgendasOrdered()}">
+							<h:dataTable value="#{panelView.current.listFavoriteAgendasOrdered()}" var="agenda"
+											styleClass="table table-bordered table-condensed">
+											
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Codice" />
+									</f:facet>
+											
+									<h:outputText value="#{agenda.code}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Descrizione" />
+									</f:facet>		
+									
+									<h:outputText value="#{agenda.description}" />
+								</h:column>
+								
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+					
+				</div>
+			</div>			
+			
+			<div class="control-group">
+				<label class="control-label bold">Agende abilitate</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="agenda-list">
+						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty panelView.current.listAgendasOrdered()}">
+							<h:dataTable value="#{panelView.current.listAgendasOrdered()}" var="agenda"
+											styleClass="table table-bordered table-condensed">
+											
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Codice" />
+									</f:facet>
+											
+									<h:outputText value="#{agenda.code}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Descrizione" />
+									</f:facet>		
+									
+									<h:outputText value="#{agenda.description}" />
+								</h:column>
+								
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+					
+				</div>
+			</div>			
+		</h:panelGroup>
+		
+		<h:form id="password-form" styleClass="form-horizontal">
+			<rich:popupPanel id="password-popup" modal="true"
+				moveable="false" domElementAttachment="form" height="500" width="700">
+				
+				<div class="modal-header">
+					<a4j:commandLink
+						action="#{panelView.clear( 'password-form' )}"
+                        execute="@this" styleClass="btn pull-right"
+                    	onclick="#{rich:component('password-popup')}.hide(); return false;">
+						<i class="fw-icon-step-backward dist-right"></i> Chiudi
+					</a4j:commandLink>
+                        
+					<a4j:commandLink execute="@form" render="msg, pwd-group"
+						id="save-btn"
+						action="#{panelView.savePassword()}"
+                        styleClass="btn btn-primary pull-right dist-right save-btn" 
+                       	oncomplete="if(#{not facesContext.validationFailed}) {$('.pwd-group').hide(); $('.save-btn').hide(); return false;}">
+                        <i class="fw-icon-step-forward dist-right"></i> Salva
+                    </a4j:commandLink>
+                    
+                    <h3>Modifica Password</h3>                                            
+				</div>				
+				
+				<div class="modal-body">
+					<h:panelGroup id="msg" layout="block">
+						<h:messages styleClass="messages strong" 
+									infoClass="alert alert-success"
+									warnClass="alert" 
+									errorClass="alert alert-error" />
+					</h:panelGroup>
+					
+					<h:panelGroup id="pwd-group" layout="block" styleClass="pwd-group">
+						<div class="control-group">	
+							<label class="control-label bold" for="password-form:old-pwd">* Vecchia password</label>
+							<div class="controls">
+								<h:inputSecret id="old-pwd" value="#{panelView.oldPassword}" 
+									styleClass="#{component.valid ? '' : 'vld-error'}" 
+									validator="#{panelView.validateOldPassword}"
+									onkeydown="return disableReturn(event, this);"
+									required="true"
+									requiredMessage="'Vecchia password' è un campo obbligatorio!">
+									<f:ajax execute="@this"/>
+								</h:inputSecret>
+							</div>
+						</div>		
+						
+						<div class="control-group">	
+							<label class="control-label bold" for="password-form:new-pwd">* Nuova password</label>
+							<div class="controls">
+								<h:inputSecret id="new-pwd" value="#{panelView.newPassword}" 
+									styleClass="#{component.valid ? '' : 'vld-error'}" 
+									required="true"
+									onkeydown="return disableReturn(event, this);"
+									requiredMessage="'Nuova password' è un campo obbligatorio!">
+									<f:ajax execute="@this" />									
+									<f:validateLength minimum="8" for="password-form:new-pwd"/>
+								</h:inputSecret>
+							</div>
+						</div>		
+						
+						<div class="control-group">	
+							<label class="control-label bold" for="password-form:confirm-new-pwd">* Conferma nuova password</label>
+							<div class="controls">
+								<h:inputSecret id="confirm-new-pwd" value="#{panelView.repeatedPassword}" 
+									styleClass="#{component.valid ? '' : 'vld-error'}" 
+									validator="#{panelView.validateNewPassword}"
+									onkeydown="return disableReturn(event, this);"
+									required="true"
+									requiredMessage="'Conferma nuova password' è un campo obbligatorio!">
+									<f:validateLength minimum="8" for="password-form:confirm-new-pwd"/>
+									<f:ajax execute="@this" />
+								</h:inputSecret>
+							</div>
+						</div>
+					</h:panelGroup>
+				</div>			
+			</rich:popupPanel>
+		</h:form>		
+	</ui:define>
+
+</ui:composition>
+</html>

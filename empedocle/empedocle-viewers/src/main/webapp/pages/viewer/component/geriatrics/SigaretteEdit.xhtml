@@ -1,0 +1,43 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<a4j:outputPanel xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+	<div>
+			<table class="grid_table" style="width: 100%">
+				<tr>
+					<td class="grid_cell_0">
+						<h:outputText value="#{sigaretteController.findFactLinkBySelector(value, viewer.getByPriority(0).selector).type.name}" styleClass="outputPath_text"/>
+					</td>
+					<td class="grid_cell_1">
+						<a:view value="#{sigaretteController.findBySelector(value, viewer.getByPriority(0).selector)}" 
+							viewer="#{viewer.getByPriority(0).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td class="grid_cell_0">
+						<h:outputText value="#{sigaretteController.findFactLinkBySelector(value, viewer.getByPriority(1).selector).type.name}" styleClass="outputPath_text"/>
+					</td>
+					<td class="grid_cell_1">
+						<a:view value="#{sigaretteController.findBySelector(value, viewer.getByPriority(1).selector)}" 
+							viewer="#{viewer.getByPriority(1).target}" />
+					</td>
+				</tr>
+		
+									
+				<tr>
+					<td class="grid_cell_0">
+						<h:outputText value="#{sigaretteController.findFactLinkBySelector(value, viewer.getByPriority(2).selector).type.name}" styleClass="outputPath_text"/>
+					</td>
+					<td class="grid_cell_1">
+						<a4j:outputPanel ajaxRendered="true">
+						<h:outputText value="#{sigaretteController.retrieveOverallScore( viewer, value )}" />
+						</a4j:outputPanel>
+					</td>
+				</tr>
+			</table>
+		</div>
+</a4j:outputPanel>

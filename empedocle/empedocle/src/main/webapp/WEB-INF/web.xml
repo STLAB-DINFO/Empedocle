@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Empedocle</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+ 
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+
+	<context-param>
+        <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+	<context-param>
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+	<context-param>
+    	<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    	<param-value>server</param-value>
+    </context-param>    	
+
+	<!-- RichFaces configuration -->	
+
+	<context-param>
+	    <param-name>org.richfaces.skin</param-name>
+	    <param-value>plain</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.richfaces.enableControlSkinning</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<!-- Application specific settings -->
+	
+	<context-param>
+		<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+		<param-value>/pages/viewer/facelets/empedocle.taglib.xml</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>	
+
+	<!-- FlyingSource filters -->
+	
+ 	<filter> 
+ 		<filter-name>PDFRender</filter-name> 
+ 		<filter-class>it.unifi.ing.stlab.commons.pdf.PDFRendererFilter</filter-class> 
+ 	</filter> 
+	
+ 	<filter-mapping> 
+ 		<filter-name>PDFRender</filter-name> 
+ 		<url-pattern>/pages/viewer/report-preview.jsf</url-pattern> 
+ 	</filter-mapping> 
+ 	
+ 	<filter-mapping> 
+ 		<filter-name>PDFRender</filter-name> 
+ 		<url-pattern>/pages/viewer/report-viewer.jsf</url-pattern> 
+ 	</filter-mapping> 
+	
+	<!-- Login method configurations -->
+	
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>empedocle-realm</realm-name>
+		<form-login-config>
+			<form-login-page>/pages/security/login.jsf</form-login-page>
+			<form-error-page>/pages/security/login-error.jsf</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<!-- Security constraints -->
+	
+	<security-constraint>
+		<display-name>Basic user pages constraints</display-name>
+		<web-resource-collection>
+			<web-resource-name>Basic user pages</web-resource-name>
+			<url-pattern>/pages/examination/examination-list.jsf</url-pattern>
+			<url-pattern>/pages/examination/examination-running.jsf</url-pattern>
+			<url-pattern>/pages/patients/patient-list.jsf</url-pattern>
+			<url-pattern>/pages/patients/patient-view.jsf</url-pattern>
+			<url-pattern>/pages/staff/panel/*</url-pattern>		
+			<url-pattern>/pages/messages/*</url-pattern>				
+			<url-pattern>/home.jsf</url-pattern>
+			<url-pattern>/pages/viewer/report-viewer.jsf</url-pattern>			
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>basic user</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<!--<security-constraint>
+		<display-name>Domain expert pages constraints</display-name>
+		<web-resource-collection>
+			<web-resource-name>Domain expert pages</web-resource-name>
+
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>domain expert</role-name>
+		</auth-constraint>
+	</security-constraint>-->
+
+	<security-constraint>
+		<display-name>Administrator pages constraints</display-name>
+		<web-resource-collection>
+			<web-resource-name>Administrator pages</web-resource-name>
+			<url-pattern>/pages/agendas/*</url-pattern>
+			<url-pattern>/pages/examination/types/examinationtype-list.jsf</url-pattern>
+			<url-pattern>/pages/examination/types/examinationtype-view.jsf</url-pattern>
+			<url-pattern>/pages/examination/types/examinationtype-edit.jsf</url-pattern>
+			<url-pattern>/pages/queries/*</url-pattern>
+			<url-pattern>/pages/types/*</url-pattern>
+			<url-pattern>/pages/viewer/*</url-pattern>
+			<url-pattern>/pages/staff/staff-view.jsf</url-pattern>
+			<url-pattern>/pages/staff/staff-edit.jsf</url-pattern>
+			<url-pattern>/pages/staff/staff-list.jsf</url-pattern>
+			<url-pattern>/pages/patients/patient-list.jsf</url-pattern>
+			<url-pattern>/pages/patients/patient-view.jsf</url-pattern>
+			<url-pattern>/pages/staff/panel/*</url-pattern>
+			<url-pattern>/home.jsf</url-pattern>
+			<url-pattern>/pages/viewer/report-viewer.jsf</url-pattern>
+			<url-pattern>/pages/patients/patient-edit.jsf</url-pattern>
+			<url-pattern>/pages/examination/examination-edit.jsf</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>administrator</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<!--  Security roles -->
+	
+	<security-role>
+		<role-name>basic user</role-name>	<!-- consultazione cartelle ed erogazione visite -->
+	</security-role>
+	<security-role>
+		<role-name>data analyst</role-name>	 <!-- estrazioni statistiche -->
+	</security-role>	
+	<security-role>
+		<role-name>domain expert</role-name>	<!-- domain expert -->
+	</security-role>
+	<security-role>
+		<role-name>administrator</role-name>	<!-- gestione utenti -->
+	</security-role>
+	<security-role>
+		<role-name>data reviewer</role-name>	<!-- solo consultazione cartelle -->
+	</security-role>
+	<security-role>
+		<role-name>patient merger</role-name> <!-- unione manuale di pazienti duplicati -->
+	</security-role>	
+	<security-role>
+		<role-name>examination rescuer</role-name> <!-- recupero visite in erogazione -->
+	</security-role>	
+	<security-role>
+		<role-name>examination editor</role-name> <!-- creazione nuovi pazienti e nuove visite -->
+	</security-role>			
+	
+</web-app>

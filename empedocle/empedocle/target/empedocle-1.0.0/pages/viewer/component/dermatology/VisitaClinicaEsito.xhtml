@@ -1,0 +1,55 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+	
+	<div class="fieldset">
+		<table style="width: 100%">
+			<tr>
+				<td class="grid_cell_0">
+					<h:outputText value="Esito" />
+				</td>
+				<td class="grid_cell_1">
+					<h:panelGroup rendered="#{visitaClinicaEsitoController.retrieveEsito(value, viewer) ne null}"> 
+						<a4j:region>
+							<h:selectOneMenu value="#{visitaClinicaEsitoController.esito.phenomenon}" 
+												onkeydown="return disableReturn(event, this)"
+												converter="#{phenomenonConverter}">
+								<a4j:ajax event="valueChange" execute="@this" 
+									limitRender="false"
+									render="#{conditionalPanelController.render( visitaClinicaEsitoController.retrieveEsito(value, viewer).type, viewer )}"
+									listener="#{persistListener.persistData}" />
+								<f:selectItem itemValue="" itemLabel="" noSelectionOption="true"/>
+								<f:selectItems value="#{comboController.getSelectItems(visitaClinicaEsitoController.esito)}" />	
+								<f:attribute name="fact" value="#{visitaClinicaEsitoController.esito}" />
+							</h:selectOneMenu>
+						</a4j:region>
+					</h:panelGroup>
+				</td>
+			</tr>
+			<tr>
+				<td class="grid_cell_0">
+					<h:outputText value="Note" />
+				</td>
+				<td class="grid_cell_1">
+					<a4j:outputPanel ajaxRendered="true"
+								rendered="#{visitaClinicaEsitoController.retrieveNote(value, viewer) ne null}">
+						<a4j:region>
+							<h:inputTextarea value="#{visitaClinicaEsitoController.note.text}"
+								styleClass="textArea_input">
+								
+								<a4j:ajax event="change" limitRender="true" 
+											listener="#{persistListener.persistData}" />
+								
+							</h:inputTextarea>
+						</a4j:region>
+					</a4j:outputPanel>
+				</td>
+			</tr>
+		</table>
+	</div>
+</h:panelGroup>

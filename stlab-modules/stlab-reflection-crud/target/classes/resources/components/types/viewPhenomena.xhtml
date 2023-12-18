@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" type="it.unifi.ing.stlab.reflection.actions.wrappers.TypeBean"/>
+    </composite:interface>
+ 
+    <composite:implementation>
+		<h:panelGroup styleClass="control-group" rendered="#{cc.attrs.value.isEnumerated()}" layout="block">
+			<h:outputLabel styleClass="control-label bold" for="#{cc.clientId}:phenomena" value="Fenomeni" />
+		    <h:panelGroup styleClass="controls scrollable" layout="block">
+		    	<h:dataTable id="phenomena" styleClass="table table-bordered table-condensed"  
+		    		value="#{cc.attrs.value.phenomena}" var="ph" 
+		    		rendered="#{not empty cc.attrs.value.phenomena}"
+		    		columnClasses="col1, text-center, text-center">
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Nome
+		    			</f:facet>
+		    			#{ph.name}
+		    		</h:column>
+
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Valido dal
+		    			</f:facet>
+		    			<h:outputText value="#{ph.left}">
+		    				<f:convertDateTime pattern="dd/MM/yyyy"/>
+		    			</h:outputText>
+		    		</h:column>
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Valido fino al
+		    			</f:facet>
+		    			<h:outputText value="#{ph.right}">
+		    				<f:convertDateTime pattern="dd/MM/yyyy"/>
+		    			</h:outputText>
+		    		</h:column>
+		    	</h:dataTable>
+		    </h:panelGroup>
+		</h:panelGroup>
+    </composite:implementation>
+</html>

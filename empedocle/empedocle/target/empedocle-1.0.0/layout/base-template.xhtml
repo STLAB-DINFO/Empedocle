@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<h:head>
+	<title>Empedocle</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- Styles -->
+	<h:outputStylesheet library="bootstrap" name="css/bootstrap.css" />
+	<h:outputStylesheet library="bootstrap" name="font-awesome/css/font-awesome.css" />
+	<h:outputStylesheet library="css" name="custom.1.2.0.css" />
+
+	<style type="text/css">
+		.sidebar-nav {
+			padding: 9px 0;
+		}
+	</style>
+
+	<h:outputStylesheet library="bootstrap" name="css/bootstrap-responsive.css" />
+	<ui:insert name="styles" />
+</h:head>
+
+<h:body>
+	<!-- Javascript  -->
+	<h:outputScript library="jquery" name="jquery-1.9.1.min.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap.js" />
+	<h:outputScript library="javascript" name="custom.1.0.0.js" />
+	<ui:insert name="scripts" />
+	
+	<div id="wrap">
+		<ui:insert name="header" />
+
+		<div style="float: right; margin-right: 20px;">
+			<a4j:status startStyleClass="load-icon"
+						onsuccess="initializeTooltip(); capitalizeText();">
+				<f:facet name="start">
+					<h:graphicImage value="/img/ajax-loader.gif" alt="loading..." />
+				</f:facet>
+			</a4j:status>
+			<div class="conn-notify"
+				style="position: fixed; top: 41px; right: 0px; z-index: 100;"></div>
+		</div>
+		
+		<div class="container-fluid">
+			<a4j:outputPanel id="msg" layout="block">
+				<h:messages styleClass="messages strong" 
+							infoClass="alert alert-success"
+							warnClass="alert" 
+							errorClass="alert alert-error" />
+			</a4j:outputPanel>				
+		
+			<ui:insert name="body" />
+		</div>
+		
+		<div id="push"></div>
+	</div>
+	
+	<div id="footer">
+		<div class="container-fluid">
+			<a class="pull-right normal-text" href="https://stlab.dinfo.unifi.it/" target="_blank">
+				<h:outputText value="STLab - Software Technologies Laboratory ( 2013 -" />
+				<script type="text/javascript">
+					document.write(new Date().getFullYear());
+				</script>
+				<h:outputText value=" )" />
+			</a>
+		</div>
+	</div>
+</h:body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<h:panelGroup class="accordion" id="validation" rendered="#{facesContext.validationFailed}">
+		<div class="accordion-group alert-error" style="border-color: #b94a48;" >
+			<div class="accordion-heading">
+				<strong><h:outputText value="Visita non valida!" style="text-decoration: none;" styleClass="accordion-toggle pull-left" /></strong>
+				<a class="accordion-toggle alert-error pull-right" data-toggle="collapse" data-parent="#validation" href="#vld-detail">
+					<i class="icon-th-list"></i>
+				</a>
+				<div style="clear: both;"></div>
+			</div>
+			<div id="vld-detail" class="accordion-body collapse in">
+				<div class="accordion-inner">
+					<h:messages styleClass="unordered" />
+				</div>
+			</div>
+		</div>
+	</h:panelGroup>
+	
+</ui:composition>

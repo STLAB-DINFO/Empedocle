@@ -1,0 +1,5801 @@
+Codice#Descrizione#Livello
+A#APPARATO GASTROINTESTINALE E METABOLISMO#1
+A01#Stomatologici#2
+A01A#Stomatologici#3
+A01AA#Sostanze per la profilassi della carie#4
+A01AA01#Sodio fluoruro#5
+A01AA02#Sodio monofluorofosfato#5
+A01AA03#Olaflur#5
+A01AA04#Fluoruro stannoso#5
+A01AA30#Associazioni#5
+A01AA51#Sodio fluoruro, associazioni#5
+A01AB#Antiinfettivi e antisettici per trattamento orale locale#4
+A01AB02#Idrogeno perossido#5
+A01AB03#Clorexidina#5
+A01AB04#Amfotericina B#5
+A01AB05#Polinoxilina#5
+A01AB06#Domifene#5
+A01AB07#Ossichinolina#5
+A01AB08#Neomicina#5
+A01AB09#Miconazolo#5
+A01AB10#Natamicina#5
+A01AB11#Vari#5
+A01AB12#Esetidina#5
+A01AB13#Tetraciclina#5
+A01AB14#Benzoxonio cloruro#5
+A01AB15#Tibenzonio ioduro#5
+A01AB16#Mepartricina#5
+A01AB17#Metronidazolo#5
+A01AB18#Clotrimazolo#5
+A01AB19#Sodio perborato#5
+A01AB21#Clortetraciclina#5
+A01AB22#Doxiciclina#5
+A01AB23#Minociclina#5
+A01AC#Corticosteroidi per il trattamento orale locale#4
+A01AC01#Triamcinolone#5
+A01AC02#Desametasone#5
+A01AC03#Idrocortisone#5
+A01AC54#Prednisolone, associazioni#5
+A01AD#Altre sostanze per il trattamento orale locale#4
+A01AD01#Adrenalina#5
+A01AD02#Benzidamina#5
+A01AD05#Acido acetilsalicilico#5
+A01AD06#Adrenalone#5
+A01AD07#Amlexanox#5
+A01AD08#Becaplermin#5
+A01AD11#Vari#5
+A02#Farmaci per disturbi associati alla produzione di acido#2
+A02A#Antiacidi#3
+A02AA#Composti del magnesio#4
+A02AA01#Magnesio carbonato#5
+A02AA02#Magnesio ossido#5
+A02AA03#Magnesio perossido#5
+A02AA04#Magnesio idrossido#5
+A02AA05#Magnesio silicato#5
+A02AA10#Associazioni#5
+A02AB#Composti dell'alluminio#4
+A02AB01#Alluminio idrossido#5
+A02AB02#Algeldrato#5
+A02AB03#Alluminio fosfato#5
+A02AB04#Diidrossialluminio sodio carbonato#5
+A02AB05#Alluminio acetoacetato#5
+A02AB06#Aloglutamolo#5
+A02AB07#Alluminio glicinato#5
+A02AB10#Associazioni#5
+A02AC#Composti del calcio#4
+A02AC01#Calcio carbonato#5
+A02AC02#Calcio silicato#5
+A02AC10#Associazioni#5
+A02AD#Associazioni e complessi fra composti di alluminio, calcio e magnesio#4
+A02AD01#Associazioni di sali ordinarie#5
+A02AD02#Magaldrato#5
+A02AD03#Almagato#5
+A02AD04#Idrotalcite#5
+A02AD05#Almasilato#5
+A02AF#Antiacidi associati ad antimeteorici#4
+A02AF01#Magaldrato e antimeteorici#5
+A02AF02#Associazioni di sali ordinarie e antimeteorici#5
+A02AG#Antiacidi associati ad antispastici#4
+A02AH#Antiacidi associati a sodio bicarbonato#4
+A02AX#Antiacidi, altre associazioni#4
+A02B#Farmaci per l'ulcera peptica e il reflusso gastroesofageo#3
+A02BA#Antagonisti dei recettori H2#4
+A02BA01#Cimetidina#5
+A02BA02#Ranitidina#5
+A02BA03#Famotidina#5
+A02BA04#Nizatidina#5
+A02BA05#Niperotidina#5
+A02BA06#Roxatidina#5
+A02BA07#Ranitidina bismuto citrato#5
+A02BA08#Lafutidina#5
+A02BA51#Cimetidina, associazioni#5
+A02BA53#Famotidina, associazioni#5
+A02BB#Prostaglandine#4
+A02BB01#Misoprostolo#5
+A02BB02#Enprostil#5
+A02BC#Inibitori della pompa acida#4
+A02BC01#Omeprazolo#5
+A02BC02#Pantoprazolo#5
+A02BC03#Lansoprazolo#5
+A02BC04#Rabeprazolo#5
+A02BC05#Esomeprazolo#5
+A02BD#Associazioni per l'eradicazione di Helicobacter pylori#4
+A02BD01#Omeprazolo, amoxicillina e metronidazolo#5
+A02BD02#Lansoprazolo, tetraciclina e metronidazolo#5
+A02BD03#Lansoprazolo, amoxicillina e metronidazolo#5
+A02BD04#Pantoprazolo, amoxicillina e claritromicina#5
+A02BD05#Omeprazolo,amoxicillina e claritromicina#5
+A02BD06#Esomeprazolo, amoxicillina e claritromicina#5
+A02BD07#Lansoprazolo, amoxicillina e claritromicina#5
+A02BD08#bismuth subcitrate, tetracycline e metronidazole#5
+A02BX#Altri antiulcera peptica#4
+A02BX01#Carbenoxolone#5
+A02BX02#Sucralfato#5
+A02BX03#Pirenzepina#5
+A02BX04#Metiosolfonio cloruro#5
+A02BX05#Bismuto subcitrato#5
+A02BX06#Proglumide#5
+A02BX07#Gefarnato#5
+A02BX08#Sulglicotide#5
+A02BX09#Acetoxolone#5
+A02BX10#Zolimidina#5
+A02BX11#Troxipide#5
+A02BX12#Bismuto subnitrato#5
+A02BX13#Acido alginico#5
+A02BX51#Carbenoxolone, associazioni escl. psicolettici#5
+A02BX71#Carbenoxolone, associazioni con psicolettici#5
+A02BX77#Gefarnato, associazioni con psicolettici#5
+A02X#Altri farmaci per disturbi associati alla produzione di acido#3
+A03#Farmaci per disturbi funzionali gastrointestinali#2
+A03A#Farmaci per disturbi funzionali dell'intestino#3
+A03AA#Anticolinergici sintetici, esteri con gruppi aminici terziari#4
+A03AA01#Ossifenciclimina#5
+A03AA03#Camilofina#5
+A03AA04#Mebeverina#5
+A03AA05#Trimebutina#5
+A03AA06#Rociverina#5
+A03AA07#Dicicloverina#5
+A03AA08#Diesiverina#5
+A03AA09#Difemerina#5
+A03AA30#Piperidolato#5
+A03AB#Anticolinergici sintetici, composti ammonici quaternari#4
+A03AB01#Benzilone#5
+A03AB02#Glicopirronio#5
+A03AB03#Ossifenonio#5
+A03AB04#Pentienato#5
+A03AB05#Propantelina#5
+A03AB06#Otilonio bromuro#5
+A03AB07#Metantelina#5
+A03AB08#Tridiesetile#5
+A03AB09#Isopropamide#5
+A03AB10#Esociclio#5
+A03AB11#Poldina#5
+A03AB12#Mepenzolato#5
+A03AB13#Bevonio#5
+A03AB14#Pipenzolato#5
+A03AB15#Difemanile#5
+A03AB16#(2-benzidrilossietil)dietil-metilammonio ioduro#5
+A03AB17#Tiemonio ioduro#5
+A03AB18#Prifinio bromuro#5
+A03AB19#Timepidio bromuro#5
+A03AB21#Fenpiverinio#5
+A03AB53#Ossifenonio, associazioni#5
+A03AC#Antispastici sintetici, amidi con amine terziarie#4
+A03AC02#Dimetilaminopropionilfenotiazina#5
+A03AC04#Nicofetamide#5
+A03AC05#Tiropramide#5
+A03AD#Papaverina e derivati#4
+A03AD01#Papaverina#5
+A03AD02#Drotaverina#5
+A03AD30#Moxaverina#5
+A03AE#Farmaci che agiscono sui recettori serotoninergici#4
+A03AE01#Alosetron#5
+A03AE02#Tegaserod#5
+A03AE03#Cilansetron#5
+A03AE04#Prucalopride#5
+A03AX#Altri farmaci per disturbi funzionali dell'intestino#4
+A03AX01#Fenpiprano#5
+A03AX02#Diisopromina#5
+A03AX03#Clorbenzossamina#5
+A03AX04#Pinaverio#5
+A03AX05#Fenoverina#5
+A03AX06#Idanpramina#5
+A03AX07#Proxazolo#5
+A03AX08#Alverina#5
+A03AX09#Trepibutone#5
+A03AX10#Isometeptene#5
+A03AX11#Caroverina#5
+A03AX12#Floroglucinolo#5
+A03AX13#Siliconi#5
+A03AX30#Trimetildifenilpropilamina#5
+A03AX58#Alverina, associazioni#5
+A03B#Belladonna e derivati, non associati#3
+A03BA#Alcaloidi della belladonna, amine terziarie#4
+A03BA01#Atropina#5
+A03BA03#Iosciamina#5
+A03BA04#Belladonna alcaloidi totali#5
+A03BB#Alcaloidi della belladonna, semisintetici, composti ammonici quaternari#4
+A03BB01#Butilscopolamina bromuro#5
+A03BB02#Metilatropina#5
+A03BB03#Metilscopolamina#5
+A03BB04#Fentonio#5
+A03BB05#Cimetropio bromuro#5
+A03C#Antispastici associati a psicolettici#3
+A03CA#Anticolinergici sintetici in associazione con psicolettici#4
+A03CA01#Isopropamide e psicolettici#5
+A03CA02#Clidinio e psicolettici#5
+A03CA03#Ossifenciclimina e psicolettici#5
+A03CA04#Otilonio bromuro e psicolettici#5
+A03CA05#Glicopirronio e psicolettici#5
+A03CA06#Bevonio e psicolettici#5
+A03CA07#Ambutonio e psicolettici#5
+A03CA08#Difemanile e psicolettici#5
+A03CA30#Emepronio e psicolettici#5
+A03CA34#Propantelina e psicolettici#5
+A03CB#Belladonna e derivati in associazione con psicolettici#4
+A03CB01#Metilscopolamina e psicolettici#5
+A03CB02#Belladonna alcaloidi totali e psicolettici#5
+A03CB03#Atropina e psicolettici#5
+A03CB04#Metilomatropina e psicolettici#5
+A03CB31#Iosciamina e psicolettici#5
+A03CC#Altri antispastici in associazione con psicolettici#4
+A03D#Antispastici associati ad analgesici#3
+A03DA#Anticolinergici sintetici in associazione con analgesici#4
+A03DA01#Tropenzilone e analgesici#5
+A03DA02#Pitofenone e analgesici#5
+A03DA03#Bevonio e analgesici#5
+A03DA04#Ciclonio e analgesici#5
+A03DA05#Camilofina e analgesici#5
+A03DA06#Trospio e analgesici#5
+A03DA07#Tiemonio ioduro e analgesici#5
+A03DB#Belladonna e derivati in associazione con analgesici#4
+A03DB04#Butilscopolamina e analgesici#5
+A03DC#Altri antispastici in associazione con analgesici#4
+A03E#Antispastici e anticolinergici in associazione con altri farmaci#3
+A03EA#Antispastici, psicolettici, analgesici in associazione#4
+A03ED#Antispastici in associazione con altri farmaci#4
+A03F#Procinetici#3
+A03FA#Procinetici#4
+A03FA01#Metoclopramide#5
+A03FA02#Cisapride#5
+A03FA03#Domperidone#5
+A03FA04#Bromopride#5
+A03FA05#Alizapride#5
+A03FA06#Clebopride#5
+A04#Antiemetici e antinausea#2
+A04A#Antiemetici e antinausea#3
+A04AA#Antagonisti della serotonina (5HT3)#4
+A04AA01#Ondansetron#5
+A04AA02#Granisetron#5
+A04AA03#Tropisetron#5
+A04AA04#Dolasetron#5
+A04AA05#Palonosetron#5
+A04AD#Altri antiemetici#4
+A04AD01#Scopolamina#5
+A04AD02#Cerio ossalato#5
+A04AD04#Clorobutanolo#5
+A04AD05#Metopimazina#5
+A04AD10#Dronabinolo#5
+A04AD11#Nabilone#5
+A04AD12#Aprepitant#5
+A04AD13#Casopitant#5
+A04AD51#Scopolamina, associazioni#5
+A04AD54#Clorobutanolo, associazioni#5
+A05#Terapia biliare ed epatica#2
+A05A#Terapia biliare#3
+A05AA#Preparati a base di acidi biliari#4
+A05AA01#Acido chenodesossicolico#5
+A05AA02#Acido ursodesossicolico#5
+A05AA03#Acido colico#5
+A05AB#Preparati per la terapia delle vie biliari#4
+A05AB01#Nicotinile metilamide#5
+A05AX#Altri farmaci per la terapia biliare#4
+A05AX01#Piprozolina#5
+A05AX02#Imecromone#5
+A05AX03#Ciclobutirrolo#5
+A05B#Terapia epatica, lipotropi#3
+A05BA#Terapia epatica#4
+A05BA01#Arginina glutamato#5
+A05BA03#Silimarina#5
+A05BA04#Citiolone#5
+A05BA05#Epomediol#5
+A05BA06#Ornitina ossoglurato#5
+A05BA07#Arginina tidiacica#5
+A05BA08#Acido glicirrizico#5
+A05C#Farmaci per la terapia biliare e lipotropi in associazione#3
+A06#Lassativi#2
+A06A#Lassativi#3
+A06AA#Emollienti#4
+A06AA01#Paraffina liquida#5
+A06AA02#Docusato sodico#5
+A06AA51#Paraffina liquida, associazioni#5
+A06AB#Lassativi di contatto#4
+A06AB01#Ossifenisatina#5
+A06AB02#Bisacodile#5
+A06AB03#Dantrone#5
+A06AB04#Fenolftaleina#5
+A06AB05#Olio di ricino#5
+A06AB06#Senna glicosidi#5
+A06AB07#Cascara#5
+A06AB08#Picosolfato sodico#5
+A06AB09#Bsoxatin#5
+A06AB20#Fitoterapici#5
+A06AB30#Lassativi di contatto in associazione con alcaloidi della belladonna#5
+A06AB52#Bisacodile, associazioni#5
+A06AB53#Dantron, associazioni#5
+A06AB56#Senna glicosidi, associazioni#5
+A06AB57#Cascara, associazioni#5
+A06AB58#Sodio picosolfato, associazioni#5
+A06AC#Lassativi di volume#4
+A06AC01#Ispaghula (psillio semi)#5
+A06AC02#Etulosio#5
+A06AC03#Sterculia#5
+A06AC05#Semi di lino#5
+A06AC06#Metilcellulosa#5
+A06AC07#Triticum (frumento fibre)#5
+A06AC08#Policarbophyl#5
+A06AC51#Ispaghula (psillio semi), associazioni#5
+A06AC53#Sterculia, associazioni#5
+A06AC55#Semi di lino, associazioni#5
+A06AD#Lassativi ad azione osmotica#4
+A06AD01#Magnesio carbonato#5
+A06AD02#Magnesio ossido#5
+A06AD03#Magnesio perossido#5
+A06AD04#Magnesio solfato#5
+A06AD10#Sali  minerali#5
+A06AD11#Lattulosio#5
+A06AD12#Lattitolo#5
+A06AD13#Sodio solfato#5
+A06AD14#Pentaeritritile#5
+A06AD15#Macrogol#5
+A06AD16#Mannitolo#5
+A06AD17#Sodio fosfato#5
+A06AD18#Sorbitolo#5
+A06AD19#Magnesio citrato#5
+A06AD21#Sodio tartrato#5
+A06AD61#Lattulosio, associazioni#5
+A06AD65#Macrogol, associazioni#5
+A06AG#Clismi#4
+A06AG01#Sodio fosfato#5
+A06AG02#Bisacodile#5
+A06AG03#Dantrone, incl. associazioni#5
+A06AG04#Glicerolo#5
+A06AG06#Olio#5
+A06AG07#Sorbitolo#5
+A06AG10#Docusato sodico, incl. associazioni#5
+A06AG11#Laurilsolfato, incl. associazioni#5
+A06AG20#Associazioni#5
+A06AH#Antagonisti dei recettori oppioidi periferici#4
+A06AH01#Metilnaltrexone bromuro#5
+A06AH02#Alvimopan#5
+A06AX#Altri lassativi#4
+A06AX01#Glicerolo#5
+A06AX02#Farmaci produttori di anidride carbonica#5
+A06AX03#Lubiprostone#5
+A06AX04#linaclotide#5
+A06AX05#Prucalopride#5
+A07#Agenti antidiarroici, antiinfettivi/antiinfiammatori intestinali#2
+A07A#Antiinfettivi intestinali#3
+A07AA#Antibiotici#4
+A07AA01#Neomicina#5
+A07AA02#Nistatina#5
+A07AA03#Natamicina#5
+A07AA04#Streptomicina#5
+A07AA05#Polimixina B#5
+A07AA06#Paromomicina#5
+A07AA07#Amfotericina B#5
+A07AA08#Kanamicina#5
+A07AA09#Vancomicina#5
+A07AA10#Colistina#5
+A07AA11#Rifaximina#5
+A07AA12#fidaxomicina#5
+A07AA51#Neomicina, associazioni#5
+A07AA54#Streptomicina, associazioni#5
+A07AB#Sulfammidici#4
+A07AB02#Ftalilsulfatiazolo#5
+A07AB03#Sulfaguanidina#5
+A07AB04#Succinilsulfatiazolo#5
+A07AC#Derivati imidazolici#4
+A07AC01#Miconazolo#5
+A07AX#Furazolidone#4
+A07AX01#Brossichinolina#5
+A07AX02#Acetarsolo#5
+A07AX03#Nifuroxazide#5
+A07AX04#Nifurzide#5
+A07B#Adsorbenti intestinali#3
+A07BA#Preparati a base di carbone#4
+A07BA01#Carbone attivato#5
+A07BA51#Carbone attivato, associazioni#5
+A07BB#Preparati a base di bismuto#4
+A07BC#Altri adsorbenti intestinali#4
+A07BC01#Pectina#5
+A07BC02#Caolino colloidale#5
+A07BC03#Crospovidone#5
+A07BC04#Attapulgite#5
+A07BC05#Diosmectite#5
+A07BC30#Associazioni#5
+A07BC54#Attapulgite, associazioni#5
+A07C#Elettroliti associati a carboidrati#3
+A07CA#Preparati salini per la reidratazione per via orale#4
+A07D#Antipropulsivi#3
+A07DA#Antipropulsivi#4
+A07DA01#Difenossilato#5
+A07DA02#Oppio#5
+A07DA03#Loperamide#5
+A07DA04#Difenossina#5
+A07DA05#Loperamide ossido#5
+A07DA52#Morfina, associazioni#5
+A07DA53#Loperamide, associazioni#5
+A07E#Antinfiammatori intestinali#3
+A07EA#Corticosteroidi per uso topico#4
+A07EA01#Prednisolone#5
+A07EA02#Idrocortisone#5
+A07EA03#Prednisone#5
+A07EA04#Betametasone#5
+A07EA05#Tixocortolo#5
+A07EA06#Budesonide#5
+A07EA07#Beclometasone#5
+A07EB#Sostanze antiallergiche, esclusi i corticosteroidi#4
+A07EB01#Acido cromoglicico#5
+A07EC#Acido aminosalicilico e analoghi#4
+A07EC01#Sulfasalazina#5
+A07EC02#Mesalazina (5-ASA)#5
+A07EC03#Olsalazina#5
+A07EC04#Balsalazide#5
+A07F#Microorganismi antidiarroici#3
+A07FA#Microorganismi antidiarroici#4
+A07FA01#Organismi produttori di acido lattico#5
+A07FA02#Saccharomyces boulardii#5
+A07FA51#Organismi produttori di acido lattico, associazioni#5
+A07X#Altri antidiarroici#3
+A07XA#Altri antidiarroici#4
+A07XA01#Albumina tannato#5
+A07XA02#Ceratonia#5
+A07XA03#Composti del calcio#5
+A07XA04#Racecadotril#5
+A07XA51#Albumina tannato, associazioni#5
+A08#Farmaci contro l'obesita', esclusi i prodotti dietetici#2
+A08A#Farmaci contro l'obesita', esclusi i prodotti dietetici#3
+A08AA#Farmaci contro l'obesita' ad azione centrale#4
+A08AA01#Fentermina#5
+A08AA02#Fenfluramina#5
+A08AA03#Amfepramone#5
+A08AA04#Dexfenfluramina#5
+A08AA05#Mazindol#5
+A08AA06#Etilamfetamina#5
+A08AA07#Catina#5
+A08AA08#Clobenzorex#5
+A08AA09#Mefenorex#5
+A08AA10#Sibutramina#5
+A08AA56#Efedrina, associazioni#5
+A08AB#Farmaci contro l'obesita' ad azione periferica#4
+A08AB01#Orlistat#5
+A08AX#Altri farmaci contro l'obesit¿#4
+A08AX01#Rimonabant#5
+A09#Digestivi, inclusi gli enzimi#2
+A09A#Digestivi, inclusi gli enzimi#3
+A09AA#Preparati a base di enzimi#4
+A09AA01#Diastasi#5
+A09AA02#Multienzimi (lipasi, proteasi ecc.)#5
+A09AA03#Pepsina#5
+A09AA04#Tilattasi#5
+A09AB#Preparati a base di sostanze a carattere acido#4
+A09AB01#Acido glutamico cloridrato#5
+A09AB02#Betaina cloridrato#5
+A09AB03#Acido cloridrico#5
+A09AB04#Acido citrico#5
+A09AC#Enzimi e sostanze a carattere acido, associazioni#4
+A09AC01#Pepsina e sostanze a carattere acido#5
+A09AC02#Multienzimi e sostanze a carattere acido#5
+A10#Farmaci usati nel diabete#2
+A10A#Insuline e analoghi#3
+A10AB#Insuline e analoghi per iniezione, ad azione rapida#4
+A10AB01#Insulina (umana)#5
+A10AB02#Insulina (bovina)#5
+A10AB03#Insulina (porcina)#5
+A10AB04#Insulina lispro#5
+A10AB05#Insulina aspart#5
+A10AB06#Insulina glulisina#5
+A10AB30#Associazioni#5
+A10AC#Insuline e analoghi per iniezione, ad azione intermedia#4
+A10AC01#Insulina (umana)#5
+A10AC02#Insulina (bovina)#5
+A10AC03#Insulina (porcina)#5
+A10AC04#Insulina lispro#5
+A10AC30#Associazioni#5
+A10AD#Insuline e analoghi per iniezione, ad azione intermedia e ad azione rapida associate#4
+A10AD01#Insulina (umana)#5
+A10AD02#Insulina (bovina)#5
+A10AD03#Insulina (porcina)#5
+A10AD04#Insulina lispro#5
+A10AD05#Insulina aspart#5
+A10AD30#Associazioni#5
+A10AE#Insuline e analoghi per iniezione, ad azione lunga#4
+A10AE01#Insulina (umana)#5
+A10AE02#Insulina (bovina)#5
+A10AE03#Insulina (porcina)#5
+A10AE04#Insulina glargine#5
+A10AE05#Insulina detemir#5
+A10AE06#Insulina Degludec#5
+A10AE30#Associazioni#5
+A10AF#Insulina e analoghi, per inalazione#4
+A10AF01#Insulina (umana)#5
+A10B#Ipoglicemizzanti, escluse le insuline#3
+A10BA#Biguanidi#4
+A10BA01#Fenformina#5
+A10BA02#Metformina#5
+A10BA03#Buformina#5
+A10BB#Sulfaniluree#4
+A10BB01#Glibenclamide#5
+A10BB02#Clorpropamide#5
+A10BB03#Tolbutamide#5
+A10BB04#Glibornuride#5
+A10BB05#Tolazamide#5
+A10BB06#Carbutamide#5
+A10BB07#Glipizide#5
+A10BB08#Gliquidone#5
+A10BB09#Gliclazide#5
+A10BB10#Metaesamide#5
+A10BB11#Glisoxepide#5
+A10BB12#Glimepiride#5
+A10BB31#Acetoesamide#5
+A10BC#Sulfonamidi (eterocicliche)#4
+A10BC01#Glimidina#5
+A10BD#Associazioni di ipoglicemizzanti orali#4
+A10BD01#Fenformina e sulfaniluree#5
+A10BD02#Metformina e sulfaniluree#5
+A10BD03#Metformina e rosiglitazone#5
+A10BD04#Glimepiride e rosiglitazone#5
+A10BD05#Metformina e pioglitazone#5
+A10BD06#Glimepiride e pioglitazone#5
+A10BD07#Metformina e sitagliptin#5
+A10BD08#Metformina e vildagliptin#5
+A10BD09#Pioglitazone e alogliptin#5
+A10BD10#Metformina e Saxagliptin#5
+A10BD11#Metformina e Linagliptin#5
+A10BD13#Metformina + Alogliptin#5
+A10BD16#METFORMINA E CANAGLIFLOZIN#5
+A10BD20#METFORMINA ED EMPAGLIFLOZIN#5
+A10BF#Inibitori dell'alfa glucosidasi#4
+A10BF01#Acarbosio#5
+A10BF02#Miglitol#5
+A10BF03#Voglibosio#5
+A10BG#Tiazolidinedioni#4
+A10BG01#Troglitazone#5
+A10BG02#Rosiglitazone#5
+A10BG03#Pioglitazone#5
+A10BH#Inibitori della dipeptidil peptidasi 4 (DPP-4)#4
+A10BH01#Sitagliptin#5
+A10BH02#Vildagliptin#5
+A10BH03#Saxagliptin#5
+A10BH04#Alogliptin#5
+A10BH05#linagliptin#5
+A10BX#Altri ipoglicemizzanti orali#4
+A10BX01#Gomma Guar#5
+A10BX02#Repaglinide#5
+A10BX03#Nateglinide#5
+A10BX04#Exenatide#5
+A10BX05#Pramlintide#5
+A10BX06#Benfluorex#5
+A10BX07#Liraglutide#5
+A10BX08#Mitglinide#5
+A10BX10#Lixisenatide#5
+A10BX11#CANAGLIFLOZIN#5
+A10BX14#DULAGLUTIDE#5
+A10X#Altri farmaci usati nel diabete#3
+A10XA#Inibitori dell'aldoso-reduttasi#4
+A10XA01#Tolrestat#5
+A11#Vitamine#2
+A11A#Polivitaminici, associazioni#3
+A11AA#Polivitaminici associati a  minerali#4
+A11AA01#Polivitaminici e ferro#5
+A11AA02#Polivitaminici e calcio#5
+A11AA03#Polivitaminici e altri minerali, incl. associazioni#5
+A11AA04#Polivitaminici e oligoelementi#5
+A11AB#Polivitaminici, altre associazioni#4
+A11B#Polivitaminici, non associati#3
+A11BA#Polivitaminici, non associati#4
+A11C#Vitamine A e D, incluse le loro associazioni#3
+A11CA#Vitamina A, non associata#4
+A11CA01#Retinolo (vit. A)#5
+A11CA02#Betacarotene#5
+A11CB#Vitamine A e D in associazione#4
+A11CC#Vitamina D e analoghi#4
+A11CC01#Ergocalciferolo#5
+A11CC02#Diidrotachisterolo#5
+A11CC03#Alfacalcidolo#5
+A11CC04#Calcitriolo#5
+A11CC05#Colecalciferolo#5
+A11CC06#Calcifediolo#5
+A11CC20#Associazioni#5
+A11D#Vitamina B1, sola o in associazione con vitamina B6 e B12#3
+A11DA#Vvitamina B1, non associata#4
+A11DA01#Tiamina (vit. B1)#5
+A11DA02#Sulbutiamina#5
+A11DA03#Benfotiamina#5
+A11DB#Vitamina B1 in associazione con vitamina B6 e/o vitamina B12#4
+A11E#Complesso vitaminico B, comprese le associazioni#3
+A11EA#Complesso vitaminico B, non associato#4
+A11EB#Complesso vitaminico B, associato a vitamina C#4
+A11EC#Complesso vitaminico B, associato a sali minerali#4
+A11ED#Complesso vitaminico B, associato a steroidi anabolizzanti#4
+A11EX#Complesso vitaminico B, altre associazioni#4
+A11G#Acido ascorbico (vitamina C), comprese le associazioni#3
+A11GA#Acido ascorbico (vitamina C), non associato#4
+A11GA01#Acido ascorbico (vit C)#5
+A11GB#Acido ascorbico (vitamina C), associazioni#4
+A11GB01#Acido ascorbico (vit C) e calcio#5
+A11H#Altri preparati di vitamine, non associate#3
+A11HA#Altri preparati di vitamine, non associate#4
+A11HA01#Nicotinamide#5
+A11HA02#Piridossina (vit B6)#5
+A11HA03#Tocoferolo (vit E)#5
+A11HA04#Riboflavina (vit B2)#5
+A11HA05#Biotina#5
+A11HA06#Piridossal fosfato#5
+A11HA07#Inositolo#5
+A11HA08#Tocofersolan#5
+A11HA30#Despantenolo#5
+A11HA31#Calcio pantotenato#5
+A11HA32#Pantetina#5
+A11J#Altri prodotti vitaminici, associazioni#3
+A11JA#Associazioni di vitamine#4
+A11JB#Vitamine associate a sali minerali#4
+A11JC#Vitamine, altre associazioni#4
+A12#Integratori minerali#2
+A12A#Calcio#3
+A12AA#Calcio#4
+A12AA01#Calcio fosfato#5
+A12AA02#Calcio glubionato#5
+A12AA03#Calcio gluconato#5
+A12AA04#Calcio carbonato#5
+A12AA05#Calcio lattato#5
+A12AA06#Calcio lattato gluconato#5
+A12AA07#Calcio cloruro#5
+A12AA08#Calcio glicerofosfato#5
+A12AA09#Calcio citrolisina#5
+A12AA10#Calcio glucoeptonato#5
+A12AA11#Calcio pangamato#5
+A12AA12#Calcio acetato anidro#5
+A12AA20#Calcio (sali diversi in associazione)#5
+A12AA30#Calcio levulinato#5
+A12AX#Calcio, associazioni con altri farmaci#4
+A12B#Potassio#3
+A12BA#Potassio#4
+A12BA01#Potassio cloruro#5
+A12BA02#Potassio citrato#5
+A12BA03#Potassio idrogeno tartrato#5
+A12BA04#Potassio idrogeno carbonato#5
+A12BA05#Potassio gluconato#5
+A12BA30#Associazioni#5
+A12BA51#Potassio cloruro, associazioni#5
+A12C#Altri integratori minerali#3
+A12CA#Sodio#4
+A12CA01#Sodio cloruro#5
+A12CA02#Sodio solfato#5
+A12CB#Zinco#4
+A12CB01#Zinco solfato#5
+A12CB02#Zinco gluconato#5
+A12CB03#Complesso zinco proteico#5
+A12CC#Magnesio#4
+A12CC01#Magnesio cloruro#5
+A12CC02#Magnesio solfato#5
+A12CC03#Magnesio gluconato#5
+A12CC04#Magnesio citrato#5
+A12CC05#Magnesio aspartato#5
+A12CC06#Magnesio lattato#5
+A12CC07#Magnesio levulinato#5
+A12CC08#Magnesio pidolato#5
+A12CC09#Magnesio orotato#5
+A12CC10#Magnesio ossido#5
+A12CC30#Magnesio (sali diversi in associazione)#5
+A12CD#Fluoruri#4
+A12CD01#Sodio fluoruro#5
+A12CD02#Sodio monofluorofosfato#5
+A12CD51#Fluoruri , associazioni#5
+A12CE#Selenio#4
+A12CE01#Sodio selenato#5
+A12CE02#Sodio selenite#5
+A12CX#Altri  preparati minerali#4
+A13#Tonici#2
+A13A#Tonici#3
+A14#Anabolizzanti sistemici#2
+A14A#Steroidi anabolizzanti#3
+A14AA#Derivati dell'androstano#4
+A14AA01#Androstanolone#5
+A14AA02#Stanozololo#5
+A14AA03#Metandienone#5
+A14AA04#Metenolone#5
+A14AA05#Ossimetolone#5
+A14AA06#Quinbolone#5
+A14AA07#Prasterone#5
+A14AA08#Oxandrolone#5
+A14AA09#Noretandrolone#5
+A14AB#Derivati dell'estrene#4
+A14AB01#Nandrolone#5
+A14AB02#Etilestrenolo#5
+A14AB03#Oxabolone cipionato#5
+A14B#Altre sostanze anabolizzanti#3
+A15#Stimolanti dell'appetito#2
+A16#Altri farmaci dell'apparato gastrointestinale e del metabolismo#2
+A16A#Altri farmaci dell'apparato gastrointestinale e del metabolismo#3
+A16AA#Aminoacidi e derivati#4
+A16AA01#Levocarnitina#5
+A16AA02#Ademetionina#5
+A16AA03#Glutamina#5
+A16AA04#Mercaptamina#5
+A16AA05#Acido carglumico#5
+A16AA06#Betaina#5
+A16AB#Enzimi#4
+A16AB01#Alglucerasi#5
+A16AB02#Imiglucerasi#5
+A16AB03#Agalsidasi alfa#5
+A16AB04#Agalsidasi beta#5
+A16AB05#Laronidasi#5
+A16AB06#Sacrosidasi#5
+A16AB07#Alglucosidasi alfa#5
+A16AB08#Galsulfasi#5
+A16AB09#Idursulfasi#5
+A16AB10#velaglucerase alfa#5
+A16AB11#taliglucerase alfa#5
+A16AB12#Elosulfase Alfa#5
+A16AX#Prodotti vari dell'apparato gastrointestinale e metabolismo#4
+A16AX01#Acido tioctico#5
+A16AX02#Anetolo tritione#5
+A16AX03#Sodio fenilbutirrato#5
+A16AX04#Nitisinone#5
+A16AX05#Zinco acetato#5
+A16AX06#Miglustat#5
+A16AX07#Sapropterina#5
+B#SANGUE E ORGANI EMOPOIETICI#1
+B01#Antitrombotici#2
+B01A#Antitrombotici#3
+B01AA#Antagonisti della vitamina K#4
+B01AA01#Dicumarolo#5
+B01AA02#Fenindione#5
+B01AA03#Warfarin#5
+B01AA04#Fenprocumone#5
+B01AA07#Acenocumarolo#5
+B01AA08#Etile biscumacetato#5
+B01AA09#Clorindione#5
+B01AA10#Difenadione#5
+B01AA11#Tioclomarolo#5
+B01AB#Eparinici#4
+B01AB01#Eparina#5
+B01AB02#Antitrombina III#5
+B01AB04#Dalteparina#5
+B01AB05#Enoxaparina#5
+B01AB06#Nadroparina#5
+B01AB07#Parnaparina#5
+B01AB08#Reviparina#5
+B01AB09#Danaparoid#5
+B01AB10#Tinzaparina#5
+B01AB11#Sulodexide#5
+B01AB12#Bemiparina#5
+B01AB51#Eparina, associazioni#5
+B01AC#Antiaggreganti piastrinici, esclusa l'eparina#4
+B01AC01#Ditazolo#5
+B01AC02#Cloricromene#5
+B01AC03#Picotamide#5
+B01AC04#Clopidogrel#5
+B01AC05#Ticlopidina#5
+B01AC06#Acido acetilsalicilico#5
+B01AC07#Dipiridamolo#5
+B01AC08#Carbasalato calcico#5
+B01AC09#Epoprostenolo#5
+B01AC10#Indobufene#5
+B01AC11#Iloprost#5
+B01AC13#Abciximab#5
+B01AC15#Aloxiprin#5
+B01AC16#Eptifibatide#5
+B01AC17#Tirofiban#5
+B01AC18#Triflusal#5
+B01AC19#Beraprost#5
+B01AC21#Treprostinil#5
+B01AC22#Prasugrel#5
+B01AC23#cilostazol#5
+B01AC24#ticagrelor#5
+B01AC30#Associazioni#5
+B01AC56#acetylsalicylic acid e esomeprazole#5
+B01AD#Enzimi#4
+B01AD01#Streptokinasi#5
+B01AD02#Alteplasi#5
+B01AD03#Anistreplasi#5
+B01AD04#Urokinasi#5
+B01AD05#Fibrinolisina#5
+B01AD06#Brinasi#5
+B01AD07#Reteplasi#5
+B01AD08#Saruplasi#5
+B01AD09#Ancrod#5
+B01AD10#Drotrecogin alfa (attivato)#5
+B01AD11#Tenecteplasi#5
+B01AD12#Proteina C#5
+B01AE#Inibitori diretti della trombina#4
+B01AE01#Desirudina#5
+B01AE02#Lepirudina#5
+B01AE03#Argatroban#5
+B01AE04#Melagatran#5
+B01AE05#Ximelagatran#5
+B01AE06#Bivalirudina#5
+B01AE07#Dabigatran etexilato#5
+B01AF#Direct factor Xa inhibitors#4
+B01AF01#rivaroxiban#5
+B01AF02#apixaban#5
+B01AX#Altri antitrombotici#4
+B01AX01#Defibrotide#5
+B01AX04#Dermatan solfato#5
+B01AX05#Fondaparinux#5
+B01AX06#Rivaroxaban#5
+B02#Antiemorragici#2
+B02A#Antifibrinolitici#3
+B02AA#Aminoacidi#4
+B02AA01#Acido aminocaproico#5
+B02AA02#Acido tranexamico#5
+B02AA03#Acido aminometilbenzoico#5
+B02AB#Inibitori delle proteasi#4
+B02AB01#Aprotinina#5
+B02AB02#Alfa1 antitripsina#5
+B02AB03#C1-inibitore#5
+B02AB04#Camostat#5
+B02B#Vitamina K e altri emostatici#3
+B02BA#Vitamina K#4
+B02BA01#Fitomenadione#5
+B02BA02#Menadione#5
+B02BB#Fibrinogeno#4
+B02BB01#Fibrinogeno umano#5
+B02BC#Emostatici locali#4
+B02BC01#Tampone di gelatina assorbibile#5
+B02BC02#Cellulosa ossidata#5
+B02BC03#Acido tetragalatturonico idrossimetilestere#5
+B02BC05#Adrenalone#5
+B02BC06#Trombina#5
+B02BC07#Collageno#5
+B02BC08#Calcio alginato#5
+B02BC09#Adrenalina#5
+B02BC10#Fibrinogeno umano#5
+B02BC30#Associazioni#5
+B02BD#Fattori della coagulazione del sangue#4
+B02BD01#Fattori IX, II, VII e X in associazione#5
+B02BD02#Fattore VIII#5
+B02BD03#Attività di bypass dell'inibitore del fattore VIII#5
+B02BD04#Fattore IX#5
+B02BD05#Fattore VII#5
+B02BD06#Fattore di Von Willebrand e fattore VIII di coagulazione in associazione#5
+B02BD07#Fattore XIII#5
+B02BD08#Eptacog alfa (attivato)#5
+B02BD09#Nonacog alfa#5
+B02BD10#Fattore di Von Willebrand#5
+B02BD11#Catridecacog#5
+B02BD30#Trombina#5
+B02BX#Altri emostatici per uso sistemico#4
+B02BX01#Etamsilato#5
+B02BX02#Carbazocromo#5
+B02BX03#Batroxobina#5
+B02BX04#Romiplostim#5
+B02BX05#Eltrombopag#5
+B03#Farmaci antianemici#2
+B03A#Preparati a base di ferro#3
+B03AA#Ferro bivalente, preparati orali#4
+B03AA01#Ferro (II) glicina solfato#5
+B03AA02#Ferro (II) fumarato#5
+B03AA03#Ferroso gluconato#5
+B03AA04#Ferro (II) carbonato#5
+B03AA05#Ferro (II) cloruro#5
+B03AA06#Ferro (II) succinato#5
+B03AA07#Ferro (II) solfato#5
+B03AA08#Ferro (II) tartrato#5
+B03AA09#Ferro (II) aspartato#5
+B03AA10#Ferro (II) ascorbato#5
+B03AA11#Ferro (II) iodio#5
+B03AB#Ferro trivalente, preparati orali#4
+B03AB01#Ferricitrato sodico#5
+B03AB02#Ferro ossido saccarato#5
+B03AB03#Ferro disodio edetato#5
+B03AB04#Ferro (III) idrossido#5
+B03AB05#Complesso ferro-destrina#5
+B03AB06#Ferro (III) citrato#5
+B03AB07#Complesso ferro-acido condroitinsolforico#5
+B03AB08#Acetil transferrina ferrica#5
+B03AB09#Ferro (III) proteinsuccinilato#5
+B03AC#Ferro trivalente, preparati parenterali#4
+B03AC01#Dextriferron#5
+B03AC02#Ferro ossido saccarato#5
+B03AC03#Complesso ferro-sorbitolo-acido citrico#5
+B03AC05#Complesso ferro (III) sorbitolo acido gluconico#5
+B03AC06#Complesso ferro (III) ossido destrano#5
+B03AC07#Complesso ferro-sodio gluconato#5
+B03AD#Ferro in associazione con acido folico#4
+B03AD01#Complesso ferro (II) aminoacidi#5
+B03AD02#Ferro (II) fumarato#5
+B03AD03#Ferro (II) solfato#5
+B03AD04#Dextriferron#5
+B03AE#Ferro in altre associazioni#4
+B03AE01#Ferro, vitamina B12 e acido folico#5
+B03AE02#Ferro, polivitaminici e acido folico#5
+B03AE03#Ferro e polivitaminici#5
+B03AE04#Ferro, polivitaminici e minerali#5
+B03AE10#Associazioni varie#5
+B03B#Vitamina B12 e acido folico#3
+B03BA#Vitamina B12 (cianocobalamina e derivati)#4
+B03BA01#Cianocobalamina#5
+B03BA02#Complesso cianocobalamina tannina#5
+B03BA03#Idrossocobalamina#5
+B03BA04#Cobamamide#5
+B03BA05#Mecobalamina#5
+B03BA51#Cianocobalamina, associazioni#5
+B03BA53#Idrossocobalamina, associazioni#5
+B03BB#Acido folico e derivati#4
+B03BB01#Acido folico#5
+B03BB51#Acido folico, associazioni#5
+B03X#Altri preparati antianemici#3
+B03XA#Altri preparati antianemici#4
+B03XA01#Eritropoietina#5
+B03XA02#Darbepoetina alfa#5
+B03XA03#Epoetina beta metossi polietilenglicole#5
+B05#Succedanei del sangue e soluzioni perfusionali#2
+B05A#Sangue e prodotti correlati#3
+B05AA#Succedanei del sangue e frazioni proteiche plasmatiche#4
+B05AA01#Albumina#5
+B05AA02#Altre frazioni proteiche plasmatiche#5
+B05AA03#Fluorocarburi sostituti del sangue#5
+B05AA05#Destrano#5
+B05AA06#Derivati della gelatina#5
+B05AA07#Idrossietil amido#5
+B05AA08#Emoglobina crosfumarile#5
+B05AA09#Emoglobina raffimer#5
+B05AA10#Emoglobina glutamer#5
+B05AX#Altri prodotti del sangue#4
+B05AX01#Eritrociti#5
+B05AX02#Piastrine#5
+B05AX03#Plasma#5
+B05AX04#Cellule staminali dal sangue del cordone ombelicale#5
+B05B#Soluzioni endovena#3
+B05BA#Soluzioni nutrizionali parenterali#4
+B05BA01#Aminoacidi#5
+B05BA02#Emulsioni di grassi#5
+B05BA03#Carboidrati#5
+B05BA04#Idrolisati proteici#5
+B05BA10#Associazioni#5
+B05BB#Soluzioni che influenzano l'equilibrio elettrolitico#4
+B05BB01#Elettroliti#5
+B05BB02#Elettroliti con carboidrati#5
+B05BB03#Trometamolo#5
+B05BC#Soluzioni che favoriscono la diuresi osmotica#4
+B05BC01#Mannitolo#5
+B05BC02#Carbamide#5
+B05C#Soluzioni per irrigazioni#3
+B05CA#Antiinfettivi#4
+B05CA01#Cetilpiridinio#5
+B05CA02#Clorexidina#5
+B05CA03#Nitrofural#5
+B05CA04#Sulfametizolo#5
+B05CA05#Taurolidina#5
+B05CA06#Acido mandelico#5
+B05CA07#Nossitiolina#5
+B05CA08#Etacridina lattato#5
+B05CA09#Neomicina#5
+B05CA10#Associazioni#5
+B05CB#Soluzioni saline#4
+B05CB01#Sodio cloruro#5
+B05CB02#Sodio citrato#5
+B05CB03#Magnesio citrato#5
+B05CB04#Sodio bicarbonato#5
+B05CB10#Associazioni#5
+B05CX#Altre soluzioni per irrigazioni#4
+B05CX01#Glucosio#5
+B05CX02#Sorbitolo#5
+B05CX03#Glicina#5
+B05CX04#Mannitolo#5
+B05CX10#Associazioni#5
+B05D#Soluzioni per dialisi peritoneale#3
+B05DA#Soluzioni isotoniche#4
+B05DB#Soluzioni ipertoniche#4
+B05X#Soluzioni endovena additive#3
+B05XA#Soluzioni elettrolitiche#4
+B05XA01#Potassio cloruro#5
+B05XA02#Sodio bicarbonato#5
+B05XA03#Sodio cloruro#5
+B05XA04#Ammonio cloruro#5
+B05XA05#Magnesio solfato#5
+B05XA06#Potassio fosfato, incl. ass. con altri sali di potassio#5
+B05XA07#Calcio cloruro#5
+B05XA08#Sodio acetato#5
+B05XA09#Sodio fosfato#5
+B05XA10#Magnesio fosfato#5
+B05XA11#Magnesio cloruro#5
+B05XA12#Zinco cloruro#5
+B05XA13#Acido cloridrico#5
+B05XA14#Sodio glicerofosfato#5
+B05XA15#Potassio lattato#5
+B05XA16#Soluzioni cardioplegiche#5
+B05XA17#Potassio acetato#5
+B05XA30#Associazioni di elettroliti#5
+B05XA31#Elettroliti in associazione con altri farmaci#5
+B05XB#Aminoacidi#4
+B05XB01#Arginina cloridrato#5
+B05XB02#Alanil glutamina#5
+B05XB03#Lisina#5
+B05XC#Vitamine#4
+B05XX#Altri additivi per soluzioni endovena#4
+B05XX02#Trometamolo#5
+B05Z#Emodialitici ed emofiltrati#3
+B05ZA#Emodialitici, concentrati#4
+B05ZB#Emofiltrati#4
+B06#Altri ematologici#2
+B06A#Altri ematologici#3
+B06AA#Enzimi#4
+B06AA02#Fibrinolisina e desossiribonucleasi#5
+B06AA03#Ialuronidasi#5
+B06AA04#Chimotripsina#5
+B06AA07#Tripsina#5
+B06AA10#Desossiribonucleasi#5
+B06AA11#Bromelaina#5
+B06AA55#Streptokinasi, associazioni#5
+B06AB#Altri preparati ematologici#4
+B06AB01#Ematina#5
+B06AC#Drugs used in hereditary angioedema#4
+B06AC01#c1-inhibitor, plasma derived#5
+B06AC02#icatibant#5
+B06AC03#ecallantide#5
+B06AC04#conestst alfa#5
+C#SISTEMA CARDIOVASCOLARE#1
+C01#Terapia cardiaca#2
+C01A#Glicosidi cardiaci#3
+C01AA#Glicosidi digitalici#4
+C01AA01#Acetildigitossina#5
+C01AA02#Acetildigossina#5
+C01AA03#Digitale foglie#5
+C01AA04#Digitossina#5
+C01AA05#Digossina#5
+C01AA06#Lanatoside C#5
+C01AA07#Deslanoside#5
+C01AA08#Metildigossina#5
+C01AA09#Gitoformato#5
+C01AA52#Acetildigossina, associazioni#5
+C01AB#Glicosidi della scilla#4
+C01AB01#Proscillaridina#5
+C01AB51#Proscillaridina, associazioni#5
+C01AC#Glicosidi dello strofanto#4
+C01AC01#Strofantina G#5
+C01AC03#Strofantina K#5
+C01AX#Altri glicosidi cardiaci#4
+C01AX02#Peruvoside#5
+C01B#Antiaritmici, classe I e III#3
+C01BA#Antiaritmici, classe IA#4
+C01BA01#Chinidina#5
+C01BA02#Procainamide#5
+C01BA03#Disopiramide#5
+C01BA04#Sparteina#5
+C01BA05#Ajmalina#5
+C01BA08#Prajmalina#5
+C01BA12#Lorajmina#5
+C01BA51#Chinidina, associazioni escl. psicolettici#5
+C01BA71#Chinidina, associazioni con. psicolettici#5
+C01BB#Antiaritmici, classe IB#4
+C01BB01#Lidocaina#5
+C01BB02#Mexiletina#5
+C01BB03#Tocainide#5
+C01BB04#Aprindina#5
+C01BC#Antiaritmici, classe IC#4
+C01BC03#Propafenone#5
+C01BC04#Flecainide#5
+C01BC07#Lorcainide#5
+C01BC08#Encainide#5
+C01BD#Antiaritmici, classe III#4
+C01BD01#Amiodarone#5
+C01BD02#Bretilio tosilato#5
+C01BD03#Bunaftina#5
+C01BD04#Dofetilide#5
+C01BD05#Ibutilide#5
+C01BD06#Tedisamil#5
+C01BD07#dronedarone#5
+C01BG#Antiaritmici, altri classe I#4
+C01BG01#Moracizina#5
+C01BG07#Cibenzolina#5
+C01BG11#vernakalant#5
+C01C#Stimolanti cardiaci, esclusi i glicosidi cardiaci#3
+C01CA#Adrenergici e dopaminergici#4
+C01CA01#Etilefrina#5
+C01CA02#Isoproterenolo#5
+C01CA03#Noradrenalina#5
+C01CA04#Dopamina#5
+C01CA05#Norfenefrina#5
+C01CA06#Fenilefrina#5
+C01CA07#Dobutamina#5
+C01CA08#Oxedrina tartrato#5
+C01CA09#Metaraminolo#5
+C01CA10#Metoxamina#5
+C01CA11#Mefentermina#5
+C01CA12#Dimetofrina#5
+C01CA13#Prenalterolo#5
+C01CA14#Dopexamina#5
+C01CA15#Gepefrina#5
+C01CA16#Ibopamina#5
+C01CA17#Midodrina#5
+C01CA18#Octopamina#5
+C01CA19#Fenoldopam#5
+C01CA21#Cafedrina#5
+C01CA22#Arbutamina#5
+C01CA23#Teodrenalina#5
+C01CA24#Adrenalina#5
+C01CA25#amezinium metilsulfate#5
+C01CA26#ephedrine#5
+C01CA30#Associazioni#5
+C01CA51#Etilefrina, associazioni#5
+C01CE#Inibitori della fosfodiesterasi#4
+C01CE01#Amrinone#5
+C01CE02#Milrinone#5
+C01CE03#Enoximone#5
+C01CE04#Bucladesina#5
+C01CX#Altri stimolanti cardiaci#4
+C01CX06#Angiotensinamide#5
+C01CX07#Xamoterolo#5
+C01CX08#Levosimendan#5
+C01D#Vasodilatatori usati nelle malattie cardiache#3
+C01DA#Nitrati organici#4
+C01DA02#Nitroglicerina#5
+C01DA04#Metilpropilpropanediolo dinitrato#5
+C01DA05#Pentaeritritile tetranitrato#5
+C01DA07#Propatilnitrato#5
+C01DA08#Isosorbide dinitrato#5
+C01DA09#Trolnitrato#5
+C01DA13#Eritritile tetranitrato#5
+C01DA14#Isosorbide mononitrato#5
+C01DA20#Nitrati organici in associazione#5
+C01DA38#Tenitramina#5
+C01DA52#Nitroglicerina, associazioni#5
+C01DA54#Metilpropilpropanediolo dinitrato, associazioni#5
+C01DA55#Pentaeritritile tetranitrato, associazioni#5
+C01DA57#Propatilnitrato, associazioni#5
+C01DA58#Isosorbide dinitrato, associazioni#5
+C01DA59#Trolnitrato, associazioni#5
+C01DA63#Eritritile tetranitrato, associazioni#5
+C01DA70#Nitrati organici in associazione con psicolettici#5
+C01DB#Vasodilatatori chinolonici#4
+C01DB01#Flosequinan#5
+C01DX#Altri vasodilatatori usati nelle malattie cardiache#4
+C01DX01#Itramina tosilato#5
+C01DX02#Prenilamina#5
+C01DX03#Ossifedrina#5
+C01DX04#Benziodarone#5
+C01DX05#Carbocromene#5
+C01DX06#Esobendina#5
+C01DX07#Etafenone#5
+C01DX08#Eptaminolo#5
+C01DX09#Imolamina#5
+C01DX10#Dilazep#5
+C01DX11#Trapidil#5
+C01DX12#Molsidomina#5
+C01DX13#Eflossato#5
+C01DX14#Cinepazeto#5
+C01DX15#Cloridarolo#5
+C01DX16#Nicorandil#5
+C01DX18#Linsidomina#5
+C01DX19#Nesiritide#5
+C01DX51#Itramina tosilato, associazioni#5
+C01DX52#Prenilamina, associazioni#5
+C01DX53#Ossifedrina, associazioni#5
+C01DX54#Benziodarone, associazioni#5
+C01E#Altri preparati cardiaci#3
+C01EA#Prostaglandine#4
+C01EA01#Alprostadil#5
+C01EB#Altri preparati cardiaci#4
+C01EB02#Canfora#5
+C01EB03#Indometacina#5
+C01EB04#Crataegus glicosidi#5
+C01EB05#Creatinolfosfato#5
+C01EB06#Fosfocreatina#5
+C01EB07#Levulosio 1,6-difosfato#5
+C01EB09#Ubidecarenone#5
+C01EB10#Adenosina#5
+C01EB11#Tiracizina#5
+C01EB13#Acadesina#5
+C01EB15#Trimetazidina#5
+C01EB16#Ibuprofene#5
+C01EB17#Ivabradina#5
+C01EB18#Ranolazina#5
+C01EB19#Icatibant#5
+C01EB21#Regadenoson#5
+C01EX#Altre associazioni di prodotti cardiaci#4
+C02#Antiipertensivi#2
+C02A#Sostanze antiadrenergiche ad azione centrale#3
+C02AA#Alcaloidi della rauwolfia#4
+C02AA01#Rescinnamina#5
+C02AA02#Reserpina#5
+C02AA03#Associazioni di alcaloidi della rauwolfia#5
+C02AA04#Alcaloidi della rauwolfia, radice intera#5
+C02AA05#Deserpidina#5
+C02AA06#Metoserpidina#5
+C02AA07#Bietaserpina#5
+C02AA52#Reserpina, associazioni#5
+C02AA53#Associazioni di alcaloidi della rauwolfia, associazioni#5
+C02AA57#Bietaserpina, associazioni#5
+C02AB#Metildopa#4
+C02AB01#Metildopa (levogira)#5
+C02AB02#Metildopa (racemica)#5
+C02AC#Agonisti dei recettori dell'imidazolina#4
+C02AC01#Clonidina#5
+C02AC02#Guanfacina#5
+C02AC04#Tolonidina#5
+C02AC05#Moxonidina#5
+C02AC06#Rilmenidina#5
+C02B#Sostanze antiadrenergiche, bloccanti gangliari#3
+C02BA#Solfonio derivati#4
+C02BA01#Trimetafano#5
+C02BB#Amine secondarie e terziarie#4
+C02BB01#Mecamilamina#5
+C02BC#Composti ammonici bis-quaternari#4
+C02C#Sostanze antiadrenergiche ad azione periferica#3
+C02CA#Bloccanti dei recettori alfa adrenergici#4
+C02CA01#Prazosina#5
+C02CA02#Indoramina#5
+C02CA03#Trimazosina#5
+C02CA04#Doxazosina#5
+C02CA06#Urapidil#5
+C02CC#Derivati guanidinici#4
+C02CC01#Betanidina#5
+C02CC02#Guanetidina#5
+C02CC03#Guanoxan#5
+C02CC04#Debrisochina#5
+C02CC05#Guanoclor#5
+C02CC06#Guanazodina#5
+C02CC07#Guanoxabenz#5
+C02D#Sostanze ad azione sulla muscolatura liscia arteriolare#3
+C02DA#Derivati tiazidici#4
+C02DA01#Diazossido#5
+C02DB#Derivati idrazinoftalazinici#4
+C02DB01#Diidralazina#5
+C02DB02#Idralazina#5
+C02DB03#Endralazina#5
+C02DB04#Cadralazina#5
+C02DC#Derivati pirimidinici#4
+C02DC01#Minoxidil#5
+C02DD#Derivati nitroferricianurici#4
+C02DD01#Nitroprussiato#5
+C02DG#Derivati guanidinici#4
+C02DG01#Pinacidil#5
+C02K#Altri antiipertensivi#3
+C02KA#Alcaloidi, esclusi quelli della rauwolfia#4
+C02KA01#Veratro#5
+C02KB#Inibitori della tirosina idrossilasi#4
+C02KB01#Metirosina#5
+C02KC#Inibitori delle MAO#4
+C02KC01#Pargilina#5
+C02KD#Antagonisti della serotonina#4
+C02KD01#Ketanserina#5
+C02KX#Altri antiipertensivi#4
+C02KX01#Bosentan#5
+C02KX02#Ambrisentan#5
+C02KX03#Sitaxentan#5
+C02KX04#Macitentan#5
+C02KX05#Riociguat#5
+C02L#Antiipertensivi e diuretici in associazione#3
+C02LA#Alcaloidi della rauwolfia e diuretici in associazione#4
+C02LA01#Reserpina e diuretici#5
+C02LA02#Rescinnamina e diuretici#5
+C02LA03#Deserpidina e diuretici#5
+C02LA04#Metoserpidina e diuretici#5
+C02LA07#Bietaserpina e diuretici#5
+C02LA08#Alcaloidi della rauwolfia, radice intera e diuretici#5
+C02LA09#Sirosingopina e diuretici#5
+C02LA50#Ass. di alcaloidi della rauwolfia e diuretici incl. altre associazioni#5
+C02LA51#Reserpina e diuretici, associazioni con altri farmaci#5
+C02LA52#Rescinnamina e diuretici, associazioni con altri farmaci#5
+C02LA71#Reserpina e diuretici, associazioni con psicolettici#5
+C02LB#Metildopa e diuretici in associazione#4
+C02LB01#Metildopa (levogira) e diuretici#5
+C02LC#Agonisti dei recettori dell'imidazolina in combinazione con diuretici#4
+C02LC01#Clonidina e diuretici#5
+C02LC05#Moxonidina e diuretici#5
+C02LC51#Clonidina e diuretici, associazioni con altri farmaci#5
+C02LE#Bloccanti dei recettori alfa adrenergici e diuretici#4
+C02LE01#Prazosina e diuretici#5
+C02LF#Derivati guanidinici e diuretici#4
+C02LF01#Guanetidina e diuretici#5
+C02LG#Derivati idrazinoftalazinici e diuretici#4
+C02LG01#Diidralazina e diuretici#5
+C02LG02#Idralazina e diuretici#5
+C02LG03#Picodralazina e diuretici#5
+C02LG51#Diidralazina e diuretici, associazioni con altri farmaci#5
+C02LG73#Picodralazina e diuretici, associazioni con psicolettici#5
+C02LK#Alcaloidi, esclusi quelli della rauwolfia, in associazione con diuretici#4
+C02LK01#Veratro e diuretici#5
+C02LL#MAO inibitori e diuretici#4
+C02LL01#Pargilina e diuretici#5
+C02LN#Antagonisti della serotonina e diuretici#4
+C02LX#Altri antiipertensivi e diuretici#4
+C02LX01#Pinacidil e diuretici#5
+C02N#Associazioni di antiipertensivi del gr. ATC C02#3
+C03#Diuretici#2
+C03A#Diuretici ad azione diuretica minore, tiazidi#3
+C03AA#Tiazidi, non associate#4
+C03AA01#Bendroflumetiazide#5
+C03AA02#Idroflumetiazide#5
+C03AA03#Idroclorotiazide#5
+C03AA04#Clorotiazide#5
+C03AA05#Politiazide#5
+C03AA06#Triclormetiazide#5
+C03AA07#Ciclopentiazide#5
+C03AA08#Meticlotiazide#5
+C03AA09#Ciclotiazide#5
+C03AA13#Mebutizide#5
+C03AB#Tiazidi in associazione con potassio#4
+C03AB01#Bendroflumetiazide e potassio#5
+C03AB02#Idroflumetiazide e potassio#5
+C03AB03#Idroclorotiazide e potassio#5
+C03AB04#Clorotiazide e potassio#5
+C03AB05#Politiazide e potassio#5
+C03AB06#Triclormetiazide e potassio#5
+C03AB07#Ciclopentiazide e potassio#5
+C03AB08#Meticlotiazide e potassio#5
+C03AB09#Ciclotiazide e potassio#5
+C03AH#Tiazidi, associazioni con psicolettici e/o analgesici#4
+C03AH01#Clorotiazide, associazioni#5
+C03AH02#Idroflumetiazide, associazioni#5
+C03AX#Tiazidi, associazioni con altri farmaci#4
+C03AX01#Idroclorotiazide, associazioni#5
+C03B#Diuretici ad azione diuretica minore, escluse le tiazidi#3
+C03BA#Sulfonamidi, non associate#4
+C03BA02#Quinetazone#5
+C03BA03#Clopamide#5
+C03BA04#Clortalidone#5
+C03BA05#Mefruside#5
+C03BA07#Clofenamide#5
+C03BA08#Metolazone#5
+C03BA09#Meticrane#5
+C03BA10#Xipamide#5
+C03BA11#Indapamide#5
+C03BA12#Clorexolone#5
+C03BA13#Fenquizone#5
+C03BA82#Clorexolone, ass. con psicolettici#5
+C03BB#Sulfonamidi e potassio in associazione#4
+C03BB02#Quinetazone e potassio#5
+C03BB03#Clopamide e potassio#5
+C03BB04#Clortalidone e potassio#5
+C03BB05#Mefruside e potassio#5
+C03BB07#Clofenamide e potassio#5
+C03BC#Diuretici mercuriali#4
+C03BC01#Mersalil#5
+C03BD#Derivati xantinici#4
+C03BD01#Teobromina#5
+C03BK#Sulfonamidi, associazioni con altri farmaci#4
+C03BX#Altri diuretici ad azione diuretica minore#4
+C03BX03#Cicletanina#5
+C03C#Diuretici ad azione diuretica maggiore#3
+C03CA#Sulfonamidi, non associate#4
+C03CA01#Furosemide#5
+C03CA02#Bumetanide#5
+C03CA03#Piretanide#5
+C03CA04#Torasemide#5
+C03CB#Sulfonamidi e potassio in associazione#4
+C03CB01#Furosemide e potassio#5
+C03CB02#Bumetanide e potassio#5
+C03CC#Derivati dell'acido arilossiacetico#4
+C03CC01#Acido etacrinico#5
+C03CC02#Acido tienilico#5
+C03CD#Derivati pirazolonici#4
+C03CD01#Muzolimina#5
+C03CX#Altri diuretici ad azione diuretica maggiore#4
+C03CX01#Etozolina#5
+C03D#Farmaci risparmiatori di potassio#3
+C03DA#Antagonisti dell'aldosterone#4
+C03DA01#Spironolattone#5
+C03DA02#Canrenoato di potassio#5
+C03DA03#Canrenone#5
+C03DA04#Eplerenone#5
+C03DB#Altri farmaci risparmiatori di potassio#4
+C03DB01#Amiloride#5
+C03DB02#Triamterene#5
+C03E#Diuretici e farmaci risparmiatori di potassio in associazione#3
+C03EA#Diuretici ad azione diuretica minore e risparmiatori di potassio#4
+C03EA01#Idroclorotiazide e risparmiatori di potassio#5
+C03EA02#Triclormetiazide e risparmiatori di potassio#5
+C03EA03#Epitizide e risparmiatori di potassio#5
+C03EA04#Altizide e risparmiatori di potassio#5
+C03EA05#Mebutizide e risparmiatori di potassio#5
+C03EA06#Clortalidone e risparmiatori di potassio#5
+C03EA07#Ciclopentiazide e risparmiatori di potassio#5
+C03EA12#Metolazone e risparmiatori di potassio#5
+C03EA13#Bendroflumetiazide e risparmiatori di potassio#5
+C03EA14#Butizide e risparmiatori di potassio#5
+C03EB#Diuretici ad azione diuretica maggiore e risparmiatori di potassio#4
+C03EB01#Furosemide e risparmiatori di potassio#5
+C03EB02#Bumetanide e risparmiatori di potassio#5
+C03X#Altri diuretici#3
+C03XA#Antagonisti della vasopressina#4
+C03XA01#Tolvaptan#5
+C03XA02#Conivaptan#5
+C04#Vasodilatatori periferici#2
+C04A#Vasodilatatori periferici#3
+C04AA#Derivati del 2-amino-1-feniletanolo#4
+C04AA01#Isossuprina#5
+C04AA02#Bufenina#5
+C04AA31#Bametano#5
+C04AB#Derivati imidazolinici#4
+C04AB01#Fentolamina#5
+C04AB02#Tolazolina#5
+C04AC#Acido nicotinico e derivati#4
+C04AC01#Acido nicotinico#5
+C04AC02#Alcool nicotinilico (piridilcarbinolo)#5
+C04AC03#Inositolo nicotinato#5
+C04AC07#Ciclonicato#5
+C04AD#Derivati purinici#4
+C04AD01#Pentossifillina#5
+C04AD02#Xantinolo nicotinato#5
+C04AD03#Pentossifillina#5
+C04AD04#Etofillina nicotinato#5
+C04AE#Alcaloidi della segale cornuta#4
+C04AE01#Diidroergotossina#5
+C04AE02#Nicergolina#5
+C04AE04#Diidroergocristina#5
+C04AE51#Ergoloidi mesilati, associazioni#5
+C04AE54#Diidroergocristina, associazioni#5
+C04AF#Enzimi#4
+C04AF01#Kallidinogenasi#5
+C04AX#Altri vasodilatatori periferici#4
+C04AX01#Ciclandelato#5
+C04AX02#Fenossibenzamina#5
+C04AX07#Vincamina#5
+C04AX10#Moxisilite#5
+C04AX11#Benciclano#5
+C04AX17#Vinburnina#5
+C04AX19#Suloctidil#5
+C04AX20#Buflomedil#5
+C04AX21#Naftidrofurile#5
+C04AX23#Butalamina#5
+C04AX24#Visnadina#5
+C04AX26#Cetiedile#5
+C04AX27#Cinepazide#5
+C04AX28#Ifenprodil#5
+C04AX30#Azapetina#5
+C04AX32#Fasudil#5
+C05#Vasoprotettori#2
+C05A#Agenti per il trattamento delle emorroidi e le fessure anali per uso topico#3
+C05AA#Corticosteroidi#4
+C05AA01#Idrocortisone#5
+C05AA04#Prednisolone#5
+C05AA05#Betametasone#5
+C05AA06#Fluorometolone#5
+C05AA08#Fluocortolone#5
+C05AA09#Desametasone#5
+C05AA10#Fluocinolone acetonide#5
+C05AA11#Fluocinonide#5
+C05AA12#triamcinolone#5
+C05AB#Antibiotici#4
+C05AD#Anestetici locali#4
+C05AD01#Lidocaina#5
+C05AD02#Tetracaina#5
+C05AD03#Benzocaina#5
+C05AD04#Cincocaina#5
+C05AD05#Procaina#5
+C05AD06#Oxetacaina#5
+C05AD07#Pramocaina#5
+C05AE#Miorilassanti#4
+C05AE01#Nitroglicerina#5
+C05AE02#Isosorbide dinitrato#5
+C05AX#Altri farmaci per il trattamento delle emorroidi e delle ragadi anali per uso topico#4
+C05AX01#Alluminio acetotartrato#5
+C05AX02#Preparati del bismuto, associazioni#5
+C05AX03#Altri preparati, associazioni#5
+C05AX04#Composti dello zinco#5
+C05AX05#Tribenoside#5
+C05B#Terapia antivaricosa#3
+C05BA#Eparine o eparinoidi per uso topico#4
+C05BA01#Eparinoidi organici#5
+C05BA02#Sodio apolato#5
+C05BA03#Eparina#5
+C05BA04#Xilanpolisolfato sodico#5
+C05BA51#Eparinoidi, associazioni#5
+C05BA53#Eparina, associazioni#5
+C05BB#Sostanze sclerosanti per iniezioni locali#4
+C05BB01#Monoetanolamina oleato#5
+C05BB02#Polidocanolo#5
+C05BB03#Zucchero invertito#5
+C05BB04#Sodio tetradecilsolfato#5
+C05BB05#Fenolo#5
+C05BB56#Glucosio,associazioni#5
+C05BX#Altre sostanze sclerosanti#4
+C05BX01#Calcio dobesilato#5
+C05BX51#Calcio dobesilato, associazioni#5
+C05C#Sostanze capillaroprotettrici#3
+C05CA#Bioflavonoidi#4
+C05CA01#Rutoside#5
+C05CA02#Monoxerutina#5
+C05CA03#Diosmina#5
+C05CA04#Troxerutina#5
+C05CA05#Idrosmina#5
+C05CA51#Rutoside, associazioni#5
+C05CA53#Diosmina, associazioni#5
+C05CA54#Troxerutina, associazioni#5
+C05CX#Altre sostanze capillaroprotettrici#4
+C05CX01#Tribenoside#5
+C05CX02#naftazone#5
+C05CX03#Hippocastani semen#5
+C07#Betabloccanti#2
+C07A#Betabloccanti#3
+C07AA#Betabloccanti, non selettivi#4
+C07AA01#Alprenololo#5
+C07AA02#Oxprenololo#5
+C07AA03#Pindololo#5
+C07AA05#Propranololo#5
+C07AA06#Timololo#5
+C07AA07#Sotalolo#5
+C07AA12#Nadololo#5
+C07AA14#Mepindololo#5
+C07AA15#Carteololo#5
+C07AA16#Tertatololo#5
+C07AA17#Bopindololo#5
+C07AA19#Bupranololo#5
+C07AA23#Penbutololo#5
+C07AA27#Cloranololo#5
+C07AA57#Sotalolo, confezioni associate#5
+C07AB#Betabloccanti, selettivi#4
+C07AB01#Practololo#5
+C07AB02#Metoprololo#5
+C07AB03#Atenololo#5
+C07AB04#Acebutololo#5
+C07AB05#Betaxololo#5
+C07AB06#Bevantololo#5
+C07AB07#Bisoprololo#5
+C07AB08#Celiprololo#5
+C07AB09#Esmololo#5
+C07AB10#Epanololo#5
+C07AB11#S-atenololo#5
+C07AB12#Nebivololo#5
+C07AB13#Talinololo#5
+C07AB52#Metoprololo, associazioni#5
+C07AB57#Bisoprololo, associazioni#5
+C07AG#Bloccanti dei recettori alfa e beta adrenergici#4
+C07AG01#Labetalolo#5
+C07AG02#Carvedilolo#5
+C07B#Betabloccanti e tiazidi#3
+C07BA#Betabloccanti non selettivi e tiazidi#4
+C07BA02#Oxprenololo e tiazidi#5
+C07BA05#Propranololo e tiazidi#5
+C07BA06#Timololo e tiazidi#5
+C07BA07#Sotalolo e tiazidi#5
+C07BA12#Nadololo e tiazidi#5
+C07BA68#Metipranololo e tiazidi, associazioni#5
+C07BB#Betabloccanti selettivi e tiazidi#4
+C07BB02#Metoprololo e tiazidi#5
+C07BB03#Atenololo e tiazidi#5
+C07BB04#Acebutololo e tiazidi#5
+C07BB06#Bevantololo e tiazidi#5
+C07BB07#Bisoprololo e tiazidi#5
+C07BB12#nebivolol e thiazides#5
+C07BB52#Metoprololo e tiazidi, associazioni#5
+C07BG#Bloccanti dei recettori alfa e beta e tiazidi#4
+C07BG01#Labetalolo e tiazidi#5
+C07C#Betabloccanti ed altri diuretici#3
+C07CA#Betabloccanti non selettivi ed altri diuretici#4
+C07CA02#Oxprenololo e altri diuretici#5
+C07CA03#Pindololo e altri diuretici#5
+C07CA17#Bopindololo e altri diuretici#5
+C07CA23#Penbutololo e altri diuretici#5
+C07CB#Betabloccanti selettivi ed altri diuretici#4
+C07CB02#Metoprololo e altri diuretici#5
+C07CB03#Atenololo e altri diuretici#5
+C07CB53#Atenololo e altri diuretici, associazioni#5
+C07CG#Alfa e betabloccanti e altri farmaci#4
+C07CG01#Labetalolo e altri diuretici#5
+C07D#Betabloccanti, tiazidi ed altri diuretici#3
+C07DA#Betabloccanti non selettivi, tiazidi e altri diuretici#4
+C07DA06#Timololo, tiazidi e altri diuretici#5
+C07DB#Betabloccanti selettivi, tiazidi e altri diuretici#4
+C07DB01#Atenololo, tiazidi e altri diuretici#5
+C07E#Betabloccanti e vasodilatatori#3
+C07EA#Betabloccanti non selettivi e vasodilatatori#4
+C07EB#Betabloccanti selettivi e vasodilatatori#4
+C07F#Betabloccanti ed altri antiipertensivi#3
+C07FA#Betabloccanti non selettivi e altri antiipertensivi#4
+C07FA05#Propranololo e altri antiipertensivi#5
+C07FB#Betabloccanti selettivi e altri antiipertensivi#4
+C07FB02#Metoprololo e altri antiipertensivi#5
+C07FB03#Atenololo e altri antiipertensivi#5
+C07FB07#bisoprolol e altri ipertensivi#5
+C08#Calcioantagonisti#2
+C08C#Calcioantagonisti selettivi con prevalente effetto vascolare#3
+C08CA#Derivati diidropiridinici#4
+C08CA01#Amlodipina#5
+C08CA02#Felodipina#5
+C08CA03#Isradipina#5
+C08CA04#Nicardipina#5
+C08CA05#Nifedipina#5
+C08CA06#Nimodipina#5
+C08CA07#Nisoldipina#5
+C08CA08#Nitrendipina#5
+C08CA09#Lacidipina#5
+C08CA10#Nilvadipina#5
+C08CA11#Manidipina#5
+C08CA12#Barnidipina#5
+C08CA13#Lercanidipina#5
+C08CA14#Cilnidipina#5
+C08CA15#Benidipina#5
+C08CA16#clevidipine#5
+C08CA55#Nifedipina, associazioni#5
+C08CX#Altri calcioantagonisti selettivi con prevalente effetto vascolare#4
+C08CX01#Mibefradil#5
+C08D#Calcioantagonisti selettivi con effetto cardiaco diretto#3
+C08DA#Derivati fenilalchilaminici#4
+C08DA01#Verapamil#5
+C08DA02#Gallopamil#5
+C08DA51#Verapamil, associazioni#5
+C08DB#Derivati benzotiazepinici#4
+C08DB01#Diltiazem#5
+C08E#Calcioantagonisti non selettivi#3
+C08EA#Derivati fenilalchilaminici#4
+C08EA01#Fendilina#5
+C08EA02#Bepridil#5
+C08EX#Altri calcioantagonisti non selettivi#4
+C08EX01#Lidoflazina#5
+C08EX02#Perexilina#5
+C08G#Calcioantagonisti e diuretici#3
+C08GA#Calcioantagonisti e diuretici#4
+C08GA01#Nifedipina e diuretici#5
+C09#Sostanze ad azione sul sistema renina-angiotensina#2
+C09A#Inibitori dell'enzima di conversione dell'angiotensina (ACE), non associati#3
+C09AA#Inibitori dell'enzima di conversione dell'angiotensina (ACE), non associati#4
+C09AA01#Captopril#5
+C09AA02#Enalapril#5
+C09AA03#Lisinopril#5
+C09AA04#Perindopril#5
+C09AA05#Ramipril#5
+C09AA06#Quinapril#5
+C09AA07#Benazepril#5
+C09AA08#Cilazapril#5
+C09AA09#Fosinopril#5
+C09AA10#Trandolapril#5
+C09AA11#Spirapril#5
+C09AA12#Delapril#5
+C09AA13#Moexipril#5
+C09AA14#Temocapril#5
+C09AA15#Zofenopril#5
+C09AA16#Imidapril#5
+C09B#Inibitori dell'enzima di conversione dell'angiotensina (ACE), in associazione#3
+C09BA#Inibitori dell'enzima di conversione dell'angiotensina (ACE) e diuretici#4
+C09BA01#Captopril e diuretici#5
+C09BA02#Enalapril e diuretici#5
+C09BA03#Lisinopril e diuretici#5
+C09BA04#Perindopril e diuretici#5
+C09BA05#Ramipril e diuretici#5
+C09BA06#Quinapril e diuretici#5
+C09BA07#Benazepril e diuretici#5
+C09BA08#Cilazapril e diuretici#5
+C09BA09#Fosinopril e diuretici#5
+C09BA12#Delapril e diuretici#5
+C09BA13#Moexipril e diuretici#5
+C09BA15#Zofenopril e diuretici#5
+C09BB#Inibitori dell'enzima di conversione dell'angiotensina (ACE) e calcioantagonisti#4
+C09BB02#Enalapril e lercanidipina#5
+C09BB03#Lisinopril e amlodipina#5
+C09BB04#Perindopril e amlodipina#5
+C09BB05#Ramipril e felodipina#5
+C09BB06#enalapril e nitrendipine#5
+C09BB07#Ramipril + Amlodipina#5
+C09BB10#Trandolapril e verapamil#5
+C09BB12#Delapril e manidipina#5
+C09BX#Inibitori dell'enzima di conversione dell'angiotensina (ACE), altre combinazioni#4
+C09BX01#perindopril, amlodipina e indapamide#5
+C09BX02#perindopril e bisoprololo#5
+C09C#Antagonisti dell'angiotensina II#3
+C09CA#Antagonisti dell'angiotensina II, non associati#4
+C09CA01#Losartan#5
+C09CA02#Eprosartan#5
+C09CA03#Valsartan#5
+C09CA04#Irbesartan#5
+C09CA05#Tasosartan#5
+C09CA06#Candesartan#5
+C09CA07#Telmisartan#5
+C09CA08#Olmesartan medoxomil#5
+C09D#Antagonisti dell'angiotensina II, in associazione#3
+C09DA#Antagonisti dell'angiotensina II e diuretici#4
+C09DA01#Losartan e diuretici#5
+C09DA02#Eprosartan e diuretici#5
+C09DA03#Valsartan e diuretici#5
+C09DA04#Irbesartan e diuretici#5
+C09DA06#Candesartan e diuretici#5
+C09DA07#Telmisartan e diuretici#5
+C09DA08#Olmesartan medoxomil e diuretici#5
+C09DB#Antagonisti dell'angiotensina II e calcioantagonisti#4
+C09DB01#Valsartan e amlodipina#5
+C09DB02#Olmesartan medoxomile e amlodipina#5
+C09DB04#Telmisartan e amlodipina#5
+C09DB05#irbesartan e amlodipine#5
+C09DX#Antagonisti dell'angiotensina II, altre associazioni#4
+C09DX01#Valsartan, amlodipina e idroclorotiazide#5
+C09DX02#Valsartan e aliskiren#5
+C09DX03#olmesartan medoxomil, amlodipine e hydrochlorothiazide#5
+C09X#Altri farmaci ad azione sul sistema renina-angiotensina#3
+C09XA#Inibitori della renina#4
+C09XA01#Remikiren#5
+C09XA02#Aliskiren#5
+C09XA52#Aliskiren e idroclorotiazide#5
+C09XA53#aliskiren e amlodipine#5
+C09XA54#aliskiren, amlodipine e hydrochlorothiazide#5
+C10#Agenti ipolipemizzanti#2
+C10A#Agenti ipolipemizzanti, non associati#3
+C10AA#Inibitori della HMG CoA riduttasi#4
+C10AA01#Simvastatina#5
+C10AA02#Lovastatina#5
+C10AA03#Pravastatina#5
+C10AA04#Fluvastatina#5
+C10AA05#Atorvastatina#5
+C10AA06#Cerivastatina#5
+C10AA07#Rosuvastatina#5
+C10AA08#Pitavastina#5
+C10AB#Fibrati#4
+C10AB01#Clofibrato#5
+C10AB02#Bezafibrato#5
+C10AB03#Alluminio clofibrato#5
+C10AB04#Gemfibrozil#5
+C10AB05#Fenofibrato#5
+C10AB06#Simfibrato#5
+C10AB07#Ronifibrato#5
+C10AB08#Ciprofibrato#5
+C10AB09#Etofibrato#5
+C10AB10#Clofibride#5
+C10AB11#choline fenofibrate#5
+C10AC#Sequestranti degli acidi biliari#4
+C10AC01#Colestiramina#5
+C10AC02#Colestipolo#5
+C10AC03#Colestrano#5
+C10AC04#Colesevelam#5
+C10AD#Acido nicotinico e derivati#4
+C10AD01#Niceritrolo#5
+C10AD02#Acido nicotinico#5
+C10AD03#Nicofuranosio#5
+C10AD04#Alluminio nicotinato#5
+C10AD05#Alcool nicotinilico (piridilcarbinolo)#5
+C10AD06#Acipimox#5
+C10AD52#Acido nicotinico, associazioni#5
+C10AX#Altri ipolipemizzanti#4
+C10AX01#Destrotiroxina#5
+C10AX02#Probucol#5
+C10AX03#Tiadenolo#5
+C10AX05#Meglutolo#5
+C10AX06#Omega-3-trigliceridi incl. altri esteri e acidi#5
+C10AX07#Magnesio piridossal 5-fosfato glutamato#5
+C10AX08#Policosanolo#5
+C10AX09#Ezetimibe#5
+C10AX10#Alipogene tiparvovec#5
+C10AX12#lomitapide#5
+C10AX13#EVOLOCUMAB#5
+C10B#Agenti ipolipemizzanti, associazioni#3
+C10BA#Inibitori dell' HMG CoA riduttasi in associazione con altri agenti ipolipemizzanti#4
+C10BA01#Lovastatina e acido nicotinico#5
+C10BA02#Simvastatina e ezetimibe#5
+C10BA03#Pravastatina e fenofibrato#5
+C10BX#Inibitori dell' HMG CoA riduttasi, altre associazioni#4
+C10BX01#Simvastatina e acido acetilsalicilico#5
+C10BX02#Pravastatina e acido acetilsalicilico#5
+C10BX03#Atorvastatina e amlodipina#5
+C10BX04#simvastatin, acetylsalicylic acid e ramipril#5
+D#DERMATOLOGICI#1
+D01#Antimicotici per uso dermatologico#2
+D01A#Antimicotici per uso topico#3
+D01AA#Antibiotici#4
+D01AA01#Nistatina#5
+D01AA02#Natamicina#5
+D01AA03#Achimicina#5
+D01AA04#Pecilocina#5
+D01AA06#Mepartricina#5
+D01AA07#Pirrolnitrina#5
+D01AA08#Griseofulvina#5
+D01AA20#Associazioni#5
+D01AC#Derivati imidazolici e triazolici#4
+D01AC01#Clotrimazolo#5
+D01AC02#Miconazolo#5
+D01AC03#Econazolo#5
+D01AC04#Clormidazolo#5
+D01AC05#Isoconazolo#5
+D01AC06#Tiabendazolo#5
+D01AC07#Tioconazolo#5
+D01AC08#Ketoconazolo#5
+D01AC09#Sulconazolo#5
+D01AC10#Bifonazolo#5
+D01AC11#Ossiconazolo#5
+D01AC12#Fenticonazolo#5
+D01AC13#Omoconazolo#5
+D01AC14#Sertaconsazolo#5
+D01AC15#Fluconazolo#5
+D01AC16#Flutrimazolo#5
+D01AC20#Associazioni#5
+D01AC52#Miconazolo, associazioni#5
+D01AC60#Bifonazolo, associazioni#5
+D01AE#Altri antimicotici per uso topico#4
+D01AE01#Bromoclorosalicilanilide#5
+D01AE02#Naftifina#5
+D01AE03#Tribromometacresolo#5
+D01AE04#Acido undecilenico#5
+D01AE05#Polinossilina#5
+D01AE06#2-(4-clorfenossi)-etanolo#5
+D01AE07#Clorfenesina#5
+D01AE08#Ticlatone#5
+D01AE09#Sulbentina#5
+D01AE10#Etile idrossibenzoato#5
+D01AE11#Aloprogin#5
+D01AE12#Acido salicilico#5
+D01AE13#Selenio solfuro#5
+D01AE14#Ciclopirox#5
+D01AE15#Terbinafina#5
+D01AE16#Amorolfina#5
+D01AE17#Dimazolo#5
+D01AE18#Tolnaftato#5
+D01AE19#Tolciclato#5
+D01AE20#Associazioni#5
+D01AE21#Flucitosina#5
+D01AE22#Naftifina#5
+D01AE23#Butenafine#5
+D01AE54#Acido undecilenico, associazioni#5
+D01B#Antimicotici per uso sistemico#3
+D01BA#Antimicotici per uso sistemico#4
+D01BA01#Griseofulvina#5
+D01BA02#Terbinafina#5
+D02#Emollienti e protettivi#2
+D02A#Emollienti e protettivi#3
+D02AA#Prodotti a base di silicone#4
+D02AB#Prodotti a base di ossido di zinco#4
+D02AC#Prodotti a base di vaselina e di grassi#4
+D02AD#Plastificanti liquidi#4
+D02AE#Prodotti a base di carbamide#4
+D02AE01#Carbamide#5
+D02AE51#Carbamide, associazioni#5
+D02AF#Preparati a base di acido salicilico#4
+D02AX#Altri emollienti protettivi#4
+D02B#Sostanze protettive contro le radiazioni UV#3
+D02BA#Sostanze per uso topico contro le radiazioni UV#4
+D02BA01#Acido aminobenzoico#5
+D02BA02#Octil metossicinnamato#5
+D02BB#Sostanze protettive contro le radiazioni UV per uso sistemico#4
+D02BB01#Betacarotene#5
+D03#Preparati per il trattamento di ferite e ulcerazioni#2
+D03A#Cicatrizzanti#3
+D03AA#Unguenti a base di olio di fegato di merluzzo#4
+D03AX#Altri cicatrizzanti#4
+D03AX01#Cadexomero ioduro#5
+D03AX02#Destranomer#5
+D03AX03#Despantenolo#5
+D03AX04#Calcio pantotenato#5
+D03AX05#Acido ialuronico#5
+D03AX06#Becaplermin#5
+D03AX09#Crilanomer#5
+D03AX10#Enoxolone#5
+D03B#Enzimi#3
+D03BA#Enzimi proteolitici#4
+D03BA01#Tripsina#5
+D03BA02#Collagenasi#5
+D03BA52#Collagenasi, associazioni#5
+D04#Antipruriginosi, inclusi antiistaminici, anestetici, ecc.#2
+D04A#Antipruriginosi, inclusi antiistaminici, anestetici, ecc.#3
+D04AA#Antiistaminici per uso topico#4
+D04AA01#Tonzilamina#5
+D04AA02#Mepiramina#5
+D04AA03#Tenalidina#5
+D04AA04#Tripelennamina#5
+D04AA09#Cloropiramina#5
+D04AA10#Prometazina#5
+D04AA12#Tolpropamina#5
+D04AA13#Dimetindene#5
+D04AA14#Clemastina#5
+D04AA15#Bamipina#5
+D04AA22#Isotipendile#5
+D04AA32#Difenidramina#5
+D04AA33#Difenidramina metilbromuro#5
+D04AA34#Clorfenossamina#5
+D04AB#Anestetici per uso topico#4
+D04AB01#Lidocaina#5
+D04AB02#Cincocaina#5
+D04AB03#Ossibuprocaina#5
+D04AB04#Benzocaina#5
+D04AB05#Chinisocaina#5
+D04AB06#Tetracaina#5
+D04AB07#Pramocaina#5
+D04AX#Altri antipruriginosi#4
+D05#Antipsoriasici#2
+D05A#Antipsoriasici per uso topico#3
+D05AA#Catrami#4
+D05AC#Derivati antracenici#4
+D05AC01#Ditranolo#5
+D05AC51#Ditranolo, associazioni#5
+D05AD#Psoraleni per uso topico#4
+D05AD01#Triossisalene#5
+D05AD02#Metossalene#5
+D05AX#Altri antipsoriasici per uso topico#4
+D05AX01#Acido fumarico#5
+D05AX02#Calcipotriolo#5
+D05AX03#Calcitriolo#5
+D05AX04#Tacalcitolo#5
+D05AX05#Tazarotene#5
+D05AX52#Calcipotriolo, associazioni#5
+D05B#Antipsoriasici per uso sistemico#3
+D05BA#Psoraleni per uso sistemico#4
+D05BA01#Triossisalene#5
+D05BA02#Metossalene#5
+D05BA03#Bergapten#5
+D05BB#Retinoidi per il trattamento della psoriasi#4
+D05BB01#Etretinato#5
+D05BB02#Acitretina#5
+D05BX#Altri antipsoriasici per uso sistemico#4
+D05BX51#Derivati dell'acido fumarico, associazioni#5
+D06#Antibiotici e chemioterapici per uso dermatologico#2
+D06A#Antibiotici per uso topico#3
+D06AA#Tetracicline e derivati#4
+D06AA01#Demeclociclina#5
+D06AA02#Clortetraciclina#5
+D06AA03#Ossitetraciclina#5
+D06AA04#Tetraciclina#5
+D06AX#Altri antibiotici per uso topico#4
+D06AX01#Acido fusidico#5
+D06AX02#Cloramfenicolo#5
+D06AX04#Neomicina#5
+D06AX05#Bacitracina#5
+D06AX07#Gentamicina#5
+D06AX08#Tirotricina#5
+D06AX09#Mupirocina#5
+D06AX10#Virginiamicina#5
+D06AX11#Rifaximina#5
+D06AX12#Amikacina#5
+D06AX13#Retapamulin#5
+D06B#Chemioterapici per uso topico#3
+D06BA#Sulfamidici#4
+D06BA01#Sulfadiazina argentica#5
+D06BA02#Sulfatiazolo#5
+D06BA03#Mafenide#5
+D06BA04#Sulfametizolo#5
+D06BA05#Sulfanilamide#5
+D06BA06#Sulfamerazina#5
+D06BA51#Sulfadiazina argentica, associazioni#5
+D06BB#Antivirali#4
+D06BB01#Idoxuridina#5
+D06BB02#Tromantadina#5
+D06BB03#Aciclovir#5
+D06BB04#Podofillotossina#5
+D06BB05#Inosina#5
+D06BB06#Penciclovir#5
+D06BB07#Lisozima#5
+D06BB08#Ibacitabina#5
+D06BB09#Edoxudina#5
+D06BB10#Imiquimod#5
+D06BB11#Docosanol#5
+D06BB53#Aciclovir, associazioni#5
+D06BX#Altri chemioterapici#4
+D06BX01#Metronidazolo#5
+D06BX02#Ingenolo Mebutato#5
+D06C#Associazioni di antibiotici e chemioterapici#3
+D07#Corticosteroidi, preparati dermatologici#2
+D07A#Corticosteroidi, non associati#3
+D07AA#Corticosteroidi, deboli (gruppo I)#4
+D07AA01#Metilprednisolone#5
+D07AA02#Idrocortisone#5
+D07AA03#Prednisolone#5
+D07AB#Corticosteroidi, moderatamente potenti (gruppo II)#4
+D07AB01#Clobetasone#5
+D07AB02#Idrocortisone#5
+D07AB03#Flumetasone#5
+D07AB04#Fluocortin#5
+D07AB05#Fluperolone#5
+D07AB06#Fluorometolone#5
+D07AB07#Fluprednidene#5
+D07AB08#Desonide#5
+D07AB09#Triamcinolone#5
+D07AB10#Alclometasone#5
+D07AB11#Idrocortisone buteprato#5
+D07AB19#Desametasone#5
+D07AB21#Clocortolone#5
+D07AB30#Associazioni di corticosteroidi#5
+D07AC#Corticosteroidi, potenti (gruppo III)#4
+D07AC01#Betametasone#5
+D07AC02#Fluclorolone#5
+D07AC03#Desossimetasone#5
+D07AC04#Fluocinolone acetonide#5
+D07AC05#Fluocortolone#5
+D07AC06#Diflucortolone#5
+D07AC07#Fludrossicortide#5
+D07AC08#Fluocinonide#5
+D07AC09#Budesonide#5
+D07AC10#Diflorasone#5
+D07AC11#Amcinonide#5
+D07AC12#Alometasone#5
+D07AC13#Mometasone#5
+D07AC14#Metilprednisolone#5
+D07AC15#Beclometasone#5
+D07AC16#Idrocortisone aceponato#5
+D07AC17#Fluticasone#5
+D07AC18#Prednicarbato#5
+D07AC19#Difluprednato#5
+D07AC21#Ulobetasol#5
+D07AD#Corticosteroidi, molto potenti (gruppo IV)#4
+D07AD01#Clobetasolo#5
+D07AD02#Alcinonide#5
+D07B#Corticosteroidi, associazioni con antisettici#3
+D07BA#Corticosteroidi deboli, associazioni con antisettici#4
+D07BA01#Prednisolone e antisettici#5
+D07BA04#Idrocortisone e antisettici#5
+D07BB#Corticosteroidi moderatamente potenti, associazioni con antisettici#4
+D07BB01#Flumetasone e antisettici#5
+D07BB02#Desonide e antisettici#5
+D07BB03#Triamcinolone e antisettici#5
+D07BB04#Idrocortisone butirrato e antisettici#5
+D07BC#Corticosteroidi potenti, associazioni con antisettici#4
+D07BC01#Betametasone e antisettici#5
+D07BC02#Fluocinolone acetonide e antisettici#5
+D07BC03#Fluocortolone e antisettici#5
+D07BC04#Diflucortolone e antisettici#5
+D07BD#Corticosteroidi molto potenti, associazioni con antisettici#4
+D07C#Corticosteroidi, associazioni con antibiotici#3
+D07CA#Corticosteroidi deboli, associazioni con antibiotici#4
+D07CA01#Idrocortisone e antibiotici#5
+D07CA02#Metilprednisolone e antibiotici#5
+D07CA03#Prednisolone e antibiotici#5
+D07CB#Corticosteroidi moderatamente potenti, associazioni con antibiotici#4
+D07CB01#Triamcinolone e antibiotici#5
+D07CB02#Fluprednidene e antibiotici#5
+D07CB03#Fluorometolone e antibiotici#5
+D07CB04#Desametasone e antibiotici#5
+D07CB05#Flumetasone e antibiotici#5
+D07CC#Corticosteroidi potenti, associazioni con antibiotici#4
+D07CC01#Betametasone e antibiotici#5
+D07CC02#Fluocinolone acetonide#5
+D07CC03#Fludrossicortide e antibiotici#5
+D07CC04#Beclometasone e antibiotici#5
+D07CC05#Fluocinonide e antibiotici#5
+D07CC06#Fluocortolone e antibiotici#5
+D07CD#Corticosteroidi molto potenti, associazioni con antibiotici#4
+D07CD01#Clobetasolo e antibiotici#5
+D07X#Corticosteroidi, altre associazioni#3
+D07XA#Corticosteroidi deboli, altre associazioni#4
+D07XA01#Idrocortisone#5
+D07XA02#Prednisolone#5
+D07XB#Corticosteroidi moderatamente potenti, altre associazioni#4
+D07XB01#Flumetasone#5
+D07XB02#Triamcinolone#5
+D07XB03#Fluprednidene#5
+D07XB04#Fluorometolone#5
+D07XB05#Desametasone#5
+D07XB30#Associazioni di corticosteroidi#5
+D07XC#Corticosteroidi potenti, altre associazioni#4
+D07XC01#Betametasone#5
+D07XC02#Desossimetasone#5
+D07XC03#Mometasone#5
+D07XC04#Diflucortolone#5
+D07XD#Corticosteroidi molto potenti, altre associazioni#4
+D08#Antisettici e disinfettanti#2
+D08A#Antisettici e disinfettanti#3
+D08AA#Derivati acridinici#4
+D08AA01#Etacridina lattato#5
+D08AA02#Aminoacridina#5
+D08AA03#Euflavina#5
+D08AB#Composti dell'alluminio#4
+D08AC#Biguanidi e amidine#4
+D08AC01#Dibrompropamidina#5
+D08AC02#Clorexidina#5
+D08AC03#Propamidina#5
+D08AC04#Esamidina#5
+D08AC05#Poliesanide#5
+D08AC52#Clorexidina, associazioni#5
+D08AD#Acido borico e derivati#4
+D08AE#Fenolo e derivati#4
+D08AE01#Esaclorofene#5
+D08AE02#Policresulene#5
+D08AE03#Fenolo#5
+D08AE04#Triclosan#5
+D08AE05#Clorossilenolo#5
+D08AE06#Bifenilolo#5
+D08AF#Derivati furanici#4
+D08AF01#Nitrofural#5
+D08AG#Derivati dello iodio#4
+D08AG01#Iodio/octilfenossipoliglicoletere#5
+D08AG02#Iodopovidone#5
+D08AG03#Iodio#5
+D08AG04#Diiodoidrossipropano#5
+D08AH#Derivati chinolinici#4
+D08AH01#Dequalinio#5
+D08AH02#Clorchinaldolo#5
+D08AH03#Ossichinolina#5
+D08AH30#Cliochinolo#5
+D08AJ#Derivati ammonici quaternari#4
+D08AJ01#Benzalconio cloruro#5
+D08AJ02#Cetrimonio#5
+D08AJ03#Cetilpiridinio cloruro#5
+D08AJ04#Cetrimide#5
+D08AJ05#Benzoxonio cloruro#5
+D08AJ06#Didecildimetilammonio cloruro#5
+D08AJ08#Benzetonio cloruro#5
+D08AJ57#Octenidina,associazioni#5
+D08AJ58#Benzetonio cloruro, associazioni#5
+D08AJ59#Dodeclonio bromuro, associazioni#5
+D08AK#Derivati del mercurio#4
+D08AK01#Mercurio amidocloruro#5
+D08AK02#Fenilmercurio borato#5
+D08AK03#Mercurio cloruro#5
+D08AK04#Merbromina#5
+D08AK05#Mercurio, metallico#5
+D08AK06#Tiomersale#5
+D08AK30#Mercurio ioduro#5
+D08AL#Composti dell'argento#4
+D08AL01#Argento nitrato#5
+D08AL30#Argento#5
+D08AX#Altri antisettici e disinfettanti#4
+D08AX01#Idrogeno perossido#5
+D08AX02#Eosina#5
+D08AX03#Propanolo#5
+D08AX04#Tosilcloramide sodio#5
+D08AX05#Isopropanolo#5
+D08AX06#Potassio permanganato#5
+D08AX07#Sodio ipoclorito#5
+D08AX08#Etanolo#5
+D08AX53#Propanolo, associazioni#5
+D09#Bendaggi medicati#2
+D09A#Bendaggi medicati#3
+D09AA#Bendaggi medicati con antiinfettivi#4
+D09AA01#Framicetina#5
+D09AA02#Acido fusidico#5
+D09AA03#Nitrofural#5
+D09AA04#Fenilmercurio nitrato#5
+D09AA05#Benzododecinio#5
+D09AA06#Triclosan#5
+D09AA07#Cetilpiridinio#5
+D09AA08#Alluminio cloroidrato#5
+D09AA09#Iodopovidone#5
+D09AA10#Cliochinolo#5
+D09AA11#Benzalconio#5
+D09AA12#Clorexidina#5
+D09AA13#Iodoformio#5
+D09AB#Bendaggi allo zinco#4
+D09AB01#Bendaggi allo zinco senza aggiunte#5
+D09AB02#Bendaggi allo zinco con aggiunte#5
+D09AX#Bendaggi contenenti vaselina#4
+D10#Preparati antiacne#2
+D10A#Preparati antiacne per uso topico#3
+D10AA#Corticosteroidi, associazioni per il trattamento dell'acne#4
+D10AA01#Fluorometolone#5
+D10AA02#Metilprednisolone#5
+D10AA03#Desametasone#5
+D10AB#Preparati contenenti zolfo#4
+D10AB01#Bitionolo#5
+D10AB02#Zolfo#5
+D10AB03#Tioxolone#5
+D10AB05#Mesulfen#5
+D10AD#Retinoidi per il trattamento topico dell'acne#4
+D10AD01#Tretinoina#5
+D10AD02#Retinolo#5
+D10AD03#Adapalene#5
+D10AD04#Isotretinoina#5
+D10AD05#Motretinide#5
+D10AD51#Tretinoina, associazioni#5
+D10AD53#Adapalene, associazioni#5
+D10AD54#Isotretinoina, associazioni#5
+D10AE#Perossidi#4
+D10AE01#Benzoile perossido idrato#5
+D10AE51#Benzoile perossido, associazioni#5
+D10AF#Antimicrobici per il trattamento dell'acne#4
+D10AF01#Clindamicina#5
+D10AF02#Eritromicina#5
+D10AF03#Cloramfenicolo#5
+D10AF04#Meclociclina#5
+D10AF51#Clindamicina, associazioni#5
+D10AF52#Eritromicina, associazioni#5
+D10AX#Altri preparati antiacne per uso topico#4
+D10AX01#Alluminio cloruro#5
+D10AX02#Resorcinolo#5
+D10AX03#Acido azelaico#5
+D10AX04#Alluminio ossido#5
+D10AX05#Dapsone#5
+D10AX30#Associazioni varie#5
+D10B#Preparati antiacne per uso sistemico#3
+D10BA#Retinoidi per il trattamento dell'acne#4
+D10BA01#Isotretinoina#5
+D10BX#Altri preparati antiacne per uso sistemico#4
+D10BX01#Ictasolo#5
+D11#Altri preparati dermatologici#2
+D11A#Altri preparati dermatologici#3
+D11AA#Preparati antiidrotici#4
+D11AC#Shampo medicati#4
+D11AC01#Cetrimide#5
+D11AC02#Composti del cadmio#5
+D11AC03#Composti del selenio#5
+D11AC06#Iodopovidone#5
+D11AC08#Composti dello zolfo#5
+D11AC09#Xenisalato#5
+D11AC30#Altri#5
+D11AE#Androgeni per uso topico#4
+D11AE01#Metandienone#5
+D11AF#Preparati per calli e verruche#4
+D11AH#Agenti per la dermatite atopica, esclusi corticosteroidi#4
+D11AH01#Tacrolimus#5
+D11AH02#Pimecrolimus#5
+D11AH03#Acido cromoglicico#5
+D11AH04#altretinoin#5
+D11AX#Altri dermatologici#4
+D11AX01#Minoxidil#5
+D11AX02#Acido gamolenico#5
+D11AX03#Calcio gluconato#5
+D11AX04#Litio succinato#5
+D11AX05#Magnesio solfato#5
+D11AX06#Mechinolo#5
+D11AX08#Tiratricolo#5
+D11AX09#Oxaceprolo#5
+D11AX10#Finasteride#5
+D11AX11#Idrochinone#5
+D11AX12#Zinco piritione#5
+D11AX13#Monobenzone#5
+D11AX16#Eflornitina#5
+D11AX18#Diclofenac#5
+D11AX19#Alitretinoina#5
+D11AX21#Brimonidina#5
+D11AX22#IVERMECTINA#5
+D11AX52#Acido gamolenico, associazioni#5
+D11AX57#Collageno, associazioni#5
+G#SISTEMA GENITO-URINARIO E ORMONI SESSUALI#1
+G01#Antiinfettivi e antisettici ginecologici#2
+G01A#Antiinfettivi e antisettici ginecologici, escluse associazioni con corticosteroi#3
+G01AA#Antibiotici#4
+G01AA01#Nistatina#5
+G01AA02#Natamicina#5
+G01AA03#Amfotericina B#5
+G01AA04#Candicidina#5
+G01AA05#Cloramfenicolo#5
+G01AA06#Achimicina#5
+G01AA07#Ossitetraciclina#5
+G01AA08#Carfecillina#5
+G01AA09#Mepartricina#5
+G01AA10#Clindamicina#5
+G01AA11#Pentamicina#5
+G01AA51#Nistatina, associazioni#5
+G01AB#Composti dell' arsenico#4
+G01AB01#Acetarsolo#5
+G01AC#Derivati chinolinici#4
+G01AC01#Diiodoidrossichinolina#5
+G01AC02#Cliochinolo#5
+G01AC03#Clorchinaldolo#5
+G01AC05#Dequalinio#5
+G01AC06#Brossichinolina#5
+G01AC30#Ossichinolina#5
+G01AD#Acidi organici#4
+G01AD01#Acido lattico#5
+G01AD02#Acido acetico#5
+G01AD03#Acido ascorbico#5
+G01AE#Sulfamidici#4
+G01AE01#Sulfatolamide#5
+G01AE10#Associazioni di sulfamidici#5
+G01AF#Derivati imidazolici#4
+G01AF01#Metronidazolo#5
+G01AF02#Clotrimazolo#5
+G01AF04#Miconazolo#5
+G01AF05#Econazolo#5
+G01AF06#Ornidazolo#5
+G01AF07#Isoconazolo#5
+G01AF08#Tioconazolo#5
+G01AF11#Ketoconazolo#5
+G01AF12#Fenticonazolo#5
+G01AF13#Azanidazolo#5
+G01AF14#Propenidazolo#5
+G01AF15#Butoconazolo#5
+G01AF16#Omoconazolo#5
+G01AF17#Ossiconazolo#5
+G01AF18#Flutrimazolo#5
+G01AF19#Sertaconazolo#5
+G01AF20#Associazioni di derivati dell'imidazolo#5
+G01AG#Derivati triazolici#4
+G01AG02#Terconazolo#5
+G01AX#Altri antiinfettivi e antisettici#4
+G01AX01#Clodantoina#5
+G01AX02#Inosina#5
+G01AX03#Policresolsolfonato#5
+G01AX05#Nifuratel#5
+G01AX06#Furazolidone#5
+G01AX09#Metilrosanilinio#5
+G01AX11#Iodopovidone#5
+G01AX12#Ciclopirox#5
+G01AX13#Protiofato#5
+G01AX14#Lactobacillus fermentum#5
+G01AX15#Rame usnato#5
+G01AX66#Octenidina,associazioni#5
+G01B#Antimicrobici/antisettici in associazione con corticosteroidi#3
+G01BA#Antibiotici e corticosteroidi#4
+G01BC#Derivati chinolinici e corticosteroidi#4
+G01BD#Antisettici e corticosteroidi#4
+G01BE#Sulfonamidi e corticosteroidi#4
+G01BF#Derivati imidazolici e corticosteroidi#4
+G02#Altri ginecologici#2
+G02A#Ossitocici#3
+G02AB#Alcaloidi della segale cornuta#4
+G02AB01#Metilergometrina#5
+G02AB02#Alcaloidi della segale cornuta#5
+G02AB03#Ergometrina#5
+G02AC#Alcaloidi della segale cornuta in associazione con ossitocina e/o suoi derivati#4
+G02AC01#Metilergometrina e ossitocina#5
+G02AD#Prostaglandine#4
+G02AD01#Dinoprost#5
+G02AD02#Dinoprostone#5
+G02AD03#Gemeprost#5
+G02AD04#Carboprost#5
+G02AD05#Sulprostone#5
+G02AD06#Misoprostolo#5
+G02AX#Altri ossitocici#4
+G02B#Contraccettivi per uso topico#3
+G02BA#Contraccettivi itrauterini#4
+G02BA01#IUD in plastica#5
+G02BA02#IUD in plastica con rame#5
+G02BA03#IUD in plastica con progesterone#5
+G02BB#Contraccettivi intravaginali#4
+G02BB01#Anello vaginale con progesterone ed estrogeno#5
+G02C#Altri preparati ginecologici#3
+G02CA#Simpaticomimetici, tocolitici#4
+G02CA01#Ritodrina#5
+G02CA02#Bufenina#5
+G02CA03#Fenoterolo#5
+G02CB#Inibitori della prolattina#4
+G02CB01#Bromocriptina#5
+G02CB02#Lisuride#5
+G02CB03#Cabergolina#5
+G02CB04#Quinagolide#5
+G02CB05#Metergolina#5
+G02CB06#Terguride#5
+G02CC#Antinfiammatori per somministrazione vaginale#4
+G02CC01#Ibuprofene#5
+G02CC02#Naprossene#5
+G02CC03#Benzidamina#5
+G02CC04#Flunoxaprofene#5
+G02CX#Altri ginecologici#4
+G02CX01#Atosiban#5
+G03#Ormoni sessuali e modulatori del sistema genitale#2
+G03A#Contraccettivi ormonali sistemici#3
+G03AA#Progestinici ed estrogeni, associazioni fisse#4
+G03AA01#Etinodiolo ed estrogeno#5
+G03AA02#Quingestanolo ed estrogeno#5
+G03AA03#Linestrenolo ed estrogeno#5
+G03AA04#Megestrolo ed estrogeno#5
+G03AA05#Noretisterone ed estrogeno#5
+G03AA06#Norgestrel ed estrogeno#5
+G03AA07#Levonorgestrel ed estrogeno#5
+G03AA08#Medrossiprogesterone ed estrogeno#5
+G03AA09#Desogestrel ed estrogeno#5
+G03AA10#Gestodene ed estrogeno#5
+G03AA11#Norgestimato ed estrogeno#5
+G03AA12#Drospirenone ed estrogeno#5
+G03AA13#Norelgestromin ed estrogeno#5
+G03AA14#Normegestrolo ed estrogeno#5
+G03AA15#chlormadinone e estrogen#5
+G03AA16#Dienogest + Etinilestradiolo#5
+G03AB#Preparati sequenziali estro-progestinici#4
+G03AB01#Megestrolo ed estrogeno#5
+G03AB02#Linestrenolo ed estrogeno#5
+G03AB03#Levonorgestrel ed estrogeno#5
+G03AB04#Noretisterone ed estrogeno#5
+G03AB05#Desogestrel ed estrogeno#5
+G03AB06#Gestodene ed estrogeno#5
+G03AB07#Clormadinone ed estrogeno#5
+G03AB08#dienogest e estrogen#5
+G03AC#Progestinici#4
+G03AC01#Noretisterone#5
+G03AC02#Linestrenolo#5
+G03AC03#Levonorgestrel#5
+G03AC04#Quingestanolo#5
+G03AC05#Megestrolo#5
+G03AC06#Medrossiprogesterone#5
+G03AC07#Norgestrienone#5
+G03AC08#Etonogestrel#5
+G03AC09#Desogestrel#5
+G03AD#Emergency contraceptive#4
+G03AD01#levonorgestrel#5
+G03AD02#ulipristal#5
+G03B#Androgeni#3
+G03BA#Derivati del 3-ossoandrostene (4)#4
+G03BA01#Fluossimesterone#5
+G03BA02#Metiltestosterone#5
+G03BA03#Testosterone#5
+G03BB#Derivati del 5-androstanone (3)#4
+G03BB01#Mesterolone#5
+G03BB02#Androstanolone#5
+G03C#Estrogeni#3
+G03CA#Estrogeni naturali e semisintetici, non associati#4
+G03CA01#Etinilestradiolo#5
+G03CA03#Estradiolo#5
+G03CA04#Estriolo#5
+G03CA06#Clorotrianisene#5
+G03CA07#Estrone#5
+G03CA09#Promestriene#5
+G03CA53#Estradiolo, associazioni#5
+G03CA57#Estrogeni coniugati#5
+G03CB#Estrogeni sintetici, non associati#4
+G03CB01#Dienestrolo#5
+G03CB02#Dietilstilbestrolo#5
+G03CB03#Metallenestrile#5
+G03CB04#Moxestrolo#5
+G03CC#Estrogeni, associazioni con altri farmaci#4
+G03CC02#Dienestrolo#5
+G03CC03#Metallenestrile#5
+G03CC04#Estrone#5
+G03CC05#Dietilstilbestrolo#5
+G03CC06#Estriolo#5
+G03CX#Altri estrogeni#4
+G03CX01#Tibolone#5
+G03D#Progestinici#3
+G03DA#Derivati del pregnene (4)#4
+G03DA01#Gestonorone#5
+G03DA02#Medrossiprogesterone#5
+G03DA03#Idrossiprogesterone caproato#5
+G03DA04#Progesterone#5
+G03DB#Derivati del pregnadiene#4
+G03DB01#Didrogesterone#5
+G03DB02#Megestrolo#5
+G03DB03#Medrogestone#5
+G03DB04#Nomegestrolo#5
+G03DB05#Demegestone#5
+G03DB06#Clormadinone#5
+G03DB07#Promegestone#5
+G03DB08#Dienogest#5
+G03DC#Derivati dell'estrene#4
+G03DC01#Allilestrenolo#5
+G03DC02#Noretisterone#5
+G03DC03#Linestrenolo#5
+G03DC04#Etisterone#5
+G03DC06#Etinodiolo#5
+G03DC31#Metilestrenolone#5
+G03E#Androgeni e ormoni sessuali femminili in associazione#3
+G03EA#Androgeni ed estrogeni#4
+G03EA01#Metiltestosterone ed estrogeno#5
+G03EA02#Testosterone ed estrogeno#5
+G03EA03#Prasterone ed estrogeno#5
+G03EB#Androgeni, progestinici ed estrogeni in associazione#4
+G03EK#Androgeni e ormoni sessuali femminili in associazione con altri farmaci#4
+G03EK01#Metiltestosterone#5
+G03F#Progestinici ed estrogeni in associazione#3
+G03FA#Progestinici ed estrogeni, associazioni fisse#4
+G03FA01#Noretisterone ed estrogeno#5
+G03FA02#Idrossiprogesterone ed estrogeno#5
+G03FA03#Etisterone ed estrogeno#5
+G03FA04#Progesterone ed estrogeno#5
+G03FA05#Metilnortestosterone ed estrogeno#5
+G03FA06#Etinodiolo ed estrogeno#5
+G03FA07#Linestrenolo ed estrogeno#5
+G03FA08#Megestrolo ed estrogeno#5
+G03FA09#Noretinodrel ed estrogeno#5
+G03FA10#Norgestrel ed estrogeno#5
+G03FA11#Levonorgestrel ed estrogeno#5
+G03FA12#Medrossiprogesterone ed estrogeno#5
+G03FA13#Norgestimato ed estrogeni#5
+G03FA14#Didrogesterone ed estrogeno#5
+G03FA15#Dienogest ed estrogeno#5
+G03FA16#Trimegestone ed estrogeno#5
+G03FA17#Drospirenone ed estrogeno#5
+G03FB#Preparati sequenziali estro-progestinici#4
+G03FB01#Norgestrel ed estrogeno#5
+G03FB02#Linestrenolo ed estrogeno#5
+G03FB03#Clormadinone ed estrogeno#5
+G03FB04#Megestrolo ed estrogeno#5
+G03FB05#Noretisterone ed estrogeno#5
+G03FB06#Medrossiprogesterone ed estrogeno#5
+G03FB07#Medrogestone ed estrogeno#5
+G03FB08#Didrogesterone ed estrogeno#5
+G03FB09#Levonorgestrel ed estrogeno#5
+G03FB10#Desogestrel ed estrogeno#5
+G03FB11#Trimegestone ed estrogeno#5
+G03FB12#NOMEGESTROLO ED ESTROGENI#5
+G03G#Gonadotropine e altri stimolanti dell'ovulazione#3
+G03GA#Gonadotropine#4
+G03GA01#Gonadotropina corionica#5
+G03GA02#Menotropina#5
+G03GA03#Gonadotropina sierica#5
+G03GA04#Urofollitropina#5
+G03GA05#Follitropina alfa#5
+G03GA06#Follitropina beta#5
+G03GA07#Lutropina alfa#5
+G03GA08#Gonadotropina corionica alfa#5
+G03GA09#Corifollitropina alfa#5
+G03GA30#Associazioni#5
+G03GB#Stimolanti dell'ovulazione sintetici#4
+G03GB01#Ciclofenile#5
+G03GB02#Clomifene#5
+G03GB03#Epimestrolo#5
+G03H#Antiandrogeni#3
+G03HA#Antiandrogeni, non associati#4
+G03HA01#Ciproterone#5
+G03HB#Antiandrogeni ed estrogeni#4
+G03HB01#Ciproterone ed estrogeni#5
+G03X#Altri ormoni sessuali e modulatori del sistema genitale#3
+G03XA#Antigonadotropine e sostanze similari#4
+G03XA01#Danazolo#5
+G03XA02#Gestrinone#5
+G03XB#Antiprogestinici#4
+G03XB01#Mifepristone#5
+G03XB02#Ulipristal#5
+G03XC#Modulatori selettivi dei recettori degli estrogeni#4
+G03XC01#Raloxifene#5
+G03XC02#Bazedoxifene#5
+G03XC03#lasofoxifene#5
+G04#Urologici#2
+G04B#Altri urologici, inclusi gli antispastici#3
+G04BA#Acidificanti#4
+G04BA01#Ammonio cloruro#5
+G04BA03#Calcio cloruro#5
+G04BC#Solventi dei calcoli urinari#4
+G04BD#Antispastici urinari#4
+G04BD01#Emepronio#5
+G04BD02#Flavossato#5
+G04BD03#Meladrazina#5
+G04BD04#Ossibutinina#5
+G04BD05#Terodilina#5
+G04BD06#Propiverina#5
+G04BD07#Tolterodina#5
+G04BD08#Solifenacina#5
+G04BD09#Trospio#5
+G04BD10#Darifenacina#5
+G04BD11#Fesoterodina#5
+G04BD12#Mirabegron#5
+G04BE#Farmaci usati nella disfunzione erettile#4
+G04BE01#Alprostadil#5
+G04BE02#Papaverina#5
+G04BE03#Sildenafil#5
+G04BE04#Yohimbina#5
+G04BE05#Fentolamina#5
+G04BE06#Moxisilite#5
+G04BE07#Apomorfina#5
+G04BE08#Tadalafil#5
+G04BE09#Vardenafil#5
+G04BE10#Avanafil#5
+G04BE30#Associazioni#5
+G04BE52#Papaverina, associazioni#5
+G04BX#Altri urologici#4
+G04BX01#Magnesio idrossido#5
+G04BX03#Acido acetoidrossamico#5
+G04BX06#Fenazopiridina#5
+G04BX10#Succinimide#5
+G04BX11#Collagene#5
+G04BX12#Fenile salicilato#5
+G04BX13#Dimetil sulfossido#5
+G04BX14#Dapoxetina#5
+G04C#Farmaci usati nell'ipertrofia prostatica benigna#3
+G04CA#Antagonisti dei recettori alfa adrenergici#4
+G04CA01#Alfuzosina#5
+G04CA02#Tamsulosina#5
+G04CA03#Terazosina#5
+G04CA04#Silodosina#5
+G04CA51#Alfuzosina e finasteride#5
+G04CA52#Tamsulosina e dutasteride#5
+G04CB#Inibitori della testosterone-5-alfa riduttasi#4
+G04CB01#Finasteride#5
+G04CB02#Dutasteride#5
+G04CX#Altri farmaci usati nell'ipertrofia prostatica benigna#4
+G04CX01#Pigelina#5
+G04CX02#Repentina#5
+G04CX03#Mepartricina#5
+H#PREPARATI ORMONALI SISTEMICI, ESCLUSI ORMONI SESSUALI E INSULINE#1
+H01#Ormoni ipofisari, ipotalamici ed analoghi#2
+H01A#Ormoni del lobo anteriore dell'ipofisi#3
+H01AA#ACTH#4
+H01AA01#Corticotropina#5
+H01AA02#Tetracosactide#5
+H01AB#Tirotropina#4
+H01AB01#Tirotropina#5
+H01AC#Somatotropina e analoghi#4
+H01AC01#Somatropina#5
+H01AC02#Somatrem#5
+H01AC03#Mecasermina#5
+H01AC04#Sermorelina#5
+H01AC05#Mecasermina rinfabato#5
+H01AX#Altri ormoni della ghiandola pituitaria anteriore e analoghi#4
+H01AX01#Pegvisomant#5
+H01B#Ormoni del lobo posteriore dell'ipofisi#3
+H01BA#Vasopressina e analoghi#4
+H01BA01#Vasopressina#5
+H01BA02#Desmopressina#5
+H01BA03#Lipressina#5
+H01BA04#Terlipressina#5
+H01BA05#Ornipressina#5
+H01BA06#Argipressina#5
+H01BB#Ossitocina e analoghi#4
+H01BB01#Demossitocina#5
+H01BB02#Ossitocina#5
+H01BB03#Carbetocina#5
+H01C#Ormoni ipotalamici#3
+H01CA#Ormoni liberatori delle gonadotropine#4
+H01CA01#Gonadorelina#5
+H01CA02#Nafarelina#5
+H01CA03#Istrelina#5
+H01CB#Ormoni anticrescita#4
+H01CB01#Somatostatina#5
+H01CB02#Octreotide#5
+H01CB03#Lanreotide#5
+H01CB04#Vapreotide#5
+H01CB05#pasireotide#5
+H01CC#Antagonisti degli ormoni di liberazione delle gonadotropine#4
+H01CC01#Ganirelix#5
+H01CC02#Cetrorelix#5
+H02#Corticosteroidi sistemici#2
+H02A#Corticosteroidi sistemici, non associati#3
+H02AA#Mineralcorticoidi#4
+H02AA01#Aldosterone#5
+H02AA02#Fludrocortisone#5
+H02AA03#Desossicortone#5
+H02AB#Glicocorticoidi#4
+H02AB01#Betametasone#5
+H02AB02#Desametasone#5
+H02AB03#Fluocortolone#5
+H02AB04#Metilprednisolone#5
+H02AB05#Parametasone#5
+H02AB06#Prednisolone#5
+H02AB07#Prednisone#5
+H02AB08#Triamcinolone#5
+H02AB09#Idrocortisone#5
+H02AB10#Cortisone#5
+H02AB11#Prednilidene#5
+H02AB12#Rimexolone#5
+H02AB13#Deflazacort#5
+H02AB14#Cloprednolo#5
+H02AB15#Meprednisone#5
+H02AB17#Cortivazolo#5
+H02B#Corticosteroidi sistemici, associazioni#3
+H02BX#Corticosteroidi sistemici, associazioni#4
+H02BX01#Metilprednisolone, associazioni#5
+H02C#Preparati antisurrenalici#3
+H02CA#Anticorticosteroidi#4
+H02CA01#Trilostano#5
+H03#Terapia tiroidea#2
+H03A#Preparati tiroidei#3
+H03AA#Ormoni tiroidei#4
+H03AA01#Levotiroxina sodica#5
+H03AA02#Liotironina#5
+H03AA03#Associazioni di levotiroxina e liotironina#5
+H03AA04#Tiratricolo#5
+H03AA05#Praparati di tiroide#5
+H03B#Preparati antitiroidei#3
+H03BA#Tiouracilici#4
+H03BA01#Metiltiouracile#5
+H03BA02#Propiltiouracile#5
+H03BA03#Benziltiouracile#5
+H03BB#Derivati imidazolici contenenti zolfo#4
+H03BB01#Carbimazolo#5
+H03BB02#Tiamazolo#5
+H03BB52#Tiamazolo, associazioni#5
+H03BC#Perclorati#4
+H03BC01#Potassio perclorato#5
+H03BX#Altri preparati antitiroidei#4
+H03BX01#Diiodotirosina#5
+H03BX02#Dibromtirosina#5
+H03C#Terapia iodica#3
+H03CA#Terapia iodica#4
+H04#Ormoni pancreatici#2
+H04A#Ormoni glicogenolitici#3
+H04AA#Ormoni glicogenolitici#4
+H04AA01#Glucagone#5
+H05#Calcio-omeostatici#2
+H05A#Ormoni paratiroidei#3
+H05AA#Ormoni paratiroidei#4
+H05AA01#Estratto di paratiroide#5
+H05AA02#Teriparatide#5
+H05AA03#Ormone paratiroideo#5
+H05B#Agenti antiparatiroidei#3
+H05BA#Preparati a base di calcitonina#4
+H05BA01#Calcitonina (sintetica di salmone)#5
+H05BA02#Calcitonina (naturale porcina)#5
+H05BA03#Calcitonina (sintetica umana)#5
+H05BA04#Elcatonina#5
+H05BX#Altri agenti paratiroidei#4
+H05BX01#Cinacalcet#5
+H05BX02#Paracalcitolo#5
+H05BX03#Doxercalciferol#5
+J#ANTIINFETTIVI GENERALI PER USO SISTEMICO#1
+J01#Antibatterici per uso sistemico#2
+J01A#Tetracicline#3
+J01AA#Tetracicline#4
+J01AA01#Demeclociclina#5
+J01AA02#Doxiciclina#5
+J01AA03#Clortetraciclina#5
+J01AA04#Limeciclina#5
+J01AA05#Metaciclina#5
+J01AA06#Ossitetraciclina#5
+J01AA07#Tetraciclina#5
+J01AA08#Minociclina#5
+J01AA09#Rolitetraciclina#5
+J01AA10#Penimepiciclina#5
+J01AA11#Clomociclina#5
+J01AA12#Tigeciclina#5
+J01AA20#Associazioni di tetracicline#5
+J01AA56#Ossitetraciclina, associazioni#5
+J01B#Amfenicoli#3
+J01BA#Amfenicoli#4
+J01BA01#Cloramfenicolo#5
+J01BA02#Tiamfenicolo#5
+J01BA52#Tiamfenicolo,associazioni#5
+J01C#Antibatterici beta-lattamici, penicilline#3
+J01CA#Penicilline a spettro esteso#4
+J01CA01#Ampicillina#5
+J01CA02#Pivampicillina#5
+J01CA03#Carbenicillina#5
+J01CA04#Amoxicillina#5
+J01CA05#Carindacillina#5
+J01CA06#Bacampicillina#5
+J01CA07#Epicillina#5
+J01CA08#Pivmecillinam#5
+J01CA09#Azlocillina#5
+J01CA10#Mezlocillina#5
+J01CA11#Mecillinam#5
+J01CA12#Piperacillina#5
+J01CA13#Ticarcillina#5
+J01CA14#Metampicillina#5
+J01CA15#Talampicillina#5
+J01CA16#Sulbenicillina#5
+J01CA17#Temocillina#5
+J01CA18#Etacillina#5
+J01CA20#Associazioni#5
+J01CA51#Ampicillina, associazioni#5
+J01CE#Penicilline sensibili alla beta-lattamasi#4
+J01CE01#Benzilpenicillina#5
+J01CE02#Fenossimetilpenicillina#5
+J01CE03#Propicillina#5
+J01CE04#Azidocillina#5
+J01CE05#Feneticillina#5
+J01CE06#Penamecillina#5
+J01CE07#Clometocillina#5
+J01CE08#Benzilpenicillina benzatina#5
+J01CE09#Procaina penicillina#5
+J01CE10#Benzatina fenossimetilpenicillina#5
+J01CE30#Associazioni#5
+J01CF#Penicilline resistenti alla beta-lattamasi#4
+J01CF01#Dicloxacillina#5
+J01CF02#Cloxacillina#5
+J01CF03#Meticillina#5
+J01CF04#Oxacillina#5
+J01CF05#Flucloxacillina#5
+J01CG#Inibitori delle beta-lattamasi#4
+J01CG01#Sulbactam#5
+J01CG02#Tazobactam#5
+J01CR#Associazioni di penicilline, inclusi gli inibitori delle beta-lattamasi#4
+J01CR01#Ampicillina e inibitori enzimatici#5
+J01CR02#Amoxicillina e inibitori enzimatici#5
+J01CR03#Ticarcillina e inibitori enzimatici#5
+J01CR04#Sultamicillina#5
+J01CR05#Piperacillina e inibitori enzimatici#5
+J01CR50#Associazioni di penicilline#5
+J01D#Altri antibatterici beta-lattamici#3
+J01DB#Cefalosporine di prima generazione#4
+J01DB01#Cefalexina#5
+J01DB02#Cefaloridina#5
+J01DB03#Cefalotina#5
+J01DB04#Cefazolina#5
+J01DB05#Cefadroxil#5
+J01DB06#Cefazedone#5
+J01DB07#Cefatrizina#5
+J01DB08#Cefapirina#5
+J01DB09#Cefradina#5
+J01DB10#Cefacetrile#5
+J01DB11#Cefroxadina#5
+J01DB12#Ceftezolo#5
+J01DC#Cefalosporine di seconda generazione#4
+J01DC01#Cefoxitina#5
+J01DC02#Cefuroxima#5
+J01DC03#Cefamandolo#5
+J01DC04#Cefaclor#5
+J01DC05#Cefotetan#5
+J01DC06#Cefonicid#5
+J01DC07#Cefotiam#5
+J01DC08#Loracarbef#5
+J01DC09#Cefmetazolo#5
+J01DC10#Cefprozil#5
+J01DC11#Ceforanide#5
+J01DD#Cefalosporine di terza generazione#4
+J01DD01#Cefotaxima#5
+J01DD02#Ceftazidima#5
+J01DD03#Cefsulodina#5
+J01DD04#Ceftriaxone#5
+J01DD05#Cefmenoxima#5
+J01DD06#Latamoxef (Moxalactam)#5
+J01DD07#Ceftizoxima#5
+J01DD08#Cefixima#5
+J01DD09#Cefodizima#5
+J01DD10#Cefetamet#5
+J01DD11#Cefpiramide#5
+J01DD12#Cefoperazone#5
+J01DD13#Cefpodoxima#5
+J01DD14#Ceftibuten#5
+J01DD15#Cefdinir#5
+J01DD16#Cefditoren#5
+J01DD17#Cefcapene#5
+J01DD54#Ceftriaxone, associazioni#5
+J01DD62#Cefoperazone, associazioni#5
+J01DE#Cefalosporine di quarta generazione#4
+J01DE01#Cefepima#5
+J01DE02#Cefpirome#5
+J01DE03#Cefozopran#5
+J01DF#Monobattami#4
+J01DF01#Aztreonam#5
+J01DH#Carbapenemi#4
+J01DH02#Meropenem#5
+J01DH03#Ertapenem#5
+J01DH04#Doripenem#5
+J01DH05#Biapenem#5
+J01DH51#Imipenem e inibitori enzimatici#5
+J01DH55#Panipenem e betamiprone#5
+J01DI#Altre cefalosporine#4
+J01DI01#Ceftobiprole medocaril#5
+J01DI02#ceftaroline fosamil#5
+J01DI54#CEFTOLOZANO ED INIBITORI ENZIMATICI#5
+J01E#Sulfamidici e trimetoprim#3
+J01EA#Trimetoprim e derivati#4
+J01EA01#Trimetoprim#5
+J01EA02#Brodimoprim#5
+J01EA03#Iclaprim#5
+J01EB#Sulfamidici ad azione breve#4
+J01EB01#Sulfaisodimidina#5
+J01EB02#Sulfametizolo#5
+J01EB03#Sulfadimidina#5
+J01EB04#Sulfapiridina#5
+J01EB05#Sulfafurazolo#5
+J01EB06#Sulfanilamide#5
+J01EB07#Sulfatiazolo#5
+J01EB08#Sulfatiourea#5
+J01EB20#Associazioni#5
+J01EC#Sulfamidici ad azione intermedia#4
+J01EC01#Sulfametoxazolo#5
+J01EC02#Sulfadiazina#5
+J01EC03#Sulfamoxolo#5
+J01EC20#Associazioni#5
+J01ED#Sulfamidici ad azione protratta#4
+J01ED01#Sulfadimetoxina#5
+J01ED02#Sulfalene#5
+J01ED03#Sulfametomidina#5
+J01ED04#Sulfametossidiazina#5
+J01ED05#Sulfametossipiridazina#5
+J01ED06#Sulfaperina#5
+J01ED07#Sulfamerazina#5
+J01ED08#Sulfafenazolo#5
+J01ED09#Sulfamazone#5
+J01ED20#Associazioni#5
+J01EE#Associazioni di sulfamidici con trimetoprim, inclusi i derivati#4
+J01EE01#Sulfametoxazolo e trimetoprim#5
+J01EE02#Sulfadiazina e trimetoprim#5
+J01EE03#Sulfametrolo e trimetoprim#5
+J01EE04#Sulfamoxolo e trimetoprim#5
+J01EE05#Sulfadimidina e trimetoprim#5
+J01EE06#Sulfadiazina e tetroxoprim#5
+J01EE07#Sulfamerazina e trimetoprim#5
+J01F#Macrolidi e lincosamidi#3
+J01FA#Macrolidi#4
+J01FA01#Eritromicina#5
+J01FA02#Spiramicina#5
+J01FA03#Midecamicina#5
+J01FA05#Oleandomicina#5
+J01FA06#Roxitromicina#5
+J01FA07#Josamicina#5
+J01FA08#Troleandomicina#5
+J01FA09#Claritromicina#5
+J01FA10#Azitromicina#5
+J01FA11#Miocamicina#5
+J01FA12#Rokitamicina#5
+J01FA13#Diritromicina#5
+J01FA14#Fluritromicina#5
+J01FA15#Telitromicina#5
+J01FF#Lincosamidi#4
+J01FF01#Clindamicina#5
+J01FF02#Lincomicina#5
+J01FG#Streptogramine#4
+J01FG01#Pristinamicina#5
+J01FG02#Quinupristin/dalfopristin#5
+J01G#Antibatterici aminoglicosidici#3
+J01GA#Streptomicine#4
+J01GA01#Streptomicina#5
+J01GA02#Streptoduocina#5
+J01GB#Altri aminoglicosidi#4
+J01GB01#Tobramicina#5
+J01GB03#Gentamicina#5
+J01GB04#Kanamicina#5
+J01GB05#Neomicina#5
+J01GB06#Amikacina#5
+J01GB07#Netilmicina#5
+J01GB08#Sisomicina#5
+J01GB09#Dibekacina#5
+J01GB10#Ribostamicina#5
+J01GB11#Isepamicina#5
+J01GB12#Arbekacina#5
+J01GB13#bekanamycin#5
+J01M#Antibatterici chinolonici#3
+J01MA#Fluorochinoloni#4
+J01MA01#Ofloxacina#5
+J01MA02#Ciprofloxacina#5
+J01MA03#Pefloxacina#5
+J01MA04#Enoxacina#5
+J01MA05#Temafloxacina#5
+J01MA06#Norfloxacina#5
+J01MA07#Lomefloxacina#5
+J01MA08#Fleroxacina#5
+J01MA09#Sparfloxacina#5
+J01MA10#Rufloxacina#5
+J01MA11#Grepafloxacina#5
+J01MA12#Levofloxacina#5
+J01MA13#Trovafloxacina#5
+J01MA14#Moxifloxacina#5
+J01MA15#Gemifloxacina#5
+J01MA16#Gatifloxacina#5
+J01MA17#Prulifloxacina#5
+J01MA18#Pazufloxacina#5
+J01MA19#Garenoxacina#5
+J01MA21#sitafloxacin#5
+J01MB#Altri chinolonici#4
+J01MB01#Rosoxacina#5
+J01MB02#Acido nalidissico#5
+J01MB03#Acido piromidico#5
+J01MB04#Acido pipemidico#5
+J01MB05#Acido ossolinico#5
+J01MB06#Cinoxacina#5
+J01MB07#Flumechina#5
+J01R#Associazioni di antibatterici#3
+J01RA#Associazioni di antibatterici#4
+J01RA01#Penicilline, associazioni con altri antibatterici#5
+J01RA02#Sulfamidici, associazioni con altri antibatterici (escl. trimetoprim)#5
+J01RA03#Cefuroxima, associazioni con altri antibatterici#5
+J01RA04#Spiramicina, associazioni con altri antibatterici#5
+J01X#Altri antibatterici#3
+J01XA#Antibatterici glicopeptidici#4
+J01XA01#Vancomicina#5
+J01XA02#Teicoplanina#5
+J01XA03#Telavancina#5
+J01XA04#Dalbavancina#5
+J01XA05#Oritavancina#5
+J01XB#Polimixine#4
+J01XB01#Colistina#5
+J01XB02#Polimixina B#5
+J01XC#Antibatterici steroidei#4
+J01XC01#Acido fusidico#5
+J01XD#Derivati imidazolici#4
+J01XD01#Metronidazolo#5
+J01XD02#Tinidazolo#5
+J01XD03#Ornidazolo#5
+J01XE#Derivati nitrofuranici#4
+J01XE01#Nitrofurantoina#5
+J01XE02#Nifurtoinolo#5
+J01XX#Altri antibatterici#4
+J01XX01#Fosfomicina#5
+J01XX02#Xibornolo#5
+J01XX03#Clofoctolo#5
+J01XX04#Spectinomicina#5
+J01XX05#Metenamina#5
+J01XX06#Acido mandelico#5
+J01XX07#Nitroxolina#5
+J01XX08#Linezolid#5
+J01XX09#Daptomicina#5
+J01XX10#Bacitracina#5
+J02#Antimicotici per uso sistemico#2
+J02A#Antimicotici per uso sistemico#3
+J02AA#Antibiotici#4
+J02AA01#Amfotericina B#5
+J02AA02#Achimicina#5
+J02AB#Derivati imidazolici#4
+J02AB01#Miconazolo#5
+J02AB02#Ketoconazolo#5
+J02AC#Derivati triazolici#4
+J02AC01#Fluconazolo#5
+J02AC02#Itraconazolo#5
+J02AC03#Voriconazolo#5
+J02AC04#Posaconazolo#5
+J02AC05#ISAVUCONAZOLO#5
+J02AX#Altri antimicotici per uso sistemico#4
+J02AX01#Flucitosina#5
+J02AX04#Caspofungin#5
+J02AX05#Micafungina#5
+J02AX06#Anidulafungin#5
+J04#Antimicobatteri#2
+J04A#Farmaci per il trattamento della tubercolosi#3
+J04AA#Acido aminosalicilico e suoi derivati#4
+J04AA01#Acido aminosalicilico#5
+J04AA02#Aminosalicilato di sodio#5
+J04AA03#Calcio aminosalicilato#5
+J04AB#Antibiotici#4
+J04AB01#Cicloserina#5
+J04AB02#Rifampicina#5
+J04AB03#Rifamicina#5
+J04AB04#Rifabutina#5
+J04AB05#Rifapentina#5
+J04AB30#Capreomicina#5
+J04AC#Idrazidi#4
+J04AC01#Isoniazide#5
+J04AC51#Isoniazide, associazioni#5
+J04AD#Derivati della tiocarbamide#4
+J04AD01#Protionamide#5
+J04AD02#Tiocarlide#5
+J04AD03#Etionamide#5
+J04AK#Altri farmaci per il trattamento della tubercolosi#4
+J04AK01#Pirazinamide#5
+J04AK02#Etambutolo#5
+J04AK03#Terizodone#5
+J04AK04#Morinamide#5
+J04AK05#Bedaquilina#5
+J04AM#Associazioni di farmaci per il trattamento della tubercolosi#4
+J04AM01#Streptomicina, associazioni#5
+J04AM02#Rifampicina, associazioni#5
+J04AM03#Etambutolo, associazioni#5
+J04AM04#Tioacetazone, associazioni#5
+J04AM05#Rifampicina, pirazinamide e isoniazide#5
+J04AM06#Rifampicina, pirazinamide, etambutolo e isoniazide#5
+J04B#Farmaci per il trattamento della lebbra#3
+J04BA#Farmaci per il trattamento della lebbra#4
+J04BA01#Clofazimina#5
+J04BA02#Dapsone#5
+J04BA03#Aldesulfone sodico#5
+J05#Antivirali per uso sistemico#2
+J05A#Antivirali ad azione diretta#3
+J05AA#Tiosemicarbazoni#4
+J05AA01#Metisazone#5
+J05AB#Nucleosidi e nucleotidi escl. inibitori della trascriptasi inversa#4
+J05AB01#Aciclovir#5
+J05AB02#Idoxuridina#5
+J05AB03#Vidarabina#5
+J05AB04#Ribavirina#5
+J05AB06#Ganciclovir#5
+J05AB09#Famciclovir#5
+J05AB11#Valaciclovir#5
+J05AB12#Cidofovir#5
+J05AB13#Penciclovir#5
+J05AB14#Valganciclovir#5
+J05AB15#Brivudina#5
+J05AC#Amine cicliche#4
+J05AC02#Rimantadina#5
+J05AC03#Tromantadina#5
+J05AD#Derivati dell'acido fosfonico#4
+J05AD01#Foscarnet#5
+J05AD02#Fosfonet#5
+J05AE#Inibitori della proteasi#4
+J05AE01#Saquinavir#5
+J05AE02#Indinavir#5
+J05AE03#Ritonavir#5
+J05AE04#Nelfinavir#5
+J05AE05#Amprenavir#5
+J05AE06#Lopinavir#5
+J05AE07#Fosamprenavir#5
+J05AE08#Atazanavir#5
+J05AE09#Tipranavir#5
+J05AE10#Darunavir#5
+J05AE11#Telaprevir#5
+J05AE12#Boceprevir#5
+J05AE14#SIMEPREVIR#5
+J05AF#Inibitori della trascriptasi inversa, nucleosidi e nucleotidi#4
+J05AF01#Zidovudina#5
+J05AF02#Didanosina#5
+J05AF03#Zalcitabina#5
+J05AF04#Stavudina#5
+J05AF05#Lamivudina#5
+J05AF06#Abacavir#5
+J05AF07#Tenofovir disoproxil#5
+J05AF08#Adefovir dipivoxil#5
+J05AF09#Emtricitabine#5
+J05AF10#Entecavir#5
+J05AF11#Telbivudina#5
+J05AF12#Clevudina#5
+J05AG#Inibitori della trascriptasi inversa, non nucleosidi#4
+J05AG01#Nevirapina#5
+J05AG02#Delavirdina#5
+J05AG03#Efavirenz#5
+J05AG04#Etravirina#5
+J05AG05#Rilpivirina#5
+J05AH#Inibitori della neuraminidasi#4
+J05AH01#Zanamivir#5
+J05AH02#Oseltamivir#5
+J05AR#Antivirali per il trattamento delle infezioni da HIV, associazioni#4
+J05AR01#Zidovudina e lamivudina#5
+J05AR02#Lamivudina e abacavir#5
+J05AR03#Tenofovir disoproxil e emtricitabina#5
+J05AR04#Zidovudina, lamivudina e abacavir#5
+J05AR05#Zidovudina, lamivudina e nevirapine#5
+J05AR06#Emtricitabine, tenofovir disoproxil e efavirenz#5
+J05AR07#Stavudina, lamivudina e nevirapina#5
+J05AR08#emtricitabine, tenofovir disoproxil e rilpivirine#5
+J05AR09#emtricitabine, tenofovir disoproxil, elvitegravir e cobicistat#5
+J05AR10#lopinavir e ritonavir#5
+J05AR13#LAMIVUDINA, ABACAVIR E DOLUTEGRAVIR#5
+J05AR14#DARUNAVIR E COBICISTAT#5
+J05AX#Altri antivirali#4
+J05AX01#Morossidina#5
+J05AX02#Lisozima#5
+J05AX05#Inosina pranobex#5
+J05AX06#Pleconaril#5
+J05AX07#Enfuvirtide#5
+J05AX08#Raltegravir#5
+J05AX09#Maraviroc#5
+J05AX10#Maribavir#5
+J05AX12#Dolutegravir#5
+J05AX14#DACLATASVIR#5
+J05AX15#Sofosbuvir#5
+J05AX16#DASABUVIR#5
+J05AX65#SOFOSBUVIR E LEDIPASVIR#5
+J05AX67#OMBITASVIR, PARITAPREVIR E RITONAVIR#5
+J06#Sieri immuni e immunoglobuline#2
+J06A#Sieri immuni#3
+J06AA#Sieri immuni#4
+J06AA01#Antitossina difterica#5
+J06AA02#Antitossina tetanica#5
+J06AA03#Sierimmune antivipera#5
+J06AA04#Sierimmune antibotulinico#5
+J06AA05#Sierimmune antigangrena gassosa#5
+J06AA06#Siero rabico#5
+J06B#Immunoglobuline#3
+J06BA#Immunoglobuline umane normali#4
+J06BA01#Immunoglobuline, umane normali, per somm. extravascolare#5
+J06BA02#Immunoglobuline, umane normali, per somm. intravascolare#5
+J06BB#Immunoglobuline specifiche#4
+J06BB01#Immunoglobulina anti-D (rh)#5
+J06BB02#Immunoglobulina tetanica#5
+J06BB03#Immunoglobulina anti-varicella/zoster#5
+J06BB04#Immunoglobulina anti-epatite B#5
+J06BB05#Immunoglobulina umana antirabbica#5
+J06BB06#Immunoglobulina umana antirosolia#5
+J06BB07#Immunoglobulina vaiolosa#5
+J06BB08#Immunoglobulina stafilococcica#5
+J06BB09#Immunoglobulina anti-citomegalovirus#5
+J06BB10#Immunoglobulina difterica#5
+J06BB11#Immunoglobulina anti-epatite A#5
+J06BB12#Immunoglobulina dell'encefalite petecchiale#5
+J06BB13#Immunoglobulina umana antipertussica#5
+J06BB14#Immunoglobulina anti-morbillo#5
+J06BB15#Immunoglobulina anti-parotite#5
+J06BB16#Palivizumab#5
+J06BB30#Associazioni#5
+J06BC#Altre immunoglobuline#4
+J06BC01#Nebacumab#5
+J07#Vaccini#2
+J07A#Vaccini batterici#3
+J07AC#Vaccini del carbonchio#4
+J07AC01#Antigene del carbonchio#5
+J07AD#Vaccini della brucellosi#4
+J07AD01#Brucella antigene#5
+J07AE#Vaccini colerici#4
+J07AE01#Vaccino colerico#5
+J07AE02#Vaccino colerico, vivo attenuato#5
+J07AE51#Vaccino colerico, associazioni con vaccino tifoideo, inattivato, cellule intere#5
+J07AF#Vaccini difterico#4
+J07AF01#Tossoide difterico#5
+J07AG#Vaccini dell'Haemophilus influenzae tipo B#4
+J07AG01#Vaccino haemophilus influenzae B coniugato (al tossoide difterico)#5
+J07AG51#Haemophilus influenzae B, associazioni con tossoidi#5
+J07AG52#Haemophilus influenzae B, associazioni con pertosse e tossoidi#5
+J07AG53#Hemophilus influenzae B, associazioni con meningococcus C, coniugato#5
+J07AH#Vaccini meningococcici#4
+J07AH01#Meningococco A, antigene purificato polisaccaridico#5
+J07AH02#Altri antigeni da meningococco polisaccaridici monovalenti purificati#5
+J07AH03#Vaccino meningococcico, antigene bivalente polisaccaridico purificato#5
+J07AH04#Vaccino meningococcico, antigene tetravalente polisaccaridico purificato#5
+J07AH05#Altri antigeni da meningococco polisaccaridici polivalenti purificati#5
+J07AH06#Vaccino da meningococcus B, vescicole membrana esterna#5
+J07AH07#Meningococco C, antigene polisaccaridico purificato#5
+J07AH08#Meningococco,antigene coniugato polisaccaridico purificato tetravalente#5
+J07AH09#Vaccino Meningococcico B, Multicomponente#5
+J07AJ#Vaccini pertossici#4
+J07AJ01#Pertosse, inattivato, cellule intere#5
+J07AJ02#Pertosse, antigene purificato#5
+J07AJ51#Pertosse, inattivato, cellule intere, associazione con tossoidi#5
+J07AJ52#Pertosse, antigene purificato, associazioni con tossoidi#5
+J07AK#Vaccini della peste#4
+J07AK01#Peste, inattivato, cellule intere#5
+J07AL#Vaccini pneumococcici#4
+J07AL01#Vaccino pneumococcico, antigene purificato polisaccaridico#5
+J07AL02#Vaccino pneumococcico, antigene purificato coniugato polisaccaridico#5
+J07AL52#Vaccino pneumococcico, antigene purificato  polisaccaridico e Hemophilus influenza coniugati#5
+J07AM#Vaccini tetanici#4
+J07AM01#Vaccino tetanico adsorbito#5
+J07AM51#Tossoide tetanico, associazioni con tossoide difterico#5
+J07AM52#Tossoide tetanico, associazioni con  immunoglobulina tetanica#5
+J07AN#Vaccini della tubercolosi#4
+J07AN01#Vaccino tubercolare vivo attenuato#5
+J07AP#Vaccini tifoidei#4
+J07AP01#Tifoideo, orale, vivo attenuato#5
+J07AP02#Tifoideo, inattivato, cellule intere#5
+J07AP03#Ttifoideo, antigene polisaccaridico purificato#5
+J07AP10#Tifoideo, associazioni con paratifo#5
+J07AR#Vaccini del tifo (esantematico)#4
+J07AR01#Tifo esantematico, inattivato, cellule intere#5
+J07AX#Altri vaccini batterici#4
+J07B#Vaccini virali#3
+J07BA#Vaccini dell'encefalite#4
+J07BA01#Encefalite, petecchiale, inattivato, virus intero#5
+J07BA02#Encefalite, giapponese, inattivato, virus intero#5
+J07BB#Vaccini influenzali#4
+J07BB01#Influenza, inattivato, virus intero#5
+J07BB02#Influenza, antigene purificato#5
+J07BB03#Influenza, antigene vivo attenuato#5
+J07BC#Vaccini epatitici#4
+J07BC01#Vaccino epatitico B, antigene purificato#5
+J07BC02#Vaccino dell'epatite A, inattivato, virus intero#5
+J07BC20#Associazioni#5
+J07BD#Vaccini del morbillo#4
+J07BD01#Vaccino del morbillo, vivo attenuato#5
+J07BD51#Vaccino del morbillo, associazioni con vaccino della parotite, vivo attenuato#5
+J07BD52#Vaccino del morbillo, associazioni con vaccini della parotite e della rosolia, vivo attenuato#5
+J07BD53#Vaccino del morbillo, associazioni con vaccino della della rosolia, vivo attenuato#5
+J07BD54#Vaccino del morbillo, associazioni con vaccini della parotite, della rosolia e della varicella,vivo attenuato#5
+J07BE#Vaccini della parotite#4
+J07BE01#Vaccino della parotite, vivo attenuato#5
+J07BF#Vaccini poliomielitici#4
+J07BF01#Poliomielite orale, monovalente vivo attenuato#5
+J07BF02#Vaccino poliomielitico orale, trivalente, vivo attenuato#5
+J07BF03#Vaccino poliomielitico, trivalente, inattivato, virus intero#5
+J07BG#Vaccini rabici#4
+J07BG01#Vaccino rabico, inattivato, virus intero#5
+J07BH#Vaccini della diarrea da rota virus#4
+J07BH01#Rota virus, vivo attenuato#5
+J07BH02#Rota virus, pentavalente, vivo, riassortito#5
+J07BJ#Vaccini della irosolia#4
+J07BJ01#Vaccino rubeolico vivo attenuato#5
+J07BJ51#Vaccino della rosolia, associazioni con vaccino della parotite, vivo attenuato#5
+J07BK#Vaccini per varicella zoster#4
+J07BK01#Varicella, vivo attenuato#5
+J07BK02#Zoster, vivo attenuato#5
+J07BL#Vaccini della febbre gialla#4
+J07BL01#Vaccino della febbre gialla, vivo attenuato#5
+J07BM#Vaccini da papillomavirus#4
+J07BM01#Papillomavirus (tipi umani 6, 11, 16, 18)#5
+J07BM02#Papillomavirus (tipi umani 16, 18)#5
+J07BX#Altri vaccini virali#4
+J07C#Vaccini batterici e virali in associazione#3
+J07CA#Vaccini batterici e virali in associazione#4
+J07CA01#Difterite-poliomielite-tetano#5
+J07CA02#Difterite-pertosse-poliomielite-tetano#5
+J07CA03#Difterite-rosolia-tetano#5
+J07CA04#Hemophilus influenzae B e poliomielite#5
+J07CA05#Difterite-epatite B-pertosse-tetano#5
+J07CA06#Difterite-hemophilus influenzae B-pertosse-poliomelite-tetano#5
+J07CA07#Difterite-epatite B-tetano#5
+J07CA08#Haemophilus influenzae B ed epatite B#5
+J07CA09#Difterite-Hemophilus influenzae B-pertosse-poliomelite-tetano-epatite B#5
+J07CA10#Tifo-epatite A#5
+J07CA11#Difterite-hemophilus influenzae B-pertosse-tetano-epatite B#5
+J07CA12#Difterite-pertosse-poliomielite-tetano-epatite B#5
+J07CA13#Difterite-hemophilus influenzae B-pertosse-tetano-epatite B-meningococco A+C#5
+J07X#Altri vaccini#3
+L#FARMACI ANTINEOPLASTICI E IMMUNOMODULATORI#1
+L01#Antineoplastici#2
+L01A#Sostanze alchilanti#3
+L01AA#Analoghi della mostarda azotata#4
+L01AA01#Ciclofosfamide#5
+L01AA02#Clorambucile#5
+L01AA03#Melfalan#5
+L01AA05#Clormetina#5
+L01AA06#Ifosfamide#5
+L01AA07#Trofosfamide#5
+L01AA08#Prednimustina#5
+L01AA09#Bendamustina#5
+L01AB#Alchilsulfonati#4
+L01AB01#Busulfano#5
+L01AB02#Treosulfan#5
+L01AB03#Mannosulfan#5
+L01AC#Etilenimine#4
+L01AC01#Tiotepa#5
+L01AC02#Triaziquone#5
+L01AC03#Carboquone#5
+L01AD#Nitrosouree#4
+L01AD01#Carmustina#5
+L01AD02#Lomustina#5
+L01AD03#Semustina#5
+L01AD04#Streptozocina#5
+L01AD05#Fotemustina#5
+L01AD06#Nimustina#5
+L01AD07#Ranimustina#5
+L01AG#Epossidi#4
+L01AG01#Etoglucid#5
+L01AX#Altre sostanze alchilanti#4
+L01AX01#Mitobronitolo#5
+L01AX02#Pipobromano#5
+L01AX03#Temozolomide#5
+L01AX04#Dacarbazina#5
+L01B#Antimetaboliti#3
+L01BA#Analoghi dell'acido folico#4
+L01BA01#Metotrexato#5
+L01BA03#Raltitrexed#5
+L01BA04#Pemetrexed#5
+L01BA05#Pralatrexato#5
+L01BB#Analoghi della purina#4
+L01BB02#Mercaptopurina#5
+L01BB03#Tioguanina#5
+L01BB04#Cladribina#5
+L01BB05#Fludarabina#5
+L01BB06#Clofarabina#5
+L01BB07#Nelarabine#5
+L01BC#Analoghi della pirimidina#4
+L01BC01#Citarabina#5
+L01BC02#Fluorouracile#5
+L01BC03#Tegafur#5
+L01BC04#Carmofur#5
+L01BC05#Gemcitabina#5
+L01BC06#Capecitabina#5
+L01BC07#Azacitidina#5
+L01BC08#Decitabina#5
+L01BC52#Fluorouracile, associazioni#5
+L01BC53#Tegafur, associazioni#5
+L01C#Alcaloidi da piante e altri prodotti naturali#3
+L01CA#Alcaloidi della vinca e analoghi#4
+L01CA01#Vinblastina#5
+L01CA02#Vincristina#5
+L01CA03#Vindesina#5
+L01CA04#Vinorelbina#5
+L01CA05#Vinflunina#5
+L01CB#Derivati della podofillotossina#4
+L01CB01#Etoposide#5
+L01CB02#Teniposide#5
+L01CC#Derivati della colchicina#4
+L01CC01#Demecolcina#5
+L01CD#Taxani#4
+L01CD01#Paclitaxel#5
+L01CD02#Docetaxel#5
+L01CD03#Paclitaxel poliglumex#5
+L01CD04#cabazitaxel#5
+L01CX#Altri alcaloidi delle piante e prodotti naturali#4
+L01CX01#Trabectedin#5
+L01D#Antibiotici citotossici#3
+L01DA#Actinomicine#4
+L01DA01#Dactinomicina#5
+L01DB#Antracicline e sostanze correlate#4
+L01DB01#Doxorubicina#5
+L01DB02#Daunorubicina#5
+L01DB03#Epirubicina#5
+L01DB04#Aclarubicina#5
+L01DB05#Zorubicina#5
+L01DB06#Idarubicina#5
+L01DB07#Mitoxantrone#5
+L01DB08#Pirarubicina#5
+L01DB09#Valrubicina#5
+L01DB10#amrubicin#5
+L01DB11#pixantrone#5
+L01DC#Altri antibiotici citotossici#4
+L01DC01#Bleomicina#5
+L01DC02#Plicamicina#5
+L01DC03#Mitomicina#5
+L01DC04#Ixabepilone#5
+L01X#Altri antineoplastici#3
+L01XA#Composti del platino#4
+L01XA01#Cisplatino#5
+L01XA02#Carboplatino#5
+L01XA03#Oxaliplatino#5
+L01XA04#Satraplatin#5
+L01XA05#polyplatillen#5
+L01XB#Metilidrazine#4
+L01XB01#Procarbazina#5
+L01XC#Anticorpi monoclonali#4
+L01XC01#Edrecolomab#5
+L01XC02#Rituximab#5
+L01XC03#Trastuzumab#5
+L01XC04#Alemtuzumab#5
+L01XC05#Gemtuzumab#5
+L01XC06#Cetuximab#5
+L01XC07#Bevacizumab#5
+L01XC08#Panitumumab#5
+L01XC09#Catumaxomab#5
+L01XC10#Ofatumumab#5
+L01XC11#Ipilimumab#5
+L01XC12#Brentuximab vedotin#5
+L01XC13#pertuzumab#5
+L01XC14#Trastuzumab Emtansine#5
+L01XC15#OBINUTUZUMAB#5
+L01XC17#NIVOLUMAB#5
+L01XC18#PEMBROLIZUMAB#5
+L01XC21#RAMUCIRUMAB#5
+L01XD#Sensibilizzanti usati nella terapia fotodinamica/radiante#4
+L01XD01#Sodio porfimer#5
+L01XD03#Metil aminolevulinato#5
+L01XD04#Acido aminolevulenico#5
+L01XD05#Temoporfina#5
+L01XD06#Efaproxiral#5
+L01XE#Inibitori della protein kinasi#4
+L01XE01#Imatinib#5
+L01XE02#Gefitinib#5
+L01XE03#Erlotinib#5
+L01XE04#Sunitinib#5
+L01XE05#Sorafenib#5
+L01XE06#Dasatinib#5
+L01XE07#Lapatinib#5
+L01XE08#Nilotinib#5
+L01XE09#Temsirolimus#5
+L01XE10#Everolimus#5
+L01XE11#Pazopanib#5
+L01XE12#vandetanib#5
+L01XE13#afatinib#5
+L01XE14#Bosutinib#5
+L01XE15#Vemurafenib#5
+L01XE16#Crizotinib#5
+L01XE17#Axitinib#5
+L01XE18#Ruxolitinib#5
+L01XE21#regorafenib#5
+L01XE23#Dabrafenib#5
+L01XE24#Ponatinib#5
+L01XE26#CABOZANTINIB#5
+L01XE27#IBRUTINIB#5
+L01XE29#LENVATINIB#5
+L01XE31#NINTEDANIB#5
+L01XX#Altri antineoplastici#4
+L01XX01#Amsacrina#5
+L01XX02#Asparaginasi#5
+L01XX03#Altretamina#5
+L01XX05#Idrossicarbamide#5
+L01XX07#Lonidamina#5
+L01XX08#Pentostatina#5
+L01XX09#Miltefosina#5
+L01XX10#Masoprocol#5
+L01XX11#Estramustina#5
+L01XX14#Tretinoina#5
+L01XX16#Mitoguazone#5
+L01XX17#Topotecan#5
+L01XX18#Tiazofurina#5
+L01XX19#Irinotecan#5
+L01XX22#Alitretinoina#5
+L01XX23#Mitotano#5
+L01XX24#Pegaspargasi#5
+L01XX25#Bexarotene#5
+L01XX27#Arsenico triossido#5
+L01XX29#Denileukina diftitox#5
+L01XX32#Bortezomib#5
+L01XX33#Celecoxib#5
+L01XX35#Anagrelide#5
+L01XX36#Oblimersen#5
+L01XX37#Sitimagene ceradenovec#5
+L01XX38#Vorinostat#5
+L01XX39#Romidepsin#5
+L01XX40#omacetaxine mepesuccinate#5
+L01XX41#eribulin#5
+L01XX43#Vismodegib#5
+L01XX44#Aflibercept#5
+L01XX46#OLAPARIB#5
+L01XX47#IDELALISIB#5
+L01XY#Associazioni di antineoplastici#4
+L02#Terapia endocrina#2
+L02A#Ormoni ed agenti correlati#3
+L02AA#Estrogeni#4
+L02AA01#Dietilstilbestrolo#5
+L02AA02#Poliestradiolo fosfato#5
+L02AA03#Etinilestradiolo#5
+L02AA04#Fosfestrolo#5
+L02AB#Progestinici#4
+L02AB01#Megestrolo acetato#5
+L02AB02#Medrossiprogesterone#5
+L02AB03#Gestonorone caproato#5
+L02AE#Analoghi dell'ormone liberatore delle gonadotropine#4
+L02AE01#Buserelin#5
+L02AE02#Leuprolide#5
+L02AE03#Goserelin#5
+L02AE04#Triptorelina#5
+L02AX#Altri ormoni#4
+L02B#Antagonisti ormonali ed agenti correlati#3
+L02BA#Antiestrogeni#4
+L02BA01#Tamoxifene#5
+L02BA02#Toremifene#5
+L02BA03#Fulvestrant#5
+L02BB#Antiandrogeni#4
+L02BB01#Flutamide#5
+L02BB02#Nilutamide#5
+L02BB03#Bicalutamide#5
+L02BB04#Enzalutamide#5
+L02BG#Inibitori enzimatici#4
+L02BG01#Aminoglutetimide#5
+L02BG02#Formestan#5
+L02BG03#Anastrozolo#5
+L02BG04#Letrozolo#5
+L02BG05#Vorozolo#5
+L02BG06#Exemestane#5
+L02BX#Altri antagonisti ormonali e agenti correlati#4
+L02BX01#Abarelix#5
+L02BX02#Degarelix#5
+L02BX03#Abiraterone#5
+L03#Immunostimolanti#2
+L03A#Immunostimolanti#3
+L03AA#Fattori di stimolazione delle colonie#4
+L03AA02#Filgrastim#5
+L03AA03#Molgramostim#5
+L03AA09#Sargramostim#5
+L03AA10#Lenograstim#5
+L03AA12#Ancestim#5
+L03AA13#Pegfilgrastim#5
+L03AA14#Lipegfilgrastim#5
+L03AB#Interferoni#4
+L03AB01#Interferone alfa naturale#5
+L03AB02#Interferone beta naturale#5
+L03AB03#Interferone gamma#5
+L03AB04#Interferone alfa-2a#5
+L03AB05#Interferone alfa-2b#5
+L03AB06#Interferone alfa-n1#5
+L03AB07#Interferone beta-1a#5
+L03AB08#Interferone beta-1b#5
+L03AB09#Interferone alfacon-1#5
+L03AB10#Peginterferone alfa-2b#5
+L03AB11#Peginterferone alfa-2a#5
+L03AB12#albinterferon alfa-2b#5
+L03AB13#PEGINTERFERONE BETA-1A#5
+L03AB60#Peginterferone alfa-2b, associazioni#5
+L03AB61#Peginterferone alfa-2a, associazioni#5
+L03AC#Interleuchine#4
+L03AC01#Aldesleuchina#5
+L03AC02#Oprelvechina#5
+L03AX#Altri immunostimolanti#4
+L03AX01#Lentinan#5
+L03AX02#Roquinimex#5
+L03AX03#Vaccino BCG#5
+L03AX04#Pegademasi#5
+L03AX05#Pidotimod#5
+L03AX07#Poli I:C#5
+L03AX08#Poli ICLC#5
+L03AX09#Timopentina#5
+L03AX10#Immunocianina#5
+L03AX11#Tasonermina#5
+L03AX12#Vaccino del melanoma#5
+L03AX13#Glatiramer acetato#5
+L03AX14#Istamina diidrocloruro#5
+L03AX15#Mifamurtide#5
+L03AX16#Plerixafor#5
+L04#Immunosoppressori#2
+L04A#Immunosoppressori#3
+L04AA#Immunosoppressori selettivi#4
+L04AA02#Muromonab-CD3#5
+L04AA03#Immunoglobulina antilinfocitaria (cavallo)#5
+L04AA04#Immunoglobulina antimonocitaria (coniglio)#5
+L04AA06#Micofenolato mofetile#5
+L04AA10#Sirolimus#5
+L04AA13#Leflunomide#5
+L04AA15#Alefacept#5
+L04AA18#Everolimus#5
+L04AA19#Gusperimus#5
+L04AA21#Efalizumab#5
+L04AA22#Abetimus#5
+L04AA23#Natalizumab#5
+L04AA24#Abatacept#5
+L04AA25#Eculizumab#5
+L04AA26#belimumab#5
+L04AA27#fingolimod#5
+L04AA28#belatacept#5
+L04AA31#Teriflunomide#5
+L04AA32#APREMILAST#5
+L04AA33#VEDOLIZUMAB#5
+L04AA34#Alemtuzumab#5
+L04AB#Inibitori del fattore di necrosi tumorale (TNF-a)#4
+L04AB01#Etanercept#5
+L04AB02#Infliximab#5
+L04AB03#Afelimomab#5
+L04AB04#Adalimumab#5
+L04AB05#Certolizumab pegol#5
+L04AB06#Golimumab#5
+L04AC#Inibitori dell'interleuchina#4
+L04AC01#Daclizumab#5
+L04AC02#Basiliximab#5
+L04AC03#Anakinra#5
+L04AC04#Rilonacept#5
+L04AC05#Ustekinumab#5
+L04AC06#Mepolizumab#5
+L04AC07#Tocilizumab#5
+L04AC08#Canakinumab#5
+L04AC09#briakinumab#5
+L04AD#Inibitori calcineurina#4
+L04AD01#Ciclosporina#5
+L04AD02#Tacrolimus#5
+L04AD03#voclosporin#5
+L04AX#Altri immunosoppressori#4
+L04AX01#Azatioprina#5
+L04AX02#Talidomide#5
+L04AX03#Metotrexato#5
+L04AX04#Lenalidomide#5
+L04AX05#Pirfenidone#5
+L04AX06#Pomalidomide#5
+M#SISTEMA MUSCOLO-SCHELETRICO#1
+M01#Farmaci antinfiammatori e antireumatici#2
+M01A#Farmaci antinfiammatori e antireumatici, non steroidei#3
+M01AA#Butilpirazolidine#4
+M01AA01#Fenilbutazone#5
+M01AA02#Mofebutazone#5
+M01AA03#Ossifenbutazone#5
+M01AA05#Clofezone#5
+M01AA06#Kebuzone#5
+M01AB#Derivati dell'acido acetico e sostanze correlate#4
+M01AB01#Indometacina#5
+M01AB02#Sulindac#5
+M01AB03#Tolmetina#5
+M01AB04#Zomepirac#5
+M01AB05#Diclofenac#5
+M01AB06#Alclofenac#5
+M01AB07#Bumadizone#5
+M01AB08#Etodolac#5
+M01AB09#Lonazolac#5
+M01AB10#Fentiazac#5
+M01AB11#Acemetacina#5
+M01AB12#Difenpiramide#5
+M01AB13#Oxametacina#5
+M01AB14#Proglumetacina#5
+M01AB15#Ketorolac#5
+M01AB16#Aceclofenac#5
+M01AB17#Bufexamac#5
+M01AB51#Indometacina, associazioni#5
+M01AB55#Diclofenac, associazioni#5
+M01AC#Oxicam-derivati#4
+M01AC01#Piroxicam#5
+M01AC02#Tenoxicam#5
+M01AC04#Droxicam#5
+M01AC05#Lornoxicam#5
+M01AC06#Meloxicam#5
+M01AE#Derivati dell'acido propionico#4
+M01AE01#Ibuprofene#5
+M01AE02#Naproxene#5
+M01AE03#Ketoprofene#5
+M01AE04#Fenoprofene#5
+M01AE05#Fenbufene#5
+M01AE06#Benoxaprofene#5
+M01AE07#Suprofene#5
+M01AE08#Pirprofene#5
+M01AE09#Flurbiprofene#5
+M01AE10#Indoprofene#5
+M01AE11#Acido tiaprofenico#5
+M01AE12#Oxaprozina#5
+M01AE13#Ibuproxam#5
+M01AE14#Dexibuprofene#5
+M01AE15#Flunoxaprofene#5
+M01AE16#Alminoprofene#5
+M01AE17#Desketoprofene#5
+M01AE18#naproxcinod#5
+M01AE51#Ibuprofene, associazioni#5
+M01AE52#naproxen e esomeprazole#5
+M01AE53#Ketoprofene, associazioni#5
+M01AG#Fenamati#4
+M01AG01#Acido mefenamico#5
+M01AG02#Acido tolfenamico#5
+M01AG03#Acido flufenamico#5
+M01AG04#Acido meclofenamico#5
+M01AH#Coxibs#4
+M01AH01#Celecoxib#5
+M01AH02#Rofecoxib#5
+M01AH03#Valdecoxib#5
+M01AH04#Parecoxib#5
+M01AH05#Etoricoxib#5
+M01AH06#Lumiracoxib#5
+M01AX#Altri farmaci antinfiammatori e antireumatici non steroidei#4
+M01AX01#Nabumetone#5
+M01AX02#Acido niflumico#5
+M01AX04#Azapropazone#5
+M01AX05#Glucosamina#5
+M01AX07#Benzidamina#5
+M01AX12#Glucosaminoglicano polisolfato#5
+M01AX13#Proquazone#5
+M01AX14#Orgoteina#5
+M01AX17#Nimesulide#5
+M01AX18#Feprazone#5
+M01AX21#Diacereina#5
+M01AX22#Morniflumato#5
+M01AX23#Tenidap#5
+M01AX24#Oxaceprolo#5
+M01AX25#Condroitinsolfato#5
+M01AX26#avocado e soyabean oil, unsaponifiables#5
+M01AX68#Feprazone, associazioni#5
+M01B#Antinfiammatori/antireumatici in associazione#3
+M01BA#Antinfiammatori/antireumatici in associazione con corticosteroidi#4
+M01BA01#Fenilbutazone e corticosteroidi#5
+M01BA02#Dipirocetil e corticosteroidi#5
+M01BA03#Acido acetlsalicilico e corticosteroidi#5
+M01BX#Altri antinfiammatori/antireumatici in associazione con altri farmaci#4
+M01C#Farmaci antireumatichi specifici#3
+M01CA#Derivati chinolinici#4
+M01CA03#Ossicincofene#5
+M01CB#Preparati a base di oro#4
+M01CB01#Sodio aurotiomalato#5
+M01CB02#Sodio aurotiosolfato#5
+M01CB03#Auranofin#5
+M01CB04#Aurotioglucosio#5
+M01CB05#Aurotioprol#5
+M01CC#Penicillamina ed analoghi#4
+M01CC01#Penicillamina#5
+M01CC02#Bucillamina#5
+M01CX#Altri agenti antireumatici specifici#4
+M02#Farmaci per uso topico per dolori articolari e muscolari#2
+M02A#Farmaci per uso topico per dolori articolari e muscolari#3
+M02AA#Antiinfiammatori non steroidei per uso topico#4
+M02AA01#Fenilbutazone#5
+M02AA02#Mofebutazone#5
+M02AA03#Clofezone#5
+M02AA04#Ossifenbutazone#5
+M02AA05#Benzidamina#5
+M02AA06#Etofenamato#5
+M02AA07#Piroxicam#5
+M02AA08#Felbinac#5
+M02AA09#Bufexamac#5
+M02AA10#Ketoprofene#5
+M02AA11#Bendazac#5
+M02AA12#Naproxene#5
+M02AA13#Ibuprofene#5
+M02AA14#Fentiazac#5
+M02AA15#Diclofenac#5
+M02AA16#Feprazone#5
+M02AA17#Acido niflumico#5
+M02AA18#Acido meclofenamico#5
+M02AA19#Flurbiprofene#5
+M02AA21#Tolmetina#5
+M02AA22#Suxibuzone#5
+M02AA23#Indometacina#5
+M02AA24#Nifenazone#5
+M02AA25#Aceclofenac#5
+M02AA26#nimesulide#5
+M02AB#Capsaicina e agenti similari#4
+M02AB01#Capsaicina#5
+M02AB02#Zucapsaicina#5
+M02AC#Preparati a base di derivati dell'acido salicilico#4
+M02AX#Altri preparati per uso topico per dolori articolari e muscolari#4
+M02AX02#Tolazolina#5
+M02AX03#Dimetil sulfossido#5
+M02AX05#idrocilamide#5
+M02AX10#Vari#5
+M03#Miorilassanti#2
+M03A#Miorilassanti ad azione periferica#3
+M03AA#Alcaloidi del curaro#4
+M03AA01#Alcuronio#5
+M03AA02#Tubocurarina#5
+M03AA04#Dimetiltubocurarina#5
+M03AB#Derivati della colina#4
+M03AB01#Suxametonio cloruro#5
+M03AC#Altri composti ammonici quaternari#4
+M03AC01#Pancuronio bromuro#5
+M03AC02#Gallamina#5
+M03AC03#Vecuronio bromuro#5
+M03AC04#Atracurio#5
+M03AC05#Exafluronio#5
+M03AC06#Pipecuronio bromuro#5
+M03AC07#Doxacurio cloruro#5
+M03AC08#Fazadinio bromuro#5
+M03AC09#Rocuronio bromuro#5
+M03AC10#Mivacurio cloruro#5
+M03AC11#Cisatracurio#5
+M03AX#Altri miorilassanti ad azione periferica#4
+M03AX01#Tossina botulinica#5
+M03B#Miorilassanti ad azione centrale#3
+M03BA#Esteri dell'acido carbamico#4
+M03BA01#Fenprobamato#5
+M03BA02#Carisoprodolo#5
+M03BA03#Metocarbamolo#5
+M03BA04#Stiramato#5
+M03BA05#Febarbamato#5
+M03BA51#Fenprobamato, associazioni escl. psicolettici#5
+M03BA52#Carisoprodolo, associazioni escl. psicolettici#5
+M03BA53#Metocarbamolo, associazioni escl. psicolettici#5
+M03BA71#Fenprobamato, associazioni con psicolettici#5
+M03BA72#Carisoprodolo, associazioni con psicolettici#5
+M03BA73#Metocarbamolo, associazioni con psicolettici#5
+M03BB#Derivati dell'ossazolo, della tiazina e della triazina#4
+M03BB02#Clormezanone#5
+M03BB03#Clorzoxazone#5
+M03BB52#Clormezanone, associazioni escl. psicolettici#5
+M03BB53#Clorzoxazone, associazioni escl. psicolettici#5
+M03BB72#Clormezanone, associazioni con psicolettici#5
+M03BB73#Clorzoxazone, associazioni con psicolettici#5
+M03BC#Esteri, chimicamente correlati agli antiistaminici#4
+M03BC01#Orfenadrina (citrato)#5
+M03BC51#Orfenadrina, associazioni#5
+M03BX#Altri miorilassanti ad azione centrale#4
+M03BX01#Baclofene#5
+M03BX02#Tizanidina#5
+M03BX03#Pridinolo#5
+M03BX04#Tolperisone#5
+M03BX05#Tiocolchicoside#5
+M03BX06#Mefenesina#5
+M03BX07#Tetrazepam#5
+M03BX08#Ciclobenzaprina#5
+M03BX09#Eperisone#5
+M03BX30#Feniramidolo#5
+M03C#Miorilassanti ad azione diretta#3
+M03CA#Dantrolene e derivati#4
+M03CA01#Dantrolene#5
+M04#Preparati antigottosi#2
+M04A#Preparati antigottosi#3
+M04AA#Preparati che inibiscono la formazione di acido urico#4
+M04AA01#Allopurinolo#5
+M04AA02#Tisopurina#5
+M04AA03#Febuxostat#5
+M04AA51#Allopurinolo, associazioni#5
+M04AB#Preparati favorenti l'escrezione di acido urico#4
+M04AB01#Probenecid#5
+M04AB02#Sulfinpirazone#5
+M04AB03#Benzbromarone#5
+M04AB04#Isobromindione#5
+M04AC#Preparati senza effetto sul metabolismo dell'acido urico#4
+M04AC01#Colchicina#5
+M04AC02#Cincofene#5
+M04AX#Altri preparati antigottosi#4
+M04AX01#Uricasi (Urato ossidasi)#5
+M04AX02#Pegloticasi#5
+M05#Farmaci per il trattamento delle malattie delle ossa#2
+M05B#Farmaci che agiscono sulla mineralizzazione#3
+M05BA#Bifosfonati#4
+M05BA01#Acido etidronico#5
+M05BA02#Acido clodronico#5
+M05BA03#Acido pamidronico#5
+M05BA04#Acido alendronico#5
+M05BA05#Acido tiludronico#5
+M05BA06#Acido ibandronico#5
+M05BA07#Acido risedronico#5
+M05BA08#Acido zoledronico#5
+M05BB#Bifosfonati, associazioni#4
+M05BB01#Acido etidronico e calcio, sequenziale#5
+M05BB02#Acido risedronico e calcio, sequenziale#5
+M05BB03#Acido alendronico e colecalciferolo#5
+M05BB04#Acido risedronico, calcio e colecalciferolo, sequenziale#5
+M05BB05#Acido alendronico, calcio e colecalciferolo, sequenziale#5
+M05BC#Proteine morfogenetiche di origine ossea#4
+M05BC01#Dibotermina alfa#5
+M05BC02#Eptotermina alfa#5
+M05BX#Altri farmaci che agiscono sulla mineralizzazione#4
+M05BX01#Ipriflavone#5
+M05BX02#Alluminio cloroidrato#5
+M05BX03#Stronzio ranelato#5
+M05BX04#Denosumab#5
+M09#Altri farmaci per le affezioni del sistema muscolo-scheletrico#2
+M09A#Altri farmaci per le affezioni sistema muscolo-scheletrico#3
+M09AA#Chinina e derivati#4
+M09AA01#Idrochinina#5
+M09AA72#Chinina, associazioni con psicolettici#5
+M09AB#Enzimi#4
+M09AB01#Chimopapaina#5
+M09AB02#collagenase clostridium histolyticum#5
+M09AB03#Bromelaina#5
+M09AB52#Tripsina, associazioni#5
+M09AX#Altri farmaci per le affezioni del sistema muscolo-scheletrico#4
+M09AX01#Acido ialuronico#5
+M09AX02#chondrocytes, autologous#5
+M09AX03#ataluren#5
+N#SISTEMA NERVOSO#1
+N01#Anestetici#2
+N01A#Anestetici generali#3
+N01AA#Eteri#4
+N01AA01#Etere dietilico#5
+N01AA02#Etere vinilico#5
+N01AB#Idrocarburi alogenati#4
+N01AB01#Alotano#5
+N01AB02#Cloroformio#5
+N01AB04#Isoflurano#5
+N01AB05#Tricloroetilene#5
+N01AB06#Isoflurano#5
+N01AB07#Desflurano#5
+N01AB08#Sevoflurano#5
+N01AF#Barbiturici, non associati#4
+N01AF01#Metoexital#5
+N01AF02#Esobarbital#5
+N01AF03#Tiopental sodico#5
+N01AG#Barbiturici associati ad altri farmaci#4
+N01AG01#Narcobarbital#5
+N01AH#Anestetici oppiacei#4
+N01AH01#Fentanil#5
+N01AH02#Alfentanil#5
+N01AH03#Sufentanil#5
+N01AH04#Fenoperidina#5
+N01AH05#Anileridina#5
+N01AH06#Remifentanil#5
+N01AH51#Fentanil, associazioni#5
+N01AX#Altri anestetici generali#4
+N01AX01#Droperidolo#5
+N01AX03#Ketamina#5
+N01AX04#Propanidide#5
+N01AX05#Alfaxalone#5
+N01AX07#Etomidato#5
+N01AX10#Propofol#5
+N01AX11#Acido idrossibutirrico#5
+N01AX13#Protossido d'azoto#5
+N01AX14#Esketamina#5
+N01AX15#Xeno#5
+N01AX63#Protossido d'azoto, associazioni#5
+N01B#Anestetici locali#3
+N01BA#Esteri dell'acido aminobenzoico#4
+N01BA01#Metabutetamina#5
+N01BA02#Procaina#5
+N01BA03#Tetracaina#5
+N01BA04#Cloroprocaina#5
+N01BA05#Benzocaina#5
+N01BA52#Procaina, associazioni#5
+N01BB#Amidi#4
+N01BB01#Bupivacaina#5
+N01BB02#Lidocaina#5
+N01BB03#Mepivacaina#5
+N01BB04#Prilocaina#5
+N01BB05#Butanilicaina#5
+N01BB06#Cincocaina#5
+N01BB07#Etidocaina#5
+N01BB08#Articaina#5
+N01BB09#Ropivacaina#5
+N01BB10#Levobupivacaina#5
+N01BB20#Associazioni#5
+N01BB51#Bupivacaina, associazioni#5
+N01BB52#Lidocaina, associazioni#5
+N01BB53#Mepivacaina, associazioni#5
+N01BB54#Prilocaina, associazioni#5
+N01BB57#Etidocaina, associazioni#5
+N01BB58#Articaina, associazioni#5
+N01BC#Esteri dell'acido benzoico#4
+N01BC01#Cocaina#5
+N01BX#Altri anestetici locali#4
+N01BX01#Etile cloruro#5
+N01BX02#Diclonina#5
+N01BX03#Fenolo#5
+N01BX04#Capsaicina#5
+N02#Analgesici#2
+N02A#Oppiacei#3
+N02AA#Alcaloidi naturali dell'oppio#4
+N02AA01#Morfina solfato#5
+N02AA02#Oppio#5
+N02AA03#Idromorfone#5
+N02AA04#Nicomorfina#5
+N02AA05#Ossicodone#5
+N02AA08#Diidrocodeina#5
+N02AA09#Diamorfina#5
+N02AA10#Papavereto#5
+N02AA51#Morfina, associazioni#5
+N02AA55#Ossicodone, associazioni#5
+N02AA58#Diidrocodeina, associazioni#5
+N02AA59#Codeina, associazioni#5
+N02AA79#Codeina,associazioni con picolettici#5
+N02AB#Derivati della fenilpiperidina#4
+N02AB01#Ketobemidone#5
+N02AB02#Petidina#5
+N02AB03#Fentanil#5
+N02AB52#Petidina, associazioni escl. psicolettici#5
+N02AB72#Petidina, associazioni con psicolettici#5
+N02AC#Derivati della difenilpropilamina#4
+N02AC01#Destromoramide#5
+N02AC03#Piritramide#5
+N02AC04#Destropropossifene#5
+N02AC05#Bezitramide#5
+N02AC52#Metadone, ass. escl. psicolettici#5
+N02AC54#Destropropossifene, ass. escl. psicolettici#5
+N02AC74#Destropropossifene, ass. con psicolettici#5
+N02AD#Derivati del benzomorfano#4
+N02AD01#Pentazocina#5
+N02AD02#Fenazocina#5
+N02AE#Derivati dell'oripavina#4
+N02AE01#Buprenorfina#5
+N02AF#Derivati del morfinano#4
+N02AF01#Butorfanol#5
+N02AF02#Nalbufina#5
+N02AG#Oppiacei in associazione con antispastici#4
+N02AG01#Morfina e antispastici#5
+N02AG02#Ketobemidone e antispastici#5
+N02AG03#Petidina e antispastici#5
+N02AG04#Idromorfone e antispastici#5
+N02AX#Altri oppiacei#4
+N02AX01#Tilidina#5
+N02AX02#Tramadolo#5
+N02AX03#Dezocina#5
+N02AX05#Meptazinolo#5
+N02AX06#Tapentadolo#5
+N02AX52#Tramadolo, associazioni#5
+N02B#Altri analgesici e antipiretici#3
+N02BA#Acido salicilico e derivati#4
+N02BA01#Acido acetilsalicilico#5
+N02BA02#Aloxiprina#5
+N02BA03#Colina salicilato#5
+N02BA04#Sodio salicilato#5
+N02BA05#Salicilamide#5
+N02BA06#Acido saliciloilsalicilico#5
+N02BA07#Etenzamide#5
+N02BA08#Morfolina salicilato#5
+N02BA09#Dipirocetil#5
+N02BA10#Benorilato#5
+N02BA11#Diflunisal#5
+N02BA12#Potassio salicilato#5
+N02BA14#Guacetisal#5
+N02BA15#Carbasalato calcico#5
+N02BA16#Imidazolo salicilato#5
+N02BA51#Acido acetilsalicilico, ass. escl. psicolettici#5
+N02BA55#Salicilamide, associazioni escl. psicolettici#5
+N02BA57#Etenzamide, associazioni escl. psicolettici#5
+N02BA59#Dipirocetil, associazioni escl. psicolettici#5
+N02BA65#Carbasalato calcico ass. escl. psicolettici#5
+N02BA71#Acido acetilsalicilico, ass. con psicolettici#5
+N02BA75#Salicilamide, associazioni con psicolettici#5
+N02BA77#Etenzamide, associazioni con psicolettici#5
+N02BA79#Dipirocetil, associazioni con psicolettici#5
+N02BB#Pirazolonici#4
+N02BB01#Fenazone#5
+N02BB02#Metamizolo sodico#5
+N02BB03#Aminofenazone#5
+N02BB04#Propifenazone#5
+N02BB05#Nifenazone#5
+N02BB51#Fenazone, associazioni escl. psicolettici#5
+N02BB52#Metamizolo sodico, associazioni escl. psicolettici#5
+N02BB53#Aminofenazone, associazioni escl. psicolettici#5
+N02BB54#Propifenazone, associazioni escl. psicolettici#5
+N02BB71#Fenazone, associazioni con psicolettici#5
+N02BB72#Metamizolo sodico, associazioni con psicolettici#5
+N02BB73#Aminofenazone, associazioni con psicolettici#5
+N02BB74#Propifenazone, associazioni con psicolettici#5
+N02BE#Anilidi#4
+N02BE01#Paracetamolo#5
+N02BE03#Fenacetina#5
+N02BE04#Bucetina#5
+N02BE05#Propacetamolo#5
+N02BE51#Paracetamolo, associazioni escl. psicolettici#5
+N02BE53#Fenacetina, associazioni escl. psicolettici#5
+N02BE54#Bucetina, associazioni escl. psicolettici#5
+N02BE71#Paracetamolo, associazioni con psicolettici#5
+N02BE73#Fenacetina, associazioni con psicolettici#5
+N02BE74#Bucetina, associazioni con psicolettici#5
+N02BG#Altri analgesici ed antipiretici#4
+N02BG02#Rimazolio#5
+N02BG03#Glafenina#5
+N02BG04#Floctafenina#5
+N02BG05#Viminolo#5
+N02BG06#Nefopam#5
+N02BG07#Flupirtina#5
+N02BG08#Ziconotide#5
+N02BG09#Metossiflurano#5
+N02BG10#Nabiximols#5
+N02C#Antiemicranici#3
+N02CA#Alcaloidi della segale cornuta#4
+N02CA01#Diidroergotamina#5
+N02CA02#Ergotamina#5
+N02CA04#Metisergide#5
+N02CA07#Lisuride#5
+N02CA51#Diidroergotamina, associazioni#5
+N02CA52#Ergotamina, associazioni escl. psicolettici#5
+N02CA72#Ergotamina, ass. con psicolettici#5
+N02CB#Derivati corticosteroidei#4
+N02CB01#Flumedroxone#5
+N02CC#Agonisti selettivi dei recettori 5HT1#4
+N02CC01#Sumatriptan#5
+N02CC02#Naratriptan#5
+N02CC03#Zolmitriptan#5
+N02CC04#Rizatriptan#5
+N02CC05#Almotriptan#5
+N02CC06#Eletriptan#5
+N02CC07#Frovatriptan#5
+N02CX#Altri antiemicranici#4
+N02CX01#Pizotifene#5
+N02CX02#Clonidina#5
+N02CX03#Iprazocromo#5
+N02CX05#Dimetotiazina#5
+N02CX06#Oxetorone#5
+N03#Antiepilettici#2
+N03A#Antiepilettici#3
+N03AA#Barbiturici e derivati#4
+N03AA01#Metilfenobarbital#5
+N03AA02#Fenobarbital#5
+N03AA03#Primidone#5
+N03AA04#Barbesaclone#5
+N03AA30#Metarbital#5
+N03AB#Derivati dell'idantoina#4
+N03AB01#Etotoina#5
+N03AB02#Fenitoina#5
+N03AB03#Acido amino(difenilidantoin) valerico#5
+N03AB04#Mefenitoina#5
+N03AB05#Fosfenitoina#5
+N03AB52#Fenitoina, associazioni#5
+N03AB54#Mefenitoina, associazioni#5
+N03AC#Derivati dell'oxazolidina#4
+N03AC01#Parametadione#5
+N03AC02#Trimetadione#5
+N03AC03#Etadione#5
+N03AD#Derivati della succinimide#4
+N03AD01#Etosuccimide#5
+N03AD02#Fensuccimide#5
+N03AD03#Mesuccimide#5
+N03AD51#Etosuccimide, associazioni#5
+N03AE#Derivati benzodiazepinici#4
+N03AE01#Clonazepam#5
+N03AF#Derivati della carbossamide#4
+N03AF01#Carbamazepina#5
+N03AF02#Oxcarbazepina#5
+N03AF03#Rufinamide#5
+N03AF04#Eslicarbazepina#5
+N03AG#Derivati degli acidi grassi#4
+N03AG01#Acido valproico#5
+N03AG02#Valpromide#5
+N03AG03#Buxamina#5
+N03AG04#Vigabatrina#5
+N03AG05#Progabide#5
+N03AG06#Tiagabina#5
+N03AX#Altri antiepilettici#4
+N03AX03#Sultiame#5
+N03AX07#Fenacemide#5
+N03AX09#Lamotrigina#5
+N03AX10#Felbamato#5
+N03AX11#Topiramato#5
+N03AX12#Gabapentin#5
+N03AX13#Feneturide#5
+N03AX14#Levetiracetam#5
+N03AX15#Zonisamide#5
+N03AX16#Pregabalin#5
+N03AX17#Stiripentolo#5
+N03AX18#Lacosamide#5
+N03AX19#Carisbamato#5
+N03AX21#retigabine#5
+N03AX30#Beclamide#5
+N04#Antiparkinsoniani#2
+N04A#Sostanze anticolinergiche#3
+N04AA#Amine terziarie#4
+N04AA01#Triesifenidile#5
+N04AA02#Biperidene#5
+N04AA03#Metixene#5
+N04AA04#Prociclidina#5
+N04AA05#Profenamina#5
+N04AA08#Dexetimide#5
+N04AA09#Fenglutarimide#5
+N04AA10#Mazaticol#5
+N04AA11#Bornaprina#5
+N04AA12#Tropatepina#5
+N04AB#Eteri chimicamente correlati agli antistaminici#4
+N04AB01#Etanautina#5
+N04AB02#Orfenadrina (cloruro)#5
+N04AC#Eteri della tropina o dei derivati della tropina#4
+N04AC01#Benzatropina#5
+N04AC30#Etibenzatropina#5
+N04B#Sostanze dopaminergiche#3
+N04BA#Dopa e suoi derivati#4
+N04BA01#Levodopa#5
+N04BA02#Levodopa e inibitori della decarbossilasi#5
+N04BA03#Levodopa, inibitori della decarbossilasi e inibitori della COMT#5
+N04BA04#Melevodopa#5
+N04BA05#Melevodopa e inibitori della decarbossilasi#5
+N04BA06#Etilevodopa e inibitori della decarbossilasi#5
+N04BB#Derivati dell'adamantano#4
+N04BB01#Amantadina#5
+N04BC#Agonisti della dopamina#4
+N04BC01#Bromocriptina#5
+N04BC02#Pergolide#5
+N04BC03#Diidroergocriptina#5
+N04BC04#Ropinirolo#5
+N04BC05#Pramipexolo#5
+N04BC06#Cabergolina#5
+N04BC07#Apomorfina#5
+N04BC08#Piribedil#5
+N04BC09#Rotigotina#5
+N04BD#Inibitori della monoaminoossidasi di tipo B#4
+N04BD01#Selegilina#5
+N04BD02#Rasagilina#5
+N04BX#Altre sostanze dopaminergiche#4
+N04BX01#Tolcapone#5
+N04BX02#Entacapone#5
+N04BX03#Budipina#5
+N05#Psicolettici#2
+N05A#Antipsicotici#3
+N05AA#Fenotiazine con catena laterale alifatica#4
+N05AA01#Clorpromazina#5
+N05AA02#Levomepromazina#5
+N05AA03#Promazina#5
+N05AA04#Acepromazina#5
+N05AA05#Triflupromazina#5
+N05AA06#Ciamemazina#5
+N05AA07#Clorproetazina#5
+N05AB#Fenotiazine con struttura piperazinica#4
+N05AB01#Dixirazina#5
+N05AB02#Flufenazina#5
+N05AB03#Perfenazina#5
+N05AB04#Proclorperazina#5
+N05AB05#Tiopropazato#5
+N05AB06#Trifluoperazina#5
+N05AB07#Acetofenazina#5
+N05AB08#Tioproperazina#5
+N05AB09#Butaperazina#5
+N05AB10#Perazina#5
+N05AC#Fenotiazine con struttura piperidinica#4
+N05AC01#Periciazina#5
+N05AC02#Tioridazina#5
+N05AC03#Mesoridazina#5
+N05AC04#Pipotiazina#5
+N05AD#Derivati del butirrofenone#4
+N05AD01#Aloperidolo#5
+N05AD02#Trifluperidolo#5
+N05AD03#Melperone#5
+N05AD04#Moperone#5
+N05AD05#Pipamperone#5
+N05AD06#Bromperidolo#5
+N05AD07#Benperidolo#5
+N05AD08#Droperidolo#5
+N05AD09#Fluanisone#5
+N05AE#Derivati dell'indolo#4
+N05AE01#Ossipertina#5
+N05AE02#Molindone#5
+N05AE03#Sertindolo#5
+N05AE04#Ziprasidone#5
+N05AF#Derivati del tioxantene#4
+N05AF01#Flupentixolo#5
+N05AF02#Clopentixolo#5
+N05AF03#Clorprotixene#5
+N05AF04#Tiotixene#5
+N05AF05#Zuclopentixolo#5
+N05AG#Derivati della difenilbutilpiperidina#4
+N05AG01#Fluspirilene#5
+N05AG02#Pimozide#5
+N05AG03#Penfluridolo#5
+N05AH#Diazepine, oxazepine e tiazepine#4
+N05AH01#Loxapina#5
+N05AH02#Clozapina#5
+N05AH03#Olanzapina#5
+N05AH04#Quetiapina#5
+N05AH05#Asenapina#5
+N05AH06#Clotiapina#5
+N05AL#Benzamidi#4
+N05AL01#Sulpiride#5
+N05AL02#Sultopride#5
+N05AL03#Tiapride#5
+N05AL04#Remoxipride#5
+N05AL05#Amisulpride#5
+N05AL06#Veralipride#5
+N05AL07#Levosulpiride#5
+N05AN#Litio#4
+N05AN01#Litio#5
+N05AX#Altri antipsicotici#4
+N05AX07#Protipendil#5
+N05AX08#Risperidone#5
+N05AX10#Mosapramina#5
+N05AX11#Zotepina#5
+N05AX12#Aripiprazolo#5
+N05AX13#Paliperidone#5
+N05B#Ansiolitici#3
+N05BA#Derivati benzodiazepinici#4
+N05BA01#Diazepam#5
+N05BA02#Clordiazepossido#5
+N05BA03#Medazepam#5
+N05BA04#Oxazepam#5
+N05BA05#Potassio clorazepato#5
+N05BA06#Lorazepam#5
+N05BA07#Adinazolam#5
+N05BA08#Bromazepam#5
+N05BA09#Clobazam#5
+N05BA10#Ketazolam#5
+N05BA11#Prazepam#5
+N05BA12#Alprazolam#5
+N05BA13#Alazepam#5
+N05BA14#Pinazepam#5
+N05BA15#Camazepam#5
+N05BA16#Nordazepam#5
+N05BA17#Fludiazepam#5
+N05BA18#Etile loflazepato#5
+N05BA19#Etizolam#5
+N05BA21#Clotiazepam#5
+N05BA22#Cloxazolam#5
+N05BA23#Tofisopam#5
+N05BA56#Lorazepam, associazioni#5
+N05BB#Derivati del difenilmetano#4
+N05BB01#Idrossizina#5
+N05BB02#Captodiame#5
+N05BB51#Idrossizina, associazioni#5
+N05BC#Carbamati#4
+N05BC01#Meprobamato#5
+N05BC03#Emilcamato#5
+N05BC04#Mebutamato#5
+N05BC51#Meprobamato, associazioni#5
+N05BD#Derivati del dibenzobicicloottadiene#4
+N05BD01#Benzoctamina#5
+N05BE#Derivati dell'azaspirodecandione#4
+N05BE01#Buspirone#5
+N05BX#Altri ansiolitici#4
+N05BX01#Mefenoxalone#5
+N05BX02#Gedocarnil#5
+N05BX03#Etifoxina#5
+N05C#Ipnotici e sedativi#3
+N05CA#Barbiturici, non associati#4
+N05CA01#Pentobarbital#5
+N05CA02#Amobarbital#5
+N05CA03#Butobarbital#5
+N05CA04#Barbital#5
+N05CA05#Aprobarbital#5
+N05CA06#Secobarbital#5
+N05CA07#Talbutal#5
+N05CA08#Vinilbital#5
+N05CA09#Vinbarbital#5
+N05CA10#Ciclobarbital#5
+N05CA11#Eptabarbital#5
+N05CA12#Reposal#5
+N05CA15#Metoexital#5
+N05CA16#Esobarbital#5
+N05CA19#Tiopental#5
+N05CA20#Etallobarbital#5
+N05CA21#Allobarbital#5
+N05CA22#Prossibarbal#5
+N05CB#Barbiturici, associazioni#4
+N05CB01#Associazioni di barbiturici#5
+N05CB02#Barbiturici in associazione con altri farmaci#5
+N05CC#Aldeidi e loro derivati#4
+N05CC01#Cloralio idrato#5
+N05CC02#Cloralodolo#5
+N05CC03#Acetilglicinamide cloralio idrato#5
+N05CC04#Dicloralfenazone#5
+N05CC05#Paraldeide#5
+N05CD#Derivati benzodiazepinici#4
+N05CD01#Flurazepam#5
+N05CD02#Nitrazepam#5
+N05CD03#Flunitrazepam#5
+N05CD04#Estazolam#5
+N05CD05#Triazolam#5
+N05CD06#Lormetazepam#5
+N05CD07#Temazepam#5
+N05CD08#Midazolam#5
+N05CD09#Brotizolam#5
+N05CD10#Quazepam#5
+N05CD11#Loprazolam#5
+N05CD12#Doxefazepam#5
+N05CD13#Cinolazepam#5
+N05CE#Derivati del piperidindione#4
+N05CE01#Glutetimide#5
+N05CE02#Metiprilone#5
+N05CE03#Piritildione#5
+N05CF#Analoghi delle benzodiazepine#4
+N05CF01#Zopiclone#5
+N05CF02#Zolpidem#5
+N05CF03#Zaleplon#5
+N05CF04#Eszopiclone#5
+N05CH#Agonisti dei recettori della melatonina#4
+N05CH01#Melatonin#5
+N05CH02#Ramelteon#5
+N05CM#Altri ipnotici e sedativi#4
+N05CM01#Metaqualone#5
+N05CM02#Clometiazolo#5
+N05CM03#Bromisoval#5
+N05CM04#Carbromal#5
+N05CM05#Scopolamina#5
+N05CM06#Propiomazina#5
+N05CM07#Triclofos#5
+N05CM08#Etclorvinolo#5
+N05CM09#Valeriana#5
+N05CM10#Esapropimato#5
+N05CM11#Bromuri#5
+N05CM12#Apronal#5
+N05CM13#Valnoctamide#5
+N05CM15#Metilpentinolo#5
+N05CM16#Niaprazina#5
+N05CM18#Desmedetomidina#5
+N05CX#Ipnotici e sedativi in associazione, esclusi i barbiturici#4
+N05CX01#Meprobamato, associazioni#5
+N05CX02#Metaqualone, associazioni#5
+N05CX03#Metilpentinolo, associazioni#5
+N05CX04#Clometiazolo, associazioni#5
+N05CX05#Emepronio, associazioni#5
+N05CX06#Dipiperonilaminoetanolo, associazioni#5
+N06#Psicoanalettici#2
+N06A#Antidepressivi#3
+N06AA#Inibitori non selettivi della ricaptazione di monoamine#4
+N06AA01#Desipramina#5
+N06AA02#Imipramina#5
+N06AA03#Imipramina ossido#5
+N06AA04#Clomipramina#5
+N06AA05#Opipramolo#5
+N06AA06#Trimipramina#5
+N06AA07#Lofepramina#5
+N06AA08#Dibenzepina#5
+N06AA09#Amitriptilina#5
+N06AA10#Nortriptilina#5
+N06AA11#Protriptilina#5
+N06AA12#Doxepina#5
+N06AA13#Iprindolo#5
+N06AA14#Melitracene#5
+N06AA15#Butriptilina#5
+N06AA16#Dosulepina#5
+N06AA17#Amoxapina#5
+N06AA18#Dimetacrina#5
+N06AA19#Amineptina#5
+N06AA21#Maprotilina#5
+N06AA23#Quinupramina#5
+N06AB#Inibitori selettivi della ricaptazione di serotonina#4
+N06AB02#Zimeldina#5
+N06AB03#Fluoxetina#5
+N06AB04#Citalopram#5
+N06AB05#Paroxetina#5
+N06AB06#Sertralina#5
+N06AB07#Alaproclato#5
+N06AB08#Fluvoxamina#5
+N06AB09#Etoperidone#5
+N06AB10#Escitalopram#5
+N06AF#Inibitori della monoamino ossidasi, non selettivi#4
+N06AF01#Isocarboxazide#5
+N06AF02#Nialamide#5
+N06AF03#Fenelzina#5
+N06AF04#Tranilcipromina#5
+N06AF05#Iproniazide#5
+N06AF06#Iproclozide#5
+N06AG#Inibitori della monoamino ossidasi di tipo A#4
+N06AG02#Moclobemide#5
+N06AG03#Toloxatone#5
+N06AX#Altri antidepressivi#4
+N06AX01#Oxitriptano#5
+N06AX02#Triptofano#5
+N06AX03#Mianserina#5
+N06AX04#Nomifensina#5
+N06AX05#Trazodone#5
+N06AX06#Nefazodone#5
+N06AX07#Minaprina#5
+N06AX08#Bifemelano#5
+N06AX09#Viloxazina#5
+N06AX10#Oxaflozano#5
+N06AX11#Mirtazapina#5
+N06AX12#Bupropione#5
+N06AX13#Medifoxamina#5
+N06AX14#Tianeptina#5
+N06AX15#Pivagabina#5
+N06AX16#Venlafaxina#5
+N06AX17#Milnacipran#5
+N06AX18#Reboxetina#5
+N06AX19#Gepirone#5
+N06AX21#Duloxetina#5
+N06AX22#Agomelatina#5
+N06AX23#Desvenlafaxina#5
+N06AX25#IPERICO ERBA#5
+N06AX26#VORTIOXETINA#5
+N06B#Psicostimolanti, farmaci per l'ADHD e nootropi#3
+N06BA#Simpaticomimetici ad azione centrale#4
+N06BA01#Amfetamina#5
+N06BA02#Dexamfetamina#5
+N06BA03#Metamfetamina#5
+N06BA04#Metilfenidato#5
+N06BA05#Pemolina#5
+N06BA06#Fencamfamina#5
+N06BA07#Modafinil#5
+N06BA08#Fenozolone#5
+N06BA09#Atomoxetina#5
+N06BA10#Fenetillina#5
+N06BA11#Dexmetilfenidato#5
+N06BA12#lisdexamfetamine#5
+N06BC#Derivati xantinici#4
+N06BC01#Caffeina#5
+N06BC02#Propentofillina#5
+N06BX#Altri psicostimolanti e nootropi#4
+N06BX01#Meclofenoxato#5
+N06BX02#Piritinolo#5
+N06BX03#Piracetam#5
+N06BX04#Deanolo#5
+N06BX05#Fipexide#5
+N06BX06#Citicolina#5
+N06BX07#Oxiracetam#5
+N06BX08#Pirisudanolo#5
+N06BX09#Linopirdina#5
+N06BX10#Nizofenone#5
+N06BX11#Aniracetam#5
+N06BX12#Acetilcarnitina#5
+N06BX13#Idebenone#5
+N06BX14#Prolintano#5
+N06BX15#Pipradrol#5
+N06BX16#Pramiracetam#5
+N06BX17#Adrafinil#5
+N06BX18#Vinpocetina#5
+N06C#Associazioni di psicolettici e psicoanalettici#3
+N06CA#Antidepressivi in associazione con psicolettici#4
+N06CA01#Amitriptilina e psicolettici#5
+N06CA02#Melitracene e psicolettici#5
+N06CB#Psicostimolanti in associazione con psicolettici#4
+N06D#Farmaci antidemenza#3
+N06DA#Anticolinesterasici#4
+N06DA01#Tacrina#5
+N06DA02#Donepezil#5
+N06DA03#Rivastigmina#5
+N06DA04#Galantamina#5
+N06DX#Altri farmaci antidemenza#4
+N06DX01#Memantina#5
+N06DX02#Ginkgo biloba#5
+N07#Altri farmaci del sistema nervoso#2
+N07A#Parasimpaticomimetici#3
+N07AA#Anticolinesterasici#4
+N07AA01#Neostigmina#5
+N07AA02#Piridostigmina#5
+N07AA03#Distigmina#5
+N07AA30#Ambenonio#5
+N07AA51#Neostigmina, associazioni#5
+N07AB#Esteri della colina#4
+N07AB01#Carbacolo#5
+N07AB02#Betanecolo cloruro#5
+N07AX#Altri parasimpaticomimetici#4
+N07AX01#Pilocarpina#5
+N07AX02#Colina alfoscerato#5
+N07AX03#Cevimelina#5
+N07B#Farmaci usati nei disordini da assuefazione#3
+N07BA#Sostanze contro il fumo#4
+N07BA01#Nicotina#5
+N07BA03#Vareniclina#5
+N07BB#Farmaci utilizzati nella dipendenza da alcool#4
+N07BB01#Disulfiram#5
+N07BB02#Calcio carbimide#5
+N07BB03#Acamprosato#5
+N07BB04#Naltrexone#5
+N07BB05#Nalmefene#5
+N07BC#Droghe utilizzate nella dipendenza da oppiodi#4
+N07BC01#Buprenorfina#5
+N07BC02#Metadone#5
+N07BC03#Levacetilmetadolo#5
+N07BC04#Lofexidina#5
+N07BC51#Buprenorfina, associazioni#5
+N07C#Preparati antivertigine#3
+N07CA#Preparati antivertigine#4
+N07CA01#Betaistina#5
+N07CA02#Cinnarizina#5
+N07CA03#Flunarizina#5
+N07CA04#Acetilleucina#5
+N07CA52#Cinnarizina, associazioni#5
+N07X#Altri farmaci del sistema nervoso#3
+N07XA#Gangliosidi e derivati#4
+N07XX#Altri farmaci del sistema nervoso#4
+N07XX01#Tirilazad#5
+N07XX02#Riluzolo#5
+N07XX03#Gepirone#5
+N07XX04#Acido idrossibutirrico#5
+N07XX05#Amifampridina#5
+N07XX06#Tetrabenazina#5
+N07XX07#fampridine#5
+N07XX08#tafamidis#5
+N07XX09#DIMETILFUMARATO#5
+N07XX59#dextromethorphan, combinations#5
+P#FARMACI ANTIPARASSITARI, INSETTICIDI E REPELLENTI#1
+P01#Antiprotozoari#2
+P01A#Sostanze contro l'amebiasi e altre affezioni protozoarie#3
+P01AA#Derivati idrossichinolinici#4
+P01AA01#Brossichinolina#5
+P01AA02#Cliochinolo#5
+P01AA04#Clorchinaldolo#5
+P01AA05#Tilbrochinolo#5
+P01AA52#Cliochinolo, associazioni#5
+P01AB#Derivati nitroimidazolici#4
+P01AB01#Metronidazolo#5
+P01AB02#Tinidazolo#5
+P01AB03#Ornidazolo#5
+P01AB04#Azanidazolo#5
+P01AB05#Propenidazolo#5
+P01AB06#Nimorazolo#5
+P01AB07#Secnidazolo#5
+P01AC#Derivati della dicloroacetamide#4
+P01AC01#Diloxanide#5
+P01AC02#Clefamide#5
+P01AC03#Etofamide#5
+P01AC04#Teclozan#5
+P01AR#Composti dell'arsenico#4
+P01AR01#Arstinolo#5
+P01AR02#Difetarsone#5
+P01AR03#Glicobiarsolo#5
+P01AR53#Glicobiarsolo, associazioni#5
+P01AX#Altre sostanze contro l'amebiasi e altre affezioni protozoarie#4
+P01AX01#Chiniofon#5
+P01AX02#Emetina#5
+P01AX04#Fanchinone#5
+P01AX05#Mepacrina#5
+P01AX06#Atovaquone#5
+P01AX07#Trimetrexate#5
+P01AX08#Tenonitrozolo#5
+P01AX09#Diidroemetina#5
+P01AX10#Fumagillina#5
+P01AX11#Nitazoxanide#5
+P01AX52#Emetina, associazioni#5
+P01B#Antimalarici#3
+P01BA#Aminochinoline#4
+P01BA01#Clorochina#5
+P01BA02#Idrossiclorochina#5
+P01BA03#Primachina#5
+P01BA06#Amodiachina#5
+P01BB#Biguanidi#4
+P01BB01#Proguanil#5
+P01BB02#Cicloguanil embonato#5
+P01BB51#Proguanil, associazioni#5
+P01BC#Metanolchinoline#4
+P01BC01#Chinina#5
+P01BC02#Meflochina#5
+P01BD#Diaminopirimidine#4
+P01BD01#Pirimetamina#5
+P01BD51#Pirimetamina, associazioni#5
+P01BE#Artemisina e derivati#4
+P01BE01#Artemisinina#5
+P01BE02#Artemeter#5
+P01BE03#Artesunato#5
+P01BE04#Artemotil#5
+P01BE05#Artenimol#5
+P01BE52#Artemeter,associazioni#5
+P01BF#Artemisinin e derivatives, combinations#4
+P01BF01#artemether e lumefantrine#5
+P01BF02#artesunate e mefloquine#5
+P01BF03#artesunate e amodiaquine#5
+P01BF04#artesunate, sulphamethopyrazine e pyrimethamine#5
+P01BF05#artenimol e piperaquine#5
+P01BF06#artesunate e pyronaridine#5
+P01BX#Altri antimalarici#4
+P01BX01#Alofantrine#5
+P01C#Sostanze contro la leishmaniosi e la tripanosomiasi#3
+P01CA#Derivati nitroimidazolici#4
+P01CA02#Benznidazolo#5
+P01CB#Composti dell'antimonio#4
+P01CB01#Meglumina stibiato#5
+P01CB02#Sodio stibogluconato#5
+P01CC#Derivati nitrofuranici#4
+P01CC01#Nifurtimox#5
+P01CC02#Nitrofural#5
+P01CD#Composti dell'arsenico#4
+P01CD01#Melarsoprolo#5
+P01CD02#Acetarsolo#5
+P01CX#Altre sostanze contro la leishmaniosi e la tripanosomiasi#4
+P01CX01#Pentamidina#5
+P01CX02#Suramina sodica#5
+P01CX03#Eflornitina#5
+P02#Antielmintici#2
+P02B#Antitrematodi#3
+P02BA#Derivati chinolinici e sostanze correlate#4
+P02BA01#Praziquantel#5
+P02BA02#Oxamnichina#5
+P02BB#Composti organofosforici#4
+P02BB01#Metrifonato#5
+P02BX#Altri antitrematodi#4
+P02BX01#Bitionolo#5
+P02BX02#Niridazolo#5
+P02BX03#Stibofene#5
+P02BX04#Triclabendazolo#5
+P02C#Antinematodi#3
+P02CA#Derivati benzimidazolici#4
+P02CA01#Mebendazolo#5
+P02CA02#Tiabendazolo#5
+P02CA03#Albendazolo#5
+P02CA04#Ciclobendazolo#5
+P02CA05#Flubendazolo#5
+P02CA06#Fenbendazolo#5
+P02CA51#Mebendazolo, associazioni#5
+P02CB#Piperazina e derivati#4
+P02CB01#Piperazina#5
+P02CB02#Dietilcarbamazina#5
+P02CC#Derivati della tetraidropirimidina#4
+P02CC01#Pirantele#5
+P02CC02#Oxantel#5
+P02CE#Derivati dell'imidazotiazolo#4
+P02CE01#Levamisolo#5
+P02CF#Avermectine#4
+P02CF01#Ivermectina#5
+P02CX#Altri antinematodi#4
+P02CX01#Pirvinio#5
+P02CX02#Befenio#5
+P02D#Anticestodi#3
+P02DA#Derivati dell'acido salicilico#4
+P02DA01#Niclosamide#5
+P02DX#Altri anticestodi#4
+P02DX01#Desaspidina#5
+P02DX02#Diclorofene#5
+P03#Ectoparassiticidi, compresi gli antiscabbia, insetticidi e repellenti#2
+P03A#Ectoparassiticidi, compresi gli antiscabbia#3
+P03AA#Prodotti contenenti zolfo#4
+P03AA01#Dixantogen#5
+P03AA02#Potassio polisolfuro#5
+P03AA03#Mesulfen#5
+P03AA04#Disulfiram#5
+P03AA05#Thiram#5
+P03AA54#Disulfiram, associazioni#5
+P03AB#Prodotti contenenti cloro#4
+P03AB01#Clofenotano#5
+P03AB02#Lindaneo#5
+P03AB51#Clofenotano, associazioni#5
+P03AC#Piretrine, inclusi i composti sintetici#4
+P03AC01#Piretro#5
+P03AC02#Bioalletrina#5
+P03AC03#Fenotrina#5
+P03AC04#Permetrina#5
+P03AC51#Piretro, associazioni#5
+P03AC52#Bioalletrina, associazioni#5
+P03AC53#Fenotrina, associazioni#5
+P03AC54#Permetrina, associazioni#5
+P03AX#Altri ectoparassiticidi, compresi gli antiscabbia#4
+P03AX01#Benzile benzoato#5
+P03AX02#Rame oleinato#5
+P03AX03#Malathion#5
+P03AX04#Quassia#5
+P03B#Insetticidi e repellenti#3
+P03BA#Piretrine#4
+P03BA01#Ciflutrina#5
+P03BA02#Cipermetrina#5
+P03BA03#Decametrina#5
+P03BA04#Tetrametrina#5
+P03BX#Altri insetticidi e repellenti#4
+P03BX01#Dietiltoluamide#5
+P03BX02#Dimetilftalato#5
+P03BX03#Dibutilftalato#5
+P03BX04#Dibutilsuccinato#5
+P03BX05#Dimetilcarbato#5
+P03BX06#Etoesadiolo#5
+R#SISTEMA RESPIRATORIO#1
+R01#Preparati rinologici#2
+R01A#Decongestionanti nasali per uso topico#3
+R01AA#Simpaticomimetici, non associati#4
+R01AA02#Ciclopentamina#5
+R01AA03#Efedrina cloridrato#5
+R01AA04#Fenilefrina#5
+R01AA05#Ossimetazolina#5
+R01AA06#Tetrizolina#5
+R01AA07#Xilometazolina#5
+R01AA08#Nafazolina#5
+R01AA09#Tramazolina#5
+R01AA10#Metizolina#5
+R01AA11#Tuaminoeptano#5
+R01AA12#Fenoxazolina#5
+R01AA13#Timazolina#5
+R01AA14#Epinefrina#5
+R01AB#Simpaticomimetici, associazioni esclusi i corticosteroidi#4
+R01AB01#Fenilefrina#5
+R01AB02#Nafazolina#5
+R01AB03#Tetrizolina#5
+R01AB05#Efedrina#5
+R01AB06#Xilometazolina#5
+R01AB07#Ossimetazolina#5
+R01AB08#Tuaminoeptano#5
+R01AC#Sostanze antiallergiche, esclusi i corticosteroidi#4
+R01AC01#Acido cromoglicico#5
+R01AC02#Levocabastina#5
+R01AC03#Azelastina#5
+R01AC04#Antazolina#5
+R01AC05#Acido spaglumico#5
+R01AC06#Tonzilamina#5
+R01AC07#Nedocromile#5
+R01AC08#Olopatadina#5
+R01AC51#Acido cromoglicico, associazioni#5
+R01AD#Corticosteroidi#4
+R01AD01#Beclometasone#5
+R01AD02#Prednisolone#5
+R01AD03#Desametasone#5
+R01AD04#Flunisolide#5
+R01AD05#Budesonide#5
+R01AD06#Betametasone#5
+R01AD07#Tixocortolo#5
+R01AD08#Fluticasone#5
+R01AD09#Mometasone#5
+R01AD11#Triamcinolone#5
+R01AD12#Fluticasone furoato#5
+R01AD52#Prednisolone, associazioni#5
+R01AD53#Desametasone, associazioni#5
+R01AD57#Tixocortolo, associazioni#5
+R01AD58#Fluticasone, Associazioni#5
+R01AD60#Idrocortisone, associazioni#5
+R01AX#Altre preparazioni nasali#4
+R01AX01#Calcio esamina tiocianato#5
+R01AX02#Retinolo#5
+R01AX03#Ipratropio bromuro#5
+R01AX05#Ritiometano#5
+R01AX06#Mupirocina#5
+R01AX07#Examidina#5
+R01AX08#Framicetina#5
+R01AX09#Acido ialuronico#5
+R01AX10#Vari#5
+R01AX30#Terpeni#5
+R01B#Decongestionanti nasali per uso sistemico#3
+R01BA#Simpaticomimetici#4
+R01BA01#Fenilpropanolamina#5
+R01BA02#Pseudoefedrina#5
+R01BA03#Fenilefrina#5
+R01BA51#Fenilpropanolamina, associazioni#5
+R01BA52#Pseudoefedrina, associazioni#5
+R01BA53#Fenilefrina, associazioni#5
+R02#Preparati per il cavo faringeo#2
+R02A#Preparati per il cavo faringeo#3
+R02AA#Antisettici#4
+R02AA01#Ambazone#5
+R02AA02#Dequalinio cloruro#5
+R02AA03#Diclorofenilcarbinolo#5
+R02AA05#Clorexidina#5
+R02AA06#Cetilpiridinio cloruro#5
+R02AA09#Benzetonio#5
+R02AA10#Miristil-benzalconio#5
+R02AA11#Clorchinaldolo#5
+R02AA12#Esilresorcinolo#5
+R02AA13#Acriflavinio cloruro#5
+R02AA14#Ossichinolina#5
+R02AA15#Iodopovidone#5
+R02AA16#Benzalconio#5
+R02AA17#Cetrimonio#5
+R02AA18#Examidina#5
+R02AA19#Fenolo#5
+R02AA20#Vari#5
+R02AB#Antibiotici#4
+R02AB01#Neomicina#5
+R02AB02#Tirotricina#5
+R02AB03#Fusafungina#5
+R02AB04#Bacitracina#5
+R02AB30#Gramicidina#5
+R02AD#Anestetici locali#4
+R02AD01#Benzocaina#5
+R02AD02#Lidocaina#5
+R02AD03#Cocaina#5
+R02AD04#Diclonina#5
+R02AX#Altri preparati per il cavo faringeo#4
+R02AX01#Flurbiprofene#5
+R03#Farmaci per le malattie ostruttive delle vie aeree#2
+R03A#Adrenergici, per inalazione#3
+R03AA#Agonisti dei recettori alfa e beta adrenergici#4
+R03AA01#Adrenalina#5
+R03AB#Agonisti non selettivi dei recettori beta adrenergici#4
+R03AB02#Isoproterenolo#5
+R03AB03#Orciprenalina#5
+R03AC#Agonisti selettivi dei recettori beta2-adrenergici#4
+R03AC02#Salbutamolo#5
+R03AC03#Terbutalina#5
+R03AC04#Fenoterolo#5
+R03AC05#Rimiterolo#5
+R03AC06#Esoprenalina#5
+R03AC07#Isoetarina#5
+R03AC08#Pirbuterolo#5
+R03AC09#Tretochinolo#5
+R03AC10#Carbuterolo#5
+R03AC11#Tulobuterolo#5
+R03AC12#Salmeterolo#5
+R03AC13#Formoterolo#5
+R03AC14#Clenbuterolo#5
+R03AC15#Reproterolo#5
+R03AC16#Procaterolo#5
+R03AC17#Bitolterolo#5
+R03AC18#Indacaterolo#5
+R03AH#Associazioni di adrenergici#4
+R03AK#Adrenergici e altri farmaci per le malattie ostruttive delle vie aeree#4
+R03AK01#Adrenalina e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK02#Isoproterenolo e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK03#Fenoterolo e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK04#Salbutamolo e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK05#Reproterolo e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK06#Salmeterolo e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK07#Formoterolo e altri farmaci per le malattie ostruttive delle vie aeree#5
+R03AK08#Formoterolo + Beclometasone#5
+R03AK10#VILANTEROLO E FLUTICASONE FUROATO#5
+R03AK11#Formoterolo + Fluticasone#5
+R03AL#Adrenergici in Associazione con Anticolinergici#4
+R03AL01#FENOTEROLO E IPRATROPIO BROMURO#5
+R03AL02#Salbutamolo + Ipratropio Bromuro#5
+R03AL03#VILANTEROLO E UMECLIDINIO BROMURO#5
+R03AL04#Indacaterolo e Glicopirronio Bromuro#5
+R03AL05#FORMOTEROLO ED ACLIDINIO BROMURO#5
+R03B#Altri farmaci per le malattie ostruttive delle vie aeree, per inalazione#3
+R03BA#Glucocorticoidi#4
+R03BA01#Beclometasone#5
+R03BA02#Budesonide#5
+R03BA03#Flunisolide#5
+R03BA04#Betametasone#5
+R03BA05#Fluticasone#5
+R03BA06#Triamcinolone#5
+R03BA07#Mometasone#5
+R03BA08#Ciclesonide#5
+R03BB#Anticolinergici#4
+R03BB01#Ipratropio bromuro#5
+R03BB02#Ossitropio bromuro#5
+R03BB03#Stramonio#5
+R03BB04#Tiotropio bromuro#5
+R03BB05#ACLIDINIO BROMURO#5
+R03BB06#GLICOPIRRONIO BROMURO#5
+R03BB07#UMECLIDINIO BROMURO#5
+R03BC#Sostanze antiallergiche, esclusi i corticosteroidi#4
+R03BC01#Acido cromoglicato#5
+R03BC03#Nedocromile#5
+R03BX#Altri farmaci per le malattie ostruttive delle vie aeree, per inalazione#4
+R03BX01#Fenspiride#5
+R03C#Adrenergici per uso sistemico#3
+R03CA#Agonisti dei recettori alfa e beta adrenergici#4
+R03CA02#Efedrina#5
+R03CB#Agonisti non selettivi dei recettori beta adrenergici#4
+R03CB01#Isoproterenolo#5
+R03CB02#Metossifenamina#5
+R03CB03#Orciprenalina#5
+R03CB51#Isoprenalina, associazioni#5
+R03CB53#Orciprenalina, associazioni#5
+R03CC#Agonisti selettivi dei recettori beta2-adrenergici#4
+R03CC02#Salbutamolo#5
+R03CC03#Terbutalina#5
+R03CC04#Fenoterolo#5
+R03CC05#Esoprenalina#5
+R03CC06#Isoetarina#5
+R03CC07#Pirbuterolo#5
+R03CC08#Procaterolo#5
+R03CC09#Tretochinolo#5
+R03CC10#Carbuterolo#5
+R03CC11#Tulobuterolo#5
+R03CC12#Bambuterolo cloridrato#5
+R03CC13#Clenbuterolo#5
+R03CC14#Reproterolo#5
+R03CC53#Terbutalina, associazioni#5
+R03CK#Adrenergici ed altri antiasmatici#4
+R03D#Altri farmaci sistemici per le malattie ostruttive delle vie aeree#3
+R03DA#Derivati xantinici#4
+R03DA01#Diprofillina#5
+R03DA02#Colina teofillinacetato#5
+R03DA03#Prossifillina#5
+R03DA04#Teofillina#5
+R03DA05#Aminofillina#5
+R03DA06#Etamifillina#5
+R03DA07#Teobromina#5
+R03DA08#Bamifillina#5
+R03DA09#Acefillina piperazina#5
+R03DA10#Bufillina#5
+R03DA11#Doxofillina#5
+R03DA20#Associazioni di xantine#5
+R03DA51#Diprofillina, associazioni#5
+R03DA54#Teofillina, associazioni escl. psicolettici#5
+R03DA55#Aminofillina, associazioni#5
+R03DA57#Teobromina, associazioni#5
+R03DA74#Teofillina, associazioni con psicolettici#5
+R03DB#Derivati xantinici e adrenergici#4
+R03DB01#Diprofillina e adrenergici#5
+R03DB02#Colina teofillinato e adrenergici#5
+R03DB03#Prossifillina e adrenergici#5
+R03DB04#Teofillina e adrenergici#5
+R03DB05#Aminofillina e adrenergici#5
+R03DB06#Etamifillina e adrenergici#5
+R03DC#Antagonisti dei recettori dei leucotrieni#4
+R03DC01#Zafirlukast#5
+R03DC02#Pranlukast#5
+R03DC03#Montelukast#5
+R03DC04#Ibudilast#5
+R03DX#Altri farmaci sistemici per le malattie ostruttive delle vie aeree#4
+R03DX01#Amlexanox#5
+R03DX02#Eprozinolo#5
+R03DX03#Fenspiride#5
+R03DX05#Omalizumab#5
+R03DX06#Seratrodast#5
+R03DX07#Roflumilast#5
+R05#Preparati per la tosse e le malattie da raffreddamento#2
+R05C#Espettoranti, escluse le associazioni con antitosse#3
+R05CA#Espettoranti#4
+R05CA01#Tiloxapolo#5
+R05CA02#Potassio ioduro#5
+R05CA03#Guaifenesina#5
+R05CA04#Ipecacuana#5
+R05CA05#Altea radice#5
+R05CA06#Senega#5
+R05CA07#Antimonio pentasolfuro#5
+R05CA08#Creosoto#5
+R05CA09#Solfoguaiacolo#5
+R05CA10#Terpeni#5
+R05CA11#Verbenone#5
+R05CB#Mucolitici#4
+R05CB01#Acetilcisteina#5
+R05CB02#Bromexina#5
+R05CB03#Carbocisteina#5
+R05CB04#Eprazinone#5
+R05CB05#Mesna#5
+R05CB06#Ambroxolo#5
+R05CB07#Sobrerolo#5
+R05CB08#Domiodolo#5
+R05CB09#Letosteina#5
+R05CB10#Associazioni#5
+R05CB11#Stepronina#5
+R05CB12#Tiopronina#5
+R05CB13#Dornasi alfa (desossiribonucleasi)#5
+R05CB14#Neltenexina#5
+R05CB15#Erdosteina#5
+R05CB16#mannitol#5
+R05D#Antitosse, escluse le associazioni con espettoranti#3
+R05DA#Alcaloidi dell'oppio e suoi derivati#4
+R05DA01#Etilmorfina#5
+R05DA03#Idrocodone#5
+R05DA04#Codeina#5
+R05DA05#Alcaloidi dell'oppio con morfina#5
+R05DA06#Normetadone#5
+R05DA07#Noscapina#5
+R05DA08#Folcodina#5
+R05DA09#Destrometorfano#5
+R05DA10#Tebacone#5
+R05DA11#Dimemorfano#5
+R05DA12#Acetildiidrocodeina#5
+R05DA20#Associazioni#5
+R05DB#Altri sedativi della tosse#4
+R05DB01#Benzonatato#5
+R05DB02#Benproperina#5
+R05DB03#Clobutinolo#5
+R05DB04#Isoaminile#5
+R05DB05#Pentossiverina#5
+R05DB07#Oxolamina#5
+R05DB09#Oxeladina#5
+R05DB10#Clofedanolo#5
+R05DB11#Pipazetato#5
+R05DB12#Bibenzonio bromuro#5
+R05DB13#Butamirato#5
+R05DB14#Fedrilato#5
+R05DB15#Zipeprolo#5
+R05DB16#Dibunato#5
+R05DB17#Drossipropina#5
+R05DB18#Prenoxdiazina#5
+R05DB19#Dropropizina#5
+R05DB20#Associazioni#5
+R05DB21#Cloperastina#5
+R05DB22#Meprotixolo#5
+R05DB23#Piperidione#5
+R05DB24#Tipepidina#5
+R05DB25#Morclofone#5
+R05DB26#Nepinalone#5
+R05DB27#Levodropropizina#5
+R05DB28#Dimetossanato#5
+R05F#Antitosse ed espettoranti, associazioni#3
+R05FA#Derivati dell'oppio ed espettoranti#4
+R05FA01#Derivati dell'oppio e mucolitici#5
+R05FA02#Derivati dell'oppio ed espectoranti#5
+R05FB#Sedativi della tosse ed espettoranti#4
+R05FB01#Sedativi della tosse e mucolitici#5
+R05FB02#Sedativi della tosse ed espectoranti#5
+R05X#Altre associazioni di preparati per malattie da raffreddamento#3
+R06#Antiistaminici per uso sistemico#2
+R06A#Antiistaminici per uso sistemico#3
+R06AA#Eteri aminoalchilici#4
+R06AA01#Bromazina#5
+R06AA02#Difenidramina#5
+R06AA04#Clemastina#5
+R06AA06#Clorfenossamina#5
+R06AA07#Difenilpiralina#5
+R06AA08#Carbinossamina#5
+R06AA09#Doxilamina#5
+R06AA52#Difenidramina, associazioni#5
+R06AA54#Clemastina, associazioni#5
+R06AA56#Clorfenossamina, associazioni#5
+R06AA57#Difenilpiralina, associazioni#5
+R06AB#Alchilamine sostituite#4
+R06AB01#Bromfeniramina#5
+R06AB02#Desclorfeniramina#5
+R06AB03#Dimetindene#5
+R06AB04#Clorfenamina#5
+R06AB05#Feniramina#5
+R06AB06#Desbromfeniramina#5
+R06AB07#Talastina#5
+R06AB51#Bromfeniramina, associazioni#5
+R06AB52#Dexclorfeniramina, associazioni#5
+R06AB54#Clorfenamina, associazioni#5
+R06AB56#Desbromfeniramina, associazioni#5
+R06AC#Etilendiamine sostituite#4
+R06AC01#Mepiramina#5
+R06AC02#Istapirrodina#5
+R06AC03#Cloropiramina#5
+R06AC04#Tripelennamina#5
+R06AC05#Metapirilene#5
+R06AC06#Tonzilamina#5
+R06AC52#Istapirrodina, associazioni#5
+R06AC53#Cloropiramina, associazioni#5
+R06AD#Derivati fenotiazinici#4
+R06AD01#Alimemazina#5
+R06AD02#Prometazina#5
+R06AD03#Tietilperazina#5
+R06AD04#Metdilazina#5
+R06AD05#Idrossietilprometazina#5
+R06AD06#Tiazinam#5
+R06AD07#Mequitazina#5
+R06AD08#Oxomemazina#5
+R06AD09#Isotipendile#5
+R06AD52#Prometazina, associazioni#5
+R06AD55#Idrossietilprometazina, associazioni#5
+R06AE#Derivati piperazinici#4
+R06AE01#Buclizina#5
+R06AE03#Ciclizina#5
+R06AE04#Clorciclizina#5
+R06AE05#Meclozina#5
+R06AE06#Oxatomide#5
+R06AE07#Cetirizina#5
+R06AE09#Levocetirizina#5
+R06AE51#Buclizina, associazioni#5
+R06AE53#Ciclizina, associazioni#5
+R06AE55#Meclozina, associazioni#5
+R06AK#Associazioni di antistaminici#4
+R06AX#Altri antiistaminici per uso sistemico#4
+R06AX01#Bamipina#5
+R06AX02#Ciproeptadina#5
+R06AX03#Tenalidina#5
+R06AX04#Fenindamina#5
+R06AX05#Antazolina#5
+R06AX07#Triprolidina#5
+R06AX08#Pirrobutamina#5
+R06AX09#Azatadina#5
+R06AX11#Astemizolo#5
+R06AX12#Terfenadina#5
+R06AX13#Loratadina#5
+R06AX15#Mebidrolina#5
+R06AX16#Deptropina#5
+R06AX17#Ketotifene#5
+R06AX18#Acrivastina#5
+R06AX19#Azelastina#5
+R06AX21#Tritoqualina#5
+R06AX22#Ebastina#5
+R06AX23#Pimetixene#5
+R06AX24#Epinastina#5
+R06AX25#Mizolastina#5
+R06AX26#Fexofenadina#5
+R06AX27#Desloratadina#5
+R06AX28#Rupatadina#5
+R06AX29#bilastine#5
+R06AX53#Tenalidina, associazioni#5
+R06AX58#Pirrobutamina, associazioni#5
+R07#Altri preparati per il sistema respiratorio#2
+R07A#Altri preparati per il sistema respiratorio#3
+R07AA#Surfattanti polmonari#4
+R07AA01#Colfosceril palmitato#5
+R07AA02#Fosfolipidi naturali#5
+R07AA30#Associazioni#5
+R07AB#Stimolanti respiratori#4
+R07AB01#Doxapram#5
+R07AB02#Niketamide#5
+R07AB03#Pentetrazolo#5
+R07AB04#Etamivan#5
+R07AB05#Bemegride#5
+R07AB06#Pretcamide#5
+R07AB07#Almitrina#5
+R07AB08#Dimeflina#5
+R07AB09#Mepixanox#5
+R07AB52#Niketamide, associazioni#5
+R07AB53#Pentetrazolo, associazioni#5
+R07AX#Altri preparati per il sistema respiratorio#4
+R07AX01#Ossido nitrico#5
+R07AX02#Ivacaftor#5
+R07AX30#IVACAFTOR E LUMACAFTOR#5
+S#ORGANI DI SENSO#1
+S01#Oftalmologici#2
+S01A#Antimicrobici#3
+S01AA#Antibiotici#4
+S01AA01#Cloramfenicolo#5
+S01AA02#Clortetraciclina#5
+S01AA03#Neomicina#5
+S01AA04#Ossitetraciclina#5
+S01AA05#Tirotricina#5
+S01AA07#Framicetina#5
+S01AA09#Tetraciclina#5
+S01AA10#Natamicina#5
+S01AA11#Gentamicina#5
+S01AA12#Tobramicina#5
+S01AA13#Acido fusidico#5
+S01AA14#Benzilpenicillina#5
+S01AA15#Diidrostreptomicina#5
+S01AA16#Rifamicina#5
+S01AA17#Eritromicina#5
+S01AA18#Polimixina B#5
+S01AA19#Ampicillina#5
+S01AA20#Antibiotici in associazione con altri farmaci#5
+S01AA21#Amikacina#5
+S01AA22#Micronomicina#5
+S01AA23#Netilmicina#5
+S01AA24#Kanamicina#5
+S01AA25#Azidamfenicolo#5
+S01AA26#Azitromicina#5
+S01AA27#Cefuroxima#5
+S01AA30#Associazioni di differenti antibiotici#5
+S01AB#Sulfamidici#4
+S01AB01#Sulfametizolo#5
+S01AB02#Sulfafurazolo#5
+S01AB03#Sulfadicramide#5
+S01AB04#Sulfacetamide#5
+S01AB05#Sulfafenazolo#5
+S01AD#Antivirali#4
+S01AD01#Idoxuridina#5
+S01AD02#Trifluridina#5
+S01AD03#Aciclovir#5
+S01AD05#Interferone#5
+S01AD06#Vidarabina#5
+S01AD07#Famciclovir#5
+S01AD08#Fomivirsen#5
+S01AD09#Ganciclovir#5
+S01AE#Fluoroquinolones#4
+S01AE01#ofloxacin#5
+S01AE02#norfloxacin#5
+S01AE03#ciprofloxacin#5
+S01AE04#lomefloxacin#5
+S01AE05#levofloxacin#5
+S01AE06#gatifloxacin#5
+S01AE07#moxifloxacin#5
+S01AE08#besifloxacin#5
+S01AX#Altri antimicrobici#4
+S01AX01#Composti del mercurio#5
+S01AX02#Composti dell'argento#5
+S01AX03#Composti dello zinco#5
+S01AX04#Nitrofural#5
+S01AX05#Bibrocatolo#5
+S01AX06#Resorcinolo#5
+S01AX07#Sodio borato#5
+S01AX08#Esamidina#5
+S01AX09#Clorexidina#5
+S01AX10#Propionato sodico#5
+S01AX11#Ofloxacina#5
+S01AX12#Norfloxacina#5
+S01AX13#Ciprofloxacina#5
+S01AX14#Dibrompropamidina#5
+S01AX15#Propamidina#5
+S01AX16#Piclossidina#5
+S01AX17#Lomefloxacina#5
+S01AX18#Iodopovidone#5
+S01AX19#Levofloxacina#5
+S01AX21#Gatifloxacina#5
+S01AX22#Moxifloxacina#5
+S01B#Antiinfiammatori#3
+S01BA#Corticosteroidi, non associati#4
+S01BA01#Desametasone#5
+S01BA02#Idrocortisone#5
+S01BA03#Cortisone#5
+S01BA04#Prednisolone#5
+S01BA05#Triamcinolone#5
+S01BA06#Betametasone#5
+S01BA07#Fluorometolone#5
+S01BA08#Medrisone#5
+S01BA09#Clobetasone#5
+S01BA10#Alclometasone#5
+S01BA11#Desonide#5
+S01BA12#Formocortal#5
+S01BA13#Rimexolone#5
+S01BA14#Loteprednolo#5
+S01BA15#Fluocinolone acetonide#5
+S01BB#Corticosteroidi e midriatici in associazione#4
+S01BB01#Idrocortisone e midriatici#5
+S01BB02#Prednisolone e midriatici#5
+S01BB03#Fluorometolone e midriatici#5
+S01BB04#Betametasone e midriatici#5
+S01BC#Antinfiammatori non steroidei#4
+S01BC01#Indometacina#5
+S01BC02#Ossifenbutazone#5
+S01BC03#Diclofenac#5
+S01BC04#Flurbiprofene#5
+S01BC05#Ketorolac#5
+S01BC06#Piroxicam#5
+S01BC07#Bendazac lisina#5
+S01BC08#Acido salicilico#5
+S01BC09#Pranoprofene#5
+S01BC10#Nepafenac#5
+S01BC11#Bromfenac#5
+S01C#Corticosteroidi e antiinfettivi in associazione#3
+S01CA#Corticosteroidi e antiinfettivi in associazione#4
+S01CA01#Desametasone e antiinfettivi#5
+S01CA02#Prednisolone e antiinfettivi#5
+S01CA03#Idrocortisone e antiinfettivi#5
+S01CA04#Fluocortolone e antiinfettivi#5
+S01CA05#Betametasone e antiinfettivi#5
+S01CA06#Fludrocortisone e antiinfettivi#5
+S01CA07#Fluorometolone e antiinfettivi#5
+S01CA08#Metilprednisolone e antiinfettivi#5
+S01CA09#Cloroprednisone e antiinfettivi#5
+S01CA10#Fluocinolone acetonide e antiinfettivi#5
+S01CA11#Clobetasone e antiinfettivi#5
+S01CB#Corticosteroidi/antimicrobici/midriatici in associazione#4
+S01CB01#Desametasone#5
+S01CB02#Prednisolone#5
+S01CB03#Idrocortisone#5
+S01CB04#Betametasone#5
+S01CB05#Fluorometolone#5
+S01CC#Antiinfiammatori non steroidei e antiinfettivi in associazione#4
+S01CC01#Diclofenac e antiinfettivi#5
+S01E#Preparazioni antiglaucoma e miotici#3
+S01EA#Simpaticomimetici per la terapia del glaucoma#4
+S01EA01#Adrenalina#5
+S01EA02#Dipivefrina#5
+S01EA03#Apraclonidina#5
+S01EA04#Clonidina#5
+S01EA05#Brimonidina#5
+S01EA51#Adrenalina, associazioni#5
+S01EB#Parasimpaticomimetici#4
+S01EB01#Pilocarpina#5
+S01EB02#Carbacolo#5
+S01EB03#Ecotiopato#5
+S01EB04#Demecario#5
+S01EB05#Fisostigmina#5
+S01EB06#Neostigmina#5
+S01EB07#Fluostigmina#5
+S01EB08#Aceclidina cloridrato#5
+S01EB09#Acetilcolina cloruro#5
+S01EB10#Paraoxon#5
+S01EB51#Pilocarpina, associazioni#5
+S01EB58#Aceclidina, associazioni#5
+S01EC#Inibitori dell'anidrasi carbonica#4
+S01EC01#Acetazolamide#5
+S01EC02#Diclofenamide#5
+S01EC03#Dorzolamide#5
+S01EC04#Brinzolamide#5
+S01EC05#Metazolamide#5
+S01EC54#Timololo + Brinzolamide#5
+S01ED#Sostanze beta bloccanti#4
+S01ED01#Timololo#5
+S01ED02#Betaxololo#5
+S01ED03#Levobunololo#5
+S01ED04#Metipranololo#5
+S01ED05#Carteololo#5
+S01ED06#Befunololo#5
+S01ED51#Timololo, associazioni#5
+S01ED52#Betaxololo, associazioni#5
+S01ED54#Metipranololo, associazioni#5
+S01ED55#Carteololo, associazioni#5
+S01EE#Analoghi delle prostaglandine#4
+S01EE01#Latanoprost#5
+S01EE02#Unoprostone#5
+S01EE03#Bimatoprost#5
+S01EE04#Travoprost#5
+S01EE05#Tafluprost#5
+S01EX#Altri preparati antiglaucoma#4
+S01EX01#Guanetidina#5
+S01EX02#Dapiprazolo#5
+S01F#Midriatici e cicloplegici#3
+S01FA#Anticolinergici#4
+S01FA01#Atropina#5
+S01FA02#Scopolamina#5
+S01FA03#Metilscopolamina#5
+S01FA04#Ciclopentolato#5
+S01FA05#Omatropina#5
+S01FA06#Tropicamide#5
+S01FA56#Tropicamide, associazioni#5
+S01FB#Simpaticomimetici, esclusi i preparati antiglaucoma#4
+S01FB01#Fenilefrina#5
+S01FB02#Efedrina#5
+S01FB03#Ibopamina#5
+S01G#Decongestionanti e antiallergici#3
+S01GA#Simpaticomimetici impiegati come decongestionanti#4
+S01GA01#Nafazolina#5
+S01GA02#Tetrizolina#5
+S01GA03#Xilometazolina#5
+S01GA04#Ossimetazolina#5
+S01GA05#Fenilefrina#5
+S01GA06#Oxedrina#5
+S01GA51#Nafazolina, associazioni#5
+S01GA52#Tetrizolina, associazioni#5
+S01GA53#Xilometazolina, associazioni#5
+S01GA55#Fenilefrina, associazioni#5
+S01GA56#Oxedrina, associazioni#5
+S01GX#Altri antiallergici#4
+S01GX01#Acido cromoglicato#5
+S01GX02#Levocabastina#5
+S01GX03#Acido spaglumico#5
+S01GX04#Nedocromile#5
+S01GX05#Lodoxamide#5
+S01GX06#Emedastina#5
+S01GX07#Azelastina#5
+S01GX08#Ketotifene#5
+S01GX09#Olopatadina#5
+S01GX10#Epinastine#5
+S01GX51#Acido cromoglicico, associazioni#5
+S01H#Anestetici locali#3
+S01HA#Anestetici locali#4
+S01HA01#Cocaina#5
+S01HA02#Ossibuprocaina#5
+S01HA03#Tetracaina#5
+S01HA04#Prossimetacaina#5
+S01HA05#Procaina#5
+S01HA06#Cincocaina#5
+S01HA07#Lidocaina#5
+S01HA30#Associazioni#5
+S01J#Diagnostici#3
+S01JA#Sostanze coloranti#4
+S01JA01#Fluoresceina sodica#5
+S01JA02#Rosa bengala sodico#5
+S01JA51#Fluoresceina, associazioni#5
+S01JX#Altri diagnostici per uso oftalmologico#4
+S01K#Sussidi chirurgici#3
+S01KA#Sostanze viscoelastiche#4
+S01KA01#Acido ialuronico#5
+S01KA02#Ipromellosa#5
+S01KA51#Acido Ialuronico, associazioni#5
+S01KX#Altri sussidi chirurgici#4
+S01KX01#Chimotripsina#5
+S01L#Sostanze contro le malattie vascolari oculari#3
+S01LA#Sostanze antineovascolarizzazione#4
+S01LA01#Verteporfina#5
+S01LA02#Anecortave#5
+S01LA03#Pegaptanib#5
+S01LA04#Ranibizumab#5
+S01LA05#Aflibercept#5
+S01X#Altri oftalmologici#3
+S01XA#Altri oftalmologici#4
+S01XA01#Guaiazulene#5
+S01XA02#Retinolo#5
+S01XA03#Sodio cloruro, ipertonico#5
+S01XA04#Potassio ioduro#5
+S01XA05#Sodio edetato#5
+S01XA06#Etilmorfina#5
+S01XA07#Allume#5
+S01XA08#Acetilcisteina#5
+S01XA09#Iodoeparinato#5
+S01XA10#Inosina#5
+S01XA11#Nandrolone#5
+S01XA12#Despantenolo#5
+S01XA13#Alteplasi#5
+S01XA14#Eparina#5
+S01XA15#Acido ascorbico#5
+S01XA18#Ciclosporina#5
+S01XA20#Lacrime artificiali e altri preparati indifferenti#5
+S01XA21#MERCAPTAMINA (CISTEAMINA)#5
+S01XA22#Ocriplasmin#5
+S02#Otologici#2
+S02A#Antimicrobici#3
+S02AA#Antimicrobici#4
+S02AA01#Cloramfenicolo#5
+S02AA02#Nitrofural#5
+S02AA03#Acido borico#5
+S02AA04#Alluminio acetotartrato#5
+S02AA05#Cliochinolo#5
+S02AA06#Idrogeno perossido#5
+S02AA07#Neomicina#5
+S02AA08#Tetraciclina#5
+S02AA09#Clorexidina#5
+S02AA10#Acido acetico#5
+S02AA11#Polimixina B#5
+S02AA12#Rifamicina#5
+S02AA13#Miconazolo#5
+S02AA14#Gentamicina#5
+S02AA15#Ciprofloxacina#5
+S02AA16#Ofloxacina#5
+S02AA30#Antiinfettivi, associazioni#5
+S02B#Corticosteroidi#3
+S02BA#Corticosteroidi#4
+S02BA01#Idrocortisone#5
+S02BA03#Prednisolone#5
+S02BA06#Desametasone#5
+S02BA07#Betametasone#5
+S02BA08#Fluocinolone acetonide#5
+S02C#Corticosteroidi e antiinfettivi in associazione#3
+S02CA#Corticosteroidi e antiinfettivi in associazione#4
+S02CA01#Prednisolone e antiinfettivi#5
+S02CA02#Flumetasone e antiinfettivi#5
+S02CA03#Idrocortisone e antiinfettivi#5
+S02CA04#Triamcinolone e antiinfettivi#5
+S02CA05#Fluocinolone acetonide e antiinfettivi#5
+S02CA06#Desametasone e antiinfettivi#5
+S02CA07#Fludrocortisone e antiinfettivi#5
+S02D#Altri otologici#3
+S02DA#Analgesici ed anestetici#4
+S02DA01#Lidocaina#5
+S02DA02#Cocaina#5
+S02DA03#Fenazone#5
+S02DA30#Associazioni#5
+S02DC#Preparati indifferenti#4
+S03#Preparati oftalmologici e otologici#2
+S03A#Antiinfettivi#3
+S03AA#Antiinfettivi#4
+S03AA01#Neomicina#5
+S03AA02#Tetraciclina#5
+S03AA03#Polimixina B#5
+S03AA04#Clorexidina#5
+S03AA05#Esamidina#5
+S03AA06#Gentamicina#5
+S03AA07#Ciprofloxacina#5
+S03AA08#Cloramfenicolo#5
+S03AA30#Antiinfettivi, associazioni#5
+S03B#Corticosteroidi#3
+S03BA#Corticosteroidi#4
+S03BA01#Desametasone#5
+S03BA02#Prednisolone#5
+S03BA03#Betametasone#5
+S03C#Corticosteroidi e antiinfettivi in associazione#3
+S03CA#Corticosteroidi antiinfettivi in associazione#4
+S03CA01#Desametasone e antiinfettivi#5
+S03CA02#Prednisolone e antiinfettivi#5
+S03CA04#Idrocortisone e antiinfettivi#5
+S03CA05#Fludrocortisone e antiinfettivi#5
+S03CA06#Betametasone e antiinfettivi#5
+S03D#Altri preparati per uso oftalmologico e otologico#3
+V#VARI#1
+V01#Allergeni#2
+V01A#Allergeni#3
+V01AA#Estratti allergenici#4
+V01AA01#Piume#5
+V01AA02#Polline di erba#5
+V01AA03#Acari della polvere domestica#5
+V01AA04#Muffe e lieviti#5
+V01AA05#Polline di alberi#5
+V01AA07#Insetti#5
+V01AA08#Cibo#5
+V01AA09#Fibre tessili#5
+V01AA10#Fiori#5
+V01AA11#Animali#5
+V01AA20#Vari#5
+V03#Tutti gli altri prodotti terapeutici#2
+V03A#Tutti gli altri prodotti terapeutici#3
+V03AB#Antidoti#4
+V03AB01#Ipecacuana#5
+V03AB02#Nalorfina#5
+V03AB03#Edetati#5
+V03AB04#Pralidossima#5
+V03AB05#Prednisolone e prometazina#5
+V03AB06#Tiosolfato#5
+V03AB08#Sodio nitrito#5
+V03AB09#Dimercaprolo#5
+V03AB13#Obidoxima#5
+V03AB14#Protamina#5
+V03AB15#Naloxone#5
+V03AB16#Etanolo#5
+V03AB17#Metiltioninio cloruro#5
+V03AB18#Potassio permanganato#5
+V03AB19#Fisostigmina#5
+V03AB20#Rame solfato#5
+V03AB21#Potassio ioduro#5
+V03AB22#Amile nitrito#5
+V03AB23#Acetilcisteina#5
+V03AB24#Antitossina digitalica#5
+V03AB25#Flumazenil#5
+V03AB26#Metionina#5
+V03AB27#4-dimetilaminofenolo#5
+V03AB29#Colinesterasi#5
+V03AB31#Blu di Prussia#5
+V03AB32#Glutatione#5
+V03AB33#Idrossocobalamina#5
+V03AB34#Fomepizole#5
+V03AB35#Sugammadex#5
+V03AB37#IDARUCIZUMAB#5
+V03AC#Sostanze chelanti del ferro#4
+V03AC01#Deferoxamina#5
+V03AC02#Deferiprone#5
+V03AC03#Deferasirox#5
+V03AE#Farmaci per il trattamento dell'iperkaliemia e dell'iperfosfatemia#4
+V03AE01#Polistirensolfonato#5
+V03AE02#Sevelamer#5
+V03AE03#Lantanio carbonato#5
+V03AE04#Calcio acetato e magnesio carbonato#5
+V03AE05#OSSIDROSSIDO SUCROFERRICO#5
+V03AF#Sostanze disintossicanti per trattamenti antineoplastici#4
+V03AF01#Mesna#5
+V03AF02#Dexrazoxano#5
+V03AF03#Calcio folinato#5
+V03AF04#Calcio levofolinato#5
+V03AF05#Amifostina#5
+V03AF06#Sodio folinato#5
+V03AF07#Rasburicasi#5
+V03AF08#Palifermina#5
+V03AF09#Glucarpidasi#5
+V03AF10#Sodio levofolinato#5
+V03AG#Farmaci per il trattamento della ipercalcemia#4
+V03AG01#Sodio cellulosa fosfato#5
+V03AH#Farmaci per il trattamento della ipoglicemia#4
+V03AH01#Diazossido#5
+V03AK#Adesivi per tessuti#4
+V03AM#Farmaci per l'embolizzazione#4
+V03AN#Gas medicali#4
+V03AN01#Ossigeno#5
+V03AN02#Carbone diossido#5
+V03AN03#Elio#5
+V03AN04#Azoto#5
+V03AN05#Aria medicale#5
+V03AX#Altri prodotti terapeutici#4
+V03AX02#Nalfurafina#5
+V03AZ#Deprimenti del sistema nervoso#4
+V03AZ01#Etanolo#5
+V04#Diagnostici#2
+V04B#Test urinari#3
+V04C#Altri diagnostici#3
+V04CA#Test per il diabete#4
+V04CA01#Tolbutamide#5
+V04CA02#Glucosio#5
+V04CB#Test per l'assorbimento dei grassi#4
+V04CB01#Concentrati di vitamina A#5
+V04CC#Test per la pervieta' delle vie biliari#4
+V04CC01#Sorbitolo#5
+V04CC02#Magnesio solfato#5
+V04CC03#Sincalide#5
+V04CC04#Ceruletide#5
+V04CD#Test di funzionalita'  ipofisaria#4
+V04CD01#Metirapone#5
+V04CD03#Sermorelina#5
+V04CD04#Corticorelina#5
+V04CD05#Somatorelina#5
+V04CE#Test di funzionalita'  epatica#4
+V04CE01#Galattosio#5
+V04CE02#Solfobromoftaleina#5
+V04CF#Diagnostici della tubercolosi#4
+V04CF01#Tubercolina#5
+V04CG#Test per la secrezione gastrica#4
+V04CG01#Resine a scambio cationico#5
+V04CG02#Betazolo#5
+V04CG03#Istamina fosfato#5
+V04CG04#Pentagastrina#5
+V04CG05#Metiltioninio cloruro#5
+V04CG30#Caffeina e sodio benzoato#5
+V04CH#Test per la funzionalita' renale#4
+V04CH01#Inulina e altri polifruttosani#5
+V04CH02#Indaco carminio#5
+V04CH03#Fenolsolfonftaleina#5
+V04CH04#Alsactide#5
+V04CH30#Acido aminoippurico#5
+V04CJ#Test per la funzionalita'  tiroidea#4
+V04CJ01#Tirotropina#5
+V04CJ02#Protirelina#5
+V04CK#Test per la funzionalita'  pancreatica#4
+V04CK01#Secretina#5
+V04CK02#Pancreozimina (colecistochinina)#5
+V04CK03#Bentiromide#5
+V04CL#Test allergologici#4
+V04CM#Test per i disturbi della fertilita'#4
+V04CM01#Gonadorelina#5
+V04CX#Altri diagnostici#4
+V06#Agenti nutrizionali#2
+V06A#Dietetici per il trattamento dell'obesita'#3
+V06AA#Dietetici ipocalorici#4
+V06B#Integratori proteici#3
+V06C#Formulazioni per l'infanzia#3
+V06CA#Alimenti senza fenilalanina#4
+V06D#Altri agenti nutrizionali#3
+V06DA#Carboidrati/proteine/minerali/vitamine, associazioni#4
+V06DB#Grassi/carboidrati/proteine/minerali/vitamine, associazioni#4
+V06DC#Carboidrati#4
+V06DC01#Glucosio#5
+V06DC02#Fructosio#5
+V06DD#Aminoacidi, comprese le associazioni con polipeptidi#4
+V06DE#Aminoacidi/carboidrati/minerali/vitamine, associazioni#4
+V06DF#Sostituti del latte#4
+V06DX#Altre associazioni di sostanze nutrizionali#4
+V07#Tutti gli altri prodotti non terapeutici#2
+V07A#Tutti gli altri prodotti non terapeutici#3
+V07AA#Cerotti#4
+V07AB#Solventi e diluenti, comprese le soluzioni detergenti#4
+V07AC#Prodotti ausiliari per la trasfusione del sangue#4
+V07AD#Prodotti ausiliari per i test ematici#4
+V07AN#Dispositivi per l'incontinenza#4
+V07AR#Dischi e compresse per i test di sensibilita'#4
+V07AS#Dispositivi per stomie#4
+V07AT#Cosmetici#4
+V07AV#Disinfettanti per attrezzature#4
+V07AX#Sostanze per lavaggi, ecc.#4
+V07AY#Altri prodotti ausiliari non terapeutici#4
+V07AZ#Reagenti e prodotti chimici per analisi#4
+V08#Mezzi di contrasto#2
+V08A#Mezzi di contrasto radiologici, iodati#3
+V08AA#Mezzi di contrasto radiologici idrosolubili, nefrotropici, ad alta osmolarita'#4
+V08AA01#Acido diatrizoico#5
+V08AA02#Acido metrizoico#5
+V08AA03#Iodamide#5
+V08AA04#Acido iotalamico#5
+V08AA05#Acido iossitalamico#5
+V08AA06#Acido ioglicico#5
+V08AA07#Acido acetrizoico#5
+V08AA08#Acido iocarmico#5
+V08AA09#Metiodal#5
+V08AA10#Diodone#5
+V08AB#Mezzi di contrasto radiologici idrosolubili, nefrotropi, a bassa osmolarita'#4
+V08AB01#Metrizamide#5
+V08AB02#Ioexolo#5
+V08AB03#Acido iossaglico#5
+V08AB04#Iopamidolo#5
+V08AB05#Iopromide#5
+V08AB06#Iotranolo#5
+V08AB07#Ioversolo#5
+V08AB08#Iopentolo#5
+V08AB09#Iodissanolo#5
+V08AB10#Iomeprolo#5
+V08AB11#Iobitridolo#5
+V08AB12#Ioxilan#5
+V08AC#Mezzi di contrasto radiologici idrosolubili, epatotropici#4
+V08AC01#Acido iodossamico#5
+V08AC02#Acido iotrossico#5
+V08AC03#Acido ioglicamico#5
+V08AC04#Adipiodone#5
+V08AC05#Acido iobenzamico#5
+V08AC06#Acido iopanoico#5
+V08AC07#Acido iocetamico#5
+V08AC08#Sodio iopodato#5
+V08AC09#Acido tiropanoico#5
+V08AC10#Calcio iopodato#5
+V08AD#Mezzi di contrasto radiologici non idrosolubili#4
+V08AD01#Olio etiodato#5
+V08AD02#Iopidolo#5
+V08AD03#Propiliodone#5
+V08AD04#Iofendilato#5
+V08B#Mezzi di contrasto radiologici, non iodati#3
+V08BA#Bario solfato contenente mezzi di contrasto radiologici#4
+V08BA01#Bario solfato con sostanze sospendenti#5
+V08BA02#Bario solfato senza sostanze sospendenti#5
+V08C#Mezzi di contrasto per risonanza magnetica#3
+V08CA#Mezzi di contrasto paramagnetici#4
+V08CA01#Acido gadopentetico#5
+V08CA02#Acido gadoterico#5
+V08CA03#Gadodiamide#5
+V08CA04#Gadoteridolo#5
+V08CA05#Mangafodipir#5
+V08CA06#Gadoversetamide#5
+V08CA07#Ferro (III) ammonio citrato#5
+V08CA08#Acido gadobenico#5
+V08CA09#Gadobutrolo#5
+V08CA10#Acido gadoxetico#5
+V08CA11#Gadofosveset#5
+V08CB#Mezzi di contrasto superparamagnetici#4
+V08CB01#Ferumoxsil#5
+V08CB02#Ferristene#5
+V08CB03#Ferro ossido nanoparticelle#5
+V08CX#Altri mezzi di contrasto per risonanza magnetica#4
+V08CX01#Perflubron#5
+V08D#Mezzi di contrasto per ecografia#3
+V08DA#Mezzi di contrasto per ecografia#4
+V08DA01#Microsfere di albumina umana#5
+V08DA02#Microparticelle di galattosio#5
+V08DA03#Perflenapent#5
+V08DA04#Microsfere di fosfolipidi#5
+V08DA05#Zolfo esafluoruro#5
+V09#Radiofarmaci diagnostici#2
+V09A#Sistema nervoso centrale#3
+V09AA#Composti del tecnezio 99mTc#4
+V09AA01#Esametazina#5
+V09AA02#Tecnezio-99mTc-bicisato#5
+V09AB#Composti dello iodio 123I#4
+V09AB01#Iodio-123I-iofetamina#5
+V09AB02#Iodio-123I-iolopride#5
+V09AB03#Iodio-123I-ioflupano#5
+V09AX#Altri radiofarmaci diagnostici del sistema nervoso centrale#4
+V09AX01#Indio-111In-acido pentetico#5
+V09AX03#Iodio (124I) 2beta-carbometossi-3beta-(4 iodofenil)-tropano#5
+V09AX05#FLORBETAPIR-18F#5
+V09AX06#FLORBETABEN-18F#5
+V09B#Scheletro#3
+V09BA#Composti del tecnezio 99mTc#4
+V09BA01#Tecnezio-99mTc-acido oxidronico#5
+V09BA02#Tecnezio-99mTc-acido medronico#5
+V09BA03#Tecnezio-99mTc-pirofosfato#5
+V09BA04#Tecnezio-99mTc-acido butedronico#5
+V09C#Apparato renale#3
+V09CA#Composti del tecnezio 99mTc#4
+V09CA01#Tecnezio-99mTc-acido pentetico#5
+V09CA02#Tecnezio-99mTc-succimero#5
+V09CA03#Tecnezio-99mTc-mertiatide#5
+V09CA04#Tecnezio-99mTc-gluceptato#5
+V09CA05#Tecnezio-99mTc-gluconato#5
+V09CX#Altri radiofarmaci diagnostici dell'apparato renale#4
+V09CX01#Sodio iodoippurato (123I)#5
+V09CX02#Sodio iodoippurato (131I)#5
+V09CX03#Sodio iotalamato (125I)#5
+V09CX04#Cromo-51Cr-edetato#5
+V09D#Sistema epatico e reticolo-endoteliale#3
+V09DA#Composti del tecnezio 99mTc#4
+V09DA01#Tecnezio-99mTc-disofenina#5
+V09DA02#Tecnezio-99mTc-etifenina#5
+V09DA03#Tecnezio-99mTc-lidofenina#5
+V09DA04#Tecnezio-99mTc-mebrofenina#5
+V09DA05#Tecnezio-99mTc-galtifenina#5
+V09DB#Tecnezio 99mTc, particelle e colloidi#4
+V09DB01#Tecnezio-99mTc-nanocolloide#5
+V09DB02#Tecnezio-99mTc-microcolloide#5
+V09DB03#Tecnezio-99mTc-millimicrosfere#5
+V09DB04#Tecnezio-99mTc-stagno colloide#5
+V09DB05#Tecnezio-99mTc-zolfo colloide#5
+V09DB06#Tecnezio-99mTc-reniosolfuro colloide#5
+V09DB07#Tecnezio-99mTc-fitato#5
+V09DX#Altri radiofarmaci diagnostici del sistema epatico e reticolo-endoteliale#4
+V09DX01#Selenio-75Se-acido tauroselcolico#5
+V09E#Apparato respiratorio#3
+V09EA#Tecnezio 99mTc, per inalazione#4
+V09EA01#Tecnezio-99mTc-acido pentetico#5
+V09EA02#Tecnezio-99mTc-tecnegas#5
+V09EA03#Tecnezio(99mTc) nanocolloide#5
+V09EB#Tecnezio 99mTc, particelle iniettabili#4
+V09EB01#Tecnezio-99mTc-macrosalb#5
+V09EB02#Tecnezio-99mTc-microsfere#5
+V09EX#Altri radiofarmaci diagnostici dell'apparato respiratorio#4
+V09EX01#Kripton-81mKr gas#5
+V09EX02#Xenon-127Xe- gas#5
+V09EX03#Xenon-133Xe gas#5
+V09F#Tiroide#3
+V09FX#Radiofarmaci diagnostici tirodei vari#4
+V09FX01#Tecnezio-99mTc-pertecnetato#5
+V09FX02#Sodio ioduro (123I)#5
+V09FX03#Sodio ioduro (131I)#5
+V09FX04#Sodio ioduro (124I)#5
+V09G#Sistema cardiovascolare#3
+V09GA#Composti del tecnezio 99mTc#4
+V09GA01#Tecnezio-99mTc-sestamibi#5
+V09GA02#Tecnezio-99mTc-tetrofosmina#5
+V09GA03#Tecnezio-99mTc-teboroxima#5
+V09GA04#Tecnezio-99mTc-albumina umana#5
+V09GA05#Tecnezio-99mTc-furifosmina#5
+V09GA06#Tecnezio-99mTc-cellule marcate con stagno#5
+V09GA07#Tecnezio-99mTc-apcitide#5
+V09GB#Composti dello iodio 125I#4
+V09GB01#Iodio-125I-fibrinogeno#5
+V09GB02#Iodio-125I-albumina umana#5
+V09GX#Altri radiofarmaci diagnostici del sistema cardiovascolare#4
+V09GX01#Tallio (201Tl) cloruro#5
+V09GX02#Indio (111In) imciromab#5
+V09GX03#Cellule marcate con cromo-51 Cr-cromato#5
+V09GX04#Rubidio-82RB-Ccloruro#5
+V09H#Rilevazione di infiammazione e infezione#3
+V09HA#Composti del tecnezio 99mTc#4
+V09HA01#Tecnezio-99mTc-immunoglobulina umana#5
+V09HA02#Tecnezio-99mTc-cellule marcate con esametazima#5
+V09HA03#Tecnezio-99mTc-anticorpo antigranulocita#5
+V09HA04#Tecnezio (99mTc) sulesomab#5
+V09HB#Composti dell'indio 111In#4
+V09HB01#Indio-111In-cellule marcate con ossinato#5
+V09HB02#Indio-111In-cellule marcate con tropolonato#5
+V09HX#Altri radiofarmaci diagnostici per la rilevazione di infiammazione e infezione#4
+V09HX01#Gallio-67Ga-citrato#5
+V09I#Rilevazione di tumori#3
+V09IA#Composti del tecnezio 99mTc#4
+V09IA01#Tecnezio-99mTc-anticorpo contro l'antigene carcinoembrionale#5
+V09IA02#Tecnezio-99mTc-anticorpo antimelanoma#5
+V09IA03#Tecnezio-99mTc-succimero pentavalente#5
+V09IA04#Tecnezio-99mTc-votumumab#5
+V09IA05#Tecnezio-99mTc-depreotide#5
+V09IA06#Tecnezio-99mTc-arcitumomab#5
+V09IA07#technetium (99mTc) hynic-octreotide#5
+V09IB#Composti dell'indio 111In#4
+V09IB01#Iodio (111 In) pentetreotide#5
+V09IB02#Indio (111In) satumomab pendetide#5
+V09IB03#Indio (111In) anticorpo anticarcinoma ovarico#5
+V09IB04#Indio (111 ln) capromab pendetide#5
+V09IX#Altri radiofarmaci diagnostici per la rilevazione di tumori#4
+V09IX01#Iodio-123I-iobenguano#5
+V09IX02#Iodio-131I-iobenguano#5
+V09IX03#Iodio-125I-anticorpo monoclonale CC49#5
+V09IX04#Fludeoxyglucosio (18F)#5
+V09IX05#Fluorodopa (18F)#5
+V09IX06#Sodio fluoruro (18F)#5
+V09IX07#Fluorometilcolina (18F)#5
+V09IX08#fluoroethylcholine (18F)#5
+V09X#Altri radiofarmaci diagnostici#3
+V09XA#Composti dello iodio 131I#4
+V09XA01#Iodio-131I-norcolesterolo#5
+V09XA02#Iodio-131I-colesterolo#5
+V09XA03#Iodio (131I) albumina umana#5
+V09XX#Radiofarmaci diagnostici vari#4
+V09XX01#Cobalto-57Co-cianocobalamina#5
+V09XX02#Cobalto-58Co-cianocobalamina#5
+V09XX03#Selenio-75Se-norcolesterolo#5
+V09XX04#Ferro(III)-59Fe-citrato#5
+V10#Radiofarmaci terapeutici#2
+V10A#Antiinfiammatori#3
+V10AA#Composti dell'ittrio 90Y#4
+V10AA01#Ittrio-90Y-citrato colloide#5
+V10AA02#Ittrio-90Y-ferriidrossido colloide#5
+V10AA03#Ittrio-90Y-silicato colloide#5
+V10AX#Altri radiofarmaci terapeutici antiinfiammatori#4
+V10AX01#Fosforo-32P-fosfato cromico colloide#5
+V10AX02#Samario-153Sm-idrossiapatite colloide#5
+V10AX03#Disprosmio-165Di-colloide#5
+V10AX04#Erbio-169Er-citrato colloide#5
+V10AX05#Renio-186Re-solfuro colloide#5
+V10AX06#Oro-198Au-colloide#5
+V10B#Palliativi del dolore (agenti osteofili)#3
+V10BX#Radiofarmaci palliativi del dolore vari#4
+V10BX01#Stronzio cloruro (89Sr)#5
+V10BX02#Samario-153Sm-lexidronam#5
+V10BX03#Renio-186Re-acido etidronico#5
+V10X#Altri radiofarmaci terapeutici#3
+V10XA#Composti dello iodio 131I#4
+V10XA01#Iodio-131I-sodioioduro#5
+V10XA02#Iodio-131I-iobenguano#5
+V10XA53#Tositumomab/iodio (131I) tositumomab#5
+V10XX#Radiofarmaci terapeutici vari#4
+V10XX01#Fosforo-32P-sodiofosfato#5
+V10XX02#Ibritumomab tiuxetan [90Y]#5
+V10XX03#Radio-223ra-Dicloruro#5
+V20#Bendaggi chirurgici#2

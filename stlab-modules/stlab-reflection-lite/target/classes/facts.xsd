@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.stlab.dsi.unifi.it/reflection/facts"
+	xmlns:tns="http://www.stlab.dsi.unifi.it/reflection/facts"
+	elementFormDefault="qualified">
+
+	<element name="textual">
+		<complexType>
+			<simpleContent>
+				<extension base="string">
+					<attribute name="type" type="string" use="required"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="temporal">
+		<complexType>
+			<simpleContent>
+				<extension base="dateTime">
+					<attribute name="type" type="string" use="required"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="qualitative">
+		<complexType>
+			<simpleContent>
+				<extension base="string">
+					<attribute name="type" type="string" use="required"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="quantitative">
+		<complexType>
+			<simpleContent>
+				<extension base="float">
+					<attribute name="type" type="string" use="required"/>
+					<attribute name="um" type="string" use="required"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="composite">
+		<complexType>
+			<choice maxOccurs="unbounded">
+				<element ref="tns:textual"/>
+				<element ref="tns:temporal"/>
+				<element ref="tns:qualitative"/>
+				<element ref="tns:quantitative"/>
+				<element ref="tns:composite"/>
+			</choice>
+			<attribute name="type" type="string" use="required"/>
+		</complexType>	
+	</element>
+	
+
+</schema>

@@ -1,0 +1,25 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<c:if test="#{inputTextController.isOsservazioneQuantitativa(value)}">
+		<a4j:region>
+			<h:inputText value="#{value.quantity.value}" label="#{value.type.name}"
+							styleClass="inputText_number #{not component.valid ? 'vld-error' : ''}"
+							onkeydown="return disableReturn(event, this)"
+							converter="#{plusSignConverter}">
+				<f:attribute name="typeId" value="#{value.type.id}" />
+				<f:attribute name="unitId" value="#{value.quantity.unit.uuid}" />
+				<a4j:ajax event="change" execute="@region" render="@this" 
+							limitRender="true" listener="#{persistListener.persistData}" />
+			</h:inputText>
+		</a4j:region>
+	</c:if>
+	
+</h:panelGroup>

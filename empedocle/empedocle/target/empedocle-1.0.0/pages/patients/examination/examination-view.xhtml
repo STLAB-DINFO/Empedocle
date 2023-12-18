@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<style>
+		.warning { background-color:  #fcf8e3; padding-left: 10px;}
+		.info { background-color:  #d9edf7; padding-left: 10px;}
+		.concluded { background-color: #F0F0F0; padding-left: 10px; }
+		
+		.align-btn { margin-right: 5px; margin-top: 20px; }
+		.span1 { width: 100px; }
+		</style>
+	
+		<h:form>
+			<h:panelGroup layout="block" styleClass="page-title #{examinationView.getStyleClass( examinationView.current.examination )}">
+				<h2>
+					Visita di 
+					#{examinationView.current.examination.appointment.patient.surname} #{examinationView.current.examination.appointment.patient.name}
+					del 
+					<h:outputText value="#{examinationView.current.examination.appointment.date}" >
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:outputText>
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:link styleClass="btn dist-left" includeViewParams="true" outcome="#{param.from}">
+							<f:param name="id" value="#{param.pid}" />
+							<f:param name="from" value="#{empty param.eid ? 'patient-list' : '/pages/examination/examination-running.html'}" />
+							<f:param name="eid" value="#{param.eid}" 
+								disable="#{empty param.eid}"/>
+							<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" 
+								disable="#{empty javax.enterprise.context.conversation.id}"/>							
+							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						</h:link>	
+					</h:panelGroup>	
+				</h2>
+				<div class="container">
+ 					<div class="row">
+						<span class="bold span1">Agenda</span> 
+						<span class="span4">#{examinationView.current.examination.appointment.agenda.toString()}</span>
+						<br />
+						<span class="bold span1">Responsabile</span> 
+						<span class="span4">Dott. #{examinationView.current.examination.author.name.concat(' ').concat(examinationView.current.examination.author.surname)}</span>
+						<br />
+						<span class="bold span1">Stato</span> 
+						<span class="span4">#{examinationView.current.examination.status.translatedName}</span>					
+					</div>
+				</div>	
+			</h:panelGroup>
+		</h:form>
+
+		<style>
+			#{examinationView.current.viewer.css}
+		</style>
+		<a:view value="#{examinationView.current.fact}"
+		    viewer="#{examinationView.current.viewer}" />
+
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../header-examination-running.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<style>
+			.examination-sidebar { float: left; width: 22%; }
+			.examination-content { float: right;  width: 77%; }
+			
+			.align-checkbox-report { position: relative; top: -2px; }			
+		</style>
+
+		<script type="text/javascript">
+
+		//<![CDATA[ 
+			function disableButtons() {
+				jQuery('input[type=submit]').attr('disabled', true);
+			}
+			function enableButtons() {
+				jQuery('input[type=submit]').attr('disabled', false);
+			}
+
+			function confirmCancel() {
+				var result = confirm('Annullare la visita? \n Tutti i dati inseriti andranno persi. \n Cliccare OK per confermare l\'annullamento.');
+				if(result) {
+					#{rich:component('loading-popup')}.show();
+				} 
+
+				return result;
+			}
+
+		//]]> 
+		</script>
+		
+		<h:panelGroup>
+			<script type="text/javascript">
+				jsf.ajax.addOnError(function(data){
+				    console.log(data);
+				    if(data.status == 'emptyResponse') {
+						//#{rich:component('error-popup')}.show();
+						//console.log("emptyResponse!")
+						$(".tab-pane.active").context.location.reload();
+
+				    }
+				});
+			</script>
+		</h:panelGroup>
+		
+		<a4j:status onstart="disableButtons();" onstop="enableButtons();" />
+		<!-- Il poll serve a tenere viva la conversazione -->
+		<a4j:poll interval="540000" />
+		
+		<h:form id="examination-form">
+			<h:panelGroup layout="block" class="page-title" style="#{examinationRunning.dateFreeVisit? 'border-bottom: none;' : ''}" >
+				<h2>
+					Visita di 
+					<span style="text-transform:uppercase;">#{examinationRunning.lastPatientVersion.surname}</span>
+					<span class='capitalize'>#{examinationRunning.lastPatientVersion.name}</span>
+					<h:panelGroup layout="block" styleClass="pull-right">
+
+						<h:commandLink action="#{examinationRunning.switchUser()}" class="btn dist-right align-btn" immediate="true">
+							<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+							<i class="fw-icon-user dist-right"></i> Cambia utente
+						</h:commandLink>
+						
+						<h:commandLink action="#{examinationRunning.cancel()}"
+							onclick="return confirmCancel();" begin="#{rich:component('loading-popup')}.show();"
+							class="btn btn-danger dist-right align-btn"
+							immediate="true" 
+							rendered="#{not examinationRunning.examinationDetails.examination.wasDone}">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+												
+						<h:commandLink action="#{examinationRunning.suspend()}" 
+							class="btn btn-warning dist-right align-btn"
+							immediate="true" 
+							onclick="#{rich:component('loading-popup')}.show();" >
+							<i class="fw-icon-pause dist-right"></i> Sospendi
+						</h:commandLink>					
+						
+						<h:commandLink action="#{examinationRunning.end()}" 
+							rendered="#{examinationRunning.checkEndAuthorization()}"
+							class="btn btn-success align-btn" 
+							onclick="#{rich:component('loading-popup')}.show();" >
+							<i class="fw-icon-stop dist-right"></i> Concludi
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+
+				<h:panelGroup layout="block" style="margin-left: 18px;" rendered="#{examinationRunning.dateFreeVisit}"
+							  styleClass="input-append date datepicker datepicker-box">
+
+					<h:outputLabel value="* Data Visita" class="control-label bold" />
+					<h:inputText value="#{examinationRunning.visitDate}"
+								 onkeydown="return disableReturn(event, this)" boxClass="datepicker-box" styleClass="#{ component.valid ? '' : 'vld-error'}"
+								 required="true" requiredMessage="Obbligatorio inserire una Data per la Visita in erogazione! Usare il formato 'dd/MM/yyyy hh:mm'">
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:inputText>
+				</h:panelGroup>
+			
+				<h:panelGroup id="side-panel" layout="block" styleClass="examination-sidebar" >
+					<ui:include src="examination-running-sidebar.xhtml" />
+				</h:panelGroup>
+				
+				<h:panelGroup id="view-panel" layout="block" styleClass="examination-content view-root" >
+					<style>
+						#{examinationRunning.examinationDetails.viewer.css}
+					</style>
+					<a:view value="#{examinationRunning.examinationDetails.fact}" 
+							viewer="#{examinationRunning.examinationDetails.viewer}"
+							persistListener="#{examinationRunning}" />
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:form>
+		
+		<rich:popupPanel id="loading-popup" modal="true" autosized="true"
+			moveable="false" domElementAttachment="form" shadowDepth="0">
+			<div class="modal-body">
+				<h:graphicImage value="/img/load-slow.gif" alt="loading..." />
+			</div>
+		</rich:popupPanel>
+		
+		<rich:popupPanel id="error-popup" modal="true" autosized="true"
+			moveable="false" domElementAttachment="form" shadowDepth="0">
+			<div class="modal-header">
+				<h3><h:outputText value="Si è verificato un errore!" /></h3>
+			</div>
+			<div class="modal-body">
+				<span>I dati scritti fino al questo momento <strong>dovrebbero essere stati salvati</strong></span><br/>
+				<span>Provare a <strong>ricaricare</strong> la visita usando il bottone sottostante</span><br/>
+				<span>Altrimenti, recuperare la visita dalla lista delle visite, sotto il tab <strong>'In Erogazione'</strong></span>
+			</div>
+			<div class="modal-footer">
+				<h:link outcome="list" value="Torna alla lista visite" styleClass="btn btn-default" />
+				<h:link outcome="examination-running" value="Ricarica" styleClass="btn btn-default">
+					<f:param name="id" value="#{examinationRunning.examinationDetails.examination.id}"></f:param>
+				</h:link>
+			</div>
+		</rich:popupPanel>
+
+	</ui:define>
+
+</ui:composition>
+</html>

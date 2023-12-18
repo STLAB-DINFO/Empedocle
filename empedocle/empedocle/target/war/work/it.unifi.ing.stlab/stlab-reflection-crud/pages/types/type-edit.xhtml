@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:emp="http://java.sun.com/jsf/composite/components"
+	xmlns:types="http://java.sun.com/jsf/composite/components/types"
+	xmlns:date="http://java.sun.com/jsf/composite/datepicker">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="styles">
+		<h:outputStylesheet library="datepicker" name="css/datepicker.css" />
+	</ui:define>
+
+	<ui:define name="scripts">
+		<h:outputScript library="datepicker" name="js/bootstrap-datepicker.js" />
+		<h:outputScript library="datepicker" name="js/locales/bootstrap-datepicker.it.js" />
+	</ui:define>
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<style>
+			.table-bordered { margin-bottom: 0; width: 60%;}
+			.structure-container { padding: 10px; border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; 
+				overflow-y: auto; }
+			.structure-details { padding: 0 10px 0 10px; border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; 
+				overflow-y: auto; }
+			#type-edit-form\:sources { border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; width: 120px }		
+			.rf-ind-drag { cursor: pointer; cursor: -webkit-grab; 
+				width: 100px; border: 1px solid #cccccc; padding: 2px 6px 2px 2px; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; }		
+			.rf-ind-acpt { border: 1px solid #cccccc; background-color: #6fd671; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; }
+			.rf-ind-rejt { border: 1px solid #cccccc; background-color: #e86761;
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; }
+			.rf-trn-ico-cst,
+			.rf-trn-hnd-exp,
+			.rf-trn-hnd-lf { position: relative; top: -2px; margin-right: 5px; }
+			.rf-trn-hnd-exp { background: url("#{request.contextPath}/img/collapse-up.png") no-repeat center; }
+			.rf-trn-hnd-colps { background: url("#{request.contextPath}/img/expand-down.png") no-repeat center; 
+				position: relative; top: -5px; margin-right: 5px; }
+		</style>
+
+		<script type="text/javascript">
+	   		var last = null;
+	    
+		    function savePosition() {
+				last = $('.structure-container').scrollTop();
+				console.log('saved '+last);
+			}
+	
+			function moveToLastPosition() {
+				if( last != null ) {
+					console.log('restored '+last);
+					var div = $('.structure-container').scrollTop( last );
+					last = null;
+				}
+			}
+			
+			$(function(){
+				initializeDatepicker();
+				$('.tltip').tooltip();
+			});
+		</script>
+
+		<h:form id="type-edit-form" styleClass="form-horizontal">
+
+			<div class="crud-title">
+				<h2>
+					#{typeEdit.edit ? 'Modifica' : 'Creazione'} Tipo 
+
+					<h:panelGroup layout="block" rendered="#{typeEdit.new}">
+						<h:outputText value="Testuale"
+							rendered="#{typeEdit.current.isTextual()}" />
+						<h:outputText value="Enumerato"
+							rendered="#{typeEdit.current.isEnumerated()}" />
+						<h:outputText value="Queried"
+							rendered="#{typeEdit.current.isQueried()}" />
+						<h:outputText value="Quantitativo"
+							rendered="#{typeEdit.current.isQuantitative()}" />
+						<h:outputText value="Composito"
+							rendered="#{typeEdit.current.isComposite()}" />
+						<h:outputText value="Temporale"
+							rendered="#{typeEdit.current.isTemporal()}" />
+					</h:panelGroup>
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn" action="#{typeEdit.cancel()}"
+							immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+
+						<h:commandLink class="btn btn-primary dist-left"
+							action="#{typeEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-edit-form:name">* Nome</label>
+				<div class="controls">
+					<h:inputText id="name" value="#{typeEdit.current.type.name}"
+						required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+						styleClass="wider #{component.valid ? '' : 'vld-error'}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-edit-form:description">Descrizione</label>
+				<div class="controls">
+			    	<h:inputTextarea id="description" value="#{typeEdit.current.type.description}"
+			    		styleClass="wider" rows="3" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-edit-form:validity">Validità</label>
+				<div class="controls" id="validity">
+					<table class="table table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>Inizio</th>
+								<th>Fine</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<date:datePicker value="#{typeEdit.startDate}" render="@this"
+										boxClass="datepicker-box" />
+								</td>
+								<td>
+									<date:datePicker value="#{typeEdit.endDate}" render="@this"
+										boxClass="datepicker-box" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-edit-form:anonymous">Anonimo</label>
+				<div class="controls align-checkbox">
+					<h:selectBooleanCheckbox id="anonymous"
+						value="#{typeEdit.current.type.anonymous}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-edit-form:read-only">Sola lettura</label>
+				<div class="controls align-checkbox">
+					<h:selectBooleanCheckbox id="read-only"
+						value="#{typeEdit.current.type.readOnly}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-edit-form:recurrent">Ricorrente</label>
+				<div class="controls align-checkbox">
+					<h:selectBooleanCheckbox id="recurrent"
+						value="#{typeEdit.current.type.recurrent}" />
+				</div>
+			</div>
+
+			<types:editPhenomena value="#{typeEdit.current}" />
+
+			<types:editQuery value="#{typeEdit.current}" />
+
+			<types:editUnits value="#{typeEdit.current}" />
+
+			<types:editTemporal value="#{typeEdit.current}" />
+
+			<!-- COMPOSITE -->
+			<h:panelGroup styleClass="control-group" layout="block" rendered="#{typeEdit.current.isComposite()}">
+				<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Struttura" />
+				<h:panelGroup layout="block" styleClass="controls align-txt">
+
+					<h:panelGroup layout="block" styleClass="row-fluid">
+						<h:panelGroup layout="block" styleClass="span6 structure-container">
+							<rich:tree id="tree-structure" 
+								value="#{typeEdit.current.treeRoot}" var="node"
+								toggleType="ajax" selectionType="ajax"
+								selectionChangeListener="#{typeEdit.selectionChanged}">
+								<rich:treeNode expanded="#{node.expanded}" 
+									iconLeaf="/img/caret-right.png" iconExpanded="/img/folder-open.png" iconCollapsed="/img/folder.png">
+									<a4j:outputPanel>
+										<h:outputText value="#{node.label}" 
+											style="#{node.label eq 'root' ? 'color: white' : ''}"/>
+										<rich:dropTarget
+											acceptedTypes="#{node.leaf ? '' : 'textual enumerated queried quantitative temporal composite reference'}"
+											dropValue="#{node.link.uuid}"
+											dropListener="#{typeEdit.addNodeListener}"
+											render="tree-structure" />
+										<rich:dragSource type="node-move"
+											dragValue="#{node.link.uuid}" />
+									</a4j:outputPanel>
+
+									<a4j:outputPanel layout="block" style="height: 5px;">
+										<rich:dropTarget acceptedTypes="node-move"
+											dropValue="#{node.link.uuid}"
+											dropListener="#{typeEdit.moveNodeListener}"
+											render="tree-structure" />
+									</a4j:outputPanel>
+								</rich:treeNode>
+							</rich:tree>
+						</h:panelGroup>
+
+						<a4j:outputPanel ajaxRendered="true" layout="block" styleClass="form-horizontal span6">
+							<h:panelGroup id="sources" layout="block" 
+								rendered="#{not typeEdit.isCurrentLinkSet()}">
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="composite" dragValue="composite" />
+									<i class="fw-icon-sitemap dist-right dist-left"></i>Composito
+								</a4j:outputPanel>
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="enumerated" dragValue="enumerated" />
+									<i class="fw-icon-list dist-right dist-left"></i>Enumerato
+								</a4j:outputPanel>
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="quantitative" dragValue="quantitative" />
+									<i class="fw-icon-tasks dist-right dist-left"></i>Quantitativo
+								</a4j:outputPanel>
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="queried" dragValue="queried" />
+									<i class="fw-icon-question dist-right dist-left"></i>Queried
+								</a4j:outputPanel>
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="temporal" dragValue="temporal" />
+									<i class="fw-icon-calendar dist-right dist-left"></i>Temporale
+								</a4j:outputPanel>
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="textual" dragValue="textual" />
+									<i class="fw-icon-pencil dist-right dist-left"></i>Testuale
+								</a4j:outputPanel>
+								<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+									<rich:dragSource type="reference" dragValue="reference" />
+									<i class="fw-icon-share dist-right dist-left"></i>Riferimento
+								</a4j:outputPanel>
+							</h:panelGroup>
+
+							<h:panelGroup layout="block" rendered="#{typeEdit.isCurrentLinkSet()}" 
+								styleClass="structure-details">
+
+								<script>
+									initializeDatepicker();
+								</script>
+								
+								<h:panelGroup layout="block" styleClass="page-title">
+								<h4>Dettagli selezione
+									<h:panelGroup layout="block" styleClass="pull-right" style="margin-top:-5px">
+										<h:commandLink class="btn btn-danger"
+											action="#{typeEdit.deleteCurrentNode()}">
+											<f:ajax execute="@this" render=":type-edit-form:sources :type-edit-form:structure-details :type-edit-form:tree-structure" />
+											<i class="fw-icon-remove dist-right"></i> Elimina
+										</h:commandLink>	
+																			
+										<h:commandLink class="btn dist-left"
+											action="#{typeEdit.closeSelection}">
+											<f:ajax execute="@this" render=":type-edit-form:sources :type-edit-form:structure-details :type-edit-form:tree-structure"/>									
+											<i class="fw-icon-step-backward dist-right"></i> Chiudi
+										</h:commandLink>								
+									</h:panelGroup>	
+									</h4>	
+								</h:panelGroup>							
+								
+								<h:panelGroup styleClass="control-group" layout="block">
+									<h:outputLabel styleClass="control-label bold" for="tl-name" value="Nome" />
+								    <h:panelGroup styleClass="controls" layout="block">
+								    	<h:inputText id="tl-name" value="#{typeEdit.selectedLink.link.name}">
+								    		<a4j:ajax event="change" execute="@this"
+												render=":type-edit-form:tree-structure" />
+										</h:inputText>
+								    </h:panelGroup>
+								</h:panelGroup>
+								
+								<h:panelGroup styleClass="control-group" layout="block">
+									<h:outputLabel styleClass="control-label bold" for="tl-type" value="Tipo" />
+								    <h:panelGroup styleClass="controls align-txt" layout="block" id="tl-type">
+								    	<h:outputText value="Testuale" rendered="#{typeEdit.selectedType.isTextual()}" />
+								    	<h:outputText value="Enumerato" rendered="#{typeEdit.selectedType.isEnumerated()}" />
+								    	<h:outputText value="Queried" rendered="#{typeEdit.selectedType.isQueried()}" />
+								    	<h:outputText value="Quantitativo" rendered="#{typeEdit.selectedType.isQuantitative()}" />
+								    	<h:outputText value="Composito" rendered="#{typeEdit.selectedType.isComposite()}" />
+								    	<h:outputText value="Temporale" rendered="#{typeEdit.selectedType.isTemporal()}" />
+								    	<h:outputText value="Riferimento" rendered="#{empty typeEdit.selectedType}" />
+								    </h:panelGroup>
+								</h:panelGroup>								
+							
+								<h:panelGroup styleClass="control-group" layout="block">
+									<h:outputLabel styleClass="control-label bold" for="occurs" value="Occorrenze" />
+								    <h:panelGroup id="occurs" styleClass="controls align-txt" layout="block">
+										<table class="table table-bordered table-condensed">
+											<thead>
+												<tr>
+													<th>Min</th>
+													<th>Max</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<h:inputText id="min"
+															value="#{typeEdit.selectedLink.link.min}"
+															styleClass="input-mini">
+															<a4j:ajax event="change" execute="@this" />
+														</h:inputText>
+													</td>
+													<td>
+														<h:inputText id="max"
+															value="#{typeEdit.selectedLink.link.max}"
+															styleClass="input-mini">
+															<a4j:ajax event="change" execute="@this" />
+														</h:inputText>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+								    </h:panelGroup>
+								</h:panelGroup>
+
+								<h:panelGroup
+									rendered="#{not typeEdit.selectedType.isReference()}"
+									layout="block">
+
+									<types:editPhenomena value="#{typeEdit.selectedType}" />
+
+									<types:editQuery value="#{typeEdit.selectedType}" />
+
+									<types:editUnits value="#{typeEdit.selectedType}" />
+
+									<types:editTemporal value="#{typeEdit.selectedType}" />
+								</h:panelGroup>
+
+								<h:panelGroup styleClass="control-group" id="reference-sel"
+									layout="block"
+									rendered="#{empty typeEdit.selectedType or typeEdit.selectedType.isReference()}">
+									<h:outputLabel styleClass="control-label bold" for="ref"
+										value="Riferimento" />
+									<h:panelGroup styleClass="controls" layout="block">
+											
+										<h:panelGroup layout="block" rendered="#{empty typeEdit.referencedType}">
+											<rich:autocomplete id="suggestion" mode="ajax" minChars="3" 
+												autocompleteMethod="#{typeEdit.autocomplete}" 
+												var="item" fetchValue="#{item.label}" layout="list"
+												onkeydown="return disableReturn(event, this);" limitRender="true"
+												onclick="this.select();">
+												
+											    <h:inputHidden value="#{item.value}" rendered="#{item ne null}" />
+											    <h:outputText value="#{item.label}"/>
+											    
+											    <f:ajax event="selectitem" 
+											    	execute="@this"
+											    	onevent="#{cc.attrs.id}setValueSelect(event.target.firstChild.value)"/>
+											</rich:autocomplete>
+											
+											<a4j:jsFunction name="#{cc.attrs.id}setValueSelect">
+										    	<a4j:param name="param" assignTo="#{typeEdit.referencedType}" converter="#{typeConverter}" />
+										    	<a4j:actionListener listener="#{typeEdit.confirmReferencedType()}" />
+										    </a4j:jsFunction>		
+											
+											<script type="text/javascript">
+												var element = document.getElementById('#{cc.clientId}:suggestionInput');
+												element.value = ""; 
+												element.value = '#{typeEdit.referencedType.name}';
+											</script>		
+										</h:panelGroup>		
+										
+										<h:panelGroup layout="block" rendered="#{not empty typeEdit.referencedType}">
+											<h:outputText styleClass="align-txt" value="#{typeEdit.referencedType.name}"/>							
+										</h:panelGroup>
+								
+									</h:panelGroup>
+								</h:panelGroup>
+
+								<h:panelGroup layout="block" id="default-values"
+									rendered="#{not empty typeEdit.selectedLink.defaultValue}">
+									<types:editDefaultTextualValue
+										linkBean="#{typeEdit.selectedLink}"
+										typeBean="#{typeEdit.selectedType}"
+										rendered="#{typeEdit.selectedLink.isTargetTextual()}" />
+
+									<types:editDefaultQualitativeValue
+										linkBean="#{typeEdit.selectedLink}"
+										typeBean="#{typeEdit.selectedType}"
+										rendered="#{typeEdit.selectedLink.isTargetEnumerated()}" />
+
+									<types:editDefaultQuantitativeValue
+										linkBean="#{typeEdit.selectedLink}"
+										typeBean="#{typeEdit.selectedType}"
+										rendered="#{typeEdit.selectedLink.isTargetQuantitative()}" />
+
+									<types:editDefaultTemporalValue
+										linkBean="#{typeEdit.selectedLink}"
+										typeBean="#{typeEdit.selectedType}"
+										rendered="#{typeEdit.selectedLink.isTargetTemporal()}" />
+								</h:panelGroup>
+							</h:panelGroup>
+						</a4j:outputPanel>
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

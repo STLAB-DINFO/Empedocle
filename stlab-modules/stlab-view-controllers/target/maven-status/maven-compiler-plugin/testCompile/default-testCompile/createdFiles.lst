@@ -1,0 +1,17 @@
+it/unifi/ing/stlab/view/controllers/InputTextControllerTest.class
+it/unifi/ing/stlab/view/controllers/OutputMeasurementUnitControllerTest.class
+it/unifi/ing/stlab/view/controllers/ConditionalPanelControllerTest.class
+it/unifi/ing/stlab/view/controllers/TabbedPanelControllerTest.class
+it/unifi/ing/stlab/view/controllers/GridControllerTest.class
+it/unifi/ing/stlab/view/controllers/BoxControllerTest.class
+it/unifi/ing/stlab/view/controllers/ComboControllerTest.class
+it/unifi/ing/stlab/view/controllers/ReportControllerTest.class
+it/unifi/ing/stlab/view/controllers/FakeViewer.class
+it/unifi/ing/stlab/view/controllers/FactPanelControllerTest.class
+it/unifi/ing/stlab/view/controllers/SuggestionControllerTest.class
+it/unifi/ing/stlab/view/controllers/InputListControllerTest.class
+it/unifi/ing/stlab/view/controllers/TextAreaControllerTest.class
+it/unifi/ing/stlab/view/controllers/OutputFieldControllerTest.class
+it/unifi/ing/stlab/view/controllers/OutputPathControllerTest.class
+it/unifi/ing/stlab/view/controllers/OutputListControllerTest.class
+it/unifi/ing/stlab/view/controllers/OutputValueControllerTest.class

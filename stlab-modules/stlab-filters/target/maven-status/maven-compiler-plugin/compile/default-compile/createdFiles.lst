@@ -1,0 +1,12 @@
+it/unifi/ing/stlab/filters/FilterDef.class
+it/unifi/ing/stlab/filters/Filter.class
+it/unifi/ing/stlab/filters/FilterBean$1.class
+it/unifi/ing/stlab/filters/FilterBean.class
+it/unifi/ing/stlab/filters/FilterBean$FilterDefsOrder.class
+it/unifi/ing/stlab/filters/FilterType.class
+it/unifi/ing/stlab/navigation/Navigator.class
+it/unifi/ing/stlab/navigation/NavigationStatus.class
+it/unifi/ing/stlab/sorting/SortField.class
+it/unifi/ing/stlab/filters/SelectItemBuilder.class
+it/unifi/ing/stlab/filters/Filter$1.class
+it/unifi/ing/stlab/sorting/Sorting.class

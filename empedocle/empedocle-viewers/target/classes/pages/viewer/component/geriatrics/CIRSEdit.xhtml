@@ -1,0 +1,139 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<a4j:outputPanel xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div class="fieldset">
+		<div class="box_label">
+			<h:outputText value="Cumulative Illness Rating Scale (CIRS)" />
+		</div>	
+		<div class="box_content" style="padding-top: 10px;" >
+			<table style="width: 100%">
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(0).selector)}" 
+							viewer="#{viewer.getByPriority(0).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(1).selector)}" 
+							viewer="#{viewer.getByPriority(1).target}" />
+					</td>
+				</tr>		
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(2).selector)}" 
+							viewer="#{viewer.getByPriority(2).target}" />
+					</td>
+				</tr>		
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(3).selector)}" 
+							viewer="#{viewer.getByPriority(3).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(4).selector)}" 
+							viewer="#{viewer.getByPriority(4).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(5).selector)}" 
+							viewer="#{viewer.getByPriority(5).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(6).selector)}" 
+							viewer="#{viewer.getByPriority(6).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(7).selector)}" 
+							viewer="#{viewer.getByPriority(7).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(8).selector)}" 
+							viewer="#{viewer.getByPriority(8).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(9).selector)}" 
+							viewer="#{viewer.getByPriority(9).target}" />
+					</td>
+				</tr>					
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(10).selector)}" 
+							viewer="#{viewer.getByPriority(10).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(11).selector)}" 
+							viewer="#{viewer.getByPriority(11).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(12).selector)}" 
+							viewer="#{viewer.getByPriority(12).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a:view value="#{cIRSController.findBySelector(value, viewer.getByPriority(13).selector)}" 
+							viewer="#{viewer.getByPriority(13).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table class="grid_table">
+							<tbody>
+								<tr>
+									<td class="grid_cell_0">
+										<h:outputText value="#{cIRSController.findFactLinkBySelector(value, viewer.getByPriority(14).selector).type.name}" styleClass="label_text"/>
+									</td>
+									<td class="grid_cell_1">
+										<a4j:outputPanel ajaxRendered="true">
+											<h:outputText value="#{cIRSController.retrieveSeverityIndex( value )}/5" />
+										</a4j:outputPanel>
+									</td>
+								</tr>
+							</tbody>
+						</table>			
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table class="grid_table">
+							<tbody>
+								<tr>
+									<td class="grid_cell_0">
+										<h:outputText value="#{cIRSController.findFactLinkBySelector(value, viewer.getByPriority(15).selector).type.name}" styleClass="label_text"/>
+									</td>
+									<td class="grid_cell_1">
+										<a4j:outputPanel ajaxRendered="true">
+											<h:outputText value="#{cIRSController.retrieveComorbidityIndex( value )}/13" />
+										</a4j:outputPanel>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>	
+				</tr>	
+			</table>				
+		</div>	
+	</div>
+</a4j:outputPanel>

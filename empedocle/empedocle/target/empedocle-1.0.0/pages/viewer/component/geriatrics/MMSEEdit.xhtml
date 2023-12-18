@@ -1,0 +1,168 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<a4j:outputPanel xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div class="fieldset">
+		<div class="box_label">
+			<h:outputText value="Mini-Mental State Examination (MMSE)" />
+		</div>	
+		<div class="box_content">
+			<table style="width: 100%">
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(0).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Il paziente sa riferire l'anno, il mese, la stagione, il giorno della settimana e la data del mese)" />
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(0).selector)}" viewer="#{viewer.getByPriority(0).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(1).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Il paziente sa riferire lo stato, la regione, la città dove abita, il luogo in cui si trova e a quale piano)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(1).selector)}" 
+							viewer="#{viewer.getByPriority(1).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(2).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (L'esaminatore pronuncia ad alta voce tre termini (casa, pane, gatto) e chiede
+    al paziente di ripeterli immediatamente (max 6 ripetizioni))"/>					    
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(2).selector)}" 
+							viewer="#{viewer.getByPriority(2).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(3).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Partendo da 100 sottrarre sette per 5 volte)"/>						
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(3).selector)}" 
+							viewer="#{viewer.getByPriority(3).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(4).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Richiamare i tre termini precedentemente imparati)"/>
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(4).selector)}" 
+							viewer="#{viewer.getByPriority(4).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(5).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Il paziente deve riconoscere due oggetti)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(5).selector)}" 
+							viewer="#{viewer.getByPriority(5).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(6).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Invitare il paziente a ripetere la frase TIGRE CONTRO TIGRE)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(6).selector)}" 
+							viewer="#{viewer.getByPriority(6).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(7).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Esecuzione di un compito su comando)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(7).selector)}" 
+							viewer="#{viewer.getByPriority(7).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(8).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Presentare al paziente un foglio con la seguente scritta: CHIUDA GLI OCCHI.
+    Invitare il paziente ad eseguire il comando indicato)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(8).selector)}" 
+							viewer="#{viewer.getByPriority(8).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(9).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Far scrivere al paziente una frase)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(9).selector)}" 
+							viewer="#{viewer.getByPriority(9).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(10).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Far copiare al paziente il disegno indicato)"/>					
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(10).selector)}" 
+							viewer="#{viewer.getByPriority(10).target}" />
+					</td>
+				</tr>												
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(13).selector).type.name}" styleClass="label_text"/><br />
+					</td>
+					<td>
+						<a4j:outputPanel ajaxRendered="true">
+							<h:outputText value="#{mMSEController.retrieveOverallScore( viewer, value )}/30" />
+						</a4j:outputPanel>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(11).selector).type.name}" styleClass="label_text"/><br />
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(11).selector)}" 
+							viewer="#{viewer.getByPriority(11).target}" />
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(12).selector).type.name}" styleClass="label_text"/><br />
+					</td>
+					<td>
+						<a:view value="#{mMSEController.findBySelector(value, viewer.getByPriority(12).selector)}" 
+							viewer="#{viewer.getByPriority(12).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{mMSEController.findFactLinkBySelector(value, viewer.getByPriority(14).selector).type.name}" styleClass="label_text"/>
+					</td>
+					<td>
+						<a4j:outputPanel ajaxRendered="true">
+							<h:outputText value="#{mMSEController.retrieveAdjustedOverallScore( viewer, value )}" />
+						</a4j:outputPanel>
+					</td>
+				</tr>				
+			</table>
+		</div>	
+	</div>
+</a4j:outputPanel>

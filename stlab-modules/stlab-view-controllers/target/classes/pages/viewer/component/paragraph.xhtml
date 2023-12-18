@@ -1,0 +1,22 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<c:if test="#{paragraphController.show(viewer, value)}">
+		<p>
+			<c:forEach items="#{viewer.listChildrenOrdered()}" var="subView" varStatus="loop">
+				<c:if test="#{paragraphController.show(viewer, paragraphController.findBySelector(value, subView.selector))}">
+					<a:view
+						value="#{paragraphController.findBySelector(value, subView.selector)}"
+						viewer="#{subView.target}" />
+				</c:if>
+			</c:forEach>		
+		</p>
+	</c:if>
+</h:panelGroup>

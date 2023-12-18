@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="linkBean" required="true"
+    		type="it.unifi.ing.stlab.reflection.actions.wrappers.LinkBean" />
+    	<composite:attribute name="typeBean" required="true"
+    		type="it.unifi.ing.stlab.reflection.actions.wrappers.TypeBean" />
+    	<composite:attribute name="rendered" type="java.lang.String" />
+    </composite:interface>
+  
+    <composite:implementation>
+		<h:panelGroup xmlns:datepicker="http://java.sun.com/jsf/composite/datepicker"
+			styleClass="control-group" layout="block" rendered="#{empty cc.attrs.rendered or cc.attrs.rendered}">
+			<h:outputLabel styleClass="control-label bold" for="#{cc.clientId}:phenomenon" value="Valore di default" />
+		    <h:panelGroup styleClass="controls align-select" layout="block" id="phenomenon">
+		    	<h:selectOneMenu value="#{cc.attrs.linkBean.defaultValue.phenomenon}"
+		    		converter="#{phenomenonConverter}">
+		    		<f:selectItem noSelectionOption="true" itemValue="" itemLabel="" />
+		    		<f:selectItems value="#{cc.attrs.typeBean.getPhenomenaItems()}" />
+		    		<f:ajax />
+		    	</h:selectOneMenu>
+		    </h:panelGroup>
+		</h:panelGroup>
+		
+    </composite:implementation>
+</html>

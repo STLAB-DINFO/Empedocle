@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+		<h:form id="agenda-form">
+			<h:panelGroup id="filters" layout="block"
+				xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Agende
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink title="Aggiungi" class="btn btn-primary"
+							action="#{agendaList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+
+				<filter:filterPanel filters="#{agendaFilter}"
+					navigator="#{agendaList}"
+					render=":agenda-form:navigator :agenda-form:results"
+					renderAll=":agenda-form:filters :agenda-form:navigator :agenda-form:results" />
+			</h:panelGroup>
+
+			<h:panelGroup layout="block" id="navigator"
+				xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+				<nav:navigator value="#{agendaList}"
+					render=":agenda-form:navigator :agenda-form:results" />
+			</h:panelGroup>
+
+			<h:panelGroup layout="block" id="results">
+				<h:panelGroup rendered="#{empty agendaResults}">
+					<br />
+					<h:outputText styleClass="lead" value="Nessuna agenda trovata" />
+				</h:panelGroup>
+
+				<h:dataTable
+					styleClass="table table-bordered table-striped table-hover"
+					columnClasses="col1, col2, col3, crud-controls-3"
+					value="#{agendaResults}" var="agenda"
+					rendered="#{not empty agendaResults}">
+					<h:column>
+						<f:facet name="header">
+							<h:commandLink value="Codice" styleClass="normal-text"
+								action="#{agendaFilter.toggle('Codice')}">
+								<f:ajax render="@none" execute="@this" />
+								<f:ajax render=":agenda-form:results" execute="@none" />
+								<h:panelGroup rendered="#{agendaFilter.isSelected('Codice')}">
+									<i class="#{agendaFilter.isAscending('Codice') ? 
+										'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								</h:panelGroup>
+								<h:panelGroup
+									rendered="#{not agendaFilter.isSelected('Codice')}">
+									<i class="fw-icon-sort" />
+								</h:panelGroup>
+							</h:commandLink>
+						</f:facet>
+						#{agenda.code}
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							Descrizione
+						</f:facet>
+						#{agenda.description}
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							Azioni
+						</f:facet>
+
+						<h:commandLink title="Visualizza"
+							class="btn btn-info pull-left tltip"
+							action="#{agendaList.view( agenda.id )}">
+							<i class="fw-icon-large fw-icon-zoom-in"></i>
+						</h:commandLink>
+
+						<h:commandLink title="Modifica"
+							class="btn btn-warning pull-left dist-left tltip"
+							action="#{agendaList.edit( agenda.id )}">
+							<i class="fw-icon-pencil fw-icon-large"></i>
+						</h:commandLink>
+
+						<h:commandLink title="Elimina"
+							class="btn btn-danger pull-left dist-left tltip"
+							action="#{agendaList.delete( agenda.id )}"
+							rendered="#{agendaList.isRemovable( agenda.id )}"
+							onclick="if(!confirm('Eliminare agenda selezionata?')) {return false;}">
+							<i class="fw-icon-remove fw-icon-large"></i>
+						</h:commandLink>
+					</h:column>
+				</h:dataTable>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

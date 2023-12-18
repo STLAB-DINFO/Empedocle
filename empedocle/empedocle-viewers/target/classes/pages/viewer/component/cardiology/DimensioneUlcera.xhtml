@@ -1,0 +1,53 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div class="fieldset">
+		<div class="box_label">
+			<span class="label_text">Dimensioni</span>
+		</div>
+		<div class="box_content">
+			<table style="width: 100%">
+				<tr>
+					<a4j:region>
+						<td style="width: 8%;">
+							<h:outputText value="H" styleClass="label_text" style="text-align: right; margin-left: 15px;"/>
+						</td>
+						<td style="width: 23%;">
+							<a:view value="#{dimensioneUlceraController.retrieveH(value, viewer)}" 
+										viewer="#{viewer.getByPriority(0).target}" />
+							<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit( dimensioneUlceraController.retrieveH(value, viewer) )}" 
+										escape="false" />
+						</td>
+						<td style="width: 8%;">
+							<h:outputText value="L" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+						</td>
+						<td style="width: 23%;">
+							<a:view value="#{dimensioneUlceraController.retrieveL(value, viewer)}" 
+										viewer="#{viewer.getByPriority(1).target}" />
+							<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit( dimensioneUlceraController.retrieveL(value, viewer) )}" 
+										escape="false" />
+						</td>
+					</a4j:region>
+					<td style="width: 8%;">
+						<h:outputText value="Area" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+					</td>
+					<td style="width: 26%;">
+						<a4j:outputPanel ajaxRendered="true"> 
+							<h:inputText value="#{dimensioneUlceraController.retrieveArea(value, viewer).quantity.value}" 
+											disabled="true" style="width: 60px;
+											margin-right: 10px; text-align: right;"/>
+							<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(dimensioneUlceraController.retrieveArea(value, viewer))}" 
+ 											escape="false" />
+</a4j:outputPanel>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</h:panelGroup>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="valueName" type="java.lang.String" required="false" default="value" />
+		<composite:attribute name="assignTo" required="true" />
+		<composite:attribute name="displayNameList" type="java.lang.String" required="false" default="label" />
+		<composite:attribute name="displayNameInput" type="java.lang.String" required="false" />
+		<composite:attribute name="minChars" default="1" required="false" />
+		<composite:attribute name="render" type="java.lang.String" default="@none" required="false" />
+		<composite:attribute name="required" type="java.lang.Boolean" default="false" required="false" />
+		<composite:attribute name="converter" type="javax.faces.convert.Converter" required="false" />
+		<composite:attribute name="allowReset" type="java.lang.Boolean" default="false" required="false" />
+		<composite:attribute name="fact" required="true" />
+	</composite:interface>
+	
+	<composite:implementation>
+		<rich:autocomplete id="suggestion" mode="ajax" minChars="#{cc.attrs.minChars}" 
+							styleClass="#{not component.valid ? ' sugg-vld-error' : ''}"
+							autocompleteMethod="#{suggestionController.autocomplete}" 
+							var="item" fetchValue="#{item[cc.attrs.displayNameList]}" layout="list"
+							onkeydown="return disableReturn(event, this);"
+							onclick="this.select(); #{cc.attrs.id}focus();">
+		    <h:inputHidden value="#{item[cc.attrs.valueName]}" rendered="#{item ne null}" />
+		    <h:outputText value="#{item[cc.attrs.displayNameList]}"/>
+
+		    <f:ajax event="selectitem" execute="@this"
+		    		onevent="#{cc.attrs.id}setValueSelect(event.target.firstChild.value)"
+		    		render="#{cc.attrs.render}" />
+		</rich:autocomplete>	
+	
+		<a4j:jsFunction name="#{cc.attrs.id}setValueSelect">
+	    	<a4j:param name="param" assignTo="#{cc.attrs.assignTo}" converter="#{cc.attrs.converter}"  />
+	    	<a4j:actionListener listener="#{cc.attrs.persistListener.persistData}" />
+	    </a4j:jsFunction>
+		
+		<a4j:commandLink action="#{cc.attrs.reset}" 
+							styleClass="normal-text tltip"
+							title="Svuota campo"
+							execute="@this"
+							render="@form"
+							rendered="#{cc.attrs.allowReset}">
+			<i class="fw-icon-undo"></i>					
+		</a4j:commandLink>
+		
+		<a4j:jsFunction name="#{cc.attrs.id}focus" 
+						action="#{suggestionController.assignSelectedType(cc.attrs.fact.type)}" 
+						execute="@this" render="@none"/>
+		
+		<script type="text/javascript">
+			var element = document.getElementById('#{cc.clientId}:suggestionInput');
+			element.value = ""; 
+			element.value = '#{cc.attrs.displayNameInput}';
+		</script>
+		
+	</composite:implementation>
+</html>

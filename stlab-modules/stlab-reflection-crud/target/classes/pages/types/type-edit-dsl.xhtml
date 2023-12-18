@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+<ui:composition template="/layout/template.xhtml">
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<h:form id="type-dsl-form" styleClass="form-horizontal">
+		
+			<h:panelGroup layout="block" styleClass="page-title">
+				<h2>
+					Creazione Tipo
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn" id="btn">
+						<h:commandLink class="btn" action="#{typeEditDsl.cancel()}"
+							immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+						
+						<h:commandLink class="btn btn-info dist-left"
+							action="#{typeEditDsl.validate()}">
+							<i class="fw-icon-ok-circle fw-icon-large dist-right"></i> Valida
+							<f:ajax execute="@this :type-dsl-form:definition" 
+								render=":type-dsl-form:name :type-dsl-form:definition :type-dsl-form:btn :msg"/>
+						</h:commandLink>
+
+						<h:commandLink class="btn btn-primary dist-left"
+							action="#{typeEditDsl.save()}"
+							rendered="#{typeEditDsl.canSave()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+			</h:panelGroup>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="type-dsl-form:name">* Nome</label>
+				<div class="controls">
+					<h:inputText id="name" value="#{typeEditDsl.name}"
+						required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+						styleClass="wider #{component.valid ? '' : 'vld-error'}">
+			    		<f:ajax execute="@this" render=":type-dsl-form:btn" />
+					</h:inputText>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="type-dsl-form:definition">* Definizione</label>
+				<div class="controls">
+			    	<h:inputTextarea id="definition" value="#{typeEditDsl.definition}"
+			    		required="true" requiredMessage="'Definizione' è un campo obbligatorio!"
+			    		styleClass="wider #{component.valid ? '' : 'vld-error'}" rows="20">
+			    		<f:ajax execute="@this" render=":type-dsl-form:btn" />
+			    	</h:inputTextarea>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>

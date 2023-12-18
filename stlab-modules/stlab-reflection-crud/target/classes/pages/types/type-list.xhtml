@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+	
+		<style>
+			.recurrent { width: 90px; }
+			.form-horizontal .control-label { width: 120px; }
+			.name { width: 300px; }
+		</style>		
+	
+		<h:form id="type-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Tipi
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+
+						<h:panelGroup class="btn-group" layout="block">
+							<a4j:commandLink class="btn btn-primary" 
+								oncomplete="#{rich:component('add-popup')}.show(); return false;" execute="@this">
+								<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+							</a4j:commandLink>					
+							<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right">
+								<li>
+									<h:commandLink action="#{typeList.addNewDsl()}" value="Aggiungi con DSL" />
+								</li>				
+							</ul>
+						</h:panelGroup>
+					</h:panelGroup>
+				</h2>
+ 
+				<filter:filterPanel filters="#{typeFilter}" navigator="#{typeList}"
+									render=":type-form:navigator :type-form:results"
+									renderAll=":type-form:filters :type-form:navigator :type-form:results" />
+			</h:panelGroup>
+
+			<h:panelGroup id="results-tab" layout="block"
+							class="tabbable tabs-left">
+				<ul class="nav nav-tabs">
+					<li class="#{typeFilter.isSelectedList( 'ALL' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'ALL' )}"
+										value="Tutti">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+					<li class="#{typeFilter.isSelectedList( 'COMPOSITE' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'COMPOSITE' )}" value="Compositi">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+					<li class="#{typeFilter.isSelectedList( 'ENUMERATED' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'ENUMERATED' )}" value="Enumerati">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+					<li class="#{typeFilter.isSelectedList( 'QUANTITATIVE' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'QUANTITATIVE' )}" value="Quantitativi">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+					<li class="#{typeFilter.isSelectedList( 'QUERIED' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'QUERIED' )}" value="Queried">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+					<li class="#{typeFilter.isSelectedList( 'TEMPORAL' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'TEMPORAL' )}" value="Temporali">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+					<li class="#{typeFilter.isSelectedList( 'TEXTUAL' ) ? 'active' : ''}">
+						<h:commandLink action="#{typeFilter.selectList( 'TEXTUAL' )}" value="Testuali">
+							<f:ajax execute="@this" render="results-tab" />
+						</h:commandLink>
+					</li>
+				</ul>
+
+				<div class="tab-content">
+					<div class="tab-pane active">
+						<h:panelGroup layout="block" id="navigator" 
+										xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+							<nav:navigator value="#{typeList}" render=":type-form:navigator :type-form:results" />
+						</h:panelGroup>
+
+						<h:panelGroup layout="block" id="results">
+							<h:panelGroup rendered="#{empty typeResults}">
+								<br />
+								<h:outputText styleClass="lead" value="Nessun tipo trovato" />
+							</h:panelGroup>
+
+							<h:dataTable styleClass="table table-bordered table-striped table-hover"
+								value="#{typeResults}" var="type"
+								columnClasses="name, col, recurrent text-center, crud-controls-4"
+								rendered="#{not empty typeResults}">
+								
+								<h:column>
+									<f:facet name="header">
+										<h:commandLink value="Nome" styleClass="normal-text"
+											action="#{typeFilter.toggle('Nome')}">
+											<f:ajax render="@none" execute="@this" />
+											<f:ajax render=":type-form:results" execute="@none" />
+											<h:panelGroup rendered="#{typeFilter.isSelected('Nome')}">
+												<i class="#{typeFilter.isAscending('Nome') ? 
+													'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+											</h:panelGroup>
+											<h:panelGroup
+												rendered="#{not typeFilter.isSelected('Nome')}">
+												<i class="fw-icon-sort" />
+											</h:panelGroup>
+										</h:commandLink>
+									</f:facet>
+									#{type.name}
+								</h:column>								
+
+								<h:column>
+									<f:facet name="header">
+										Descrizione
+									</f:facet>
+									#{type.description}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:commandLink value="Ricorrente" styleClass="normal-text"
+											action="#{typeFilter.toggle('Ricorrente')}">
+											<f:ajax render="@none" execute="@this" />
+											<f:ajax render=":type-form:results" execute="@none" />
+											<h:panelGroup rendered="#{typeFilter.isSelected('Ricorrente')}">
+												<i class="#{typeFilter.isAscending('Ricorrente') ? 
+													'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+											</h:panelGroup>
+											<h:panelGroup
+												rendered="#{not typeFilter.isSelected('Ricorrente')}">
+												<i class="fw-icon-sort" />
+											</h:panelGroup>
+										</h:commandLink>
+									</f:facet>
+									<h:panelGroup layout="block" rendered="#{type.recurrent}">
+										<i class="fw-icon-ok fw-icon-large" />
+				   					 </h:panelGroup>								
+				   				</h:column>									
+
+								<h:column>
+									<f:facet name="header">
+										Azioni
+									</f:facet>
+				
+									<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+										action="#{typeList.view( type.id )}" >
+										<i class="fw-icon-large fw-icon-zoom-in"></i>
+									</h:commandLink>
+									
+									<h:commandLink title="Modifica" class="btn btn-warning pull-left dist-left tltip"
+										action="#{typeList.edit( type.id )}" >
+										<i class="fw-icon-pencil fw-icon-large"></i>
+									</h:commandLink>	
+										
+									<h:commandLink title="Elimina" class="btn btn-danger pull-left dist-left tltip"
+													action="#{typeList.delete( type.id )}" 
+													rendered="#{typeList.isRemovable( type.id )}"
+													onclick="if(!confirm('Eliminare tipo selezionato?')) {return false;}" >
+										<i class="fw-icon-remove fw-icon-large"></i>
+									</h:commandLink>																		
+									
+									<h:panelGroup layout="block" styleClass="btn-group dropup pull-right dist-left" >
+										<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 
+											<span class="fw-icon-reorder"></span></a>
+										<ul class="dropdown-menu pull-right">
+											<li>
+												<h:commandLink action="#{typeList.copy( type.id )}">
+													<i class="fw-icon-copy dist-right"></i> Clona
+												</h:commandLink>
+											</li>
+										</ul>
+									</h:panelGroup>												
+								</h:column>	
+							</h:dataTable>
+						</h:panelGroup>
+					</div>
+				</div>
+			</h:panelGroup>
+		</h:form>
+
+		<rich:popupPanel id="add-popup" modal="true"
+							moveable="false" height="500" width="900">
+							
+			<h:form id="add-type-form" styleClass="form-horizontal">
+							
+				<div class="modal-header">
+					<a4j:commandLink styleClass="btn btn-primary pull-right 
+						#{not empty typeList.selectedType ? '' : ' hide'}" 
+						action="#{typeList.addNew()}"
+						oncomplete="#{rich:component('add-popup')}.hide();"
+						execute="@form">
+						<i class="fw-icon-step-forward dist-right"></i> Conferma						
+					</a4j:commandLink>					
+					
+					<a4j:commandLink
+						execute="@this" styleClass="btn pull-right dist-right"
+	                   	oncomplete="#{rich:component('add-popup')}.hide(); return false;"
+	                   	render="@form">
+						<i class="fw-icon-step-backward dist-right"></i> Chiudi
+					</a4j:commandLink>										
+	                   
+	                  <h3>Seleziona Tipo da aggiungere</h3>                                            
+				</div>			
+							
+				<div class="modal-body">
+					<div class="control-group">
+						<label class="control-label bold">Tipo</label>
+						<div class="controls align-txt">	
+							<h:selectOneRadio layout="pageDirection" styleClass="radio"
+								value="#{typeList.selectedType}" >
+								<f:selectItem itemValue="composite" itemLabel="Composito" />
+								<f:selectItem itemValue="enumerated" itemLabel="Enumerato" />
+								<f:selectItem itemValue="quantitative" itemLabel="Quantitativo" />
+								<f:selectItem itemValue="queried" itemLabel="Queried" />
+								<f:selectItem itemValue="temporal" itemLabel="Temporale" />
+								<f:selectItem itemValue="textual" itemLabel="Testuale" />
+								<f:ajax execute="@this" render="@form"/>
+							</h:selectOneRadio>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</rich:popupPanel>
+	</ui:define>
+
+</ui:composition>
+</html>

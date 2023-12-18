@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" type="it.unifi.ing.stlab.reflection.actions.wrappers.TypeBean"/>
+    </composite:interface>
+ 
+    <composite:implementation>
+		<h:panelGroup styleClass="control-group" layout="block" rendered="#{cc.attrs.value.isQueried()}">
+			<h:outputLabel styleClass="control-label bold" for="selectedQuery" value="Query" />
+		    <h:panelGroup styleClass="controls align-txt" layout="block">
+		    	<h:outputText id="selectedQuery" value="#{cc.attrs.value.queriedType.queryDef}" /> 
+		    </h:panelGroup>
+		</h:panelGroup>
+    </composite:implementation>
+</html>

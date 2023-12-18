@@ -1,0 +1,5 @@
+it/unifi/ing/stlab/patients/model/PatientTest.class
+it/unifi/ing/stlab/patients/model/PatientJpaTest.class
+it/unifi/ing/stlab/patients/model/PatientIdentifierJpaTest.class
+it/unifi/ing/stlab/patients/dao/PatientDaoTest.class
+it/unifi/ing/stlab/patients/manager/PatientManagerTest.class

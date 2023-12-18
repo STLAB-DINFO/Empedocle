@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" type="it.unifi.ing.stlab.navigation.Navigator"/>
+    	<composite:attribute name="render" />
+    </composite:interface>
+ 
+    <composite:implementation>
+    	<h:panelGroup layout="block" class="navigator-bar">
+			<h:panelGroup rendered="#{cc.attrs.value.itemCount > 0}">
+				<span class="pull-left">
+					<h:panelGroup rendered="#{cc.attrs.value.pageCount > 1}">
+						<strong>#{cc.attrs.value.firstItem} - #{cc.attrs.value.lastItem}</strong> di 
+		              </h:panelGroup>
+					<strong>#{cc.attrs.value.itemCount}</strong> risultati trovati
+				</span>
+			</h:panelGroup>
+	
+			<h:panelGroup styleClass="pull-right" rendered="#{cc.attrs.value.pageCount > 1}">
+				<h:commandLink 
+					styleClass="btn #{cc.attrs.value.hasPrevious() ? '' : 'disabled'}"
+					disabled="#{not cc.attrs.value.hasPrevious()}"
+					action="#{cc.attrs.value.movePrevious()}">
+					<f:ajax render="#{cc.attrs.render}" execute="@this"/>
+					<i class="icon-chevron-left"/>
+				</h:commandLink>
+	
+				<h:commandLink 
+					styleClass="btn dist-left #{cc.attrs.value.hasNext() ? '' : 'disabled'}"
+					disabled="#{not cc.attrs.value.hasNext()}"
+					action="#{cc.attrs.value.moveNext()}">
+					<f:ajax render="#{cc.attrs.render}" execute="@this"/>
+					<i class="icon-chevron-right"/>
+				</h:commandLink>
+			</h:panelGroup>
+    	</h:panelGroup>
+    </composite:implementation>
+</html>

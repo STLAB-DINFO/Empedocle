@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+	
+	<style>
+		div.rf-pp-cnt { background-color: white; padding: 0;}
+		div.rf-pp-cntr { border: 1px solid #CCC; }
+	</style>
+	
+		<h:form id="message-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Messaggi
+				</h2>			
+
+				<filter:filterPanel filters="#{messageFilter}" navigator="#{messageList}" 
+						render=":message-form:navigator :message-form:results"
+						renderAll=":message-form:filters :message-form:navigator :message-form:results"/>				
+			</h:panelGroup>
+			
+			<h:panelGroup id="results-tab" layout="block" class="tabbable tabs-left">
+				<ul class="nav nav-tabs">
+					<li class="#{messageFilter.isSelectedList( 'ALL' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{messageFilter.selectList( 'ALL' )}"  
+							value="Tutti">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{messageFilter.isSelectedList( 'INFO' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{messageFilter.selectList( 'INFO' )}"  
+							value="Info">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{messageFilter.isSelectedList( 'WARNING' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{messageFilter.selectList( 'WARNING' )}"  
+							value="Warning">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{messageFilter.isSelectedList( 'SEVERE' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{messageFilter.selectList( 'SEVERE' )}"  
+							value="Severe">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+				</ul>
+	
+				<div class="tab-content">
+					<div class="tab-pane active">
+						<a4j:poll interval="5000" render="navigator,results" />
+			
+						<h:panelGroup layout="block" id="navigator" xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+							<nav:navigator value="#{messageList}" render=":message-form:navigator :message-form:results"/>
+						</h:panelGroup>
+			
+						<h:panelGroup layout="block" id="results">
+							<h:panelGroup rendered="#{empty messageResults}">
+								<br/>
+								<h:outputText styleClass="lead" value="Nessun messaggio trovato"/>
+							</h:panelGroup>
+							
+							<h:dataTable styleClass="table table-bordered table-striped table-hover" value="#{messageResults}" var="message"
+								rendered="#{not empty messageResults}"
+								columnClasses="text-center, null, null, null, null, crud-controls-2"
+								rowClasses="#{messageList.rowStyleClasses}">
+								
+								<h:column>
+									<f:facet name="header">
+										Stato
+									</f:facet>
+									<i class="tltip fw-icon-large #{message.isRead ? 'fw-icon-envelope-alt' : 'fw-icon-envelope'}" 
+										title="#{message.isRead ? 'Letto' : 'Non letto'}"></i>
+								</h:column>								
+								
+								<h:column>
+									<f:facet name="header">
+										Data
+									</f:facet>
+									<h:outputText value="#{message.date}" >
+										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>										
+								</h:column>
+			
+								<h:column>
+									<f:facet name="header">
+										Mittente
+									</f:facet>
+									<span>#{message.sender}</span>
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										Paziente
+									</f:facet>
+									<span>#{message.patient.surname} #{message.patient.name}</span>
+								</h:column>
+			
+								<h:column>
+									<f:facet name="header">
+										Oggetto
+									</f:facet>
+									<span>#{message.subject}</span>
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										Azioni
+									</f:facet>
+									
+									<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+													action="#{messageList.view( message.id )}" >
+										<i class="fw-icon-zoom-in fw-icon-large"></i>
+									</h:commandLink>									
+
+									<h:commandLink styleClass="btn btn-warning pull-right tltip" 
+													title="Marca come non letto" 
+													action="#{messageList.markAsUnread( message.id )}" rendered="#{message.isRead}">
+										<i class="fw-icon-minus-sign-alt fw-icon-large"></i>
+									</h:commandLink>									
+								</h:column>
+							</h:dataTable>
+						</h:panelGroup>
+					</div>
+				</div>
+			</h:panelGroup>			
+		</h:form>
+		
+	</ui:define>
+
+</ui:composition>
+</html>

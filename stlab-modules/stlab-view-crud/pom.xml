@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>stlab-view-crud</artifactId>
+	<parent>
+		<groupId>it.unifi.ing.stlab</groupId>
+		<artifactId>stlab-modules</artifactId>
+		<version>1.0.0</version>
+	</parent>	
+	
+	<properties>
+		<org.richfaces.version>4.5.17.Final</org.richfaces.version>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/webapp</directory>
+			</resource>
+		</resources>	
+	</build>
+	
+	<dependencies>
+		<!--  stlab dependencies -->				
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-view</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-view-dsl</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-reflection</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-entities</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-users</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-commons</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-filters</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-test</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+			
+		<!--  other libraries -->				
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-jexl</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		
+		<!--  richfaces dependencies-->
+		<dependency>
+			<groupId>org.richfaces</groupId>
+			<artifactId>richfaces</artifactId>
+			<version>${org.richfaces.version}</version>
+		</dependency>
+	</dependencies>
+</project>

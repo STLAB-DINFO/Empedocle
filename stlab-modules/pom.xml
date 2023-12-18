@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.unifi.ing.stlab</groupId>
+	<artifactId>stlab-modules</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>stlab-commons</module>
+		<module>stlab-entities</module>
+		<module>stlab-fact-query</module>
+		<module>stlab-filters</module>
+		<module>stlab-patients</module>
+		<module>stlab-reflection</module>
+		<module>stlab-reflection-crud</module>
+		<module>stlab-reflection-dsl</module>
+		<module>stlab-reflection-impl</module>
+		<module>stlab-reflection-lite</module>
+		<module>stlab-test</module>
+		<module>stlab-users</module>
+		<module>stlab-view</module>
+		<module>stlab-view-controllers</module>
+		<module>stlab-view-crud</module>
+		<module>stlab-view-dsl</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jacoco.report.path>${project.basedir}/target/jacoco</jacoco.report.path>
+	</properties>
+
+	<dependencies>
+		<!-- Java EE 8 dependency -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- log libraries -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>		
+		
+        <!-- test libraries -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>			
+		</dependency>		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+	<!--  		<plugin>
+			    <artifactId>maven-dependency-plugin</artifactId>
+			    <version>2.8</version>
+			    <executions>
+			        <execution>
+			            <id>analyze</id>
+			            <goals>
+			                <goal>analyze-only</goal>
+			            </goals>
+			            <configuration>
+			                <failOnWarning>true</failOnWarning>
+			                <outputXML>true</outputXML>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>	-->		
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>jacoco</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.7.9</version>
+						<configuration>
+							<destFile>${jacoco.report.path}/jacoco.exec</destFile>
+						</configuration>
+						<executions>
+							<execution>
+								<id>pre-unit-test</id>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>post-unit-test</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
+								</goals>
+								<configuration>
+									<dataFile>${jacoco.report.path}/jacoco.exec</dataFile>
+									<outputDirectory>${jacoco.report.path}</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

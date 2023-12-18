@@ -1,0 +1,80 @@
+/*==========================*/
+.viewer-list-col1 {
+	width: 90%
+}
+
+.viewer-list-col2 {
+	width: 10%
+}
+
+/*====== viewer edit dsl =======*/
+.viewer-def-input {
+	min-height: 250px;
+	width: 98%;
+}
+
+.viewer-css-input {
+	min-height: 250px;
+	width: 98%;
+}
+
+#view-sx-col {
+	width: 70%;
+}
+
+#view-dx-col {
+	width: 30%;
+}
+
+#view-preview-box {
+	width: 465px;
+	padding-left: 5px;
+}
+
+#report-popup_content .modal-body, #preview-popup_content .modal-body {
+	max-height: none;
+}
+
+/*====== viewer edit =======*/
+.structure-container {
+	padding: 3px;
+	border: 1px solid #cccccc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	overflow-y: auto;
+	height: 400px;
+}
+
+.panelc {
+	width: 25%;
+}
+
+.valign {
+	vertical-align: top;
+}
+
+.dropTargetPanel {
+	width: 90%;
+}
+
+.footerClass {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.rf-ind-drag {
+	font-size: 11px;
+	cursor: pointer;
+	cursor: -webkit-grab;
+	width: 100px;
+	border: 1px solid gray;
+	padding: 2px
+}
+
+.rf-ind-acpt {
+	border: 2px solid green
+}
+
+.rf-ind-rejt {
+	border: 2px solid red
+}

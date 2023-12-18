@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<h:form id="agenda-edit-form" styleClass="form-horizontal">
+
+			<div class="crud-title">
+				<h2>
+					#{agendaEdit.new ? 'Creazione' : 'Modifica'} Agenda
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn" action="#{agendaEdit.cancel()}"
+							immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+
+						<h:commandLink class="btn btn-primary dist-left"
+							action="#{agendaEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="agenda-edit-form:code">* Codice</label>
+				<div class="controls">
+					<h:inputText id="code" value="#{agendaEdit.current.code}"
+						required="true"
+						requiredMessage="'Codice' è un campo obbligatorio!"
+						styleClass="#{component.valid ? '' : 'vld-error'}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="agenda-edit-form:description">Descrizione</label>
+				<div class="controls">
+					<h:inputText id="description"
+						value="#{agendaEdit.current.description}" styleClass="wider" />
+				</div>
+			</div>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

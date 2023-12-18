@@ -1,0 +1,15 @@
+it/unifi/ing/stlab/patients/dao/PatientDaoBean.class
+it/unifi/ing/stlab/patients/model/actions/PatientAction.class
+it/unifi/ing/stlab/patients/model/PatientIdentifier.class
+it/unifi/ing/stlab/patients/model/actions/PatientDeleteAction.class
+it/unifi/ing/stlab/patients/model/actions/PatientModifyAction.class
+it/unifi/ing/stlab/patients/factory/PatientFactory.class
+it/unifi/ing/stlab/patients/factory/PatientActionFactory.class
+it/unifi/ing/stlab/patients/model/Patient.class
+it/unifi/ing/stlab/patients/model/actions/PatientSplitAction.class
+it/unifi/ing/stlab/patients/model/Address.class
+it/unifi/ing/stlab/patients/dao/PatientDao.class
+it/unifi/ing/stlab/patients/manager/PatientManager.class
+it/unifi/ing/stlab/patients/model/Sex.class
+it/unifi/ing/stlab/patients/model/actions/PatientCreateAction.class
+it/unifi/ing/stlab/patients/model/actions/PatientMergeAction.class

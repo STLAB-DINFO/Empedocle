@@ -1,0 +1,46 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<c:if test="#{comboController.isOsservazioneQualitativa( value )}">
+		<h:selectOneMenu value="#{value.phenomenon}" 
+						disabled ="#{viewer.readOnly}" 
+						converter="#{phenomenonConverter}" label="#{value.type.name}"
+						styleClass="combo_phen #{not component.valid ? 'vld-error' : ''}" 
+						onkeydown="return disableReturn(event, this)">
+			<f:selectItem itemValue="" itemLabel="" noSelectionOption="true"/>
+			<f:selectItems value="#{comboController.getSelectItems(value)}" />
+			<f:attribute name="fact" value="#{value}" />
+			<a4j:ajax event="valueChange"
+					  execute="@this" render="@region"
+					  listener="#{persistListener.persistData}" />
+		</h:selectOneMenu>
+	</c:if>
+	
+	<c:if test="#{comboController.isOsservazioneQuantitativa(value)}">
+		<c:choose>
+			<c:when test="#{comboController.getSelectItems(value).size() gt 1}">
+				<h:selectOneMenu value="#{value.quantity.unit}"
+									disabled ="#{viewer.readOnly}" 
+									onkeydown="return disableReturn(event, this)"
+									converter="#{unitConverter}"
+									styleClass="combo_udm #{not component.valid ? 'vld-error' : ''}" >
+					<a4j:ajax event="valueChange"
+							 	listener="#{persistListener.persistData}" />
+					<f:selectItems value="#{comboController.getSelectItems(value)}" />	
+					<f:attribute name="fact" value="#{value}" />
+				</h:selectOneMenu>
+			</c:when>
+			<c:otherwise>
+				<h:outputText value="#{value.quantity.unit.simbol}" escape="false" />
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+	
+</h:panelGroup>

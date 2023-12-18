@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL"> 
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+		
+ 		<class>it.unifi.ing.stlab.users.model.User</class> 
+ 		<class>it.unifi.ing.stlab.users.model.Role</class> 
+ 		<class>it.unifi.ing.stlab.users.model.Qualification</class> 
+
+ 		<class>it.unifi.ing.stlab.patients.model.Patient</class> 
+		<class>it.unifi.ing.stlab.patients.model.PatientIdentifier</class>
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientCreateAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientModifyAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientMergeAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientSplitAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientDeleteAction</class> 
+
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Unit</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.UnitUse</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Phenomenon</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Type</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.TextualType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QuantitativeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QualitativeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QueriedType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.EnumeratedType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.CompositeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.links.TypeLink</class> 
+
+ 		<class>it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.TextualFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.TemporalFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.QualitativeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.QuantitativeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.CompositeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactCreateAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactModifyAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactMergeAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactSplitAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactDeleteAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactLinkImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactInsertLink</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactUpdateLink</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactRemoveLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.FactContext</class>
+		
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.FactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.TextualFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue</class>
+		
+		<class>it.unifi.ing.stlab.view.model.Viewer</class>
+		<class>it.unifi.ing.stlab.view.model.links.SubViewer</class>
+		<class>it.unifi.ing.stlab.view.model.links.TypeSelector</class>
+		<class>it.unifi.ing.stlab.view.model.links.Tab</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerOutput</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerInput</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerContainer</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerCustom</class> 		
+		
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Box</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Grid</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Report</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.input.Combo</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.InputList</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.InputText</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.Suggestion</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.input.TextArea</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.output.Label</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputField</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputImage</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputList</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputMeasurementUnit</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputPath</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputType</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputValue</class>						
+		
+ 		<class>it.unifi.ing.stlab.empedocle.model.Agenda</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.Staff</class>
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Icd9cm</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Service</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.ExaminationType</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Examination</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Appointment</class> 
+		<class>it.unifi.ing.stlab.empedocle.model.health.ViewerUse</class>
+		<class>it.unifi.ing.stlab.empedocle.model.health.Authorization</class>	
+		
+		<class>it.unifi.ing.stlab.empedocle.model.messages.Message</class>  			
+		
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMTopicCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubTopicCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMCategoryCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubCategoryCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubClassificationCode</class> 
+ 		
+  		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCAnatomicalMainGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCTherapeuticMainGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCPharmacologicalSubGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCChemicalSubGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCChemicalSubstanceCode</class>	
+ 		
+   		<class>it.unifi.ing.stlab.empedocle.model.health.drugs.DrugIndex</class> 
+		
+ 		<properties>
+ 			<property name="javax.persistence.validation.mode" value="none" />
+ 			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" /> 
+ 			<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:testdb" /> 
+ 			<property name="hibernate.connection.username" value="sa" /> 
+ 			<property name="hibernate.connection.password" value="" /> 
+ 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" /> 
+ 			<property name="hibernate.hbm2ddl.auto" value="update" /> 
+ 			<property name="hibernate.show_sql" value="false" /> 
+ 		</properties> 
+ 	</persistence-unit>  
+
+	<persistence-unit name="test_mysql" transaction-type="RESOURCE_LOCAL"> 
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+		
+ 		<class>it.unifi.ing.stlab.users.model.User</class> 
+ 		<class>it.unifi.ing.stlab.users.model.Role</class> 
+ 		<class>it.unifi.ing.stlab.users.model.Qualification</class> 
+
+ 		<class>it.unifi.ing.stlab.patients.model.Patient</class> 
+		<class>it.unifi.ing.stlab.patients.model.PatientIdentifier</class>
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientCreateAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientModifyAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientMergeAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientSplitAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientDeleteAction</class> 
+
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Unit</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.UnitUse</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Phenomenon</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Type</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.TextualType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.TemporalType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QuantitativeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QualitativeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QueriedType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.EnumeratedType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.CompositeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.links.TypeLink</class> 
+
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.TextualFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.TemporalFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.QualitativeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.QuantitativeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.CompositeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactCreateAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactModifyAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactMergeAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactSplitAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactDeleteAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactLinkImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactInsertLink</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactUpdateLink</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactRemoveLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.FactContext</class>
+		
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.FactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.TextualFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue</class>
+
+		<class>it.unifi.ing.stlab.view.model.Viewer</class>
+		<class>it.unifi.ing.stlab.view.model.links.SubViewer</class>
+		<class>it.unifi.ing.stlab.view.model.links.TypeSelector</class>
+		<class>it.unifi.ing.stlab.view.model.links.Tab</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerOutput</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerInput</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerContainer</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerCustom</class> 		
+		
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Box</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Grid</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Report</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.input.Combo</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.InputList</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.InputText</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.Suggestion</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.input.TextArea</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.output.Label</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputField</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputImage</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputList</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputMeasurementUnit</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputPath</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputType</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputValue</class>						
+		
+ 		<class>it.unifi.ing.stlab.empedocle.model.Agenda</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.Staff</class>
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Icd9cm</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Service</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.ExaminationType</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Examination</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Appointment</class> 
+		<class>it.unifi.ing.stlab.empedocle.model.health.ViewerUse</class>
+		<class>it.unifi.ing.stlab.empedocle.model.health.Authorization</class>		
+		
+		<class>it.unifi.ing.stlab.empedocle.model.messages.Message</class>  			
+		
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMTopicCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubTopicCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMCategoryCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubCategoryCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubClassificationCode</class> 
+ 		
+   		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCAnatomicalMainGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCTherapeuticMainGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCPharmacologicalSubGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCChemicalSubGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCChemicalSubstanceCode</class>	
+ 		
+   		<class>it.unifi.ing.stlab.empedocle.model.health.drugs.DrugIndex</class> 
+
+		<properties>
+			<property name="javax.persistence.validation.mode" value="none" /> 
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/empdb_test" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.default_batch_fetch_size" value="16" />
+		</properties>
+ 	</persistence-unit>  
+
+	<persistence-unit name="test_reflection" transaction-type="RESOURCE_LOCAL"> 
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+		
+ 		<class>it.unifi.ing.stlab.users.model.User</class> 
+ 		<class>it.unifi.ing.stlab.users.model.Role</class> 
+ 		<class>it.unifi.ing.stlab.users.model.Qualification</class> 
+
+ 		<class>it.unifi.ing.stlab.patients.model.Patient</class> 
+		<class>it.unifi.ing.stlab.patients.model.PatientIdentifier</class>
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientCreateAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientModifyAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientMergeAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientSplitAction</class> 
+ 		<class>it.unifi.ing.stlab.patients.model.actions.PatientDeleteAction</class> 
+
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Unit</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.UnitUse</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Phenomenon</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.Type</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.TextualType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.TemporalType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QuantitativeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QualitativeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.QueriedType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.EnumeratedType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.CompositeType</class> 
+ 		<class>it.unifi.ing.stlab.reflection.model.types.links.TypeLink</class> 
+
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.TextualFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.TemporalFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.QualitativeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.QuantitativeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.CompositeFactImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactCreateAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactModifyAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactMergeAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactSplitAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.actions.FactDeleteAction</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactLinkImpl</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactInsertLink</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactUpdateLink</class>
+		<class>it.unifi.ing.stlab.reflection.impl.model.facts.links.FactRemoveLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.FactContext</class>
+		
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.FactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.TextualFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue</class>
+
+		<class>it.unifi.ing.stlab.view.model.Viewer</class>
+		<class>it.unifi.ing.stlab.view.model.links.SubViewer</class>
+		<class>it.unifi.ing.stlab.view.model.links.TypeSelector</class>
+		<class>it.unifi.ing.stlab.view.model.links.Tab</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerOutput</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerInput</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerContainer</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerCustom</class> 		
+		
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Box</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Grid</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.container.Report</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.input.Combo</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.InputList</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.InputText</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.input.Suggestion</class>			
+		<class>it.unifi.ing.stlab.view.model.widgets.input.TextArea</class>	
+		<class>it.unifi.ing.stlab.view.model.widgets.output.Label</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputField</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputImage</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputList</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputMeasurementUnit</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputPath</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputType</class>
+		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputValue</class>						
+		
+ 		<class>it.unifi.ing.stlab.empedocle.model.Agenda</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.Staff</class>
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Icd9cm</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Service</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.ExaminationType</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Examination</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.Appointment</class> 
+		<class>it.unifi.ing.stlab.empedocle.model.health.ViewerUse</class>
+		<class>it.unifi.ing.stlab.empedocle.model.health.Authorization</class>		
+		
+		<class>it.unifi.ing.stlab.empedocle.model.messages.Message</class>  			
+		
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMTopicCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubTopicCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMCategoryCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubCategoryCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.icd9cm.ICD9CMSubClassificationCode</class> 
+ 		
+   		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCAnatomicalMainGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCTherapeuticMainGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCPharmacologicalSubGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCChemicalSubGroupCode</class> 
+ 		<class>it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCChemicalSubstanceCode</class>	
+ 		
+   		<class>it.unifi.ing.stlab.empedocle.model.health.drugs.DrugIndex</class> 
+		
+		<properties>
+			<property name="javax.persistence.validation.mode" value="none" /> 
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/emp_db" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.default_batch_fetch_size" value="16" />
+		</properties>
+ 	</persistence-unit>  
+	
+</persistence>

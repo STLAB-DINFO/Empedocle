@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	
+	<!-- Phase Tracker 
+		<lifecycle>
+			<phase-listener>it.unifi.ing.stlab.commons.faces.PhaseTracker</phase-listener>
+		</lifecycle> -->
+	
+	<!-- JSF custom messages -->
+	<application>
+		<message-bundle>lang.CustomMessages</message-bundle>
+	</application>
+	
+	<!-- General navigation rules -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>patient-list</from-outcome>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>examination-list</from-outcome>
+			<to-view-id>/pages/examination/examination-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>staff-list</from-outcome>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>agenda-list</from-outcome>
+			<to-view-id>/pages/agendas/agenda-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>examinationtype-list</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>type-list</from-outcome>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>view-list</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fact-query-list</from-outcome>
+			<to-view-id>/pages/queries/query-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>message-list</from-outcome>
+			<to-view-id>/pages/messages/message-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>panel-view</from-outcome>
+			<to-view-id>/pages/staff/panel/panel-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>from</name>
+					<value>#{view.viewId}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- Patient navigation rules -->
+	<!-- from patient-list -->
+	<navigation-rule>
+		<from-view-id>/pages/patients/patient-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/patients/patient-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{patientList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>patient-list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/patients/patient-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{patientList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/patients/patient-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>run</from-outcome>
+			<to-view-id>/pages/examination/examination-running.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{patientList.examinationId}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from patient-view -->
+	<navigation-rule>
+		<from-view-id>/pages/patients/patient-view.xhtml</from-view-id>	
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/patients/patient-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{patientList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>run</from-outcome>
+			<to-view-id>/pages/examination/examination-running.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{patientView.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>		
+	</navigation-rule>
+	
+	<!-- from patient-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/patients/patient-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{patientEdit.from eq 'list'}</if>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{patientEdit.from eq 'view'}</if>
+			<to-view-id>/pages/patients/patient-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{patientEdit.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>patient-list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{patientEdit.from eq 'view'}</if>
+			<to-view-id>/pages/patients/patient-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{patientEdit.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>patient-list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{patientEdit.from eq 'list'}</if>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+
+	<!-- Examination navigation rules -->
+	<!-- from examination-list -->
+	<navigation-rule>
+		<from-view-id>/pages/examination/examination-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>run</from-outcome>
+			<to-view-id>/pages/examination/examination-running.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{examinationList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>history</from-outcome>
+			<to-view-id>/pages/patients/patient-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{examinationList.patientId}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>examination-list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/examination/examination-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{examinationList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/examination/examination-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/examination/examination-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from examination-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/examination/examination-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<to-view-id>/pages/examination/examination-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/examination/examination-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from examination-running -->
+	<navigation-rule>
+		<from-view-id>/pages/examination/examination-running.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>summary</from-outcome>
+			<to-view-id>/pages/examination/examination-summary.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/pages/examination/examination-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>switch-user</from-outcome>
+			<to-view-id>/pages/examination/examination-running.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{examinationRunning.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from examination-summary -->
+	<navigation-rule>
+		<from-view-id>/pages/examination/examination-summary.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/pages/patients/patient-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>run</from-outcome>
+			<to-view-id>/pages/examination/examination-running.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- Message navigation rules from message-list -->
+	<!-- from message-list -->	
+	<navigation-rule>
+		<from-view-id>/pages/messages/message-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/messages/message-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{messageList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>message-list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from message-view -->
+	<navigation-rule>
+		<from-view-id>/pages/messages/message-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/messages/message-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>	
+	
+	
+	<!-- Staff navigation rules -->
+	<!--  from staff-list -->
+	<navigation-rule>
+		<from-view-id>/pages/staff/staff-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/staff/staff-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{staffList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/staff/staff-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{staffList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/staff/staff-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>copy</from-outcome>
+			<to-view-id>/pages/staff/staff-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>copy</name>
+					<value>true</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{staffList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>enable-disable</from-outcome>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>reset</from-outcome>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from staff-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/staff/staff-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{staffEdit.from eq 'view'}</if>
+			<to-view-id>/pages/staff/staff-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{staffEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{staffEdit.from eq 'list'}</if>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{staffEdit.from eq 'view' and not staffEdit.copy}</if>
+			<to-view-id>/pages/staff/staff-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{staffEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{staffEdit.from eq 'list' or staffEdit.copy}</if>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from staff-view -->
+	<navigation-rule>
+		<from-view-id>/pages/staff/staff-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/staff/staff-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{staffView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>copy</from-outcome>
+			<to-view-id>/pages/staff/staff-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>copy</name>
+					<value>true</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{staffView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/staff/staff-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>enable-disable</from-outcome>
+			<to-view-id>/pages/staff/staff-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{staffView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>reset</from-outcome>
+			<to-view-id>/pages/staff/staff-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>from</name>
+					<value>#{staffView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- StaffPanel navigation rules -->
+	<!-- from panel-view -->
+	<navigation-rule>
+		<from-view-id>/pages/staff/panel/panel-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/staff/panel/panel-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>from</name>
+					<value>#{panelView.from}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>#{panelView.from}</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from panel-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/staff/panel/panel-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>save-cancel</from-outcome>
+			<to-view-id>/pages/staff/panel/panel-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>from</name>
+					<value>#{panelEdit.from}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>	
+	
+	
+	<!-- Agenda navigation rules -->	
+	<!-- from agenda-list -->
+	<navigation-rule>
+		<from-view-id>/pages/agendas/agenda-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/agendas/agenda-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{agendaList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/agendas/agenda-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{agendaList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/agendas/agenda-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/agendas/agenda-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from agenda-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/agendas/agenda-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{agendaEdit.from eq 'view'}</if>
+			<to-view-id>/pages/agendas/agenda-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{agendaEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{agendaEdit.from eq 'list'}</if>
+			<to-view-id>/pages/agendas/agenda-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{agendaEdit.from eq 'view'}</if>
+			<to-view-id>/pages/agendas/agenda-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{agendaEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{agendaEdit.from eq 'list'}</if>
+			<to-view-id>/pages/agendas/agenda-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from agenda-view -->
+	<navigation-rule>
+		<from-view-id>/pages/agendas/agenda-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/agendas/agenda-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/agendas/agenda-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{agendaView.id}</value>
+				</view-param>
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/agendas/agenda-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- Examination type navigation rules -->
+	<!-- from examinationtype-list -->	
+	<navigation-rule>
+		<from-view-id>/pages/examination/types/examinationtype-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>				
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>copy</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>copy</name>
+					<value>true</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from examinationtype-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/examination/types/examinationtype-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{examinationTypeEdit.from eq 'view'}</if>
+			<to-view-id>/pages/examination/types/examinationtype-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{examinationTypeEdit.from eq 'list'}</if>
+			<to-view-id>/pages/examination/types/examinationtype-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{examinationTypeEdit.from eq 'view' and not examinationTypeEdit.copy}</if>
+			<to-view-id>/pages/examination/types/examinationtype-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{examinationTypeEdit.from eq 'list' or examinationTypeEdit.copy}</if>
+			<to-view-id>/pages/examination/types/examinationtype-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>		
+	</navigation-rule>
+	
+	<!-- from examinationtype-view -->
+	<navigation-rule>
+		<from-view-id>/pages/examination/types/examinationtype-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>copy</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>copy</name>
+					<value>true</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{examinationTypeView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/examination/types/examinationtype-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- Type navigation rules -->
+	<!-- from type-list -->
+	<navigation-rule>
+		<from-view-id>/pages/types/type-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/types/type-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{typeList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/types/type-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>				
+				<view-param>
+					<name>id</name>
+					<value>#{typeList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>copy</from-outcome>
+			<to-view-id>/pages/types/type-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>copy</name>
+					<value>true</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{typeList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/types/type-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+				<view-param>
+					<name>type</name>
+					<value>#{typeList.selectedType}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new-dsl</from-outcome>
+			<to-view-id>/pages/types/type-edit-dsl.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>		
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>	
+
+	
+	<!-- from type-view -->
+	<navigation-rule>
+		<from-view-id>/pages/types/type-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/types/type-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{typeView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>copy</from-outcome>
+			<to-view-id>/pages/types/type-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>copy</name>
+					<value>true</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{typeView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>	
+	
+	<!-- from type-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/types/type-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{typeEdit.from eq 'view'}</if>
+			<to-view-id>/pages/types/type-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{typeEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<if>#{typeEdit.from eq 'list'}</if>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{typeEdit.from eq 'view' and not typeEdit.copy}</if>
+			<to-view-id>/pages/types/type-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{typeEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<if>#{typeEdit.from eq 'list' or typeEdit.copy}</if>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>		
+	</navigation-rule>	
+	
+	<!-- from type-edit-dsl -->
+	<navigation-rule>
+		<from-view-id>/pages/types/type-edit-dsl.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<to-view-id>/pages/types/type-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- Viewer navigation rules -->
+	<!-- from viewer-list -->	
+	<navigation-rule>
+		<from-view-id>/pages/viewer/viewer-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/viewer/viewer-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new-dsl</from-outcome>
+			<to-view-id>/pages/viewer/viewer-edit-dsl.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/viewer/viewer-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{viewerList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/viewer/viewer-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{viewerList.selection}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from viewer-view -->
+	<navigation-rule>
+		<from-view-id>/pages/viewer/viewer-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>delete</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/viewer/viewer-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{viewerView.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from viewer-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/viewer/viewer-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from viewer-edit-dsl -->
+	<navigation-rule>
+		<from-view-id>/pages/viewer/viewer-edit-dsl.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<to-view-id>/pages/viewer/viewer-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+
+	<!-- Fact Query navigation rules from query-list -->
+	<!-- from query-list -->	
+	<navigation-rule>
+		<from-view-id>/pages/queries/query-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/queries/query-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{queryList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>query-list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/queries/query-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{queryList.selection}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>add-new</from-outcome>
+			<to-view-id>/pages/queries/query-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>list</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from query-view -->
+	<navigation-rule>
+		<from-view-id>/pages/queries/query-view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/queries/query-edit.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>cid</name>
+					<value>#{javax.enterprise.context.conversation.id}</value>
+				</view-param>
+				<view-param>
+					<name>id</name>
+					<value>#{queryView.id}</value>
+				</view-param>
+				<view-param>
+					<name>from</name>
+					<value>view</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>close</from-outcome>
+			<to-view-id>/pages/queries/query-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- from query-edit -->
+	<navigation-rule>
+		<from-view-id>/pages/queries/query-edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/pages/queries/query-list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/pages/queries/query-view.xhtml</to-view-id>
+			<redirect include-view-params="true">
+				<view-param>
+					<name>id</name>
+					<value>#{queryEdit.id}</value>
+				</view-param>
+			</redirect>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

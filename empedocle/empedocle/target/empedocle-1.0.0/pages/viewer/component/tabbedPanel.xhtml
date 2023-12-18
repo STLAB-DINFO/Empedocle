@@ -1,0 +1,84 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<a4j:outputPanel>
+		<a4j:jsFunction name="setActiveTab"
+				action="#{tabbedPanelController.activateTab( viewer, provaTab )}">
+			<a4j:param name="param1" assignTo="#{provaTab}"></a4j:param>
+		</a4j:jsFunction>
+		<!--...-->
+		<ul class="nav nav-tabs" id="tabs">
+			<c:forEach items="#{viewer.listChildrenOrdered()}" var="tab" varStatus="row">
+				<li>
+					<a href="#{fn:toLowerCase( fn:replace('#'.concat(tab.label),'\\s+','-') )}" data-toggle="tab">#{tab.label}</a>
+				</li>
+			</c:forEach>
+		</ul>
+		
+		<div class="tab-content">
+			<c:forEach items="#{viewer.listChildrenOrdered()}" var="tab" varStatus="row">
+				<div class="tab-pane" id="#{fn:toLowerCase( fn:replace(tab.label, '\\s+', '-') )}">					
+					<c:choose>
+						<c:when
+							test="#{tabbedPanelController.isVistaCompositaItem(tab.target)}">
+							<a:view value="#{value}" viewer="#{tab.target}"
+								selector="#{tab.selector}" />
+						</c:when>
+						<c:otherwise>
+							<a:view
+								value="#{tabbedPanelController.findBySelector(value, tab.selector)}"
+								viewer="#{tab.target}" />
+						</c:otherwise>
+					</c:choose>
+					<h:panelGroup layout="block" class="row-fluid tabbedpanel-controls">
+						<div class="span2">
+							<h:panelGroup rendered="#{row.index gt 0}">
+								<a href="#" class="btn tltip"
+									title="Pagina precedente" 
+									onclick="$('#tabs .active').prev().children('a').tab('show'); $('html, body').scrollTop(0);">
+									<i class="fw-icon-chevron-left fw-icon-large"></i>
+								</a>
+							</h:panelGroup>
+						</div>
+						<div class="span8">
+							<a href="#" class="btn tltip"
+								title="Scorri in alto"
+								onclick="$('html, body').scrollTop(0);">
+								<i class="fw-icon-chevron-up fw-icon-large"></i>
+							</a>
+						</div>
+						<div class="span2">
+							<h:panelGroup rendered="#{row.index lt (viewer.listChildrenOrdered().size() - 1)}">
+								<a href="#" class="btn tltip" 
+									title="Pagina successiva" 
+									onclick="$('#tabs .active').next().children('a').tab('show'); $('html, body').scrollTop(0);">
+									<i class="fw-icon-chevron-right fw-icon-large"></i>
+								</a>
+							</h:panelGroup>
+						</div>
+					</h:panelGroup>
+				</div>
+			</c:forEach>
+		</div>
+
+		<script>
+			$(function() {
+				$('#tabs a[href="##{fn:toLowerCase( fn:replace( tabbedPanelController.getRenderedTab( viewer ), '\\s+', '-') )}"]')
+				.tab( 'show' );
+			});
+
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+				setActiveTab( e.target.innerHTML );
+			});		
+		</script>		
+		
+	</a4j:outputPanel>
+</h:panelGroup>

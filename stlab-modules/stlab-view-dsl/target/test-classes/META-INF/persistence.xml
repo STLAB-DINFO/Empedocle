@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="production" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+		
+		<class>it.unifi.ing.stlab.reflection.model.types.Unit</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.UnitUse</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.Phenomenon</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.Type</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.TextualType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.TemporalType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.QuantitativeType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.QualitativeType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.QueriedType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.EnumeratedType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.CompositeType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.links.TypeLink</class>
+
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.FactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.TemporalFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.TextualFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue</class>
+
+ 		<class>it.unifi.ing.stlab.view.model.Viewer</class> 
+ 		<class>it.unifi.ing.stlab.view.model.links.SubViewer</class> 
+ 		<class>it.unifi.ing.stlab.view.model.links.TypeSelector</class> 
+ 		<class>it.unifi.ing.stlab.view.model.links.Tab</class>			 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.ViewerOutput</class>	 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.ViewerInput</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.ViewerContainer</class> 
+		<class>it.unifi.ing.stlab.view.model.widgets.ViewerCustom</class> 
+		
+ 		<class>it.unifi.ing.stlab.view.model.widgets.container.Box</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.container.Grid</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel</class>	 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.container.Report</class>	
+ 		<class>it.unifi.ing.stlab.view.model.widgets.input.Combo</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.input.InputList</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.input.InputText</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.input.InputTemporal</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.input.Suggestion</class>			 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.input.TextArea</class>	 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.Label</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputField</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputImage</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputList</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputMeasurementUnit</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputPath</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputType</class> 
+ 		<class>it.unifi.ing.stlab.view.model.widgets.output.OutputValue</class>						 
+
+		<properties>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/empdb_cec" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.default_batch_fetch_size" value="16" />
+		</properties>
+	</persistence-unit>
+	
+</persistence>

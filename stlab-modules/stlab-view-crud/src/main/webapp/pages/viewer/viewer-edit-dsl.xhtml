@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+      xmlns:emp="http://java.sun.com/jsf/composite/components"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+	<ui:composition template="/layout/template.xhtml">
+		<ui:define name="header">
+			<ui:include src="../../header-no-menu.xhtml" />
+		</ui:define>
+		
+		<ui:define name="body">
+			<style>
+				#viewer-definition-form\:type .controls .span5 > input { width: 100%; }	
+			</style>
+		
+			<h:form id="viewer-definition-form" styleClass="form-horizontal">
+	
+				<h:panelGroup layout="block" styleClass="page-title">
+					<h2>
+						Creazione Vista
+						
+						<h:panelGroup layout="block" styleClass="pull-right align-btn" id="view-buttons">
+							<h:commandLink class="btn" action="#{viewerEditDsl.cancel()}"
+								immediate="true">
+								<i class="fw-icon-step-backward dist-right"></i> Annulla
+							</h:commandLink>
+	
+							<h:commandLink class="btn btn-info dist-left"
+								action="#{viewerEditDsl.validate()}">
+								<i class="fw-icon-ok-circle fw-icon-large dist-right"></i> Valida
+								<f:ajax execute="@this :viewer-definition-form:definition" 
+									render=":viewer-definition-form:view-name 
+										:viewer-definition-form:definition :viewer-definition-form:view-buttons :msg"/>
+							</h:commandLink>
+							
+							<h:panelGroup styleClass="btn-group dist-left" layout="block" rendered="#{viewerEditDsl.checkPreview()}" >
+								<a4j:commandLink styleClass="btn btn-info"
+									action="#{viewerEditDsl.preview( true )}"
+									execute="@this" render="view-root :msg"
+									oncomplete="#{rich:component('preview-popup')}.show()" >
+									<i class="fw-icon-desktop dist-right"></i> Anteprima
+								</a4j:commandLink>
+								<button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><h:link target="_blank" outcome="report-preview"
+											value="Anteprima PDF"
+											styleClass="#{not viewerEditDsl.checkPreview() ? 'disabled-link' : ''}"
+											disabled="#{not viewerEditDsl.checkPreview()}">
+											<f:param name="cid"
+												value="#{javax.enterprise.context.conversation.id}" />
+											<f:param name="type" value="pdf" />
+											<f:ajax execute=":viewer-definition-form:css" />
+										</h:link>
+									</li>
+								</ul>
+							</h:panelGroup>							
+	
+							<h:commandLink class="btn btn-primary dist-left"
+								action="#{viewerEditDsl.save()}"
+								rendered="#{viewerEditDsl.canSave()}">
+								<i class="fw-icon-step-forward dist-right"></i> Salva
+							</h:commandLink>
+						</h:panelGroup>
+					</h2>
+				</h:panelGroup>
+
+				<div class="control-group form-horizontal">
+					<label class="control-label bold" for="viewer-definition-form:view-name">* Nome</label>
+					<div class="controls">
+						<h:inputText id="view-name" value="#{viewerEditDsl.name}" 
+							styleClass="wider #{not component.valid ? ' vld-error' : ''}" 
+							required="true" requiredMessage="'Nome' è un campo obbligatorio">
+				    		<f:ajax execute="@this" render=":viewer-definition-form:view-buttons" />
+						</h:inputText>
+					</div>
+				</div>		
+			
+				<h:panelGroup class="control-group" id="type">
+					<label class="control-label bold" for="viewer-definition-form:type">Applica a</label>
+					<h:panelGroup layout="block" styleClass="controls">
+					
+						<h:panelGroup layout="block" styleClass="row-fluid">
+							<h:panelGroup layout="block" styleClass="span5">
+								<emp:suggestionList bean="#{viewerEditDsl.typeSuggestion}"
+									value="#{viewerEditDsl.type}"
+									suggestion="#{viewerEditDsl.typeSuggestion.suggestion}"
+									converter="#{typeConverter}"
+									render=":viewer-definition-form:type" />	
+							</h:panelGroup>
+	
+							<h:panelGroup class="dropdown span2" layout="block" id="generate-buttons" rendered="#{not empty viewerEditDsl.type}">
+								<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Genera
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a4j:commandLink value="Genera Edit"
+												action="#{viewerEditDsl.generateEditViewer()}"
+												execute="@this"
+												render=":viewer-definition-form:tab :viewer-definition-form:view-buttons" />
+										</li>
+										<li>
+											<a4j:commandLink value="Genera Output"
+												action="#{viewerEditDsl.generateOutputViewer()}"
+												execute="@this"
+												render=":viewer-definition-form:tab :viewer-definition-form:view-buttons" />
+										</li>								
+									</ul>
+								</h:panelGroup>
+							</h:panelGroup>
+						</h:panelGroup>	
+				</h:panelGroup>
+				
+				<br />
+					
+				<h:panelGroup layout="block" id="tab">
+					<ul class="nav nav-tabs">
+					  <li class="active bold"><a href="#definition-panel" data-toggle="tab">* Definizione</a></li>
+					  <li class="bold"><a href="#css-panel" data-toggle="tab">CSS</a></li>
+					</ul>
+					
+					<div class="tab-content">
+						<div class="tab-pane active" id="definition-panel">
+							<div>
+								<h:inputTextarea id="definition" required="true"
+									requiredMessage="'Definizione' è un campo obbligatorio"
+									styleClass="wider #{not component.valid ? ' vld-error' : ''}"
+									value="#{viewerEditDsl.definition}" rows="20">				
+								</h:inputTextarea>
+							</div>
+						</div>
+						<div class="tab-pane" id="css-panel">
+							<div>
+								<h:inputTextarea styleClass="wider"
+									value="#{viewerEditDsl.css}" id="css" rows="20" >
+									<f:ajax event="change" execute="@this"
+										render="@none" />
+								</h:inputTextarea>		
+							</div>
+						</div>
+					</div>
+				</h:panelGroup>	
+			</h:form>
+			
+			<ui:include src="viewer-edit-preview.xhtml" />
+		</ui:define>
+		
+	</ui:composition>
+</html>
+

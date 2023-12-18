@@ -1,0 +1,58 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<a4j:outputPanel xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div class="fieldset">
+		<div class="box_label">
+			<h:outputText value="Short Physical Performance Battery (SPPB)" />
+		</div>	
+		<div class="box_content">
+			<table style="width: 100%">
+				<tr>
+					<td>
+						<h:outputText value="#{sPPBController.findFactLinkBySelector(value, viewer.getByPriority(0).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Mantenimento della posizione a piedi uniti, semi-tandem e tandem per 10')" />					
+					</td>
+					<td>
+						<a:view value="#{sPPBController.findBySelector(value, viewer.getByPriority(0).selector)}" 
+							viewer="#{viewer.getByPriority(0).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{sPPBController.findFactLinkBySelector(value, viewer.getByPriority(1).selector).type.name}" styleClass="label_text"/>
+					</td>
+					<td>
+						<a:view value="#{sPPBController.findBySelector(value, viewer.getByPriority(1).selector)}" 
+							viewer="#{viewer.getByPriority(1).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{sPPBController.findFactLinkBySelector(value, viewer.getByPriority(2).selector).type.name}" styleClass="label_text"/><br />
+						<h:outputText value=" (Eseguire, per 5 volte consecutive, il sit to stand da una sedia senza utilizzare gli arti superiori che per la prova devono essere incrociati davanti al petto)" />
+					</td>
+					<td>
+						<a:view value="#{sPPBController.findBySelector(value, viewer.getByPriority(2).selector)}" 
+							viewer="#{viewer.getByPriority(2).target}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:outputText value="#{sPPBController.findFactLinkBySelector(value, viewer.getByPriority(3).selector).type.name}" styleClass="label_text"/>
+					</td>
+					<td>
+						<a4j:outputPanel ajaxRendered="true">
+							<h:outputText value="#{sPPBController.retrieveOverallScore( viewer, value )}/12" />
+						</a4j:outputPanel>
+					</td>
+				</tr>			
+			</table>
+		</div>	
+	</div>
+</a4j:outputPanel>

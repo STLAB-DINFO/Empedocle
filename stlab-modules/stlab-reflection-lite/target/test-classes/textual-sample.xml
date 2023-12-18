@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<textual xmlns="http://www.stlab.dsi.unifi.it/reflection/facts"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.stlab.dsi.unifi.it/reflection/facts ../../main/resources/facts.xsd "
+	type="textualTypeUuid">
+		Some Text
+</textual>

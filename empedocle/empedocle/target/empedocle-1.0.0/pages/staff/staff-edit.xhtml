@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:emp="http://java.sun.com/jsf/composite/components">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<style>
+			#edit-form\:agenda-default .controls > input { width: 40%; }
+			#edit-form\:select-agenda > div > input { width: 100%; }
+			select { margin-top: 5px; }
+			.deprecated { color: #d44944; }
+			.align-confirm-btn { position: relative; top: 5px; }
+			#edit-form\:agenda-lst .table td:nth-child(3) { text-align: center; }
+		</style>
+			
+		<h:form id="edit-form" styleClass="form-horizontal">
+		
+			<div class="crud-title">
+				<h2>#{staffEdit.edit ? 'Modifica' : 'Creazione'} Utente 
+				#{staffEdit.edit and not staffList.isActive( staffEdit.current ) ? 'disattivato' : ''}		
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn" action="#{staffEdit.cancel()}" immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>	
+						<h:commandLink class="btn btn-primary dist-left" action="#{staffEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>			
+			</div>
+			
+			<div class="#{staffEdit.edit and not staffList.isActive( staffEdit.current ) ? 'disattivato' : ''}">
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:usrName">* Username</label>
+					<div class="controls">
+						<h:inputText id="usrName" value="#{staffEdit.current.user.userid}"
+							required="true" requiredMessage="'Username' è un campo obbligatorio!" 
+							styleClass="#{ component.valid ? '' : 'vld-error'}" />
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:number">Matricola</label>
+					<div class="controls">
+						<h:inputText id="number" value="#{staffEdit.current.number}" />
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:name">* Nome</label>
+					<div class="controls">
+						<h:inputText id="name" value="#{staffEdit.current.user.name}"
+							required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+							styleClass="#{ component.valid ? '' : 'vld-error'}" />
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:surname">* Cognome</label>
+					<div class="controls">
+						<h:inputText id="surname" value="#{staffEdit.current.user.surname}"
+							required="true" requiredMessage="'Cognome' è un campo obbligatorio!"
+							styleClass="#{ component.valid ? '' : 'vld-error'}" />
+					</div>
+				</div>
+		
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:phone">Telefono</label>
+					<div class="controls">
+						<h:inputText id="phone" value="#{staffEdit.current.user.phone}" />
+					</div>
+				</div>
+		
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:mail">Email</label>
+					<div class="controls">
+						<h:inputText id="mail" value="#{staffEdit.current.user.mail}" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:qual">* Qualifica</label>
+					<h:panelGroup id="qual-lst" styleClass="controls" layout="block">
+					
+						<h:panelGroup styleClass="emptyMsg"
+							rendered="#{staffEdit.qualificationSelection.renderEmptyMessage()}" >
+						</h:panelGroup>
+						
+						<rich:list value="#{staffEdit.qualificationSelection.selectedEntities}" var="_q"
+							rendered="#{staffEdit.qualificationSelection.selectedEntities.size() gt 0}"
+							styleClass="unstyled align-txt itemList">
+								<span class="itemName">
+									<h:outputText value="#{_q.name}" />
+								</span>
+								<span class="itemRemove">
+									<h:commandLink action="#{staffEdit.removeQualification(_q)}"
+										styleClass="tltip" title="Rimuovi">
+										<f:ajax execute="@this" render=":edit-form:qual-lst" />
+										<i class="fw-icon-remove" />
+									</h:commandLink>
+								</span>
+						</rich:list>
+						
+						<h:panelGroup rendered="#{staffEdit.qualificationSelection.active}">
+							<h:selectOneMenu id="sel-qual" value="#{staffEdit.qualificationSelection.entity}"
+								converter="#{qualificationConverter}" required="true" requiredMessage="'Qualifica' è un campo obbligatorio!"
+								styleClass="#{ component.valid ? '' : 'vld-error'}" >
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:selectItem itemValue="" itemLabel="" noSelectionOption="true" />
+								<f:selectItems value="#{staffEdit.listAvailableQualifications()}" />
+								<f:ajax listener="#{staffEdit.confirmQualification}" execute="@this" render=":edit-form:qual-lst" /> 
+							</h:selectOneMenu>
+						</h:panelGroup>
+						
+						<h:panelGroup rendered="#{staffEdit.renderAddQualification()}" layout="block"
+							styleClass="selection-add-item">
+							<h:commandLink title="Imposta Qualifica" action="#{staffEdit.addQualification()}"
+								styleClass="tltip">
+								<i class="fw-icon-plus" />
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:ajax execute="@this" render=":edit-form:qual-lst" />
+							</h:commandLink>
+						</h:panelGroup>
+						
+					</h:panelGroup>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:role-lst">* Ruoli</label>
+					<h:panelGroup id="role-lst" styleClass="controls" layout="block">
+						
+						<h:panelGroup styleClass="emptyMsg"
+							rendered="#{staffEdit.roleSelection.renderEmptyMessage()}" >
+						</h:panelGroup>
+					
+						<rich:list value="#{staffEdit.roleSelection.selectedEntities}" var="_role"
+							styleClass="unstyled align-txt itemList" rendered="#{staffEdit.roleSelection.selectedEntities.size() gt 0}">
+								<span class="itemName">
+									<h:outputText value="#{_role.name}"/>
+								</span>
+								<span class="itemRemove">
+									<h:commandLink action="#{staffEdit.removeRole(_role)}"
+										styleClass="tltip" title="Rimuovi">
+										<f:ajax execute="@this" render=":edit-form:role-lst" />
+										<i class="fw-icon-remove" />
+									</h:commandLink>
+								</span>
+						</rich:list>
+						
+						<h:panelGroup rendered="#{staffEdit.roleSelection.active}" layout="block">
+							<h:selectOneMenu id="sel-role" value="#{staffEdit.roleSelection.entity}"
+								converter="#{roleConverter}" required="true" requiredMessage="'Ruoli' è un campo obbligatorio!" 
+								styleClass="#{ component.valid ? '' : 'vld-error'}">
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:selectItem itemValue="" itemLabel="" noSelectionOption="true" />
+								<f:selectItems value="#{staffEdit.listAvailableRoles()}" />
+								<f:ajax listener="#{staffEdit.confirmRole}" execute="@this" render=":edit-form:role-lst" /> 
+							</h:selectOneMenu>
+						</h:panelGroup>
+						
+						<h:panelGroup rendered="#{staffEdit.renderAddRole()}" layout="block"
+							styleClass="selection-add-item">
+							<h:commandLink title="Aggiungi Ruolo" action="#{staffEdit.addRole()}"
+								styleClass="tltip">
+								<i class="fw-icon-plus" />
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:ajax execute="@this" render=":edit-form:role-lst" />
+							</h:commandLink>
+						</h:panelGroup>
+						
+					</h:panelGroup>
+				</div>
+				
+				<h:panelGroup layout="block" class="control-group" id="agenda-default">
+					<label class="control-label bold" for="edit-form:agenda-default">Agenda di default</label>
+					<div class="controls">			
+						<h:panelGroup layout="block" 
+				    		rendered="#{not empty staffEdit.agendaSelection.selectedEntities}" >
+		
+							<emp:suggestionList
+								bean="#{staffEdit.defaultAgendaSuggestion}"
+								value="#{staffEdit.current.defaultAgenda}"
+								suggestion="#{staffEdit.defaultAgendaSuggestion.suggestion}"
+								converter="#{agendaConverter}"
+								render=":edit-form:agenda-default"/>				
+				    	</h:panelGroup>
+					</div>
+				</h:panelGroup>
+				
+				<div class="control-group">
+					<label class="control-label bold" for="edit-form:agende">* Agende</label>
+					<div class="controls">
+						<h:panelGroup layout="block" id="agenda-lst">
+						
+							<h:panelGroup layout="block" styleClass="scrollable" 
+								rendered="#{not empty staffEdit.agendaSelection.selectedEntities}">
+								
+								<h:dataTable value="#{staffEdit.agendaSelection.selectedEntities}" var="_agenda"
+									styleClass="table table-bordered table-condensed">
+											
+									<h:column>	
+										<f:facet name="header">
+											<h:outputText value="Codice" />
+										</f:facet>
+												
+										<h:outputText value="#{_agenda.code}" />
+									</h:column>
+									
+									<h:column>	
+										<f:facet name="header">
+											<h:outputText value="Descrizione" />
+										</f:facet>		
+										
+										<h:outputText value="#{_agenda.description}" />
+									</h:column>
+									
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink action="#{staffEdit.removeAgenda(_agenda)}"
+											styleClass="tltip" title="Rimuovi">
+											<f:ajax execute="@this" render=":edit-form:agenda-lst :edit-form:agenda-default" />
+											<i class="fw-icon-remove" />
+										</h:commandLink>
+									</h:column>
+								
+								</h:dataTable>
+							</h:panelGroup>
+							
+							<h:panelGroup rendered="#{staffEdit.agendaSelection.active}"
+								layout="block" id="select-agenda" styleClass="row-fluid">
+								
+								<h:panelGroup layout="block" styleClass="span5" >
+									<emp:suggestionList
+										bean="#{staffEdit.agendaSuggestion}"
+										value="#{staffEdit.agendaSelection.entity}"
+										suggestion="#{staffEdit.agendaSuggestion.suggestion}"
+										converter="#{agendaConverter}"
+										required="true" requiredMessage="'Agende' è un campo obbligatorio!"
+										render=":edit-form:select-agenda" />
+								</h:panelGroup>
+								
+								<h:panelGroup layout="block" styleClass="span5 align-confirm-btn" >
+									<h:commandLink title="Conferma agenda selezionata" action="#{staffEdit.confirmAgenda}"
+										styleClass="tltip"
+										rendered="#{not empty staffEdit.agendaSelection.entity.toString()}">
+										<i class="fw-icon-ok" />
+										<f:ajax execute="@this" render=":edit-form:agenda-lst :edit-form:agenda-default" />
+										<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+									</h:commandLink>		
+								</h:panelGroup>	
+							</h:panelGroup>
+							
+							<h:panelGroup layout="block" rendered="#{staffEdit.renderAddAgenda()}"
+									styleClass="selection-add-item" id="add-agenda">
+								<h:commandLink title="Aggiungi agenda" action="#{staffEdit.addAgenda()}"
+										styleClass="tltip">
+									<i class="fw-icon-plus" />
+									<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+									<f:ajax execute="@this" render=":edit-form:agenda-lst" />
+								</h:commandLink>
+							</h:panelGroup>
+							
+						</h:panelGroup>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

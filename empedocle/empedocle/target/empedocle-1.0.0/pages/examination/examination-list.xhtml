@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+	
+		<style>
+			.datetime { width: 115px; }
+			.sex { width: 40px; }
+			.birth-date { width: 85px; }
+			.taxcode { width: 150px; }
+			.align-checkbox-report { position: relative; top: -2px; }
+		</style>
+	
+		<script type="text/javascript">
+      		//<![CDATA[
+	        function openMoreThanOne(examinationId){
+				var checkboxes = document.getElementsByName("report-checkbox");
+					
+				for (c in checkboxes) {
+					if (checkboxes[c].checked) {
+				    	window.open("../viewer/report-viewer.jsf"+
+						    			"?type=pdf&eid="+examinationId+
+						    			"&vid="+checkboxes[c].value,
+						    			 "_blank", "", false);
+					}
+				}
+
+				$('#report-panel').modal('hide');
+					
+			}
+
+			function switchNumberOfReports(numReports, examinationId, firstReport) {
+				if(numReports > 1) {
+					$('#report-panel').modal('show');
+				}
+				else {
+					openSingle(examinationId, firstReport);
+				}
+				return false;
+			}
+				 
+			function openSingle(examinationId, firstReport){
+		    	window.open("../viewer/report-viewer.jsf"+
+				    			"?type=pdf&eid="+examinationId+
+				    			"&vid="+firstReport,
+				    			 "_blank", "", false);
+			}
+
+			function tableTooltip(){
+				$('#examination-form\\:results > table tr')
+							.each(function() { 
+								var agenda = $(this).children('td').children('.info-hidden').html();
+								if(agenda !== undefined && agenda != ''){
+									$(this).attr('title', ''+agenda+'').tooltip();
+								}
+							});
+			}
+
+			function toggleReport() {
+				var checkboxes = $('input[name=report-checkbox]:not(:checked)');
+				if( checkboxes.size() > 0 ) {
+					//check all
+					checkboxes.each( function() {
+						$(this).prop('checked', true);
+					} );
+				} else {
+					//de-check all
+					$('input[name=report-checkbox]:checked').each( function() {
+						$(this).prop('checked', false);
+					} );
+				}
+					
+			}
+
+			$(function(){
+				tableTooltip();
+				
+			});
+
+	      	//]]> 
+		</script>
+		
+		<a4j:status onsuccess="tableTooltip();" />
+	        			
+		<h:form id="examination-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Visite
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:outputLink value="/empedocle/statistics"
+								styleClass="btn dist-right #{not examinationList.checkRoleFor( 'statistics' ) ? 'hide' : ''}">
+							<i class="fw-icon-bar-chart fw-icon-large dist-right"></i> Statistiche	
+							<f:param name="user-id" value="#{loggedUser.user.id}" />
+						</h:outputLink>
+						<h:commandLink title="Aggiungi" class="btn btn-primary #{not examinationList.checkRoleFor( 'add-new' ) ? 'hide' : ''}" 
+							action="#{examinationList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+				
+				<filter:filterPanel filters="#{examinationFilter}" 
+					navigator="#{examinationList}" 
+					render=":examination-form:results-tab"
+					renderAll=":examination-form:filters :examination-form:results-tab"/>				
+			</h:panelGroup>
+			
+			<h:panelGroup id="results-tab" layout="block" class="tabbable tabs-left">
+				<ul class="nav nav-tabs">
+					<li class="#{examinationFilter.isSelectedList( 'ALL' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'ALL' )}"  
+							value="Tutte">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{examinationFilter.isSelectedList( 'BOOKED' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'BOOKED' )}"  
+							value="Prenotate">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{examinationFilter.isSelectedList( 'ACCEPTED' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'ACCEPTED' )}"  
+							value="Accettate">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{examinationFilter.isSelectedList( 'RUNNING' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'RUNNING' )}"  
+							value="In erogazione">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{examinationFilter.isSelectedList( 'SUSPENDED' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'SUSPENDED' )}"  
+							value="Sospese">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{examinationFilter.isSelectedList( 'DONE' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'DONE' )}"  
+							value="Erogate">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+					<li class="#{examinationFilter.isSelectedList( 'CONCLUDED' ) ? 'active' : ''}">
+						<h:commandLink 
+							action="#{examinationFilter.selectList( 'CONCLUDED' )}"  
+							value="Concluse">
+							<f:ajax execute="@this" render="results-tab"/>
+						</h:commandLink> 
+					</li>
+				</ul>
+	
+				<div class="tab-content">
+					<div class="tab-pane active">
+						<a4j:poll interval="5000" render="navigator,results" />
+					
+						<h:panelGroup layout="block" id="navigator"
+							xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+							<nav:navigator value="#{examinationList}"
+								render=":examination-form:navigator :examination-form:results" />
+						</h:panelGroup>
+
+						<h:panelGroup layout="block" id="results">
+							<h:panelGroup rendered="#{empty examinationResults}">
+								<br />
+								<h:outputText styleClass="lead" value="Nessuna visita trovata" />
+
+							</h:panelGroup>
+
+							<h:dataTable
+								styleClass="table table-bordered table-striped table-hover"
+								rowClasses="#{examinationList.rowStyleClasses}"
+								columnClasses="datetime, surname, name, sex, birth-date, birth-place, taxcode, crud-controls-4"
+								value="#{examinationResults}" var="examination"
+								style="#{empty examinationResults ? 'display:none;' : ''}">
+								
+								<c:set var="_patient" 
+									value="#{examinationList.getLastPatientVersion( examination.appointment.patient.id )}" />
+								
+								<h:column>
+									<f:facet name="header">
+										Orario
+									</f:facet>
+									<h:outputText value="#{examination.appointment.date}" >
+										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>								
+									
+									<div class="info-hidden">
+										<h:outputText value="#{examinationList.getPopupContent(examination)}" />
+									</div>
+									
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Cognome
+									</f:facet>
+									#{_patient.surname}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Nome
+									</f:facet>
+									#{_patient.name}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Sesso
+									</f:facet>
+									#{_patient.sex}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Data nascita
+									</f:facet>
+									<h:outputText
+										value="#{_patient.birthDate}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Luogo nascita
+									</f:facet>
+									#{_patient.birthPlace}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Codice fiscale
+									</f:facet>
+									#{_patient.taxCode}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										Azioni
+									</f:facet>
+									
+									<a4j:commandLink title="Visualizza referto"
+											action="#{examinationList.initSelectedReports( examination )}"
+											styleClass="btn btn-primary pull-left dist-right tltip" 
+											rendered="#{examinationList.hasReport( examination )}"
+											render=":report-form"
+											oncomplete="switchNumberOfReports( #{examinationList.selectedReports.size()}, #{examination.id}, #{examinationList.selectedReports.get(0).getId()} );">
+										<i class="fw-icon-book fw-icon-large "></i>
+									</a4j:commandLink>
+										
+									<h:commandLink title="Apri cartella"
+										action="#{examinationList.history( _patient.id )}" 
+										styleClass="btn btn-info pull-left dist-right tltip">
+										<i class="fw-icon-large 
+											#{examinationList.checkHistory( _patient.id ) ? 'fw-icon-zoom-in' : 'fw-icon-search'}"></i>
+									</h:commandLink>
+									
+									<h:commandLink title="Avvia"
+											action="#{examinationList.run( examination.id )}"
+											styleClass="btn btn-success pull-left tltip"
+											rendered="#{examinationList.hasStart( examination ) and not examination.status.name.equals('To do')}">
+											<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+										<i class="fw-icon-large fw-icon-play-sign" />
+									</h:commandLink>
+
+									<h:commandLink title="Modifica"
+											action="#{examinationList.run( examination.id )}"
+											styleClass="btn btn-info pull-left tltip"
+											rendered="#{examinationList.hasModify( examination )}">
+											<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+										<i class="fw-icon-large fw-icon-play-sign"></i>
+									</h:commandLink>
+
+									<h:commandLink title="Riprendi"
+											action="#{examinationList.run( examination.id )}"
+											styleClass="btn btn-warning pull-left tltip" 
+											rendered="#{examinationList.hasResume( examination )}">
+											<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+										<i class="fw-icon-large fw-icon-play-sign"></i>
+									</h:commandLink>
+
+									<h:commandLink title="Recupera"
+											action="#{examinationList.run( examination.id )}"
+											styleClass="btn btn-danger pull-left tltip" 
+											rendered="#{examinationList.hasRecover( examination )}">
+											<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+										<i class="fw-icon-large fw-icon-play-sign"></i>
+									</h:commandLink>
+									
+									<h:panelGroup layout="block" styleClass="btn-group dropup pull-right dist-left"
+										rendered="#{examinationList.isRemovable( examination ) and 
+										(examinationList.checkRoleFor( 'edit') or examinationList.checkRoleFor( 'delete'))}" >
+										<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 
+											<span class="fw-icon-reorder"></span></a>
+										<ul class="dropdown-menu pull-right">
+											<li>
+												<h:commandLink action="#{examinationList.edit( examination.id )}">
+													<i class="fw-icon-pencil dist-right"></i> Modifica
+												</h:commandLink>
+											</li>
+											<li>
+												<h:commandLink action="#{examinationList.delete( examination.id )}" 
+													onclick="if(!confirm('Eliminare la visita selezionata?')) {return false;}" >
+													<i class="fw-icon-remove dist-right"></i> Elimina
+												</h:commandLink>											
+											</li>
+										</ul>
+									</h:panelGroup>								
+
+								</h:column>
+			
+							</h:dataTable>
+						</h:panelGroup>					
+					</div>
+				</div>
+			</h:panelGroup>
+			
+		</h:form>
+		
+		<rich:popupPanel id="loading-popup" modal="true" autosized="true"
+			moveable="false" domElementAttachment="form" shadowDepth="0">
+			<div class="modal-body">
+				<h:graphicImage value="/img/load-slow.gif" alt="loading..." />
+			</div>
+		</rich:popupPanel>
+		
+		<!-- Modal -->
+		<div id="report-panel" class="modal fade" role="dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<h:form styleClass="form-horizontal" id="report-form">
+
+					<div class="modal-header">
+						<h3>Seleziona Report da stampare
+						
+							<a4j:commandLink styleClass="btn btn-primary pull-right dist-left"
+								onclick="openMoreThanOne(#{examinationList.selection});"
+								execute="@form">
+								<i class="fw-icon-step-forward dist-right"></i>
+								<h:outputText value="Conferma" styleClass="bold" />
+							</a4j:commandLink>
+						
+							<a4j:commandLink
+								immediate="true"
+								onclick="$('#report-panel').modal('hide');"
+								render="@form"
+								execute="@this"
+								styleClass="btn pull-right" >
+								<i class="fw-icon-step-backward dist-right"></i>
+								<h:outputText value="Chiudi" styleClass="bold" />
+							</a4j:commandLink>
+						</h3>
+					</div>
+
+					<div class="modal-body">
+						<table class="table table-bordered table-condensed">
+							<tr>
+								<td class="text-center"><input type="checkbox"
+									class="align-checkbox-report" onchange="toggleReport();"
+									name="report-toggle" /></td>
+								<td />
+							</tr>
+							<a4j:repeat var="report" value="#{examinationList.selectedReports}"
+								rendered="#{not empty examinationList.selectedReports and examinationList.selectedReports.size() gt 0}"
+								id="report-list">
+								<tr>
+									<td class="text-center"><input type="checkbox"
+										name="report-checkbox" value="#{report.id}"
+										class="align-checkbox-report" /></td>
+									<td>#{report.name}</td>
+								</tr>
+							</a4j:repeat>
+						</table>
+					</div>
+				</h:form>
+			</div>
+		</div>		
+		
+	</ui:define>
+	
+</ui:composition>
+</html>

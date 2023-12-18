@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="fact" required="true" />
+		<composite:attribute name="required" type="java.lang.Boolean" default="false" required="false" />
+		<composite:attribute name="converter" type="javax.faces.convert.Converter" required="false" />
+		<composite:attribute name="minChars" default="1" required="false" />
+		<composite:attribute name="render" type="java.lang.String" default="@none" required="false" />
+		<composite:attribute name="allowReset" type="java.lang.Boolean" default="false" required="false" />
+	</composite:interface>
+	
+	<composite:implementation>
+		<h:outputScript library="javascript" name="typehelper.0.1.2.js" />
+		<div class="typehelper-container" component="#{cc.id}" >
+			<h:inputText styleClass="typehelper" autocomplete="off" />
+			
+			<a4j:jsFunction name="assignValue#{cc.id}">
+				<a4j:param name="param" 
+							assignTo="#{cc.attrs.fact.phenomenon}" 
+							converter="#{cc.attrs.converter}" />
+			</a4j:jsFunction>
+		</div>
+		<script>
+			initTypehelper( "#{cc.attrs.fact.type.id}", "#{cc.id}", 
+								"#{cc.attrs.fact.phenomenon.name}" );
+		</script>
+	</composite:implementation>
+</html>

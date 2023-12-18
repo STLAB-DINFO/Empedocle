@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+	
+		<style>
+			.scrollable { width: 80%; }
+		</style>	
+	
+		<h:form id="edit-form" class="form-horizontal">
+			<div class="crud-title">
+				<h2>Modifica Profilo Utente
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn" action="#{panelEdit.cancel()}" immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+						
+						<h:commandLink class="btn btn-primary dist-left" action="#{panelEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold">Username</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelEdit.current.user.userid}" />
+				</div>
+			</div>		
+					
+			<div class="control-group">
+				<label class="control-label bold">Matricola</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelEdit.current.number}" />
+				</div>
+			</div>			
+			
+			<div class="control-group">
+				<label class="control-label bold">Nome</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelEdit.current.user.name}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Cognome</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{panelEdit.current.user.surname}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Telefono</label>
+				<div class="controls">
+					<h:inputText value="#{panelEdit.current.user.phone}"
+						styleClass="edit-input" >
+						<f:ajax execute="@this" />
+					</h:inputText>
+				</div>			
+			</div>	
+				
+			<div class="control-group">
+				<label class="control-label bold">Email</label>
+				<div class="controls">
+					<h:inputText value="#{panelEdit.current.user.mail}" 
+						styleClass="edit-input #{component.valid ? '' : 'vld-error'}" 
+						validatorMessage="'Email' non è in un formato valido!">
+					    <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+						<f:ajax execute="@this" />
+					</h:inputText>
+				</div>					
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Qualifica</label>
+				<div class="controls">
+					<h:panelGroup id="qualification-list">
+						<rich:list value="#{panelEdit.current.user.listQualifications()}" var="_qual"
+							styleClass="unstyled align-txt itemList" rendered="#{not empty panelEdit.current.user.listQualifications()}">
+								<span class="itemName">
+									<h:outputText value="#{_qual.name}"/>
+								</span>
+						</rich:list>	
+					</h:panelGroup>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Ruoli</label>
+				<div class="controls">
+					<h:panelGroup id="role-list">
+						<rich:list value="#{panelEdit.current.user.listRoles()}" var="_role"
+							styleClass="unstyled align-txt itemList" rendered="#{not empty panelEdit.current.user.listRoles()}">
+								<span class="itemName">
+									<h:outputText value="#{_role.name}"/>
+								</span>
+						</rich:list>	
+					</h:panelGroup>
+				</div>
+			</div>						
+			
+			<div class="control-group">
+				<label class="control-label bold">Agenda di default</label>					
+				<div class="controls align-txt">
+					<h:outputText value="#{panelEdit.current.defaultAgenda}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Agende preferite</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="favorite-agenda-list">
+						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty panelEdit.current.listFavoriteAgendasOrdered()}">
+							<h:dataTable value="#{panelEdit.current.listFavoriteAgendasOrdered()}" var="agenda"
+											styleClass="table table-bordered table-condensed">
+											
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Codice" />
+									</f:facet>
+											
+									<h:outputText value="#{agenda.code}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Descrizione" />
+									</f:facet>		
+									
+									<h:outputText value="#{agenda.description}" />
+								</h:column>
+								
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+					
+				</div>
+			</div>									
+				
+			<div class="control-group">
+				<label class="control-label bold">Agende abilitate</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="agenda-list">
+						<h:panelGroup layout="block" class="scrollable scrollable-edit" rendered="#{not empty panelEdit.current.listAgendasOrdered()}">
+							<h:dataTable value="#{panelEdit.current.listAgendasOrdered()}" var="agenda"
+								rowClasses="#{panelEdit.rowStyleClasses}"
+								styleClass="table table-bordered table-condensed">
+											
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Codice" />
+									</f:facet>
+											
+									<h:outputText value="#{agenda.code}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Descrizione" />
+									</f:facet>		
+									
+									<h:outputText value="#{agenda.description}" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header" />
+									<h:commandLink action="#{panelEdit.markAsFavorite(agenda)}"
+										rendered="#{not panelEdit.isFavoriteAgenda(agenda)}"
+										styleClass="tltip" title="Marca come preferito">
+										<f:ajax execute="@this" render=":edit-form:agenda-list :edit-form:favorite-agenda-list"/>
+										<i class="fw-icon-star-empty" />
+									</h:commandLink>
+									
+									<h:commandLink action="#{panelEdit.removeFavorite(agenda)}"
+										rendered="#{panelEdit.isFavoriteAgenda(agenda)}"
+										styleClass="tltip" title="Elimina da preferiti">
+										<f:ajax execute="@this" render=":edit-form:agenda-list :edit-form:favorite-agenda-list"/>
+										<i class="fw-icon-star" />
+									</h:commandLink>										
+								</h:column>																		
+								
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+				</div>
+			</div>
+ 		</h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>

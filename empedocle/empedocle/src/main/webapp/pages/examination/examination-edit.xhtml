@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:emp="http://java.sun.com/jsf/composite/components">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+		<style>
+			#edit-form\:agenda .controls > input,
+			#edit-form\:patient .controls > input { width: 50%; }
+		</style>
+	
+		<h:form id="edit-form" styleClass="form-horizontal">
+	
+			<div class="crud-title">
+				<h2>#{examinationEdit.new ? 'Creazione' : 'Modifica'} Visita
+				
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn" action="#{examinationEdit.cancel()}" immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						</h:commandLink>	
+						<h:commandLink class="btn btn-primary dist-left" action="#{examinationEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>	
+					</h:panelGroup>		
+				</h2>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:date">* Orario</label>
+				<div class="controls">
+					<h:inputText id="date" value="#{examinationEdit.current.appointment.date}" 
+						required="true" requiredMessage="'Orario' è un campo obbligatorio!" 
+						styleClass="#{ component.valid ? '' : 'vld-error'}">
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:inputText>	(dd/MM/yyyy HH:mm)
+				</div>
+			</div>
+
+			<h:panelGroup layout="block" class="control-group" id="agenda">
+				<label class="control-label bold" for="edit-form:agenda">* Agenda</label>
+				<div class="controls">
+					<emp:suggestionList
+						bean="#{examinationEdit.agendaSuggestion}"
+						value="#{examinationEdit.current.appointment.agenda}"
+						suggestion="#{examinationEdit.agendaSuggestion.suggestion}"
+						converter="#{agendaConverter}"
+						required="true" requiredMessage="'Agenda' è un campo obbligatorio!" 
+						render=":edit-form:agenda"/>
+				</div>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" class="control-group" id="patient">
+				<label class="control-label bold" for="edit-form:patient">* Paziente</label>
+				<div class="controls">
+					<emp:suggestionList
+						bean="#{examinationEdit.patientSuggestion}"
+						value="#{examinationEdit.current.appointment.patient}"
+						suggestion="#{examinationEdit.patientSuggestion.suggestion}"
+						converter="#{patientConverter}"
+						required="true" requiredMessage="'Paziente' è un campo obbligatorio!" 
+						render=":edit-form:patient"/>
+				</div>
+			</h:panelGroup>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

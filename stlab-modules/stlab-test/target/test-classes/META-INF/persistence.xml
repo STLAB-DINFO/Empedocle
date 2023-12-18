@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+
+		<class>it.unifi.ing.stlab.users.model.User</class>
+		<class>it.unifi.ing.stlab.users.model.Role</class>
+		<class>it.unifi.ing.stlab.users.model.Qualification</class>
+		
+		<class>it.unifi.ing.stlab.reflection.model.types.Unit</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.UnitUse</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.Phenomenon</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.Type</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.TextualType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.QuantitativeType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.QualitativeType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.QueriedType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.EnumeratedType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.CompositeType</class>
+		<class>it.unifi.ing.stlab.reflection.model.types.links.TypeLink</class>
+
+
+		<class>it.unifi.ing.stlab.reflection.model.facts.Fact</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.TextualFact</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.QualitativeFact</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.CompositeFact</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.actions.FactAction</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.actions.FactCreateAction</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.actions.FactModifyAction</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.actions.FactMergeAction</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.actions.FactSplitAction</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.actions.FactDeleteAction</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.links.FactLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.links.FactInsertLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.links.FactUpdateLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.links.FactRemoveLink</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.FactContext</class>
+		
+		<class>it.unifi.ing.stlab.empedocle.model.health.ExaminationType</class>
+		<class>it.unifi.ing.stlab.empedocle.model.health.Authorization</class>
+		
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.FactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.TextualFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue</class>
+		<class>it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue</class>
+		
+		<properties>
+			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" />
+			<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:testdb" />
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
+	
+</persistence>

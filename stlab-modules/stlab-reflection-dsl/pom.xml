@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>stlab-reflection-dsl</artifactId>
+	<parent>
+		<groupId>it.unifi.ing.stlab</groupId>
+		<artifactId>stlab-modules</artifactId>
+		<version>1.0.0</version>
+	</parent>	
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr3-maven-plugin</artifactId>
+				<version>3.5</version>
+				<configuration>
+					<outputDirectory>src/main/java</outputDirectory>
+        		</configuration>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>antlr</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+	        </plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!-- stlab dependencies -->
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-reflection</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-test</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+ 
+ 		<!-- antlr libraries -->    
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr3-maven-plugin</artifactId>
+			<version>3.5</version>
+		</dependency>
+	 	<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr-runtime</artifactId>
+			<version>3.5</version>
+	    </dependency>
+    
+		<!-- test libraries -->
+		<dependency>
+			<groupId>net.avh4.util</groupId>
+			<artifactId>imagecomparison</artifactId>
+			<version>0.0.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- database connectors -->    
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.40</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

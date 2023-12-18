@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+	
+		<style>
+			.dist-more-right { margin-right: 10px; }
+			.row-deprecated > td { background-color: #f2dede; color: #d44944; }
+			.row-deprecated:hover > td { background-color: #ebcccc; color: #d44944; }
+		</style>
+			
+		<h:form id="staff-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Utenti
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink title="Aggiungi" class="btn btn-primary" action="#{staffList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+
+				<filter:filterPanel filters="#{staffFilter}" navigator="#{staffList}" 
+						render=":staff-form:navigator :staff-form:results"
+						renderAll=":staff-form:filters :staff-form:navigator :staff-form:results"/>				
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" id="navigator" xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+				<nav:navigator value="#{staffList}" render=":staff-form:navigator :staff-form:results"/>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" id="results">
+				<h:panelGroup rendered="#{empty staffResults}">
+					<br/>
+					<h:outputText styleClass="lead" value="Nessun utente trovato"/>
+				</h:panelGroup>
+				
+				
+				<h:dataTable styleClass="table table-bordered table-striped table-hover" 
+					columnClasses="col1, col2, col3, crud-controls-4"
+					rowClasses="#{staffList.rowClasses}"
+					value="#{staffResults}" var="staff" 
+					rendered="#{not empty staffResults}" >
+					<h:column>
+						<f:facet name="header">
+							<h:commandLink value="Cognome" styleClass="normal-text"
+								action="#{staffFilter.toggle('Cognome')}">
+								<f:ajax render="@none" execute="@this" />
+								<f:ajax render=":staff-form:results" execute="@none" />
+								<h:panelGroup rendered="#{staffFilter.isSelected('Cognome')}">
+									<i class="#{staffFilter.isAscending('Cognome') ? 
+									'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								</h:panelGroup>
+								<h:panelGroup
+									rendered="#{not staffFilter.isSelected('Cognome')}">
+									<i class="fw-icon-sort" />
+								</h:panelGroup>
+							</h:commandLink>
+						</f:facet>
+						#{staff.user.surname}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">
+							Nome
+						</f:facet>
+						<span>#{staff.user.name}</span>
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							Azioni
+						</f:facet>
+	
+						<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+							action="#{staffList.view( staff.id )}" >
+							<i class="fw-icon-large fw-icon-zoom-in"></i>
+						</h:commandLink>
+						
+						<h:commandLink title="Modifica" class="btn btn-warning pull-left dist-left tltip"
+							action="#{staffList.edit( staff.id )}" >
+							<i class="fw-icon-pencil fw-icon-large"></i>
+						</h:commandLink>	
+							
+						<h:commandLink title="Elimina" class="btn btn-danger pull-left dist-left tltip"
+										action="#{staffList.delete( staff.id )}" 
+										rendered="#{staffList.isRemovable( staff ) and not staffList.isItMe( staff )}"
+										onclick="if(!confirm('Eliminare utente selezionato?')) {return false;}" >
+							<i class="fw-icon-remove fw-icon-large"></i>
+						</h:commandLink>																		
+						
+						<h:panelGroup layout="block" styleClass="btn-group dropup pull-right dist-left" >
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 
+								<span class="fw-icon-reorder"></span></a>
+							<ul class="dropdown-menu pull-right">
+								<li>
+									<h:commandLink action="#{staffList.copy( staff.id )}">
+										<i class="fw-icon-copy dist-right"></i> Clona
+									</h:commandLink>
+								</li>
+								<li>
+									<h:commandLink action="#{staffList.disable( staff )}"
+										rendered="#{staffList.isActive( staff ) and not staffList.isItMe( staff )}">
+										<i class="fw-icon-lock dist-right dist-more-right"></i> Disattiva
+									</h:commandLink>
+									<h:commandLink action="#{staffList.enable( staff )}"
+										rendered="#{!staffList.isActive( staff )}">
+										<i class="fw-icon-unlock dist-right"></i> Attiva
+									</h:commandLink>
+								</li>								
+								<li>
+									<h:commandLink action="#{staffList.resetPassword( staff )}" >
+										<i class="fw-icon-key dist-right"></i> Reset password
+									</h:commandLink>											
+								</li>
+							</ul>
+						</h:panelGroup>												
+					</h:column>											
+				</h:dataTable>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

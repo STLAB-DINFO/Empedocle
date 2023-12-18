@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:emp="http://java.sun.com/jsf/composite/components">
+
+<ui:composition template="/layout/template.xhtml">
+	<ui:define name="styles">
+		<h:outputStylesheet library="css" name="view-crud.0.0.1.css" />
+	</ui:define>
+	
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+	
+	<ui:define name="body">
+		<h:form id="viewer-form">
+			<h:panelGroup id="title" layout="block" styleClass="container-fluid"
+				style="padding-bottom:10px;">
+				<h2>#{empty viewerEdit.viewerId ? 'Creazione nuova Vista' : 'Modifica '.concat(viewerEdit.current.viewer.name)}</h2>
+			</h:panelGroup>
+			
+			<h:messages id="msgs" globalOnly="true" errorClass="panel-err text-error" styleClass="statusMessages" />
+	
+			<h:panelGroup id="use-warn" rendered="#{viewerEdit.isUsed()}" styleClass="panel-warn" style="margin-left: 20px;">
+				<h:outputText value="La Vista selezionata è correntemente utilizzata, prestare attenzione alle modifiche."
+					styleClass="text-warning" />
+			</h:panelGroup>
+
+			<h:panelGroup layout="block" styleClass="form-horizontal container-fluid" style="margin-top:20px;">
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="name" value="Nome" />
+				    <h:panelGroup styleClass="controls" layout="block">
+				    	<h:inputText id="name" value="#{viewerEdit.current.viewer.name}"
+				    		required="true" styleClass="input-xxlarge #{not component.valid ? 'vld-error' : ''}"
+				    		requiredMessage="Campo obbligatorio">
+				    		<f:ajax render=":viewer-form:title"/>
+				    	</h:inputText>
+				    	<h:message for="name" styleClass="left5" />
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="dex" value="Descrizione" />
+				    <h:panelGroup styleClass="controls" layout="block">
+				    	<h:inputTextarea id="dex" value="#{viewerEdit.current.viewer.description}"
+				    		styleClass="input-xxlarge">
+				    		<f:ajax />
+				    	</h:inputTextarea>
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" id="type-sel" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="type" value="Tipo" />
+				    <h:panelGroup styleClass="controls" layout="block">
+				    	<emp:suggestion id="type" bean="#{viewerEdit.typeSuggestion}"
+							assignTo="#{viewerEdit.current.viewer.type}"  
+							converter="#{typeConverter}" 
+							displayNameInput="#{viewerEdit.current.viewer.type.name}"
+							reset="#{viewerEdit.current.viewer.setType(null)}"
+							render="@this" />
+				    </h:panelGroup>
+				</h:panelGroup>
+
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="css" value="Css" />
+				    <h:panelGroup styleClass="controls" layout="block">
+				    	<h:inputTextarea id="css" value="#{viewerEdit.current.viewer.css}"
+				    		styleClass="input-xxlarge" style="height:150px;" />
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Struttura" />
+					
+					<h:panelGroup styleClass="controls align-txt" layout="block">
+						
+						<h:panelGroup layout="block" styleClass="row-fluid">
+							<h:panelGroup layout="block" styleClass="span6 structure-container"
+								style="overflow-x: auto; overflow-y: auto; max-height: 400px;">
+								<rich:tree id="tree-structure" value="#{viewerEdit.current.treeRoot}" var="node" toggleType="ajax"  
+									selectionType="ajax" selectionChangeListener="#{viewerEdit.selectionChanged}">
+								   <rich:treeNode expanded="#{node.expanded}">
+								      	<a4j:outputPanel>
+								      		<h:outputText value="#{node.link.uuid}" class="hidden" />
+									    	<h:outputText value="#{node.label}" />
+									    	<rich:dragSource type="node-move" dragValue="#{node.link.uuid}" />
+											<rich:dropTarget render="tree-structure"
+												acceptedTypes="#{node.leaf ? '' : 'grid text-area label output-type'}"
+												dropValue="#{node.link.uuid}" dropListener="#{viewerEdit.addNodeListener}" />
+											<a4j:ajax event="click" render=":viewer-form:detail-panel :viewer-form:sources tree-structure" />			      
+								      	</a4j:outputPanel>
+								      	
+								      	<!-- <a4j:commandLink title="Cancella elemento" styleClass="tltip" action="# {viewerEdit.deleteNode( node )}" render="tree-structure" rendered="# {not empty node.link}">
+											<i class="icon-remove"/>
+								      	</a4j:commandLink> -->
+								      	
+								      	<a4j:outputPanel layout="block" style="height: 5px;">
+								      		<br />
+								      		<h:outputText value="(move here)" />
+											<rich:dropTarget acceptedTypes="node-move" dropValue="#{node.link.uuid}"
+											dropListener="#{viewerEdit.moveNodeListener}" render="tree-structure"/>				      
+								      	</a4j:outputPanel>
+								   </rich:treeNode>
+								</rich:tree>
+							</h:panelGroup>
+														
+							<h:panelGroup id="sources" styleClass="span2">
+								<h:panelGroup layout="block"
+									rendered="#{empty viewerEdit.selectedLink}">
+									<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+										<rich:dragSource type="grid" dragValue="grid" />
+										<h:outputText value="Grid" />
+									</a4j:outputPanel>
+									<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+										<rich:dragSource type="text-area" dragValue="text-area" />
+										<h:outputText value="Text area" />
+									</a4j:outputPanel>
+									<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+										<rich:dragSource type="label" dragValue="label"  />
+										<h:outputText value="Label" />
+									</a4j:outputPanel>
+									<a4j:outputPanel layout="block" styleClass="rf-ind-drag margin5">
+										<rich:dragSource type="output-type" dragValue="output-type" />
+										<h:outputText value="Output type" />
+									</a4j:outputPanel>
+								</h:panelGroup>
+							</h:panelGroup>
+							
+							<h:panelGroup layout="block" styleClass="span6" id="detail-panel">
+								<h:panelGroup layout="block" styleClass="form-horizontal container-fluid well"
+									rendered="#{not empty viewerEdit.selectedLink}">
+									
+									<h:commandLink action="#{viewerEdit.closeSelection}" styleClass="pull-right tltip" title="Chiudi">
+										<f:ajax execute="@this" render="@form" />
+										<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+										<i class="icon-remove" />
+									</h:commandLink>
+									
+									<h:panelGroup layout="block" styleClass="form-horizontal">
+										<h5>#{viewerEdit.component(viewerEdit.selectedLink)} Elemento selezionato</h5>
+										
+										<h:panelGroup styleClass="controls" layout="block">
+									    	<emp:suggestion id="ref" bean="#{viewerEdit.typeSuggestion}"
+													assignTo="#{viewerEdit.link}"  
+													converter="#{typeConverter}" 
+													displayNameInput="#{viewerEdit.link.name}"
+													render="@none" />
+									    </h:panelGroup>
+										
+										<h:panelGroup styleClass="control-group" layout="block">
+											<h:outputLabel styleClass="control-label" for="role" value="Nome" />
+										    <h:panelGroup styleClass="controls" layout="block">
+										    	<h:inputText id="role" value="#{viewerEdit.selectedLink.uuid}" >
+										    		<a4j:ajax event="change" execute="@this" />
+										    	</h:inputText>
+										    </h:panelGroup>
+										</h:panelGroup>
+			
+										TODO edit dei dati specifici del nodo <br />
+									</h:panelGroup>
+									
+									<div class="row-fluid">
+										<a4j:commandButton title="Cancella elemento" 
+												styleClass="tltip btn pull-right"
+												value="Elimina"
+									      		action="#{viewerEdit.deleteCurrentNode()}"
+									      		render="@form"
+									      		immediate="true">
+												<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+									     </a4j:commandButton>
+									</div>
+									
+								</h:panelGroup>
+							</h:panelGroup>
+							
+						</h:panelGroup>
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:panelGroup>
+			<div class="row-fluid">
+				<h:commandButton styleClass="btn btn-primary pull-right dist-left"
+					value="Salva" action="#{viewerEdit.save()}" />
+				<h:commandButton styleClass="btn pull-right dist-left" value="Annulla"
+					action="#{viewerEdit.close()}" immediate="true" />
+			</div>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

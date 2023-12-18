@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+	
+	<ui:define name="body">
+	
+		<h:form>
+			<h:panelGroup layout="block">
+				<h:panelGroup layout="block" styleClass="page-title">
+					<h2>
+						Dettaglio Messaggio
+						
+						<h:panelGroup layout="block" styleClass="pull-right align-btn">
+							<h:commandLink class="btn btn-warning" 
+								action="#{messageView.markAsUnread()}">
+								<i class="fw-icon-minus-sign-alt dist-right"></i> Marca come non letto
+							</h:commandLink>							
+							
+							<h:commandLink styleClass="btn dist-left" action="#{messageView.close()}">
+								<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							</h:commandLink>	
+						</h:panelGroup>
+					</h2>
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:form>
+		
+		<h:panelGroup layout="block" styleClass="container-fluid form-horizontal">
+			<div class="control-group">
+				<label class="control-label bold">Livello</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{messageView.current.level}" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label bold">Data</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{messageView.current.date}" >
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:outputText>					
+				</div>
+			</div>			
+			<div class="control-group">
+				<label class="control-label bold">Mittente</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{messageView.current.sender}" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label bold">Paziente</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{messageView.current.patient.surname} #{messageView.current.patient.name}" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label bold">Oggetto</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{messageView.current.subject}" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label bold">Dettagli</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{messageView.current.body}" escape="false" />
+				</div>
+			</div>
+
+		</h:panelGroup>	
+		
+	</ui:define>
+
+</ui:composition>
+</html>

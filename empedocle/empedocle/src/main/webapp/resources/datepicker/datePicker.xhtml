@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" required="true" />
+    	<composite:attribute name="render" />
+    	<composite:attribute name="listener" />
+    	<composite:attribute name="boxClass" />
+    	<composite:attribute name="boxStyle" />
+    	<composite:attribute name="label" />
+    	<composite:attribute name="labelClass" />
+    	<composite:attribute name="labelStyle" />
+    	<composite:attribute name="required" />
+    	<composite:attribute name="requiredMessage" />
+    	<composite:attribute name="styleClass" /> 
+    </composite:interface>
+ 
+    <composite:implementation>
+    	<h:panelGroup layout="block" style="#{cc.attrs.boxStyle}"
+    		styleClass="input-append date datepicker #{cc.attrs.boxClass}">
+    		
+    		<h:outputLabel value="#{cc.attrs.label}" rendered="#{not empty cc.attrs.label}"
+    			style="#{cc.attrs.labelStyle}" styleClass="#{cc.attrs.labelClass}" />
+    			
+			<h:inputText value="#{cc.attrs.value}" styleClass="#{cc.attrs.styleClass}"
+				onkeydown="return disableReturn(event, this)" required="#{cc.attrs.required}"
+				requiredMessage="#{cc.attrs.requiredMessage}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+				<f:ajax
+					event="change"
+					execute="@this"
+					listener="#{cc.attrs.listener}"
+					render="#{cc.attrs.render}" />								
+			</h:inputText>
+			<span class="add-on">
+				<i class="fw-icon-calendar fw-icon-large"></i>
+			</span>
+		</h:panelGroup>
+    </composite:implementation>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:fragment>
+	<h:form>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<span class="brand">Empedocle</span>
+					<h:panelGroup layout="block" rendered="#{loginBean.loggedIn}">
+						<ul class="nav">
+							<li>
+								<h:link outcome="/pages/patients/patient-view.xhtml" includeViewParams="true">
+									<f:param name="id" value="#{examinationRunning.lastPatientVersion.id}" />
+									<f:param name="from" value="#{view.viewId}" />
+									<f:param name="eid" value="#{examinationRunning.id}" />
+									<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+									<i class="fw-icon-book dist-right fw-icon-large"></i> Cartella clinica
+								</h:link>
+							</li>
+							<li class="dropdown" >
+								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								    <i class="fw-icon-file-text dist-right fw-icon-large"></i> Modulistica
+								        <b class="caret"></b>
+								    </a>
+								    <ul class="dropdown-menu">
+										<li>
+											<h:outputLink value="/empedocle/patient-consent" target="_blank">
+												<f:param name="pid" value="#{examinationRunning.lastPatientVersion.id}" />
+												<i class="fw-icon-file-text dist-right fw-icon-large"></i> Consenso al trattamento dati personali
+											</h:outputLink>
+										</li>										
+								    </ul>
+							</li>							
+						</ul>
+						<ul class="nav pull-right">
+							<li>
+			    				<a>
+			    					 <i class="fw-icon-user dist-right fw-icon-large"></i> 
+			    					 #{loggedUser.user.name} #{loggedUser.user.surname}
+			    				</a>
+			    			</li>
+						</ul>
+					</h:panelGroup>
+				</div>
+			</div>
+		</div>
+		
+	</h:form>
+</ui:fragment>
+
+</html>

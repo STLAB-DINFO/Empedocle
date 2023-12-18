@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:date="http://java.sun.com/jsf/composite/datepicker">
+ 
+    <composite:interface>
+    	<composite:attribute name="linkBean" required="true"
+    		type="it.unifi.ing.stlab.reflection.actions.wrappers.LinkBean" />
+    	<composite:attribute name="controller" required="true" />
+    </composite:interface>
+  
+    <composite:implementation>
+    
+    	<h:panelGroup layout="block" styleClass="control-group">
+    		<h:outputLabel styleClass="control-label bold" value="Valore di default" />
+    		<h:panelGroup layout="block" styleClass="controls">
+	  			<h:panelGroup layout="block" styleClass="row-fluid"
+	  				rendered="#{empty cc.attrs.linkBean.defaultValue.date}">
+		  			<h:outputLabel for="#{cc.clientId}:today" 
+		  				value="Data odierna" styleClass="align-txt span4 bold"/>
+			    	<h:selectBooleanCheckbox id="today" styleClass="align-checkbox span3" value="#{cc.attrs.linkBean.defaultValue.useToday}">
+			    		<f:ajax render=":type-edit-form:structure-details"/>
+			    	</h:selectBooleanCheckbox>
+			    </h:panelGroup>		
+	  			<h:panelGroup layout="block" styleClass="row-fluid" 
+	  				rendered="#{not cc.attrs.linkBean.defaultValue.useToday}">
+					<h:outputLabel styleClass="align-txt span2 bold" for="#{cc.clientId}:value" value="Data" />
+					<date:datePicker id="value" value="#{cc.attrs.linkBean.defaultValue.date}"
+					 	render="@this" boxClass="datepicker-box" />
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:panelGroup>
+		
+    </composite:implementation>
+</html>

@@ -1,0 +1,803 @@
+@CHARSET "UTF-8";
+
+a:hover,
+a:focus {
+	text-decoration : none;
+}
+
+.navbar .brand {
+  padding-bottom: 0;
+}
+
+/* ---- sticky-footer ----- */
+html, body {
+	height: 100%;
+
+	/* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: -0px auto -60px;
+}
+
+@media (min-width: 980px) {
+	#wrap > .container-fluid {
+		padding-top: 60px;
+	}
+}
+
+/* Set the fixed height of the footer here */
+#push, #footer {
+	height: 60px;
+}
+
+#footer {
+	border-top: 1px solid #dddddd;
+}
+
+#footer a {
+	margin: 20px 0;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media ( max-width : 767px) {
+	#footer {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.datepicker {
+	padding: 0 !important;
+}
+
+.datepicker-label {
+	display: inline;
+	position:relative; 
+	top:4px;
+	margin:0 5px;
+}
+
+.datepicker-box input {
+	width: 180px;
+}
+
+.statusMessages {
+	list-style-type: none;
+}
+
+.panel-warn {
+	border: 1px solid #C09853;
+}
+
+.panel-err {
+	border: 1px solid #B94A48;
+}
+
+.autosized {
+	width: auto;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+			
+.panel-warn, .panel-err {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.left5 {
+	position: relative; left: 5px;
+}
+
+.margin5 {
+	margin: 5px;
+}
+
+.crud-title {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+}
+
+.btn-margin {
+	margin: 0 5px;
+}
+
+.controls {
+	padding-left: 10px;
+}
+
+.crud-controls-2 {
+	width: 92px;
+}
+
+.crud-controls-3 {
+	width: 136px;
+}
+
+.crud-controls-4 {
+	width: 179px;
+}
+
+.emptyMsg {
+	position: relative;
+	top: 5px;
+}
+
+.itemList li {
+	margin-bottom: 5px;
+}
+
+.itemList .itemName {
+	margin-right:5px;
+}
+
+.itemList .itemRemove {
+	position:relative; top:1px;
+}
+
+.no-results {
+	margin-bottom: 4px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.messages {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+.messages > li {
+	margin-bottom: 4px;
+}
+
+.dropdown-menu > li > .disabled-link {
+	color: #919191;
+	padding: 3px 20px;
+	display: block;
+	clear: both;
+}
+
+/*====== font awesome fix width =======*/
+
+/*i[class^="fw-icon"] {
+	padding-left: 2px;
+	padding-right: 2px;
+}*/
+
+/*======aggiungi relazione nei crud=======*/
+
+div.selection-add-item {
+	position: relative; left: 0; bottom: 5px;
+	margin:10px 0;
+}
+
+/*======home page=======*/
+
+div.welcome {
+	position:relative; left:20px; top: 30px;
+}
+
+div.welcome li {
+	margin:10px;
+}
+
+div.home-rem-box {
+	border:2px dashed #FC0;
+	padding:10px 0 10px 10px;
+	font-size: 0.9em;
+}
+
+ul.home-rem-lst {
+}
+
+ul.home-rem-lst li {
+	margin-top: 20px;
+}
+
+/*=====lista report nel menu popup per la stampa======*/
+
+ul.report-print-list li {
+	padding:5px;
+}
+
+ul.report-print-list li input.report-ckb {
+	position:relative; bottom: 3px;
+}
+
+/*======generic style classes=======*/
+
+.small-lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 30px;
+}
+
+footer {
+	border-top: 1px solid #dddddd;
+	padding-top: 20px;
+}
+
+.footer {
+	margin-top: 50px;
+}
+
+.login-panel {
+	min-width: 220px;
+}
+
+.footer-fixed {
+	position: fixed;
+	margin-bottom: 30px;
+	bottom: 0;
+	margin-top: 0px;
+}
+
+a.normal-text {
+	text-decoration: none;
+	color: #333333;
+}
+
+a.not-underline{
+	text-decoration: none;
+}
+
+.load-icon {
+	position: fixed; 
+	top: 60px;
+	right: 10px;
+	width: auto;
+	z-index: 99;
+	background-color: #FFFFFF;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.vld-error, input.vld-error {
+	border: 1px solid #F33;
+}
+
+.sugg-vld-error > span > input {
+	border: 1px solid #F33;
+}
+
+a.rmv-lnk {
+	padding-left: 5px;
+}
+
+.align-btn {
+	margin-top: -6px;
+}
+
+.dist-left, input.dist-left {
+	margin-left: 5px;
+}
+
+.dist-right, input.dist-right {
+	margin-right: 5px;
+}
+
+.dist-left-more, input.dist-left-more {
+	margin-left: 10px;
+}
+
+.dist-right-more, input.dist-right-more {
+	margin-right: 10px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.unbold {
+	font-weight: normal;
+}
+
+/* usata per correggere allineamento campi diversi da <input> nei form-horizontal di bootstrap */
+.align-txt {
+	position:relative; 
+	top:5px;
+}
+
+/* come sopra, corregge allineamenti select */
+.align-select {
+	position:relative; 
+	top:4px;
+}
+
+/* come sopra, corregge allineamenti checkboxes */
+.align-checkbox {
+	position:relative; 
+	top:2px;
+}
+
+/* page title per le pagine di edit e view */
+.page-title {
+	border-bottom: 1px solid #dddddd; 
+	margin-bottom: 20px;
+}
+
+.scrollable {
+	width: 75%;
+	max-height: 160px; 
+	overflow-y: auto;
+	padding-right: 1px;
+	border: 1px solid #dddddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;	
+	padding: 5px;
+}
+
+.scrollable > table {
+	margin-bottom: 0px;
+}
+
+.scrollable-edit > table {
+	table-layout: fixed;
+	margin-bottom: 0px;
+}
+
+.scrollable-edit > table td:last-child, .scrollable-edit > table th:last-child {
+	width: 30px;
+	text-align: center;
+}
+
+.table tbody tr.concluded > td {
+	background-color: #F0F0F0;
+}
+.table-hover tbody tr.concluded:hover > td {
+	background-color: #E6E6E6;
+}
+.table tbody tr.booked > td {
+	background-color: #ffffff;
+}
+.table-hover tbody tr.booked:hover > td {
+	background-color: #F0F0F0;
+}
+.table tbody tr.selected > td {
+	font-weight: bold;
+}
+.table-hover tbody tr.selected:hover > td {
+	font-weight: bold;
+}
+
+.table tbody tr.to-read > td {
+  font-weight: bold;
+}
+
+/* examination-list - agenda tooltip helper */
+.info-hidden {
+	display: none;
+}
+
+
+
+/* utile per distinguere lo stato in examination-running */
+/*
+
+-- da cancellare se si tiene la tabella dello storico e non la lista--
+
+dt.concluded {
+	background-color: #F0F0F0;
+	border: 1px solid #dddddd;
+	padding: 2px;
+	
+}
+dt.warning {
+	background-color: #fcf8e3;
+	border: 1px solid #dddddd;
+	padding: 2px;	
+}
+dt.info {
+	background-color: #d9edf7;
+	border: 1px solid #dddddd;
+	padding: 2px;
+}
+*/
+
+/* tabella con minor padding di quella di bootstrap */
+.table-compact td {
+	vertical-align: middle; 
+	padding: 2px;
+}
+.table-compact th {
+	padding: 2px;
+}
+.table-compact td > input {
+	margin-top: 2px; 
+	margin-bottom: 2px;
+}
+.table-compact td > select {
+	margin-top: 6px; 
+	margin-bottom: 7px;
+}
+.table-compact td:last-child {
+	text-align: center;
+}
+
+/*====== navigator bar======*/
+.navigator-bar {
+	min-height: 34px;
+}
+
+.navigator-bar > span:first-child {
+	margin-top: 7px;
+}
+
+/*=====richfaces calendar hack======*/ 
+
+table.rf-cal-extr.rf-cal-popup {
+	background-color: #FFF;
+}
+
+/*======rich:popupPanel=======*/
+
+div.rf-pp-cnt {
+	border: 0;
+	background-color: white;
+	padding: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+div.rf-pp-cntr {
+	border: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+div.rf-pp-shade {
+	background-color: #333;
+}
+
+div.rf-pp-shdw  { display: none; }
+
+/*======= viewer default css ========*/
+
+#man-edit .load-div {
+	visibility: hidden;
+	width: 360px; 
+	height: 439px; 
+	position: absolute; 
+	background-color: white; 
+	opacity: 0.6;
+}
+
+#man-edit svg g {
+	cursor: crosshair;
+}
+
+#man-edit #list, #man-view #list {
+	border: 1px solid #CCC;
+	height: 480px;
+	overflow-y: auto;
+	padding: 3px;
+}
+
+#man-view #image > div {
+	/*top: 50px;*/
+	width: 340px; 
+}
+
+#man-edit #image > div {
+	/*top: 50px;*/
+	border: 1px solid #CCC; 
+	width: 340px; 
+	background-color: white;
+}
+
+#man-edit #list .fieldset, #man-view #list .fieldset {
+	padding-top: 15px;
+}
+
+#man-edit #list .fieldset .box_label span:first-of-type:after,
+#man-view #list .fieldset .box_label span:first-of-type:after {
+	content: ')';
+}
+
+#man-edit #list .box_label, #man-view #list .box_label {
+	font-weight: bold;	
+}
+
+#man-edit .load-div img, #man-view .load-div img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+#man svg path { 
+	fill: #E2E2E2; 
+}
+
+#man svg path[active=true],
+#man svg path[selectable=true][disabled=false]:hover  { 
+	/*transition: .3s fill;*/
+	fill: #22aa22; 
+}
+
+#man svg path[disabled=disabled],[selectable=false] { 
+	fill: #636363;
+	cursor: not-allowed;
+}
+
+#child .load-div {
+	visibility: hidden;
+	width: 495px; 
+	height: 475px; 
+	position: absolute; 
+	background-color: white; 
+	opacity: 0.6;
+}
+
+#child svg path { 
+	fill: #FFFFFF; 
+}
+
+#child svg path[active=true]{
+	fill: #FF0000; 
+}
+
+#child svg path[selectable=true][disabled=false]:hover { 
+	fill: #FF7B7B; 
+}
+
+.percentage td:first-of-type { 
+	width: 40%; 
+	text-align: right; 
+	padding-right: 15px; 
+	font-weight: bold; 
+}
+
+.percentage td:last-of-type input { 
+	width: 25px; 
+	margin-right: 10px; 
+}
+
+.inputText_text{
+	width: 120px;
+}
+
+.inputText_number{
+	width: 70px;
+	text-align: right;
+}
+
+.inputText_number_small {
+	width: 35px;
+	text-align: right;
+}
+
+.outputValue_text {
+	white-space: pre-wrap;
+}
+
+.grid_table{
+	width: 100%;
+}
+
+.grid_table td {
+	padding: 0px;
+}
+
+.combo_phen{
+	width: auto;
+	max-width: 140px;
+}
+
+.combo_udm{
+	width: auto;
+	max-width: 50px;
+}
+
+.fieldset {
+	margin-top: 5px;
+	padding: 15px 0 5px 0;
+	border: 1px solid #CCC;
+	position: relative;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+}
+
+.box_label {
+	left: 0.5em;
+	top: -0.8em;
+	position: absolute;
+	background: white;
+}
+
+.box_content {
+	padding: 3px;
+}
+
+.tabbedpanel-controls {
+	border-top: 1px solid #ddd; 
+	clear:both; 
+	padding-top: 10px;
+	margin-top: 20px;
+}
+
+.tabbedpanel-controls > div:nth-of-type(1) {
+	text-align: left;
+}
+
+.tabbedpanel-controls > div:nth-of-type(2) {
+	text-align: center;
+}
+
+.tabbedpanel-controls > div:nth-of-type(3) {
+	text-align: right;
+}
+
+a.reset-icon {
+	position: relative;
+	top: 8px;
+}
+
+/*===fact-query===*/
+#query-form\:results > table td:first-child {
+	width: 380px;
+}
+
+#query-form\:results > table td:last-child {
+	width: 85px;
+}
+
+#query-form\:criteria td:nth-of-type(3) select {
+	width: 350px;
+}
+
+#query-form\:criteria td:nth-of-type(4) select {
+	width: auto;
+}
+
+
+
+/*=====richfaces autocomplete======*/
+
+input.rf-au-inp {
+	width: 100%;
+	background-image: none;
+	margin-bottom: 0px;
+	padding: 4px 6px;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.rf-au {
+    border: none;
+    display: inline-block;
+    font-size: 1px;
+}
+
+.rf-au-lst-cord {
+    position: absolute;
+    z-index: 10000;
+    display: none;
+}
+
+.rf-au-lst-dcrtn {
+	border: 1px solid #cccccc;
+	background-color: white;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.rf-au-lst-scrl {
+    overflow: auto;
+    overflow-x: hidden;
+	min-width: 212px;
+	width: auto;
+	max-height: 144px;
+}
+
+.rf-au-itm {
+    cursor: default;
+    padding: 2px;
+}
+
+.rf-au-itm-sel {
+    border-width: 1px;
+    border-style: dotted;
+    padding: 1px;
+}
+
+.rf-au-opt {
+    white-space: nowrap;
+    list-style-type: none;
+}
+
+.rf-au-opt-sel {
+    width: 100%;
+}
+
+.rf-au-shdw {
+    border: none;
+    display: inline-block;
+    position: absolute;
+    float: left;
+    padding: 6px 6px 6px 6px;
+    top: -4px;
+    left: -7px;
+}
+
+.rf-au-fnt.rf-au-inp {
+	width: 98%;
+}
+
+.rf-au-lst-ul {
+    margin: 0px;
+    padding: 0px;
+}
+.rf-au-shdw-t {
+	display:none;
+}
+.rf-au-shdw-l {
+	display:none;
+}
+.rf-au-shdw-r {
+	display:none;
+}
+.rf-au-shdw-b {
+	display:none;
+}
+
+.rf-au-tbl {
+    border-spacing: 0px;
+}
+
+
+/*=====other stuff======*/
+
+.table td.text-center {
+  text-align: center;
+}
+
+.table td {
+	vertical-align: middle;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.wider {
+	width: 60%;
+}
+
+/*
+select[multiple], select[size] {
+	height: 30px !important;
+} */
+
+
+/*======= MODAL PANEL ======*/
+.modal { width: 90%; margin-left:-45%; display: none;  }
+.modal-header { border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #006dcc; color: #FFF; }

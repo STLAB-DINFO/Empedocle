@@ -1,0 +1,54 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<c:if test="#{comboController.isSupported(value)}">
+		<c:choose>
+			<c:when test="#{comboController.isOsservazioneQualitativa(value)}">
+				<a4j:region>
+					<h:selectOneMenu value="#{value.phenomenon}" required="#{viewer.required}"
+									disabled ="#{viewer.readOnly}"
+									onkeydown="return disableReturn(event, this)"
+									converter="#{phenomenonConverter}" label="#{value.type.name}"
+									styleClass="combo_phen #{not component.valid ? 'vld-error' : ''}"
+									requiredMessage="Il campo #{value.type.name} deve essere compilato">
+						<f:selectItem itemValue="" itemLabel="" noSelectionOption="true"/>
+						<f:selectItems value="#{comboController.getSelectItems(value)}" />
+						<f:attribute name="fact" value="#{value}" />
+						<a4j:ajax event="valueChange" execute="@this"
+									limitRender="true"
+									render="#{conditionalPanelController.render(value.type, viewer )}"
+									listener="#{persistListener.persistData}" />
+					</h:selectOneMenu>
+				</a4j:region>
+			</c:when>
+
+			<c:when test="#{comboController.isOsservazioneQuantitativa(value)}">
+				<c:choose>
+					<c:when test="#{comboController.getSelectItems(value).size() gt 1}">
+						<a4j:region>
+							<h:selectOneMenu value="#{value.quantity.unit}" required="#{viewer.required}" 
+												disabled ="#{viewer.readOnly}" 
+												onkeydown="return disableReturn(event, this)"
+												converter="#{unitConverter}"
+												styleClass="combo_udm #{not component.valid ? 'vld-error' : ''}" >
+								<a4j:ajax event="valueChange" execute="@this" limitRender="true"
+									 listener="#{persistListener.persistData}" />
+								<f:selectItems value="#{comboController.getSelectItems(value)}" />	
+								<f:attribute name="fact" value="#{value}" />
+							</h:selectOneMenu>
+						</a4j:region>
+					</c:when>
+					<c:otherwise>
+						<h:outputText value="#{value.quantity.unit.simbol}" escape="false" />
+					</c:otherwise>
+				</c:choose>
+			</c:when>
+		</c:choose>
+	</c:if>
+</h:panelGroup>

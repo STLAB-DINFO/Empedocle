@@ -1,0 +1,66 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<c:if test="#{boxController.show(viewer, value)}">
+		<div class="fieldset">
+			<c:choose>
+				<c:when test="#{viewer.size eq '1'}">
+					<div class="box_content">
+						<c:choose>
+							<c:when test="#{boxController.isVistaCompositaItem(viewer.getByPriority(0).target)}">
+								<a:view
+									value="#{value}"
+									viewer="#{viewer.getByPriority(0).target}"
+									selector="#{viewer.getByPriority(0).selector}" />
+							</c:when>
+							<c:otherwise>
+								<a:view
+									value="#{boxController.findBySelector(value, viewer.getByPriority(0).selector)}"
+									viewer="#{viewer.getByPriority(0).target}" />
+							</c:otherwise>
+						</c:choose>
+					</div>
+				</c:when>
+	
+				<c:when test="#{viewer.size eq '2'}">
+					<div class="box_label">
+						<c:choose>
+							<c:when test="#{boxController.isVistaCompositaItem(viewer.getByPriority(0).target)}">
+								<a:view
+									value="#{value}"
+									viewer="#{viewer.getByPriority(0).target}"
+									selector="#{viewer.getByPriority(0).selector}" />
+							</c:when>
+							<c:otherwise>
+								<a:view
+									value="#{boxController.findBySelector(value, viewer.getByPriority(0).selector)}"
+									viewer="#{viewer.getByPriority(0).target}" />
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="box_content">
+						<c:choose>
+							<c:when test="#{boxController.isVistaCompositaItem(viewer.getByPriority(1).target)}">
+								<a:view
+									value="#{value}"
+									viewer="#{viewer.getByPriority(1).target}"
+									selector="#{viewer.getByPriority(1).selector}" />
+							</c:when>
+							<c:otherwise>
+								<a:view
+									value="#{boxController.findBySelector(value, viewer.getByPriority(1).selector)}"
+									viewer="#{viewer.getByPriority(1).target}" />
+							</c:otherwise>
+						</c:choose>
+					</div>
+				</c:when>	
+			</c:choose>
+		</div>
+	</c:if>
+</h:panelGroup>

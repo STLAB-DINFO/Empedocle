@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:types="http://java.sun.com/jsf/composite/components/types">
+
+<ui:composition template="/layout/template.xhtml">
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>	
+	
+	<ui:define name="body">
+	
+		<style>
+			.table-bordered { margin-bottom: 0 }
+			.structure-container { padding: 10px; border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; 
+				overflow-y: auto; }
+			.structure-details { padding: 10px; padding-bottom: 0; border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; 
+				overflow-y: auto; }
+			.rf-trn-ico-cst,
+			.rf-trn-hnd-exp,
+			.rf-trn-hnd-lf { margin-right: 5px; }
+			.rf-trn-hnd-exp { background: url("#{request.contextPath}/img/collapse-up.png") no-repeat center; }
+			.rf-trn-hnd-colps { background: url("#{request.contextPath}/img/expand-down.png") no-repeat center; 
+				position: relative; top: -5px; margin-right: 5px; }
+		</style>
+		
+		<h:form>
+			<h:panelGroup layout="block" styleClass="page-title">
+				<h2>
+					Dettaglio Tipo
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+					
+						<h:commandLink class="btn btn-danger"
+							action="#{typeList.delete( typeView.current.type.id )}"
+							rendered="#{typeList.isRemovable( typeView.current.type.id )}"
+							onclick="if(!confirm('Eliminare tipo?')) {return false;}" >
+							<i class="fw-icon-remove dist-right"></i> Elimina
+						</h:commandLink>						
+					
+						<h:panelGroup class="btn-group dist-left" layout="block">
+							<h:commandLink class="btn btn-warning" 
+								action="#{typeList.edit( typeView.current.type.id )}">
+								<i class="fw-icon-pencil dist-right"></i> Modifica
+							</h:commandLink>	
+							<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<h:commandLink action="#{typeList.copy( typeView.current.type.id )}">
+										<i class="fw-icon-copy dist-right"></i> Clona
+									</h:commandLink>
+								</li>				
+							</ul>
+						</h:panelGroup>
+						
+						<h:commandLink class="btn dist-left"
+							action="#{typeView.close()}">
+							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						</h:commandLink>		
+					</h:panelGroup>	
+				</h2>
+			</h:panelGroup>
+
+			<h:panelGroup layout="block" styleClass="form-horizontal container-fluid">
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="name" value="Nome" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block">
+				    	<h:outputText id="name" value="#{typeView.current.type.name}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="cat" value="Categoria" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block" id="cat">
+				    	<h:outputText value="Testuale" rendered="#{typeView.current.isTextual()}" />
+				    	<h:outputText value="Enumerato" rendered="#{typeView.current.isEnumerated()}" />
+				    	<h:outputText value="Queried" rendered="#{typeView.current.isQueried()}" />
+				    	<h:outputText value="Quantitativo" rendered="#{typeView.current.isQuantitative()}" />
+				    	<h:outputText value="Composito" rendered="#{typeView.current.isComposite()}" />
+				    	<h:outputText value="Temporale" rendered="#{typeView.current.isTemporal()}" />
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="dex" value="Descrizione" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block">
+				    	<h:outputText id="dex" value="#{typeView.current.type.description}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block"
+					xmlns:datepicker="http://java.sun.com/jsf/composite/datepicker">
+					<h:outputLabel styleClass="control-label bold" for="validita" value="Validità" />
+				    <h:panelGroup styleClass="controls align-checkbox" layout="block" id="validita">
+			    		<h:outputLabel value="Inizio" styleClass="datepicker-label bold"
+			    			rendered="#{not empty typeView.current.type.timeRange.left}" />
+			    		<h:outputText value="#{typeView.current.type.timeRange.left.date}"
+			    			styleClass="datepicker-label">
+			    			<f:convertDateTime pattern="dd/MM/yyyy" />
+			    		</h:outputText>
+			    		<h:outputLabel value="Fine" styleClass="datepicker-label bold"
+			    			rendered="#{not empty typeView.current.type.timeRange.right}" />
+			    		<h:outputText value="#{typeView.current.type.timeRange.right.date}"
+			    			styleClass="datepicker-label">
+			    			<f:convertDateTime pattern="dd/MM/yyyy" />
+			    		</h:outputText>
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="read-only" value="Sola lettura" />
+				    <h:panelGroup id="read-only" styleClass="controls align-txt" layout="block" 
+				    	rendered="#{typeView.current.type.readOnly}">
+						<i class="fw-icon-ok fw-icon-large" />
+				    </h:panelGroup>		    
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="recurrent" value="Ricorrente" />
+				    <h:panelGroup id="recurrent" styleClass="controls align-txt" layout="block"
+				    	rendered="#{typeView.current.type.recurrent}">
+						<i class="fw-icon-ok fw-icon-large" />
+				    </h:panelGroup>
+				</h:panelGroup>
+	
+				<!-- ENUMERATED (FENOMENI) -->
+				<types:viewPhenomena value="#{typeView.current}" />
+	
+				<!-- QUERIED -->
+				<h:panelGroup styleClass="control-group" layout="block" rendered="#{typeView.current.isQueried()}">
+					<h:outputLabel styleClass="control-label bold" for="query" value="Query" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block">
+				    	<h:outputText id="query" value="#{typeView.current.queriedType.queryDef}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+	
+				<!-- QUANTITATIVE (UNITA' DI MISURA) -->
+				<types:viewUnits value="#{typeView.current}" />
+				
+				<!-- TEMPORAL -->
+				<types:viewTemporal value="#{typeView.current}" />
+			
+				<!-- COMPOSITE -->
+				<h:panelGroup styleClass="control-group" layout="block" rendered="#{typeView.current.isComposite()}">
+					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Struttura" />
+					<h:panelGroup layout="block" styleClass="controls align-txt">
+					
+						<h:panelGroup layout="block" styleClass="row-fluid">
+							<h:panelGroup layout="block" styleClass="structure-container span6">
+								<rich:tree id="tree-structure" value="#{typeView.current.treeRoot}" var="node" toggleType="ajax" 
+									selectionType="ajax" selectionChangeListener="#{typeView.selectionChanged}">
+								   <rich:treeNode expanded="#{node.expanded}" 
+								   		iconLeaf="/img/caret-right.png" iconExpanded="/img/folder-open.png" iconCollapsed="/img/folder.png">
+								    	<h:outputText value="#{node.label}" escape="true" 
+								    		styleClass="#{node.label eq 'root' ? 'hide' : ''}"/>
+								   </rich:treeNode>
+								</rich:tree>
+							</h:panelGroup>
+							<a4j:outputPanel ajaxRendered="true" layout="block" styleClass="form-horizontal span6">
+								<h:panelGroup layout="block" rendered="#{not empty typeView.selectedLink and not empty typeView.selectedLink.link.name}" 
+									styleClass="structure-details">
+									<h:panelGroup styleClass="control-group" layout="block">
+										<h:outputLabel styleClass="control-label bold" for="role" value="Nome" />
+									    <h:panelGroup styleClass="controls align-txt" layout="block">
+									    	<h:outputText id="role" value="#{typeView.selectedLink.link.name}" /> 
+									    </h:panelGroup>
+									</h:panelGroup>
+			
+									<h:panelGroup styleClass="control-group" layout="block">
+										<h:outputLabel styleClass="control-label bold" for="occurs" value="Occorrenze" />
+									    <h:panelGroup id="occurs" styleClass="controls align-txt" layout="block">
+											<table class="table table-bordered table-condensed">
+												<thead>
+													<tr>
+														<th>Min</th>
+														<th>Max</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															#{typeView.selectedLink.link.min}
+														</td>
+														<td>
+															#{typeView.selectedLink.link.max}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</h:panelGroup>
+									</h:panelGroup>
+									
+									<h:panelGroup layout="block" rendered="#{not typeView.selectedType.isReference()}">
+										<types:viewPhenomena value="#{typeView.selectedType}" />
+			
+										<types:viewQuery value="#{typeView.selectedType}" />
+										
+										<types:viewUnits value="#{typeView.selectedType}" />
+										
+										<types:viewTemporal value="#{typeView.selectedType}" />
+									</h:panelGroup>
+									
+									<h:panelGroup styleClass="control-group" layout="block"
+										rendered="#{typeView.selectedType.isReference()}">
+										<h:outputLabel styleClass="control-label bold" for="reference" value="Riferimento" />
+									    <h:panelGroup styleClass="controls align-txt" layout="block">
+									    	<h:outputText id="reference" value="#{typeView.selectedType.type.name}" /> 
+									    </h:panelGroup>
+									</h:panelGroup>
+									
+									<h:panelGroup styleClass="control-group" layout="block"
+										rendered="#{typeView.selectedType.isReference()}">
+										<h:outputLabel styleClass="control-label bold" for="reference-type" value="Tipo riferimento" />
+									    <h:panelGroup id="reference-type" styleClass="controls align-txt" layout="block">
+									    	<h:outputText value="Testuale" rendered="#{typeView.selectedType.isTextual()}" />
+									    	<h:outputText value="Enumerato" rendered="#{typeView.selectedType.isEnumerated()}" />
+									    	<h:outputText value="Queried" rendered="#{typeView.selectedType.isQueried()}" />
+									    	<h:outputText value="Quantitativo" rendered="#{typeView.selectedType.isQuantitative()}" />
+									    	<h:outputText value="Composito" rendered="#{typeView.selectedType.isComposite()}" />
+									    	<h:outputText value="Temporale" rendered="#{typeView.selectedType.isTemporal()}" />
+									    </h:panelGroup>
+									</h:panelGroup>
+									
+									<h:panelGroup styleClass="control-group" layout="block"
+										rendered="#{not empty typeView.defaultValue and not typeView.defaultValue.isEmpty()}">
+										<h:outputLabel styleClass="control-label bold" for="defaultvalue" value="Valore di default" />
+									    <h:panelGroup styleClass="controls align-txt" layout="block">
+									    	<h:outputText id="defaultvalue" value="#{typeView.defaultValue.value}" /> 
+									    </h:panelGroup>
+									</h:panelGroup>
+									
+								</h:panelGroup>
+				        	</a4j:outputPanel>
+						</h:panelGroup>
+				        				
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

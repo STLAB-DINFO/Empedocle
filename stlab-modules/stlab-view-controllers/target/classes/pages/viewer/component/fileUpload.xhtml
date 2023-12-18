@@ -1,0 +1,77 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	
+	<style type="text/css">
+		div div.rf-fu {
+			border-style: none; 
+			padding: 0;
+		}
+		div div.rf-fu-hdr { 
+			border: none; 
+			float: left; 
+		}
+		div div.rf-fu-hdr span span.rf-fu-btn-add { 
+			border: none; 
+			cursor:pointer; 
+			margin: 0 
+		}
+		div div.rf-fu-hdr span span.rf-fu-btn-add span.rf-fu-btn-cnt-add {
+			padding-top: 0!important; 
+			padding-bottom: 0!important; 
+			background-image:none; 
+			overflow: visible; 
+			margin-left: -20px;
+		}
+		div div.rf-fu-hdr span input.rf-fu-inp { cursor: pointer }
+		span span.rf-fu-btn-clr { border: none }
+		span.rf-fu-btns-lft{ width: auto; }
+		span.rf-fu-btns-rgh{ display: none; }
+		div div.rf-fu-lst { display:none; }
+	</style>	
+
+	<c:if test="#{fileUploadController.isSupported(value)}">
+		<h:panelGroup layout="block" id="file-upload-container">
+				<a4j:region>
+					<rich:fileUpload
+						maxFilesQuantity="1" acceptedTypes="#{viewer.acceptedTypes}"
+						ontyperejected="alert('Attenzione! Sono consentiti solo file con estensione: #{viewer.acceptedTypes}');"
+						fileUploadListener="#{fileUploadController.upload}"					
+						immediateUpload="true"
+						styleClass="btn btn-link"
+						addLabel="Carica" clearLabel="Cancella" 					
+						onfilesubmit="#{rich:component('loading-popup')}.show()"
+						onuploadcomplete="#{rich:component('loading-popup')}.hide()"
+						style="#{not empty value.text ? 'display:none;' : ''}"
+						listHeight="0px">
+						
+						<h:panelGroup layout="block" id="command-links" class="row-fluid"
+							rendered="#{not empty value.text}">
+							<h:outputLink value="#{value.text}" target="_blank" styleClass="pull-left dist-right-more">
+								Visualizza</h:outputLink>								
+							<h:commandLink value="Cancella" actionListener="#{fileUploadController.delete}" 
+								styleClass="pull-left">
+								<f:attribute name="fact" value="#{value}" />
+							</h:commandLink>							
+						</h:panelGroup>
+											
+						<a4j:ajax
+							event="uploadcomplete"
+							execute="@region"
+							limitRender="true"
+							listener="#{persistListener.persistData}"
+							render="@this command-links"
+						/>
+							
+						<f:attribute name="fact" value="#{value}" />
+					</rich:fileUpload>			
+				</a4j:region>	
+		</h:panelGroup>
+	</c:if>	
+</h:panelGroup>

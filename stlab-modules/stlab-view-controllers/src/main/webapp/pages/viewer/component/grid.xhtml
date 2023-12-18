@@ -1,0 +1,94 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<c:if test="#{gridController.show(viewer, value)}">
+		<c:choose>
+			<c:when test="#{viewer.orientation eq 'vertical'}">
+				<table class="grid_table">
+					<tbody>
+						<c:forEach items="#{viewer.listChildrenOrdered()}" var="subView" varStatus="loop">
+							<c:if test="#{gridController.show(viewer, gridController.findBySelector(value, subView.selector))}">
+								<tr class="grid_row_#{loop.index}">
+									<td>
+										<c:choose>
+											<c:when test="#{gridController.isVistaCompositaItem(subView.target)}">
+												<a:view
+													value="#{value}"
+													viewer="#{subView.target}"
+													selector="#{subView.selector}" />
+											</c:when>
+											<c:otherwise>
+												<a:view
+													value="#{gridController.findBySelector(value, subView.selector)}"
+													viewer="#{subView.target}" />
+											</c:otherwise>
+										</c:choose>
+									</td>
+								</tr>
+							</c:if>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:when>
+	
+			<c:when test="#{viewer.orientation eq 'horizontal'}">
+				<div class="row-fluid">
+					<c:forEach items="#{viewer.listChildrenOrdered()}" var="subView" varStatus="loop">
+						<c:if test="#{gridController.show(viewer, gridController.findBySelector(value, subView.selector))}">
+							<div class="span2">
+								<c:choose>
+									<c:when test="#{gridController.isVistaCompositaItem(subView.target)}">
+										<a:view
+											value="#{value}"
+											viewer="#{subView.target}"
+											selector="#{subView.selector}" />
+									</c:when>
+									<c:otherwise>
+										<a:view
+											value="#{gridController.findBySelector(value, subView.selector)}"
+											viewer="#{subView.target}" />
+									</c:otherwise>
+								</c:choose>
+							</div>
+						</c:if>
+					</c:forEach>
+				</div>
+			</c:when>
+			
+			<c:when test="#{viewer.orientation eq 'spaced_horizontal'}">
+				<table class="grid_table">
+					<tbody>
+						<tr>
+							<c:forEach items="#{viewer.listChildrenOrdered()}" var="subView" varStatus="loop">
+								<c:if test="#{gridController.show(viewer, gridController.findBySelector(value, subView.selector))}">
+									<td class="grid_cell_#{loop.index}">
+										<c:choose>
+											<c:when test="#{gridController.isVistaCompositaItem(subView.target)}">
+												<a:view
+													value="#{value}"
+													viewer="#{subView.target}"
+													selector="#{subView.selector}" />
+											</c:when>
+											<c:otherwise>
+												<a:view
+													value="#{gridController.findBySelector(value, subView.selector)}"
+													viewer="#{subView.target}" />
+											</c:otherwise>
+										</c:choose>
+									</td>
+								</c:if>
+							</c:forEach>
+						</tr>
+					</tbody>
+				</table>
+			</c:when>	
+		</c:choose>
+	</c:if>
+</h:panelGroup>

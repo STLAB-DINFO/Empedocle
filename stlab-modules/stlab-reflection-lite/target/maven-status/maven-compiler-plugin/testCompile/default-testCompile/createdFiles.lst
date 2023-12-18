@@ -1,0 +1,12 @@
+it/unifi/ing/stlab/reflection/lite/model/facts/QualitativeFactTest.class
+it/unifi/ing/stlab/reflection/lite/converter/util/ZipperTest.class
+it/unifi/ing/stlab/reflection/lite/visitor/type/FactRandomFactoryVisitorTest.class
+it/unifi/ing/stlab/reflection/lite/model/facts/TextualFactTest.class
+it/unifi/ing/stlab/reflection/lite/converter/stax/StaxConverterTest.class
+it/unifi/ing/stlab/reflection/lite/visitor/type/FactFactoryVisitorTest.class
+it/unifi/ing/stlab/reflection/lite/model/facts/TemporalFactTest.class
+it/unifi/ing/stlab/reflection/lite/model/facts/CompositeFactTest.class
+it/unifi/ing/stlab/reflection/lite/converter/jaxb/JaxbConverterTest.class
+it/unifi/ing/stlab/reflection/lite/converter/sax/SaxConverterTest.class
+it/unifi/ing/stlab/reflection/lite/visitor/type/SampleFactFactoryVisitorTest.class
+it/unifi/ing/stlab/reflection/lite/model/facts/QuantitativeFactTest.class

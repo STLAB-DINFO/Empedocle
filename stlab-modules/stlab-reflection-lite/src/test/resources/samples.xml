@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.stlab.dsi.unifi.it/reflection/facts"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.stlab.dsi.unifi.it/reflection/facts ../../main/resources/facts.xsd "
+	type="">
+
+	<textual type="textualTypeUuid">
+		Some Text
+	</textual>
+	<temporal type="temporalTypeUuid">2002-05-30T09:00:00</temporal>
+	<quantitative type="quantitativeTypeUuid" um="umUuid">123.5</quantitative>
+	<qualitative type="qualitativeTypeUuid">uuid</qualitative>
+
+	<composite type="compositeTypeUuid">
+		<textual type="textualTypeUuid">
+			Some Text
+		</textual>
+		<temporal type="temporalTypeUuid">2002-05-30T09:00:00</temporal>
+		<quantitative type="quantitativeTypeUuid" um="umUuid">123.5</quantitative>
+		<qualitative type="qualitativeTypeUuid">uuid</qualitative>
+		<composite type="compositeTypeUuid">
+			<textual type="textualTypeUuid">
+				Some Text
+			</textual>
+		</composite>
+	</composite>
+
+</composite>

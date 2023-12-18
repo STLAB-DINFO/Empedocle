@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:fragment>
+
+	<h:form>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse"
+						data-target=".nav-collapse">
+						<span class="icon-bar"/> 
+						<span class="icon-bar"/> 
+						<span class="icon-bar"/>
+					</button>
+					
+					<h:commandLink action="home" actionListener="#{headerMenu.endConversation}" class="brand">Empedocle</h:commandLink>
+					
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li>
+								<h:commandLink action="home" actionListener="#{headerMenu.endConversation}">
+									<i class="fw-icon-home dist-right fw-icon-large"></i> Home
+								</h:commandLink>
+							</li>
+							<li>
+								<h:commandLink action="patient-list" actionListener="#{headerMenu.endConversation}">
+									<i class="fw-icon-book dist-right fw-icon-large"></i> Cartelle cliniche
+								</h:commandLink>
+							</li>
+							<li>
+								<h:commandLink action="examination-list" actionListener="#{headerMenu.endConversation}" 
+									rendered="#{headerMenu.checkRoleFor( 'examination-list' )}">
+									<i class="fw-icon-stethoscope dist-right fw-icon-large"></i> Visite
+								</h:commandLink>
+							</li>			
+
+							<li class="dropdown" >
+								<h:panelGroup rendered="#{headerMenu.checkRoleFor( 'configurability-item' )}">
+								    <a class="dropdown-toggle"
+								       data-toggle="dropdown"
+								       href="#">									
+								       <i class="fw-icon-gear dist-right fw-icon-large"></i> Configurazione
+								        <b class="caret"></b>
+								      </a>
+								    <ul class="dropdown-menu">
+										<li>
+											<h:commandLink action="staff-list" actionListener="#{headerMenu.endConversation}"
+												rendered="#{headerMenu.checkRoleFor( 'staff-list' )}" >
+												<i class="fw-icon-group dist-right fw-icon-large"></i> Utenti
+											</h:commandLink>
+										</li>
+										<li>
+											<h:commandLink action="agenda-list" actionListener="#{headerMenu.endConversation}"
+												rendered="#{headerMenu.checkRoleFor( 'agenda-list' )}" >
+												<i class="fw-icon-calendar dist-right fw-icon-large"></i> Agende
+											</h:commandLink>
+										</li>
+										<li>
+											<h:commandLink action="examinationtype-list" actionListener="#{headerMenu.endConversation}"
+												rendered="#{headerMenu.checkRoleFor( 'examinationtype-list' )}">
+												<i class="fw-icon-sitemap dist-right fw-icon-large"></i> Strutture visita
+											</h:commandLink>
+										</li>
+										<li>
+											<h:commandLink action="type-list" actionListener="#{headerMenu.endConversation}"
+												rendered="#{headerMenu.checkRoleFor( 'type-list' )}" >
+												<i class="fw-icon-puzzle-piece dist-right fw-icon-large"></i> Tipi
+											</h:commandLink>
+										</li>
+										<li>
+											<h:commandLink action="view-list" actionListener="#{headerMenu.endConversation}"
+												rendered="#{headerMenu.checkRoleFor( 'view-list' )}">
+												<i class="fw-icon-desktop dist-right fw-icon-large"></i> Viste
+											</h:commandLink>
+										</li>
+										<!--<li>
+											<h:commandLink action="fact-query-list" actionListener="#{headerMenu.endConversation}" value="Queries" 
+												rendered="#{headerMenu.checkRoleFor( 'fact-query-list' )}" /></li>-->
+								    </ul>
+								</h:panelGroup> 
+							</li>
+						</ul>
+						<h:panelGroup rendered="#{loginBean.loggedIn}">
+							<ul class="nav pull-right">
+								<li class="dropdown">
+									<a class="dropdown-toggle"
+							    		data-toggle="dropdown"
+							    		href="#">
+							    		<i class="fw-icon-user dist-right fw-icon-large"></i> 
+							    		#{loggedUser.user.name} #{loggedUser.user.surname}
+							    		<b class="caret"></b>
+							    	</a>
+							    	<ul class="dropdown-menu">
+							    		<li>
+							    			<h:commandLink action="panel-view" actionListener="#{headerMenu.endConversation}">
+							    				<f:param name="user-id" value="#{loggedUser.user.userid}" />
+							    				<i class="fw-icon-user dist-right fw-icon-large"></i> Profilo utente
+							    			</h:commandLink>
+							    		</li>
+							    		<li>
+							    			<h:commandLink action="#{loginBean.logout()}">
+												<i class="fw-icon-signout dist-right fw-icon-large"></i> Logout
+							    			</h:commandLink>
+							    		</li>
+							    	</ul>
+								</li>
+							</ul>
+						</h:panelGroup>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</ui:fragment>
+
+</html>

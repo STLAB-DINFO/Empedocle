@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+ 	<artifactId>stlab-patients</artifactId>
+	<parent>
+		<groupId>it.unifi.ing.stlab</groupId>
+		<artifactId>stlab-modules</artifactId>
+		<version>1.0.0</version>
+	</parent>	
+	
+	<dependencies>
+		<!--  stlab dependencies -->		
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-commons</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-entities</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-users</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-test</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+			
+        <!-- database connectors -->	
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.40</version>
+		</dependency>		
+		<dependency>
+			<groupId>net.avh4.util</groupId>
+			<artifactId>imagecomparison</artifactId>
+			<version>0.0.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>  
+</project>

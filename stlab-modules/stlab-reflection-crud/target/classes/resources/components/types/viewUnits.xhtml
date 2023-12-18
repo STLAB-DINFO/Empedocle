@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" type="it.unifi.ing.stlab.reflection.actions.wrappers.TypeBean"/>
+    </composite:interface>
+ 
+    <composite:implementation>
+		<h:panelGroup styleClass="control-group" layout="block" rendered="#{cc.attrs.value.isQuantitative()}">
+			<h:outputLabel styleClass="control-label bold" for="#{cc.clientId}:units" value="Unità di misura" />
+		    <h:panelGroup styleClass="controls scrollable" layout="block">
+		    	<h:dataTable styleClass="table table-bordered table-condensed" id="units" 
+		    		value="#{cc.attrs.value.units}" var="uu" 
+		    		rendered="#{not empty cc.attrs.value.units}">
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Nome
+		    			</f:facet>
+		    			#{uu.unit.name}
+		    		</h:column>
+
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Simbolo
+		    			</f:facet>
+		    			<h:outputText value="#{uu.unit.simbol}" escape="false" />
+		    		</h:column>
+
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Cifre
+		    			</f:facet>
+		    			#{uu.digits}
+		    		</h:column>
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Decimali
+		    			</f:facet>
+		    			#{uu.decimals}
+		    		</h:column>
+		    	</h:dataTable>
+		    </h:panelGroup>
+		</h:panelGroup>
+    </composite:implementation>
+</html>

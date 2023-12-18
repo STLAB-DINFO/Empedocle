@@ -1,0 +1,168 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div class="fieldset">
+		<div class="box_label">
+		</div>
+		<div class="box_content">
+			<div>
+				<a href="http://www.aou-careggi.toscana.it/internet/docs/file/CRR_FR/Deg_retiniche_informativa_pazienti.pdf"
+					target="_blank"> 
+						<h:outputText value="Link all'informativa" />
+				</a>
+			</div>
+			<table class="grid_table">
+				<tr>
+					<td>
+						<h:outputText value="Consegnata informativa" styleClass="label_text" />
+					</td>
+					<td>
+						<c:choose>
+							<c:when test="#{geneticController.isInformativeRecovered(value, viewer, value.context.appointment.patient.id)}">
+								<h:outputText value="#{geneticController.informative.phenomenon.name}" 
+												styleClass="outputValue_text" />
+							</c:when>
+							<c:otherwise>
+								<a:view value="#{geneticController.informative}" viewer="#{viewer.getByPriority(0).target}" />
+							</c:otherwise>
+						</c:choose>
+					</td>
+					<td>
+						<a4j:outputPanel ajaxRendered="true">
+							<h:panelGroup rendered="#{geneticController.isInformativeDateRendered(value, viewer)}">
+								<h:outputText value="In data" styleClass="label_text" />
+								<a:view value="#{geneticController.findBySelector(value, viewer.getByPriority(1).selector)}" 
+										viewer="#{viewer.getByPriority(1).target}"/>
+							</h:panelGroup>
+						</a4j:outputPanel>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<table class="grid_table">
+		<tr>
+			<td>
+				<h:outputText value="Consigliata consulenza genetica preconcezionale" styleClass="label_text" />
+			</td>
+			<td>
+				<c:choose>
+					<c:when test="#{geneticController.isAdviceRecovered(value, viewer, value.context.appointment.patient.id)}">
+						<h:outputText value="#{geneticController.advice.phenomenon.name}" 
+										styleClass="outputValue_text"/>
+					</c:when>
+					<c:otherwise>
+						<a:view value="#{geneticController.advice}" viewer="#{viewer.getByPriority(2).target}" />
+					</c:otherwise>
+				</c:choose>
+			</td>
+			<td>
+				<a4j:outputPanel ajaxRendered="true">
+					<h:panelGroup rendered="#{geneticController.isAdviceDateRendered(value, viewer)}">
+						<h:outputText value="In data" styleClass="label_text" />
+						<a:view value="#{geneticController.findBySelector(value, viewer.getByPriority(3).selector)}" 
+								viewer="#{viewer.getByPriority(3).target}"/>
+					</h:panelGroup>
+				</a4j:outputPanel>
+			</td>
+		</tr>
+	</table>
+	
+	<table class="grid_table">
+		<tr>
+			<td>
+				<h:outputText value="Consigliata visita oculistica per i parenti prossimi" styleClass="label_text" />
+			</td>
+			<td>
+				<c:choose>
+					<c:when test="#{geneticController.isParentVisitRecovered(value, viewer, value.context.appointment.patient.id)}">
+						<h:outputText value="#{geneticController.parentVisit.phenomenon.name}" 
+										styleClass="outputValue_text" />
+					</c:when>
+					<c:otherwise>
+						<a:view value="#{geneticController.parentVisit}" viewer="#{viewer.getByPriority(4).target}" />
+					</c:otherwise>
+				</c:choose>
+			</td>
+			<td>
+				<a4j:outputPanel ajaxRendered="true">
+					<h:panelGroup rendered="#{geneticController.isParentVisitDateRendered(value, viewer)}">
+						<h:outputText value="In data" styleClass="label_text" />
+						<a:view value="#{geneticController.findBySelector(value, viewer.getByPriority(5).selector)}" 
+								viewer="#{viewer.getByPriority(5).target}"/>
+					</h:panelGroup>
+				</a4j:outputPanel>
+			</td>
+		</tr>
+	</table>
+	
+	<table class="grid_table">
+		<tr>
+			<td>
+				<h:outputText value="Consigliata consulenza genetica preconcezionale 
+										per i membri della famiglia, anche apparentemente non affetti"
+								styleClass="label_text" />
+			</td>
+			<td>
+				<c:choose>
+					<c:when test="#{geneticController.isFamilyAdviceRecovered(value, viewer, value.context.appointment.patient.id)}">
+						<h:outputText value="#{geneticController.familyAdvice.phenomenon.name}" 
+										styleClass="outputValue_text" />
+					</c:when>
+					<c:otherwise>
+						<a:view value="#{geneticController.familyAdvice}" viewer="#{viewer.getByPriority(6).target}" />
+					</c:otherwise>
+				</c:choose>
+			</td>
+			<td>
+				<a4j:outputPanel ajaxRendered="true">
+					<h:panelGroup rendered="#{geneticController.isFamilyAdviceDateRendered(value, viewer)}">
+						<h:outputText value="In data" styleClass="label_text" />
+						<a:view value="#{geneticController.findBySelector(value, viewer.getByPriority(7).selector)}" 
+								viewer="#{viewer.getByPriority(7).target}"/>
+					</h:panelGroup>
+				</a4j:outputPanel>
+			</td>
+		</tr>
+	</table>
+	
+	<c:if test="#{geneticController.isSecondVersion(value, viewer)}">
+		<table class="grid_table">
+			<tr>
+				<td>
+					<h:outputText value="Il/la paziente ha espresso il proprio consenso all'inserimento dei propri 
+												dati nel Registro Toscano Malattie Rare"
+									styleClass="label_text" />
+				</td>
+				<td>
+					<c:choose>
+						<c:when test="#{geneticController.isRegisterRecovered(value, viewer, value.context.appointment.patient.id)}">
+							<h:outputText value="#{geneticController.register.phenomenon.name}" 
+											styleClass="outputValue_text" />
+						</c:when>
+						<c:otherwise>
+							<a:view value="#{geneticController.register}" viewer="#{viewer.getByPriority(8).target}" />
+						</c:otherwise>
+					</c:choose>
+				</td>
+				<td>
+					<a4j:outputPanel ajaxRendered="true">
+						<h:panelGroup rendered="#{geneticController.isRegisterDateRendered(value, viewer)}">
+							<h:outputText value="In data" styleClass="label_text" />
+							<a:view value="#{geneticController.findBySelector(value, viewer.getByPriority(9).selector)}" 
+									viewer="#{viewer.getByPriority(9).target}"/>
+						</h:panelGroup>
+					</a4j:outputPanel>
+				</td>
+			</tr>
+		</table>
+	</c:if>
+</h:panelGroup>

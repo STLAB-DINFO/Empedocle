@@ -1,0 +1,52 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<a4j:outputPanel xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	ajaxRendered="true">
+
+	<div class="fieldset">
+		<table style="width: 100%">
+			<tr>
+				<td style="width: 10%;">
+					<h:outputText value="Altezza" styleClass="label_text" style="text-align: right; margin-left: 15px;"/>
+				</td>
+				<td style="width: 15%;">
+					<h:panelGroup rendered="#{altezzaPesoController.retrieveAltezza(value, viewer) ne null}"> 
+						<h:outputText value="#{altezzaPesoController.altezza.quantity.value} #{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.altezza)}" 
+										style="width: 60px; margin-right: 10px; text-align: right;" escape="false" />
+					</h:panelGroup>
+				</td>
+				<td style="width: 10%;">
+					<h:outputText value="Peso" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td style="width: 15%;">
+					<h:panelGroup rendered="#{altezzaPesoController.retrievePeso(value, viewer) ne null}"> 
+						<h:outputText value="#{altezzaPesoController.peso.quantity.value} #{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.peso)}" 
+										style="width: 60px; margin-right: 10px; text-align: right;" escape="false" />
+					</h:panelGroup>
+				</td>
+				<td style="width: 10%;">
+					<h:outputText value="S.C." styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td style="width: 15%;">
+					<h:panelGroup rendered="#{altezzaPesoController.retrieveSC(value, viewer) ne null}"> 
+						<h:outputText value="#{altezzaPesoController.sc.quantity.value} #{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.sc)}"
+										style="width: 60px; margin-right: 10px; text-align: right;" escape="false" />
+					</h:panelGroup>
+				</td>
+				<td style="width: 10%;">
+					<h:outputText value="I.M.C." styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td style="width: 15%;">
+					<h:panelGroup rendered="#{altezzaPesoController.retrieveIMC(value, viewer) ne null}"> 
+						<h:outputText value="#{altezzaPesoController.imc.quantity.value} #{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.imc)}"
+										style="width: 60px; margin-right: 10px; text-align: right;" escape="false" />
+					</h:panelGroup>
+				</td>
+			</tr>
+		</table>
+	</div>
+</a4j:outputPanel>

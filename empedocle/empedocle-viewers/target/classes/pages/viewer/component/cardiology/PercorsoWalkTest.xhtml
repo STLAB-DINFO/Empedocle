@@ -1,0 +1,65 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<div class="fieldset">
+		<table style="width: 100%">
+			<tr>
+				<a4j:region>
+					<td style="width: 30%;">
+						<h:outputText value="N° volte corridoio percorso" styleClass="label_text" style="text-align: right; margin-left: 15px;"/>
+					</td>
+					<td style="width: 10%;">
+						<h:panelGroup rendered="#{percorsoWalkTestController.retrieveNumeroVolteCorridoio(value, viewer) ne null}"> 
+							<h:inputText value="#{percorsoWalkTestController.numeroVolteCorridoio.quantity.value}" 
+											onkeydown="return disableReturn(event, this)"
+											style="width: 60px; margin-right: 10px; text-align: right;" >
+								<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+							</h:inputText>
+						</h:panelGroup>
+					</td>
+					<td style="width: 20%;">
+						<h:outputText value="N° tacche" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+					</td>
+					<td style="width: 10%;">
+						<h:panelGroup rendered="#{percorsoWalkTestController.retrieveNumeroTacche(value, viewer) ne null}"> 
+							<h:inputText value="#{percorsoWalkTestController.numeroTacche.quantity.value}" 
+											onkeydown="return disableReturn(event, this)"
+											style="width: 60px; margin-right: 10px; text-align: right;" >
+								<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+							</h:inputText>
+						</h:panelGroup>
+					</td>
+				</a4j:region>
+				<td style="width: 20%;">
+					<h:outputText value="Metri percorsi" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td style="width: 10%;">
+					<a4j:outputPanel rendered="#{percorsoWalkTestController.retrieveMetriPercorsi(value, viewer) ne null}"
+										ajaxRendered="true"> 
+						<h:inputText value="#{percorsoWalkTestController.metriPercorsi.quantity.value}" disabled="true" 
+										style="width: 60px; margin-right: 10px; text-align: right;"/>
+					</a4j:outputPanel>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 30%;">
+					<h:outputText value="N° fermate" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td>
+					<h:panelGroup rendered="#{percorsoWalkTestController.retrieveNumeroFermate(value, viewer) ne null}"> 
+						<h:inputText value="#{percorsoWalkTestController.numeroFermate.quantity.value}"
+										onkeydown="return disableReturn(event, this)"
+										style="width: 60px; margin-right: 10px; text-align: right;">
+							<f:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+						</h:inputText>
+					</h:panelGroup>
+				</td>
+			</tr>
+		</table>
+	</div>
+</h:panelGroup>

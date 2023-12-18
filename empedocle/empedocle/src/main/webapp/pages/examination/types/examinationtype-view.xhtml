@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<h:form>
+			<h:panelGroup layout="block" styleClass="page-title">
+				<h2>	
+					Dettaglio Struttura visita
+			
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+					
+						<h:commandLink class="btn btn-danger"
+							action="#{examinationTypeList.delete( examinationTypeView.current.id )}"
+							rendered="#{examinationTypeList.isRemovable( examinationTypeView.current.id )}"
+							onclick="if(!confirm('Eliminare struttura visita?')) {return false;}" >
+							<i class="fw-icon-remove dist-right"></i> Elimina
+						</h:commandLink>						
+					
+						<h:panelGroup class="btn-group dist-left" layout="block">
+							<h:commandLink class="btn btn-warning" 
+								action="#{examinationTypeList.edit( examinationTypeView.current.id )}">
+								<i class="fw-icon-pencil dist-right"></i> Modifica
+							</h:commandLink>	
+							<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<h:commandLink action="#{examinationTypeList.copy( examinationTypeView.current.id )}">
+										<i class="fw-icon-copy dist-right"></i> Clona
+									</h:commandLink>
+								</li>				
+							</ul>
+						</h:panelGroup>
+						
+						<h:commandLink class="btn dist-left"
+							action="#{examinationTypeView.close()}">
+							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						</h:commandLink>		
+					</h:panelGroup>		
+				</h2>	
+			</h:panelGroup>
+		</h:form>
+		
+		<h:panelGroup layout="block" styleClass="container-fluid form-horizontal">
+			<div class="control-group">
+				<label class="control-label bold">Nome</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{examinationTypeView.current.name}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Descrizione</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{examinationTypeView.current.description}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Tempo di chiusura</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{examinationTypeView.current.timeToLive} ore" />
+				</div>
+			</div>			
+			
+			<div class="control-group">
+				<label class="control-label bold">Tipo</label>
+				<div class="controls align-txt">
+					<h:outputText value="#{examinationTypeView.current.type.name}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold">Agende</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="agenda-list">
+						<h:panelGroup layout="block" rendered="#{empty examinationTypeView.agendas}">
+							<h:outputText value="Nessun agenda associata" />
+						</h:panelGroup>
+						
+						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty examinationTypeView.agendas}">
+							<h:dataTable value="#{examinationTypeView.agendas}" var="agenda"
+											styleClass="table table-bordered table-condensed">
+											
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Codice" />
+									</f:facet>
+											
+									<h:outputText value="#{agenda.code}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Descrizione" />
+									</f:facet>		
+									
+									<h:outputText value="#{agenda.description}" />
+								</h:column>
+								
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+					
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold">Permessi su operazioni</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="auth-list" layout="block">
+						<h:panelGroup layout="block" rendered="#{not examinationTypeView.hasAuthorizations()}">
+							<h:outputText value="Nessun permesso esistente" />
+						</h:panelGroup>
+						
+						<h:panelGroup layout="block" class="scrollable" rendered="#{examinationTypeView.hasAuthorizations()}">				
+							<h:dataTable value="#{examinationTypeView.authorizations}" var="auth"
+											styleClass="table table-bordered table-condensed">
+											
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Operazione" />
+									</f:facet>
+									
+									<h:outputText value="#{auth.examOperation.name}" />
+								</h:column>			
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Qualifica" />
+									</f:facet>
+									
+									<h:outputText value="#{auth.qualification.name}" />
+								</h:column>
+								
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label bold">Viste associate a contesti e qualifiche</label>
+				<div class="controls align-txt">
+					<h:panelGroup id="vieweruses-list" layout="block">
+						<h:panelGroup layout="block" rendered="#{not examinationTypeView.hasViewerUses()}">
+							<h:outputText value="Nessuna vista associata" />
+						</h:panelGroup>
+						
+						<h:panelGroup layout="block" class="scrollable" rendered="#{examinationTypeView.hasViewerUses()}">			
+							<h:dataTable value="#{examinationTypeView.viewerUses}" var="vuse"
+											styleClass="table table-bordered table-condensed" >
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Contesto" />
+									</f:facet>
+									
+									<h:outputText value="#{vuse.context.name}" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Qualifica" />
+									</f:facet>
+									
+									<h:outputText value="#{vuse.qualification.name}" />
+								</h:column>								
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Vista" />
+									</f:facet>
+									
+									<h:outputText value="#{vuse.viewer.name}" />
+								</h:column>
+							</h:dataTable>
+						</h:panelGroup>
+					</h:panelGroup>
+				</div>
+			</div>
+		</h:panelGroup>	
+		
+	</ui:define>
+
+</ui:composition>
+</html>

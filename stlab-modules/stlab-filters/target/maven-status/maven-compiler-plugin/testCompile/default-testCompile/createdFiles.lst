@@ -1,0 +1,7 @@
+it/unifi/ing/stlab/navigation/NavigationStatusTest.class
+it/unifi/ing/stlab/navigation/NavigatorTest.class
+it/unifi/ing/stlab/sorting/SortingTest.class
+it/unifi/ing/stlab/filters/FilterDefTest.class
+it/unifi/ing/stlab/filters/FilterTest.class
+it/unifi/ing/stlab/navigation/FakeNavigator.class
+it/unifi/ing/stlab/sorting/SortFieldTest.class

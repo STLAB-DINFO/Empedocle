@@ -1,0 +1,59 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div id="report_header">
+		<c:choose>
+			<c:when test="#{reportController.isVistaCompositaItem(viewer.header)}">
+				<a:view
+					value="#{value}"
+					viewer="#{viewer.header}"
+					selector="#{viewer.getByPriority(0).selector}" />
+			</c:when>
+			<c:otherwise>
+				<a:view
+					value="#{reportController.findBySelector(value, viewer.getByPriority(0).selector)}"
+					viewer="#{viewer.header}" />
+			</c:otherwise>
+		</c:choose>
+	</div> 
+	<div id="report_footer">
+		<span id="pagenumber" /><br/>
+		<c:choose>
+			<c:when test="#{reportController.isVistaCompositaItem(viewer.footer)}">
+				<a:view
+					value="#{value}"
+					viewer="#{viewer.footer}"
+					selector="#{viewer.getByPriority(2).selector}" />
+			</c:when>
+			<c:otherwise>
+				<a:view
+					value="#{reportController.findBySelector(value, viewer.getByPriority(2).selector)}"
+					viewer="#{viewer.footer}" />
+			</c:otherwise>
+		</c:choose>
+	</div>
+	<div id="report_content">
+		<c:choose>
+			<c:when test="#{reportController.isVistaCompositaItem(viewer.content)}">
+				<a:view
+					value="#{value}"
+					viewer="#{viewer.content}"
+					selector="#{viewer.getByPriority(1).selector}" />
+			</c:when>
+			<c:otherwise>
+				<a:view
+					value="#{reportController.findBySelector(value, viewer.getByPriority(1).selector)}"
+					viewer="#{viewer.content}" />
+			</c:otherwise>
+		</c:choose>
+	</div>
+	
+
+</h:panelGroup>

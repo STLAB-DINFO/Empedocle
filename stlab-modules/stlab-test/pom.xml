@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>stlab-test</artifactId>
+	<parent>
+		<groupId>it.unifi.ing.stlab</groupId>
+		<artifactId>stlab-modules</artifactId>
+		<version>1.0.0</version>
+	</parent>	
+	
+	<dependencies>
+        <!-- test libraries -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-integration</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.3.9.Final</version> <!-- versione inclusa in wildfly-16.0.0.Final -->
+		</dependency>	
+
+		<!-- database connectors -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.40</version>
+		</dependency>	
+		
+		<!-- Tools for comparing images and writing image-base approval tests -->
+		<dependency>
+			<groupId>net.avh4.util</groupId>
+			<artifactId>imagecomparison</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+	</dependencies>  
+</project>

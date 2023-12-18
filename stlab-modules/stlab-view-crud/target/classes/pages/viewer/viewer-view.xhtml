@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	
+
+<ui:composition template="/layout/template.xhtml">
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>		
+		
+	<ui:define name="body">
+	
+		<style>
+			.table-bordered { margin-bottom: 0 }
+			.structure-container { padding: 10px; border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; 
+				overflow-y: auto; }
+			.structure-details { padding: 10px; padding-bottom: 0; border: 1px solid #cccccc; 
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; 
+				overflow-y: auto; }
+			.rf-trn-ico-cst,
+			.rf-trn-hnd-exp,
+			.rf-trn-hnd-lf { margin-right: 5px; }
+			.rf-trn-hnd-exp { background: url("#{request.contextPath}/img/collapse-up.png") no-repeat center; }
+			.rf-trn-hnd-colps { background: url("#{request.contextPath}/img/expand-down.png") no-repeat center; 
+				position: relative; top: -5px; margin-right: 5px; }
+		</style>	
+	
+		<h:form>
+			<h:panelGroup layout="block" styleClass="page-title">
+				<h2>
+					Dettaglio Vista
+					
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+					
+						<h:commandLink class="btn btn-danger"
+							action="#{viewerList.delete( viewerView.current.viewer.id )}"
+							rendered="#{viewerList.isRemovable( viewerView.current.viewer.id )}"
+							onclick="if(!confirm('Eliminare vista?')) {return false;}" >
+							<i class="fw-icon-remove dist-right"></i> Elimina
+						</h:commandLink>	
+					
+						<h:commandLink class="btn dist-left"
+							action="#{viewerView.close()}">
+							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						</h:commandLink>		
+					</h:panelGroup>						
+				</h2>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="form-horizontal container-fluid">
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="name" value="Nome" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block">
+				    	<h:outputText id="name" value="#{viewerView.current.viewer.name}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="dex" value="Descrizione" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block">
+				    	<h:outputText id="dex" value="#{viewerView.current.viewer.description}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="type" value="Tipo" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block">
+				    	<h:outputText id="type" value="#{viewerView.current.viewer.type.name}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block" id="read-only">
+					<h:outputLabel styleClass="control-label bold" for="read-only" value="Sola lettura" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block"
+				    	rendered="#{viewerView.current.viewer.readOnly}">
+						<i class="fw-icon-ok fw-icon-large" />
+				    </h:panelGroup>					
+				</h:panelGroup>
+	
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="css" value="Css" />
+				    <h:panelGroup styleClass="controls align-txt" layout="block"
+				    	style="overflow-y: auto; max-height:300px;">
+				    	<h:outputText id="css" value="#{viewerView.current.viewer.css}" /> 
+				    </h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup styleClass="control-group" layout="block">
+					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Struttura" />
+					<h:panelGroup layout="block" styleClass="controls align-txt">
+					
+						<h:panelGroup layout="block" styleClass="row-fluid">
+							<h:panelGroup layout="block" styleClass="structure-container span6">
+								<rich:tree id="tree-structure" value="#{viewerView.current.treeRoot}" var="node" toggleType="ajax" 
+									selectionType="ajax" selectionChangeListener="#{viewerView.selectionChanged}">
+								   <rich:treeNode expanded="#{node.expanded}" 
+								  		iconLeaf="/img/caret-right.png" iconExpanded="/img/folder-open.png" iconCollapsed="/img/folder.png">
+								    	<h:outputText value="#{node.label} - #{node.link.target.id}" escape="true" 
+								    		styleClass="#{node.label eq 'root' ? 'hide' : ''}"/>
+								   </rich:treeNode>
+								</rich:tree>
+							</h:panelGroup>					
+							
+							<a4j:outputPanel ajaxRendered="true" layout="block" styleClass="form-horizontal span6">
+								<h:panelGroup layout="block" rendered="#{not empty viewerView.selectedLink}" 
+									styleClass="structure-details">							
+									<h:panelGroup styleClass="control-group" layout="block">
+										<h:outputLabel styleClass="control-label bold" for="uuid" value="Uuid" />
+									    <h:panelGroup styleClass="controls align-txt" layout="block">
+									    	<h:outputText id="uuid" value="#{viewerView.selectedLink.uuid}" /> 
+									    </h:panelGroup>
+									</h:panelGroup>
+								</h:panelGroup>
+        					</a4j:outputPanel>	
+						</h:panelGroup>
+				    </h:panelGroup>
+				</h:panelGroup>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

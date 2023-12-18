@@ -1,0 +1,12 @@
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/visitor/type/FactFactoryVisitorTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/model/facts/QuantitativeFactTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/visitor/type/SampleFactFactoryVisitorTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/model/facts/QualitativeFactTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/model/facts/TemporalFactTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/converter/stax/StaxConverterTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/converter/sax/SaxConverterTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/converter/jaxb/JaxbConverterTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/visitor/type/FactRandomFactoryVisitorTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/model/facts/TextualFactTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/converter/util/ZipperTest.java
+/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-lite/src/test/java/it/unifi/ing/stlab/reflection/lite/model/facts/CompositeFactTest.java

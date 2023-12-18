@@ -1,0 +1,643 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<div style="text-align:center; font-weight: bold;">
+		<h:outputText value="DESCRIZIONE" /><br />
+		<h:outputText value="LOCALIZZAZIONE" />
+	</div>
+	
+	<table style="width: 100%" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 42%"></td>
+				<td style="width: 28%">
+					<h:outputText value="Destra" styleClass="label_text" style="text-align:right; margin-left: 30px;" />
+				</td>
+				<td style="width: 30%">
+					<h:outputText value="Sinistra" styleClass="label_text" style="text-align:right; margin-rigth: 10px;" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="padding-bottom: 10px; width: 18%;"><h:outputText value="Gamba" styleClass="label_text" /></td>
+				<td style="padding-bottom: 10px; width: 72%;">
+					<table style="width: 100%">
+						<c:forEach items="#{medicazioneUlcereController.retrieveRegioneGambaPhenomena(value, viewer)}" var="phen" >
+							<tr>
+								<td style="width: 35%">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 30%">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedRegioneGambaDx(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+								<td style="width: 35%">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedRegioneGambaSx(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding-bottom: 10px"><h:outputText value="Malleolo" styleClass="label_text" /></td>
+				<td style="padding-bottom: 10px">
+					<table style="width: 100%">
+						<c:forEach items="#{medicazioneUlcereController.retrieveRegioneMalleoloPhenomena(value, viewer)}" var="phen" >
+							<tr>
+								<td style="width: 35%">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 30%">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedRegioneMalleoloDx(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+								<td style="width: 35%">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedRegioneMalleoloSx(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td><h:outputText value="Piede" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<c:forEach items="#{medicazioneUlcereController.retrieveRegionePiedePhenomena(value, viewer)}" var="phen" >
+							<tr>
+								<td style="width: 35%">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 30%">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedRegionePiedeDx(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+								<td style="width: 35%">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedRegionePiedeSx(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 48%"><h:outputText value="Note" styleClass="label_text" /></td>
+				<td style="width: 24%">
+					<h:outputText value="#{medicazioneUlcereController.retrieveNoteDx(value, viewer)}" />
+				</td>
+				<td style="width: 28%">
+					<h:outputText value="#{medicazioneUlcereController.retrieveNoteSx(value, viewer)}" />
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 48%"><h:outputText value="Edemi" styleClass="label_text" /></td>
+				<td style="width: 24%">
+					<h:outputText value="#{medicazioneUlcereController.retrieveEdemiDx(value, viewer)}" />
+				</td>
+				<td style="width: 28%">
+					<h:outputText value="#{medicazioneUlcereController.retrieveEdemiSx(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div style="text-align:center; font-weight: bold; margin-top:10px;">
+		<h:outputText value="TIPOLOGIA" /><br />
+	</div>
+	
+	<table style="width: 100%" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%;"><h:outputText value="Dimensioni" styleClass="label_text" /></td>
+				<td style="padding-left: 18px;"><h:outputText value="H" styleClass="label_text" /></td>
+				<td style="padding-left: 18px;"><h:outputText value="L" styleClass="label_text" /></td>
+				<td style="padding-left: 15px;"><h:outputText value="Area" styleClass="label_text" /></td>
+			</tr>
+			<tr>
+				<td style="width: 15%;"></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveDimensioniH(value, viewer)}" />
+				</td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveDimensioniL(value, viewer)}" />
+				</td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveDimensioniArea(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%;"><h:outputText value="Profondità" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveProfondita(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%;"><h:outputText value="Bordi" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveBordiPhenomena(value, viewer)}" var="phen" >
+								<td style="width: 10%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 11%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedBordi(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 10%;"><h:outputText value="Necrosi" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveNecrosi(value, viewer)}" />
+				</td>
+				<td style="width: 10%;"><h:outputText value="Infezione" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveInfezione(value, viewer)}" />
+				</td>
+				<td style="width: 20%;"><h:outputText value="Flogosi periulcerosa" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveFlogosi(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%"><h:outputText value="Eziologia" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveEziologiaPhenomena(value, viewer)}" 
+										var="phen" varStatus="row" begin="0" end="2">
+								<td style="width: 20%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 10%; text-align:left;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedEziologia(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>								
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveEziologiaPhenomena(value, viewer)}" 
+										var="phen" varStatus="row" begin="3" end="5">
+								<td style="width: 20%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 10%; text-align:left;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedEziologia(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>								
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveEziologiaPhenomena(value, viewer)}" 
+										var="phen" varStatus="row" begin="6" end="8">
+								<td style="width: 20%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 20%; text-align:left;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedEziologia(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>								
+							</c:forEach>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 28%;"><h:outputText value="Alterazioni della deambulazione" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveAlterazioniDeambulazione(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 20%;"><h:outputText value="Epoca di insorgenza" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveEpocaInsorgenza(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 20%;"><h:outputText value="Presenza di Dolore" styleClass="label_text" /></td>
+				<td style="width: 30%;">
+					<h:outputText value="#{medicazioneUlcereController.retrievePresenzaDolore(value, viewer)}" />
+				</td>
+				<td style="width: 20%;"><h:outputText value="Fascia temporale" styleClass="label_text" /></td>
+				<td style="width: 30%;">
+					<h:outputText value="#{medicazioneUlcereController.retrieveFasciaTemporale(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div style="text-align:center; font-weight: bold; margin-top:10px;">
+		<h:outputText value="MEDICAZIONE" /><br />
+		<h:outputText value="DETERSIONE" />
+	</div>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 20%;"><h:outputText value="Modalità" styleClass="label_text" /></td>
+				<c:forEach items="#{medicazioneUlcereController.retrieveModalitaDetersionePhenomena(value, viewer)}" var="phen" >
+					<td style="width: 18%;">
+						<h:outputText value="#{phen.name}" />
+					</td>
+					<td style="width: 12%;">
+						<div style="width: 10px; height: 10px; border: 1px solid black;">
+							<c:if test="#{medicazioneUlcereController.isCheckedModalitaDetersione(value, viewer, phen)}">
+								<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+							</c:if>
+						</div>
+					</td>
+				</c:forEach>
+				<td style="width: 20%;"></td>
+			</tr>
+			<tr>
+				<td style="width: 20%;"><h:outputText value="Materiali usati" styleClass="label_text" /></td>
+				<c:forEach items="#{medicazioneUlcereController.retrieveMaterialiUsatiPhenomena(value, viewer)}" var="phen" >
+					<td style="width: 18%;">
+						<h:outputText value="#{phen.name}" />
+					</td>
+					<td style="width: 12%;">
+						<div style="width: 10px; height: 10px; border: 1px solid black;">
+							<c:if test="#{medicazioneUlcereController.isCheckedMaterialiUsati(value, viewer, phen)}">
+								<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+							</c:if>
+						</div>
+					</td>
+				</c:forEach>
+				<td style="width: 20%;"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 20%;"><h:outputText value="Note" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveNoteDetersione(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 20%;"><h:outputText value="Disinfezione" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveDisinfezione(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div style="text-align:center; font-weight: bold; margin-top:10px;">
+		<h:outputText value="COPERTURA" />
+	</div>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%;"><h:outputText value="Tipologia" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipologiaCoperturaPhenomena(value, viewer)}" var="phen" 
+										varStatus="row" begin="0" end="2" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipologiaCopertura(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipologiaCoperturaPhenomena(value, viewer)}" var="phen" 
+										varStatus="row" begin="3" end="5" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipologiaCopertura(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipologiaCoperturaPhenomena(value, viewer)}" var="phen" 
+										varStatus="row" begin="6" end="8" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipologiaCopertura(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%;"><h:outputText value="Note" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveNoteCopertura(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div style="text-align:center; font-weight: bold; margin-top:10px;">
+		<h:outputText value="COMPRESSIONE" />
+	</div>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 35%;"><h:outputText value="Materiale usato per protezione cute" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveMaterialeProtezionePhenomena(value, viewer)}" 
+										var="phen" begin="0" end="1" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedMaterialeProtezione(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveMaterialeProtezionePhenomena(value, viewer)}" 
+										var="phen" begin="2" end="3" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td  style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedMaterialeProtezione(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 25%;"><h:outputText value="Tipo di compressione" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipoCompressionePhenomena(value, viewer)}" 
+										var="phen" begin="0" end="2" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipoCompressione(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipoCompressionePhenomena(value, viewer)}" 
+										var="phen" begin="3" end="5" >
+								<td style="width: 15%;">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 15%;">
+									<div style="width: 10px; height: 10px; border: 1px solid black;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipoCompressione(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+								</td>
+							</c:forEach>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 18%"><h:outputText value="Bendaggio con" styleClass="label_text" /></td>
+				<td>
+					<table style="width: 100%">
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipoBendaPhenomena(value, viewer)}" 
+										var="phen" begin="0" end="1">
+								<td style="width: 25%">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 25%">
+									<div style="width: 10px; height: 10px; border: 1px solid black; float:left;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipoBenda(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+									<h:outputText value="#{medicazioneUlcereController.retrieveQuantitaBenda(value, viewer, phen)}" 
+													 style="padding-left: 10px;" />
+								</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipoBendaPhenomena(value, viewer)}" 
+										var="phen" begin="2" end="3">
+								<td style="width: 25%">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 25%">
+									<div style="width: 10px; height: 10px; border: 1px solid black; float:left;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipoBenda(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+									<h:outputText value="#{medicazioneUlcereController.retrieveQuantitaBenda(value, viewer, phen)}"
+													style="padding-left: 10px;" />
+								</td>
+							</c:forEach>
+						</tr>
+						<tr>
+							<c:forEach items="#{medicazioneUlcereController.retrieveTipoBendaPhenomena(value, viewer)}" 
+										var="phen" begin="4" end="5">
+								<td style="width: 25%">
+									<h:outputText value="#{phen.name}" />
+								</td>
+								<td style="width: 25%">
+									<div style="width: 10px; height: 10px; border: 1px solid black; float:left;">
+										<c:if test="#{medicazioneUlcereController.isCheckedTipoBenda(value, viewer, phen)}">
+											<h:outputText value="X" style="font-size: 11px; font-weight: bold;" />
+										</c:if>
+									</div>
+									<h:outputText value="#{medicazioneUlcereController.retrieveQuantitaBenda(value, viewer, phen)}"
+													style="padding-left: 10px;" />
+								</td>
+							</c:forEach>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 15%;"><h:outputText value="Note" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveNoteCompressione(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div style="text-align:center; font-weight: bold; margin-top:10px;">
+		<h:outputText value="TERAPIA" />
+	</div>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 18%;"><h:outputText value="Terapia in atto" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveTerapiaAtto(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 18%;"><h:outputText value="Terapia prescritta" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveTerapiaPrescritta(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="width: 100%; margin-top:10px;" class="unbreakable">
+		<tbody>
+			<tr>
+				<td style="width: 18%;"><h:outputText value="Osservazioni" styleClass="label_text" /></td>
+				<td>
+					<h:outputText value="#{medicazioneUlcereController.retrieveOsservazioni(value, viewer)}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</h:panelGroup>

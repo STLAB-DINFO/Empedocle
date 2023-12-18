@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name=controller type="it.unifi.ing.stlab.filters.FilterBean" />
+    	<composite:attribute name="value" />
+    	<composite:attribute name="render" />
+    </composite:interface>
+ 
+    <composite:implementation>
+    	<h:commandLink action="#{cc.attrs.controller.toggle(value)}" value="#{cc.attrs.value}"
+    		styleClass="" style="margin-right: 2px;">
+    		<f:ajax render="#{cc.attrs.render}" execute="@this" />
+    	</h:commandLink>
+    	#{cc.attrs.controller.ascending(value) ? '\u2193' : '\u2191'}
+    </composite:implementation>
+</html>

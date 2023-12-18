@@ -1,0 +1,108 @@
+i[class^="fw-icon"] {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*=== type-edit dsl ===*/
+#type-root-div {
+	width: 75%;	
+}
+
+.type-def-input {
+	width: 98%;	
+	min-height: 400px;
+}
+
+ul.type-err-messages {
+	margin: 0 0 10px 0px;
+}
+
+/*======type Edit======*/
+#type-form\:use-warn {
+	margin-left: 20px;
+}
+
+*.rf-trn-sel {
+	background: #F5F5F5;
+}
+
+.structure-container {
+	padding: 3px;
+	border: 1px solid #cccccc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	overflow-y: auto;
+	height: 400px;
+}
+
+#type-form\3a detail-panel>div>div>label, #type-form\3a default-values>div>label
+	{
+	width: 110px;
+}
+
+#type-form\3a detail-panel>div>div.control-group>div,
+	#type-form\3a default-values>div.control-group>div {
+	margin-left: 120px;
+}
+
+#type-form\3a default-values>div.control-group>div>select {
+	margin-left: 5px;
+}
+
+#type-form\3a detail-panel>div>div.control-group>div.controls>table>tbody>tr>td>select
+	{
+	max-width: 180px;
+}
+
+#type-form\3a detail-panel>div>div.control-group>div.controls>table {
+	background-color: white;
+}
+
+#type-form\3a detail-panel>div>div.control-group>div.controls>table>tbody>tr>td:nth-child(5)>div.align-txt
+	{
+	top: 3px;
+	text-align: center;
+}
+
+#type-form\3a detail-panel>div>div>div.controls>textarea.input-xxlarge {
+	width: 500px;
+}
+
+#type-form\3a results>table>tbody>tr>td.crud-controls-3>a>i.fw-icon-copy
+	{
+	padding: 0px;
+}
+
+.panelc {
+	width: 25%;
+}
+
+.valign {
+	vertical-align: top;
+}
+
+.dropTargetPanel {
+	width: 90%;
+}
+
+.footerClass {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.rf-ind-drag {
+	font-size: 11px;
+	cursor: pointer;
+	cursor: -webkit-grab;
+	width: 100px;
+	border: 1px solid gray;
+	padding: 2px
+}
+
+.rf-ind-acpt {
+	border: 2px solid green
+}
+
+.rf-ind-rejt {
+	border: 2px solid red
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<div class="fieldset">
+		<div class="box_label">
+			<span class="label_text">Reperti Mono e Bidimensionali</span>
+		</div>
+		<div class="box_content">
+			<table style="width: 100%">
+				<tr>
+					<td style="width: 50%;">
+						<div class="fieldset">
+							<div class="box_label">
+								<span class="label_text">Ventricolo Sinistro</span>
+							</div>
+							<div class="box_content">
+								<a4j:region>
+									<table style="margin-left: 15px; width: 100%">
+										<tr>
+											<td>
+												<h:outputText value="Diametro telediastolico vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveDiametroTelediastolico(value, viewer) ne null}"> 
+													<h:inputText value="#{repertiMonoBidimensionaliController.diametroTelediastolico.quantity.value}"
+																	converter="#{decimalNumberConverter}" 
+																	style="width: 60px; margin-right: 10px; text-align: right;" >
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.diametroTelediastolico.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.diametroTelediastolico.quantity.unit.uuid}" />
+														<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.diametroTelediastolico)}" 
+																	escape="false" />
+												</h:panelGroup>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Diametro telediastolico vsn indicizzato" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveDiametroTelediastolicoIndicizzato(value, viewer) ne null}"
+																	ajaxRendered="true"> 
+													<h:inputText disabled="true"
+																	value="#{repertiMonoBidimensionaliController.diametroTelediastolicoIndicizzato.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.diametroTelediastolicoIndicizzato.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.diametroTelediastolicoIndicizzato.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.diametroTelediastolicoIndicizzato)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Diametro telesistolico vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveDiametroTelesistolico(value, viewer) ne null}"> 
+													<h:inputText value="#{repertiMonoBidimensionaliController.diametroTelesistolico.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;" >
+														<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.diametroTelesistolico.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.diametroTelesistolico.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.diametroTelesistolico)}" 
+																	escape="false" />
+												</h:panelGroup>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Diametro telesistolico vsn indicizzato" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveDiametroTelesistolicoIndicizzato(value, viewer) ne null}"
+																	ajaxRendered="true"> 
+													<h:inputText disabled="true"
+																	converter="#{decimalNumberConverter}"
+																	value="#{repertiMonoBidimensionaliController.diametroTelesistolicoIndicizzato.quantity.value}" 
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.diametroTelesistolicoIndicizzato.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.diametroTelesistolicoIndicizzato.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.diametroTelesistolicoIndicizzato)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Accorciamento frazionale" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveAccorciamentoFrazionale(value, viewer) ne null}"
+																	ajaxRendered="true"> 
+													<h:inputText disabled="true"
+																	converter="#{decimalNumberConverter}"
+																	value="#{repertiMonoBidimensionaliController.accorciamentoFrazionale.quantity.value}" 
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.accorciamentoFrazionale.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.accorciamentoFrazionale.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.accorciamentoFrazionale)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Volume telediastolico vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveVolumeTelediastolico(value, viewer) ne null}"> 
+													<h:inputText value="#{repertiMonoBidimensionaliController.volumeTelediastolico.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;" >
+														<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.volumeTelediastolico.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.volumeTelediastolico.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.volumeTelediastolico)}" 
+																	escape="false" />
+												</h:panelGroup>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Volume telediastolico vsn indicizzato" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveVolumeTelediastolicoIndicizzato(value, viewer) ne null}"
+																	ajaxRendered="true"> 
+													<h:inputText disabled="true"
+																	converter="#{decimalNumberConverter}"
+																	value="#{repertiMonoBidimensionaliController.volumeTelediastolicoIndicizzato.quantity.value}" 
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.volumeTelediastolicoIndicizzato.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.volumeTelediastolicoIndicizzato.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.volumeTelediastolicoIndicizzato)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Volume telesistolico vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveVolumeTelesistolico(value, viewer) ne null}"> 
+													<h:inputText value="#{repertiMonoBidimensionaliController.volumeTelesistolico.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;" >
+														<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.volumeTelesistolico.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.volumeTelesistolico.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.volumeTelesistolico)}" 
+																	escape="false" />
+												</h:panelGroup>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Volume telesistolico vsn indicizzato" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveVolumeTelesistolicoIndicizzato(value, viewer) ne null}"
+																	ajaxRendered="true"> 
+													<h:inputText disabled="true"
+																	value="#{repertiMonoBidimensionaliController.volumeTelesistolicoIndicizzato.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.volumeTelesistolicoIndicizzato.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.volumeTelesistolicoIndicizzato.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.volumeTelesistolicoIndicizzato)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Frazione d'eiezione" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveFrazioneEiezione(value, viewer) ne null}"
+																	ajaxRendered="true">
+													<h:inputText id="fraz_eiezione" disabled="true"
+																	value="#{repertiMonoBidimensionaliController.frazioneEiezione.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.frazioneEiezione.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.frazioneEiezione.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.frazioneEiezione)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Setto interventricolare vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveSettoInterventricolare(value, viewer) ne null}"> 
+													<h:inputText value="#{repertiMonoBidimensionaliController.settoInterventricolare.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.settoInterventricolare.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.settoInterventricolare.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.settoInterventricolare)}" 
+																	escape="false" />
+												</h:panelGroup>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Parete posteriore vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveParetePosteriore(value, viewer) ne null}"> 
+													<h:inputText value="#{repertiMonoBidimensionaliController.paretePosteriore.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.paretePosteriore.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.paretePosteriore.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.paretePosteriore)}" 
+																	escape="false" />
+												</h:panelGroup>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Massa vsn" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveMassa(value, viewer) ne null}"
+																	ajaxRendered="true">
+													<h:inputText disabled="true"
+																	value="#{repertiMonoBidimensionaliController.massa.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.massa.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.massa.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.massa)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Massa vsn Indicizzata" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveMassaIndicizzata(value, viewer) ne null}"
+																	ajaxRendered="true"> 
+													<h:inputText disabled="true"
+																	value="#{repertiMonoBidimensionaliController.massaIndicizzata.quantity.value}" 
+																	converter="#{decimalNumberConverter}"
+																	style="width: 60px; margin-right: 10px; text-align: right;">
+														<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.massaIndicizzata.type.id}" />
+														<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.massaIndicizzata.quantity.unit.uuid}" />
+													</h:inputText>
+													
+													<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.massaIndicizzata)}" 
+																	escape="false" />
+												</a4j:outputPanel>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h:outputText value="Radice aortica" styleClass="label_text" style="text-align: right;"/>
+											</td>
+											<td>
+												<a:view value="#{repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(16).selector)}" viewer="#{viewer.getByPriority(16).target}" />
+											
+												<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(16).selector))}" 
+																	escape="false" />
+											</td>
+										</tr>
+									</table>	
+								</a4j:region>
+							</div>
+						</div>
+					</td>
+					
+					<td style="vertical-align:top; width: 50%;">
+						<div class="fieldset">
+							<div class="box_label">
+								<span class="label_text">Atrio Sinistro</span>
+							</div>
+							<div class="box_content">
+								<table style="margin-left: 15px; width: 100%">
+									<tr>
+										<td>
+											<h:outputText value="Volume asn" styleClass="label_text" style="text-align: right;"/>
+										</td>
+										<td>
+											<h:panelGroup rendered="#{repertiMonoBidimensionaliController.retrieveVolume(value, viewer) ne null}"> 
+												<h:inputText value="#{repertiMonoBidimensionaliController.volume.quantity.value}" 
+																converter="#{decimalNumberConverter}"
+																style="width: 60px; margin-right: 10px; text-align: right;">
+																
+													<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+													<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.volume.type.id}" />
+													<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.volume.quantity.unit.uuid}" />
+												</h:inputText>
+											
+												<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.volume)}" 
+																escape="false" />
+											</h:panelGroup>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h:outputText value="Volume asn indicizzato" styleClass="label_text" style="text-align: right;"/>
+										</td>
+										<td>
+											<a4j:outputPanel rendered="#{repertiMonoBidimensionaliController.retrieveVolumeIndicizzato(value, viewer) ne null}"
+																ajaxRendered="true"> 
+												<h:inputText id="volume_ind" disabled="true"
+																value="#{repertiMonoBidimensionaliController.volumeIndicizzato.quantity.value}" 
+																converter="#{decimalNumberConverter}"
+																style="width: 60px; margin-right: 10px; text-align: right;">
+													<f:attribute name="typeId" value="#{repertiMonoBidimensionaliController.volumeIndicizzato.type.id}" />
+													<f:attribute name="unitId" value="#{repertiMonoBidimensionaliController.volumeIndicizzato.quantity.unit.uuid}" />
+												</h:inputText>
+												
+												<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(repertiMonoBidimensionaliController.volumeIndicizzato)}" 
+																escape="false" />
+											</a4j:outputPanel>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h:outputText value="Diametro Asn" styleClass="label_text" style="text-align: right;"/>
+										</td>
+										<td>
+											<a:view value="#{repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(17).selector)}" viewer="#{viewer.getByPriority(17).target}" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h:outputText value="Area asn" styleClass="label_text" style="text-align: right;"/>
+										</td>
+										<td>
+											<a:view value="#{repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(20).selector)}" viewer="#{viewer.getByPriority(20).target}" />
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="fieldset">
+							<div class="box_label">
+								<span class="label_text">Ventricolo Destro</span>
+							</div>
+							<div class="box_content">
+								<table style="margin-left: 15px; width: 100%">
+									<tr>
+										<td style="width: 56%;">
+											<h:outputText value="Diametro Vdx" styleClass="label_text" style="text-align: right;"/>
+										</td>
+										<td>
+											<a:view value="#{repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(18).selector)}" viewer="#{viewer.getByPriority(18).target}" />
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 56%;">
+											<h:outputText value="Tapse" styleClass="label_text" style="text-align: right;"/>
+										</td>
+										<td>
+											<a:view value="#{repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(19).selector)}" viewer="#{viewer.getByPriority(19).target}" />
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+						<h:outputText value="Commento" styleClass="label_text" style="text-align: right;"/>
+					</td>
+					<td>
+						<a:view value="#{repertiMonoBidimensionaliController.findBySelector(value, viewer.getByPriority(21).selector)}" viewer="#{viewer.getByPriority(21).target}" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</h:panelGroup>

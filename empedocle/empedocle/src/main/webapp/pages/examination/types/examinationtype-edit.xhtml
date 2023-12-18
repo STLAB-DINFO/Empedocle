@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:emp="http://java.sun.com/jsf/composite/components"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<style>
+			#examtype-edit-form\:name, 
+			#examtype-edit-form\:select-data-structure .controls > input,
+				#examtype-edit-form\:select-agenda > input { width: 40%; }
+			#examtype-edit-form\:time-to-live { width: 40px; }
+			#examtype-edit-form\:select-viewer-use .col1,
+				#examtype-edit-form\:select-viewer-use .col2,
+				#examtype-edit-form\:viewer-use-lst .col1,
+				#examtype-edit-form\:viewer-use-lst .col2,
+				#examtype-edit-form\:auth-lst .col1,
+				#examtype-edit-form\:select-auth .col1 { width: 230px; }
+			#examtype-edit-form\:select-agenda > a { position: relative; top: -25px; left: 440px; }
+			
+			.action { width: 70px; text-align: center !important; }	
+		</style>	
+		
+		<h:form id="examtype-edit-form" styleClass="form-horizontal">
+
+			<div class="crud-title">
+				<h2>
+					#{examinationTypeEdit.edit ? 'Modifica' : 'Creazione'} Struttura visita
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn"
+							action="#{examinationTypeEdit.cancel()}" immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+						<h:commandLink class="btn btn-primary dist-left"
+							action="#{examinationTypeEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="examtype-edit-form:name">* Nome</label>
+				<div class="controls">
+					<h:inputText id="name" value="#{examinationTypeEdit.current.name}"
+						required="true"
+						requiredMessage="'Nome' è un campo obbligatorio!"
+						styleClass="#{ component.valid ? '' : 'vld-error'}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="examtype-edit-form:description">Descrizione</label>
+				<div class="controls">
+					<h:inputTextarea id="description" 
+						value="#{examinationTypeEdit.current.description}" styleClass="wider" rows="6"/>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="examtype-edit-form:time-to-live">* Tempo di chiusura</label>
+				<div class="controls">
+					<h:inputText id="time-to-live"
+						value="#{examinationTypeEdit.current.timeToLive}" required="true"
+						requiredMessage="'Tempo di chiusura' è un campo obbligatorio!"
+						styleClass="#{ component.valid ? '' : 'vld-error'}" />
+					<h:outputText value="ore" styleClass="dist-left" />
+				</div>
+			</div>			
+		
+			<h:panelGroup layout="block" class="control-group" id="select-data-structure">
+				<label class="control-label bold">* Struttura dati</label>
+				
+				<div class="controls">
+					<emp:suggestionList bean="#{examinationTypeEdit.typeSuggestion}"
+						value="#{examinationTypeEdit.current.type}"
+						suggestion="#{examinationTypeEdit.typeSuggestion.suggestion}"
+						required="true"
+						requiredMessage="'Struttura dati' è un campo obbligatorio!"
+						converter="#{typeConverter}"
+						render=":examtype-edit-form:select-data-structure" />
+				</div>
+			</h:panelGroup>
+			
+
+			<div class="control-group">
+				<label class="control-label bold">Agende</label>
+				<div class="controls">
+					<h:panelGroup layout="block" id="agenda-lst">
+					
+						<h:panelGroup layout="block" styleClass="scrollable" 
+							rendered="#{not empty examinationTypeEdit.agendaSelection.selectedEntities}">
+							
+							<h:dataTable value="#{examinationTypeEdit.agendaSelection.selectedEntities}" var="_agenda"
+								styleClass="table table-bordered table-condensed"
+								columnClasses="col1, col2, action">
+										
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Codice" />
+									</f:facet>
+											
+									<h:outputText value="#{_agenda.code}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Descrizione" />
+									</f:facet>		
+									
+									<h:outputText value="#{_agenda.description}" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header" />
+									<h:commandLink action="#{examinationTypeEdit.removeAgenda(_agenda)}"
+										styleClass="tltip" title="Rimuovi">
+										<f:ajax execute="@this" render=":examtype-edit-form:agenda-lst" />
+										<i class="fw-icon-remove" />
+									</h:commandLink>
+								</h:column>
+							
+							</h:dataTable>
+						</h:panelGroup>
+						
+						<h:panelGroup rendered="#{examinationTypeEdit.agendaSelection.active}"
+							layout="block" id="select-agenda">
+						
+							<emp:suggestionList
+								bean="#{examinationTypeEdit.agendaSuggestion}"
+								value="#{examinationTypeEdit.agendaSelection.entity}"
+								suggestion="#{examinationTypeEdit.agendaSuggestion.suggestion}"
+								converter="#{agendaConverter}"
+								render=":examtype-edit-form:select-agenda" />
+							
+							<h:commandLink title="Conferma agenda selezionata" action="#{examinationTypeEdit.confirmAgenda}"
+								styleClass="tltip"
+								rendered="#{not empty examinationTypeEdit.agendaSelection.entity.toString()}">
+								<i class="fw-icon-ok" />
+								<f:ajax execute="@this" render=":examtype-edit-form:agenda-lst" />
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+							</h:commandLink>			
+						</h:panelGroup>
+						
+						<h:panelGroup layout="block" id="add-agenda">
+							<h:commandLink title="Aggiungi agenda" action="#{examinationTypeEdit.addAgenda()}"
+									styleClass="tltip align-txt" rendered="#{examinationTypeEdit.renderAddAgenda()}">
+								<i class="fw-icon-plus dist-right" />
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:ajax execute="@this" render=":examtype-edit-form:agenda-lst" />
+							</h:commandLink>
+							
+							<a4j:region>
+								<a4j:commandLink title="Importa agende da altra struttura visita"
+									styleClass="tltip align-txt"
+									onclick="#{rich:component('import-popup')}.show()">
+									<i class="fw-icon-mail-reply" />
+								</a4j:commandLink>
+							</a4j:region>								
+						</h:panelGroup>
+					</h:panelGroup>
+				</div>
+			</div>
+
+
+			<div class="control-group">
+				<label class="control-label bold">Permessi su operazioni</label>
+				<div class="controls">
+					<h:panelGroup layout="block" id="auth-lst">
+					
+						<h:panelGroup layout="block" styleClass="scrollable" 
+							rendered="#{not empty examinationTypeEdit.authorizationSelection.selectedEntities}">
+							
+							<h:dataTable value="#{examinationTypeEdit.authorizationSelection.selectedEntities}" var="_auth"
+								styleClass="table table-bordered table-condensed"
+								columnClasses="col1, col2, action">
+										
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Operazione" />
+									</f:facet>
+											
+									<h:outputText value="#{_auth.examOperation.name}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Qualifica" />
+									</f:facet>		
+									
+									<h:outputText value="#{_auth.qualification}" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header" />
+									<h:commandLink action="#{examinationTypeEdit.removeAuthorization(_auth)}"
+										styleClass="tltip" title="Rimuovi">
+										<f:ajax execute="@this" render=":examtype-edit-form:auth-lst" />
+										<i class="fw-icon-remove" />
+									</h:commandLink>
+								</h:column>
+							
+							</h:dataTable>
+						</h:panelGroup>
+						
+						<h:panelGroup rendered="#{examinationTypeEdit.authorizationSelection.active}"
+							layout="block" id="select-auth" styleClass="scrollable">
+							
+							<h:dataTable value="#{examinationTypeEdit.authorizationSelection.entity}" var="_auth"
+								styleClass="table table-bordered table-condensed"
+								columnClasses="col1, col2, action"
+								headerClass="#{not empty examinationTypeEdit.authorizationSelection.selectedEntities ? 'hide' : ''}">
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Operazione" />
+									</f:facet>
+
+									<h:selectOneMenu value="#{_auth.examOperation}"
+										hideNoSelectionOption="true">
+										<f:selectItem itemValue=""
+											itemLabel="- scegli un tipo di operazione -"
+											noSelectionOption="true" />
+										<f:selectItems
+											value="#{examinationTypeEdit.examinationOperations}" />
+										<f:ajax execute="@this" render=":examtype-edit-form:select-auth"/>
+									</h:selectOneMenu>
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Qualifica" />
+									</f:facet>
+
+									<h:selectOneMenu value="#{_auth.qualification}"
+										converter="#{qualificationConverter}"
+										hideNoSelectionOption="true">
+										<f:selectItem itemValue=""
+											itemLabel="- scegli una qualifica -" noSelectionOption="true" />
+										<f:selectItems value="#{examinationTypeEdit.qualifications}" />
+										<f:ajax execute="@this" render=":examtype-edit-form:select-auth"/>
+									</h:selectOneMenu>
+								</h:column>
+							
+								<h:column>
+									<f:facet name="header" />
+									
+									<h:commandLink id="select-auth-confirm" 
+										title="Conferma permesso selezionato" action="#{examinationTypeEdit.confirmAuthorization}"
+										styleClass="tltip"
+										rendered="#{(not empty examinationTypeEdit.authorizationSelection.entity.examOperation) and
+											(not empty examinationTypeEdit.authorizationSelection.entity.qualification)}">
+										<i class="fw-icon-ok" />
+										<f:ajax execute="@this" render=":examtype-edit-form:auth-lst" />
+										<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+									</h:commandLink>
+								</h:column>						
+							</h:dataTable>
+						</h:panelGroup>
+						
+						<h:panelGroup layout="block" id="add-auth">
+							<h:commandLink title="Aggiungi permesso" action="#{examinationTypeEdit.addAuthorization()}"
+									styleClass="tltip align-txt" rendered="#{examinationTypeEdit.renderAddAuthorization()}">
+								<i class="fw-icon-plus dist-right" />
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:ajax execute="@this" render=":examtype-edit-form:auth-lst" />
+							</h:commandLink>							
+						</h:panelGroup>
+					</h:panelGroup>
+				</div>
+			</div>		
+			
+			<div class="control-group">
+				<label class="control-label bold">Viste associate a contesti e qualifiche</label>
+				<div class="controls">
+					<h:panelGroup layout="block" id="viewer-use-lst">
+					
+						<h:panelGroup layout="block" styleClass="scrollable" 
+							rendered="#{not empty examinationTypeEdit.viewerUseSelection.selectedEntities}">
+							
+							<h:dataTable value="#{examinationTypeEdit.viewerUseSelection.selectedEntities}" var="_vu"
+								styleClass="table table-bordered table-condensed"
+								columnClasses="col1, col2, col3, action">
+										
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Contesto" />
+									</f:facet>
+											
+									<h:outputText value="#{_vu.context.name}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Qualifica" />
+									</f:facet>		
+									
+									<h:outputText value="#{_vu.qualification.name}" />
+								</h:column>
+								
+								<h:column>	
+									<f:facet name="header">
+										<h:outputText value="Vista" />
+									</f:facet>		
+									
+									<h:outputText value="#{_vu.viewer.name}" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header" />
+									<h:commandLink action="#{examinationTypeEdit.removeViewerUse(_vu)}"
+										styleClass="tltip" title="Rimuovi">
+										<f:ajax execute="@this" render=":examtype-edit-form:viewer-use-lst" />
+										<i class="fw-icon-remove" />
+									</h:commandLink>
+								</h:column>
+							
+							</h:dataTable>
+						</h:panelGroup>
+						
+						<h:panelGroup rendered="#{examinationTypeEdit.viewerUseSelection.active}"
+							layout="block" id="select-viewer-use" styleClass="scrollable">
+							
+							<h:dataTable value="#{examinationTypeEdit.viewerUseSelection.entity}" var="_vu"
+								styleClass="table table-bordered table-condensed"
+								columnClasses="col1, col2, col3, action"
+								headerClass="#{not empty examinationTypeEdit.viewerUseSelection.selectedEntities ? 'hide' : ''}">
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Contesto" />
+									</f:facet>
+
+									<h:selectOneMenu value="#{_vu.context}"
+										hideNoSelectionOption="true">
+										<f:selectItem itemValue="" itemLabel="- scegli un contesto -"
+											noSelectionOption="true" />
+										<f:selectItems
+											value="#{examinationTypeEdit.examinationContexts}" />
+										<f:ajax execute="@this" render=":examtype-edit-form:select-viewer-use" />
+									</h:selectOneMenu>
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Qualifica" />
+									</f:facet>
+
+									<h:selectOneMenu value="#{_vu.qualification}"
+										converter="#{qualificationConverter}"
+										hideNoSelectionOption="true">
+										<f:selectItem itemValue=""
+											itemLabel="- scegli una qualifica -" noSelectionOption="true" />
+										<f:selectItems value="#{examinationTypeEdit.qualifications}" />
+										<f:ajax execute="@this" render=":examtype-edit-form:select-viewer-use" />
+									</h:selectOneMenu>
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header" >
+										<h:outputText value="Vista"/>
+									</f:facet>
+									
+									<emp:suggestionList
+										bean="#{examinationTypeEdit.viewerSuggestion}"
+										value="#{examinationTypeEdit.viewerUseSelection.entity.viewer}"
+										suggestion="#{examinationTypeEdit.viewerSuggestion.suggestion}"
+										converter="#{viewerConverter}"
+										render=":examtype-edit-form:select-viewer-use" />									
+								</h:column>								
+							
+								<h:column>
+									<f:facet name="header" />
+									
+									<h:commandLink id="select-vuse-confirm" 
+										title="Conferma vista selezionata" action="#{examinationTypeEdit.confirmViewerUse}"
+										styleClass="tltip"
+										rendered="#{(not empty examinationTypeEdit.viewerUseSelection.entity.context) and
+											(not empty examinationTypeEdit.viewerUseSelection.entity.qualification) and
+											(not empty examinationTypeEdit.viewerUseSelection.entity.viewer)}">
+										<i class="fw-icon-ok" />
+										<f:ajax execute="@this" render=":examtype-edit-form:viewer-use-lst" />
+										<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+									</h:commandLink>
+								</h:column>						
+							</h:dataTable>
+						</h:panelGroup>
+						
+						<h:panelGroup layout="block" id="add-viewer-use">
+							<h:commandLink title="Aggiungi vista" action="#{examinationTypeEdit.addViewerUse()}"
+									styleClass="tltip align-txt" rendered="#{examinationTypeEdit.renderAddViewerUse()}">
+								<i class="fw-icon-plus dist-right" />
+								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
+								<f:ajax execute="@this" render=":examtype-edit-form:viewer-use-lst" />
+							</h:commandLink>							
+						</h:panelGroup>
+					</h:panelGroup>
+				</div>
+			</div>			
+		</h:form>
+		
+		<rich:popupPanel id="import-popup" modal="true" 
+			moveable="false" shadowDepth="0" height="500" width="900">
+			
+			<h:form id="import-form" styleClass="form-horizontal">
+			
+				<div class="modal-header">
+					<a4j:commandLink id="import-btn"
+						action="#{examinationTypeEdit.importAgendas()}"
+						execute="@this" styleClass="btn btn-primary pull-right"
+	                   	oncomplete="#{rich:component('import-popup')}.hide(); return false;"
+	                   	rendered="#{not empty examinationTypeEdit.importFromExamTypeId}"
+	                   	render=":examtype-edit-form:agenda-lst @form">
+						<i class="fw-icon-step-forward dist-right"></i> Importa
+					</a4j:commandLink>
+					
+					<a4j:commandLink
+						action="#{examinationTypeEdit.resetImportFromExamTypeId()}"
+						execute="@this" styleClass="btn pull-right dist-right"
+	                   	oncomplete="#{rich:component('import-popup')}.hide(); return false;"
+	                   	render="@form">
+						<i class="fw-icon-step-backward dist-right"></i> Chiudi
+					</a4j:commandLink>										
+	                   
+	                  <h3>Importa agende da altra Struttura Visita</h3>                                            
+				</div>		
+								
+				<div class="modal-body">
+					<div class="control-group">
+						<label class="control-label bold">Struttura visita</label>
+						<div class="controls align-txt">				
+							<h:selectOneMenu value="#{examinationTypeEdit.importFromExamTypeId}" styleClass="autosized">
+								<f:selectItem itemValue="" itemLabel="" noSelectionOption="true"/>
+								<f:selectItems value="#{examinationTypeEdit.listExamTypeImport()}" />
+								<f:ajax execute="@this" render=":import-form"/>
+							</h:selectOneMenu>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label bold">Agende</label>
+						<div class="controls">		
+							<h:panelGroup id="agenda-lst" layout="block" styleClass="agenda-import-list"
+								rendered="#{not empty examinationTypeEdit.listAgendasFromExamTypeId()}">
+								
+								<h:panelGroup layout="block" styleClass="scrollable">
+									<h:dataTable styleClass="table table-bordered table-condensed"
+										value="#{examinationTypeEdit.listAgendasFromExamTypeId()}"
+										var="_agenda">
+										
+										<h:column>
+											<f:facet name="header">
+													Codice
+												</f:facet>
+											<h:outputText value="#{_agenda.code}" />
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header">
+													Descrizione
+												</f:facet>
+											<h:outputText value="#{_agenda.description}" />
+										</h:column>
+									</h:dataTable>
+								</h:panelGroup>
+							</h:panelGroup>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</rich:popupPanel>
+	</ui:define>
+
+</ui:composition>
+</html>

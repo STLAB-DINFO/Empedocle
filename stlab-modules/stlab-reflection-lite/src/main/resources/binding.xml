@@ -1,0 +1,14 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.0" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<globalBindings>
+		<javaType name="java.lang.Float" xmlType="xs:float" />
+	</globalBindings>
+
+	<bindings>
+		<bindings schemaLocation="facts.xsd"
+			node="/xs:schema/xs:element[@name='composite']/xs:complexType/xs:choice">
+			<property name="Children" />
+		</bindings>
+
+	</bindings>
+</bindings>

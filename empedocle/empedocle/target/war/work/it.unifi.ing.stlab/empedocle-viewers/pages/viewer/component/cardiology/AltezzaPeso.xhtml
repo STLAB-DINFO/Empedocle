@@ -1,0 +1,81 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<div class="fieldset">
+		<table style="width: 100%">
+			<a4j:region>
+				<tr>
+					<td style="width: 20%;">
+						<h:outputText value="Altezza" styleClass="label_text" style="text-align: right; margin-left: 15px;"/>
+					</td>
+					<td style="width: 30%;">
+						<h:panelGroup rendered="#{altezzaPesoController.retrieveAltezza(value, viewer) ne null}"> 
+							<h:inputText value="#{altezzaPesoController.altezza.quantity.value}" 
+											onkeydown="return disableReturn(event, this)"
+											style="width: 60px; margin-right: 10px; text-align: right;" >
+								<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+							</h:inputText>
+						
+							<h:selectOneMenu value="#{altezzaPesoController.altezza.quantity.unit}" 
+												valueChangeListener="#{altezzaPesoController.altezzaUnitChanged}"
+												onkeydown="return disableReturn(event, this)"
+												converter="#{unitConverter}"
+												style="width: auto;" >
+								<a4j:ajax event="valueChange" listener="#{persistListener.persistData}" />
+								<f:selectItems value="#{comboController.getSelectItems(altezzaPesoController.altezza)}" />	
+								<f:attribute name="fact" value="#{altezzaPesoController.altezza}" />
+							</h:selectOneMenu>
+						</h:panelGroup>
+					</td>
+					<td style="width: 20%;">
+						<h:outputText value="Peso" styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+					</td>
+					<td style="width: 30%;">
+						<h:panelGroup rendered="#{altezzaPesoController.retrievePeso(value, viewer) ne null}"> 
+							<h:inputText value="#{altezzaPesoController.peso.quantity.value}" 
+											onkeydown="return disableReturn(event, this)"
+											style="width: 60px; margin-right: 10px; text-align: right;" >
+								<a4j:ajax event="change" render="@this" listener="#{persistListener.persistData}" />
+							</h:inputText>
+							
+							<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.peso)}" 
+											escape="false" />
+						</h:panelGroup>
+					</td>
+				</tr>
+			</a4j:region>
+			<tr>
+				<td style="width: 20%;">
+					<h:outputText value="S.C." styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td style="width: 30%;">
+					<a4j:outputPanel rendered="#{altezzaPesoController.retrieveSC(value, viewer) ne null}"
+										ajaxRendered="true"> 
+						<h:inputText value="#{altezzaPesoController.sc.quantity.value}" disabled="true" 
+										style="width: 60px; margin-right: 10px; text-align: right;"/>
+						
+						<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.sc)}" 
+										escape="false" />
+					</a4j:outputPanel>
+				</td>
+				<td style="width: 20%;">
+					<h:outputText value="I.M.C." styleClass="label_text" style="text-align: right; margin-left: 15px;" />
+				</td>
+				<td style="width: 30%;">
+					<a4j:outputPanel rendered="#{altezzaPesoController.retrieveIMC(value, viewer) ne null}"
+										ajaxRendered="true"> 
+						<h:inputText value="#{altezzaPesoController.imc.quantity.value}" disabled="true" 
+										style="width: 60px; margin-right: 10px; text-align: right;"/>
+						
+						<h:outputText value="#{outputMeasurementUnitController.getMeasurementUnit(altezzaPesoController.imc)}" escape="false" />
+					</a4j:outputPanel>
+				</td>
+			</tr>
+		</table>
+	</div>
+</h:panelGroup>

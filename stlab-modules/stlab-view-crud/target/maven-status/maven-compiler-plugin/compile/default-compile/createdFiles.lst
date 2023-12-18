@@ -1,0 +1,16 @@
+it/unifi/ing/stlab/view/actions/wrappers/ViewerTreeNode.class
+it/unifi/ing/stlab/view/actions/loader/ViewerLoader.class
+it/unifi/ing/stlab/view/actions/wrappers/ViewerBean$1.class
+it/unifi/ing/stlab/view/actions/wrappers/ViewerBean.class
+it/unifi/ing/stlab/view/actions/ViewerView.class
+it/unifi/ing/stlab/view/actions/ViewerList.class
+it/unifi/ing/stlab/view/actions/ViewerPreview.class
+it/unifi/ing/stlab/view/actions/ViewerController.class
+it/unifi/ing/stlab/view/actions/visitor/IsViewerLeafVisitor.class
+it/unifi/ing/stlab/view/actions/ViewerEdit$TypeSuggestion.class
+it/unifi/ing/stlab/view/actions/ViewerEditDsl.class
+it/unifi/ing/stlab/view/actions/loader/ViewerLoaderBean.class
+it/unifi/ing/stlab/view/actions/FactInitializer.class
+it/unifi/ing/stlab/view/actions/ViewerEdit.class
+it/unifi/ing/stlab/view/actions/ViewerFilter.class
+it/unifi/ing/stlab/view/actions/ViewerEditDsl$TypeSuggestion.class

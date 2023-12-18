@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+			
+		<h:form id="query-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Queries
+					<h:commandButton styleClass="btn pull-right" value="Aggiungi" action="#{queryList.addNew()}" />
+				</h2>
+
+				<filter:filterPanel filters="#{queryFilter}" navigator="#{queryList}" 
+						render=":query-form:navigator :query-form:results"
+						renderAll=":query-form:filters :query-form:navigator :query-form:results"/>				
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" id="navigator" xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+				<nav:navigator value="#{queryList}" render=":query-form:navigator :query-form:results"/>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" id="results">
+				<h:panelGroup rendered="#{empty queryResults}">
+					<br/>
+					<h:outputText styleClass="lead" value="Nessuna query trovata"/>
+	
+				</h:panelGroup>
+				
+				<h:dataTable styleClass="table table-bordered table-striped table-hover" 
+								value="#{queryResults}" var="query" 
+								rendered="#{not empty queryResults}">
+					<h:column>
+						<f:facet name="header">
+							<h:commandLink value="Nome"
+											styleClass="normal-text"
+											action="#{queryFilter.toggle('Nome')}">
+								<f:ajax render="@none" execute="@this" />
+								<f:ajax render=":query-form:results" execute="@none" />
+								<h:panelGroup rendered="#{queryFilter.isSelected('Nome')}">
+									<i class="#{queryFilter.isAscending('Nome') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								</h:panelGroup>
+							</h:commandLink>
+						</f:facet>
+						#{query.name}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">
+							Descrizione
+						</f:facet>
+						#{query.description}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">
+							Azioni
+						</f:facet>
+
+						<h:commandLink title="Visualizza" class="btn tltip"
+										action="#{queryList.view( query.id )}" >
+							<i class="icon-zoom-in"></i>
+						</h:commandLink>
+						
+						<h:commandLink styleClass="btn pull-right tltip"
+										title="Modifica" action="#{queryList.edit( query.id )}">
+							<i class="icon-pencil"></i>
+						</h:commandLink>
+					</h:column>
+				</h:dataTable>
+			</h:panelGroup>
+		</h:form>
+		
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>	
+
+	<ui:define name="body">
+	
+		<style>
+			.align-checkbox-report { position: relative; top: -2px; }
+				
+			.crud-controls-3 { width: 140px; }
+			
+			.warning { background-color: #fcf8e3;}
+			.info { background-color: #d9edf7; }
+			.concluded { background-color: #F0F0F0; }
+			
+			.taxcode {	width: 138px;	}
+			.sex {	width: 55px;	}
+			.birth-date {	width: 100px;	}
+			.action {	width: 40px;	}
+			
+			.datetime { width: 115px; }
+			.param { width: 300px; }
+		</style>
+		
+		<script type="text/javascript">
+      		//<![CDATA[
+	        function openMoreThanOne(examinationId){
+				var checkboxes = document.getElementsByName("report-checkbox");
+					
+				for (c in checkboxes) {
+					if (checkboxes[c].checked) {
+				    	window.open("../viewer/report-viewer.jsf"+
+						    			"?type=pdf&eid="+examinationId+
+						    			"&vid="+checkboxes[c].value,
+						    			 "_blank", "", false);
+					}
+				}
+
+				$('#report-panel').modal('hide');
+			}
+
+			function switchNumberOfReports(numReports, examinationId, firstReport) {
+				if(numReports > 1) {
+					$('#report-panel').modal('show');
+				}
+				else {
+					openSingle(examinationId, firstReport);
+				}
+				return false;
+			}
+				 
+			function openSingle(examinationId, firstReport){
+		    	window.open("../viewer/report-viewer.jsf"+
+				    			"?type=pdf&eid="+examinationId+
+				    			"&vid="+firstReport,
+				    			 "_blank", "", false);
+			}
+
+			function toggleReport(){
+				var checkboxes = $('input[name=report-checkbox]:not(:checked)');
+				if( checkboxes.size() > 0 ) {
+					//check all
+					checkboxes.each( function() {
+						$(this).prop('checked', true);
+					} );
+				} else {
+					//de-check all
+					$('input[name=report-checkbox]:checked').each( function() {
+						$(this).prop('checked', false);
+					} );
+				}
+			}
+
+	      	//]]> 
+		</script>
+				
+		<h:form id="patient-view-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Cartella clinica di
+					<span style="text-transform:uppercase;">#{patientView.current.surname}</span>
+					<span class='capitalize'>#{patientView.current.name}</span>
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:panelGroup styleClass="#{patientView.examinationId eq null ? '' : 'hide'}">
+							<!--<a4j:commandLink
+								oncomplete="$('#matching-panel').modal('show');"
+								styleClass="btn btn-primary #{not empty patientView.matchingPatients and patientView.checkRoleFor( 'merge' ) ? '' : 'hide'}">
+								<i class="fw-icon-link"></i> Unisci
+							</a4j:commandLink>-->
+									
+							<h:commandLink
+								action="#{patientList.delete( patientView.current.id )}"
+								styleClass="btn btn-danger dist-left #{patientList.checkRoleFor( 'delete' ) and patientList.isRemovable( patientView.current.id ) ? '' : 'hide'}"
+								onclick="if(!confirm('Eliminare il paziente selezionato? Clicca Ok per confermare la cancellazione')) {return false;}">
+								<i class="fw-icon-remove dist-right"></i> Elimina
+							</h:commandLink>	
+							
+							<h:commandLink
+								action="#{patientList.edit( patientView.current.id )}"
+								styleClass="btn btn-warning dist-left #{patientList.checkRoleFor( 'edit' ) ? '' : 'hide'}">
+								<i class="fw-icon-pencil dist-right"></i> Modifica
+							</h:commandLink>				
+						</h:panelGroup>		 
+						
+						<h:link styleClass="btn dist-left" includeViewParams="true" outcome="#{patientView.from}">
+							<f:param name="id" value="#{param.eid}" 
+								disable="#{empty param.eid}"/>
+							<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" 
+								disable="#{empty javax.enterprise.context.conversation.id}"/>
+							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						</h:link>						
+					</h:panelGroup>
+				</h2>		
+				
+				<filter:filterPanel filters="#{patientExaminationFilter}" 
+					navigator="#{patientView}" 
+					render=":patient-view-form:results-tab"
+					renderAll=":patient-view-form:filters :patient-view-form:results-tab"/>				
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" id="tab">
+				<ul class="nav nav-tabs">
+				  <li><a href="#demographics" data-toggle="tab">Dati anagrafici</a></li>
+				  <li class="active"><a href="#history" data-toggle="tab">Storico visite</a></li>
+				  <li><a href="#fact-panel" data-toggle="tab">Osservazioni rilevanti</a></li>
+				  <!-- <li><a href="#biohumoral-parameters" data-toggle="tab">Parametri bioumorali</a></li>  -->
+				</ul>
+				
+				<div class="tab-content">
+					<div class="tab-pane" id="demographics">
+						<h:panelGroup layout="block" id="demographics-results" class="container-fluid form-horizontal">
+
+							<div class="control-group">
+								<label class="control-label bold">Codice fiscale</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.taxCode}" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Cognome</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.surname}" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Nome</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.name}" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Sesso</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.sex}" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Data di nascita</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.birthDate}" >
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>	
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Luogo di nascita</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.birthPlace}" />
+								</div>
+							</div>														
+							<div class="control-group">
+								<label class="control-label bold">Residenza</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.residence.place}" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Domicilio</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.domicile.place}" />
+								</div>
+							</div>							
+							<div class="control-group">
+								<label class="control-label bold">Nazionalità</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.nationality}" />
+								</div>
+							</div>									
+							<div class="control-group">
+								<label class="control-label bold">Telefono</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.homePhone}" /> 
+								</div>
+							</div>		
+							<div class="control-group">
+								<label class="control-label bold">Cellulare</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.workPhone}" /> 
+								</div>
+							</div>															
+							<div class="control-group">
+								<label class="control-label bold">Regione</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.region}" />
+								</div>
+							</div>									
+							<div class="control-group">
+								<label class="control-label bold">ASL</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.asl}" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label bold">Codice sanitario</label>
+								<div class="controls align-txt">
+									<h:outputText value="#{patientView.current.ssnCode}" />
+								</div>
+							</div>																	
+						</h:panelGroup>	
+					</div>
+					
+					<div class="tab-pane active" id="history">
+						<h:panelGroup id="results-tab" layout="block" class="tabbable tabs-left">
+							<ul class="nav nav-tabs">
+								<li class="#{patientExaminationFilter.isSelectedList( 'ALL' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'ALL' )}"  
+										value="Tutte">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>
+								<li class="#{patientExaminationFilter.isSelectedList( 'BOOKED' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'BOOKED' )}"  
+										value="Prenotate">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>
+								<li class="#{patientExaminationFilter.isSelectedList( 'ACCEPTED' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'ACCEPTED' )}"  
+										value="Accettate">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>								
+								<li class="#{patientExaminationFilter.isSelectedList( 'RUNNING' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'RUNNING' )}"  
+										value="In erogazione">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>
+								<li class="#{patientExaminationFilter.isSelectedList( 'SUSPENDED' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'SUSPENDED' )}"  
+										value="Sospese">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>
+								<li class="#{patientExaminationFilter.isSelectedList( 'DONE' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'DONE' )}"  
+										value="Erogate">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>
+								<li class="#{patientExaminationFilter.isSelectedList( 'CONCLUDED' ) ? 'active' : ''}">
+									<h:commandLink 
+										action="#{patientExaminationFilter.selectList( 'CONCLUDED' )}"  
+										value="Concluse">
+										<f:ajax execute="@this" render="results-tab"/>
+									</h:commandLink> 
+								</li>
+							</ul>
+	
+							<div class="tab-content">
+								<div class="tab-pane active">
+								
+									<h:panelGroup layout="block" id="navigator"
+										xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+										<nav:navigator value="#{patientView}"
+											render=":patient-view-form:navigator :patient-view-form:results" />
+									</h:panelGroup>
+			
+									<h:panelGroup layout="block" id="results">
+										<h:panelGroup rendered="#{empty patientExaminationResults}">
+											<br />
+											<h:outputText styleClass="lead" value="Nessuna visita trovata" />
+										</h:panelGroup>
+			
+										<h:dataTable
+											styleClass="table table-bordered table-striped table-hover"
+											rowClasses="#{patientView.rowStyleClasses}"
+											columnClasses="datetime, agenda, crud-controls-3"
+											value="#{patientExaminationResults}" var="examination"
+											style="#{empty patientExaminationResults ? 'display:none;' : ''}">
+											
+											<h:column>
+												<f:facet name="header">
+													Orario
+												</f:facet>
+												<h:outputText value="#{examination.appointment.date}" >
+													<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+												</h:outputText>								
+											</h:column>
+											
+											<h:column>
+												<f:facet name="header">
+													Agenda
+												</f:facet>
+												<h:outputText value="#{examination.appointment.agenda.code}" />
+												 - 
+												<h:outputText value="#{examination.appointment.agenda.description}" />
+											</h:column>
+			
+											<h:column>
+												<f:facet name="header">
+													Azioni
+												</f:facet>
+
+												<a4j:commandLink title="Visualizza referto"
+														action="#{patientView.initReports( examination.id )}"
+														styleClass="btn btn-primary pull-left dist-right tltip" 
+														rendered="#{patientView.hasReport( examination )}"
+														render=":report-form"
+														oncomplete="switchNumberOfReports( #{patientView.reports.size()}, #{examination.id}, #{patientView.reports.get(0).getId()} );">
+													<i class="fw-icon-book fw-icon-large "></i>
+												</a4j:commandLink>
+
+												<h:link outcome="/pages/patients/examination/examination-view.xhtml" includeViewParams="true"
+													rendered="#{patientView.hasView(examination)}" title="Visualizza visita"
+													styleClass="btn btn-info pull-left dist-right tltip">
+													<f:param name="id" value="#{examination.id}" />
+													<f:param name="pid" value="#{patientView.current.id}" />
+													<f:param name="from" value="#{view.viewId}" />
+													<f:param name="eid" value="#{patientView.examinationId}" disable="#{patientView.examinationId eq null}" />
+													<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" 
+														disable="#{empty javax.enterprise.context.conversation.id}"/>	
+														<i class="fw-icon-zoom-in fw-icon-large"></i>
+												</h:link>
+												
+												<h:commandLink title="Avvia"
+													action="#{patientView.run( examination.id )}"
+													styleClass="btn btn-success pull-left tltip"
+													rendered="#{patientView.examinationId eq null and patientView.hasStart( examination ) and not examination.status.name.equals('To do')}">
+													<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+													<i class="fw-icon-large fw-icon-play-sign" />
+												</h:commandLink>																						
+																		
+												<h:commandLink title="Modifica"
+														action="#{patientView.run( examination.id )}"
+														styleClass="btn btn-info pull-left tltip"
+														rendered="#{patientView.examinationId eq null and patientView.hasModify( examination )}">
+														<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+													<i class="fw-icon-large fw-icon-play-sign"></i>
+												</h:commandLink>
+			
+												<h:commandLink title="Riprendi"
+														action="#{patientView.run( examination.id )}"
+														styleClass="btn btn-warning pull-left tltip" 
+														rendered="#{patientView.examinationId eq null and patientView.hasResume( examination )}">
+														<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+													<i class="fw-icon-large fw-icon-play-sign"></i>
+												</h:commandLink>
+			
+												<h:commandLink title="Recupera"
+														action="#{patientView.run( examination.id )}"
+														styleClass="btn btn-danger pull-left tltip" 
+														rendered="#{patientView.examinationId eq null and patientView.hasRecover( examination )}">
+														<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
+													<i class="fw-icon-large fw-icon-play-sign"></i>
+												</h:commandLink>
+											</h:column>
+						
+										</h:dataTable>
+									</h:panelGroup>					
+								</div>
+							</div>
+						</h:panelGroup>
+					</div>
+				
+					<div class="tab-pane" id="fact-panel">
+						<h:panelGroup id="highlight" class="highlight" layout="block" rendered="#{not empty patientView.factPanels}"
+							xmlns:emp="http://java.sun.com/jsf/composite/components">
+							<emp:highlights panels="#{patientView.factPanels}" />
+						</h:panelGroup>		
+					</div>				
+					
+			 <!-- 	<div class="tab-pane" id="biohumoral-parameters">
+						<h:panelGroup layout="block" id="biohumoral-parameters" class="container-fluid"
+							xmlns:filters="http://java.sun.com/jsf/composite/components/filters">
+								
+							<h:panelGroup id="query-definition" layout="block" 
+								styleClass="container-fluid form-horizontal box-empty">
+								
+								<input type="hidden" name="taxcode" value="#{patientView.current.taxCode}" />
+								
+								<div class="control-group">
+									<label class="control-label bold align-txt" for="patient-view-form:parameter">Parametro</label>
+									<div class="controls align-txt">
+										<h:selectOneMenu id="parameter" value="#{biohumoralParameterList.parameter}"
+											styleClass="#{ component.valid ? '' : 'vld-error'}" style="width: auto; height: 30px; ">
+											<f:selectItem noSelectionOption="true" />
+											<f:selectItem itemLabel="Glucose [Mass/volume] in Serum or Plasma" itemValue="2345-7" />
+											<f:selectItem itemLabel="Diastolic blood pressure" itemValue="8462-4" />
+											<f:selectItem itemLabel="Systolic blood pressure" itemValue="8480-6" />
+											<f:selectItem itemLabel="Mean blood pressure" itemValue="8478-0" />
+											<f:selectItem itemLabel="Heart rate" itemValue="8867-4" />
+											<f:selectItem itemLabel="Body weight" itemValue="29463-7" />
+											<f:selectItem itemLabel="Oxygen saturation in Blood Preductal by Pulse oximetry" itemValue="59407-7" />
+											<f:selectItem itemLabel="Heart rate Blood Preductal Pulse oximetry" itemValue="73799-9" />
+											<f:selectItem itemLabel="Perfusion index Blood Preductal Pulse oximetry" itemValue="73798-1" />
+										</h:selectOneMenu>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label bold" for="patient-view-form:start">A partire dal</label>
+									<div class="controls" id="start">
+										<filters:datePicker value="#{biohumoralParameterList.start}"  />
+									</div>
+								</div>	
+								<div class="control-group">
+									<label class="control-label bold" for="patient-view-form:end">Fino al</label>
+									<div class="controls" id="end">
+										<filters:datePicker value="#{biohumoralParameterList.end}"  />
+									</div>
+								</div>	
+								
+								<h:panelGroup layout="block" styleClass="pull-right">
+									<a4j:commandLink action="#{biohumoralParameterList.executeQuery()}" class="btn btn-primary dist-right"
+										render=":patient-view-form:query-results :msg" execute="@this,:patient-view-form:query-definition"
+										onbegin="#{rich:component('loading-popup')}.show();" 
+										oncomplete="#{rich:component('loading-popup')}.hide();">
+										<i class="fw-icon-ok-sign fw-icon-large dist-right more-right"></i>
+										<h:outputText value="Applica" styleClass="bold" />
+									</a4j:commandLink>
+									<a4j:commandLink action="#{biohumoralParameterList.reset()}" class="btn dist-right" 
+										render=":patient-view-form:query-definition :patient-view-form:query-results" execute="@this">
+										<i class="fw-icon-remove-sign fw-icon-large dist-right more-right"></i>
+										<h:outputText value="Reset" styleClass="bold" />
+									</a4j:commandLink>	
+								</h:panelGroup>
+							</h:panelGroup>
+							
+							<br />
+							
+							<h:panelGroup layout="block" id="query-results">
+								<h:dataTable styleClass="table table-bordered table-striped table-hover" 
+									columnClasses="datetime, param, value"
+									value="#{biohumoralParameterList.results}" var="result" 
+									rendered="#{not empty biohumoralParameterList.results}">
+									
+									<h:column>
+										<f:facet name="header">
+											Data
+										</f:facet>
+										<h:outputText value="#{result.timestamp}" >
+											<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+										</h:outputText>
+									</h:column>
+									
+									<h:column>
+										<f:facet name="header">
+											Parametro
+										</f:facet>
+										#{result.name}
+									</h:column>
+									
+									<h:column>
+										<f:facet name="header">
+											Valore
+										</f:facet>
+										#{result.value} #{result.unit}
+									</h:column>							
+								</h:dataTable>	
+							</h:panelGroup>			
+						</h:panelGroup>							
+					</div>				-->	
+					
+				</div>
+			</h:panelGroup>					
+			
+		</h:form>		
+		
+		<rich:popupPanel id="loading-popup" modal="true" autosized="true"
+			moveable="false" domElementAttachment="form" shadowDepth="0">
+			<div class="modal-body">
+				<h:graphicImage value="/img/load-slow.gif" alt="loading..." />
+			</div>
+		</rich:popupPanel>
+		
+		
+		<!-- Modal -->
+		<div id="report-panel" class="modal fade" role="dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<h:form styleClass="form-horizontal" id="report-form">
+
+					<div class="modal-header">
+						<h3>Seleziona Report da stampare
+						
+							<a4j:commandLink styleClass="btn btn-primary pull-right dist-left"
+								onclick="openMoreThanOne(#{patientView.selection});"
+								execute="@form">
+								<i class="fw-icon-step-forward dist-right"></i>
+								<h:outputText value="Conferma" styleClass="bold" />
+							</a4j:commandLink>
+						
+							<a4j:commandLink
+								immediate="true"
+								onclick="$('#report-panel').modal('hide');"
+								onbegin="#{rich:component('loading-popup')}.show();"
+								render="@form"
+								execute="@this"
+								styleClass="btn pull-right" >
+								<i class="fw-icon-step-backward dist-right"></i>
+								<h:outputText value="Chiudi" styleClass="bold" />
+							</a4j:commandLink>
+						</h3>
+					</div>
+
+					<div class="modal-body">
+						<table class="table table-bordered table-condensed">
+							<tr>
+								<td class="text-center"><input type="checkbox"
+									class="align-checkbox-report" onchange="toggleReport();"
+									name="report-toggle" /></td>
+								<td />
+							</tr>
+							<a4j:repeat var="report" value="#{patientView.reports}"
+								rendered="#{not empty patientView.reports and patientView.reports.size() gt 0}"
+								id="report-list">
+								<tr>
+									<td class="text-center"><input type="checkbox"
+										name="report-checkbox" value="#{report.id}"
+										class="align-checkbox-report" /></td>
+									<td>#{report.name}</td>
+								</tr>
+							</a4j:repeat>
+						</table>
+					</div>
+				</h:form>
+			</div>
+		</div>
+
+
+		<!-- Modal -->
+		<div id="matching-panel" class="modal fade" role="dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<h:form styleClass="form-horizontal">
+					<div class="modal-header">
+						<h3>Seleziona Paziente da unire
+							<a4j:commandLink
+								immediate="true"
+								onclick="$('#matching-panel').modal('hide');"
+								render="@form"
+								execute="@this"
+								styleClass="btn pull-right" >
+								<i class="fw-icon-step-backward dist-right"></i>
+								<h:outputText value="Chiudi" styleClass="bold" />
+							</a4j:commandLink>
+						</h3>
+					</div>
+
+					<div class="modal-body">
+						<h4>Paziente corrente</h4>
+						<table class="table table-bordered table table-striped"
+							style="width: 100%">
+							<thead>
+								<tr>
+									<th class="taxcode">Codice fiscale</th>
+									<th>Cognome</th>
+									<th>Nome</th>
+									<th class="sex">Sesso</th>
+									<th class="birth-date">Data di nascita</th>
+									<th>Luogo di nascita</th>
+									<th />
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>#{patientView.current.taxCode}</td>
+									<td>#{patientView.current.surname}</td>
+									<td>#{patientView.current.name}</td>
+									<td>#{patientView.current.sex}</td>
+									<td><h:outputText value="#{patientView.current.birthDate}">
+											<f:convertDateTime pattern="dd/MM/yyyy" />
+										</h:outputText></td>
+									<td>#{patientView.current.birthPlace}</td>
+									<td class="action" />
+								</tr>
+							</tbody>
+						</table>
+
+						<br />
+
+						<h4>Lista pazienti duplicati</h4>
+						<h:dataTable value="#{patientView.matchingPatients}" var="_patient"
+							styleClass="table table-striped table-bordered"
+							id="merger-list"
+							columnClasses="taxcode, col, col, sex, birth-date, col, action">
+
+							<h:column>
+								<f:facet name="header">Codice fiscale</f:facet>
+								<h:outputText value="#{_patient.taxCode}" />
+							</h:column>
+
+							<h:column>
+								<f:facet name="header">Cognome</f:facet>
+								<h:outputText value="#{_patient.surname}" />
+							</h:column>
+
+							<h:column>
+								<f:facet name="header">Nome</f:facet>
+								<h:outputText value="#{_patient.name}" />
+							</h:column>
+
+							<h:column>
+								<f:facet name="header">Sesso</f:facet>
+								<h:outputText value="#{_patient.sex}" />
+							</h:column>
+
+							<h:column>
+								<f:facet name="header">Data di nascita</f:facet>
+								<h:outputText value="#{_patient.birthDate}">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</h:outputText>
+							</h:column>
+
+							<h:column>
+								<f:facet name="header">Luogo di nascita</f:facet>
+								<h:outputText value="#{_patient.birthPlace}" />
+							</h:column>
+
+							<h:column>
+								<a4j:commandLink styleClass="btn btn-primary pull-right tltip"
+									title="Unisci"
+									onclick="#{rich:component('loading-popup')}.show();"
+									action="#{patientView.merge( _patient.id )}">
+									<i class="fw-icon-link"></i>
+								</a4j:commandLink>
+							</h:column>
+						</h:dataTable>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>

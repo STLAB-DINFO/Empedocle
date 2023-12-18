@@ -1,0 +1,38 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<c:if test="#{inputTemporalController.isSupported(value)}">
+		<h:outputScript name="javascript/masked-input/jquery.maskedinput.min.js"/>
+		<a4j:region>
+			<div class="datetimeinput" format="#{value.type.type.defaultFormat}">
+				<h:inputText value="#{value.date}" label="#{value.type.name}"
+								styleClass="inputTemporal #{not component.valid ? 'vld-error' : ''}"
+								required="#{viewer.required}"
+								disabled ="#{viewer.readOnly}" 
+								converterMessage="Il campo #{value.type.name} contiene una valore errata"
+								requiredMessage="Il campo #{value.type.name} deve essere compilato"
+								onkeydown="return disableReturn(event, this)">
+					<f:convertDateTime pattern="#{value.type.type.defaultFormat}" />
+					<a4j:ajax event="change" 
+								execute="@this" 
+								render="@this"
+								listener="#{persistListener.persistData}" />
+				</h:inputText>
+			</div>
+		</a4j:region>
+		<script type="text/javascript">
+			$('.datetimeinput').each( function() {
+				var pattern = $(this).attr('format');
+				$(this).children('input').mask(pattern.replace(/\w/g, '9'));
+			});
+		</script>
+	</c:if>
+	
+</h:panelGroup>

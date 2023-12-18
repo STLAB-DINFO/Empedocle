@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<style>
+		.align-checkbox-report { position: relative; top: -2px; }
+
+		.warning { background-color: #fcf8e3;}
+		.info { background-color: #d9edf7; }
+		.concluded { background-color: #F0F0F0; }
+		.action { width: 30px; }
+		.datetime { width: 60px; }
+	</style>
+
+	<script type="text/javascript">
+		//<![CDATA[
+
+		function openMoreThanOne(examinationId){
+			var checkboxes = document.getElementsByName("report-checkbox");
+
+			for (c in checkboxes) {
+				if (checkboxes[c].checked) {
+					window.open("../viewer/report-viewer.jsf"+
+							"?type=pdf&eid="+examinationId+
+							"&vid="+checkboxes[c].value,
+							"_blank", "", false);
+				}
+			}
+
+			$('#report-panel').modal('hide');
+		}
+
+		function switchNumberOfReports(numReports, examinationId, firstReport) {
+			if(numReports > 1) {
+				$('#report-panel').modal('show');
+				$('#report-panel').modal('show');
+			}
+			else {
+				openSingle(examinationId, firstReport);
+			}
+			return false;
+		}
+
+		function openSingle(examinationId, report){
+
+			window.open("../viewer/report-viewer.jsf"+
+					"?type=pdf&eid="+examinationId+
+					"&vid="+report,
+					"_blank", "", false);
+		}
+
+		function toggleReport(){
+			var checkboxes = $('input[name=report-checkbox]:not(:checked)');
+			if( checkboxes.size() > 0 ) {
+				//check all
+				checkboxes.each( function() {
+					$(this).prop('checked', true);
+				} );
+			} else {
+				//de-check all
+				$('input[name=report-checkbox]:checked').each( function() {
+					$(this).prop('checked', false);
+				} );
+			}
+		}
+		//]]>
+	</script>
+	 
+	<div class="accordion" id="accordion2" style="margin-bottom: 0px;">
+
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle not-underline" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+					<h:outputText value="Dati Paziente" />
+				</a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse in">
+				<div class="accordion-inner">
+					<dl>
+						<dt>Codice fiscale</dt>
+						<dd>#{examinationRunning.lastPatientVersion.taxCode}</dd>
+						<dt>Cognome</dt>
+						<dd>#{examinationRunning.lastPatientVersion.surname}</dd>
+						<dt>Nome</dt>
+						<dd>#{examinationRunning.lastPatientVersion.name}</dd>
+						<dt>Sesso</dt>
+						<dd>#{examinationRunning.lastPatientVersion.sex}</dd>
+						<dt>Data nascita</dt>
+						<dd>
+							<h:outputText value="#{examinationRunning.lastPatientVersion.birthDate}">
+								<f:convertDateTime pattern="dd/MM/yyyy"/>
+							</h:outputText>
+						</dd>	
+						<dt>Luogo nascita</dt>
+						<dd>#{examinationRunning.lastPatientVersion.birthPlace}</dd>						
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle not-underline" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> 
+					<h:outputText value="Dettagli Visita" />
+				</a>
+			</div>
+			<div id="collapseTwo" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<dl>
+						<dt >Orario</dt>
+						<dd>
+							<h:outputText rendered="#{not examinationRunning.dateFreeVisit}" value="#{examinationRunning.examinationDetails.examination.appointment.date}">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+							</h:outputText>
+						</dd>
+						<dd>
+							<h:outputText rendered="#{examinationRunning.dateFreeVisit}" value="Da indicare prima della conclusione"/>
+						</dd>
+						<dt>Agenda</dt>
+						<dd>#{examinationRunning.examinationDetails.examination.appointment.agenda.code} - #{examinationRunning.examinationDetails.examination.appointment.agenda.description}</dd>			
+						<h:panelGroup rendered="#{not examinationRunning.dateFreeVisit}">
+							<dt>Codice prenotazione</dt>
+							<dd>#{examinationRunning.examinationDetails.examination.appointment.bookingCode}</dd>
+							<dt>Codice accettazione</dt>
+							<dd>#{examinationRunning.examinationDetails.examination.appointment.acceptanceCode}</dd>
+						</h:panelGroup>
+
+						<h:panelGroup layout="block" rendered="#{not empty examinationRunning.examinationDetails.examination.appointment.listServices()}">		
+							<dt>Prestazioni</dt>
+							<dd>#{examinationRunning.examinationDetails.examination.appointment.listServices()}</dd>	
+						</h:panelGroup>								
+					</dl>		
+				</div>
+			</div>
+		</div>
+
+		<a4j:region>
+			<div class="accordion-group">
+				<h:form id="exams-accordion-form">
+					<div class="accordion-heading">
+						<a class="accordion-toggle not-underline" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+							<h:outputText value="Visite Recenti" />
+						</a>
+					</div>
+					<div id="collapseThree" class="accordion-body collapse in">
+						<div class="accordion-inner" style="padding: 9px 9px; font-size: smaller;">
+							<h:panelGroup layout="block" id="results">
+								<h:panelGroup rendered="#{empty examinationRunning.patientLastExams}">
+									<br />
+									<h:outputText styleClass="lead" value="Nessuna visita trovata" />
+								</h:panelGroup>
+
+								<h:dataTable
+										styleClass="table table-striped table-hover"
+										columnClasses="datetime, agenda, action"
+										value="#{examinationRunning.patientLastExams}" var="examination"
+										rendered="#{not empty examinationRunning.patientLastExams}"
+										style="padding: 6px; ">
+
+									<h:column>
+										<f:facet name="header">
+											Orario
+										</f:facet>
+										<h:outputText value="#{examination.appointment.date}" >
+											<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+										</h:outputText>
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											Agenda
+										</f:facet>
+										<h:outputText value="#{examination.appointment.agenda.code}" />
+										-
+										<h:outputText value="#{examination.appointment.agenda.description}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											Azioni
+										</f:facet>
+
+										<a4j:commandLink title="Visualizza referto"
+														 action="#{examinationRunning.initReports( examination.id )}"
+														 styleClass="btn btn-primary tltip"
+														 rendered="#{examinationRunning.hasReport( examination ) and not examinationRunning.has2Report( examination )}"
+														 oncomplete="switchNumberOfReports( #{examinationRunning.getExamReports(examination.id).size()},
+												 	#{examination.id},
+												 	#{examinationRunning.getExamReports(examination.id).get(0).getId()} );">
+											<i class="fw-icon-book fw-icon-large "></i>
+										</a4j:commandLink>
+
+										<a4j:commandLink title="Visualizza referti"
+														 action="#{examinationRunning.initReports( examination.id )}"
+														 styleClass="btn btn-primary pull-left dist-right tltip"
+														 rendered="#{examinationRunning.hasReport( examination ) and examinationRunning.has2Report( examination )}"
+														 render=":report-form"
+														 oncomplete="switchNumberOfReports( #{examinationRunning.getExamReports(examination.id).size()},
+												 	#{examination.id},
+												 	#{examinationRunning.getExamReports(examination.id).get(0).getId()} );">
+											<i class="fw-icon-book fw-icon-large "></i>
+										</a4j:commandLink>
+
+										<h:link outcome="/pages/patients/examination/examination-view.xhtml" includeViewParams="true"
+												rendered="#{examinationRunning.hasView(examination)}" title="Visualizza visita"
+												styleClass="btn btn-info pull-left dist-right tltip">
+											<f:param name="id" value="#{examination.id}" />
+											<f:param name="pid" value="#{examinationRunning.lastPatientVersion.id}" />
+											<f:param name="from" value="#{view.viewId}" />
+											<f:param name="eid" value="#{examinationRunning.examinationId}" disable="#{examinationRunning.examinationId eq null}" />
+											<f:param name="cid" value="#{javax.enterprise.context.conversation.id}"
+													 disable="#{empty javax.enterprise.context.conversation.id}"/>
+											<i class="fw-icon-zoom-in fw-icon-large"></i>
+										</h:link>
+
+									</h:column>
+
+								</h:dataTable>
+							</h:panelGroup>
+						</div>
+					</div>
+				</h:form>
+			</div>
+
+			<!-- Modal -->
+			<div id="report-panel" class="modal fade" role="dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<h:form styleClass="form-horizontal" id="report-form">
+
+						<div class="modal-header">
+							<h3>Seleziona Report da stampare
+								<a4j:commandLink
+										immediate="true"
+										onclick="$('#report-panel').modal('hide');"
+										render="@form"
+										execute="@this"
+										styleClass="btn pull-right" >
+									<i class="fw-icon-step-backward dist-right"></i>
+									<h:outputText value="Chiudi" styleClass="bold" />
+								</a4j:commandLink>
+							</h3>
+						</div>
+
+						<div class="modal-body">
+							<table class="table table-bordered table-condensed">
+								<tr>
+									<td class="text-center">
+										<h:outputText rendered="#{not empty examinationRunning.reports}"
+													  value="#{examinationRunning.reports.get(0).name}" styleClass="bold" />
+									</td>
+									<td>
+										<a4j:commandLink styleClass="btn btn-primary pull-right dist-left"
+														 rendered="#{not empty examinationRunning.reports}"
+														 onclick="openSingle( #{examinationRunning.selection}, #{examinationRunning.reports.get(0).id} );"
+														 execute="@form">
+											<i class="fw-icon-step-forward dist-right"></i>
+											<h:outputText value="Visualizza" styleClass="bold" />
+										</a4j:commandLink>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">
+										<h:outputText rendered="#{not empty examinationRunning.reports and examinationRunning.reports.size() gt 1}"
+													  value="#{examinationRunning.reports.get(1).name}" styleClass="bold" />
+									</td>
+									<td>
+										<a4j:commandLink styleClass="btn btn-primary pull-right dist-left"
+														 rendered="#{not empty examinationRunning.reports and examinationRunning.reports.size() gt 1}"
+														 onclick="openSingle( #{examinationRunning.selection}, #{examinationRunning.reports.get(1).id} );"
+														 execute="@form">
+											<i class="fw-icon-step-forward dist-right"></i>
+											<h:outputText value="Visualizza" styleClass="bold" />
+										</a4j:commandLink>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</a4j:region>
+
+
+	</div>
+</h:panelGroup>

@@ -1,0 +1,3 @@
+it/unifi/ing/stlab/factquery/model/FactQueryJpaTest.class
+it/unifi/ing/stlab/factquery/model/expression/CompositeExpressionJpaTest.class
+it/unifi/ing/stlab/factquery/builder/FactQueryBuilderTest.class

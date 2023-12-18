@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" required="true" />
+    	<composite:attribute name="render" />
+    	<composite:attribute name="navigator" />
+    </composite:interface>
+ 
+    <composite:implementation>
+    	<h:outputStylesheet library="datepicker" name="css/datepicker.css" />
+    	<div class="input-append date dpicker">
+			<h:inputText value="#{cc.attrs.value}" styleClass="span2"
+				onkeydown="return disableReturn(event, this)">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+				<a4j:ajax 
+					event="change"
+					execute="@this"
+					listener="#{cc.attrs.navigator.reset}"
+					render="#{cc.attrs.render}" />								
+			</h:inputText>
+			<span class="add-on">
+				<i class="fw-icon-calendar fw-icon-large"></i>
+			</span>
+		</div>
+		<h:outputScript library="datepicker" name="js/bootstrap-datepicker.js" />
+		<h:outputScript library="datepicker" name="js/locales/bootstrap-datepicker.it.js" />
+		<script type="text/javascript">
+			$(function(){
+				$('.dpicker').datepicker({format: 'dd/mm/yyyy', 
+					autoclose: 'true', 
+					todayHighlight: 'true', 
+					language: 'it',
+					keyboardNavigation: 'false',
+					todayBtn: 'linked'})
+				.on('changeDate', function(ev){
+				$('.dpicker').datepicker('hide')});
+			});
+    	</script>
+    </composite:implementation>
+</html>

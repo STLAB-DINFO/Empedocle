@@ -1,0 +1,74 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+	<html>
+		<h:head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title>Empedocle</title>
+			
+			<link href="#{request.contextPath}/resources/css/report.1.0.0.css" rel="stylesheet" type="text/css" />
+			
+			<style type="text/css">
+				@media print {
+ 					table {page-break-inside:avoid;}
+				}
+				
+				#report_header {
+					display: block; 
+					text-align: center;
+					position: running(report_header);
+				}
+				
+				#report_footer {
+					border-top: 1px solid black;
+					display: block; 
+					text-align: center;
+					position: running(report_footer);
+				}
+
+				@page {	
+					size: A4 portrait;
+					margin: 4cm 1.2cm 2.2cm 1.2cm;
+					@bottom-center { content: element(report_footer) }; 
+					@top-center { content: element(report_header)}; 
+				}
+
+				#pagenumber:before {
+					font-size: 11px;
+					content: counter(page);
+				}
+				
+				#pagecount:before {
+					font-size: 11px;
+					content: counter(pages);
+				}			
+				
+				body, table {
+					font-family: Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					color: #000000;
+				}
+				
+				table {
+					border-collapse: collapse;
+				}
+				
+				#{reportViewer.viewer.css}	
+			</style>
+
+		</h:head>
+		
+		<h:body>
+			<ui:fragment rendered="#{reportViewer.displayable}">
+					<a:view value="#{reportViewer.fact}" viewer="#{reportViewer.viewer}" />
+			</ui:fragment>
+		</h:body>
+	</html>
+</f:view>

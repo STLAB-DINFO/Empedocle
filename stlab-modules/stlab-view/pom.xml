@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>stlab-view</artifactId>
+	<parent>
+		<groupId>it.unifi.ing.stlab</groupId>
+		<artifactId>stlab-modules</artifactId>
+		<version>1.0.0</version>
+	</parent>	
+	
+	<dependencies>
+		<!-- stlab dependencies -->
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-reflection</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-entities</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-users</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-fact-query</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-test</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>it.unifi.ing.stlab</groupId>
+			<artifactId>stlab-reflection-impl</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>  
+</project>

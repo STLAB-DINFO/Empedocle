@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" type="it.unifi.ing.stlab.reflection.actions.wrappers.TypeBean" />
+    </composite:interface>
+  
+    <composite:implementation>
+
+		<h:panelGroup styleClass="control-group" rendered="#{cc.attrs.value.isEnumerated()}" layout="block"
+			xmlns:datepicker="http://java.sun.com/jsf/composite/datepicker">
+			<h:outputLabel styleClass="control-label bold" for="#{cc.clientId}:phenomena" value="Fenomeni" />
+		    <h:panelGroup styleClass="controls" layout="block">
+		    	<h:dataTable styleClass="table table-bordered table-condensed" id="phenomena" value="#{cc.attrs.value.phenomena}" var="ph"
+		    		rendered="#{not empty cc.attrs.value.phenomena}"
+		    		columnClasses="col, col, col, text-center">
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Nome
+		    			</f:facet>
+		    			<div>
+			    			<h:inputText value="#{ph.name}" required="true">
+					    		<a4j:ajax event="change" execute="@this" render="@form" />
+			    			</h:inputText>
+		    			</div>
+		    		</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							Valido dal
+						</f:facet>
+						
+						<datepicker:datePicker value="#{ph.left}"
+			    			render="@this" />
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">
+							Valido fino al
+						</f:facet>
+						
+						<datepicker:datePicker value="#{ph.right}"
+			    			render="@this" />
+					</h:column>
+
+		    		<h:column>
+		    			<f:facet name="header" />
+		    			<div>
+							<h:commandLink title="Cancella fenomeno" class="tltip"
+									action="#{cc.attrs.value.deletePhenomenon( ph )}"
+									rendered="#{not cc.attrs.value.isPhenomenonUsed( ph )}"
+									immediate="true">
+								<i class="fw-icon-remove"/>
+								<a4j:ajax execute="@this" render="@form"/>
+							</h:commandLink>
+						</div>
+		    		</h:column>
+
+		    	</h:dataTable>
+		    	
+		    	<h:commandLink styleClass="btn btn-link" action="#{cc.attrs.value.addPhenomenon()}"
+		    		class="tltip align-txt" title="Aggiungi fenomeno" >
+		    		<i class="fw-icon-plus"/>
+					<a4j:ajax execute="@this" render="@form"/>
+		    	</h:commandLink>
+		    </h:panelGroup>
+		</h:panelGroup>
+		
+    </composite:implementation>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:fragment>
+
+	<h:form>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<span class="brand">Empedocle</span>
+					<h:panelGroup layout="block" rendered="#{!empty loggedUser.user}">
+						<ul class="nav pull-right">
+							<li>
+			    				<a> 							   
+			    					<i class="fw-icon-user dist-right fw-icon-large"></i> 
+			    					#{loggedUser.user.name} #{loggedUser.user.surname}
+			    				</a>
+			    			</li>
+						</ul>
+					</h:panelGroup>					
+				</div>
+			</div>
+		</div>
+		
+	</h:form>
+</ui:fragment>
+
+</html>

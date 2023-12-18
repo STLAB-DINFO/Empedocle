@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="96,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#home.xhtml" NAME="output"
+    PATH="/home.xhtml" TARGET="rules:#home.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="logout::#home.xhtml" NAME="output1"
+    PATH="/home.xhtml" TARGET="rules:#home.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="patient-list::#pages#patients#patient-list.xhtml" NAME="output2"
+    PATH="/pages/patients/patient-list.xhtml"
+    TARGET="rules:#pages#patients#patient-list.xhtml"
+    TITLE="patient-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="examination-list::#pages#examination#examination-list.xhtml"
+    NAME="output3" PATH="/pages/examination/examination-list.xhtml"
+    TARGET="rules:#pages#examination#examination-list.xhtml"
+    TITLE="examination-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="staff-list::#pages#staff#staff-list.xhtml"
+    NAME="output4" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="staff-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="agenda-list::#pages#agendas#agenda-list.xhtml" NAME="output5"
+    PATH="/pages/agendas/agenda-list.xhtml"
+    TARGET="rules:#pages#agendas#agenda-list.xhtml" TITLE="agenda-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="examinationtype-list::#pages#examination#types#examinationtype-list.xhtml"
+    NAME="output6"
+    PATH="/pages/examination/types/examinationtype-list.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-list.xhtml"
+    TITLE="examinationtype-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="type-list::#pages#types#type-list.xhtml"
+    NAME="output7" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="type-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view-list::#pages#viewer#viewer-list.xhtml"
+    NAME="output8" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="view-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="fact-query-list::#pages#queries#query-list.xhtml" NAME="output9"
+    PATH="/pages/queries/query-list.xhtml"
+    TARGET="rules:#pages#queries#query-list.xhtml"
+    TITLE="fact-query-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="message-list::#pages#messages#message-list.xhtml"
+    NAME="output10" PATH="/pages/messages/message-list.xhtml"
+    TARGET="rules:#pages#messages#message-list.xhtml"
+    TITLE="message-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="panel-view::#pages#staff#panel#panel-view.xhtml" NAME="output11"
+    PATH="/pages/staff/panel/panel-view.xhtml"
+    TARGET="rules:#pages#staff#panel#panel-view.xhtml"
+    TITLE="panel-view" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#patients#patient-list.xhtml"
+  PATH="/pages/patients/patient-list.xhtml" SHAPE="640,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#patients#patient-list.xhtml:0"
+   NAME="item" PATH="/pages/patients/patient-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#patients#patient-view.xhtml"
+    NAME="output" PATH="/pages/patients/patient-view.xhtml"
+    TARGET="rules:#pages#patients#patient-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#patients#patient-edit.xhtml"
+    NAME="output1" PATH="/pages/patients/patient-edit.xhtml"
+    TARGET="rules:#pages#patients#patient-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="add-new::#pages#patients#patient-edit.xhtml"
+    NAME="output2" PATH="/pages/patients/patient-edit.xhtml"
+    TARGET="rules:#pages#patients#patient-edit.xhtml" TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#patients#patient-list.xhtml"
+    NAME="output3" PATH="/pages/patients/patient-list.xhtml"
+    TARGET="rules:#pages#patients#patient-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#patients#patient-view.xhtml"
+  PATH="/pages/patients/patient-view.xhtml" SHAPE="912,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#patients#patient-view.xhtml:0"
+   NAME="item" PATH="/pages/patients/patient-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#patients#patient-edit.xhtml"
+    NAME="output2" PATH="/pages/patients/patient-edit.xhtml"
+    TARGET="rules:#pages#patients#patient-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#patients#patient-list.xhtml"
+    NAME="output3" PATH="/pages/patients/patient-list.xhtml"
+    TARGET="rules:#pages#patients#patient-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="run::#pages#examination#examination-running.xhtml" NAME="output"
+    PATH="/pages/examination/examination-running.xhtml"
+    TARGET="rules:#pages#examination#examination-running.xhtml"
+    TITLE="run" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#patients#patient-edit.xhtml"
+  PATH="/pages/patients/patient-edit.xhtml" SHAPE="368,1953,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#patients#patient-edit.xhtml:0"
+   NAME="item" PATH="/pages/patients/patient-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#patients#patient-list.xhtml"
+    NAME="output" PATH="/pages/patients/patient-list.xhtml"
+    TARGET="rules:#pages#patients#patient-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#patients#patient-view.xhtml"
+    NAME="output1" PATH="/pages/patients/patient-view.xhtml"
+    TARGET="rules:#pages#patients#patient-view.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#patients#patient-view.xhtml"
+    NAME="output2" PATH="/pages/patients/patient-view.xhtml"
+    TARGET="rules:#pages#patients#patient-view.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#patients#patient-list.xhtml"
+    NAME="output3" PATH="/pages/patients/patient-list.xhtml"
+    TARGET="rules:#pages#patients#patient-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#types#type-list.xhtml"
+  PATH="/pages/types/type-list.xhtml" SHAPE="368,1009,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#types#type-list.xhtml:0" NAME="item"
+   PATH="/pages/types/type-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#types#type-view.xhtml"
+    NAME="output3" PATH="/pages/types/type-view.xhtml"
+    TARGET="rules:#pages#types#type-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#types#type-edit.xhtml"
+    NAME="output4" PATH="/pages/types/type-edit.xhtml"
+    TARGET="rules:#pages#types#type-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="copy::#pages#types#type-edit.xhtml"
+    NAME="output2" PATH="/pages/types/type-edit.xhtml"
+    TARGET="rules:#pages#types#type-edit.xhtml" TITLE="copy" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="add-new::#pages#types#type-edit.xhtml"
+    NAME="output" PATH="/pages/types/type-edit.xhtml"
+    TARGET="rules:#pages#types#type-edit.xhtml" TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="add-new-dsl::#pages#types#type-edit-dsl.xhtml" NAME="output1"
+    PATH="/pages/types/type-edit-dsl.xhtml"
+    TARGET="rules:#pages#types#type-edit-dsl.xhtml" TITLE="add-new-dsl" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#types#type-list.xhtml"
+    NAME="output5" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#types#type-view.xhtml"
+  PATH="/pages/types/type-view.xhtml" SHAPE="96,993,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#types#type-view.xhtml:0" NAME="item"
+   PATH="/pages/types/type-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="close::#pages#types#type-list.xhtml"
+    NAME="output" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="close" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#types#type-edit.xhtml"
+    NAME="output2" PATH="/pages/types/type-edit.xhtml"
+    TARGET="rules:#pages#types#type-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="copy::#pages#types#type-edit.xhtml"
+    NAME="output3" PATH="/pages/types/type-edit.xhtml"
+    TARGET="rules:#pages#types#type-edit.xhtml" TITLE="copy" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#types#type-list.xhtml"
+    NAME="output1" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#types#type-edit.xhtml"
+  PATH="/pages/types/type-edit.xhtml" SHAPE="640,993,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#types#type-edit.xhtml:0" NAME="item"
+   PATH="/pages/types/type-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#types#type-view.xhtml"
+    NAME="output" PATH="/pages/types/type-view.xhtml"
+    TARGET="rules:#pages#types#type-view.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#types#type-list.xhtml"
+    NAME="output1" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#types#type-view.xhtml"
+    NAME="output2" PATH="/pages/types/type-view.xhtml"
+    TARGET="rules:#pages#types#type-view.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#types#type-list.xhtml"
+    NAME="output3" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#types#type-edit-dsl.xhtml"
+  PATH="/pages/types/type-edit-dsl.xhtml" SHAPE="96,1233,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#types#type-edit-dsl.xhtml:0"
+   NAME="item" PATH="/pages/types/type-edit-dsl.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#types#type-list.xhtml"
+    NAME="output" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#types#type-list.xhtml"
+    NAME="output1" PATH="/pages/types/type-list.xhtml"
+    TARGET="rules:#pages#types#type-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#viewer#viewer-list.xhtml"
+  PATH="/pages/viewer/viewer-list.xhtml" SHAPE="368,1249,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#viewer#viewer-list.xhtml:0" NAME="item"
+   PATH="/pages/viewer/viewer-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="add-new::#pages#viewer#viewer-edit.xhtml"
+    NAME="output" PATH="/pages/viewer/viewer-edit.xhtml"
+    TARGET="rules:#pages#viewer#viewer-edit.xhtml" TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="add-new-dsl::#pages#viewer#viewer-edit-dsl.xhtml" NAME="output1"
+    PATH="/pages/viewer/viewer-edit-dsl.xhtml"
+    TARGET="rules:#pages#viewer#viewer-edit-dsl.xhtml"
+    TITLE="add-new-dsl" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#viewer#viewer-view.xhtml"
+    NAME="output2" PATH="/pages/viewer/viewer-view.xhtml"
+    TARGET="rules:#pages#viewer#viewer-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#viewer#viewer-edit.xhtml"
+    NAME="output3" PATH="/pages/viewer/viewer-edit.xhtml"
+    TARGET="rules:#pages#viewer#viewer-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#viewer#viewer-list.xhtml"
+    NAME="output4" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#viewer#viewer-view.xhtml"
+  PATH="/pages/viewer/viewer-view.xhtml" SHAPE="96,1473,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#viewer#viewer-view.xhtml:0" NAME="item"
+   PATH="/pages/viewer/viewer-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="close::#pages#viewer#viewer-list.xhtml"
+    NAME="output" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="close" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#viewer#viewer-list.xhtml"
+    NAME="output1" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#viewer#viewer-edit.xhtml"
+    NAME="output2" PATH="/pages/viewer/viewer-edit.xhtml"
+    TARGET="rules:#pages#viewer#viewer-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#viewer#viewer-edit.xhtml"
+  PATH="/pages/viewer/viewer-edit.xhtml" SHAPE="640,1473,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#viewer#viewer-edit.xhtml:0" NAME="item"
+   PATH="/pages/viewer/viewer-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#viewer#viewer-list.xhtml"
+    NAME="output" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#viewer#viewer-list.xhtml"
+    NAME="output1" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#viewer#viewer-edit-dsl.xhtml"
+  PATH="/pages/viewer/viewer-edit-dsl.xhtml" SHAPE="96,1649,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#viewer#viewer-edit-dsl.xhtml:0"
+   NAME="item" PATH="/pages/viewer/viewer-edit-dsl.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#viewer#viewer-list.xhtml"
+    NAME="output" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#viewer#viewer-list.xhtml"
+    NAME="output1" PATH="/pages/viewer/viewer-list.xhtml"
+    TARGET="rules:#pages#viewer#viewer-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#staff#staff-list.xhtml"
+  PATH="/pages/staff/staff-list.xhtml" SHAPE="368,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#staff#staff-list.xhtml:0" NAME="item"
+   PATH="/pages/staff/staff-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#staff#staff-edit.xhtml"
+    NAME="output" PATH="/pages/staff/staff-edit.xhtml"
+    TARGET="rules:#pages#staff#staff-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#staff#staff-view.xhtml"
+    NAME="output1" PATH="/pages/staff/staff-view.xhtml"
+    TARGET="rules:#pages#staff#staff-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="add-new::#pages#staff#staff-edit.xhtml"
+    NAME="output2" PATH="/pages/staff/staff-edit.xhtml"
+    TARGET="rules:#pages#staff#staff-edit.xhtml" TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="copy::#pages#staff#staff-edit.xhtml"
+    NAME="output3" PATH="/pages/staff/staff-edit.xhtml"
+    TARGET="rules:#pages#staff#staff-edit.xhtml" TITLE="copy" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#staff#staff-list.xhtml"
+    NAME="output4" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enable-disable::#pages#staff#staff-list.xhtml" NAME="output5"
+    PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="enable-disable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="reset::#pages#staff#staff-list.xhtml"
+    NAME="output6" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="reset" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#staff#staff-edit.xhtml"
+  PATH="/pages/staff/staff-edit.xhtml" SHAPE="640,481,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#staff#staff-edit.xhtml:0" NAME="item"
+   PATH="/pages/staff/staff-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#staff#staff-view.xhtml"
+    NAME="output" PATH="/pages/staff/staff-view.xhtml"
+    TARGET="rules:#pages#staff#staff-view.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#staff#staff-list.xhtml"
+    NAME="output1" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#staff#staff-view.xhtml"
+    NAME="output2" PATH="/pages/staff/staff-view.xhtml"
+    TARGET="rules:#pages#staff#staff-view.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#staff#staff-list.xhtml"
+    NAME="output3" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#staff#staff-view.xhtml"
+  PATH="/pages/staff/staff-view.xhtml" SHAPE="96,481,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#staff#staff-view.xhtml:0" NAME="item"
+   PATH="/pages/staff/staff-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="close::#pages#staff#staff-list.xhtml"
+    NAME="output" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="close" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#staff#staff-edit.xhtml"
+    NAME="output1" PATH="/pages/staff/staff-edit.xhtml"
+    TARGET="rules:#pages#staff#staff-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="copy::#pages#staff#staff-edit.xhtml"
+    NAME="output2" PATH="/pages/staff/staff-edit.xhtml"
+    TARGET="rules:#pages#staff#staff-edit.xhtml" TITLE="copy" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#staff#staff-list.xhtml"
+    NAME="output3" PATH="/pages/staff/staff-list.xhtml"
+    TARGET="rules:#pages#staff#staff-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enable-disable::#pages#staff#staff-view.xhtml" NAME="output4"
+    PATH="/pages/staff/staff-view.xhtml"
+    TARGET="rules:#pages#staff#staff-view.xhtml" TITLE="enable-disable" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="reset::#pages#staff#staff-view.xhtml"
+    NAME="output5" PATH="/pages/staff/staff-view.xhtml"
+    TARGET="rules:#pages#staff#staff-view.xhtml" TITLE="reset" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#staff#panel#panel-view.xhtml"
+  PATH="/pages/staff/panel/panel-view.xhtml" SHAPE="368,1809,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#staff#panel#panel-view.xhtml:0"
+   NAME="item" PATH="/pages/staff/panel/panel-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#staff#panel#panel-edit.xhtml"
+    NAME="output" PATH="/pages/staff/panel/panel-edit.xhtml"
+    TARGET="rules:#pages#staff#panel#panel-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="close::#{panelView.from}" NAME="output1"
+    PATH="#{panelView.from}" TARGET="rules:#{panelView.from}"
+    TITLE="close" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#staff#panel#panel-edit.xhtml"
+  PATH="/pages/staff/panel/panel-edit.xhtml" SHAPE="640,1937,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#staff#panel#panel-edit.xhtml:0"
+   NAME="item" PATH="/pages/staff/panel/panel-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="save-cancel::#pages#staff#panel#panel-view.xhtml" NAME="output"
+    PATH="/pages/staff/panel/panel-view.xhtml"
+    TARGET="rules:#pages#staff#panel#panel-view.xhtml"
+    TITLE="save-cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#agendas#agenda-list.xhtml"
+  PATH="/pages/agendas/agenda-list.xhtml" SHAPE="640,2353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#agendas#agenda-list.xhtml:0"
+   NAME="item" PATH="/pages/agendas/agenda-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#agendas#agenda-edit.xhtml"
+    NAME="output" PATH="/pages/agendas/agenda-edit.xhtml"
+    TARGET="rules:#pages#agendas#agenda-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#agendas#agenda-view.xhtml"
+    NAME="output1" PATH="/pages/agendas/agenda-view.xhtml"
+    TARGET="rules:#pages#agendas#agenda-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="add-new::#pages#agendas#agenda-edit.xhtml"
+    NAME="output2" PATH="/pages/agendas/agenda-edit.xhtml"
+    TARGET="rules:#pages#agendas#agenda-edit.xhtml" TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#agendas#agenda-list.xhtml"
+    NAME="output3" PATH="/pages/agendas/agenda-list.xhtml"
+    TARGET="rules:#pages#agendas#agenda-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#agendas#agenda-edit.xhtml"
+  PATH="/pages/agendas/agenda-edit.xhtml" SHAPE="96,2353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#agendas#agenda-edit.xhtml:0"
+   NAME="item" PATH="/pages/agendas/agenda-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#agendas#agenda-view.xhtml"
+    NAME="output" PATH="/pages/agendas/agenda-view.xhtml"
+    TARGET="rules:#pages#agendas#agenda-view.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#agendas#agenda-list.xhtml"
+    NAME="output1" PATH="/pages/agendas/agenda-list.xhtml"
+    TARGET="rules:#pages#agendas#agenda-list.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#agendas#agenda-view.xhtml"
+    NAME="output2" PATH="/pages/agendas/agenda-view.xhtml"
+    TARGET="rules:#pages#agendas#agenda-view.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="save::#pages#agendas#agenda-list.xhtml"
+    NAME="output3" PATH="/pages/agendas/agenda-list.xhtml"
+    TARGET="rules:#pages#agendas#agenda-list.xhtml" TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#agendas#agenda-view.xhtml"
+  PATH="/pages/agendas/agenda-view.xhtml" SHAPE="368,2369,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#agendas#agenda-view.xhtml:0"
+   NAME="item" PATH="/pages/agendas/agenda-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="close::#pages#agendas#agenda-list.xhtml"
+    NAME="output" PATH="/pages/agendas/agenda-list.xhtml"
+    TARGET="rules:#pages#agendas#agenda-list.xhtml" TITLE="close" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#agendas#agenda-edit.xhtml"
+    NAME="output1" PATH="/pages/agendas/agenda-edit.xhtml"
+    TARGET="rules:#pages#agendas#agenda-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#pages#agendas#agenda-list.xhtml"
+    NAME="output2" PATH="/pages/agendas/agenda-list.xhtml"
+    TARGET="rules:#pages#agendas#agenda-list.xhtml" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#queries#query-list.xhtml"
+  PATH="/pages/queries/query-list.xhtml" SHAPE="368,1489,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#queries#query-list.xhtml:0" NAME="item"
+   PATH="/pages/queries/query-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#queries#query-view.xhtml"
+    NAME="output" PATH="/pages/queries/query-view.xhtml"
+    TARGET="rules:#pages#queries#query-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#queries#query-edit.xhtml"
+    NAME="output1" PATH="/pages/queries/query-edit.xhtml"
+    TARGET="rules:#pages#queries#query-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="add-new::#pages#queries#query-edit.xhtml"
+    NAME="output2" PATH="/pages/queries/query-edit.xhtml"
+    TARGET="rules:#pages#queries#query-edit.xhtml" TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#queries#query-view.xhtml"
+  PATH="/pages/queries/query-view.xhtml" SHAPE="640,1649,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#queries#query-view.xhtml:0" NAME="item"
+   PATH="/pages/queries/query-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#pages#queries#query-edit.xhtml"
+    NAME="output" PATH="/pages/queries/query-edit.xhtml"
+    TARGET="rules:#pages#queries#query-edit.xhtml" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="close::#pages#queries#query-list.xhtml"
+    NAME="output1" PATH="/pages/queries/query-list.xhtml"
+    TARGET="rules:#pages#queries#query-list.xhtml" TITLE="close" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#queries#query-edit.xhtml"
+  PATH="/pages/queries/query-edit.xhtml" SHAPE="912,1665,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#queries#query-edit.xhtml:0" NAME="item"
+   PATH="/pages/queries/query-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="list::#pages#queries#query-list.xhtml"
+    NAME="output" PATH="/pages/queries/query-list.xhtml"
+    TARGET="rules:#pages#queries#query-list.xhtml" TITLE="list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#queries#query-view.xhtml"
+    NAME="output1" PATH="/pages/queries/query-view.xhtml"
+    TARGET="rules:#pages#queries#query-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#messages#message-list.xhtml"
+  PATH="/pages/messages/message-list.xhtml" SHAPE="368,1665,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#messages#message-list.xhtml:0"
+   NAME="item" PATH="/pages/messages/message-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="view::#pages#messages#message-view.xhtml"
+    NAME="output" PATH="/pages/messages/message-view.xhtml"
+    TARGET="rules:#pages#messages#message-view.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#messages#message-view.xhtml"
+  PATH="/pages/messages/message-view.xhtml" SHAPE="640,1793,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#messages#message-view.xhtml:0"
+   NAME="item" PATH="/pages/messages/message-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="close::#pages#messages#message-list.xhtml"
+    NAME="output" PATH="/pages/messages/message-list.xhtml"
+    TARGET="rules:#pages#messages#message-list.xhtml" TITLE="close" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#home.xhtml" PATH="/home.xhtml"
+  SHAPE="368,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#examination#examination-list.xhtml"
+  PATH="/pages/examination/examination-list.xhtml" SHAPE="368,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#examination#examination-list.xhtml:0"
+   NAME="item" PATH="/pages/examination/examination-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="run::#pages#examination#examination-running.xhtml" NAME="output"
+    PATH="/pages/examination/examination-running.xhtml"
+    TARGET="rules:#pages#examination#examination-running.xhtml"
+    TITLE="run" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="history::#pages#patients#patient-view.xhtml"
+    NAME="output1" PATH="/pages/patients/patient-view.xhtml"
+    TARGET="rules:#pages#patients#patient-view.xhtml" TITLE="history" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="edit::#pages#examination#examination-edit.xhtml" NAME="output2"
+    PATH="/pages/examination/examination-edit.xhtml"
+    TARGET="rules:#pages#examination#examination-edit.xhtml"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="add-new::#pages#examination#examination-edit.xhtml"
+    NAME="output3" PATH="/pages/examination/examination-edit.xhtml"
+    TARGET="rules:#pages#examination#examination-edit.xhtml"
+    TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="delete::#pages#examination#examination-list.xhtml"
+    NAME="output4" PATH="/pages/examination/examination-list.xhtml"
+    TARGET="rules:#pages#examination#examination-list.xhtml"
+    TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#examination#examination-running.xhtml"
+  PATH="/pages/examination/examination-running.xhtml"
+  SHAPE="640,817,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#examination#examination-running.xhtml:0" NAME="item"
+   PATH="/pages/examination/examination-running.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="summary::#pages#examination#examination-summary.xhtml"
+    NAME="output" PATH="/pages/examination/examination-summary.xhtml"
+    TARGET="rules:#pages#examination#examination-summary.xhtml"
+    TITLE="summary" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="list::#pages#examination#examination-list.xhtml" NAME="output1"
+    PATH="/pages/examination/examination-list.xhtml"
+    TARGET="rules:#pages#examination#examination-list.xhtml"
+    TITLE="list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="switch-user::#pages#examination#examination-running.xhtml"
+    NAME="output3" PATH="/pages/examination/examination-running.xhtml"
+    TARGET="rules:#pages#examination#examination-running.xhtml"
+    TITLE="switch-user" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#examination#examination-edit.xhtml"
+  PATH="/pages/examination/examination-edit.xhtml" SHAPE="640,817,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#examination#examination-edit.xhtml:0"
+   NAME="item" PATH="/pages/examination/examination-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="save::#pages#examination#examination-list.xhtml" NAME="output"
+    PATH="/pages/examination/examination-list.xhtml"
+    TARGET="rules:#pages#examination#examination-list.xhtml"
+    TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancel::#pages#examination#examination-list.xhtml"
+    NAME="output1" PATH="/pages/examination/examination-list.xhtml"
+    TARGET="rules:#pages#examination#examination-list.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#examination#examination-summary.xhtml"
+  PATH="/pages/examination/examination-summary.xhtml"
+  SHAPE="1168,1345,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#examination#examination-summary.xhtml:0" NAME="item"
+   PATH="/pages/examination/examination-summary.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="list::#pages#examination#examination-list.xhtml" NAME="output"
+    PATH="/pages/examination/examination-list.xhtml"
+    TARGET="rules:#pages#examination#examination-list.xhtml"
+    TITLE="list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="run::#pages#examination#examination-running.xhtml"
+    NAME="output1" PATH="/pages/examination/examination-running.xhtml"
+    TARGET="rules:#pages#examination#examination-running.xhtml"
+    TITLE="run" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#pages#examination#types#examinationtype-list.xhtml"
+  PATH="/pages/examination/types/examinationtype-list.xhtml"
+  SHAPE="368,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#examination#types#examinationtype-list.xhtml:0"
+   NAME="item"
+   PATH="/pages/examination/types/examinationtype-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="view::#pages#examination#types#examinationtype-view.xhtml"
+    NAME="output"
+    PATH="/pages/examination/types/examinationtype-view.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-view.xhtml"
+    TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="edit::#pages#examination#types#examinationtype-edit.xhtml"
+    NAME="output1"
+    PATH="/pages/examination/types/examinationtype-edit.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-edit.xhtml"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="copy::#pages#examination#types#examinationtype-edit.xhtml"
+    NAME="output2"
+    PATH="/pages/examination/types/examinationtype-edit.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-edit.xhtml"
+    TITLE="copy" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="add-new::#pages#examination#types#examinationtype-edit.xhtml"
+    NAME="output3"
+    PATH="/pages/examination/types/examinationtype-edit.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-edit.xhtml"
+    TITLE="add-new" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="delete::#pages#examination#types#examinationtype-list.xhtml"
+    NAME="output4"
+    PATH="/pages/examination/types/examinationtype-list.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-list.xhtml"
+    TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#pages#examination#types#examinationtype-view.xhtml"
+  PATH="/pages/examination/types/examinationtype-view.xhtml"
+  SHAPE="640,817,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#examination#types#examinationtype-view.xhtml:0"
+   NAME="item"
+   PATH="/pages/examination/types/examinationtype-view.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="close::#pages#examination#types#examinationtype-list.xhtml"
+    NAME="output"
+    PATH="/pages/examination/types/examinationtype-list.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-list.xhtml"
+    TITLE="close" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="edit::#pages#examination#types#examinationtype-edit.xhtml"
+    NAME="output1"
+    PATH="/pages/examination/types/examinationtype-edit.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-edit.xhtml"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="copy::#pages#examination#types#examinationtype-edit.xhtml"
+    NAME="output2"
+    PATH="/pages/examination/types/examinationtype-edit.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-edit.xhtml"
+    TITLE="copy" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="delete::#pages#examination#types#examinationtype-list.xhtml"
+    NAME="output3"
+    PATH="/pages/examination/types/examinationtype-list.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-list.xhtml"
+    TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#pages#examination#types#examinationtype-edit.xhtml"
+  PATH="/pages/examination/types/examinationtype-edit.xhtml"
+  SHAPE="640,817,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#examination#types#examinationtype-edit.xhtml:0"
+   NAME="item"
+   PATH="/pages/examination/types/examinationtype-edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="cancel::#pages#examination#types#examinationtype-view.xhtml"
+    NAME="output"
+    PATH="/pages/examination/types/examinationtype-view.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-view.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cancel::#pages#examination#types#examinationtype-list.xhtml"
+    NAME="output1"
+    PATH="/pages/examination/types/examinationtype-list.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-list.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="save::#pages#examination#types#examinationtype-view.xhtml"
+    NAME="output2"
+    PATH="/pages/examination/types/examinationtype-view.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-view.xhtml"
+    TITLE="save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="save::#pages#examination#types#examinationtype-list.xhtml"
+    NAME="output3"
+    PATH="/pages/examination/types/examinationtype-list.xhtml"
+    TARGET="rules:#pages#examination#types#examinationtype-list.xhtml"
+    TITLE="save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#{panelView.from}" PATH="/{panelView.from}"
+  SHAPE="640,2897,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

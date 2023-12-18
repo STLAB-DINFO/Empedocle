@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="/layout/template.xhtml">
+	<ui:define name="styles">
+		<h:outputStylesheet library="datepicker" name="css/datepicker.css" />
+	</ui:define>
+
+	<ui:define name="scripts">
+		<h:outputScript library="datepicker" name="js/bootstrap-datepicker.js" />
+		<h:outputScript library="datepicker" name="js/locales/bootstrap-datepicker.it.js" />
+	</ui:define>
+
+	<ui:define name="header">
+		<ui:include src="../../header-no-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+	
+		<style>
+			select { margin-top: 5px; }
+		</style>
+	
+	    <script type="text/javascript">
+			$(function(){
+				initializeDatepicker();
+			});
+		</script>
+	
+		<h:form id="edit-form" styleClass="form-horizontal">
+	
+			<div class="crud-title">
+				<h2>#{patientEdit.new ? 'Creazione' : 'Modifica'} Paziente
+				
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink class="btn" action="#{patientEdit.cancel()}" immediate="true">
+							<i class="fw-icon-step-backward dist-right"></i> Annulla
+						</h:commandLink>
+						<h:commandLink class="btn btn-primary dist-left" action="#{patientEdit.save()}">
+							<i class="fw-icon-step-forward dist-right"></i> Salva
+						</h:commandLink>						
+					</h:panelGroup>
+				</h2>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:taxcode">* Codice fiscale</label>
+				<div class="controls">
+					<h:inputText id="taxcode" value="#{patientEdit.current.taxCode}"
+								 required="true" requiredMessage="'Codice fiscale' è un campo obbligatorio!"
+								 styleClass="#{ component.valid ? '' : 'vld-error'}" />
+					<h:commandLink class="btn btn-info dist-left"
+								   action="#{patientEdit.generateTaxCode}">
+						<i class="fw-icon-play-circle fw-icon-large dist-right"></i> Genera
+						<f:ajax
+								execute="@this :edit-form:surname :edit-form:name :edit-form:sex :edit-form:birthDate :edit-form:birthplace"
+								render="@form :msg" />
+					</h:commandLink>
+				</div>
+
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:surname">* Cognome</label>
+				<div class="controls">
+					<h:inputText id="surname" value="#{patientEdit.current.surname}"
+						required="true" requiredMessage="'Cognome' è un campo obbligatorio!"
+						styleClass="#{ component.valid ? '' : 'vld-error'}" />
+				</div>
+			</div>										
+
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:name">* Nome</label>
+				<div class="controls">
+					<h:inputText id="name" value="#{patientEdit.current.name}"
+						required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+						styleClass="#{ component.valid ? '' : 'vld-error'}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:sex">* Sesso</label>
+				<div class="controls">
+					<h:selectOneMenu id="sex" value="#{patientEdit.current.sex}" 
+						required="true" requiredMessage="'Sesso' è un campo obbligatorio!"
+						styleClass="#{ component.valid ? '' : 'vld-error'}">
+						<f:selectItem noSelectionOption="true" />
+						<f:selectItem itemLabel="M" itemValue="M" />
+						<f:selectItem itemLabel="F" itemValue="F" />
+						<f:selectItem itemLabel="N.D." itemValue="N.D." />
+					</h:selectOneMenu>
+				</div>
+			</div>		
+			
+			<div class="control-group" xmlns:datepicker="http://java.sun.com/jsf/composite/datepicker">
+				<label class="control-label bold" for="edit-form:birthDate">* Data di nascita</label>			
+				<div class="controls">
+		    		<datepicker:datePicker id="birthDate" value="#{patientEdit.current.birthDate}"
+		    			render="@this"
+		    			boxClass="datepicker-box" styleClass="#{ component.valid ? '' : 'vld-error'}" 
+		    			required="true" requiredMessage="'Data di nascita' è un campo obbligatorio!" />
+				</div>
+			</div>				
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:birthplace">* Luogo di nascita</label>
+				<div class="controls">
+					<h:inputText id="birthplace" value="#{patientEdit.current.birthPlace}"
+						required="true" requiredMessage="'Luogo di nascita' è un campo obbligatorio!"
+						styleClass="#{ component.valid ? '' : 'vld-error'}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:nationality">Nazionalità</label>
+				<div class="controls">
+					<h:inputText id="nationality" value="#{patientEdit.current.nationality}" />
+				</div>
+			</div>	
+	 		
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:residence">Residenza</label>
+				<div class="controls">
+					<h:inputText id="residence" value="#{patientEdit.current.residence.place}" />
+				</div>
+			</div>		
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:domicile">Domicilio</label>
+				<div class="controls">
+					<h:inputText id="domicile" value="#{patientEdit.current.domicile.place}" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:homephone">Telefono</label>
+				<div class="controls">
+					<h:inputText id="homephone" value="#{patientEdit.current.homePhone}" />
+				</div>
+			</div>		
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:workphone">Cellulare</label>
+				<div class="controls">
+					<h:inputText id="workphone" value="#{patientEdit.current.workPhone}" />
+				</div>
+			</div>		
+			
+			<div class="control-group">
+				<label class="control-label bold" for="edit-form:ssncode">Codice SSN</label>
+				<div class="controls">
+					<h:inputText id="ssncode" value="#{patientEdit.current.ssnCode}" />
+				</div>
+			</div>				
+											
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

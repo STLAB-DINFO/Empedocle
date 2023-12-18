@@ -1,0 +1,7 @@
+it/unifi/ing/stlab/users/model/UserTest.class
+it/unifi/ing/stlab/users/dao/QualificationDaoTest.class
+it/unifi/ing/stlab/users/model/PasswordHashTest.class
+it/unifi/ing/stlab/users/model/QualificationJpaTest.class
+it/unifi/ing/stlab/users/model/RoleJpaTest.class
+it/unifi/ing/stlab/users/model/UserJpaTest.class
+it/unifi/ing/stlab/users/dao/UserDaoTest.class

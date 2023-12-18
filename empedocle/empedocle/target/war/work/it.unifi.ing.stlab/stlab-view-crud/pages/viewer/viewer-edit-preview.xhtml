@@ -1,0 +1,38 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle"
+	xmlns:a4j="http://richfaces.org/a4j">
+	
+	<rich:popupPanel id="preview-popup" modal="true"
+		moveable="false" width="1000" height="600" top="100">	
+						
+		<div class="modal-header clearfix">
+			<h3 class="pull-left">
+				<h:outputText value="Anteprima" />
+			</h3>
+			<h:form>
+				<a4j:commandLink 
+					action="#{viewerEditDsl.preview( false )}"
+					oncomplete="#{rich:component('preview-popup')}.hide()"
+					styleClass="btn pull-right bold" >
+					<i class="fw-icon-step-backward dist-right"></i> Chiudi
+				</a4j:commandLink>
+			</h:form>					
+		</div>
+		<div class="modal-body">
+			<h:panelGroup id="view-root" class="view-root" layout="block">
+				<style>
+					#{viewerPreview.viewer.css}
+				</style>
+				<a:view value="#{viewerPreview.fact}" viewer="#{viewerPreview.viewer}" />
+			</h:panelGroup>
+		</div>
+	</rich:popupPanel>
+	
+</ui:composition>

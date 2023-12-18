@@ -1,0 +1,24 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<a4j:outputPanel xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+
+	<table class="grid_table">
+		<tbody>
+			<tr>
+				<td class="grid_cell_0">
+					<h:outputText value="Punteggio totale" styleClass="label_text"/>
+				</td>
+				<td class="grid_cell_1">
+					<a4j:outputPanel ajaxRendered="true">
+						<h:outputText value="#{uCLANPITotalScoreController.retrieveScore( value )}" />
+					</a4j:outputPanel>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</a4j:outputPanel>

@@ -1,0 +1,80 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:panelGroup xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:a="http://www.ing.unifi.dsi.it/empedocle">
+		
+	<c:choose>
+		<c:when test="#{viewer.orientation eq 'vertical'}">
+			<a4j:outputPanel>
+				<a4j:region>
+					<table class="inputList_table">
+						<c:forEach items="#{inputListController.getLinks(value, selector)}" var="link" varStatus="loop">
+							<tr class="inputList_row">
+								<td class="inputList_cell_#{loop.index}">
+									<a:view value="#{link.target}" viewer="#{viewer.viewer}" />
+								</td>
+								<td class="inputList_remove_#{loop.index}">
+									<a4j:commandLink alt="Rimuovi" title="Rimuovi" styleClass="tltip"
+											action="#{persistListener.removeChildren(link)}"		
+											rendered="#{inputListController.getLinks(value, selector).size() gt link.type.min}"
+											render="#{conditionalPanelController.render(link.target.type, viewer )}">
+										<i class="icon-remove"></i>
+									</a4j:commandLink>	
+								</td>
+							</tr>
+						</c:forEach>
+						<tr>
+							<td>
+								<a4j:commandLink alt="Aggiungi" title="Aggiungi" styleClass="tltip"
+										action="#{persistListener.addChildren(inputListController.getTypeLink(value, selector), inputListController.getFact(value, selector))}"	
+										rendered="#{inputListController.canAddFact(value, selector)}"
+										render="@form">
+									<i class="icon-plus"></i>
+								</a4j:commandLink>
+							</td>
+						</tr>
+					</table>		
+				</a4j:region>
+			</a4j:outputPanel>
+		</c:when>
+		<c:when test="#{viewer.orientation eq 'horizontal'}">
+			<a4j:region>
+				<a4j:outputPanel>
+					<table class="inputList_table">
+						<tr class="inputList_row">
+							<c:forEach items="#{inputListController.getLinks(value, selector)}" var="link" varStatus="loop">
+								<td class="inputList_cell_#{loop.index}">
+									<a:view value="#{link.target}" viewer="#{viewer.viewer}" />
+								</td>
+								<td class="inputList_remove_#{loop.index}">
+									<a4j:commandButton alt="Rimuovi" title="Rimuovi" styleClass="tltip"
+											action="#{persistListener.removeChildren(link)}"
+											rendered="#{inputListController.getLinks(value, selector).size() gt link.type.min}"
+											render="#{conditionalPanelController.render(link.target.type, viewer )}">
+										<i class="icon-remove"></i>
+									</a4j:commandButton>
+								</td>
+							</c:forEach>					
+						</tr>
+						<tr>
+							<td>
+								<a4j:commandLink alt="Aggiungi" title="Aggiungi" styleClass="tltip"
+										action="#{persistListener.addChildren(inputListController.getTypeLink(value, selector), inputListController.getFact(value, selector))}"
+										rendered="#{inputListController.canAddFact(value, selector)}"
+										render="@form">
+									<i class="icon-plus"></i>
+								</a4j:commandLink>
+							</td>
+						</tr>
+					</table>
+				</a4j:outputPanel>
+			</a4j:region>
+		</c:when>
+	</c:choose>
+	
+</h:panelGroup>

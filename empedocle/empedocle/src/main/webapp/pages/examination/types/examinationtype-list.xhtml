@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/layout/template.xhtml">
+
+	<ui:define name="body">
+	
+	<style>
+		.col1 { width: 25%; }	
+		.col3 { width: 25%; }
+	</style>	
+	
+		<h:form id="examType-form">
+			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
+				<h2>
+					Strutture Visita
+
+					<h:panelGroup layout="block" styleClass="pull-right align-btn">
+						<h:commandLink title="Aggiungi" class="btn btn-primary" action="#{examinationTypeList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						</h:commandLink>
+					</h:panelGroup>
+				</h2>
+				
+				<filter:filterPanel filters="#{examinationTypeFilter}" navigator="#{examinationTypeList}" 
+					render=":examType-form:navigator :examType-form:results"
+					renderAll=":examType-form:filters :examType-form:navigator :examType-form:results"/>
+			</h:panelGroup>		
+			
+			<h:panelGroup layout="block" id="navigator" xmlns:nav="http://java.sun.com/jsf/composite/components/navigator">
+				<nav:navigator value="#{examinationTypeList}" render=":examType-form:navigator :examType-form:results"/>
+			</h:panelGroup>			
+			
+			<h:panelGroup layout="block" id="results">
+				<h:panelGroup rendered="#{empty examinationTypeResults}">
+					<br/>
+					<h:outputText styleClass="lead" value="Nessuna struttura visita trovata"/>
+				</h:panelGroup>
+				
+				<h:dataTable styleClass="table table-bordered table-striped table-hover" 
+					value="#{examinationTypeResults}" var="examType"
+					columnClasses="col1, col2, col3, crud-controls-4" 
+					rendered="#{not empty examinationTypeResults}" >
+					<h:column>
+						<f:facet name="header">
+							<h:commandLink value="Nome" styleClass="normal-text"
+								action="#{examinationTypeFilter.toggle('Nome')}">
+								<f:ajax render="@none" execute="@this" />
+								<f:ajax render=":examType-form:results" execute="@none" />
+								<h:panelGroup rendered="#{examinationTypeFilter.isSelected('Nome')}">
+									<i class="#{examinationTypeFilter.isAscending('Nome') ? 
+									'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								</h:panelGroup>
+								<h:panelGroup
+									rendered="#{not examinationTypeFilter.isSelected('Nome')}">
+									<i class="fw-icon-sort" />
+								</h:panelGroup>
+							</h:commandLink>
+						</f:facet>
+						#{examType.name}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">
+							Descrizione
+						</f:facet>
+						#{examType.description}
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">
+							<h:commandLink value="Tipo" styleClass="normal-text"
+								action="#{examinationTypeFilter.toggle('Tipo')}">
+								<f:ajax render="@none" execute="@this" />
+								<f:ajax render=":examType-form:results" execute="@none" />
+								<h:panelGroup rendered="#{examinationTypeFilter.isSelected('Tipo')}">
+									<i class="#{examinationTypeFilter.isAscending('Tipo') ? 
+									'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								</h:panelGroup>
+								<h:panelGroup
+									rendered="#{not examinationTypeFilter.isSelected('Tipo')}">
+									<i class="fw-icon-sort" />
+								</h:panelGroup>
+							</h:commandLink>
+						</f:facet>
+						#{examType.type.name}
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">
+							Azioni
+						</f:facet>
+	
+						<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+							action="#{examinationTypeList.view( examType.id )}" >
+							<i class="fw-icon-large fw-icon-zoom-in"></i>
+						</h:commandLink>
+						
+						<h:commandLink title="Modifica" class="btn btn-warning pull-left dist-left tltip"
+							action="#{examinationTypeList.edit( examType.id )}" >
+							<i class="fw-icon-pencil fw-icon-large"></i>
+						</h:commandLink>	
+							
+						<h:commandLink title="Elimina" class="btn btn-danger pull-left dist-left tltip"
+										action="#{examinationTypeList.delete( examType.id )}" 
+										rendered="#{examinationTypeList.isRemovable( examType.id )}"
+										onclick="if(!confirm('Eliminare struttura visita selezionata?')) {return false;}" >
+							<i class="fw-icon-remove fw-icon-large"></i>
+						</h:commandLink>																		
+						
+						<h:panelGroup layout="block" styleClass="btn-group dropup pull-right" >
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 
+								<span class="fw-icon-reorder"></span></a>
+							<ul class="dropdown-menu pull-right">
+								<li>
+									<h:commandLink action="#{examinationTypeList.copy( examType.id )}">
+										<i class="fw-icon-copy dist-right"></i> Clona
+									</h:commandLink>
+								</li>
+							</ul>
+						</h:panelGroup>												
+					</h:column>						
+						
+				</h:dataTable>
+			</h:panelGroup>
+		</h:form>
+		
+	</ui:define>
+
+</ui:composition>
+</html>

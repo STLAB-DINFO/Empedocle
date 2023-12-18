@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+ 
+    <composite:interface>
+    	<composite:attribute name="value" type="it.unifi.ing.stlab.reflection.actions.wrappers.TypeBean"/>
+    </composite:interface>
+  
+    <composite:implementation>
+		<h:panelGroup styleClass="control-group" rendered="#{cc.attrs.value.isQuantitative()}" layout="block">
+			<h:outputLabel styleClass="control-label bold" for="#{cc.clientId}:units" value="Unità di misura" />
+		    <h:panelGroup styleClass="controls" layout="block" id="units">
+		    	<h:dataTable styleClass="table table-bordered table-condensed" value="#{cc.attrs.value.units}" var="uu"
+		    		rendered="#{not empty cc.attrs.value.units}"
+		    		columnClasses="col, col, col, col, text-center">
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Nome
+		    			</f:facet>
+
+						<h:selectOneMenu value="#{uu.unitUuid}">
+							<f:selectItems value="#{typeEdit.allUnits}" />
+							<a4j:ajax event="change" execute="@this" render="@form" />
+						</h:selectOneMenu>
+
+		    		</h:column>
+
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Simbolo
+		    			</f:facet>
+		    			<div>
+		    				<h:outputText value="#{uu.unit.simbol}" escape="false" />
+		    			</div>
+		    		</h:column>
+
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Cifre
+		    			</f:facet>
+		    			<h:inputText value="#{uu.digits}" styleClass="input-mini">
+				    		<a4j:ajax event="change" execute="@this" />
+		    			</h:inputText>
+		    		</h:column>
+		    		<h:column>
+		    			<f:facet name="header">
+		    				Decimali
+		    			</f:facet>
+		    			<h:inputText value="#{uu.decimals}" styleClass="input-mini">
+				    		<a4j:ajax event="change" execute="@this" />
+		    			</h:inputText>
+		    		</h:column>
+		    		
+		    		<h:column>
+		    			<f:facet name="header" />
+		    			<div>
+							<h:commandLink title="Cancella unità di misura"  styleClass="tltip"
+									action="#{cc.attrs.value.deleteUnit( uu )}"
+									rendered="#{not cc.attrs.value.isUnitUsed( uu, cc.attrs.value.type )}">
+								<i class="fw-icon-remove"/>
+								<a4j:ajax execute="@this" render="@form"/>
+							</h:commandLink>
+						</div>
+		    			
+		    		</h:column>
+		    	</h:dataTable>
+
+		    	<h:commandLink styleClass="btn btn-link" action="#{cc.attrs.value.addUnit()}"
+		    		class="tltip align-txt" title="Aggiungi unità di misura" immediate="true">
+		    		<i class="fw-icon-plus"/>
+					<a4j:ajax execute="@this" render="@form"/>
+		    	</h:commandLink>
+		    </h:panelGroup>
+		</h:panelGroup>
+
+    </composite:implementation>
+</html>
