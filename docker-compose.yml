@@ -1,0 +1,44 @@
+version: "3"
+
+#forse ci saranno da aggiornare i path
+
+services:
+  app:
+    container_name: "app"
+    image: "borisbrizzi/wfly4emp:latest"
+    environment:
+      - WILDFLY_USER=admin
+      - WILDFLY_PASS=password
+      - DB_NAME=sample
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_URI=db:3306
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - "8080:8080" # application
+      - "9990:9990" # admin console
+      - "5005:5005" # debug port
+
+  db:
+    container_name: "db"
+    image: "borisbrizzi/mysql4emp:latest"
+    environment:
+      - MYSQL_DATABASE=emp_db
+      - MYSQL_ROOT_PASSWORD=supersecret
+    
+    command: --sql_mode=""
+    volumes:
+      - ./workdir/db/init/:/docker-entrypoint-initdb.d/ # init database
+      - ./workdir/db/data/:/var/lib/mysql/              # data storage
+    ports:
+      - "3305:3306"
+              
+
+networks:
+    default:
+        driver: bridge
+
+
+#user: administrator; pass: adminpass
