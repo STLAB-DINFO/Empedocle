@@ -1,11 +1,10 @@
 package it.unifi.ing.stlab.commons.viewers;
 
-import java.util.List;
-
 import javax.faces.model.SelectItem;
+import java.util.List;
 
 public interface SuggestionInterface {
 
-	public List<SelectItem> autocomplete(String suggestion);
+	List<SelectItem> autocomplete(String suggestion);
 	
 }

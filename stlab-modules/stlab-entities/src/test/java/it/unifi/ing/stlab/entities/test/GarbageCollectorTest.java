@@ -1,12 +1,12 @@
 package it.unifi.ing.stlab.entities.test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import it.unifi.ing.stlab.entities.implementation.GarbageAction;
 import it.unifi.ing.stlab.entities.implementation.GarbageCollector;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class GarbageCollectorTest {
 
@@ -42,11 +42,7 @@ class FakeGarbageAction extends GarbageAction {
 	
 	@Override
 	public boolean execute(Object obj) {
-		if ( "ABC".equals( obj )) {
-			return true;
-		} else {
-			return false;
-		}
+        return "ABC".equals(obj);
 	}
 	
 }

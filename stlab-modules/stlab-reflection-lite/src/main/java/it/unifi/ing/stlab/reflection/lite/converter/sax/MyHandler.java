@@ -6,38 +6,26 @@ import it.unifi.ing.stlab.reflection.lite.converter.visitor.PhenomenonFinderVisi
 import it.unifi.ing.stlab.reflection.lite.converter.visitor.UnitFinderVisitor;
 import it.unifi.ing.stlab.reflection.lite.factory.FactFactory;
 import it.unifi.ing.stlab.reflection.lite.factory.FactLinkFactory;
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Fact;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.reflection.model.types.Unit;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
-import java.util.Stack;
-
-import javax.xml.bind.DatatypeConverter;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.xml.bind.DatatypeConverter;
+import java.util.Stack;
+
 public class MyHandler extends DefaultHandler {
 	
-	private enum elements {textual, qualitative, quantitative, temporal, composite};
-	
-	private Stack<CompositeFact> compositeStack;
+	private enum elements {textual, qualitative, quantitative, temporal, composite}
+
+	private final Stack<CompositeFact> compositeStack;
 	private Fact result;
 	
-	private FactConverterDao dao;
+	private final FactConverterDao dao;
 							
 	public MyHandler(FactConverterDao dao) {
 		this.compositeStack = new Stack<CompositeFact>();

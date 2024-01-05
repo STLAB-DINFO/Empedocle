@@ -10,11 +10,7 @@ import it.unifi.ing.stlab.reflection.factory.values.FactValueFactory;
 import it.unifi.ing.stlab.reflection.model.facts.Quantity;
 import it.unifi.ing.stlab.reflection.model.facts.values.FactValue;
 import it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue;
-import it.unifi.ing.stlab.reflection.model.types.QualitativeType;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.Type;
+import it.unifi.ing.stlab.reflection.model.types.*;
 
 public class ExpressionBean {
 
@@ -68,15 +64,11 @@ public class ExpressionBean {
 		
 		if( expression.getOperator() == null )
 			return false;
-		
-		if ( !( ComparisonOperator.NULL.equals( expression.getOperator() ) || 
-				ComparisonOperator.NOT_NULL.equals( expression.getOperator() ) ) && 
-				expression.getParameter().isEmpty() ) {
-			return false;
-		}
-		
-		return true;
-	}
+
+        return (ComparisonOperator.NULL.equals(expression.getOperator()) ||
+                ComparisonOperator.NOT_NULL.equals(expression.getOperator())) ||
+                !expression.getParameter().isEmpty();
+    }
 	
 	
 	private FactValue createParameter(Type type) {

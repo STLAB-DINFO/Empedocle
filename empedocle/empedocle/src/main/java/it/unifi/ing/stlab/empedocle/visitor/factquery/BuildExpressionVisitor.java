@@ -1,11 +1,7 @@
 package it.unifi.ing.stlab.empedocle.visitor.factquery;
 
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
-import it.unifi.ing.stlab.factquery.model.expression.AndExpression;
-import it.unifi.ing.stlab.factquery.model.expression.AtomicExpression;
-import it.unifi.ing.stlab.factquery.model.expression.ExpressionLink;
-import it.unifi.ing.stlab.factquery.model.expression.ExpressionVisitor;
-import it.unifi.ing.stlab.factquery.model.expression.OrExpression;
+import it.unifi.ing.stlab.factquery.model.expression.*;
 import it.unifi.ing.stlab.reflection.model.facts.values.FactValue;
 import it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue;
 import it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue;
@@ -20,8 +16,8 @@ import java.util.Map;
 
 public class BuildExpressionVisitor implements ExpressionVisitor {
 
-	private StringBuffer buffer;
-	private Map<String, Object> additionalParams;
+	private final StringBuffer buffer;
+	private final Map<String, Object> additionalParams;
 	private int index;
 	
 	public BuildExpressionVisitor() {

@@ -5,6 +5,6 @@ import it.unifi.ing.stlab.reflection.model.types.Type;
 
 public interface FactInitializer {
 
-	public abstract Fact init(Type type);
+	Fact init(Type type);
 	
 }

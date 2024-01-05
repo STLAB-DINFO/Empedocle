@@ -1,13 +1,12 @@
 package it.unifi.ing.stlab.commons.pdf;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletOutputStream;
 import javax.servlet.WriteListener;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class ContentCaptureServletResponse extends HttpServletResponseWrapper {
 
@@ -48,7 +47,7 @@ public class ContentCaptureServletResponse extends HttpServletResponseWrapper {
 
     public String getContent() {
         writer.flush();
-        String xhtmlContent = new String(contentBuffer.toByteArray());
+        String xhtmlContent = contentBuffer.toString();
         return xhtmlContent;
     }
 

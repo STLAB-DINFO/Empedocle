@@ -1,40 +1,39 @@
 package it.unifi.ing.stlab.empedocle.dao.agendas;
 
-import java.util.List;
-
-import javax.ejb.Local;
-
 import it.unifi.ing.stlab.commons.query.QueryBuilder;
 import it.unifi.ing.stlab.empedocle.model.Agenda;
+
+import javax.ejb.Local;
+import java.util.List;
 
 @Local
 public interface AgendaDao {
 
-	public List<Agenda> find( QueryBuilder builder, int offset, int limit );
-	public List<Agenda> findAll();
+	List<Agenda> find(QueryBuilder builder, int offset, int limit);
+	List<Agenda> findAll();
 	
-	public List<Agenda> findByPrefix( String prefix, String username, int limit );
-	public List<Agenda> findBySuggestion( String suggestion, int limit );
-	public List<Agenda> findBySuggestion( String suggestion, String username, int limit );
-	public List<Agenda> findUnusedAgendasBySuggestion( String suggestion, int limit );
-	public List<Agenda> findUnusedAgendasBySuggestion( String suggestion, int limit,
-			List<Agenda> toExclude );
+	List<Agenda> findByPrefix(String prefix, String username, int limit);
+	List<Agenda> findBySuggestion(String suggestion, int limit);
+	List<Agenda> findBySuggestion(String suggestion, String username, int limit);
+	List<Agenda> findUnusedAgendasBySuggestion(String suggestion, int limit);
+	List<Agenda> findUnusedAgendasBySuggestion(String suggestion, int limit,
+                                               List<Agenda> toExclude);
 	
-	public List<Agenda> findByExaminationTypeId( Long id );
+	List<Agenda> findByExaminationTypeId(Long id);
 
-	public Agenda findById( Long id );
-	public Agenda findByCode( String code );
-	public Agenda findByUuid( String uuid );
+	Agenda findById(Long id);
+	Agenda findByCode(String code);
+	Agenda findByUuid(String uuid);
 	
-	public List<Agenda> findFavoriteAgendasByUsername( String username );
+	List<Agenda> findFavoriteAgendasByUsername(String username);
 
-	public Boolean checkUnusedAgendas();
-	public Boolean checkUnusedAgendas( List<Agenda> toExclude );
-	public Boolean checkForeignKeyRestrictions( Long id );
+	Boolean checkUnusedAgendas();
+	Boolean checkUnusedAgendas(List<Agenda> toExclude);
+	Boolean checkForeignKeyRestrictions(Long id);
 
-	public int count( QueryBuilder builder );
+	int count(QueryBuilder builder);
 	
-	public void save( Agenda agenda );
-	public void update( Agenda agenda );
-	public void delete( Long id );
+	void save(Agenda agenda);
+	void update(Agenda agenda);
+	void delete(Long id);
 }

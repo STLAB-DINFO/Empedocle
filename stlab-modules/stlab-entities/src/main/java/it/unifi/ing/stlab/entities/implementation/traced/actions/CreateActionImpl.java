@@ -56,11 +56,8 @@ public class CreateActionImpl
 			return true;
 
 		A origin = newTarget.getOrigin();
-		if ( origin != null && !origin.equals( getDelegator() )) 
-			return false;
-
-		return true;
-	}
+        return origin == null || origin.equals(getDelegator());
+    }
 	
 	private void clearOrigin() {
 		if ( target != null ) {

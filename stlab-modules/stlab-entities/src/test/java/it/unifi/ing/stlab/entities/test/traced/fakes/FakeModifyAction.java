@@ -7,7 +7,7 @@ public class FakeModifyAction
 	extends FakeAction 
 	implements ModifyAction<FakeTracedEntity,FakeAction, FakeActor, FakeTime> {
 
-	private ModifyActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime> delegate;
+	private final ModifyActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime> delegate;
 
 	
 	public FakeModifyAction() {

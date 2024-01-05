@@ -1,29 +1,6 @@
 
 package it.unifi.ing.stlab.empedocle.actions.health.services;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
-import javax.ejb.Timeout;
-import javax.ejb.Timer;
-import javax.ejb.TimerService;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
-
-import org.apache.log4j.Logger;
-
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDao;
 import it.unifi.ing.stlab.empedocle.model.health.Examination;
 import it.unifi.ing.stlab.empedocle.model.health.ExaminationStatus;
@@ -39,6 +16,20 @@ import it.unifi.ing.stlab.reflection.model.facts.Fact;
 import it.unifi.ing.stlab.reflection.model.facts.FactStatus;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 import it.unifi.ing.stlab.reflection.visitor.fact.AssignStatusVisitor;
+import org.apache.log4j.Logger;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
+import javax.ejb.*;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.UserTransaction;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 @Singleton
 @Startup
@@ -47,9 +38,9 @@ public class CloseExaminationBean implements CloseExamination {
 	
 	// TODO da testare 
 	
-	private static long INTERVAL = 60 * 60 * 1000;
+	private static final long INTERVAL = 60 * 60 * 1000;
 	
-	private static int PAGE_SIZE = 20;
+	private static final int PAGE_SIZE = 20;
 
 	@PersistenceContext
 	private EntityManager entityManager;

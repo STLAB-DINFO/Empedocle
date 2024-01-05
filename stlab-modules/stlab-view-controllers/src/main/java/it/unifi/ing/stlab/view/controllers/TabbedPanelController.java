@@ -4,12 +4,11 @@ import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.view.model.links.Tab;
 import it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel;
 
+import javax.enterprise.context.ConversationScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.enterprise.context.ConversationScoped;
-import javax.inject.Named;
 
 @Named
 @ConversationScoped
@@ -17,7 +16,7 @@ public class TabbedPanelController extends ContainerController implements Serial
 
 	private static final long serialVersionUID = 1L;
 	
-	private Map<TabbedPanel, String> panelMap = new HashMap<TabbedPanel, String>();
+	private final Map<TabbedPanel, String> panelMap = new HashMap<TabbedPanel, String>();
 	
 	public String getRenderedTab(TabbedPanel tabbedPanel){
 		String result = panelMap.get(tabbedPanel);

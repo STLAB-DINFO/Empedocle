@@ -38,11 +38,8 @@ public class TextualFactLite extends FactLite implements TextualFact {
 	
 	@Override
 	public boolean isEmpty() {
-		if ( text == null || "".equals( text.trim()))
-			return true;
-		
-		return false;
-	}
+        return text == null || "".equals(text.trim());
+    }
 	
 	@Override
 	public void assignDefaultValue(FactValue defaultValue) {
@@ -62,8 +59,6 @@ public class TextualFactLite extends FactLite implements TextualFact {
 	
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, TextualType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, TextualType.class);
+    }
 }

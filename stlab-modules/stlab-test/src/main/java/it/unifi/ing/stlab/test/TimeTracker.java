@@ -6,7 +6,7 @@ public class TimeTracker {
 	private long duration;
 	private long start;
 	private long stop;
-	private String method;
+	private final String method;
 	
 	public TimeTracker(String method) {
 		super();

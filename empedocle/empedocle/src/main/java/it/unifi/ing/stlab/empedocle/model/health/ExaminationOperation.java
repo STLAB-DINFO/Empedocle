@@ -7,7 +7,7 @@ public enum ExaminationOperation {
 	private String id;
 	private String name;
 	
-	private ExaminationOperation(String id, String name){
+	ExaminationOperation(String id, String name){
 		this.id = id;
 		this.name = name;
 	}

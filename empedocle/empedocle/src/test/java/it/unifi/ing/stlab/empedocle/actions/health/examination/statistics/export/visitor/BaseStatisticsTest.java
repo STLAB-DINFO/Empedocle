@@ -8,24 +8,11 @@ import it.unifi.ing.stlab.reflection.factory.types.UnitFactory;
 import it.unifi.ing.stlab.reflection.impl.factory.FactFactory;
 import it.unifi.ing.stlab.reflection.impl.factory.FactLinkFactory;
 import it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl;
-import it.unifi.ing.stlab.reflection.impl.model.facts.links.FactInsertLink;
 import it.unifi.ing.stlab.reflection.impl.model.facts.links.FactLinkImpl;
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.Unit;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
 import org.junit.Before;
 
 public class BaseStatisticsTest {
@@ -131,16 +118,16 @@ public class BaseStatisticsTest {
 		brother.setText("brother's text");
 		
 		FactLinkFactory factLinkFactory = new FactLinkFactory();
-		FactLink fl = (FactInsertLink) factLinkFactory.insertLink((FactImpl)simpleCompositeFact, (FactImpl)textualFact);
+		FactLink fl = factLinkFactory.insertLink((FactImpl)simpleCompositeFact, (FactImpl)textualFact);
 		fl.setType(typeLink);
 		
-		FactLink fl1 = (FactInsertLink) factLinkFactory.insertLink((FactImpl)complexCompositeFact, (FactImpl)anotherTextualFact);
+		FactLink fl1 = factLinkFactory.insertLink((FactImpl)complexCompositeFact, (FactImpl)anotherTextualFact);
 		fl1.setType(typeLink2);
 		
-		FactLink fl1_2 = (FactInsertLink) factLinkFactory.insertLink((FactImpl)complexCompositeFact, (FactImpl)brother);
+		FactLink fl1_2 = factLinkFactory.insertLink((FactImpl)complexCompositeFact, (FactImpl)brother);
 		fl1_2.setType(typeLink2);
 		
-		FactLinkImpl fl2 = (FactInsertLink) factLinkFactory.insertLink((FactImpl)complexCompositeFact, (FactImpl)simpleCompositeFact);
+		FactLinkImpl fl2 = factLinkFactory.insertLink((FactImpl)complexCompositeFact, (FactImpl)simpleCompositeFact);
 		fl2.setType(typeLink3);
 		fl2.setPriority(1L);
 		

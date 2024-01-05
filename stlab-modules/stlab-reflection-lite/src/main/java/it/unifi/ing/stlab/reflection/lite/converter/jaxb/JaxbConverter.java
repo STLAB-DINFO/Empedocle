@@ -3,42 +3,27 @@ package it.unifi.ing.stlab.reflection.lite.converter.jaxb;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.lite.converter.FactConverter;
 import it.unifi.ing.stlab.reflection.lite.converter.dao.FactConverterDao;
-import it.unifi.ing.stlab.reflection.lite.converter.jaxb.generated.Composite;
-import it.unifi.ing.stlab.reflection.lite.converter.jaxb.generated.Qualitative;
-import it.unifi.ing.stlab.reflection.lite.converter.jaxb.generated.Quantitative;
-import it.unifi.ing.stlab.reflection.lite.converter.jaxb.generated.Temporal;
-import it.unifi.ing.stlab.reflection.lite.converter.jaxb.generated.Textual;
+import it.unifi.ing.stlab.reflection.lite.converter.jaxb.generated.*;
 import it.unifi.ing.stlab.reflection.lite.converter.visitor.PhenomenonFinderVisitor;
 import it.unifi.ing.stlab.reflection.lite.converter.visitor.UnitFinderVisitor;
 import it.unifi.ing.stlab.reflection.lite.factory.FactFactory;
 import it.unifi.ing.stlab.reflection.lite.factory.FactLinkFactory;
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Fact;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.reflection.model.types.Unit;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.Date;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.util.Date;
 
 public class JaxbConverter implements FactConverter {
 
-	private FactConverterDao dao;
+	private final FactConverterDao dao;
 	private Type type;
 	private TypeLink typeLink;
 	private boolean nested;

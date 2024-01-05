@@ -5,24 +5,17 @@ import it.unifi.ing.stlab.reflection.impl.manager.FactManager;
 import it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl;
 import it.unifi.ing.stlab.reflection.model.facts.FactStatus;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.QueriedType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.reflection.model.types.TypeVisitor;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 import it.unifi.ing.stlab.users.model.User;
 import it.unifi.ing.stlab.users.model.time.Time;
 
 public class FactFactoryVisitor implements TypeVisitor {
-	private FactManager factory;
-	private FactLinkFactory linkFactory; 
+	private final FactManager factory;
+	private final FactLinkFactory linkFactory;
 	private FactImpl result;
-	private User user;
-	private Time time;
+	private final User user;
+	private final Time time;
 
 	public FactFactoryVisitor( User user, Time time ) {
 		result = null;

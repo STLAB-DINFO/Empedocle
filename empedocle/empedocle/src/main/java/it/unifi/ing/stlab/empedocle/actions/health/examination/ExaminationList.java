@@ -1,20 +1,5 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.Conversation;
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationDao;
 import it.unifi.ing.stlab.empedocle.model.Agenda;
 import it.unifi.ing.stlab.empedocle.model.health.AppointmentStatus;
@@ -26,6 +11,16 @@ import it.unifi.ing.stlab.patients.dao.PatientDao;
 import it.unifi.ing.stlab.patients.model.Patient;
 import it.unifi.ing.stlab.users.model.RoleType;
 import it.unifi.ing.stlab.view.model.Viewer;
+
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.Conversation;
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.*;
 
 @Named
 @RequestScoped
@@ -137,7 +132,7 @@ public class ExaminationList extends Navigator {
 	}
 	
 	public boolean isRemovable( Examination ex ) {
-		return ex.getStatus().equals( ExaminationStatus.TODO ) ? true : false;
+		return ex.getStatus().equals(ExaminationStatus.TODO);
 	}
 
 	public Boolean checkHistory( Long pid ){
@@ -159,10 +154,6 @@ public class ExaminationList extends Navigator {
 		case "edit":
 		case "delete":
 			return loggedUser.hasRole( RoleType.EXAMINATION_EDITOR );
-			
-		case "statistics":
-			return loggedUser.hasRole( RoleType.DATA_ANALYST );
-			
 		case "recover":
 			return loggedUser.hasRole( RoleType.EXAMINATION_RESCUER );
 			

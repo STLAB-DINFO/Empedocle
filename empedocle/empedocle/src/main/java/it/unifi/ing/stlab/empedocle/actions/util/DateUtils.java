@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class DateUtils {
 
-	private static SimpleDateFormat df;
+	private static final SimpleDateFormat df;
 
 	static {
 		df = new SimpleDateFormat();

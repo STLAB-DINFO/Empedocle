@@ -2,20 +2,18 @@ package it.unifi.ing.stlab.reflection.lite.converter.sax;
 
 import it.unifi.ing.stlab.reflection.lite.converter.dao.FactConverterDao;
 import it.unifi.ing.stlab.reflection.model.facts.Fact;
-
-import java.io.IOException;
-import java.io.StringReader;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import java.io.IOException;
+import java.io.StringReader;
 
 public class XMLToReflectionParser {
 	
-	private FactConverterDao dao;
+	private final FactConverterDao dao;
 	
 	public XMLToReflectionParser( FactConverterDao dao ) {
 		this.dao = dao;

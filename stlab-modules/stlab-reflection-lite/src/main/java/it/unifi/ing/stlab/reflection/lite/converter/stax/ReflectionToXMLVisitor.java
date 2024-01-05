@@ -1,24 +1,17 @@
 package it.unifi.ing.stlab.reflection.lite.converter.stax;
 
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Fact;
-import it.unifi.ing.stlab.reflection.model.facts.FactVisitor;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
-import java.io.StringWriter;
-import java.util.GregorianCalendar;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
+import java.io.StringWriter;
+import java.util.GregorianCalendar;
 
 public class ReflectionToXMLVisitor implements FactVisitor {
 
@@ -28,7 +21,7 @@ public class ReflectionToXMLVisitor implements FactVisitor {
 	final String DEFAULT_NAMESPACE = "http://www.stlab.dsi.unifi.it/reflection/facts";
 	
 	private XMLStreamWriter xmlsw;
-	private StringWriter writer;
+	private final StringWriter writer;
 	
 	public ReflectionToXMLVisitor() {
 	    XMLOutputFactory xof = XMLOutputFactory.newInstance();
@@ -48,7 +41,7 @@ public class ReflectionToXMLVisitor implements FactVisitor {
 	}
 		
 	private boolean isRootNode( Fact fact ) {
-		return fact.listParents().size() == 0 ? true : false;
+		return fact.listParents().size() == 0;
 	}
 	
 	@Override

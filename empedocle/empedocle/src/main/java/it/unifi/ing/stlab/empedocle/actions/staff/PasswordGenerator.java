@@ -1,9 +1,9 @@
 package it.unifi.ing.stlab.empedocle.actions.staff;
 
-import java.nio.charset.Charset;
-import java.util.Random;
-
 import it.unifi.ing.stlab.users.model.PasswordHash;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Random;
 
 public class PasswordGenerator {
 
@@ -20,7 +20,7 @@ public class PasswordGenerator {
 	public String generateEncryptedRandomPassword() {
 		byte[] array = new byte[7]; // length is bounded by 7
 		new Random().nextBytes( array );
-		String generatedString = new String( array, Charset.forName( "UTF-8" ) );
+		String generatedString = new String( array, StandardCharsets.UTF_8);
 
 		return generateEncryptedPassword( generatedString );
 	}

@@ -5,7 +5,7 @@ import it.unifi.ing.stlab.entities.model.compact.InsertLink;
 
 public class FakeInsertLink extends FakeCompactLink implements InsertLink<FakeCompactEntity,FakeCompactLink>  {
 
-	private InsertLinkImpl<FakeCompactEntity, FakeCompactLink> delegate;
+	private final InsertLinkImpl<FakeCompactEntity, FakeCompactLink> delegate;
 
 	public FakeInsertLink() {
 		delegate = new InsertLinkImpl<FakeCompactEntity, FakeCompactLink>();

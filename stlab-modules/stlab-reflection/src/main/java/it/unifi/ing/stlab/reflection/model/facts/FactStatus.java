@@ -5,7 +5,7 @@ public enum FactStatus {
 
 	private String name;
 
-	private FactStatus(String nome) {
+	FactStatus(String nome) {
 		this.setName(nome);
 	}
 

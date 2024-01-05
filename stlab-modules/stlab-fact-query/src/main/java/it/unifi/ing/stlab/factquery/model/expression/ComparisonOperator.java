@@ -12,12 +12,12 @@ public enum ComparisonOperator {
 	NOT_NULL("not null", "non è nullo", "is not null");
 	
 	
-	private String id;
-	private String name;
-	private String symbol;
+	private final String id;
+	private final String name;
+	private final String symbol;
 
 	
-	private ComparisonOperator(String id, String name, String symbol){
+	ComparisonOperator(String id, String name, String symbol){
 		this.id = id;
 		this.name = name;
 		this.symbol = symbol;

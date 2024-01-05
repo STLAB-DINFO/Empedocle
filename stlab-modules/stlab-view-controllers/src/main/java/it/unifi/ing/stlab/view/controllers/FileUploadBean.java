@@ -3,16 +3,14 @@ package it.unifi.ing.stlab.view.controllers;
 import it.unifi.ing.stlab.commons.cdi.ViewScoped;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import org.richfaces.event.FileUploadEvent;
+import org.richfaces.model.UploadedFile;
 
+import javax.inject.Named;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import javax.inject.Named;
-
-import org.richfaces.event.FileUploadEvent;
-import org.richfaces.model.UploadedFile;
 
 @Named
 @ViewScoped
@@ -21,7 +19,7 @@ import org.richfaces.model.UploadedFile;
 @Deprecated
 public class FileUploadBean {
 
-	private String path = "/usr/local/jboss-as-7.1.1.Final/welcome-content/pdf/";
+	private final String path = "/usr/local/jboss-as-7.1.1.Final/welcome-content/pdf/";
 
     public void upload(FileUploadEvent event) throws Exception {
         UploadedFile item = event.getUploadedFile();

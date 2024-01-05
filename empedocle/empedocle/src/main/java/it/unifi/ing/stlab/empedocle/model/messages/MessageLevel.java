@@ -6,10 +6,10 @@ public enum MessageLevel {
 	WARNING("warning", "Warning"), 
 	SEVERE( "severe", "Severe" );
 
-	private String id;
-	private String name;
+	private final String id;
+	private final String name;
 
-	private MessageLevel(String id, String name) {
+	MessageLevel(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

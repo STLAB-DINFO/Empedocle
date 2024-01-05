@@ -1,11 +1,23 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination.types;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import it.unifi.ing.stlab.commons.cdi.HttpParam;
+import it.unifi.ing.stlab.commons.viewers.SuggestionInterface;
+import it.unifi.ing.stlab.empedocle.dao.agendas.AgendaDao;
+import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDao;
+import it.unifi.ing.stlab.empedocle.factory.AgendaFactory;
+import it.unifi.ing.stlab.empedocle.factory.health.AuthorizationFactory;
+import it.unifi.ing.stlab.empedocle.factory.health.ExaminationTypeFactory;
+import it.unifi.ing.stlab.empedocle.factory.health.ViewerUseFactory;
+import it.unifi.ing.stlab.empedocle.model.Agenda;
+import it.unifi.ing.stlab.empedocle.model.health.*;
+import it.unifi.ing.stlab.empedocle.presentation.SelectionBean;
+import it.unifi.ing.stlab.reflection.dao.types.TypeDao;
+import it.unifi.ing.stlab.reflection.model.types.Type;
+import it.unifi.ing.stlab.users.dao.QualificationDao;
+import it.unifi.ing.stlab.users.model.Qualification;
+import it.unifi.ing.stlab.view.dao.ViewerDao;
+import it.unifi.ing.stlab.view.model.Viewer;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJBTransactionRolledbackException;
@@ -17,30 +29,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.hibernate.exception.ConstraintViolationException;
-
-import it.unifi.ing.stlab.commons.cdi.HttpParam;
-import it.unifi.ing.stlab.commons.viewers.SuggestionInterface;
-import it.unifi.ing.stlab.empedocle.dao.agendas.AgendaDao;
-import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDao;
-import it.unifi.ing.stlab.empedocle.factory.AgendaFactory;
-import it.unifi.ing.stlab.empedocle.factory.health.AuthorizationFactory;
-import it.unifi.ing.stlab.empedocle.factory.health.ExaminationTypeFactory;
-import it.unifi.ing.stlab.empedocle.factory.health.ViewerUseFactory;
-import it.unifi.ing.stlab.empedocle.model.Agenda;
-import it.unifi.ing.stlab.empedocle.model.health.Authorization;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationOperation;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationType;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationTypeContext;
-import it.unifi.ing.stlab.empedocle.model.health.ViewerUse;
-import it.unifi.ing.stlab.empedocle.presentation.SelectionBean;
-import it.unifi.ing.stlab.reflection.dao.types.TypeDao;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.users.dao.QualificationDao;
-import it.unifi.ing.stlab.users.model.Qualification;
-import it.unifi.ing.stlab.view.dao.ViewerDao;
-import it.unifi.ing.stlab.view.model.Viewer;
+import java.io.Serializable;
+import java.util.*;
 
 @Named
 @ConversationScoped
@@ -153,7 +143,6 @@ public class ExaminationTypeEdit implements Serializable {
 	public void confirmAgenda() {
 		Agenda entity = agendaSelection.getEntity();
 		entity.setExaminationType( current );
-		
 		agendaSelection.getSelectedEntities().add( entity );
 		agendaSelection.reset();
 		agendaSuggestion.clear();

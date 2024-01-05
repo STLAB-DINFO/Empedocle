@@ -1,27 +1,26 @@
 package it.unifi.ing.stlab.empedocle.dao.staff;
 
-import java.util.List;
-
-import javax.ejb.Local;
-
 import it.unifi.ing.stlab.commons.query.QueryBuilder;
 import it.unifi.ing.stlab.empedocle.model.Staff;
+
+import javax.ejb.Local;
+import java.util.List;
 
 @Local
 public interface StaffDao {
 
-	public int count( QueryBuilder builder );
+	int count(QueryBuilder builder);
 
-	public List<Staff> find( QueryBuilder builder, int offset, int limit );
-	public Staff findById( Long id );
-	public Staff findByUserId( Long id );
+	List<Staff> find(QueryBuilder builder, int offset, int limit);
+	Staff findById(Long id);
+	Staff findByUserId(Long id);
 	
-	public Staff fetchById( Long id );
-	public Staff fetchByUsername( String username );
+	Staff fetchById(Long id);
+	Staff fetchByUsername(String username);
 
-	public void save( Staff staff );
-	public void update( Staff staff );
-	public void delete( Long id );
+	void save(Staff staff);
+	void update(Staff staff);
+	void delete(Long id);
 
-	public Boolean checkForeignKeyRestrictions( Staff s );
+	Boolean checkForeignKeyRestrictions(Staff s);
 }

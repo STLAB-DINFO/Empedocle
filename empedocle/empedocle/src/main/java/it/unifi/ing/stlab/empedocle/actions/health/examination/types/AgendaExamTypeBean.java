@@ -8,8 +8,8 @@ import javax.persistence.EntityManager;
 public class AgendaExamTypeBean {
 
 	private Agenda agenda;
-	private ExaminationType current;
-	private EntityManager entityManager;
+	private final ExaminationType current;
+	private final EntityManager entityManager;
 
 	public AgendaExamTypeBean( ExaminationType current, EntityManager entityManager ) {
 		this.current = current;

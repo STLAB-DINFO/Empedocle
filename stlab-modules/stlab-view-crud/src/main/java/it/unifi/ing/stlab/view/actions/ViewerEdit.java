@@ -14,9 +14,7 @@ import it.unifi.ing.stlab.view.factory.ViewerFactory;
 import it.unifi.ing.stlab.view.factory.ViewerLinkFactory;
 import it.unifi.ing.stlab.view.model.Viewer;
 import it.unifi.ing.stlab.view.model.links.ViewerLink;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.richfaces.event.DropEvent;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -33,8 +31,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.transaction.UserTransaction;
-
-import org.richfaces.event.DropEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 @Named
 @Stateful
@@ -72,7 +70,7 @@ public class ViewerEdit extends ViewerController {
 
 			return result;
 		}
-	};
+	}
 
 	// =============================================================
 	// OLD STUFF

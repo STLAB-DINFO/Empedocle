@@ -96,11 +96,6 @@
 					Visite
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
-						<h:outputLink value="/empedocle/statistics"
-								styleClass="btn dist-right #{not examinationList.checkRoleFor( 'statistics' ) ? 'hide' : ''}">
-							<i class="fw-icon-bar-chart fw-icon-large dist-right"></i> Statistiche	
-							<f:param name="user-id" value="#{loggedUser.user.id}" />
-						</h:outputLink>
 						<h:commandLink title="Aggiungi" class="btn btn-primary #{not examinationList.checkRoleFor( 'add-new' ) ? 'hide' : ''}" 
 							action="#{examinationList.addNew()}">
 							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi

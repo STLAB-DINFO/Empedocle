@@ -1,17 +1,11 @@
 package it.unifi.ing.stlab.reflection.visitor.fact;
 
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.FactStatus;
-import it.unifi.ing.stlab.reflection.model.facts.FactVisitor;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
 
 public class AssignStatusVisitor implements FactVisitor {
 	
-	private FactStatus status;
+	private final FactStatus status;
 	
 	public AssignStatusVisitor(FactStatus status) {
 		super();

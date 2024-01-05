@@ -13,7 +13,7 @@ public interface DeleteAction
 	
 	extends Action<T,A,U,H> {
 
-	public T getSource();
-	public void assignSource( T tracedEntity );
+	T getSource();
+	void assignSource(T tracedEntity);
 	
 }

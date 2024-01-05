@@ -5,15 +5,15 @@ import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 
 public interface FactLink {
 	
-	public Fact getSource();
-	public Fact getTarget();
+	Fact getSource();
+	Fact getTarget();
 	
-	public TypeLink getType();
-	public void setType(TypeLink type);
+	TypeLink getType();
+	void setType(TypeLink type);
 	
-	public void setPriority(Long priority);
-	public Long getPriority();
+	void setPriority(Long priority);
+	Long getPriority();
 	
-	public void delete();
+	void delete();
 	
 }

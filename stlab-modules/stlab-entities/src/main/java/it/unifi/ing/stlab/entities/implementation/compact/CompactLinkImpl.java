@@ -12,7 +12,7 @@ public abstract class CompactLinkImpl
 	implements CompactLink<T,L>, Delegated<L> {
 
 	private L delegator;
-	private CompositeLinkImpl<T,L> delegate;
+	private final CompositeLinkImpl<T,L> delegate;
 
 	public CompactLinkImpl() {
 		delegate  = new CompositeLinkImpl<T,L>();

@@ -9,7 +9,7 @@ public class FakeCompactSplitAction
 	extends FakeCompactAction 
 	implements SplitAction<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> {
 
-	private SplitActionImpl<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> delegate;
+	private final SplitActionImpl<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> delegate;
 
 	public FakeCompactSplitAction() {
 		 delegate = new SplitActionImpl<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime>();

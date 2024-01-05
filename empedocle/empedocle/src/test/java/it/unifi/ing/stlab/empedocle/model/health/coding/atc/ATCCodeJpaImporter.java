@@ -4,14 +4,13 @@ import it.unifi.ing.stlab.empedocle.factory.health.coding.atc.ATCCodeFactory;
 import it.unifi.ing.stlab.reflection.factory.types.PhenomenonFactory;
 import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
 import it.unifi.ing.stlab.test.JpaTest;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Scanner;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class ATCCodeJpaImporter extends JpaTest {
 	
@@ -123,16 +122,16 @@ public class ATCCodeJpaImporter extends JpaTest {
 		String p_code = code_to_check.getParent().getCode();
 		
 		if( code_to_check instanceof ATCTherapeuticMainGroupCode )
-			return p_code.equals( code.substring(0, code.length() - 2) ) ? true : false;
+			return p_code.equals(code.substring(0, code.length() - 2));
 		
 		else if( code_to_check instanceof ATCPharmacologicalSubGroupCode )
-			return p_code.equals( code.substring(0, code.length() - 1)) ? true : false;
+			return p_code.equals(code.substring(0, code.length() - 1));
 
 		else if( code_to_check instanceof ATCChemicalSubGroupCode )
-			return p_code.equals( code.substring(0, code.length() - 1)) ? true : false;
+			return p_code.equals(code.substring(0, code.length() - 1));
 
 		else if( code_to_check instanceof ATCChemicalSubstanceCode )
-			return p_code.equals( code.substring(0, code.length() - 2)) ? true : false;
+			return p_code.equals(code.substring(0, code.length() - 2));
 
 		else
 			return false;

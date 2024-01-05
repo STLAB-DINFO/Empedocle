@@ -4,13 +4,12 @@ import it.unifi.ing.stlab.factquery.model.FactQuery;
 import it.unifi.ing.stlab.factquery.model.ResolveLazyLoadVisitor;
 import it.unifi.ing.stlab.reflection.model.facts.Fact;
 
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.List;
 
 @Stateless
 @TransactionAttribute
@@ -63,7 +62,7 @@ public class FactQueryDaoStatelessBean implements FactQueryDao {
 	@Override
 	@SuppressWarnings( "unchecked" )
 	public List<Fact> findFacts(Long id, FactQueryConstructor queryConstructor) {
-		FactQuery result = ( FactQuery )findById( id );
+		FactQuery result = findById( id );
 		
 		if( result == null )
 			return null;

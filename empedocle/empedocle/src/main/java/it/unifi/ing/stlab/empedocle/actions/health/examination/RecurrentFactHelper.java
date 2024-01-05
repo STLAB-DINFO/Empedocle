@@ -8,7 +8,7 @@ import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
 
 public class RecurrentFactHelper {
 	
-	private ExaminationDao examinationDao;
+	private final ExaminationDao examinationDao;
 	
 	public RecurrentFactHelper(ExaminationDao examinationDao) {
 		super();

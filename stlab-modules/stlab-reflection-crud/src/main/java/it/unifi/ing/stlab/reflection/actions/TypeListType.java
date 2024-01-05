@@ -10,10 +10,10 @@ public enum TypeListType {
 	COMPOSITE("composite", "Composite"),
 	TEMPORAL("temporal", "Temporal");
 	
-	private String id;
-	private String name;
+	private final String id;
+	private final String name;
 
-	private TypeListType(String id, String name) {
+	TypeListType(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

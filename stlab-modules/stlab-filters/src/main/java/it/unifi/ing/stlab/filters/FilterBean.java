@@ -3,28 +3,21 @@ package it.unifi.ing.stlab.filters;
 import it.unifi.ing.stlab.navigation.NavigationStatus;
 import it.unifi.ing.stlab.sorting.Sorting;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
-
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.model.SelectItem;
 import javax.persistence.Query;
+import java.io.Serializable;
+import java.util.*;
 
 public class FilterBean extends NavigationStatus implements Serializable, Converter {
 
 	private static final long serialVersionUID = -4616695981146417136L;
 	
-	private Set<FilterDef> filterDefs;
+	private final Set<FilterDef> filterDefs;
 	private List<Filter> filters;
-	private Sorting sorting;
+	private final Sorting sorting;
 	private FilterDefsOrder filterDefsOrder;
 
 	public FilterBean() {
@@ -172,7 +165,7 @@ public class FilterBean extends NavigationStatus implements Serializable, Conver
 
 	public enum FilterDefsOrder {
 		INSERTION,
-		ALPHABETICAL;
+		ALPHABETICAL
 	}
 	
 }

@@ -7,7 +7,7 @@ public class FakeMergeAction
 	extends FakeAction 
 	implements MergeAction<FakeTracedEntity, FakeAction, FakeActor, FakeTime> {
 
-	private MergeActionImpl<FakeTracedEntity, FakeAction, FakeActor, FakeTime> delegate;
+	private final MergeActionImpl<FakeTracedEntity, FakeAction, FakeActor, FakeTime> delegate;
 
 	
 	public FakeMergeAction() {

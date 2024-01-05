@@ -1,11 +1,10 @@
 package it.unifi.ing.stlab.filters;
 
-import java.util.List;
-
 import javax.faces.model.SelectItem;
+import java.util.List;
 
 public interface SelectItemBuilder {
 
-	public List<SelectItem> getSelectItems(Object param, int offset, int limit);
+	List<SelectItem> getSelectItems(Object param, int offset, int limit);
 	
 }

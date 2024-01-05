@@ -8,7 +8,7 @@ import javax.ejb.Local;
 @Local
 public interface FactDao {
 
-	public Fact findByContext( FactContextLite context );
-	public void save( Fact fact );
+	Fact findByContext(FactContextLite context);
+	void save(Fact fact);
 	
 }

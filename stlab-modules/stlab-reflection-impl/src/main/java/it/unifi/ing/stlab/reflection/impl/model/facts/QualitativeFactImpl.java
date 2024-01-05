@@ -10,11 +10,7 @@ import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
 import it.unifi.ing.stlab.reflection.model.types.QualitativeType;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue( "QL" )
@@ -40,10 +36,8 @@ public class QualitativeFactImpl extends FactImpl implements QualitativeFact {
 	}
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, QualitativeType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, QualitativeType.class);
+    }
 	
 	
 	@ManyToOne
@@ -59,10 +53,8 @@ public class QualitativeFactImpl extends FactImpl implements QualitativeFact {
 	@Transient
 	@Override
 	public boolean isEmpty() {
-		if ( phenomenon == null ) return true;
-
-		return false;
-	}
+        return phenomenon == null;
+    }
 
 	@Override
 	public boolean sameAs(FactImpl obj) {

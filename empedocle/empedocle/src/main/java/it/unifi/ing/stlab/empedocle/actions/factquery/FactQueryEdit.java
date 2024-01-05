@@ -13,20 +13,8 @@ import it.unifi.ing.stlab.factquery.model.expression.ComparisonOperator;
 import it.unifi.ing.stlab.factquery.model.expression.Expression;
 import it.unifi.ing.stlab.reflection.dao.types.PhenomenonDao;
 import it.unifi.ing.stlab.reflection.dao.types.links.TypeLinkDao;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.QualitativeType;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.UnitUse;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateful;
@@ -44,6 +32,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.transaction.UserTransaction;
+import java.io.Serializable;
+import java.util.*;
 
 @Named( "queryEdit" )
 @Stateful
@@ -81,7 +71,7 @@ public class FactQueryEdit implements Serializable {
 	private FacesContext context;
 	
 	private FactQuery current;
-	private List<ExpressionBean> exprBeans;
+	private final List<ExpressionBean> exprBeans;
 	private boolean invalidated;
 	
 	//

@@ -9,17 +9,7 @@ import it.unifi.ing.stlab.reflection.model.facts.values.FactValue;
 import it.unifi.ing.stlab.reflection.model.types.CompositeType;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.TableGenerator;
+import javax.persistence.*;
 
 
 @Entity
@@ -117,10 +107,8 @@ public class TypeLink
 
 	private boolean isValidSource( Type newSource ) {
 		if ( newSource == null ) return true;
-		if ( ClassHelper.instanceOf( newSource, CompositeType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(newSource, CompositeType.class);
+    }
 	
 	@ManyToOne( fetch=FetchType.LAZY, cascade = { CascadeType.PERSIST } )
 	@JoinColumn( name="target_id")

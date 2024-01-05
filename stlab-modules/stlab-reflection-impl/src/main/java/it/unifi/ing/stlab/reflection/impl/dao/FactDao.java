@@ -12,18 +12,18 @@ import javax.ejb.Local;
 @Local
 public interface FactDao {
 
-	public Fact findById( Long id );
-	public Fact findByContextId( Long contextId, Long typeId );
-	public Fact fetchById( Long id );
+	Fact findById(Long id);
+	Fact findByContextId(Long contextId, Long typeId);
+	Fact fetchById(Long id);
 	
-	public void save( Fact fact );
+	void save(Fact fact);
 	
-	public Fact fetchForStatistics(Long id);
+	Fact fetchForStatistics(Long id);
 	
-	public void addChildren(TypeLink tl, Fact f, User user, Time time);
-	public void removeChildren(FactLink fl);
+	void addChildren(TypeLink tl, Fact f, User user, Time time);
+	void removeChildren(FactLink fl);
 	
 	boolean isOwner(Long factId, String userId);
 	
-	public boolean existsByUsedType(Long typeId);
+	boolean existsByUsedType(Long typeId);
 }

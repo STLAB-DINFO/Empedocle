@@ -10,10 +10,10 @@ public enum ExaminationListType {
 	DONE("done", "Done"), 
 	CONCLUDED("concluded", "Concluded"); 
 	
-	private String id;
-	private String name;
+	private final String id;
+	private final String name;
 
-	private ExaminationListType(String id, String name) {
+	ExaminationListType(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

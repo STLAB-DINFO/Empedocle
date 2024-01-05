@@ -8,11 +8,11 @@ public enum ExaminationStatus {
 	DONE("done", "Done", "Erogata"), 
 	CONCLUDED("concluded", "Concluded", "Conclusa"); 
 	
-	private String id;
-	private String name;
-	private String translatedName;
+	private final String id;
+	private final String name;
+	private final String translatedName;
 
-	private ExaminationStatus(String id, String name, String translatedName) {
+	ExaminationStatus(String id, String name, String translatedName) {
 		this.id = id;
 		this.name = name;
 		this.translatedName = translatedName;

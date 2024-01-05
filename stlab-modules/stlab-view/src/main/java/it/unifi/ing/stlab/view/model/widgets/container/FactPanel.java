@@ -8,14 +8,8 @@ import it.unifi.ing.stlab.view.model.links.SubViewer;
 import it.unifi.ing.stlab.view.model.links.ViewerLink;
 import it.unifi.ing.stlab.view.model.widgets.ViewerContainer;
 
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 
 @Entity
 @DiscriminatorValue("FPANEL")
@@ -35,11 +29,8 @@ public class FactPanel extends ViewerContainer {
 	@Override
 	public boolean isValidSubViewer(ViewerLink sv) {
 
-		if( sv == null || !ClassHelper.instanceOf( sv, SubViewer.class ))
-			return false;
-		
-		return true;
-	}
+        return sv != null && ClassHelper.instanceOf(sv, SubViewer.class);
+    }
 	
 	@Transient
 	@Override

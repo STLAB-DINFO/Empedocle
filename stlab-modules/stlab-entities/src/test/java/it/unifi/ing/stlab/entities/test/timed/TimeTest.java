@@ -1,15 +1,13 @@
 package it.unifi.ing.stlab.entities.test.timed;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import it.unifi.ing.stlab.entities.implementation.timed.TimeImpl;
 import it.unifi.ing.stlab.entities.model.timed.Time;
 import it.unifi.ing.stlab.entities.utils.DateHelper;
+import org.junit.Test;
 
 import java.util.Date;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TimeTest {
 
@@ -50,7 +48,7 @@ public class TimeTest {
 	public void testImmutableDate() {
 		Time t = new TimeImpl( DateHelper.createDate( "2013-03-04" ));
 		
-		Date d = (Date)t.getDate();
+		Date d = t.getDate();
 		d.setTime( DateHelper.createDate( "2013-03-07" ).getTime() );
 	
 		assertEquals( DateHelper.createDate( "2013-03-07" ), d );

@@ -39,10 +39,8 @@ public class QuantitativeFactLite extends FactLite implements QuantitativeFact {
 
 	@Override
 	public boolean isEmpty() {
-		if ( quantity == null || quantity.getValue() == null ) return true;
-
-		return false;
-	}
+        return quantity == null || quantity.getValue() == null;
+    }
 
 	@Override
 	public void assignDefaultValue(FactValue defaultValue) {
@@ -62,8 +60,6 @@ public class QuantitativeFactLite extends FactLite implements QuantitativeFact {
 	
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, QuantitativeType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, QuantitativeType.class);
+    }
 }

@@ -7,7 +7,7 @@ public class FakeCreateAction
 	extends FakeAction 
 	implements CreateAction<FakeTracedEntity,FakeAction, FakeActor, FakeTime> {
 
-	private CreateActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime> delegate;
+	private final CreateActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime> delegate;
 
 	public FakeCreateAction() {
 		delegate = new CreateActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime>();

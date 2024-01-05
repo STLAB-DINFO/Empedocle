@@ -1,9 +1,14 @@
 package it.unifi.ing.stlab.empedocle.actions.patients;
 
-import java.io.Serializable;
-import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.Date;
+import it.unifi.ing.stlab.commons.cdi.HttpParam;
+import it.unifi.ing.stlab.empedocle.actions.util.taxcode.FiscalCodeValidator;
+import it.unifi.ing.stlab.empedocle.actions.util.taxcode.FiscalCodeValidatorException;
+import it.unifi.ing.stlab.empedocle.security.LoggedUser;
+import it.unifi.ing.stlab.patients.dao.PatientDao;
+import it.unifi.ing.stlab.patients.manager.PatientManager;
+import it.unifi.ing.stlab.patients.model.Address;
+import it.unifi.ing.stlab.patients.model.Patient;
+import it.unifi.ing.stlab.users.model.time.Time;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -17,16 +22,10 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.UserTransaction;
-
-import it.unifi.ing.stlab.commons.cdi.HttpParam;
-import it.unifi.ing.stlab.empedocle.actions.util.taxcode.FiscalCodeValidator;
-import it.unifi.ing.stlab.empedocle.actions.util.taxcode.FiscalCodeValidatorException;
-import it.unifi.ing.stlab.empedocle.security.LoggedUser;
-import it.unifi.ing.stlab.patients.dao.PatientDao;
-import it.unifi.ing.stlab.patients.manager.PatientManager;
-import it.unifi.ing.stlab.patients.model.Address;
-import it.unifi.ing.stlab.patients.model.Patient;
-import it.unifi.ing.stlab.users.model.time.Time;
+import java.io.Serializable;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 
 @Named
 @ConversationScoped
@@ -222,8 +221,7 @@ public class PatientEdit implements Serializable {
 		else {
 			if ( isNew() ) return true;
 			else {
-				if ( result.equals( original )) return false;
-				else return true;
+                return !result.equals(original);
 			}
 		}
 	}

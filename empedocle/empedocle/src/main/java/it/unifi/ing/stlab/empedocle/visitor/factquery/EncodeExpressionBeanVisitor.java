@@ -2,18 +2,14 @@ package it.unifi.ing.stlab.empedocle.visitor.factquery;
 
 import it.unifi.ing.stlab.commons.util.Operator;
 import it.unifi.ing.stlab.empedocle.actions.factquery.ExpressionBean;
-import it.unifi.ing.stlab.factquery.model.expression.AndExpression;
-import it.unifi.ing.stlab.factquery.model.expression.AtomicExpression;
-import it.unifi.ing.stlab.factquery.model.expression.ExpressionLink;
-import it.unifi.ing.stlab.factquery.model.expression.ExpressionVisitor;
-import it.unifi.ing.stlab.factquery.model.expression.OrExpression;
+import it.unifi.ing.stlab.factquery.model.expression.*;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class EncodeExpressionBeanVisitor implements ExpressionVisitor {
 
-	private List<ExpressionBean> results;
+	private final List<ExpressionBean> results;
 	private Operator op;
 	
 	public EncodeExpressionBeanVisitor() {

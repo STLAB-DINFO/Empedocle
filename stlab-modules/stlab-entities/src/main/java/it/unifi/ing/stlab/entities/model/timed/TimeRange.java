@@ -2,13 +2,13 @@ package it.unifi.ing.stlab.entities.model.timed;
 
 public interface TimeRange<T extends Time> {
 
-	public Time getLeft();
-	public Time getRight();
+	Time getLeft();
+	Time getRight();
 	
-	public boolean contains( TimeRange<?> other );
-	public boolean contains( T time );
+	boolean contains(TimeRange<?> other);
+	boolean contains(T time);
 
-	public int hashCode();
-	public boolean equals(Object obj);	
+	int hashCode();
+	boolean equals(Object obj);
 	
 }

@@ -16,35 +16,35 @@ public interface CompositeEntity
 	<T extends CompositeEntity<T,E>, 
 	 E extends CompositeLink<T,E>> {
 
-	public void init();
-	public void delete();
+	void init();
+	void delete();
 	
 	/**
 	 * Metodo che restituisce l'insieme di tutti gli ancestors dell'entita',
 	 * che sono a loro volta CompositeEntity, compresa essa stessa.
 	 * @return Set<T>, dove T estende CompositeEntity
 	 */
-	public Set<T> listAncestors();
+    Set<T> listAncestors();
 	/**
 	 * Metodo che restituisce l'insieme di tutti i descendents dell'entita',
 	 * che sono a loro volta CompositeEntity, compresa essa stessa.
 	 * @return Set<T>, dove T estende CompositeEntity
 	 */
-	public Set<T> listDescendents();
+    Set<T> listDescendents();
 	
 	/**
 	 * Metodo che restituisce l'insieme di link che collegano l'entita' 
 	 * con le entita' padre.
 	 * @return Set<E>, dove E estende CompositeLink
 	 */
-	public Set<E> listParents();
+    Set<E> listParents();
 	/**
 	 * Metodo che restituisce l'insieme di link che collegano l'entita' 
 	 * con le entita' figlie. Tali link sono istanze di una classe che implementa
 	 * CompositeLink.
 	 * @return Set<E>, dove E estende CompositeLink
 	 */
-	public Set<E> listChildren();
+    Set<E> listChildren();
 	/**
 	 * Metodo che restituisce una lista di Link, ordinata secondo la priorita'
 	 * assegnata ad essi. Tali link sono istanze di una classe che implementa
@@ -53,12 +53,12 @@ public interface CompositeEntity
 	 * memorizza come attributo della classe.
 	 * @return Set<E>, dove E estende CompositeLink
 	 */
-	public List<E> listChildrenOrdered();
+    List<E> listChildrenOrdered();
 	/**
 	 * Metodo che setta a null la lista childrenOrdered, per costringere
 	 * il metodo listChildren() a ricrearla. Da utlizzare dopo aver fatto cambiamenti
 	 * nei figli.
 	 */
-	public void refreshChildrenOrdered();
+    void refreshChildrenOrdered();
 	
 }

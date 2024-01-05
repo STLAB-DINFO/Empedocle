@@ -1,13 +1,12 @@
 package it.unifi.ing.stlab.users.dao;
 
-import java.util.List;
+import it.unifi.ing.stlab.users.model.Role;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-
-import it.unifi.ing.stlab.users.model.Role;
+import java.util.List;
 
 @Stateless
 public class RoleDaoBean implements RoleDao {
@@ -29,7 +28,7 @@ public class RoleDaoBean implements RoleDao {
 			return null;
 		}
 
-		return (Role) results.get( 0 );
+		return results.get( 0 );
 	}
 
 	@Override

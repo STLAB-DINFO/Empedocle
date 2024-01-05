@@ -1,16 +1,11 @@
 package it.unifi.ing.stlab.empedocle.actions.util.taxcode;
 
-import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-
+import it.unifi.ing.stlab.patients.model.Sex;
 import org.apache.commons.io.IOUtils;
 
-import it.unifi.ing.stlab.patients.model.Sex;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.*;
 
 /**
  * https://it.wikipedia.org/wiki/Codice_fiscale#Generazione_del_codice_fiscale
@@ -306,7 +301,7 @@ public class FiscalCodeValidator {
      */
     private static String dayCode( int day, Sex gender ) {
         return gender.equals( Sex.M ) ?
-                ( day < 10 ) ? "0" + String.valueOf( day ) : String.valueOf( day )
+                ( day < 10 ) ? "0" + day : String.valueOf( day )
                 : String.valueOf( day + 40 );
     }
 
@@ -493,7 +488,7 @@ public class FiscalCodeValidator {
                 name != null && !name.isEmpty() &&
                 birthDate != null &&
                 birthPlace != null && !birthPlace.isEmpty() &&
-                gender != null ? true : false;
+                gender != null;
     }
 
     private static boolean isVocal( char character ) {

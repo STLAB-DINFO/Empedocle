@@ -14,6 +14,6 @@ public interface CompactEntity
 
 	extends CompositeEntity<T,L>, TracedEntity<T,A> {
 	
-	public Set<L> listActiveLinks();
+	Set<L> listActiveLinks();
 
 }

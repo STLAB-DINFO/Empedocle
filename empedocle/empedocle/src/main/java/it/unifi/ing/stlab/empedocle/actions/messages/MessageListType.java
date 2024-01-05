@@ -7,10 +7,10 @@ public enum MessageListType {
 	WARNING("warning", "Warning"), 
 	SEVERE( "severe", "Severe" );
 	
-	private String id;
-	private String name;
+	private final String id;
+	private final String name;
 
-	private MessageListType(String id, String name) {
+	MessageListType(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

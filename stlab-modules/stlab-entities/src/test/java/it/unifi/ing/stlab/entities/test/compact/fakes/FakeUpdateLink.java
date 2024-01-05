@@ -5,7 +5,7 @@ import it.unifi.ing.stlab.entities.model.compact.UpdateLink;
 
 public class FakeUpdateLink extends FakeCompactLink implements UpdateLink<FakeCompactEntity, FakeCompactLink>{
 
-	private UpdateLinkImpl<FakeCompactEntity, FakeCompactLink> delegate;
+	private final UpdateLinkImpl<FakeCompactEntity, FakeCompactLink> delegate;
 
 	public FakeUpdateLink() {
 		 delegate = new UpdateLinkImpl<FakeCompactEntity, FakeCompactLink>();

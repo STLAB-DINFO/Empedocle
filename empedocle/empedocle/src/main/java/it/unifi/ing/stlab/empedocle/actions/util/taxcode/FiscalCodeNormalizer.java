@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class FiscalCodeNormalizer {
 
-    private static final Pattern NOISY_CHARS = Pattern.compile( "[|{}(),.;\\\\<>\"\'`#°\n\r\t]" );
+    private static final Pattern NOISY_CHARS = Pattern.compile("[|{}(),.;\\\\<>\"'`#°\n\r\t]");
     private static final Pattern MULTIPLE_SPACES = Pattern.compile( "\\s+" );
 
     // see issue-11

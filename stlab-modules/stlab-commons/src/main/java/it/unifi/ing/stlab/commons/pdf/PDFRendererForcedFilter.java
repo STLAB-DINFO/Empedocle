@@ -1,26 +1,20 @@
 package it.unifi.ing.stlab.commons.pdf;
 
+import org.w3c.dom.Document;
+import org.xhtmlrenderer.pdf.ITextRenderer;
+import org.xhtmlrenderer.resource.FSEntityResolver;
+import org.xml.sax.InputSource;
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.w3c.dom.Document;
-import org.xhtmlrenderer.pdf.ITextRenderer;
-import org.xhtmlrenderer.resource.FSEntityResolver;
-import org.xml.sax.InputSource;
 
 public class PDFRendererForcedFilter implements Filter {
 
@@ -81,7 +75,7 @@ public class PDFRendererForcedFilter implements Filter {
 		String url = request.getRequestURL().toString();
 		String base = url.replaceFirst( uri, "" );
 		
-		String result = new String( source );
+		String result = source;
 
 		Matcher matcher = pattern.matcher( source );
 		while ( matcher.find() ) {

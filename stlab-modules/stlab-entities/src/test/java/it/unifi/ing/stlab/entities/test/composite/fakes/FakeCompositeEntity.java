@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class FakeCompositeEntity implements CompositeEntity<FakeCompositeEntity,FakeCompositeLink> {
 
-	private CompositeEntityImpl<FakeCompositeEntity,FakeCompositeLink> delegate;
+	private final CompositeEntityImpl<FakeCompositeEntity,FakeCompositeLink> delegate;
 
 	public FakeCompositeEntity() {
 		delegate = new CompositeEntityImpl<FakeCompositeEntity,FakeCompositeLink>();

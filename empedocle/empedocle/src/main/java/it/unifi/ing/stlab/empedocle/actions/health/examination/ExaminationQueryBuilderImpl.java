@@ -5,16 +5,15 @@ import it.unifi.ing.stlab.filters.Filter;
 import it.unifi.ing.stlab.filters.FilterDef;
 import it.unifi.ing.stlab.filters.FilterType;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
 public class ExaminationQueryBuilderImpl implements ExaminationQueryBuilder {
 
-	private ExaminationFilter examinationFilter;
+	private final ExaminationFilter examinationFilter;
 	private Set<Filter> predefinedFilters;
 	
 	private Boolean includeAuthorInQuery;

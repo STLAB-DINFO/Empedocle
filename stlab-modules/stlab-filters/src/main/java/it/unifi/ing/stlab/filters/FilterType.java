@@ -9,10 +9,10 @@ public enum FilterType {
 	BOOLEAN( "boolean", "boolean");
 
 	
-	private String id;
-	private String name;
+	private final String id;
+	private final String name;
 
-	private FilterType(String id, String name) {
+	FilterType(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

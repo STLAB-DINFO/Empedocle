@@ -7,7 +7,7 @@ public class FakeSplitAction
 	extends FakeAction 
 	implements SplitAction<FakeTracedEntity, FakeAction, FakeActor, FakeTime> {
 
-	private SplitActionImpl<FakeTracedEntity, FakeAction, FakeActor, FakeTime> delegate;
+	private final SplitActionImpl<FakeTracedEntity, FakeAction, FakeActor, FakeTime> delegate;
 
 	public FakeSplitAction() {
 		 delegate = new SplitActionImpl<FakeTracedEntity, FakeAction, FakeActor, FakeTime>();

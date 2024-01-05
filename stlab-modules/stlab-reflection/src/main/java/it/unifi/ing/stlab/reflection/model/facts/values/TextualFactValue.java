@@ -32,10 +32,8 @@ public class TextualFactValue extends FactValue {
 	@Transient
 	@Override
 	public boolean isEmpty() {
-		if( this.getText() == null || "".equals(this.getText().trim()) )
-			return true;
-		return false;
-	}
+        return this.getText() == null || "".equals(this.getText().trim());
+    }
 	
 	@Override
 	public void accept(FactValueVisitor v) {

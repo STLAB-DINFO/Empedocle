@@ -5,7 +5,7 @@ import it.unifi.ing.stlab.entities.model.compact.RemoveLink;
 
 public class FakeRemoveLink extends FakeCompactLink implements RemoveLink<FakeCompactEntity, FakeCompactLink> {
 
-	private RemoveLinkImpl<FakeCompactEntity, FakeCompactLink> delegate;
+	private final RemoveLinkImpl<FakeCompactEntity, FakeCompactLink> delegate;
 
 	
 	public FakeRemoveLink() {

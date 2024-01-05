@@ -6,10 +6,10 @@ public enum PanelOrientation {
 	horizontal("horizontal", "horizontal"),
 	spaced_horizontal("spaced_horizontal", "spaced_horizontal");
 
-	private String id; 
-	private String name;
+	private final String id;
+	private final String name;
 
-	private PanelOrientation(String id, String name) {
+	PanelOrientation(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

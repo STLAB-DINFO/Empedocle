@@ -5,7 +5,7 @@ import javax.persistence.Query;
 
 public interface QueryBuilder {
 
-	public Query getCountQuery( EntityManager entityManager );
-	public Query getListQuery( EntityManager entityManager );
+	Query getCountQuery(EntityManager entityManager);
+	Query getListQuery(EntityManager entityManager);
 	
 }

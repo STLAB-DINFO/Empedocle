@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class FakeTime implements Time {
 
-	private TimeImpl delegate;
+	private final TimeImpl delegate;
 	
 	public FakeTime() {
 		delegate = new TimeImpl();

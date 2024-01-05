@@ -16,24 +16,24 @@ public interface CompositeLink
 	<T extends CompositeEntity<T,E>, 
 	 E extends CompositeLink<T,E>> {
 	
-	public void delete();
+	void delete();
 
-	public T getSource();
+	T getSource();
 	/**
 	 * Metodo che effettua il set di un Target, inserendolo in ordine
 	 * nelle liste di Ancestors, Descendents e Children.
 	 * @param target istanza di CompositeEntity
 	 */
-	public void assignSource( T source );
+    void assignSource(T source);
 	
-	public T getTarget();
+	T getTarget();
 	/**
 	 * Metodo che effettua il set di un Target, inserendolo in ordine
 	 * nelle liste di Ancestors, Descendents e Parents.
 	 * @param target istanza di CompositeEntity
 	 */
-	public void assignTarget( T target );
+    void assignTarget(T target);
 
-	public Long getPriority();
-	public void setPriority( Long priority );
+	Long getPriority();
+	void setPriority(Long priority);
 }

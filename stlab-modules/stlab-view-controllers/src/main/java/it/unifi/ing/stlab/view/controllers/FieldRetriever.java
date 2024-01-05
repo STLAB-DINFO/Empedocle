@@ -4,6 +4,6 @@ import it.unifi.ing.stlab.reflection.model.facts.Fact;
 
 public interface FieldRetriever {
 
-	public String retrieve(Fact fact, String path);
+	String retrieve(Fact fact, String path);
 	
 }

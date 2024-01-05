@@ -1,7 +1,5 @@
 package it.unifi.ing.stlab.reflection.lite.model.facts;
 
-import java.util.Date;
-
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.model.facts.FactVisitor;
 import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
@@ -9,6 +7,8 @@ import it.unifi.ing.stlab.reflection.model.facts.values.FactValue;
 import it.unifi.ing.stlab.reflection.model.facts.values.TemporalFactValue;
 import it.unifi.ing.stlab.reflection.model.types.TemporalType;
 import it.unifi.ing.stlab.reflection.model.types.Type;
+
+import java.util.Date;
 
 public class TemporalFactLite extends FactLite implements TemporalFact {
 
@@ -41,11 +41,8 @@ public class TemporalFactLite extends FactLite implements TemporalFact {
 	
 	@Override
 	public boolean isEmpty() {
-		if ( date == null )
-			return true;
-		
-		return false;
-	}
+        return date == null;
+    }
 
 	@Override
 	public void assignDefaultValue(FactValue defaultValue) {
@@ -68,8 +65,6 @@ public class TemporalFactLite extends FactLite implements TemporalFact {
 
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, TemporalType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, TemporalType.class);
+    }
 }

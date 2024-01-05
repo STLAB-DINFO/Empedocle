@@ -36,10 +36,8 @@ public class QuantitativeFactImpl extends FactImpl implements QuantitativeFact {
 	}
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, QuantitativeType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, QuantitativeType.class);
+    }
 
 	@Embedded
 	public Quantity getQuantity() {
@@ -52,10 +50,8 @@ public class QuantitativeFactImpl extends FactImpl implements QuantitativeFact {
 	@Transient
 	@Override
 	public boolean isEmpty() {
-		if ( quantity == null || quantity.getValue() == null ) return true;
-
-		return false;
-	}
+        return quantity == null || quantity.getValue() == null;
+    }
 
 	@Override
 	public boolean sameAs(FactImpl obj) {

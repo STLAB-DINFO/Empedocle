@@ -1,21 +1,5 @@
 package it.unifi.ing.stlab.view.controllers;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.enterprise.context.ConversationScoped;
-import javax.inject.Named;
-
-import org.apache.commons.jexl2.Expression;
-import org.apache.commons.jexl2.JexlContext;
-import org.apache.commons.jexl2.JexlEngine;
-import org.apache.commons.jexl2.JexlException;
-import org.apache.commons.jexl2.MapContext;
-
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.model.facts.Fact;
 import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
@@ -27,6 +11,12 @@ import it.unifi.ing.stlab.view.model.Viewer;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
 import it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel;
 import it.unifi.ing.stlab.view.model.widgets.input.Combo;
+import org.apache.commons.jexl2.*;
+
+import javax.enterprise.context.ConversationScoped;
+import javax.inject.Named;
+import java.io.Serializable;
+import java.util.*;
 
 @Named
 @ConversationScoped
@@ -35,8 +25,8 @@ public class ConditionalPanelController extends ContainerController implements S
 	private static final long serialVersionUID = 1L;
 	
 	private JexlEngine jexlEngine;
-	private Map<ConditionalPanelMapKey, Boolean> panelMap;
-	private Set<Type> register;
+	private final Map<ConditionalPanelMapKey, Boolean> panelMap;
+	private final Set<Type> register;
 
 	public ConditionalPanelController() {
 		panelMap = new HashMap<ConditionalPanelMapKey, Boolean>();
@@ -187,8 +177,8 @@ public class ConditionalPanelController extends ContainerController implements S
 	
 	
 	class ConditionalPanelMapKey {
-		private ConditionalPanel panel;
-		private Fact fact;
+		private final ConditionalPanel panel;
+		private final Fact fact;
 		
 		ConditionalPanelMapKey(ConditionalPanel panel, Fact fact) {
 			this.panel = panel;

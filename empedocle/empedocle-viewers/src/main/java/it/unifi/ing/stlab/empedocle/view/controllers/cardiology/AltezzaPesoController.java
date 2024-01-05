@@ -8,11 +8,10 @@ import it.unifi.ing.stlab.reflection.model.types.Unit;
 import it.unifi.ing.stlab.view.controllers.ContainerController;
 import it.unifi.ing.stlab.view.model.Viewer;
 
-import java.math.BigDecimal;
-
 import javax.enterprise.context.RequestScoped;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Named;
+import java.math.BigDecimal;
 
 @Named
 @RequestScoped
@@ -144,13 +143,9 @@ public class AltezzaPesoController extends ContainerController {
 	
 	
 	private boolean checkEmptyField(QuantitativeFact fact) {
-		if( fact != null && 
-			fact.getQuantity().getValue() != null && 
-			fact.getQuantity().getValue() > 0) {
-				return false;
-		}
-		
-		return true;
+		return fact == null ||
+				fact.getQuantity().getValue() == null ||
+				fact.getQuantity().getValue() <= 0;
 	}
 	
 }

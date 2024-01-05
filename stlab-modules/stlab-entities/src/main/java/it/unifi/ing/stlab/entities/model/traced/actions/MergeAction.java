@@ -13,13 +13,13 @@ public interface MergeAction
 	
 	extends Action<T,A,U,H> {
 
-	public T getSource1();
-	public void assignSource1( T tracedEntity );
+	T getSource1();
+	void assignSource1(T tracedEntity);
 	
-	public T getSource2();
-	public void assignSource2( T tracedEntity );
+	T getSource2();
+	void assignSource2(T tracedEntity);
 	
-	public T getTarget();
-	public void assignTarget( T tracedEntity );
+	T getTarget();
+	void assignTarget(T tracedEntity);
 	
 }

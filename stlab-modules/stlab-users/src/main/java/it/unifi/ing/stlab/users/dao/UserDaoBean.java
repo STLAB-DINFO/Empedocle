@@ -4,15 +4,14 @@ import it.unifi.ing.stlab.users.model.Qualification;
 import it.unifi.ing.stlab.users.model.User;
 import it.unifi.ing.stlab.users.model.time.Time;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Stateless
 public class UserDaoBean implements UserDao {
@@ -23,7 +22,7 @@ public class UserDaoBean implements UserDao {
 	
 	@Override
 	public User findById(Long id) {
-		return (User)entityManager.find(User.class, id);
+		return entityManager.find(User.class, id);
 	}
 
 	
@@ -64,7 +63,7 @@ public class UserDaoBean implements UserDao {
 		Set<Qualification> result = new HashSet<Qualification>();
 		Time now = new Time(new Date());
 		
-		for(Qualification q : ((User)entityManager.find(User.class, id)).listQualifications()){
+		for(Qualification q : entityManager.find(User.class, id).listQualifications()){
 			if(q.isValidAt(now))
 				result.add(q);
 		}
