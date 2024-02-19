@@ -10,7 +10,6 @@
 		<module>stlab-entities</module>
 		<module>stlab-fact-query</module>
 		<module>stlab-filters</module>
-		<module>stlab-patients</module>
 		<module>stlab-reflection</module>
 		<module>stlab-reflection-crud</module>
 		<module>stlab-reflection-dsl</module>

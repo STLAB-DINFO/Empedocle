@@ -16,21 +16,21 @@
 		<h:form>
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>	
-					Dettaglio Struttura visita
+					Visit Structure Detail
 			
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 					
 						<h:commandLink class="btn btn-danger"
 							action="#{examinationTypeList.delete( examinationTypeView.current.id )}"
 							rendered="#{examinationTypeList.isRemovable( examinationTypeView.current.id )}"
-							onclick="if(!confirm('Eliminare struttura visita?')) {return false;}" >
-							<i class="fw-icon-remove dist-right"></i> Elimina
+							onclick="if(!confirm('Delete visit structure?')) {return false;}" >
+							<i class="fw-icon-remove dist-right"></i> Delete
 						</h:commandLink>						
 					
 						<h:panelGroup class="btn-group dist-left" layout="block">
 							<h:commandLink class="btn btn-warning" 
 								action="#{examinationTypeList.edit( examinationTypeView.current.id )}">
-								<i class="fw-icon-pencil dist-right"></i> Modifica
+								<i class="fw-icon-pencil dist-right"></i> Edit
 							</h:commandLink>	
 							<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
@@ -38,7 +38,7 @@
 							<ul class="dropdown-menu">
 								<li>
 									<h:commandLink action="#{examinationTypeList.copy( examinationTypeView.current.id )}">
-										<i class="fw-icon-copy dist-right"></i> Clona
+										<i class="fw-icon-copy dist-right"></i> Clone
 									</h:commandLink>
 								</li>				
 							</ul>
@@ -46,7 +46,7 @@
 						
 						<h:commandLink class="btn dist-left"
 							action="#{examinationTypeView.close()}">
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>		
 					</h:panelGroup>		
 				</h2>	
@@ -55,39 +55,39 @@
 		
 		<h:panelGroup layout="block" styleClass="container-fluid form-horizontal">
 			<div class="control-group">
-				<label class="control-label bold">Nome</label>
+				<label class="control-label bold">Name</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{examinationTypeView.current.name}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Descrizione</label>
+				<label class="control-label bold">Description</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{examinationTypeView.current.description}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Tempo di chiusura</label>
+				<label class="control-label bold">Time to Live</label>
 				<div class="controls align-txt">
-					<h:outputText value="#{examinationTypeView.current.timeToLive} ore" />
+					<h:outputText value="#{examinationTypeView.current.timeToLive} hours" />
 				</div>
 			</div>			
 			
 			<div class="control-group">
-				<label class="control-label bold">Tipo</label>
+				<label class="control-label bold">Type</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{examinationTypeView.current.type.name}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Agende</label>
+				<label class="control-label bold">Agendas</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="agenda-list">
 						<h:panelGroup layout="block" rendered="#{empty examinationTypeView.agendas}">
-							<h:outputText value="Nessun agenda associata" />
+							<h:outputText value="No associated agenda" />
 						</h:panelGroup>
 						
 						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty examinationTypeView.agendas}">
@@ -96,7 +96,7 @@
 											
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{agenda.code}" />
@@ -104,7 +104,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{agenda.description}" />
@@ -118,11 +118,11 @@
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold">Permessi su operazioni</label>
+				<label class="control-label bold">Authorizations on operations</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="auth-list" layout="block">
 						<h:panelGroup layout="block" rendered="#{not examinationTypeView.hasAuthorizations()}">
-							<h:outputText value="Nessun permesso esistente" />
+							<h:outputText value="No existing authorizations" />
 						</h:panelGroup>
 						
 						<h:panelGroup layout="block" class="scrollable" rendered="#{examinationTypeView.hasAuthorizations()}">				
@@ -131,7 +131,7 @@
 											
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Operazione" />
+										<h:outputText value="Operation" />
 									</f:facet>
 									
 									<h:outputText value="#{auth.examOperation.name}" />
@@ -139,7 +139,7 @@
 								
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Qualifica" />
+										<h:outputText value="Qualification" />
 									</f:facet>
 									
 									<h:outputText value="#{auth.qualification.name}" />
@@ -151,11 +151,11 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Viste associate a contesti e qualifiche</label>
+				<label class="control-label bold">Viewers associated with contexts and qualifications</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="vieweruses-list" layout="block">
 						<h:panelGroup layout="block" rendered="#{not examinationTypeView.hasViewerUses()}">
-							<h:outputText value="Nessuna vista associata" />
+							<h:outputText value="No associated viewer" />
 						</h:panelGroup>
 						
 						<h:panelGroup layout="block" class="scrollable" rendered="#{examinationTypeView.hasViewerUses()}">			
@@ -164,7 +164,7 @@
 								
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Contesto" />
+										<h:outputText value="Context" />
 									</f:facet>
 									
 									<h:outputText value="#{vuse.context.name}" />
@@ -172,7 +172,7 @@
 								
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Qualifica" />
+										<h:outputText value="Qualification" />
 									</f:facet>
 									
 									<h:outputText value="#{vuse.qualification.name}" />
@@ -180,7 +180,7 @@
 								
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Vista" />
+										<h:outputText value="Viewer" />
 									</f:facet>
 									
 									<h:outputText value="#{vuse.viewer.name}" />

@@ -35,24 +35,24 @@
 		<h:form id="edit-form" styleClass="form-horizontal">
 	
 			<div class="crud-title">
-				<h2>#{patientEdit.new ? 'Creazione' : 'Modifica'} Paziente
+				<h2>#{patientEdit.new ? 'Create' : 'Edit'} Paziente
 				
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn" action="#{patientEdit.cancel()}" immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Annulla
+							<i class="fw-icon-step-backward dist-right"></i> Cancel
 						</h:commandLink>
 						<h:commandLink class="btn btn-primary dist-left" action="#{patientEdit.save()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>						
 					</h:panelGroup>
 				</h2>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold" for="edit-form:taxcode">* Codice fiscale</label>
+				<label class="control-label bold" for="edit-form:taxcode">* Tax Code</label>
 				<div class="controls">
 					<h:inputText id="taxcode" value="#{patientEdit.current.taxCode}"
-								 required="true" requiredMessage="'Codice fiscale' è un campo obbligatorio!"
+								 required="true" requiredMessage="'Tax code' is a required field!"
 								 styleClass="#{ component.valid ? '' : 'vld-error'}" />
 					<h:commandLink class="btn btn-info dist-left"
 								   action="#{patientEdit.generateTaxCode}">
@@ -66,28 +66,28 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold" for="edit-form:surname">* Cognome</label>
+				<label class="control-label bold" for="edit-form:surname">* Surname</label>
 				<div class="controls">
 					<h:inputText id="surname" value="#{patientEdit.current.surname}"
-						required="true" requiredMessage="'Cognome' è un campo obbligatorio!"
+						required="true" requiredMessage="'Surname' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}" />
 				</div>
 			</div>										
 
 			<div class="control-group">
-				<label class="control-label bold" for="edit-form:name">* Nome</label>
+				<label class="control-label bold" for="edit-form:name">* Name</label>
 				<div class="controls">
 					<h:inputText id="name" value="#{patientEdit.current.name}"
-						required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+						required="true" requiredMessage="'Name' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold" for="edit-form:sex">* Sesso</label>
+				<label class="control-label bold" for="edit-form:sex">* Sex</label>
 				<div class="controls">
 					<h:selectOneMenu id="sex" value="#{patientEdit.current.sex}" 
-						required="true" requiredMessage="'Sesso' è un campo obbligatorio!"
+						required="true" requiredMessage="'Sex' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}">
 						<f:selectItem noSelectionOption="true" />
 						<f:selectItem itemLabel="M" itemValue="M" />
@@ -98,20 +98,20 @@
 			</div>		
 			
 			<div class="control-group" xmlns:datepicker="http://java.sun.com/jsf/composite/datepicker">
-				<label class="control-label bold" for="edit-form:birthDate">* Data di nascita</label>			
+				<label class="control-label bold" for="edit-form:birthDate">* Birthdate</label>
 				<div class="controls">
 		    		<datepicker:datePicker id="birthDate" value="#{patientEdit.current.birthDate}"
 		    			render="@this"
 		    			boxClass="datepicker-box" styleClass="#{ component.valid ? '' : 'vld-error'}" 
-		    			required="true" requiredMessage="'Data di nascita' è un campo obbligatorio!" />
+		    			required="true" requiredMessage="'Birthdate' is a required field!" />
 				</div>
 			</div>				
 			
 			<div class="control-group">
-				<label class="control-label bold" for="edit-form:birthplace">* Luogo di nascita</label>
+				<label class="control-label bold" for="edit-form:birthplace">* Birthplace</label>
 				<div class="controls">
 					<h:inputText id="birthplace" value="#{patientEdit.current.birthPlace}"
-						required="true" requiredMessage="'Luogo di nascita' è un campo obbligatorio!"
+						required="true" requiredMessage="'Birthplace' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}" />
 				</div>
 			</div>

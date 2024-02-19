@@ -63,10 +63,10 @@ public class InputList extends ViewerInput {
 			return false;
 		
 		if(listChildren().size() > 0)
-			throw new RuntimeException("non è possibile aggiungere più di una sottovista ad un inputList");
+			throw new RuntimeException("nIt is not possible to add more than one subviewer to one inputList");
 		
 		if ( sv.getTarget() != null && ClassHelper.instanceOf( sv.getTarget(), ViewerOutput.class ))
-			throw new RuntimeException("nella inputList non posso utilizzare viste di output");
+			throw new RuntimeException("in inputList It is not possible to use output viewers");
 		
 		return true;
 	}

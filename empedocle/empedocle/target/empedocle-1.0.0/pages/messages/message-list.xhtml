@@ -18,7 +18,7 @@
 		<h:form id="message-form">
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Messaggi
+					Messages
 				</h2>			
 
 				<filter:filterPanel filters="#{messageFilter}" navigator="#{messageList}" 
@@ -69,7 +69,7 @@
 						<h:panelGroup layout="block" id="results">
 							<h:panelGroup rendered="#{empty messageResults}">
 								<br/>
-								<h:outputText styleClass="lead" value="Nessun messaggio trovato"/>
+								<h:outputText styleClass="lead" value="No message found"/>
 							</h:panelGroup>
 							
 							<h:dataTable styleClass="table table-bordered table-striped table-hover" value="#{messageResults}" var="message"
@@ -82,12 +82,12 @@
 										Stato
 									</f:facet>
 									<i class="tltip fw-icon-large #{message.isRead ? 'fw-icon-envelope-alt' : 'fw-icon-envelope'}" 
-										title="#{message.isRead ? 'Letto' : 'Non letto'}"></i>
+										title="#{message.isRead ? 'Read' : 'Unread'}"></i>
 								</h:column>								
 								
 								<h:column>
 									<f:facet name="header">
-										Data
+										Date
 									</f:facet>
 									<h:outputText value="#{message.date}" >
 										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
@@ -96,37 +96,37 @@
 			
 								<h:column>
 									<f:facet name="header">
-										Mittente
+										Sender
 									</f:facet>
 									<span>#{message.sender}</span>
 								</h:column>
 								
 								<h:column>
 									<f:facet name="header">
-										Paziente
+										Patient
 									</f:facet>
 									<span>#{message.patient.surname} #{message.patient.name}</span>
 								</h:column>
 			
 								<h:column>
 									<f:facet name="header">
-										Oggetto
+										Subject
 									</f:facet>
 									<span>#{message.subject}</span>
 								</h:column>
 								
 								<h:column>
 									<f:facet name="header">
-										Azioni
+										Actions
 									</f:facet>
 									
-									<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+									<h:commandLink title="View" class="btn btn-info pull-left tltip"
 													action="#{messageList.view( message.id )}" >
 										<i class="fw-icon-zoom-in fw-icon-large"></i>
 									</h:commandLink>									
 
 									<h:commandLink styleClass="btn btn-warning pull-right tltip" 
-													title="Marca come non letto" 
+													title="Mark as Unread"
 													action="#{messageList.markAsUnread( message.id )}" rendered="#{message.isRead}">
 										<i class="fw-icon-minus-sign-alt fw-icon-large"></i>
 									</h:commandLink>									

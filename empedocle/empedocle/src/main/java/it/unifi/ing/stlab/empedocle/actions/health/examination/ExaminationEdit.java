@@ -120,7 +120,7 @@ public class ExaminationEdit implements Serializable {
 				examinationDao.update( current );
 			}
 			
-			message( FacesMessage.SEVERITY_INFO, "Visita salvata con successo!");
+			message( FacesMessage.SEVERITY_INFO, "Visit successfully saved!");
 		} catch ( EJBTransactionRolledbackException e ) {
 			Throwable t = e.getCause();
 			
@@ -130,14 +130,14 @@ public class ExaminationEdit implements Serializable {
 			
 			if ( t instanceof ConstraintViolationException ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Impossibile effettuare il salvataggio: orario '"
+						"Unable to perform the save: date '"
 								+ DateUtils.getString( current.getAppointment().getDate(), "dd/MM/yyyy HH:mm" )
-								+ "' già in uso sull'agenda '"
+								+ "' already in use on the agenda'"
 								+ current.getAppointment().getAgenda().toString() + "'!",
 						true );
 			}
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 		}
 		facesContext.getExternalContext().getFlash().setKeepMessages(true);
 		

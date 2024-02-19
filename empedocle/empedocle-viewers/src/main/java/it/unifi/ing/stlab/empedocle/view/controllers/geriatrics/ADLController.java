@@ -28,8 +28,10 @@ public class ADLController extends ContainerController {
 		return result;
 	}
 
-	// assegnazione di un punto per ciascuna opzione che inizia per a (che determina il valore di dipendenza, per un massimo di 6)
-	// e per ciascuna opzione che inizia per b (che determina il valore di indipendenza, per un massimo di 6)
+	// Assignment of one point for each option that starts with an 'a'
+	// (which determines the dependency value, up to a maximum of six)
+	// and for each option that starts with a 'b'
+	// (which determines the independence value, up to a maximum of six)
 	public String retrieveOverallScore( Viewer viewer, Fact value, String scoreType) {
 		int position;
 		if(scoreType.equals("a")){

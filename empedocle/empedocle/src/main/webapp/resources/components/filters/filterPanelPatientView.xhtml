@@ -17,17 +17,17 @@
     <composite:implementation>
         <h:outputStylesheet library="css" name="filters.1.0.3.css" />
 	 	<h:panelGroup class="box-title" >
-	 		Filtri attivi
+	 		Active Filters
 			<h:commandLink 
 				class="tltip" 
-				title="Aggiungi nuovo filtro"
+				title="Add new filter"
 				disabled="#{not cc.attrs.filters.canAddFilter()}" 
 				action="#{cc.attrs.filters.addFilter()}">
 				<i class="fw-icon-plus dist-left"></i>
 					<f:ajax render="#{cc.attrs.render}" 
 							execute="@this" />
 			</h:commandLink>				 		
-	 		<h:commandLink title="Ripristina filtri iniziali" class="tltip"
+	 		<h:commandLink title="Reset default filters" class="tltip"
 				action="#{cc.attrs.filters.resetFilters()}">
 				<i class="fw-icon-undo dist-left"></i>
 				<f:ajax
@@ -44,7 +44,7 @@
 						styleClass="table filter-table table-compact" columnClasses="column-1,column-2,column-3">
 			<h:column>
 				<h:selectOneMenu styleClass="filter-select" value="#{filter.definition}" converter="#{cc.attrs.filters}">
-					<f:selectItem itemValue="" itemLabel="- scegli un filtro -" noSelectionOption="true"/>
+					<f:selectItem itemValue="" itemLabel="- choose a filter -" noSelectionOption="true"/>
 					<f:selectItems value="#{cc.attrs.filters.getFilterDefs( filter )}"/>
 					<f:ajax 
 						listener="#{cc.attrs.navigator.reset}"
@@ -75,7 +75,7 @@
 					<h:selectOneMenu 
 						rendered="#{filter.definition.type == 'COMBO'}"
 						value="#{filter.value}">
-						<f:selectItem itemValue="" itemLabel="- scegli un valore -" noSelectionOption="true"/>
+						<f:selectItem itemValue="" itemLabel="- choose a value -" noSelectionOption="true"/>
 						<f:selectItems value="#{filter.definition.selectItems}"/>
 						<f:ajax 
 							listener="#{cc.attrs.navigator.reset}"

@@ -33,21 +33,20 @@
 		<h:form>
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>
-					Dettaglio Tipo
-					
+					Type Detail
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 					
 						<h:commandLink class="btn btn-danger"
 							action="#{typeList.delete( typeView.current.type.id )}"
 							rendered="#{typeList.isRemovable( typeView.current.type.id )}"
-							onclick="if(!confirm('Eliminare tipo?')) {return false;}" >
+							onclick="if(!confirm('Delete Type?')) {return false;}" >
 							<i class="fw-icon-remove dist-right"></i> Elimina
 						</h:commandLink>						
 					
 						<h:panelGroup class="btn-group dist-left" layout="block">
 							<h:commandLink class="btn btn-warning" 
 								action="#{typeList.edit( typeView.current.type.id )}">
-								<i class="fw-icon-pencil dist-right"></i> Modifica
+								<i class="fw-icon-pencil dist-right"></i> Edit
 							</h:commandLink>	
 							<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
@@ -55,7 +54,7 @@
 							<ul class="dropdown-menu">
 								<li>
 									<h:commandLink action="#{typeList.copy( typeView.current.type.id )}">
-										<i class="fw-icon-copy dist-right"></i> Clona
+										<i class="fw-icon-copy dist-right"></i> Clone
 									</h:commandLink>
 								</li>				
 							</ul>
@@ -63,7 +62,7 @@
 						
 						<h:commandLink class="btn dist-left"
 							action="#{typeView.close()}">
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>		
 					</h:panelGroup>	
 				</h2>
@@ -71,7 +70,7 @@
 
 			<h:panelGroup layout="block" styleClass="form-horizontal container-fluid">
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="name" value="Nome" />
+					<h:outputLabel styleClass="control-label bold" for="name" value="Name" />
 				    <h:panelGroup styleClass="controls align-txt" layout="block">
 				    	<h:outputText id="name" value="#{typeView.current.type.name}" /> 
 				    </h:panelGroup>
@@ -90,7 +89,7 @@
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="dex" value="Descrizione" />
+					<h:outputLabel styleClass="control-label bold" for="dex" value="Description" />
 				    <h:panelGroup styleClass="controls align-txt" layout="block">
 				    	<h:outputText id="dex" value="#{typeView.current.type.description}" /> 
 				    </h:panelGroup>
@@ -168,7 +167,7 @@
 								<h:panelGroup layout="block" rendered="#{not empty typeView.selectedLink and not empty typeView.selectedLink.link.name}" 
 									styleClass="structure-details">
 									<h:panelGroup styleClass="control-group" layout="block">
-										<h:outputLabel styleClass="control-label bold" for="role" value="Nome" />
+										<h:outputLabel styleClass="control-label bold" for="role" value="Name" />
 									    <h:panelGroup styleClass="controls align-txt" layout="block">
 									    	<h:outputText id="role" value="#{typeView.selectedLink.link.name}" /> 
 									    </h:panelGroup>
@@ -218,20 +217,20 @@
 									
 									<h:panelGroup styleClass="control-group" layout="block"
 										rendered="#{typeView.selectedType.isReference()}">
-										<h:outputLabel styleClass="control-label bold" for="reference-type" value="Tipo riferimento" />
+										<h:outputLabel styleClass="control-label bold" for="reference-type" value="Reference Type" />
 									    <h:panelGroup id="reference-type" styleClass="controls align-txt" layout="block">
-									    	<h:outputText value="Testuale" rendered="#{typeView.selectedType.isTextual()}" />
-									    	<h:outputText value="Enumerato" rendered="#{typeView.selectedType.isEnumerated()}" />
+									    	<h:outputText value="Textual" rendered="#{typeView.selectedType.isTextual()}" />
+									    	<h:outputText value="Enumerated" rendered="#{typeView.selectedType.isEnumerated()}" />
 									    	<h:outputText value="Queried" rendered="#{typeView.selectedType.isQueried()}" />
-									    	<h:outputText value="Quantitativo" rendered="#{typeView.selectedType.isQuantitative()}" />
-									    	<h:outputText value="Composito" rendered="#{typeView.selectedType.isComposite()}" />
-									    	<h:outputText value="Temporale" rendered="#{typeView.selectedType.isTemporal()}" />
+									    	<h:outputText value="Quantitative" rendered="#{typeView.selectedType.isQuantitative()}" />
+									    	<h:outputText value="Composite" rendered="#{typeView.selectedType.isComposite()}" />
+									    	<h:outputText value="Temporal" rendered="#{typeView.selectedType.isTemporal()}" />
 									    </h:panelGroup>
 									</h:panelGroup>
 									
 									<h:panelGroup styleClass="control-group" layout="block"
 										rendered="#{not empty typeView.defaultValue and not typeView.defaultValue.isEmpty()}">
-										<h:outputLabel styleClass="control-label bold" for="defaultvalue" value="Valore di default" />
+										<h:outputLabel styleClass="control-label bold" for="defaultvalue" value="Default Value" />
 									    <h:panelGroup styleClass="controls align-txt" layout="block">
 									    	<h:outputText id="defaultvalue" value="#{typeView.defaultValue.value}" /> 
 									    </h:panelGroup>

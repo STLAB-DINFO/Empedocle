@@ -78,7 +78,7 @@ public class StaffDaoBean implements StaffDao {
 		} else if ( result.size() == 0 ) {
 			return null;
 		} else {
-			throw new RuntimeException( "Più di un risultato da StaffDAO per id = " + id );
+			throw new RuntimeException( "More than one result from StaffDAO for id = " + id );
 		}
 	}
 
@@ -100,7 +100,7 @@ public class StaffDaoBean implements StaffDao {
 		} else if ( result.size() == 0 ) {
 			return null;
 		} else {
-			throw new RuntimeException( "Più di un risultato da StaffDAO per username = " + username );
+			throw new RuntimeException( "More than one result from StaffDAO for username = " + username );
 		}
 	}
 

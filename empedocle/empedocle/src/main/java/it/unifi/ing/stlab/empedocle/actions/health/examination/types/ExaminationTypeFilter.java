@@ -45,9 +45,9 @@ public class ExaminationTypeFilter extends FilterBean implements ExaminationType
 	}
 
 	private void initFilterDefs() {
-		addFilterDef( "Nome", FilterType.TEXT, "et.name like :etname", "etname" );
+		addFilterDef( "Name", FilterType.TEXT, "et.name like :etname", "etname" );
 
-		addFilterDef( "Tipo", FilterType.SUGGESTION, "et.type.uuid = :ptype", "ptype",
+		addFilterDef( "Type", FilterType.SUGGESTION, "et.type.uuid = :ptype", "ptype",
 				new SelectItemBuilder() {
 					@Override
 					public List<SelectItem> getSelectItems( Object param, int offset, int limit ) {
@@ -65,11 +65,11 @@ public class ExaminationTypeFilter extends FilterBean implements ExaminationType
 	}
 
 	private void initSorting() {
-		addSort( "Nome", "et.name asc", "et.name desc" );
-		addSort( "Tipo", "et.type.name asc, et.name asc", "et.type.name desc, et.name asc" );
+		addSort( "Name", "et.name asc", "et.name desc" );
+		addSort( "Type", "et.type.name asc, et.name asc", "et.type.name desc, et.name asc" );
 
 		// default sorting
-		toggle( "Nome" );
+		toggle( "Name" );
 	}
 
 	@Override

@@ -247,10 +247,10 @@ public class FiscalCodeValidator {
     }
 
     /*
-     * 1. Convertire in numeri i caratteri di posizione pari (cfr. evenValues).
-     * 2. Convertire in numeri i caratteri di posizione dispari (cfr. oddValues).
-     * 3. Addizionare tutti i valori ottenuti e dividerli per 26.
-     * 4. Determinare una lettera alfabetica corrispondente al resto dell'operazione (cfr. controlCharValues).
+     * 1. Convert even-position characters into numbers (see evenValues).
+     * 2. Convert odd-position characters into numbers (see oddValues).
+     * 3. Sum all the obtained values and divide them by 26.
+     * 4. Determine an alphabetical letter corresponding to the remainder of the operation (see controlCharValues).
      */
     private static String checkDigit( String code ) throws FiscalCodeValidatorException {
         int evenSum = 0;
@@ -283,10 +283,10 @@ public class FiscalCodeValidator {
     }
 
     /*
-     * I quattro caratteri alfanumerici indicativi del comune italiano o dello
-     * Stato estero di nascita, sono costituiti da un carattere alfabetico
-     * seguito da tre caratteri numerici, secondo la codifica stabilita
-     * dall’Agenzia del Territorio.
+     * The four alphanumeric characters indicating the Italian municipality or
+     * foreign country of birth consist of an alphabetical character
+     * followed by three numerical characters, according to the encoding established
+     * by the Territorial Agency.
      */
     private static String cityCode( String birthPlace ) throws FiscalCodeValidatorException {
         String code = cityValues.get( birthPlace );
@@ -298,11 +298,11 @@ public class FiscalCodeValidator {
     }
 
     /*
-     * Per i soggetti maschili il giorno di nascita figura invariato, con i
-     * numeri da uno a trentuno, facendo precedere dalla cifra zero i giorni
-     * del mese dall'uno al nove.
-     * Per i soggetti femminili il giorno di nascita viene aumentato di quaranta
-     * unità, per cui esso figura con i numeri da quarantuno a settantuno.
+     * For male subjects, the day of birth appears unchanged, with the
+     * numbers from one to thirty-one, prefixing the days
+     * from the first to the ninth with a zero.
+     * For female subjects, the day of birth is increased by forty
+     * units, so it appears with numbers from forty-one to seventy-one.
      */
     private static String dayCode( int day, Sex gender ) {
         return gender.equals( Sex.M ) ?
@@ -311,29 +311,29 @@ public class FiscalCodeValidator {
     }
 
     /*
-     * Il carattere alfabetico corrispondente al mese di nascita è quello
-     * stabilito per ciascun mese nella seguente tabella:
-     * Gennaio = A
-     * Febbraio = B
-     * Marzo = C
-     * Aprile = D
-     * Maggio = E
-     * Giugno = H
-     * Luglio = L
-     * Agosto = M
-     * Settembre = P
-     * Ottobre = R
-     * Novembre = S
-     * Dicembre = T
+     * The alphabetical character corresponding to the month of birth is that
+     * established for each month in the following table:
+     * January = A
+     * February = B
+     * March = C
+     * April = D
+     * May = E
+     * June = H
+     * July = L
+     * August = M
+     * September = P
+     * October = R
+     * November = S
+     * December = T
      */
     private static String monthCode( int month ) {
         return monthValues.get( month );
     }
 
     /*
-     * I due caratteri numerici indicativi dell'anno di nascita sono,
-     * nell'ordine, la cifra delle decine e la cifra delle unità dell'anno
-     * stesso.
+     * The two numerical characters indicating the year of birth are,
+     * in order, the digit of the tens and the digit of the units of the
+     * year itself.
      */
     private static int yearCode( int year ) {
         return year % 100;
@@ -343,11 +343,10 @@ public class FiscalCodeValidator {
         StringBuilder result = new StringBuilder();
 
         /*
-         * Se il cognome contiene una consonante e una vocale, si rilevano la
-         * consonante e la vocale, nell'ordine, e si assume come terzo carattere
-         * la lettera X.
-         * Se il cognome è costituito da due sole vocali, esse si
-         * rilevano, nell'ordine, e si assume come terzo carattere la lettera X.
+         * If the surname contains a consonant and a vowel, the consonant and the vowel are noted,
+         * in order, and the letter X is assumed as the third character.
+         * If the surname consists of only two vowels, they are noted,
+         * in order, and the letter X is assumed as the third character.
          */
         if ( surname.length() < 3 ) {
             result.append( surname );
@@ -370,9 +369,9 @@ public class FiscalCodeValidator {
         switch ( consonants.size() ) {
 
             /*
-             * Se il cognome contiene due consonanti, i tre caratteri da rilevare
-             * sono, nell'ordine, la prima e la seconda consonante e la prima
-             * vocale.
+             * If the surname contains two consonants, the three characters to be noted
+             * are, in order, the first and the second consonant and the first
+             * vowel.
              */
             case 2:
                 result.append( consonants.get( 0 ) );
@@ -381,8 +380,8 @@ public class FiscalCodeValidator {
                 break;
 
             /*
-             * Se il cognome contiene una consonante e due vocali, si rilevano,
-             * nell'ordine, quella consonante e quindi la prima e la seconda vocale.
+             * If the surname contains one consonant and two vowels, the consonant is noted first,
+             * followed by the first and second vowel, in that order.
              */
             case 1:
                 result.append( consonants.get( 0 ) );
@@ -394,9 +393,8 @@ public class FiscalCodeValidator {
                 throw new FiscalCodeValidatorException( "Zero consonants found for surname!" );
 
                 /*
-                 * Se il cognome contiene tre o più consonanti, i tre caratteri da
-                 * rilevare sono, nell'ordine, la prima, la seconda e la terza
-                 * consonante
+                 * If the surname contains three or more consonants, the three characters to be
+                 * noted are, in order, the first, second, and third consonant.
                  */
             default:
                 result.append( consonants.get( 0 ) );
@@ -412,11 +410,10 @@ public class FiscalCodeValidator {
         StringBuilder result = new StringBuilder();
 
         /*
-         * Se il nome contiene una consonante e una vocale, si rilevano la
-         * consonante e la vocale, nell'ordine, e si assume come terzo carattere
-         * la lettera X.
-         * Se il nome è costituito da due sole vocali, esse si
-         * rilevano nell'ordine, e si assume come terzo carattere la lettera X.
+         * If the name contains one consonant and one vowel, the consonant and vowel are noted,
+         * in order, and the letter X is assumed as the third character.
+         * If the name consists of only two vowels, they are noted in order, and the letter X
+         * is assumed as the third character.
          */
         if ( name.length() < 3 ) {
             result.append( name );
@@ -438,8 +435,8 @@ public class FiscalCodeValidator {
 
         switch ( consonants.size() ) {
             /*
-             * Se il nome contiene tre consonanti, i tre caratteri da rilevare sono,
-             * nell'ordine, la prima, la seconda e la terza consonante.
+             * If the name contains three consonants, the three characters to be noted are,
+             * in order, the first, second, and third consonant.
              */
             case 3:
                 result.append( consonants.get( 0 ) );
@@ -448,8 +445,8 @@ public class FiscalCodeValidator {
                 break;
 
             /*
-             * Se il nome contiene due consonanti, i tre caratteri da rilevare sono,
-             * nell'ordine, la prima e la seconda consonante e la prima vocale.
+             * If the name contains two consonants, the three characters to be noted are,
+             * in order, the first and second consonant and the first vowel.
              */
             case 2:
                 result.append( consonants.get( 0 ) );
@@ -458,9 +455,9 @@ public class FiscalCodeValidator {
                 break;
 
             /*
-             * Se il nome contiene una consonante e due vocali, i tre caratteri da
-             * rilevare sono, nell'ordine, quella consonante e quindi la prima e la
-             * seconda vocale.
+             *If the name contains one consonant and two vowels, the three characters to be
+             * noted are, in order, that consonant followed by the first and
+             * second vowel.
              */
             case 1:
                 result.append( consonants.get( 0 ) );
@@ -472,9 +469,8 @@ public class FiscalCodeValidator {
                 throw new FiscalCodeValidatorException( "Zero consonants found for name!" );
 
                 /*
-                 * Se il nome contiene quattro o più consonanti, i tre caratteri da
-                 * rilevare sono, nell'ordine, la prima, la terza e la quarta
-                 * consonante.
+                 * If the name contains four or more consonants, the three characters to be
+                 * noted are, in order, the first, third, and fourth consonant.
                  */
             default:
                 result.append( consonants.get( 0 ) );

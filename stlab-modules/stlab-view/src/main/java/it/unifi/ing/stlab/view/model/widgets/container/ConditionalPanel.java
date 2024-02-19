@@ -185,7 +185,7 @@ public class ConditionalPanel extends ViewerContainer {
 			return false;
 		
 		if(listChildren().size() > 0)
-			throw new RuntimeException("non è possibile aggiungere più di una sottovista ad un conditionalPanel");
+			throw new RuntimeException("It is not possible to add more than one subviewer to one conditionalPanel");
 		
 		return true;
 	}

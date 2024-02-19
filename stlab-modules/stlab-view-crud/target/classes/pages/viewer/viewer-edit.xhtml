@@ -20,23 +20,23 @@
 		<h:form id="viewer-form">
 			<h:panelGroup id="title" layout="block" styleClass="container-fluid"
 				style="padding-bottom:10px;">
-				<h2>#{empty viewerEdit.viewerId ? 'Creazione nuova Vista' : 'Modifica '.concat(viewerEdit.current.viewer.name)}</h2>
+				<h2>#{empty viewerEdit.viewerId ? 'Create new Viewer' : 'Edit '.concat(viewerEdit.current.viewer.name)}</h2>
 			</h:panelGroup>
 			
 			<h:messages id="msgs" globalOnly="true" errorClass="panel-err text-error" styleClass="statusMessages" />
 	
 			<h:panelGroup id="use-warn" rendered="#{viewerEdit.isUsed()}" styleClass="panel-warn" style="margin-left: 20px;">
-				<h:outputText value="La Vista selezionata è correntemente utilizzata, prestare attenzione alle modifiche."
+				<h:outputText value="The selected viewer is currently in use, please be cautious with the changes."
 					styleClass="text-warning" />
 			</h:panelGroup>
 
 			<h:panelGroup layout="block" styleClass="form-horizontal container-fluid" style="margin-top:20px;">
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="name" value="Nome" />
+					<h:outputLabel styleClass="control-label bold" for="name" value="Name" />
 				    <h:panelGroup styleClass="controls" layout="block">
 				    	<h:inputText id="name" value="#{viewerEdit.current.viewer.name}"
 				    		required="true" styleClass="input-xxlarge #{not component.valid ? 'vld-error' : ''}"
-				    		requiredMessage="Campo obbligatorio">
+				    		requiredMessage="Required field">
 				    		<f:ajax render=":viewer-form:title"/>
 				    	</h:inputText>
 				    	<h:message for="name" styleClass="left5" />
@@ -44,7 +44,7 @@
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="dex" value="Descrizione" />
+					<h:outputLabel styleClass="control-label bold" for="dex" value="Description" />
 				    <h:panelGroup styleClass="controls" layout="block">
 				    	<h:inputTextarea id="dex" value="#{viewerEdit.current.viewer.description}"
 				    		styleClass="input-xxlarge">
@@ -54,7 +54,7 @@
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" id="type-sel" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="type" value="Tipo" />
+					<h:outputLabel styleClass="control-label bold" for="type" value="Type" />
 				    <h:panelGroup styleClass="controls" layout="block">
 				    	<emp:suggestion id="type" bean="#{viewerEdit.typeSuggestion}"
 							assignTo="#{viewerEdit.current.viewer.type}"  
@@ -74,7 +74,7 @@
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Struttura" />
+					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Structure" />
 					
 					<h:panelGroup styleClass="controls align-txt" layout="block">
 						
@@ -134,14 +134,14 @@
 								<h:panelGroup layout="block" styleClass="form-horizontal container-fluid well"
 									rendered="#{not empty viewerEdit.selectedLink}">
 									
-									<h:commandLink action="#{viewerEdit.closeSelection}" styleClass="pull-right tltip" title="Chiudi">
+									<h:commandLink action="#{viewerEdit.closeSelection}" styleClass="pull-right tltip" title="Close">
 										<f:ajax execute="@this" render="@form" />
 										<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
 										<i class="icon-remove" />
 									</h:commandLink>
 									
 									<h:panelGroup layout="block" styleClass="form-horizontal">
-										<h5>#{viewerEdit.component(viewerEdit.selectedLink)} Elemento selezionato</h5>
+										<h5>#{viewerEdit.component(viewerEdit.selectedLink)} Selected element</h5>
 										
 										<h:panelGroup styleClass="controls" layout="block">
 									    	<emp:suggestion id="ref" bean="#{viewerEdit.typeSuggestion}"
@@ -152,7 +152,7 @@
 									    </h:panelGroup>
 										
 										<h:panelGroup styleClass="control-group" layout="block">
-											<h:outputLabel styleClass="control-label" for="role" value="Nome" />
+											<h:outputLabel styleClass="control-label" for="role" value="Name" />
 										    <h:panelGroup styleClass="controls" layout="block">
 										    	<h:inputText id="role" value="#{viewerEdit.selectedLink.uuid}" >
 										    		<a4j:ajax event="change" execute="@this" />
@@ -160,11 +160,11 @@
 										    </h:panelGroup>
 										</h:panelGroup>
 			
-										TODO edit dei dati specifici del nodo <br />
+										<!--TODO edit specific data of the node <br />-->
 									</h:panelGroup>
 									
 									<div class="row-fluid">
-										<a4j:commandButton title="Cancella elemento" 
+										<a4j:commandButton title="Delete element"
 												styleClass="tltip btn pull-right"
 												value="Elimina"
 									      		action="#{viewerEdit.deleteCurrentNode()}"
@@ -184,7 +184,7 @@
 			<div class="row-fluid">
 				<h:commandButton styleClass="btn btn-primary pull-right dist-left"
 					value="Salva" action="#{viewerEdit.save()}" />
-				<h:commandButton styleClass="btn pull-right dist-left" value="Annulla"
+				<h:commandButton styleClass="btn pull-right dist-left" value="Cancel"
 					action="#{viewerEdit.close()}" immediate="true" />
 			</div>
 

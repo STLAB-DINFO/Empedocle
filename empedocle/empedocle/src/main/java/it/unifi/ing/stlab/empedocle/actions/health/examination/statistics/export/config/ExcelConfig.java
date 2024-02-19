@@ -6,12 +6,12 @@ import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export
 public abstract class ExcelConfig {
 	
 	/**
-	 * Prima riga dati del foglio. La riga 0 è riservata all'intestazione
+	 * First data row of the sheet. Row 0 is reserved for the header
 	 */
 	private final int dataStartRow = 1;
 	
 	/**
-	 * Formato per le date da inserire nel foglio
+	 * Format for dates to be entered in the sheet
 	 */
 	private final String dateFormat = "dd/MM/yyyy";
 	

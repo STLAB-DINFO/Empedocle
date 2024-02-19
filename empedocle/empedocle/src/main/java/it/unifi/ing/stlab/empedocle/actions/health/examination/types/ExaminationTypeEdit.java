@@ -289,7 +289,7 @@ public class ExaminationTypeEdit implements Serializable {
 			
 			updateAgendas();
 
-			message( FacesMessage.SEVERITY_INFO, "Struttura visita salvata con successo!", true );
+			message( FacesMessage.SEVERITY_INFO, "Visit Structure successfully saved!", true );
 		} catch ( EJBTransactionRolledbackException e ) {
 			Throwable t = e.getCause();
 
@@ -299,12 +299,12 @@ public class ExaminationTypeEdit implements Serializable {
 
 			if ( t instanceof ConstraintViolationException ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Impossibile effettuare il salvataggio: nome '" + current.getName()
-								+ "' già in uso!",
+						"Unable to perform the save: name '" + current.getName()
+								+ "' already in use!",
 						true );
 			}
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 		}
 
 		return "save";

@@ -86,15 +86,15 @@ public class TypeFilter extends FilterBean implements TypeQueryBuilder {
 	// private methods
 	//
 	private void initFilters() {
-		addFilterDef( "Nome", FilterType.TEXT, "t.name like :pname", "pname" );
-		addFilterDef( "Ricorrente", FilterType.BOOLEAN, "t.recurrent = :precurrent", "precurrent");
+		addFilterDef( "Name", FilterType.TEXT, "t.name like :pname", "pname" );
+		addFilterDef( "Recurrent", FilterType.BOOLEAN, "t.recurrent = :precurrent", "precurrent");
 
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );
 	}
 
 	private void initSorting() {
-		addSort( "Nome", "t.name asc", "t.name desc" );
-		addSort( "Ricorrente", "t.recurrent asc, t.name asc", "t.recurrent desc, t.name asc" );
-		toggle( "Nome" );
+		addSort( "Name", "t.name asc", "t.name desc" );
+		addSort( "Recurrent", "t.recurrent asc, t.name asc", "t.recurrent desc, t.name asc" );
+		toggle( "Name" );
 	}
 }

@@ -16,8 +16,8 @@
 								styleClass="inputTemporal #{not component.valid ? 'vld-error' : ''}"
 								required="#{viewer.required}"
 								disabled ="#{viewer.readOnly}" 
-								converterMessage="Il campo #{value.type.name} contiene una valore errata"
-								requiredMessage="Il campo #{value.type.name} deve essere compilato"
+								converterMessage="Field #{value.type.name} contains a wrong value"
+								requiredMessage="Field #{value.type.name} must be filled in"
 								onkeydown="return disableReturn(event, this)">
 					<f:convertDateTime pattern="#{value.type.type.defaultFormat}" />
 					<a4j:ajax event="change" 

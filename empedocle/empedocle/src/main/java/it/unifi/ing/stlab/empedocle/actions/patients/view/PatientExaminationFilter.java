@@ -98,17 +98,17 @@ public class PatientExaminationFilter extends FilterBean implements ExaminationQ
 	
 		} );
 		
-		addFilterDef( "Visitato dal", FilterType.DATE, "e.appointment.date >= :pamin", "pamin" );
-		addFilterDef( "Visitato fino al", FilterType.DATE, "e.appointment.date <= :pamax", "pamax" );
+		addFilterDef( "Visited from", FilterType.DATE, "e.appointment.date >= :pamin", "pamin" );
+		addFilterDef( "Visited until", FilterType.DATE, "e.appointment.date <= :pamax", "pamax" );
 		
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );		
 	}
 	
 	private void initSorting() {
-		addSort( "Data", "e.appointment.date asc", "e.appointment.date desc" );
+		addSort( "Date", "e.appointment.date asc", "e.appointment.date desc" );
 		
-		toggle( "Data" ); // ordinamento asc
-		toggle( "Data" ); // ordinamento desc
+		toggle( "Date" ); // ordinamento asc
+		toggle( "Date" ); // ordinamento desc
 	}
 
 	public void selectList( String listType ) {

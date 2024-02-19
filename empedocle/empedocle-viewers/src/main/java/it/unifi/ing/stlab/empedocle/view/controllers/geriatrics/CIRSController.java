@@ -27,9 +27,9 @@ public class CIRSController extends ContainerController {
 		
 		return result;
 	}
-	
-	// l'indice di severità, che risulta dalla media dei punteggi delle prime 13 categorie (esclusi i problemi psichiatrici e comportamentali); 
-	// il punteggio massimo ottenibile è 5;
+
+	// the severity index, which is the result of the average scores of the first 13 categories (excluding psychiatric and behavioral problems);
+	// the maximum score achievable is five;
 	public String retrieveSeverityIndex( Fact value ) {
 		if( value.isEmpty() )
 			return "--";
@@ -39,9 +39,9 @@ public class CIRSController extends ContainerController {
 			facts.add( link.getTarget() );
 		}
 
-		facts.remove( 15 ); // rimuove comorbidity fact
-		QuantitativeFact severityFact = ClassHelper.cast( facts.remove( 14 ), QuantitativeFact.class ); // seleziona severity fact
-		facts.remove( 13 );  //rimuove il fact relativo ai problemi psichiatrici e comportamentali
+		facts.remove( 15 ); // removes comorbidity fact
+		QuantitativeFact severityFact = ClassHelper.cast( facts.remove( 14 ), QuantitativeFact.class ); // selects severity fact
+		facts.remove( 13 );  // removes the fact related to psychiatric and behavioral problems
 
 		if( isEmpty(facts) ) {
 			severityFact.getQuantity().setValue( null );
@@ -61,9 +61,9 @@ public class CIRSController extends ContainerController {
 		}
 		return true;
 	}
-	
-	// l'indice di comorbilità, che rappresenta il numero delle categorie nelle quali si ottiene un punteggio superiore o uguale a 3 
-	// (anche in questo caso riferito solo alle prime 13 categorie; il punteggio massimo ottenibile è 13).
+
+	// the comorbidity index, which represents the number of categories in which a score of 3 or higher is obtained
+	// (also in this case referring only to the first 13 categories; the maximum score achievable is 13).
 
 	public String retrieveComorbidityIndex( Fact value ) {
 		if( value.isEmpty() )
@@ -74,9 +74,9 @@ public class CIRSController extends ContainerController {
 			facts.add( link.getTarget() );
 		}
 
-		QuantitativeFact comorbidityFact = ClassHelper.cast( facts.remove( 15 ), QuantitativeFact.class ); // seleziona comorbidity fact
-		facts.remove( 14 ); // rimuove severity fact
-		facts.remove( 13 ); // rimuove il fact relativo ai problemi psichiatrici e comportamentali
+		QuantitativeFact comorbidityFact = ClassHelper.cast( facts.remove( 15 ), QuantitativeFact.class ); // selects comorbidity fact
+		facts.remove( 14 ); // removes severity fact
+		facts.remove( 13 ); // removes the fact related to psychiatric and behavioral problems
 
 		if( isEmpty(facts) ) {
 			comorbidityFact.getQuantity().setValue( null );

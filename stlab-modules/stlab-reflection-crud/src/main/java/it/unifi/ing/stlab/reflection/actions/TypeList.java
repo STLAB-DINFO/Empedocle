@@ -102,7 +102,7 @@ public class TypeList extends Navigator {
 	public String delete( Long id ) {
 		typeDao.delete( id );
 
-		message( FacesMessage.SEVERITY_INFO, "Tipo cancellato con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Type successfully deleted!", true );
 		return "delete";
 	}	
 

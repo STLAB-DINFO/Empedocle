@@ -13,7 +13,7 @@
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
 					Queries
-					<h:commandButton styleClass="btn pull-right" value="Aggiungi" action="#{queryList.addNew()}" />
+					<h:commandButton styleClass="btn pull-right" value="Add" action="#{queryList.addNew()}" />
 				</h2>
 
 				<filter:filterPanel filters="#{queryFilter}" navigator="#{queryList}" 
@@ -28,7 +28,7 @@
 			<h:panelGroup layout="block" id="results">
 				<h:panelGroup rendered="#{empty queryResults}">
 					<br/>
-					<h:outputText styleClass="lead" value="Nessuna query trovata"/>
+					<h:outputText styleClass="lead" value="No query found"/>
 	
 				</h:panelGroup>
 				
@@ -62,13 +62,13 @@
 							Azioni
 						</f:facet>
 
-						<h:commandLink title="Visualizza" class="btn tltip"
+						<h:commandLink title="View" class="btn tltip"
 										action="#{queryList.view( query.id )}" >
 							<i class="icon-zoom-in"></i>
 						</h:commandLink>
 						
 						<h:commandLink styleClass="btn pull-right tltip"
-										title="Modifica" action="#{queryList.edit( query.id )}">
+										title="Edit" action="#{queryList.edit( query.id )}">
 							<i class="icon-pencil"></i>
 						</h:commandLink>
 					</h:column>

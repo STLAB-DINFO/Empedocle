@@ -235,9 +235,9 @@ public class OfflinePatientReconciliator {
 		MySQLConnector( String url,  String user, String password ) {
 			try {
 				connection = DriverManager.getConnection( url, user, password );
-				logger.info( "Connesso con successo!" );
+				logger.info( "Successfully Connected!" );
 			} catch (SQLException e) {
-				logger.error( "Errore", e );
+				logger.error( "Error", e );
 				throw new RuntimeException( e );
 			}
 		}
@@ -263,7 +263,7 @@ public class OfflinePatientReconciliator {
 
 				return stmt.executeQuery( query );
 			} catch (SQLException e) {
-				logger.error( "Errore", e );
+				logger.error( "Error", e );
 				throw new RuntimeException( e );
 			}
 		}

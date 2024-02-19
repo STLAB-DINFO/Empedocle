@@ -77,27 +77,27 @@
 		<div class="accordion-group">
 			<div class="accordion-heading">
 				<a class="accordion-toggle not-underline" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-					<h:outputText value="Dati Paziente" />
+					<h:outputText value="Patient Data" />
 				</a>
 			</div>
 			<div id="collapseOne" class="accordion-body collapse in">
 				<div class="accordion-inner">
 					<dl>
-						<dt>Codice fiscale</dt>
+						<dt>Tax Code</dt>
 						<dd>#{examinationRunning.lastPatientVersion.taxCode}</dd>
-						<dt>Cognome</dt>
+						<dt>Surname</dt>
 						<dd>#{examinationRunning.lastPatientVersion.surname}</dd>
-						<dt>Nome</dt>
+						<dt>Name</dt>
 						<dd>#{examinationRunning.lastPatientVersion.name}</dd>
-						<dt>Sesso</dt>
+						<dt>Sex</dt>
 						<dd>#{examinationRunning.lastPatientVersion.sex}</dd>
-						<dt>Data nascita</dt>
+						<dt>Birthdate</dt>
 						<dd>
 							<h:outputText value="#{examinationRunning.lastPatientVersion.birthDate}">
 								<f:convertDateTime pattern="dd/MM/yyyy"/>
 							</h:outputText>
 						</dd>	
-						<dt>Luogo nascita</dt>
+						<dt>Birthplace</dt>
 						<dd>#{examinationRunning.lastPatientVersion.birthPlace}</dd>						
 					</dl>
 				</div>
@@ -107,13 +107,13 @@
 		<div class="accordion-group">
 			<div class="accordion-heading">
 				<a class="accordion-toggle not-underline" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> 
-					<h:outputText value="Dettagli Visita" />
+					<h:outputText value="Visit Details" />
 				</a>
 			</div>
 			<div id="collapseTwo" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<dl>
-						<dt >Orario</dt>
+						<dt >Date</dt>
 						<dd>
 							<h:outputText rendered="#{not examinationRunning.dateFreeVisit}" value="#{examinationRunning.examinationDetails.examination.appointment.date}">
 								<f:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
@@ -125,14 +125,14 @@
 						<dt>Agenda</dt>
 						<dd>#{examinationRunning.examinationDetails.examination.appointment.agenda.code} - #{examinationRunning.examinationDetails.examination.appointment.agenda.description}</dd>			
 						<h:panelGroup rendered="#{not examinationRunning.dateFreeVisit}">
-							<dt>Codice prenotazione</dt>
+							<dt>Booking Code</dt>
 							<dd>#{examinationRunning.examinationDetails.examination.appointment.bookingCode}</dd>
-							<dt>Codice accettazione</dt>
+							<dt>Acceptance Code</dt>
 							<dd>#{examinationRunning.examinationDetails.examination.appointment.acceptanceCode}</dd>
 						</h:panelGroup>
 
 						<h:panelGroup layout="block" rendered="#{not empty examinationRunning.examinationDetails.examination.appointment.listServices()}">		
-							<dt>Prestazioni</dt>
+							<dt>Services</dt>
 							<dd>#{examinationRunning.examinationDetails.examination.appointment.listServices()}</dd>	
 						</h:panelGroup>								
 					</dl>		
@@ -145,7 +145,7 @@
 				<h:form id="exams-accordion-form">
 					<div class="accordion-heading">
 						<a class="accordion-toggle not-underline" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-							<h:outputText value="Visite Recenti" />
+							<h:outputText value="Recent Visits" />
 						</a>
 					</div>
 					<div id="collapseThree" class="accordion-body collapse in">
@@ -153,7 +153,7 @@
 							<h:panelGroup layout="block" id="results">
 								<h:panelGroup rendered="#{empty examinationRunning.patientLastExams}">
 									<br />
-									<h:outputText styleClass="lead" value="Nessuna visita trovata" />
+									<h:outputText styleClass="lead" value="No visit found" />
 								</h:panelGroup>
 
 								<h:dataTable
@@ -165,7 +165,7 @@
 
 									<h:column>
 										<f:facet name="header">
-											Orario
+											Date
 										</f:facet>
 										<h:outputText value="#{examination.appointment.date}" >
 											<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
@@ -183,10 +183,10 @@
 
 									<h:column>
 										<f:facet name="header">
-											Azioni
+											Actions
 										</f:facet>
 
-										<a4j:commandLink title="Visualizza referto"
+										<a4j:commandLink title="View report"
 														 action="#{examinationRunning.initReports( examination.id )}"
 														 styleClass="btn btn-primary tltip"
 														 rendered="#{examinationRunning.hasReport( examination ) and not examinationRunning.has2Report( examination )}"
@@ -196,7 +196,7 @@
 											<i class="fw-icon-book fw-icon-large "></i>
 										</a4j:commandLink>
 
-										<a4j:commandLink title="Visualizza referti"
+										<a4j:commandLink title="View reports"
 														 action="#{examinationRunning.initReports( examination.id )}"
 														 styleClass="btn btn-primary pull-left dist-right tltip"
 														 rendered="#{examinationRunning.hasReport( examination ) and examinationRunning.has2Report( examination )}"
@@ -208,7 +208,7 @@
 										</a4j:commandLink>
 
 										<h:link outcome="/pages/patients/examination/examination-view.xhtml" includeViewParams="true"
-												rendered="#{examinationRunning.hasView(examination)}" title="Visualizza visita"
+												rendered="#{examinationRunning.hasView(examination)}" title="View visit"
 												styleClass="btn btn-info pull-left dist-right tltip">
 											<f:param name="id" value="#{examination.id}" />
 											<f:param name="pid" value="#{examinationRunning.lastPatientVersion.id}" />
@@ -236,7 +236,7 @@
 					<h:form styleClass="form-horizontal" id="report-form">
 
 						<div class="modal-header">
-							<h3>Seleziona Report da stampare
+							<h3>Select Report to print
 								<a4j:commandLink
 										immediate="true"
 										onclick="$('#report-panel').modal('hide');"
@@ -244,7 +244,7 @@
 										execute="@this"
 										styleClass="btn pull-right" >
 									<i class="fw-icon-step-backward dist-right"></i>
-									<h:outputText value="Chiudi" styleClass="bold" />
+									<h:outputText value="Close" styleClass="bold" />
 								</a4j:commandLink>
 							</h3>
 						</div>
@@ -262,7 +262,7 @@
 														 onclick="openSingle( #{examinationRunning.selection}, #{examinationRunning.reports.get(0).id} );"
 														 execute="@form">
 											<i class="fw-icon-step-forward dist-right"></i>
-											<h:outputText value="Visualizza" styleClass="bold" />
+											<h:outputText value="View" styleClass="bold" />
 										</a4j:commandLink>
 									</td>
 								</tr>
@@ -277,7 +277,7 @@
 														 onclick="openSingle( #{examinationRunning.selection}, #{examinationRunning.reports.get(1).id} );"
 														 execute="@form">
 											<i class="fw-icon-step-forward dist-right"></i>
-											<h:outputText value="Visualizza" styleClass="bold" />
+											<h:outputText value="View" styleClass="bold" />
 										</a4j:commandLink>
 									</td>
 								</tr>

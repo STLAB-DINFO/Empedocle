@@ -96,7 +96,7 @@ public class ICD9CMCodeJpaImporter extends JpaTest {
 			code_to_persist.setDescription(description);
 			
 			if(!check(code_to_persist))
-				throw new RuntimeException("errore in check");
+				throw new RuntimeException("error in check");
 			
 			System.out.println(
 					"code: " + code_to_persist.getCode() + 

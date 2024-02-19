@@ -35,22 +35,22 @@ public class POIDataExporter extends ExcelDataExporter {
 	
 	public POIDataExporter(BaseExcelConfig config) {
 		super(config);
-		
-		// unico file, ma un foglio per ogni tipo visita
+
+		// single file, but one sheet for each type of appointment
 		workbook = new XSSFWorkbook();
-		// analogamente, ogni tipovisita ha la sua struttura
+		// similarly, each type of appointment has its own structure
 		structures = new HashMap<String, Map<String,Integer>>();
-		// tiene traccia del numero di riga a cui si era arrivati per ogni foglio
+		// keeps track of the row number reached for each sheet
 		currentRowNumbers = new HashMap<String, Integer>();
 		
 	}
 
-	// nota1: si presuppone che questi siano già fact root di visite ok per l'export, ovvero che non siano accettate o prenotate
+	// note1: it is assumed that these are already root facts of appointments ok for export, meaning they are neither accepted nor booked
 	@Override
 	public void export(List<Fact> roots) throws Exception {
 		for(Fact rootFact : roots) {
-			
-			// se è un 'nuovo' tipo visita, crea e inizializza foglio e struttura
+
+			// if it's a 'new' type of appointment, create and initialize sheet and structure
 //			ExaminationType examinationType = ClassHelper.cast(rootFact.getContext(), Examination.class).getType();
 			Type rootType = rootFact.getType();
 			
@@ -67,12 +67,12 @@ public class POIDataExporter extends ExcelDataExporter {
 				
 			}
 			
-			// crea una nuova riga per la visita
+			// create a new row for the appointment
 			Row row = createRow(
 						workbook.getSheet( buildSheetName(rootType) ),
 						currentRowNumbers.get( rootType.getName()  ) );
 			
-			// scrive le righe di default contenenti le info Paziente e Examination
+			// write the default rows containing Patient and Examination info
 			Examination e = ClassHelper.cast(rootFact.getContext(), Examination.class);
 			getConfig().writeDefaultColumns(e, e.getAppointment().getPatient(), row);
 			
@@ -92,7 +92,7 @@ public class POIDataExporter extends ExcelDataExporter {
 				
 			}
 			
-			// incrementa il conteggio righe per il foglio correntemente usato
+			// increment the row count for the currently used sheet
 			currentRowNumbers.put(rootType.getName(), currentRowNumbers.get(rootType.getName()) + 1);
 			
 		}
@@ -117,7 +117,7 @@ public class POIDataExporter extends ExcelDataExporter {
 	
 	@Override
 	public String getFileName() {
-		return "statistiche_" +
+		return "statistics_" +
 				DateUtils.getString( Calendar.getInstance().getTime(), config.getDateFormat() )
 				+ ".xlsx";
 		

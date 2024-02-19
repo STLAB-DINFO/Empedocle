@@ -93,17 +93,17 @@
 		<h:form id="examination-form">
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Visite
+					Visits
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:outputLink value="/empedocle/statistics"
 								styleClass="btn dist-right #{not examinationList.checkRoleFor( 'statistics' ) ? 'hide' : ''}">
-							<i class="fw-icon-bar-chart fw-icon-large dist-right"></i> Statistiche	
+							<i class="fw-icon-bar-chart fw-icon-large dist-right"></i> Statistics
 							<f:param name="user-id" value="#{loggedUser.user.id}" />
 						</h:outputLink>
-						<h:commandLink title="Aggiungi" class="btn btn-primary #{not examinationList.checkRoleFor( 'add-new' ) ? 'hide' : ''}" 
+						<h:commandLink title="Add" class="btn btn-primary #{not examinationList.checkRoleFor( 'add-new' ) ? 'hide' : ''}"
 							action="#{examinationList.addNew()}">
-							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Add
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -119,49 +119,49 @@
 					<li class="#{examinationFilter.isSelectedList( 'ALL' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'ALL' )}"  
-							value="Tutte">
+							value="All">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
 					<li class="#{examinationFilter.isSelectedList( 'BOOKED' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'BOOKED' )}"  
-							value="Prenotate">
+							value="Booked">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
 					<li class="#{examinationFilter.isSelectedList( 'ACCEPTED' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'ACCEPTED' )}"  
-							value="Accettate">
+							value="Accepted">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
 					<li class="#{examinationFilter.isSelectedList( 'RUNNING' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'RUNNING' )}"  
-							value="In erogazione">
+							value="Running">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
 					<li class="#{examinationFilter.isSelectedList( 'SUSPENDED' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'SUSPENDED' )}"  
-							value="Sospese">
+							value="Suspended">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
 					<li class="#{examinationFilter.isSelectedList( 'DONE' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'DONE' )}"  
-							value="Erogate">
+							value="Done">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
 					<li class="#{examinationFilter.isSelectedList( 'CONCLUDED' ) ? 'active' : ''}">
 						<h:commandLink 
 							action="#{examinationFilter.selectList( 'CONCLUDED' )}"  
-							value="Concluse">
+							value="Concluded">
 							<f:ajax execute="@this" render="results-tab"/>
 						</h:commandLink> 
 					</li>
@@ -180,7 +180,7 @@
 						<h:panelGroup layout="block" id="results">
 							<h:panelGroup rendered="#{empty examinationResults}">
 								<br />
-								<h:outputText styleClass="lead" value="Nessuna visita trovata" />
+								<h:outputText styleClass="lead" value="No visit found" />
 
 							</h:panelGroup>
 
@@ -196,7 +196,7 @@
 								
 								<h:column>
 									<f:facet name="header">
-										Orario
+										Date
 									</f:facet>
 									<h:outputText value="#{examination.appointment.date}" >
 										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
@@ -210,28 +210,28 @@
 
 								<h:column>
 									<f:facet name="header">
-										Cognome
+										Surname
 									</f:facet>
 									#{_patient.surname}
 								</h:column>
 
 								<h:column>
 									<f:facet name="header">
-										Nome
+										Name
 									</f:facet>
 									#{_patient.name}
 								</h:column>
 
 								<h:column>
 									<f:facet name="header">
-										Sesso
+										Sex
 									</f:facet>
 									#{_patient.sex}
 								</h:column>
 
 								<h:column>
 									<f:facet name="header">
-										Data nascita
+										Birthdate
 									</f:facet>
 									<h:outputText
 										value="#{_patient.birthDate}">
@@ -242,24 +242,24 @@
 
 								<h:column>
 									<f:facet name="header">
-										Luogo nascita
+										Birthplace
 									</f:facet>
 									#{_patient.birthPlace}
 								</h:column>
 
 								<h:column>
 									<f:facet name="header">
-										Codice fiscale
+										Tax Code
 									</f:facet>
 									#{_patient.taxCode}
 								</h:column>
 
 								<h:column>
 									<f:facet name="header">
-										Azioni
+										Actions
 									</f:facet>
 									
-									<a4j:commandLink title="Visualizza referto"
+									<a4j:commandLink title="View report"
 											action="#{examinationList.initSelectedReports( examination )}"
 											styleClass="btn btn-primary pull-left dist-right tltip" 
 											rendered="#{examinationList.hasReport( examination )}"
@@ -268,14 +268,14 @@
 										<i class="fw-icon-book fw-icon-large "></i>
 									</a4j:commandLink>
 										
-									<h:commandLink title="Apri cartella"
+									<h:commandLink title="Open record"
 										action="#{examinationList.history( _patient.id )}" 
 										styleClass="btn btn-info pull-left dist-right tltip">
 										<i class="fw-icon-large 
 											#{examinationList.checkHistory( _patient.id ) ? 'fw-icon-zoom-in' : 'fw-icon-search'}"></i>
 									</h:commandLink>
 									
-									<h:commandLink title="Avvia"
+									<h:commandLink title="Start"
 											action="#{examinationList.run( examination.id )}"
 											styleClass="btn btn-success pull-left tltip"
 											rendered="#{examinationList.hasStart( examination ) and not examination.status.name.equals('To do')}">
@@ -283,7 +283,7 @@
 										<i class="fw-icon-large fw-icon-play-sign" />
 									</h:commandLink>
 
-									<h:commandLink title="Modifica"
+									<h:commandLink title="Edit"
 											action="#{examinationList.run( examination.id )}"
 											styleClass="btn btn-info pull-left tltip"
 											rendered="#{examinationList.hasModify( examination )}">
@@ -291,7 +291,7 @@
 										<i class="fw-icon-large fw-icon-play-sign"></i>
 									</h:commandLink>
 
-									<h:commandLink title="Riprendi"
+									<h:commandLink title="Resume"
 											action="#{examinationList.run( examination.id )}"
 											styleClass="btn btn-warning pull-left tltip" 
 											rendered="#{examinationList.hasResume( examination )}">
@@ -299,7 +299,7 @@
 										<i class="fw-icon-large fw-icon-play-sign"></i>
 									</h:commandLink>
 
-									<h:commandLink title="Recupera"
+									<h:commandLink title="Recover"
 											action="#{examinationList.run( examination.id )}"
 											styleClass="btn btn-danger pull-left tltip" 
 											rendered="#{examinationList.hasRecover( examination )}">
@@ -315,13 +315,13 @@
 										<ul class="dropdown-menu pull-right">
 											<li>
 												<h:commandLink action="#{examinationList.edit( examination.id )}">
-													<i class="fw-icon-pencil dist-right"></i> Modifica
+													<i class="fw-icon-pencil dist-right"></i> Edit
 												</h:commandLink>
 											</li>
 											<li>
 												<h:commandLink action="#{examinationList.delete( examination.id )}" 
-													onclick="if(!confirm('Eliminare la visita selezionata?')) {return false;}" >
-													<i class="fw-icon-remove dist-right"></i> Elimina
+													onclick="if(!confirm('Delete selected visit?')) {return false;}" >
+													<i class="fw-icon-remove dist-right"></i> Delete
 												</h:commandLink>											
 											</li>
 										</ul>
@@ -352,13 +352,13 @@
 				<h:form styleClass="form-horizontal" id="report-form">
 
 					<div class="modal-header">
-						<h3>Seleziona Report da stampare
+						<h3>Select Report to print
 						
 							<a4j:commandLink styleClass="btn btn-primary pull-right dist-left"
 								onclick="openMoreThanOne(#{examinationList.selection});"
 								execute="@form">
 								<i class="fw-icon-step-forward dist-right"></i>
-								<h:outputText value="Conferma" styleClass="bold" />
+								<h:outputText value="Confirm" styleClass="bold" />
 							</a4j:commandLink>
 						
 							<a4j:commandLink
@@ -368,7 +368,7 @@
 								execute="@this"
 								styleClass="btn pull-right" >
 								<i class="fw-icon-step-backward dist-right"></i>
-								<h:outputText value="Chiudi" styleClass="bold" />
+								<h:outputText value="Close" styleClass="bold" />
 							</a4j:commandLink>
 						</h3>
 					</div>

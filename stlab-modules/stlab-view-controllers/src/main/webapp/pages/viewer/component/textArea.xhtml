@@ -12,7 +12,7 @@
 			<h:inputTextarea value="#{value.text}" required="#{viewer.required}"
 				styleClass="textArea_input" label="#{value.type.name}"
 				disabled ="#{viewer.readOnly}" 
-				requiredMessage="Il campo #{value.type.name} deve essere compilato">
+				requiredMessage="Field #{value.type.name} must be filled in">
 				
 				<a4j:ajax event="change" limitRender="true" 
 							listener="#{persistListener.persistData}" />

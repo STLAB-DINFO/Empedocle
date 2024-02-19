@@ -33,20 +33,20 @@
 		<h:form>
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>
-					Dettaglio Vista
+					Viewer Detail
 					
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 					
 						<h:commandLink class="btn btn-danger"
 							action="#{viewerList.delete( viewerView.current.viewer.id )}"
 							rendered="#{viewerList.isRemovable( viewerView.current.viewer.id )}"
-							onclick="if(!confirm('Eliminare vista?')) {return false;}" >
+							onclick="if(!confirm('Delete Viewer?')) {return false;}" >
 							<i class="fw-icon-remove dist-right"></i> Elimina
 						</h:commandLink>	
 					
 						<h:commandLink class="btn dist-left"
 							action="#{viewerView.close()}">
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>		
 					</h:panelGroup>						
 				</h2>
@@ -54,28 +54,28 @@
 			
 			<h:panelGroup layout="block" styleClass="form-horizontal container-fluid">
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="name" value="Nome" />
+					<h:outputLabel styleClass="control-label bold" for="name" value="Name" />
 				    <h:panelGroup styleClass="controls align-txt" layout="block">
 				    	<h:outputText id="name" value="#{viewerView.current.viewer.name}" /> 
 				    </h:panelGroup>
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="dex" value="Descrizione" />
+					<h:outputLabel styleClass="control-label bold" for="dex" value="Description" />
 				    <h:panelGroup styleClass="controls align-txt" layout="block">
 				    	<h:outputText id="dex" value="#{viewerView.current.viewer.description}" /> 
 				    </h:panelGroup>
 				</h:panelGroup>
 
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="type" value="Tipo" />
+					<h:outputLabel styleClass="control-label bold" for="type" value="Type" />
 				    <h:panelGroup styleClass="controls align-txt" layout="block">
 				    	<h:outputText id="type" value="#{viewerView.current.viewer.type.name}" /> 
 				    </h:panelGroup>
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" layout="block" id="read-only">
-					<h:outputLabel styleClass="control-label bold" for="read-only" value="Sola lettura" />
+					<h:outputLabel styleClass="control-label bold" for="read-only" value="Readonly" />
 				    <h:panelGroup styleClass="controls align-txt" layout="block"
 				    	rendered="#{viewerView.current.viewer.readOnly}">
 						<i class="fw-icon-ok fw-icon-large" />
@@ -91,7 +91,7 @@
 				</h:panelGroup>
 				
 				<h:panelGroup styleClass="control-group" layout="block">
-					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Struttura" />
+					<h:outputLabel styleClass="control-label bold" for="tree-structure" value="Structure" />
 					<h:panelGroup layout="block" styleClass="controls align-txt">
 					
 						<h:panelGroup layout="block" styleClass="row-fluid">

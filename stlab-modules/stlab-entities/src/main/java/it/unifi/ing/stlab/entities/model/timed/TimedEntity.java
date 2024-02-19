@@ -1,33 +1,32 @@
 package it.unifi.ing.stlab.entities.model.timed;
 
 /**
- * Interfaccia che definisce la validita' temporale di un'entita'.
+ * Interface that defines the temporal validity of an entity.
  * @see it.unifi.ing.stlab.entities.implementation.timed.TimedEntityImpl
  *
- * @param <R> generic che estende TimeRange<H>, contenente due tempi
- * @param <H> generic che estende Time
+ * @param <R> generic which extends TimeRange<H>, containing two time points
+ * @param <H> generic which extends Time
  */
 public interface TimedEntity<R extends TimeRange<H>, H extends Time> {
 
 	/**
-	 * Metodo che restituisce l'intervallo di tempo durante il quale 
-	 * l'entita' e' considerata valida
-	 * @return R che estende TimeRange<H>
+	 * Method that returns the time range during which the entity is considered valid
+	 * @return R which extends TimeRange<H>
 	 */
 	public R getTimeRange(); 
 	
 	/**
-	 * Metodo che controlla se l'intervallo di tempo di validita' della TimedEntity 
-	 * passata come parametro contiene quello dell'entita' su cui e' invocato.
-	 * @param timedEntity un'altra TimedEntity
-	 * @return true se e' contenuto, false viceversa
+	 * Method that checks if the validity yime range of the TimedEntity
+	 * passed as a parameter encompasses that of the entity on which the method it is invoked.
+	 * @param timedEntity another TimedEntity
+	 * @return true if it is contained, false otherwise
 	 */
 	public boolean isValidReference( TimedEntity<?,?> timedEntity );
 	
 	/**
-	 * Metodo che indica se questa entita' e' valida al tempo passato come parametro.
+	 * Method that indicated whether this entity is valid at the time passed as a parameted
 	 * @param time
-	 * @return true se timeRange contiene time.
+	 * @return true if timeRange contains time.
 	 */
 	public boolean isValidAt( H time );
 

@@ -16,11 +16,11 @@
 		<h:form id="viewer-form">
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Viste
+					Viewers
 					
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn btn-primary" action="#{viewerList.addNewDsl()}">
-							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Add
 						</h:commandLink>				
 					</h:panelGroup>
 				</h2>					
@@ -38,7 +38,7 @@
 			<h:panelGroup layout="block" id="results">
 				<h:panelGroup rendered="#{empty viewerResults}">
 					<br/>
-					<h:outputText styleClass="lead" value="Nessuna vista trovata"/>
+					<h:outputText styleClass="lead" value="No viewer found"/>
 				</h:panelGroup>
 				
 				<h:dataTable value="#{viewerResults}" var="viewer" 
@@ -47,16 +47,16 @@
 					rendered="#{not empty viewerResults}">
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Nome" styleClass="normal-text"
-								action="#{viewerFilter.toggle('Nome')}">
+							<h:commandLink value="Name" styleClass="normal-text"
+								action="#{viewerFilter.toggle('Name')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":viewer-form:results" execute="@none" />
-								<h:panelGroup rendered="#{viewerFilter.isSelected('Nome')}">
-									<i class="#{viewerFilter.isAscending('Nome') ? 
+								<h:panelGroup rendered="#{viewerFilter.isSelected('Name')}">
+									<i class="#{viewerFilter.isAscending('Name') ?
 										'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
 								<h:panelGroup
-									rendered="#{not viewerFilter.isSelected('Nome')}">
+									rendered="#{not viewerFilter.isSelected('Name')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -66,23 +66,23 @@
 
 					<h:column>
 						<f:facet name="header">
-							Descrizione
+							Description
 						</f:facet>
 						#{viewer.description}
 					</h:column>
 					
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Tipo" styleClass="normal-text"
-								action="#{viewerFilter.toggle('Tipo')}">
+							<h:commandLink value="Type" styleClass="normal-text"
+								action="#{viewerFilter.toggle('Type')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":viewer-form:results" execute="@none" />
-								<h:panelGroup rendered="#{viewerFilter.isSelected('Tipo')}">
-									<i class="#{viewerFilter.isAscending('Tipo') ? 
+								<h:panelGroup rendered="#{viewerFilter.isSelected('Type')}">
+									<i class="#{viewerFilter.isAscending('Type') ?
 										'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
 								<h:panelGroup
-									rendered="#{not viewerFilter.isSelected('Tipo')}">
+									rendered="#{not viewerFilter.isSelected('Type')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -92,19 +92,19 @@
 					
 					<h:column>
 						<f:facet name="header">
-							Azioni
+							Actions
 						</f:facet>
 
-						<h:commandLink title="Visualizza"
+						<h:commandLink title="View"
 							class="btn btn-info pull-left tltip"
 							action="#{viewerList.view( viewer.id )}">
 							<i class="fw-icon-large fw-icon-zoom-in"></i>
 						</h:commandLink>
 						
-						<h:commandLink title="Elimina" class="btn btn-danger pull-left dist-left tltip"
+						<h:commandLink title="Delete" class="btn btn-danger pull-left dist-left tltip"
 										action="#{viewerList.delete( viewer.id )}" 
 										rendered="#{viewerList.isRemovable( viewer.id )}"
-										onclick="if(!confirm('Eliminare vista selezionata?')) {return false;}" >
+										onclick="if(!confirm('Delete selected viewer?')) {return false;}" >
 							<i class="fw-icon-remove fw-icon-large"></i>
 						</h:commandLink>							
 					</h:column>

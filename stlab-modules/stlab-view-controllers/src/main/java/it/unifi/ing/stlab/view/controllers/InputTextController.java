@@ -21,14 +21,14 @@ public class InputTextController {
 	public boolean isSupported(Fact fact){
 		if(fact == null){
 			facesContext.addMessage( null, 
-					new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+					new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			return false;
 			
 		}
 		if(!isOsservazioneTestuale(fact) && !isOsservazioneQuantitativa(fact)){
 			facesContext.addMessage( null, 
 					new FacesMessage( FacesMessage.SEVERITY_ERROR, 
-							"InputText non supportata per l'osservazione di tipo " + fact.getType().getClass().getSimpleName(), ""));
+							"InputText not supported for the observation of type " + fact.getType().getClass().getSimpleName(), ""));
 			return false;
 		}
 		

@@ -243,15 +243,14 @@ public abstract class FactImpl
 	}
 
 	/**
-	 * Metodo che restituisce una lista di Active Links, ordinati secondo la priorita'
-	 * assegnata ai TypeLink (0: higher priority). 
-	 * Nel caso questi fossero uguali e fosse presente una priorità
-	 * sui FactLink, allora viene ordinato secondo quella.
-	 * Il metodo crea la lista ordinata solo se non e' stata creata precedentemente e la
-	 * memorizza come attributo della classe.
-	 * 
-	 * @return List<FactLink> dove FactLink implementa CompactLink che a sua volta
-	 * estende CompositeLink.
+	 * Method that returns a list of Active Links, ordered according to the priority
+	 * assigned to the TypeLinks (0: higher priority).
+	 * In cases where these are equal and there is a priority
+	 * on FactLinks, then it is ordered according to that.
+	 * The method creates the ordered list only if it has not been previously created and stores it
+	 * as an attribute of the class.
+	 *
+	 * @return List<FactLink> where FactLink implements CompactLink which in turn extends CompositeLink.
 	 */
 	public List<FactLinkImpl> listChildrenOrdered() {
 		if ( childrenOrdered == null ) {

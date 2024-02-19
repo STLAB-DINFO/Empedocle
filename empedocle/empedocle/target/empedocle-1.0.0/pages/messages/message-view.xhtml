@@ -17,16 +17,16 @@
 			<h:panelGroup layout="block">
 				<h:panelGroup layout="block" styleClass="page-title">
 					<h2>
-						Dettaglio Messaggio
+						Message detail
 						
 						<h:panelGroup layout="block" styleClass="pull-right align-btn">
 							<h:commandLink class="btn btn-warning" 
 								action="#{messageView.markAsUnread()}">
-								<i class="fw-icon-minus-sign-alt dist-right"></i> Marca come non letto
+								<i class="fw-icon-minus-sign-alt dist-right"></i> Mark as Unread
 							</h:commandLink>							
 							
 							<h:commandLink styleClass="btn dist-left" action="#{messageView.close()}">
-								<i class="fw-icon-step-backward dist-right"></i> Chiudi
+								<i class="fw-icon-step-backward dist-right"></i> Close
 							</h:commandLink>	
 						</h:panelGroup>
 					</h2>
@@ -36,13 +36,13 @@
 		
 		<h:panelGroup layout="block" styleClass="container-fluid form-horizontal">
 			<div class="control-group">
-				<label class="control-label bold">Livello</label>
+				<label class="control-label bold">Level</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{messageView.current.level}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Data</label>
+				<label class="control-label bold">Date</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{messageView.current.date}" >
 						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
@@ -50,25 +50,25 @@
 				</div>
 			</div>			
 			<div class="control-group">
-				<label class="control-label bold">Mittente</label>
+				<label class="control-label bold">Sender</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{messageView.current.sender}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Paziente</label>
+				<label class="control-label bold">Patient</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{messageView.current.patient.surname} #{messageView.current.patient.name}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Oggetto</label>
+				<label class="control-label bold">Subject</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{messageView.current.subject}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Dettagli</label>
+				<label class="control-label bold">Details</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{messageView.current.body}" escape="false" />
 				</div>

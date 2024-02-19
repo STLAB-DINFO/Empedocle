@@ -130,45 +130,45 @@ public class PatientFilter extends FilterBean implements QueryBuilder {
 	}
 
 	private void initFilters(){
-		addFilterDef( "Codice fiscale", FilterType.TEXT, "p.taxCode like :ptaxc", "ptaxc" );
-		addFilterDef( "Cognome", FilterType.TEXT, "p.surname like :psurname", "psurname" );
-		addFilterDef( "Nome", FilterType.TEXT, "p.name like :pname", "pname" );
-		addFilterDef( "Sesso", FilterType.TEXT, "p.sex like :psex", "psex" );
-		addFilterDef( "Nato dopo il", FilterType.DATE, "p.birthDate >= :pbmin", "pbmin" );
-		addFilterDef( "Nato prima del", FilterType.DATE, "p.birthDate <= :pbmax", "pbmax" );
-		addFilterDef( "Luogo nascita", FilterType.TEXT, "p.birthPlace like :pbplace", "pbplace" );
-		addFilterDef( "Nazionalità", FilterType.TEXT, "p.nationality like :pnat", "pnat" );
-		addFilterDef( "Regione", FilterType.TEXT, "p.region like :preg", "preg" );
+		addFilterDef( "Tax Code", FilterType.TEXT, "p.taxCode like :ptaxc", "ptaxc" );
+		addFilterDef( "Surname", FilterType.TEXT, "p.surname like :psurname", "psurname" );
+		addFilterDef( "Name", FilterType.TEXT, "p.name like :pname", "pname" );
+		addFilterDef( "Sex", FilterType.TEXT, "p.sex like :psex", "psex" );
+		addFilterDef( "Born after", FilterType.DATE, "p.birthDate >= :pbmin", "pbmin" );
+		addFilterDef( "Born before", FilterType.DATE, "p.birthDate <= :pbmax", "pbmax" );
+		addFilterDef( "Birthplace", FilterType.TEXT, "p.birthPlace like :pbplace", "pbplace" );
+		addFilterDef( "Nationality", FilterType.TEXT, "p.nationality like :pnat", "pnat" );
+		addFilterDef( "Region", FilterType.TEXT, "p.region like :preg", "preg" );
 		addFilterDef( "Asl", FilterType.TEXT, "p.asl like :pasl", "pasl" );
 
 		// this filter is declared in half because it is just used to store the clinical trial for enrollment, not
 		// for real filtering
-		addFilterDef( "Visita per Agenda:", FilterType.COMBO, null, null,
+		addFilterDef( "Visit for Agenda:", FilterType.COMBO, null, null,
 				new AgendaSelectItemBuilder() );
 		
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );
 	}
 	
 	private void initSorting() {
-		addSort( "Cognome", "p.surname asc, p.name asc", "p.surname desc, p.name asc" );
-		addSort( "Sesso", "p.sex asc, p.surname asc", "p.sex desc, p.surname asc" );
-		addSort( "Data nascita", "p.birthDate asc, p.surname asc", "p.birthDate desc, p.surname asc" );
-		addSort( "Luogo nascita", "p.birthPlace asc, p.surname asc", "p.birthPlace desc, p.surname asc" );
+		addSort( "Surname", "p.surname asc, p.name asc", "p.surname desc, p.name asc" );
+		addSort( "Sex", "p.sex asc, p.surname asc", "p.sex desc, p.surname asc" );
+		addSort( "Birthdate", "p.birthDate asc, p.surname asc", "p.birthDate desc, p.surname asc" );
+		addSort( "Birthplace", "p.birthPlace asc, p.surname asc", "p.birthPlace desc, p.surname asc" );
 
 		// default sorting
-		toggle( "Cognome" );
+		toggle( "Surname" );
 	}
 	
 	@Override
 	protected void initDefaultFilters() {
 		Filter clinicalTrial = new Filter();
-		clinicalTrial.setDefinition( findFilterDefByName( "Visita per Agenda:" ) );
+		clinicalTrial.setDefinition( findFilterDefByName( "Visit for Agenda:" ) );
 
 		Filter surname = new Filter();
-		surname.setDefinition( findFilterDefByName( "Cognome" ) );
+		surname.setDefinition( findFilterDefByName( "Surname" ) );
 		
 		Filter name = new Filter();
-		name.setDefinition( findFilterDefByName( "Nome" ) );
+		name.setDefinition( findFilterDefByName( "Name" ) );
 
 		getFilters().add( clinicalTrial );
 		getFilters().add( surname );

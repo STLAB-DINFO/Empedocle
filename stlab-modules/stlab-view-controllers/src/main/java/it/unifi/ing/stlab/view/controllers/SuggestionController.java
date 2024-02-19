@@ -40,14 +40,14 @@ public class SuggestionController implements Serializable {
 	public boolean isSupported(Fact fact){
 		if(fact == null){
 			facesContext.addMessage( null, 
-					new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+					new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			return false;
 		}
 		
 		if( fact == null || !ClassHelper.instanceOf( fact, QualitativeFact.class )){
 			facesContext.addMessage( null, 
 					new FacesMessage( FacesMessage.SEVERITY_ERROR, 
-							"Suggestion non supportata per l'osservazione di tipo " + fact.getType().getClass().getSimpleName(), ""));
+							"Suggestion unsupported for the observation of type " + fact.getType().getClass().getSimpleName(), ""));
 			return false;	
 		}
 		

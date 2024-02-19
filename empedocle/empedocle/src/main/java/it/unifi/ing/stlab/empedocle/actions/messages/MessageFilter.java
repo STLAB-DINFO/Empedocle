@@ -25,17 +25,17 @@ public class MessageFilter extends FilterBean implements MessageQueryBuilder {
 	public MessageFilter() {
 		setPageSize( 10 );
 
-		addFilterDef( "Mittente", FilterType.TEXT, "m.sender like :psender", "psender" );		
-		addFilterDef( "Data - A partire dal", FilterType.DATE, "m.date >= :pmin", "pmin" );
-		addFilterDef( "Data - Prima del", FilterType.DATE, "m.date <= :pmax", "pmax" );
-		addFilterDef( "Letto", FilterType.BOOLEAN, "m.isRead = :pread", "pread");
-		addFilterDef( "Cognome", FilterType.TEXT, "m.patient.surname like :psurname", "psurname" );		
-		addFilterDef( "Nome", FilterType.TEXT, "m.patient.name like :pname", "pname" );		
+		addFilterDef( "Sender", FilterType.TEXT, "m.sender like :psender", "psender" );
+		addFilterDef( "Date - Starting from", FilterType.DATE, "m.date >= :pmin", "pmin" );
+		addFilterDef( "Date - Before", FilterType.DATE, "m.date <= :pmax", "pmax" );
+		addFilterDef( "Read", FilterType.BOOLEAN, "m.isRead = :pread", "pread");
+		addFilterDef( "Surname", FilterType.TEXT, "m.patient.surname like :psurname", "psurname" );
+		addFilterDef( "Name", FilterType.TEXT, "m.patient.name like :pname", "pname" );
 
 		setFilterDefsOrder(FilterDefsOrder.INSERTION);
 
-		addSort( "Data", "m.date desc", "m.date asc" );
-		toggle( "Data" );
+		addSort( "Date", "m.date desc", "m.date asc" );
+		toggle( "Date" );
 
 		initQueryBuilders();
 		

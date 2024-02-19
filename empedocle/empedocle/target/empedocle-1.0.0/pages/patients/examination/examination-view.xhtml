@@ -27,7 +27,7 @@
 		<h:form>
 			<h:panelGroup layout="block" styleClass="page-title #{examinationView.getStyleClass( examinationView.current.examination )}">
 				<h2>
-					Visita di 
+					Visit of
 					#{examinationView.current.examination.appointment.patient.surname} #{examinationView.current.examination.appointment.patient.name}
 					del 
 					<h:outputText value="#{examinationView.current.examination.appointment.date}" >
@@ -42,7 +42,7 @@
 								disable="#{empty param.eid}"/>
 							<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" 
 								disable="#{empty javax.enterprise.context.conversation.id}"/>							
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:link>	
 					</h:panelGroup>	
 				</h2>

@@ -93,7 +93,7 @@ public class ViewerList extends Navigator {
 	public String delete( Long id ) {
 		viewerDao.delete( id );
 
-		message( FacesMessage.SEVERITY_INFO, "Vista cancellata con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Viewer successfully deleted!", true );
 		return "delete";		
 	}
 	

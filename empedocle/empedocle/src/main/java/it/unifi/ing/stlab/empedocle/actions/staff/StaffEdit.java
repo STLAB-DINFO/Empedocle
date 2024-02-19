@@ -249,7 +249,7 @@ public class StaffEdit implements Serializable {
 				staffDao.update( current );
 			}
 	
-			message( FacesMessage.SEVERITY_INFO, "Utente salvato con successo!", true );
+			message( FacesMessage.SEVERITY_INFO, "User successfully saved!", true );
 		} catch ( EJBTransactionRolledbackException e ) {
 			Throwable t = e.getCause();
 
@@ -259,12 +259,12 @@ public class StaffEdit implements Serializable {
 
 			if ( t instanceof ConstraintViolationException ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Impossibile effettuare il salvataggio: username '"
-								+ current.getUser().getUserid() + "' già in uso!",
+						"Unable to perform the save: username '"
+								+ current.getUser().getUserid() + "' already in use!",
 						true );
 			}
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 		}
 		
 		return "save";

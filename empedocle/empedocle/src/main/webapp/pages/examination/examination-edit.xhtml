@@ -22,24 +22,24 @@
 		<h:form id="edit-form" styleClass="form-horizontal">
 	
 			<div class="crud-title">
-				<h2>#{examinationEdit.new ? 'Creazione' : 'Modifica'} Visita
+				<h2>#{examinationEdit.new ? 'Create' : 'Edit'} Visit
 				
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn" action="#{examinationEdit.cancel()}" immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>	
 						<h:commandLink class="btn btn-primary dist-left" action="#{examinationEdit.save()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>	
 					</h:panelGroup>		
 				</h2>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold" for="edit-form:date">* Orario</label>
+				<label class="control-label bold" for="edit-form:date">* Date</label>
 				<div class="controls">
 					<h:inputText id="date" value="#{examinationEdit.current.appointment.date}" 
-						required="true" requiredMessage="'Orario' è un campo obbligatorio!" 
+						required="true" requiredMessage="'Date' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}">
 						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
 					</h:inputText>	(dd/MM/yyyy HH:mm)
@@ -54,20 +54,20 @@
 						value="#{examinationEdit.current.appointment.agenda}"
 						suggestion="#{examinationEdit.agendaSuggestion.suggestion}"
 						converter="#{agendaConverter}"
-						required="true" requiredMessage="'Agenda' è un campo obbligatorio!" 
+						required="true" requiredMessage="'Agenda' is a required field!"
 						render=":edit-form:agenda"/>
 				</div>
 			</h:panelGroup>
 			
 			<h:panelGroup layout="block" class="control-group" id="patient">
-				<label class="control-label bold" for="edit-form:patient">* Paziente</label>
+				<label class="control-label bold" for="edit-form:patient">* Patient</label>
 				<div class="controls">
 					<emp:suggestionList
 						bean="#{examinationEdit.patientSuggestion}"
 						value="#{examinationEdit.current.appointment.patient}"
 						suggestion="#{examinationEdit.patientSuggestion.suggestion}"
 						converter="#{patientConverter}"
-						required="true" requiredMessage="'Paziente' è un campo obbligatorio!" 
+						required="true" requiredMessage="'Patient' is a required field!"
 						render=":edit-form:patient"/>
 				</div>
 			</h:panelGroup>

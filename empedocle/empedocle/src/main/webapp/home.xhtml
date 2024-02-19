@@ -14,7 +14,7 @@
 					<h1 style="font-size: 60px; padding-bottom: 10px">
 						Empedocle
 					</h1>
-					<p class="lead">L'applicazione per la raccolta di dati sperimentali e specialistici</p>
+					<p class="lead">The application for the collection of experimental and specialist data</p>
 				</div>
 			</div>
 		</div>
@@ -23,12 +23,12 @@
 			<div class="span8" style="margin-left: 20px;">
 
 				<div class="welcome small-lead">
-					<p>Benvenuto!
-					Con Empedocle è possibile:</p>
+					<p>Welcome!
+					With Empedocle it is possible to:</p>
 					<h:form>
 						<ul style="position:relative; left:50px;">
-							<li>Consultare le <h:commandLink action="patient-list" actionListener="#{headerMenu.endConversation}" value="Cartelle cliniche" /> dei Pazienti</li>
-							<li>Visualizzare le <h:commandLink action="examination-list" actionListener="#{headerMenu.endConversation}" value="Visite programmate" /> per la giornata</li>
+							<li>Consult patients' <h:commandLink action="patient-list" actionListener="#{headerMenu.endConversation}" value="Clinical Records" /> </li>
+							<li>View the <h:commandLink action="examination-list" actionListener="#{headerMenu.endConversation}" value="Scheduled Visits" /> for the day</li>
 						</ul>
 					</h:form>
 				</div>
@@ -37,7 +37,7 @@
  			<h:panelGroup styleClass="span3 home-rem-box pull-right" layout="block"
  				rendered="#{examinationReminder.nSuspended gt 0 or examinationReminder.nRunning gt 0}">
  				<h:form>
-	 				Gentile <strong>#{loggedUser.username}</strong>,
+	 				Dear <strong>#{loggedUser.username}</strong>,
 	 				<ul class="unstyled home-rem-lst">
 	 					<li>
 	 						<h:panelGroup styleClass="alert" rendered="#{examinationReminder.nSuspended gt 0}">
@@ -47,7 +47,7 @@
 	 					</li>
 	 					<li>
 	 						<h:panelGroup styleClass="alert" rendered="#{examinationReminder.nRunning gt 0}">
-	 							hai <strong>#{examinationReminder.nRunning}</strong> visite
+	 							You have <strong>#{examinationReminder.nRunning}</strong> visits
 	 							<strong><h:commandLink value="IN EROGAZIONE" action="#{examinationReminder.listRunningExaminations}" /></strong>
 	 						</h:panelGroup>
 	 					</li>

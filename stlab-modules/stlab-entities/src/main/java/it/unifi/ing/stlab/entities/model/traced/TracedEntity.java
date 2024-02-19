@@ -3,10 +3,9 @@ package it.unifi.ing.stlab.entities.model.traced;
 import java.util.Set;
 
 /**
- * Interfaccia che si occupa del versionamento delle entita' attraverso la definizione
- * di Before e After.
- * Ogni entita' e' collegata a una sua versione precedente attraverso una Action,
- * che specifica che tipo di modifica ha portato a quella nuova versione.
+ * Interface that handles the versioning of entities through the definition of Before and After.
+ * Each entity is linked to its previous version through an action
+ * that specifies what type of modification led to that new version
  * @see it.unifi.ing.stlab.entities.implementation.traced.TracedEntityImpl
  *
  * @param <T> estende TracedEntity<T,A>
@@ -20,50 +19,48 @@ public interface TracedEntity
 	public void delete();
 	
 	/**
-	 * Metodo che restituisce la lista di tutte le versioni precedenti dell'entita'.
+	 * Method that returns the list of all previous versions of the entity.
 	 * @return Set<T>, dove T estende TracedEntity
 	 */
 	public Set<T> listBefore();
 	/**
-	 * Metodo che restituisce la lista di tutte le versioni successive dell'entita'.
-	 * @return Set<T>, dove T estende TracedEntity
+	 * Method that returns the list of all subsequent versions of the entity
+	 * @return Set<T>, where T extends TracedEntity
 	 */
 	public Set<T> listAfter();
 	
 	/**
-	 * Metodo che restituisce la Action che collega la TracedEntity con la sua
-	 * versione precedente.
-	 * @return A che estende Action
+	 * Method that returns the Action that links the TracedEntity with its previous version
+	 * @return A which extends Action
 	 */
 	public A getOrigin();
 	/**
-	 * Metodo che restituisce la Action che collega la TracedEntity con la sua
-	 * versione successiva.
-	 * @return A che estende Action
+	 * Method that returns the Action that links the TracedEntity with its subsequent version
+	 * @return A which extends Action
 	 */
 	public A getDestination();
 	
 	public boolean isActive();
 
 	/**
-	 * Metodo che controlla se l'entita' e' vuota (e' solo un metodo di default,
-	 * la definizione di cosa vuol dire 'vuota' e' fatta localmente dai metodi che
-	 * fanno l'override).
-	 * @return true se e' vuota.
+	 * Method that verifies whether the entity is empty
+	 * (it is merely a default method, the definition of what constitutes 'empty'
+	 * is determined locally by the methods that override it).
+	 * @return true if it's empty.
 	 */
 	public boolean isEmpty();
 	/**
-	 * Metodo che controlla se l'entita' e' uguale a quella passata
-	 * (e' solo un metodo di default, la definizione di cosa vuol dire 'uguale'
-	 * e' fatta localmente dai metodi che fanno l'override).
-	 * @return true se le entita' sono uguali.
+	 * Method that checks if the entity is equal to its previous version.
+	 * (it is merely a default method, the definition of what constitutes 'equal'
+	 * is determined locally by the methods that override it).
+	 * @return true if the entities are equal.
 	 */
 	public boolean sameAs( T entity );
 	/**
-	 * Metodo che restituisce una copia dell'entita' passata come parametro
-	 * (e' solo un metodo di default, la definizione di come fare la copia
-	 * e' fatta localmente dai metodi che fanno l'override).
-	 * @return la TracedEntity copiata.
+	 * Method that return a copy of the entity passed as a parameter.
+	 * (it is merely a default method, the definition of how to do the copy
+	 * is done locally by the methods that override it).
+	 * @return the copied TracedEntity.
 	 */
 	public T copy();
 }

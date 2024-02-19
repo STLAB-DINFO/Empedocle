@@ -6,8 +6,8 @@ import java.util.List;
 
 public abstract class SelectionBean<E> {
 	
-	// TODO prendere il msg come parametro nel componente xhtml
-	public final static String EMPTY_MSG = "Nessuna associazione presente";
+	// TODO take msg as parameter in xhtml component
+	public final static String EMPTY_MSG = "No association present";
 	
 	private E entity;
 	private List<E> selectedEntities = new ArrayList<E>();

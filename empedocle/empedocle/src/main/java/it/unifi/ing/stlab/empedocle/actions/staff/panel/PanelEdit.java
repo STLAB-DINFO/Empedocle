@@ -115,10 +115,10 @@ public class PanelEdit implements Serializable {
 			staffDao.update( current );
 			utx.commit();
 
-			message( FacesMessage.SEVERITY_INFO, "Profilo aggiornato con successo!", true );
+			message( FacesMessage.SEVERITY_INFO, "Profile successfully updated!", true );
 			return "save-cancel";
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 			throw new RuntimeException( e );
 		}
 	}

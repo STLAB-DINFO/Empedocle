@@ -107,7 +107,7 @@ public class StaffList extends Navigator {
 	public String delete( Long id ) {
 		staffDao.delete( id );
 
-		message( FacesMessage.SEVERITY_INFO, "Utente cancellato con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "User successfully deleted!", true );
 		return "delete";
 	}
 
@@ -121,7 +121,7 @@ public class StaffList extends Navigator {
 
 		staffDao.update( current );
 
-		message( FacesMessage.SEVERITY_INFO, "Utente riattivato con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "User successfully reactivated!", true );
 		return "enable-disable";
 	}
 
@@ -137,7 +137,7 @@ public class StaffList extends Navigator {
 
 		staffDao.update( current );
 
-		message( FacesMessage.SEVERITY_INFO, "Utente disattivato con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "User successfully deactivated!", true );
 		return "enable-disable";
 	}
 
@@ -146,7 +146,7 @@ public class StaffList extends Navigator {
 		current.getUser().setPassword( tools.generateEncryptedDefaultPassword() );
 		staffDao.update( current );
 
-		message( FacesMessage.SEVERITY_INFO, "Password resettata con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Password successfully reset!", true );
 		return "reset";
 	}
 

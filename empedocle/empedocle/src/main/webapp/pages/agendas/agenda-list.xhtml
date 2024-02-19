@@ -13,12 +13,12 @@
 			<h:panelGroup id="filters" layout="block"
 				xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Agende
+					Agendas
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
-						<h:commandLink title="Aggiungi" class="btn btn-primary"
+						<h:commandLink title="Add" class="btn btn-primary"
 							action="#{agendaList.addNew()}">
-							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Add
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -38,7 +38,7 @@
 			<h:panelGroup layout="block" id="results">
 				<h:panelGroup rendered="#{empty agendaResults}">
 					<br />
-					<h:outputText styleClass="lead" value="Nessuna agenda trovata" />
+					<h:outputText styleClass="lead" value="No agenda found" />
 				</h:panelGroup>
 
 				<h:dataTable
@@ -48,16 +48,16 @@
 					rendered="#{not empty agendaResults}">
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Codice" styleClass="normal-text"
-								action="#{agendaFilter.toggle('Codice')}">
+							<h:commandLink value="Code" styleClass="normal-text"
+								action="#{agendaFilter.toggle('Code')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":agenda-form:results" execute="@none" />
-								<h:panelGroup rendered="#{agendaFilter.isSelected('Codice')}">
-									<i class="#{agendaFilter.isAscending('Codice') ? 
+								<h:panelGroup rendered="#{agendaFilter.isSelected('Code')}">
+									<i class="#{agendaFilter.isAscending('Code') ?
 										'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
 								<h:panelGroup
-									rendered="#{not agendaFilter.isSelected('Codice')}">
+									rendered="#{not agendaFilter.isSelected('Code')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -67,33 +67,33 @@
 
 					<h:column>
 						<f:facet name="header">
-							Descrizione
+							Description
 						</f:facet>
 						#{agenda.description}
 					</h:column>
 
 					<h:column>
 						<f:facet name="header">
-							Azioni
+							Actions
 						</f:facet>
 
-						<h:commandLink title="Visualizza"
+						<h:commandLink title="View"
 							class="btn btn-info pull-left tltip"
 							action="#{agendaList.view( agenda.id )}">
 							<i class="fw-icon-large fw-icon-zoom-in"></i>
 						</h:commandLink>
 
-						<h:commandLink title="Modifica"
+						<h:commandLink title="Edit"
 							class="btn btn-warning pull-left dist-left tltip"
 							action="#{agendaList.edit( agenda.id )}">
 							<i class="fw-icon-pencil fw-icon-large"></i>
 						</h:commandLink>
 
-						<h:commandLink title="Elimina"
+						<h:commandLink title="Delete"
 							class="btn btn-danger pull-left dist-left tltip"
 							action="#{agendaList.delete( agenda.id )}"
 							rendered="#{agendaList.isRemovable( agenda.id )}"
-							onclick="if(!confirm('Eliminare agenda selezionata?')) {return false;}">
+							onclick="if(!confirm('Delete selected agenda?')) {return false;}">
 							<i class="fw-icon-remove fw-icon-large"></i>
 						</h:commandLink>
 					</h:column>

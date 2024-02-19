@@ -28,8 +28,8 @@ public class IADLController extends ContainerController {
 		return result;
 	}
 
-	// assegnazione di un punto per ciascuna funzione indipendente così da ottenere un risultato totale di performance che varia da 0 (completa dipendenza) 
-	// a 8 (indipendenza in tutte le funzioni)
+	// assignment of one point for each independent function, thereby obtaining a total performance score ranging from 0 (complete dependence)
+	// to 8 (independence in all functions)
 	public String retrieveOverallScore( Viewer viewer, Fact value ) {
 		if( value.isEmpty() )
 			return "--";

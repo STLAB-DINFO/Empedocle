@@ -20,12 +20,12 @@ public class OutputLinkController {
 	public boolean isSupported(Fact fact){
 		if(fact == null){
 			facesContext.addMessage( null, 
-					new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+					new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			return false;
 		}
 		if(!isTextualFact(fact)){
 			facesContext.addMessage( null, 
-					new FacesMessage( FacesMessage.SEVERITY_ERROR, "OutputLinkController non supportata per l'osservazione di tipo " + 
+					new FacesMessage( FacesMessage.SEVERITY_ERROR, "OutputLinkController not supported for the observation of type " +
 					fact.getType().getClass().getSimpleName(), ""));
 			return false;
 		}

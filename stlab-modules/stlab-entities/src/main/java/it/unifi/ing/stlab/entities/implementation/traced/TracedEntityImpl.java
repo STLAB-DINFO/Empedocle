@@ -109,13 +109,13 @@ public class TracedEntityImpl
 	public void setDestination(A destination) {
 		this.destination = destination;
 	}
-	
-	//un entita' e' attiva se non ha destinazione o la sua destinazione e' terminale
+
+	//an entity is active if it has not a destination or its destination is terminal
 	@Override
 	public boolean isActive() {
 		if ( getDestination() == null ) return true;
 		
-		return getDestination().isTerminal(); //esempio delete
+		return getDestination().isTerminal(); //example delete
 	}
 
 

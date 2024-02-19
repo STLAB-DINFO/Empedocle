@@ -67,7 +67,7 @@ public class StatisticsPathGeneratorVisitor implements TypeVisitor {
 			int max = tl.getMax();
 			
 			if(max == 0) {
-				System.out.println("Numero massimo di figli indefinito ["+ tl.getName() +"], verrà limitato a " + MAX_CEILING);
+				System.out.println("Maximum number of children undefined ["+ tl.getName() +"], will be limited to " + MAX_CEILING);
 				max = MAX_CEILING;
 			}
 			

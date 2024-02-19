@@ -1,7 +1,7 @@
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/QualificationJpaTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/dao/UserDaoTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/RoleJpaTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/PasswordHashTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/UserJpaTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/dao/QualificationDaoTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/UserTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/dao/QualificationDaoTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/QualificationJpaTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/PasswordHashTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/RoleJpaTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/UserTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/dao/UserDaoTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-users/src/test/java/it/unifi/ing/stlab/users/model/UserJpaTest.java

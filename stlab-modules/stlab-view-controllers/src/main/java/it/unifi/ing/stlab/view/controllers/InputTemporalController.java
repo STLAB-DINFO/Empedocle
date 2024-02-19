@@ -20,14 +20,14 @@ public class InputTemporalController {
 	public boolean isSupported(Fact fact){
 		if(fact == null){
 			facesContext.addMessage( null, 
-					new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+					new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			return false;
 			
 		}
 		if( !isTemporalFact( fact ) ){
 			facesContext.addMessage( null, 
 					new FacesMessage( FacesMessage.SEVERITY_ERROR, 
-							"InputDate non supportata per l'osservazione di tipo " + fact.getType().getClass().getSimpleName(), ""));
+							"InputDate not supported for the observation of type " + fact.getType().getClass().getSimpleName(), ""));
 			return false;
 		}
 		

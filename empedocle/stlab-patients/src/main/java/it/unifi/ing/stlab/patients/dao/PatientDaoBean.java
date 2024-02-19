@@ -150,7 +150,7 @@ public class PatientDaoBean implements PatientDao {
 									" where p.name = :name " +
 									" and p.surname = :surname " +
 									" and p.destination is null " +
-								//	" and p.identifier is null " +  // per permettere il merge anche tra anagrafiche diverse dello stesso paziente in Book
+								//	" and p.identifier is null " +  // to allow merging even between different patient records of the same patient in Book
 									" and p.id <> :notPid", Patient.class )
 					.setParameter( "name", name )
 					.setParameter( "surname", surname )
@@ -159,7 +159,7 @@ public class PatientDaoBean implements PatientDao {
 	}
 
 	/**
-	 * Merge manuale di pazienti
+	 * Manual Merge of patients
 	 */
 	@Override
 	public Patient mergePatients( Long patientId, Long otherId, User author ) {
@@ -171,9 +171,9 @@ public class PatientDaoBean implements PatientDao {
 
 		PatientIdentifier patientIdentifier = patient.getIdentifier();
 		PatientIdentifier otherIdentifier = other.getIdentifier();
-		if ( patientIdentifier != null && otherIdentifier != null ) { 
-			// merge tra anagrafiche di Book
-			// master è l'anagrafica più recente 
+		if ( patientIdentifier != null && otherIdentifier != null ) {
+			// merge between Book patient records
+			// master is the most recent record
 			if ( patient.getOrigin().getTime().compareTo( other.getOrigin().getTime() ) >= 0 ) { 
 				master = patient;
 				slave = other;
@@ -182,15 +182,15 @@ public class PatientDaoBean implements PatientDao {
 				slave = patient;
 			}
 		} else {
-			if ( patientIdentifier != null || otherIdentifier == null ) { 
-				// ci sono due casi possibili:
-				// - patient è l'anagrafica di Book ed è il master
-				// - oppure entrambe le anagrafiche sono senza identifier e viene presa come master
-				// l'anagrafica corrente (i.e. patient)
+			if ( patientIdentifier != null || otherIdentifier == null ) {
+				// there are two possible cases:
+				// - patient is the Book record and is the master
+				// - or both records are without an identifier and
+				// the current record (i.e., patient) is taken as the master
 				master = patient;
 				slave = other;
 			} else {
-				// other è l'anagrafica di Book ed è il master
+				// other is the Book record and is the master
 				master = other;
 				slave = patient;
 			}

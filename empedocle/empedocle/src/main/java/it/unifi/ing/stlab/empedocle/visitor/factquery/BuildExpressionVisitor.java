@@ -113,7 +113,7 @@ public class BuildExpressionVisitor implements ExpressionVisitor {
 			buffer.append( ".target.phenomenon " );
 			
 		} else {
-			throw new RuntimeException( "errore nel determinare il tipo del parametro da usare" );
+			throw new RuntimeException( "Error in determining the type of the parameter to use" );
 			
 		}
 
@@ -133,7 +133,7 @@ public class BuildExpressionVisitor implements ExpressionVisitor {
 			additionalParams.put( "value"+index, ( ClassHelper.cast( parameter, QualitativeFactValue.class ).getPhenomenon() ) );
 			
 		} else {
-			throw new RuntimeException( "errore nel determinare il parametro da usare" );
+			throw new RuntimeException( "Error in determining the parameter to use" );
 			
 		}
 		

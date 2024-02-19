@@ -28,9 +28,9 @@ public class FactQueryFilter extends FilterBean implements FactQueryQueryBuilder
 		
 		initDefaultFilters();
 		
-		addSort( "Nome", "f.name asc", "f.name desc" );
+		addSort( "Name", "f.name asc", "f.name desc" );
 		
-		toggle( "Nome" );
+		toggle( "Name" );
 	}
 	
 	@Override
@@ -67,9 +67,9 @@ public class FactQueryFilter extends FilterBean implements FactQueryQueryBuilder
 	}
 
 	private void initFilterDefs(){
-		addFilterDef( "Nome", FilterType.TEXT, "f.name like :fname", "fname" );
-		addSort( "Nome", "f.name asc", "f.name desc" );
-		toggle( "Nome" );
+		addFilterDef( "Name", FilterType.TEXT, "f.name like :fname", "fname" );
+		addSort( "Name", "f.name asc", "f.name desc" );
+		toggle( "Name" );
 	}
 	
 	private void writeFilters( StringBuffer buffer ) {

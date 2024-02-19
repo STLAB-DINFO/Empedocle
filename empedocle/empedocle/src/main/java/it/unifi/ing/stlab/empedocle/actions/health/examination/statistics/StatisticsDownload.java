@@ -145,7 +145,7 @@ public class StatisticsDownload extends HttpServlet implements Serializable {
             try {
                 resource.close();
             } catch (IOException e) {
-                logger.error("Impossibile chiudere l'output stream creato per il download delle statistiche!", e);
+                logger.error("Unable to close the output stream created for the download of the statistics!", e);
             }
         }
     }

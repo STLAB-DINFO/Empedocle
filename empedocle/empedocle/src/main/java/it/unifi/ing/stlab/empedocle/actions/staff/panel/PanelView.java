@@ -121,7 +121,7 @@ public class PanelView implements Serializable {
 		}
 		clear();
 
-		message( FacesMessage.SEVERITY_INFO, "Password cambiata con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Password successfully changed!", true );
 	}
 
 	public void clear( String componentId ) {

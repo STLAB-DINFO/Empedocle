@@ -40,11 +40,11 @@ public class FileUploadBean {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			throw new RuntimeException(
-					"Errore durante il caricamento del file", e);
+					"Error during file upload", e);
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new RuntimeException(
-					"Errore durante il caricamento del file", e);
+					"Error during file upload", e);
 		}
     }
     

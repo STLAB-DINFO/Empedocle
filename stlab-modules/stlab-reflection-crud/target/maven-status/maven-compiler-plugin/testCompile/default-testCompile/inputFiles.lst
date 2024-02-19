@@ -1,7 +1,7 @@
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeBeanTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeQueryBuilderTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeListTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/UnitUseBeanTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeTreeNodeTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/PhenomenonBeanTest.java
-/Users/stefaniacerboni/IdeaProjects/Empedocle/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeFilterTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeQueryBuilderTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/PhenomenonBeanTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/UnitUseBeanTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeBeanTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeTreeNodeTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeListTest.java
+/Users/stefaniacerboni/IdeaProjects/EmpedocleNeddu/stlab-modules/stlab-reflection-crud/src/test/java/it/unifi/ing/stlab/reflection/action/TypeFilterTest.java

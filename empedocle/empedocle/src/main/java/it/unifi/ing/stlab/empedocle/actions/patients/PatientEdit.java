@@ -90,7 +90,7 @@ public class PatientEdit implements Serializable {
 			initEmbeddedFields();
 			
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error!", true );
 			
 			try {
 				utx.rollback();
@@ -111,10 +111,10 @@ public class PatientEdit implements Serializable {
 
 				current.setTaxCode( code );
 				message( FacesMessage.SEVERITY_WARN,
-						"ATTENZIONE - Verificare sempre il codice fiscale prima di procedere al salvataggio!", false );
+						"WARNING - Always check Tax Code before saving!", false );
 
 			} catch ( FiscalCodeValidatorException e ) {
-				message( FacesMessage.SEVERITY_ERROR, "ERRORE - Impossibile generare codice fiscale: " + e.getMessage(), false );
+				message( FacesMessage.SEVERITY_ERROR, "ERROR - Unable to generate Tax Code: " + e.getMessage(), false );
 			}
 		}
 	}
@@ -140,8 +140,8 @@ public class PatientEdit implements Serializable {
 			
 			if ( exists() ) {
 				message(FacesMessage.SEVERITY_ERROR,
-						"ERRORE - Paziente con codice fiscale '"
-								+ current.getTaxCode() + "' già presente!", true);
+						"ERROR - Patient with Tax Code '"
+								+ current.getTaxCode() + "' is already registered!", true);
 			} else {
 				if ( isNew() ) {
 					patientDao.save(current);
@@ -158,13 +158,13 @@ public class PatientEdit implements Serializable {
 				}
 				
 				message(FacesMessage.SEVERITY_INFO,
-						"Paziente salvato con successo!", true);
+						"Patient successfully saved!", true);
 			}
 		
 			utx.commit();
 		} catch ( Exception e ) {
 			message(FacesMessage.SEVERITY_INFO,
-					"Errore durante il salvataggio!", true);
+					"Error during saving!", true);
 			try {
 				utx.rollback();
 			} catch ( Exception e2 ) {
@@ -204,11 +204,11 @@ public class PatientEdit implements Serializable {
 
 		if(birthDate.get(Calendar.YEAR) < 1900){
 			message(FacesMessage.SEVERITY_ERROR,
-					"L'anno di nascita è precedente al 1900, ricontrolla la data inserita ed il codice fiscale generato, potrebbero contenere errori", true);
+					"The year of birth is prior to 1900. Please recheck the entered date and the generated tax code, as they may contain errors.", true);
 			return false;
 		} else if(birthDate.get(Calendar.YEAR) > calendar.get(Calendar.YEAR)) {
 			message(FacesMessage.SEVERITY_ERROR,
-					"L'anno di nascita è una data futura, ricontrolla la data inserita ed il codice fiscale generato, potrebbero contenere errori", true);
+					"The year of birth is a future date. Please recheck the entered date and the generated tax code, as they may contain errors.", true);
 			return false;
 		} else{
 			return true;

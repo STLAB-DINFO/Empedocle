@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Interfaccia che definisce un'entita' composta, ovvero una struttura a grafo
- * con figli e padri (possono essere molteplici anche i parents).
+ * Interface that defines a composite entity, i.e., a graph structure
+ * with children and parents (there can also be multiple parents).
  * @see it.unifi.ing.stlab.entities.implementation.composite.CompositeEntityImpl
  * 
- * @param <T> estende CompositeEntity<T,E>
- * @param <E> estende CompositeLink<T,E>
+ * @param <T> extends CompositeEntity<T,E>
+ * @param <E> extends CompositeLink<T,E>
  */
 public interface CompositeEntity
 	<T extends CompositeEntity<T,E>, 
@@ -26,38 +26,37 @@ public interface CompositeEntity
 	 */
 	public Set<T> listAncestors();
 	/**
-	 * Metodo che restituisce l'insieme di tutti i descendents dell'entita',
-	 * che sono a loro volta CompositeEntity, compresa essa stessa.
-	 * @return Set<T>, dove T estende CompositeEntity
+	 * Method that returns the set of all the entity's ancestors,
+	 * which are themselves CompositeEntity, including itself.
+	 * @return Set<T>, where T extends CompositeEntity
 	 */
 	public Set<T> listDescendents();
 	
 	/**
-	 * Metodo che restituisce l'insieme di link che collegano l'entita' 
-	 * con le entita' padre.
-	 * @return Set<E>, dove E estende CompositeLink
+	 * Method that returns the set of links connecting the entity
+	 * with its parent entities.
+	 * @return Set<E>, where E extends CompositeLink
 	 */
 	public Set<E> listParents();
 	/**
-	 * Metodo che restituisce l'insieme di link che collegano l'entita' 
-	 * con le entita' figlie. Tali link sono istanze di una classe che implementa
-	 * CompositeLink.
-	 * @return Set<E>, dove E estende CompositeLink
+	 * Method that returns the set of links connecting the entity
+	 * with its child entities. These links are instances of a class that implements CompositeLink.
+	 * @return Set<E>, where E extends CompositeLink
 	 */
 	public Set<E> listChildren();
 	/**
-	 * Metodo che restituisce una lista di Link, ordinata secondo la priorita'
-	 * assegnata ad essi. Tali link sono istanze di una classe che implementa
+	 * Method that returns a list of Links, ordered by the priority
+	 * assigned to them. These links are instances of a class that implements
 	 * CompositeLink.
-	 * Il metodo crea la lista ordinata solo se non e' stata creata precedentemente e la
-	 * memorizza come attributo della classe.
-	 * @return Set<E>, dove E estende CompositeLink
+	 * The method creates the ordered list only if it has not been previously created and stores it
+	 * as an attribute of the class.
+	 * @return Set<E>, where E extends CompositeLink
 	 */
 	public List<E> listChildrenOrdered();
 	/**
-	 * Metodo che setta a null la lista childrenOrdered, per costringere
-	 * il metodo listChildren() a ricrearla. Da utlizzare dopo aver fatto cambiamenti
-	 * nei figli.
+	 * Method that sets the childrenOrdered list to null, to force
+	 * the listChildren() method to recreate it. To be used after making changes
+	 * in the children.
 	 */
 	public void refreshChildrenOrdered();
 	

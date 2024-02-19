@@ -82,7 +82,7 @@ public class FactDaoBean implements FactDao {
 		return result;
 	}
 	
-	// FIXME c'è soluzione più elegante?
+	// FIXME is there a more elegant solution?
 	@Override
 	public Fact fetchForStatistics(Long id) {
 		
@@ -127,7 +127,8 @@ public class FactDaoBean implements FactDao {
 		newFact.accept( assignDefault );
 		
 		save( newFact );
-		
+
+		//search for the property to assign to the link, before inserting it
 		//cerco la priority da assegnare al link, prima di inserirlo
 		Long maxPriority = -1L;
 		for( FactLink link : f.listActiveLinks() ){
@@ -138,7 +139,8 @@ public class FactDaoBean implements FactDao {
 				maxPriority = link.getPriority();
 		}
 		maxPriority++;
-		
+
+		//insert the link and assign it the priority
 		//inserisco il link e gli assegno la priorità
 		FactLinkFactory linkFactory = new FactLinkFactory();
 		FactLinkImpl insert = linkFactory.insertLink( ClassHelper.cast( f, FactImpl.class ), newFact );

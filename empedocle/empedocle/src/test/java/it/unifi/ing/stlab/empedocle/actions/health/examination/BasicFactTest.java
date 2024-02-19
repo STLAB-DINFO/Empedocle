@@ -33,7 +33,7 @@ public class BasicFactTest {
 	protected Patient patient;
 	protected Fact root;
 	
-	// composita con 2 figli txt
+	// Composite with two children txt
 	protected CompositeFact cmp;
 	protected TextualFact child_txt1;
 	protected TextualFact child_txt2;

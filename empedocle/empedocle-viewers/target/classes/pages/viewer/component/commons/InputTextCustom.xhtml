@@ -16,7 +16,7 @@
 								styleClass="inputText_text #{not component.valid ? 'vld-error' : ''}"
 								onkeydown="return disableReturn(event, this)"
 								disabled ="#{viewer.readOnly}"
-								requiredMessage="Il campo #{value.type.name} deve essere compilato">
+								requiredMessage="Field #{value.type.name} must be filled in">
 						<a4j:ajax event="change" execute="@region"
 									listener="#{persistListener.persistData}" />
 					</h:inputText>
@@ -29,7 +29,7 @@
 							styleClass="inputText_number #{not component.valid ? 'vld-error' : ''}"
 							disabled ="#{viewer.readOnly}" 
 							onkeydown="return disableReturn(event, this)"
-							requiredMessage="Il campo #{value.type.name} deve essere compilato"
+							requiredMessage="Field #{value.type.name} must be filled in"
 							converter="#{decimalNumberConverter}">
 							<f:attribute name="typeId" value="#{value.type.id}" />
 							<f:attribute name="unitId" value="#{value.quantity.unit.uuid}" />

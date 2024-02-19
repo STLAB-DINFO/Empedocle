@@ -112,7 +112,7 @@ public class ViewerEditDsl {
 			utx.commit();
 			conversation.end();
 
-			message( FacesMessage.SEVERITY_INFO, "Vista salvata con successo!", true );
+			message( FacesMessage.SEVERITY_INFO, "Viewer successfully saved!", true );
 
 		} catch ( RollbackException e ) {
 			Throwable t = e.getCause();
@@ -123,11 +123,11 @@ public class ViewerEditDsl {
 
 			if ( t instanceof ConstraintViolationException ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Impossibile effettuare il salvataggio: nome '" + name + "' già in uso!",
+						"Unable to perform the save: name '" + name + "' already in use!",
 						true );
 			}
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 		}
 		return "save";
 	}
@@ -157,7 +157,7 @@ public class ViewerEditDsl {
 
 			viewer = parser.parse();
 
-			message( FacesMessage.SEVERITY_INFO, "Validazione eseguita con successo!", false );
+			message( FacesMessage.SEVERITY_INFO, "Validation successfully completed!", false );
 		} catch ( Exception e ) {
 			recoverException( e );
 		}

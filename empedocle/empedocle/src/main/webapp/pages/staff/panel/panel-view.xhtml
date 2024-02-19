@@ -23,13 +23,13 @@
 			<h:panelGroup layout="block">
 				<h:panelGroup layout="block" styleClass="page-title">
 					<h2>
-						Profilo Utente
+						User Profile
 						
 						<h:panelGroup layout="block" styleClass="pull-right align-btn">
 							<h:panelGroup class="btn-group" layout="block">
 								<h:commandLink class="btn btn-warning" 
 									action="#{panelView.edit()}">
-									<i class="fw-icon-pencil dist-right"></i> Modifica
+									<i class="fw-icon-pencil dist-right"></i> Edit
 								</h:commandLink>	
 								<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 									<span class="caret"></span>
@@ -39,7 +39,7 @@
 										<a4j:commandLink
 			                            	oncomplete="#{rich:component('password-popup')}.show(); return false;"
 			                                execute="@this" render=":password-form:password-popup">
-			                                <i class="fw-icon-key dist-right"></i> Modifica password
+			                                <i class="fw-icon-key dist-right"></i> Edit password
 			                            </a4j:commandLink>									
 									</li>						
 								</ul>
@@ -47,7 +47,7 @@
 							
 							<h:commandLink class="btn dist-left"
 								action="#{panelView.close()}">
-								<i class="fw-icon-step-backward dist-right"></i> Chiudi
+								<i class="fw-icon-step-backward dist-right"></i> Close
 							</h:commandLink>	
 						</h:panelGroup>						
 					</h2>
@@ -64,28 +64,28 @@
 			</div>		
 					
 			<div class="control-group">
-				<label class="control-label bold">Matricola</label>
+				<label class="control-label bold">Registration Number</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelView.current.number}" />
 				</div>
 			</div>			
 			
 			<div class="control-group">
-				<label class="control-label bold">Nome</label>
+				<label class="control-label bold">Name</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelView.current.user.name}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Cognome</label>
+				<label class="control-label bold">Surname</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelView.current.user.surname}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Telefono</label>
+				<label class="control-label bold">Telephone</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelView.current.user.phone}" />
 				</div>
@@ -99,7 +99,7 @@
 			</div>					
 			
 			<div class="control-group">
-				<label class="control-label bold">Qualifica</label>
+				<label class="control-label bold">Qualification</label>
 				<div class="controls">
 					<h:panelGroup id="qualification-list">
 						<rich:list value="#{panelView.current.user.listQualifications()}" var="_qual"
@@ -113,7 +113,7 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Ruoli</label>
+				<label class="control-label bold">Roles</label>
 				<div class="controls">
 					<h:panelGroup id="role-list">
 						<rich:list value="#{panelView.current.user.listRoles()}" var="_role"
@@ -127,14 +127,14 @@
 			</div>			
 			
 			<div class="control-group">
-				<label class="control-label bold">Agenda di default</label>
+				<label class="control-label bold">Default Agenda</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelView.current.defaultAgenda}" />
 				</div>
 			</div>			
 			
 			<div class="control-group">
-				<label class="control-label bold">Agende preferite</label>
+				<label class="control-label bold">Favorite Agendas</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="favorite-agenda-list">
 						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty panelView.current.listFavoriteAgendasOrdered()}">
@@ -143,7 +143,7 @@
 											
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{agenda.code}" />
@@ -151,7 +151,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{agenda.description}" />
@@ -165,7 +165,7 @@
 			</div>			
 			
 			<div class="control-group">
-				<label class="control-label bold">Agende abilitate</label>
+				<label class="control-label bold">Enabled Agendas</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="agenda-list">
 						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty panelView.current.listAgendasOrdered()}">
@@ -174,7 +174,7 @@
 											
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{agenda.code}" />
@@ -182,7 +182,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{agenda.description}" />
@@ -205,7 +205,7 @@
 						action="#{panelView.clear( 'password-form' )}"
                         execute="@this" styleClass="btn pull-right"
                     	onclick="#{rich:component('password-popup')}.hide(); return false;">
-						<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						<i class="fw-icon-step-backward dist-right"></i> Close
 					</a4j:commandLink>
                         
 					<a4j:commandLink execute="@form" render="msg, pwd-group"
@@ -213,10 +213,10 @@
 						action="#{panelView.savePassword()}"
                         styleClass="btn btn-primary pull-right dist-right save-btn" 
                        	oncomplete="if(#{not facesContext.validationFailed}) {$('.pwd-group').hide(); $('.save-btn').hide(); return false;}">
-                        <i class="fw-icon-step-forward dist-right"></i> Salva
+                        <i class="fw-icon-step-forward dist-right"></i> Save
                     </a4j:commandLink>
                     
-                    <h3>Modifica Password</h3>                                            
+                    <h3>Edit Password</h3>
 				</div>				
 				
 				<div class="modal-body">
@@ -229,27 +229,27 @@
 					
 					<h:panelGroup id="pwd-group" layout="block" styleClass="pwd-group">
 						<div class="control-group">	
-							<label class="control-label bold" for="password-form:old-pwd">* Vecchia password</label>
+							<label class="control-label bold" for="password-form:old-pwd">* Old password</label>
 							<div class="controls">
 								<h:inputSecret id="old-pwd" value="#{panelView.oldPassword}" 
 									styleClass="#{component.valid ? '' : 'vld-error'}" 
 									validator="#{panelView.validateOldPassword}"
 									onkeydown="return disableReturn(event, this);"
 									required="true"
-									requiredMessage="'Vecchia password' è un campo obbligatorio!">
+									requiredMessage="'Old password' is a required field!">
 									<f:ajax execute="@this"/>
 								</h:inputSecret>
 							</div>
 						</div>		
 						
 						<div class="control-group">	
-							<label class="control-label bold" for="password-form:new-pwd">* Nuova password</label>
+							<label class="control-label bold" for="password-form:new-pwd">* New password</label>
 							<div class="controls">
 								<h:inputSecret id="new-pwd" value="#{panelView.newPassword}" 
 									styleClass="#{component.valid ? '' : 'vld-error'}" 
 									required="true"
 									onkeydown="return disableReturn(event, this);"
-									requiredMessage="'Nuova password' è un campo obbligatorio!">
+									requiredMessage="'New password' is a required field!">
 									<f:ajax execute="@this" />									
 									<f:validateLength minimum="8" for="password-form:new-pwd"/>
 								</h:inputSecret>
@@ -257,14 +257,14 @@
 						</div>		
 						
 						<div class="control-group">	
-							<label class="control-label bold" for="password-form:confirm-new-pwd">* Conferma nuova password</label>
+							<label class="control-label bold" for="password-form:confirm-new-pwd">* Confirm new password</label>
 							<div class="controls">
 								<h:inputSecret id="confirm-new-pwd" value="#{panelView.repeatedPassword}" 
 									styleClass="#{component.valid ? '' : 'vld-error'}" 
 									validator="#{panelView.validateNewPassword}"
 									onkeydown="return disableReturn(event, this);"
 									required="true"
-									requiredMessage="'Conferma nuova password' è un campo obbligatorio!">
+									requiredMessage="'Confirm new password' is a required field!">
 									<f:validateLength minimum="8" for="password-form:confirm-new-pwd"/>
 									<f:ajax execute="@this" />
 								</h:inputSecret>

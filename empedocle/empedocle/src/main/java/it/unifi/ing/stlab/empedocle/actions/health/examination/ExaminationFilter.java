@@ -78,8 +78,8 @@ public class ExaminationFilter extends FilterBean implements ExaminationQueryBui
 	}
 	
 	private void initSorting() {
-		addSort( "Data", "e.appointment.date asc, e.appointment.patient.taxCode asc", "e.appointment.date desc, e.appointment.patient.taxCode desc" );
-		toggle( "Data" );		
+		addSort( "Date", "e.appointment.date asc, e.appointment.patient.taxCode asc", "e.appointment.date desc, e.appointment.patient.taxCode desc" );
+		toggle( "Date" );
 	}
 
 	@Override
@@ -116,11 +116,11 @@ public class ExaminationFilter extends FilterBean implements ExaminationQueryBui
 		agendaFilter.setDefinition( findFilterDefByName( "Agenda" ) );
 
 		Filter fromDateFilter = new Filter();
-		fromDateFilter.setDefinition( findFilterDefByName( "Data - Dal" ) );
+		fromDateFilter.setDefinition( findFilterDefByName( "Date - from" ) );
 		fromDateFilter.setValue( DateHelper.startOfToday( Calendar.getInstance().getTime() ) );
 
 		Filter toDateFilter = new Filter();
-		toDateFilter.setDefinition( findFilterDefByName( "Data - Al" ) );
+		toDateFilter.setDefinition( findFilterDefByName( "Date - to" ) );
 		toDateFilter.setValue( DateHelper.startOfTomorrow( Calendar.getInstance().getTime() ) );
 
 		getFilters().add( agendaFilter );
@@ -142,8 +142,8 @@ public class ExaminationFilter extends FilterBean implements ExaminationQueryBui
 				List<Agenda> availableAgendas = agendaDao.findBySuggestion( param.toString(), loggedUser.getUsername(), limit);
 				List<Agenda> favoriteAgendas = agendaDao.findFavoriteAgendasByUsername( loggedUser.getUsername() );
 	
-				SelectItemGroup favorite_group = new SelectItemGroup("Agende preferite");
-				SelectItemGroup other_group = new SelectItemGroup("Altre agende");
+				SelectItemGroup favorite_group = new SelectItemGroup("Favorite agenda");
+				SelectItemGroup other_group = new SelectItemGroup("Other agendas");
 	
 				List<SelectItem> favorite_items = new ArrayList<SelectItem>();
 				List<SelectItem> other_items = new ArrayList<SelectItem>();			
@@ -171,10 +171,10 @@ public class ExaminationFilter extends FilterBean implements ExaminationQueryBui
 			}
 		} );			
 			
-		addFilterDef( "Data - Dal", FilterType.DATE, "e.appointment.date >= :pamin", "pamin" );
-		addFilterDef( "Data - Al", FilterType.DATE, "e.appointment.date <= :pamax", "pamax" );
+		addFilterDef( "Date - from", FilterType.DATE, "e.appointment.date >= :pamin", "pamin" );
+		addFilterDef( "Date - to", FilterType.DATE, "e.appointment.date <= :pamax", "pamax" );
 		
-		addFilterDef( "In carico a", FilterType.SUGGESTION, "e.author.uuid = :puser", "puser", new SelectItemBuilder() {
+		addFilterDef( "Assigned to", FilterType.SUGGESTION, "e.author.uuid = :puser", "puser", new SelectItemBuilder() {
 			@Override
 			public List<SelectItem> getSelectItems(Object param, int offset, int limit) {
 				List<SelectItem> userItems = new ArrayList<SelectItem>();
@@ -190,12 +190,12 @@ public class ExaminationFilter extends FilterBean implements ExaminationQueryBui
 			}
 		} );		
 		
-		addFilterDef( "Codice fiscale", FilterType.TEXT, "e.appointment.patient.taxCode like :ptaxc", "ptaxc" );
-		addFilterDef( "Cognome", FilterType.TEXT, "e.appointment.patient.surname like :psur", "psur" );
-		addFilterDef( "Nome", FilterType.TEXT, "e.appointment.patient.name like :pname", "pname" );
-		addFilterDef( "Luogo di nascita", FilterType.TEXT, "e.appointment.patient.birthPlace like :pbplace", "pbplace" );
-		addFilterDef( "Data di nascita - Dal", FilterType.DATE, "e.appointment.patient.birthDate >= :pbmin", "pbmin" );
-		addFilterDef( "Data di nascita - Al", FilterType.DATE, "e.appointment.patient.birthDate <= :pbmax", "pbmax" );
+		addFilterDef( "Tax Code", FilterType.TEXT, "e.appointment.patient.taxCode like :ptaxc", "ptaxc" );
+		addFilterDef( "Surname", FilterType.TEXT, "e.appointment.patient.surname like :psur", "psur" );
+		addFilterDef( "Name", FilterType.TEXT, "e.appointment.patient.name like :pname", "pname" );
+		addFilterDef( "Birthplace", FilterType.TEXT, "e.appointment.patient.birthPlace like :pbplace", "pbplace" );
+		addFilterDef( "Birthdate - from", FilterType.DATE, "e.appointment.patient.birthDate >= :pbmin", "pbmin" );
+		addFilterDef( "Birthdate - to", FilterType.DATE, "e.appointment.patient.birthDate <= :pbmax", "pbmax" );
 		
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );
 	}

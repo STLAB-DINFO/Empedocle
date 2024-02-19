@@ -16,7 +16,7 @@
 									onkeydown="return disableReturn(event, this)"
 									converter="#{phenomenonConverter}" label="#{value.type.name}"
 									styleClass="combo_phen #{not component.valid ? 'vld-error' : ''}"
-									requiredMessage="Il campo #{value.type.name} deve essere compilato">
+									requiredMessage="Field #{value.type.name} must be filled in">
 						<f:selectItem itemValue="" itemLabel="" noSelectionOption="true"/>
 						<f:selectItems value="#{comboController.getSelectItems(value)}" />
 						<f:attribute name="fact" value="#{value}" />

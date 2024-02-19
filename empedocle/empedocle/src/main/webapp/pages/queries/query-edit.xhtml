@@ -29,7 +29,7 @@
 			<h:panelGroup layout="block">
 				<h:panelGroup layout="block" styleClass="page-title">
 					<h2>
-						#{empty queryEdit.queryId ? 'Creazione' : 'Modifica'} Query
+						#{empty queryEdit.queryId ? 'Create' : 'Edit'} Query
 					</h2>
 				</h:panelGroup>
 				
@@ -37,17 +37,17 @@
 				
 				<h:panelGroup layout="block" styleClass="form-horizontal container-fluid" style="margin-top:20px;">
 					<h:panelGroup styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="query-name" value="Nome" />
+						<h:outputLabel styleClass="control-label bold" for="query-name" value="Name" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:inputText id="query-name" value="#{queryEdit.current.name}"
 					    		required="true" styleClass="input-xxlarge#{not component.valid ? ' vld-error' : ''}"
-					    		requiredMessage="il campo 'Nome' deve essere compilato">
+					    		requiredMessage="Field 'Name' must be filled in">
 					    	</h:inputText>
 					    </h:panelGroup>
 					</h:panelGroup>
 					
 					<h:panelGroup styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="query-description" value="Descrizione" />
+						<h:outputLabel styleClass="control-label bold" for="query-description" value="Description" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:inputTextarea id="query-description" value="#{queryEdit.current.description}"
 					    						styleClass="input-xxlarge">
@@ -142,17 +142,17 @@
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:inputText id="offset" value="#{queryEdit.current.offset}"
 					    		required="true" styleClass="inputText_number_small#{not component.valid ? ' vld-error' : ''}"
-					    		requiredMessage="il campo 'Offset' deve essere compilato">
+					    		requiredMessage="Field 'Offset' must be filled in">
 					    	</h:inputText>
 					    </h:panelGroup>
 					</h:panelGroup>
 					
 					<h:panelGroup styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="max-res" value="Massimo numero di risultati" />
+						<h:outputLabel styleClass="control-label bold" for="max-res" value="Max number of results" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:inputText id="max-res" value="#{queryEdit.current.limit}"
 					    		required="true" styleClass="inputText_number_small#{not component.valid ? ' vld-error' : ''}"
-					    		requiredMessage="il campo 'Massimo numero risultati' deve essere compilato">
+					    		requiredMessage="Field 'Max number of results' must be filled in">
 					    	</h:inputText>
 					    </h:panelGroup>
 					</h:panelGroup>
@@ -171,7 +171,7 @@
 			<div class="row-fluid">
 				<h:commandButton value="Salva" action="#{queryEdit.save()}"
 					styleClass="btn btn-primary pull-right dist-left" />
-				<h:commandButton value="Annulla" action="#{queryEdit.close()}"
+				<h:commandButton value="Cancel" action="#{queryEdit.close()}"
 					styleClass="btn pull-right" immediate="true" />
 			</div>
 			

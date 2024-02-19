@@ -109,7 +109,7 @@ public class ExaminationReminder implements Serializable {
 		User user = loggedUser.getUser();
 
 		Filter userFilter = new Filter();
-		userFilter.setDefinition( examinationFilter.findFilterDefByName( "In carico a" ) );
+		userFilter.setDefinition( examinationFilter.findFilterDefByName( "Assigned to" ) );
 		userFilter.setSuggestion( user.getSurname() + " " + user.getName() );
 		userFilter.setValue( loggedUser.getUser().getUuid() );
 		return userFilter;
@@ -117,14 +117,14 @@ public class ExaminationReminder implements Serializable {
 	
 	private Filter fromDateFilter() {
 		Filter fromDateFilter = new Filter();
-		fromDateFilter.setDefinition( examinationFilter.findFilterDefByName( "Data - Dal" ) );
+		fromDateFilter.setDefinition( examinationFilter.findFilterDefByName( "Date - from" ) );
 		fromDateFilter.setValue( DateHelper.startOfToday( defaultStartDate ) );
 		return fromDateFilter;
 	}	
 
 	private Filter toDateFilter() {
 		Filter toDateFilter = new Filter();
-		toDateFilter.setDefinition( examinationFilter.findFilterDefByName( "Data - Al" ) );
+		toDateFilter.setDefinition( examinationFilter.findFilterDefByName( "Dato - To" ) );
 		toDateFilter.setValue( DateHelper.startOfTomorrow( Calendar.getInstance().getTime() ) );
 		return toDateFilter;
 	}

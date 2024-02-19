@@ -16,34 +16,34 @@
 
 			<div class="crud-title">
 				<h2>
-					#{agendaEdit.new ? 'Creazione' : 'Modifica'} Agenda
+					#{agendaEdit.new ? 'Create' : 'Edit'} Agenda
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn" action="#{agendaEdit.cancel()}"
 							immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Annulla
+							<i class="fw-icon-step-backward dist-right"></i> Cancel
 						</h:commandLink>
 
 						<h:commandLink class="btn btn-primary dist-left"
 							action="#{agendaEdit.save()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold" for="agenda-edit-form:code">* Codice</label>
+				<label class="control-label bold" for="agenda-edit-form:code">* Code</label>
 				<div class="controls">
 					<h:inputText id="code" value="#{agendaEdit.current.code}"
 						required="true"
-						requiredMessage="'Codice' è un campo obbligatorio!"
+						requiredMessage="'Code' is a required field!"
 						styleClass="#{component.valid ? '' : 'vld-error'}" />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold" for="agenda-edit-form:description">Descrizione</label>
+				<label class="control-label bold" for="agenda-edit-form:description">Description</label>
 				<div class="controls">
 					<h:inputText id="description"
 						value="#{agendaEdit.current.description}" styleClass="wider" />

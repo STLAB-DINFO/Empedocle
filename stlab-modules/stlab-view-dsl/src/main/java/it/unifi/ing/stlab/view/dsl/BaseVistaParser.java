@@ -298,10 +298,10 @@ public abstract class BaseVistaParser extends Parser {
 									.getResultList();
 		
 		if ( resultList == null || resultList.size() < 1 )
-			throw new RuntimeException( " Nessuna vista con nome " + nome );
+			throw new RuntimeException( " No viewer with name " + nome );
 
 		if ( resultList.size() > 1 )
-			throw new RuntimeException( " Più di una vista con nome " + nome );
+			throw new RuntimeException( " More than one viewer with name " + nome );
 		
 		return ClassHelper.cast( resultList.get( 0 ), Viewer.class );
 	}
@@ -325,8 +325,8 @@ public abstract class BaseVistaParser extends Parser {
 											" trovato per l'osservazione "+ cur.getTypeLink().getTarget().getName() );
 
 		if ( resultList.size() > 1 )
-			throw new RuntimeException( " Più di un fenomeno con nome " + nome + 
-											" trovato per l'osservazione "+ cur.getTypeLink().getTarget().getName() );
+			throw new RuntimeException( " More than one phenomenon " + nome +
+											" found for the observation "+ cur.getTypeLink().getTarget().getName() );
 		
 		return ClassHelper.cast( resultList.get( 0 ), Phenomenon.class );
 	}
@@ -338,7 +338,7 @@ public abstract class BaseVistaParser extends Parser {
 			typeLink = findSottotipoOsservazione( itemName );
 		} catch(NonUniqueResultException iae){
 			if( getLast() == null )
-				throw new NonUniqueResultException( " Più di un sotto tipo con nome " + itemName );
+				throw new NonUniqueResultException( " More than one subtype with name " + itemName );
 			
 			typeLink = findSottotipoOsservazioneAmbigua( getLast(), itemName );
 		}
@@ -359,10 +359,10 @@ public abstract class BaseVistaParser extends Parser {
 									.getResultList();
 		
 		if ( resultList == null || resultList.size() < 1 )
-			throw new RuntimeException( " Nessuna osservazione con nome " + nome );
+			throw new RuntimeException( " No observation with name " + nome );
 
 		if ( resultList.size() > 1 )
-			throw new NonUniqueResultException( " Più di un'osservazione con nome " + nome );
+			throw new NonUniqueResultException( " More than one observation with name " + nome );
 		
 		viewerType = ClassHelper.cast( resultList.get( 0 ), Type.class );
 		ossStack.add( viewerType );
@@ -379,10 +379,10 @@ public abstract class BaseVistaParser extends Parser {
 								.getResultList();
 		
 		if ( resultList == null || resultList.size() < 1 )
-			throw new RuntimeException( "Nessuna sotto tipo con nome " + nome );
+			throw new RuntimeException( "No subtype with name " + nome );
 
 		if ( resultList.size() > 1 )
-			throw new NonUniqueResultException( "Più di un sotto tipo con nome " + nome );
+			throw new NonUniqueResultException( "More than one subtype with name " + nome );
 		
 		return ClassHelper.cast( resultList.get( 0 ), TypeLink.class );
 	}
@@ -399,10 +399,10 @@ public abstract class BaseVistaParser extends Parser {
 										.getResultList();
 		
 		if ( resultList == null || resultList.size() < 1 )
-			throw new RuntimeException( "Nessuna sotto tipo con nome " + nomeLink + "contenuta in \"" + type.getName() +"\"" );
+			throw new RuntimeException( "No subtype with name " + nomeLink + "contained in \"" + type.getName() +"\"" );
 
 		if ( resultList.size() > 1 )
-			throw new NonUniqueResultException( "Più di un sotto tipo con nome " + nomeLink + "contenuta in \"" + type.getName() +"\"" );
+			throw new NonUniqueResultException( "More than one subtype with name " + nomeLink + "contained in \"" + type.getName() +"\"" );
 
 		return ClassHelper.cast( resultList.get( 0 ), TypeLink.class );
 	}
@@ -416,10 +416,10 @@ public abstract class BaseVistaParser extends Parser {
 										.getResultList();
 		
 		if ( resultList == null || resultList.size() < 1 )
-			throw new RuntimeException( "Nessuna factQuery con nome " + name );
+			throw new RuntimeException( "No factQuery with name " + name );
 
 		if ( resultList.size() > 1 )
-			throw new NonUniqueResultException( "Più di una factQuery con nome " + name + " ( impossibile! ) " );
+			throw new NonUniqueResultException( "More than one factQuery with name " + name + " ( impossible! ) " );
 		
 		return ClassHelper.cast( resultList.get( 0 ), FactQuery.class );
 	}

@@ -21,7 +21,7 @@
 		<h:form>
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>
-					Dettaglio Utente #{not staffList.isActive( staffView.current ) ? 'disattivato' : ''}
+					User detail #{not staffList.isActive( staffView.current ) ? 'deactivated' : ''}
 					
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 					
@@ -29,11 +29,11 @@
 							rendered="#{not staffList.isRemovable( staffView.current ) and not staffList.isItMe( staffView.current )}">						
 							<h:commandLink action="#{staffList.disable( staffView.current )}"
 								rendered="#{staffList.isActive( staffView.current )}">
-								<i class="fw-icon-lock dist-right more-right"></i> Disattiva
+								<i class="fw-icon-lock dist-right more-right"></i> Deactivate
 							</h:commandLink>
 							<h:commandLink action="#{staffList.enable( staffView.current )}"
 								rendered="#{not staffList.isActive( staffView.current )}">
-								<i class="fw-icon-unlock dist-right"></i> Attiva
+								<i class="fw-icon-unlock dist-right"></i> Activate
 							</h:commandLink>	
 						</h:panelGroup>		
 						
@@ -41,8 +41,8 @@
 							rendered="#{staffList.isRemovable( staffView.current ) and not staffList.isItMe( staffView.current )}">
 							<h:commandLink class="btn btn-danger" 
 								action="#{staffList.delete( staffView.current.id )}"
-								onclick="if(!confirm('Eliminare utente?')) {return false;}" >
-								<i class="fw-icon-remove dist-right"></i> Elimina 
+								onclick="if(!confirm('Delete user?')) {return false;}" >
+								<i class="fw-icon-remove dist-right"></i> Delete
 							</h:commandLink>	
 							<button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
@@ -51,11 +51,11 @@
 								<li>
 									<h:commandLink action="#{staffList.disable( staffView.current )}"
 										rendered="#{staffList.isActive( staffView.current )}">
-										<i class="fw-icon-lock dist-right"></i> Disattiva
+										<i class="fw-icon-lock dist-right"></i> Deactivate
 									</h:commandLink>
 									<h:commandLink action="#{staffList.enable( staffView.current )}"
 										rendered="#{not staffList.isActive( staffView.current )}">
-										<i class="fw-icon-unlock dist-right"></i> Attiva
+										<i class="fw-icon-unlock dist-right"></i> Activate
 									</h:commandLink>	
 								</li>						
 							</ul>
@@ -64,7 +64,7 @@
 						<h:panelGroup class="btn-group dist-left" layout="block">
 							<h:commandLink class="btn btn-warning" 
 								action="#{staffList.edit( staffView.current.id )}">
-								<i class="fw-icon-pencil dist-right"></i> Modifica
+								<i class="fw-icon-pencil dist-right"></i> Edit
 							</h:commandLink>	
 							<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
@@ -72,7 +72,7 @@
 							<ul class="dropdown-menu">
 								<li>
 									<h:commandLink action="#{staffList.copy( staffView.current.id )}">
-										<i class="fw-icon-copy dist-right"></i> Clona
+										<i class="fw-icon-copy dist-right"></i> Clone
 									</h:commandLink>
 								</li>
 								<li>
@@ -85,7 +85,7 @@
 						
 						<h:commandLink class="btn dist-left"
 							action="#{staffView.close()}">
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>		
 					</h:panelGroup>
 				</h2>
@@ -101,25 +101,25 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Matricola</label>
+				<label class="control-label bold">Serial number</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{staffView.current.number}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Nome</label>
+				<label class="control-label bold">Name</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{staffView.current.user.name}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Cognome</label>
+				<label class="control-label bold">Surname</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{staffView.current.user.surname}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Telefono</label>
+				<label class="control-label bold">Telephone</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{staffView.current.user.phone}" />
 				</div>
@@ -132,7 +132,7 @@
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold">Qualifica</label>
+				<label class="control-label bold">Qualification</label>
 				<div class="controls">
 					<rich:list value="#{staffView.current.user.listQualifications()}" var="_qual"
 						styleClass="unstyled align-txt itemList" rendered="#{not empty staffView.current.user.listQualifications()}">
@@ -144,7 +144,7 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Ruoli</label>
+				<label class="control-label bold">Roles</label>
 				<div class="controls">
 					<h:panelGroup id="role-list">
 						<h:panelGroup layout="block" class="align-txt" rendered="#{empty staffView.current.user.listRoles()}">
@@ -162,14 +162,14 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Agenda di default</label>
+				<label class="control-label bold">Default Agenda</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{staffView.current.defaultAgenda.code} #{staffView.current.defaultAgenda.description}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Agende</label>
+				<label class="control-label bold">Agendas</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="agenda-list">
 						<h:panelGroup layout="block" class="align-txt" rendered="#{empty staffView.current.listAgendasOrdered()}">
@@ -182,7 +182,7 @@
 											
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{agenda.code}" />
@@ -190,7 +190,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{agenda.description}" />

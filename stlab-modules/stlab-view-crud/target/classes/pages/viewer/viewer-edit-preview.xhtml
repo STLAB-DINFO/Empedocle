@@ -14,14 +14,14 @@
 						
 		<div class="modal-header clearfix">
 			<h3 class="pull-left">
-				<h:outputText value="Anteprima" />
+				<h:outputText value="Previews" />
 			</h3>
 			<h:form>
 				<a4j:commandLink 
 					action="#{viewerEditDsl.preview( false )}"
 					oncomplete="#{rich:component('preview-popup')}.hide()"
 					styleClass="btn pull-right bold" >
-					<i class="fw-icon-step-backward dist-right"></i> Chiudi
+					<i class="fw-icon-step-backward dist-right"></i> Close
 				</a4j:commandLink>
 			</h:form>					
 		</div>

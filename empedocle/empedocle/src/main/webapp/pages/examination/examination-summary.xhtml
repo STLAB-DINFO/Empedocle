@@ -65,7 +65,7 @@
 		<h:form id="details-form" rendered="#{examinationRunning.summary}">
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>
-					Riepilogo visita di 
+					Visit Summary of
 					<span style="text-transform:uppercase;">#{examinationRunning.lastPatientVersion.surname}</span>
 					<span class='capitalize'>#{examinationRunning.lastPatientVersion.name}</span>
 					
@@ -73,7 +73,7 @@
 						<h:commandLink action="#{examinationRunning.reOpen()}" 
 							styleClass="btn btn-warning dist-right">
 							<f:param name="id" value="#{examinationRunning.id}" />
-							<i class="fw-icon-pencil dist-right"></i> Modifica
+							<i class="fw-icon-pencil dist-right"></i> Edit
 						</h:commandLink>						
 						<h:outputLink value="../viewer/report-viewer.jsf" target="_blank" 
 							styleClass="btn btn-primary dist-right"
@@ -81,17 +81,17 @@
 							<f:param name="eid" value="#{examinationRunning.id}" />
 							<f:param name="vid" value="#{examinationRunning.reports.get(0).id}" />
 							<f:param name="type" value="pdf" />
-							<i class="fw-icon-print dist-right"></i> Stampa
+							<i class="fw-icon-print dist-right"></i> Print
 						</h:outputLink>
 						<a4j:commandLink onclick="#{rich:component('report-popup')}.show();"
 							rendered="#{examinationRunning.reports.size() gt 1}"
 							styleClass="btn btn-primary dist-right" >
-							<i class="fw-icon-print dist-right"></i> Stampa
+							<i class="fw-icon-print dist-right"></i> Print
 						</a4j:commandLink>
 						<h:commandLink onclick="#{rich:component('loading-popup')}.show();"
 							action="#{examinationRunning.close()}"
 							styleClass="btn dist-right" >	
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -126,10 +126,10 @@
 						execute="@this" styleClass="btn pull-right dist-right"
 						onclick="#{rich:component('report-popup')}.hide(); return false;">
 						<i class="fw-icon-step-backward dist-right"></i>
-						<h:outputText value="Chiudi" styleClass="bold"/>
+						<h:outputText value="Close" styleClass="bold"/>
 					</a4j:commandLink>										
 	                   
-	                  <h3>Seleziona Report da stampare</h3>                                            
+	                  <h3>Select Report to prin</h3>
 				</div>		
 					
 				<div class="modal-body">

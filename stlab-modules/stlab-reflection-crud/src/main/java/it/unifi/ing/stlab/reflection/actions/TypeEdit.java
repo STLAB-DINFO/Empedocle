@@ -418,7 +418,7 @@ public class TypeEdit extends TypeController {
 				conversation.end();
 				utx.commit();
 				
-				message( FacesMessage.SEVERITY_INFO, "Tipo salvato con successo!", true );
+				message( FacesMessage.SEVERITY_INFO, "Type successfully saved!", true );
 			} catch ( RollbackException e ) {
 				Throwable t = e.getCause();
 				
@@ -428,12 +428,12 @@ public class TypeEdit extends TypeController {
 				
 				if ( t instanceof ConstraintViolationException ) {
 					message( FacesMessage.SEVERITY_ERROR,
-							"Impossibile effettuare il salvataggio: nome '" + current.getType().getName()
-									+ "' già in uso!",
+							"Unable to perform the save: name '" + current.getType().getName()
+									+ "' already in use!",
 							true );
 				}
 			} catch ( Exception e ) {
-				message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+				message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 			}
 		} else {
 			return null;
@@ -464,7 +464,7 @@ public class TypeEdit extends TypeController {
 		if ( toValidate.isEnumerated() ) {
 			if ( toValidate.getPhenomena().isEmpty() ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Errore - Inserire almeno un fenomeno!", false );
+						"Error - Please insert at least one phenomenon!", false );
 
 				return false;
 
@@ -476,7 +476,7 @@ public class TypeEdit extends TypeController {
 		else if ( toValidate.isQuantitative() ) {
 			if ( toValidate.getUnits().isEmpty() ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Errore - Inserire almeno una unità di misura!", false );
+						"Error - Please insert at least one unit of measurement!", false );
 				return false;
 
 			}

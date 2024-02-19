@@ -16,15 +16,15 @@
 	
 		<h:form id="edit-form" class="form-horizontal">
 			<div class="crud-title">
-				<h2>Modifica Profilo Utente
+				<h2>Edit User Profile
 					
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn" action="#{panelEdit.cancel()}" immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Annulla
+							<i class="fw-icon-step-backward dist-right"></i> Cancel
 						</h:commandLink>
 						
 						<h:commandLink class="btn btn-primary dist-left" action="#{panelEdit.save()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -38,28 +38,28 @@
 			</div>		
 					
 			<div class="control-group">
-				<label class="control-label bold">Matricola</label>
+				<label class="control-label bold">Registration Number</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelEdit.current.number}" />
 				</div>
 			</div>			
 			
 			<div class="control-group">
-				<label class="control-label bold">Nome</label>
+				<label class="control-label bold">Name</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelEdit.current.user.name}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Cognome</label>
+				<label class="control-label bold">Surname</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelEdit.current.user.surname}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Telefono</label>
+				<label class="control-label bold">Telephone</label>
 				<div class="controls">
 					<h:inputText value="#{panelEdit.current.user.phone}"
 						styleClass="edit-input" >
@@ -73,7 +73,7 @@
 				<div class="controls">
 					<h:inputText value="#{panelEdit.current.user.mail}" 
 						styleClass="edit-input #{component.valid ? '' : 'vld-error'}" 
-						validatorMessage="'Email' non è in un formato valido!">
+						validatorMessage="'Email' is not in a valid format!">
 					    <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 						<f:ajax execute="@this" />
 					</h:inputText>
@@ -81,7 +81,7 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Qualifica</label>
+				<label class="control-label bold">Qualification</label>
 				<div class="controls">
 					<h:panelGroup id="qualification-list">
 						<rich:list value="#{panelEdit.current.user.listQualifications()}" var="_qual"
@@ -95,7 +95,7 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Ruoli</label>
+				<label class="control-label bold">Roles</label>
 				<div class="controls">
 					<h:panelGroup id="role-list">
 						<rich:list value="#{panelEdit.current.user.listRoles()}" var="_role"
@@ -109,14 +109,14 @@
 			</div>						
 			
 			<div class="control-group">
-				<label class="control-label bold">Agenda di default</label>					
+				<label class="control-label bold">Default Agenda</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{panelEdit.current.defaultAgenda}" />
 				</div>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold">Agende preferite</label>
+				<label class="control-label bold">Favorite Agendas</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="favorite-agenda-list">
 						<h:panelGroup layout="block" class="scrollable" rendered="#{not empty panelEdit.current.listFavoriteAgendasOrdered()}">
@@ -125,7 +125,7 @@
 											
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{agenda.code}" />
@@ -133,7 +133,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{agenda.description}" />
@@ -147,7 +147,7 @@
 			</div>									
 				
 			<div class="control-group">
-				<label class="control-label bold">Agende abilitate</label>
+				<label class="control-label bold">Enabled Agendas</label>
 				<div class="controls align-txt">
 					<h:panelGroup id="agenda-list">
 						<h:panelGroup layout="block" class="scrollable scrollable-edit" rendered="#{not empty panelEdit.current.listAgendasOrdered()}">
@@ -157,7 +157,7 @@
 											
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{agenda.code}" />
@@ -165,7 +165,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{agenda.description}" />
@@ -175,14 +175,14 @@
 									<f:facet name="header" />
 									<h:commandLink action="#{panelEdit.markAsFavorite(agenda)}"
 										rendered="#{not panelEdit.isFavoriteAgenda(agenda)}"
-										styleClass="tltip" title="Marca come preferito">
+										styleClass="tltip" title="Mark as favorite">
 										<f:ajax execute="@this" render=":edit-form:agenda-list :edit-form:favorite-agenda-list"/>
 										<i class="fw-icon-star-empty" />
 									</h:commandLink>
 									
 									<h:commandLink action="#{panelEdit.removeFavorite(agenda)}"
 										rendered="#{panelEdit.isFavoriteAgenda(agenda)}"
-										styleClass="tltip" title="Elimina da preferiti">
+										styleClass="tltip" title="Remove from favorite">
 										<f:ajax execute="@this" render=":edit-form:agenda-list :edit-form:favorite-agenda-list"/>
 										<i class="fw-icon-star" />
 									</h:commandLink>										

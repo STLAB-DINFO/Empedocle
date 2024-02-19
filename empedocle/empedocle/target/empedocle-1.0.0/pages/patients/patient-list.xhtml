@@ -20,10 +20,10 @@
 			<h:panelGroup id="filters" layout="block"
 				xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Cartelle cliniche
+					Clinical Records
 					<h:panelGroup styleClass="pull-right align-btn ">
-						<h:commandLink title="Aggiungi" class="btn btn-primary" action="#{patientList.addNew()}">
-							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						<h:commandLink title="Add" class="btn btn-primary" action="#{patientList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Add
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -54,15 +54,15 @@
 								
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Cognome"
+							<h:commandLink value="Surname"
 											styleClass="normal-text"
-											action="#{patientFilter.toggle('Cognome')}">
+											action="#{patientFilter.toggle('Surname')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":patient-form:results" execute="@none" />
-								<h:panelGroup rendered="#{patientFilter.isSelected('Cognome')}">
-									<i class="#{patientFilter.isAscending('Cognome') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								<h:panelGroup rendered="#{patientFilter.isSelected('Surname')}">
+									<i class="#{patientFilter.isAscending('Surname') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
-								<h:panelGroup rendered="#{not patientFilter.isSelected('Cognome')}">
+								<h:panelGroup rendered="#{not patientFilter.isSelected('Surname')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -72,22 +72,22 @@
 					
 					<h:column>
 						<f:facet name="header">
-							Nome
+							Name
 						</f:facet>
 						#{patient.name}
 					</h:column>
 	
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Sesso"
+							<h:commandLink value="Sex"
 											styleClass="normal-text"
-											action="#{patientFilter.toggle('Sesso')}">
+											action="#{patientFilter.toggle('Sex')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":patient-form:results" execute="@none" />
-								<h:panelGroup rendered="#{patientFilter.isSelected('Sesso')}">
-									<i class="#{patientFilter.isAscending('Sesso') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								<h:panelGroup rendered="#{patientFilter.isSelected('Sex')}">
+									<i class="#{patientFilter.isAscending('Sex') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
-								<h:panelGroup rendered="#{not patientFilter.isSelected('Sesso')}">
+								<h:panelGroup rendered="#{not patientFilter.isSelected('Sex')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -97,15 +97,15 @@
 	
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Data nascita"
+							<h:commandLink value="Birthdate"
 											styleClass="normal-text"
-											action="#{patientFilter.toggle('Data nascita')}">
+											action="#{patientFilter.toggle('Birthdate')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":patient-form:results" execute="@none" />
-								<h:panelGroup rendered="#{patientFilter.isSelected('Data nascita')}">
-									<i class="#{patientFilter.isAscending('Data nascita') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								<h:panelGroup rendered="#{patientFilter.isSelected('Birthdate')}">
+									<i class="#{patientFilter.isAscending('Birthdate') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
-								<h:panelGroup rendered="#{not patientFilter.isSelected('Data nascita')}">
+								<h:panelGroup rendered="#{not patientFilter.isSelected('Birthdate')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -117,15 +117,15 @@
 	
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Luogo nascita"
+							<h:commandLink value="Birthplace"
 											styleClass="normal-text"
-											action="#{patientFilter.toggle('Luogo nascita')}">
+											action="#{patientFilter.toggle('Birthplace')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":patient-form:results" execute="@none" />
-								<h:panelGroup rendered="#{patientFilter.isSelected('Luogo nascita')}">
-									<i class="#{patientFilter.isAscending('Luogo nascita') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
+								<h:panelGroup rendered="#{patientFilter.isSelected('Birthplace')}">
+									<i class="#{patientFilter.isAscending('Birthplace') ? 'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
-								<h:panelGroup rendered="#{not patientFilter.isSelected('Luogo nascita')}">
+								<h:panelGroup rendered="#{not patientFilter.isSelected('Birthplace')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -135,25 +135,25 @@
 					
 					<h:column>
 						<f:facet name="header">
-							Codice fiscale
+							Tax Code
 						</f:facet>
 						#{patient.taxCode}
 					</h:column>	
 	
 					<h:column>
 						<f:facet name="header">
-							Azioni
+							Actions
 						</f:facet>
 
-						<h:commandLink title="Avvia visita"
+						<h:commandLink title="Start Visit"
 									   action="#{patientList.run( patient.id )}"
 									   styleClass="btn btn-success pull-left tltip
-								#{not patientFilter.isFilterSet('Visita per Agenda:') ? 'disabled' : ''}">
+								#{not patientFilter.isFilterSet('Visit for Agenda:') ? 'disabled' : ''}">
 							<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
 							<i class="fw-icon-large fw-icon-play-sign"/>
 						</h:commandLink>
 
-						<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+						<h:commandLink title="View" class="btn btn-info pull-left tltip"
 										action="#{patientList.view( patient.id )}" >
 							<a4j:ajax onbegin="#{rich:component('loading-popup')}.show();" />
 							<i class="fw-icon-large #{patientList.checkHistory( patient.id ) ? 'fw-icon-zoom-in' : 'fw-icon-search'}"></i>
@@ -166,20 +166,20 @@
 								<li>
 									<h:commandLink action="#{patientList.edit( patient.id )}"
 												   rendered="#{patientList.checkRoleFor( 'edit' )}">
-										<i class="fw-icon-pencil dist-right "></i> Modifica dati paziente
+										<i class="fw-icon-pencil dist-right "></i> Edit patient data
 									</h:commandLink>
 								</li>
 								<li>
 									<h:commandLink action="#{patientList.delete( patient.id )}"
 												   rendered="#{patientList.isRemovable( patient.id ) and patientList.checkRoleFor( 'delete' )}"
-												   onclick="if(!confirm('Eliminare il paziente selezionato?')) {return false;}" >
-										<i class="fw-icon-remove dist-right "></i> Rimuovi paziente
+												   onclick="if(!confirm('Delete selected patient?')) {return false;}" >
+										<i class="fw-icon-remove dist-right "></i> Remove patient
 									</h:commandLink>
 								</li>
 							</ul>
 						</h:panelGroup>
 
-						<!--<h:commandLink title="Modifica" class="btn btn-warning pull-left dist-left tltip"
+						<!--<h:commandLink title="Edit" class="btn btn-warning pull-left dist-left tltip"
 							action="#{patientList.edit( patient.id )}" 
 							rendered="#{patientList.checkRoleFor( 'edit' )}">
 							<i class="fw-icon-pencil fw-icon-large"></i>

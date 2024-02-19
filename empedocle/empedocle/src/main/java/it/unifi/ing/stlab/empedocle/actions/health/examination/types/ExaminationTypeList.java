@@ -105,7 +105,7 @@ public class ExaminationTypeList extends Navigator {
 	public String delete( Long id ) {
 		examinationTypeDao.delete( id );
 
-		message( FacesMessage.SEVERITY_INFO, "Struttura visita cancellata con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Visit Structure successfully deleted!", true );
 		return "delete";
 	}
 

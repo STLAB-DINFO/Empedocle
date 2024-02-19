@@ -20,7 +20,7 @@ public class TextAreaController {
 	public boolean isOsservazioneTestuale(Fact f) {
 		if(f == null){
 			facesContext.addMessage( null, 
-					new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+					new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			return false;
 		}
 		

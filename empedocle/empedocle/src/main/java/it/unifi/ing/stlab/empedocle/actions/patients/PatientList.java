@@ -35,7 +35,7 @@ import it.unifi.ing.stlab.users.model.RoleType;
 @RequestScoped
 public class PatientList extends Navigator {
 
-	private static final String ENROLLING_FILTER_NAME = "Visita per Agenda:";
+	private static final String ENROLLING_FILTER_NAME = "Visit for Agenda:";
 	//
 	// CDI injections
 	//
@@ -84,11 +84,11 @@ public class PatientList extends Navigator {
 
 	}
 
-	public String runDateless( Long patientId){ // quando si vuole avviare una visita di "recupero" in cui impostare una data a scelta
+	public String runDateless( Long patientId){ // when starting a "recovery" appointment where a date can be chosen
 		if( !patientFilter.isFilterSet( ENROLLING_FILTER_NAME ) ) {
 			message( FacesMessage.SEVERITY_WARN,
-					"È necessario specificare lo studio clinico per l'arruolamento "
-							+ "attraverso il campo 'Visita per Agenda:' prima di procedere con la visita!", true );
+					"It is necessary to specify the clinical study for enrollment "
+							+ "through the 'Visit for Agenda:' filter before proceeding with the visit!", true );
 			return "list";
 		}
 
@@ -140,8 +140,8 @@ public class PatientList extends Navigator {
 	public String run( Long patientId ) {
 		if( !patientFilter.isFilterSet( ENROLLING_FILTER_NAME ) ) {
 			message( FacesMessage.SEVERITY_WARN,
-					"È necessario specificare lo studio clinico per l'arruolamento "
-							+ "attraverso il campo 'Visita per Agenda:' prima di procedere con la visita!", true );
+					"It is necessary to specify the clinical study for enrollment "
+							+ "through the 'Visit for Agenda:' filter before proceeding with the visit!", true );
 			return "list";
 		}
 
@@ -251,7 +251,7 @@ public class PatientList extends Navigator {
 	public String delete( Long patientId ) {
 		patientDao.deleteById( patientId, loggedUser.getUser() );
 		
-		message( FacesMessage.SEVERITY_INFO, "Paziente cancellato con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Patient successfully deleted!", true );
 		return "delete";
 	}
 

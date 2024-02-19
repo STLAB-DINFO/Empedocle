@@ -68,16 +68,16 @@ public class AgendaFilter extends FilterBean implements QueryBuilder {
 	// private methods
 	//
 	private void initFilters() {
-		addFilterDef( "Codice", FilterType.TEXT, "a.code like :pcode", "pcode" );
-		addFilterDef( "Descrizione", FilterType.TEXT, "a.description like :pdex", "pdex" );
+		addFilterDef( "Code", FilterType.TEXT, "a.code like :pcode", "pcode" );
+		addFilterDef( "Description", FilterType.TEXT, "a.description like :pdex", "pdex" );
 
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );
 	}
 	
 	private void initSorting() {
-		addSort( "Codice", "a.code asc", "a.code desc" );
+		addSort( "Code", "a.code asc", "a.code desc" );
 		// default sorting
-		toggle( "Codice" );
+		toggle( "Code" );
 	}
 
 

@@ -50,17 +50,17 @@ public class StaffFilter extends FilterBean implements QueryBuilder {
 	}
 
 	private void initSorting() {
-		addSort( "Cognome", "s.user.surname asc, s.user.name asc",
+		addSort( "Surname", "s.user.surname asc, s.user.name asc",
 				"s.user.surname desc, s.user.name asc" );
 		// default sorting
-		toggle( "Cognome" );
+		toggle( "Surname" );
 	}
 
 	private void initFilterDefs() {
-		addFilterDef( "Cognome", FilterType.TEXT, "s.user.surname like :psurname", "psurname" );
-		addFilterDef( "Nome", FilterType.TEXT, "s.user.name like :pname", "pname" );
+		addFilterDef( "Surname", FilterType.TEXT, "s.user.surname like :psurname", "psurname" );
+		addFilterDef( "Name", FilterType.TEXT, "s.user.name like :pname", "pname" );
 
-		addFilterDef( "Ruolo", FilterType.SUGGESTION, "r.uuid = :prole", "prole",
+		addFilterDef( "Role", FilterType.SUGGESTION, "r.uuid = :prole", "prole",
 				new SelectItemBuilder() {
 					@Override
 					public List<SelectItem> getSelectItems( Object param, int offset, int limit ) {
@@ -74,7 +74,7 @@ public class StaffFilter extends FilterBean implements QueryBuilder {
 					}
 				} );
 
-		addFilterDef( "Qualifica", FilterType.SUGGESTION, "q.uuid = :pqual", "pqual",
+		addFilterDef( "Qualification", FilterType.SUGGESTION, "q.uuid = :pqual", "pqual",
 				new SelectItemBuilder() {
 					@Override
 					public List<SelectItem> getSelectItems( Object param, int offset, int limit ) {
@@ -89,7 +89,7 @@ public class StaffFilter extends FilterBean implements QueryBuilder {
 					}
 				} );
 
-		addFilterDef( "Mostra utenti disattivati", FilterType.BOOLEAN,
+		addFilterDef( "Show deactivated users", FilterType.BOOLEAN,
 				"s.user.isDeprecated = :pdeprecated", "pdeprecated" );
 
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );
@@ -98,7 +98,7 @@ public class StaffFilter extends FilterBean implements QueryBuilder {
 	@Override
 	protected void initDefaultFilters() {
 		Filter disabledFilter = new Filter();
-		disabledFilter.setDefinition( findFilterDefByName( "Mostra utenti disattivati" ) );
+		disabledFilter.setDefinition( findFilterDefByName( "Show deactivated users" ) );
 		disabledFilter.setValue( String.valueOf( false ) );
 
 		getFilters().add( disabledFilter );

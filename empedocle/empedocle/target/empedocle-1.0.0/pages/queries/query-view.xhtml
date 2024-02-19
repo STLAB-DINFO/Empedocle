@@ -20,15 +20,15 @@
 			<h:panelGroup layout="block">
 				<h:panelGroup layout="block" styleClass="page-title">
 					<h2>
-						Dettaglio Query
+						Query Detail
 					
 						<h:panelGroup styleClass="pull-right">
 							<h:commandButton styleClass="btn dist-right" 
-									value="Modifica" 
+									value="Edit"
 									action="#{queryView.edit()}" />
 	
 							<h:commandButton styleClass="btn" 
-									value="Chiudi" 
+									value="Close"
 									action="#{queryView.close()}" />
 	
 						</h:panelGroup>
@@ -37,21 +37,21 @@
 				
 				<h:panelGroup layout="block" styleClass="form-horizontal container-fluid" style="margin-top:20px;">
 					<h:panelGroup styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="query-name" value="Nome" />
+						<h:outputLabel styleClass="control-label bold" for="query-name" value="Name" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:outputText id="query-name" value="#{queryView.current.name}" />
 					    </h:panelGroup>
 					</h:panelGroup>
 					
 					<h:panelGroup styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="query-description" value="Descrizione" />
+						<h:outputLabel styleClass="control-label bold" for="query-description" value="Description" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:outputText id="query-description" value="#{queryView.current.description}" />
 					    </h:panelGroup>
 					</h:panelGroup>
 					
 					<h:panelGroup id="criteria" styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="offset" value="Criteri" />
+						<h:outputLabel styleClass="control-label bold" for="offset" value="Criteria" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:dataTable value="#{queryView.exprBeans}" var="bean">
 					    		<h:column>
@@ -78,7 +78,7 @@
 					</h:panelGroup>
 					
 					<h:panelGroup styleClass="control-group" layout="block">
-						<h:outputLabel styleClass="control-label bold" for="max-res" value="Massimo numero di risultati" />
+						<h:outputLabel styleClass="control-label bold" for="max-res" value="Max number of results" />
 					    <h:panelGroup styleClass="controls" layout="block">
 					    	<h:outputText id="max-res" value="#{queryView.current.limit}" />
 					    </h:panelGroup>

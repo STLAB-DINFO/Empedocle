@@ -33,7 +33,7 @@ public class OutputValueController {
 		} else {
 			if(f == null){
 				facesContext.addMessage( null, 
-						new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare" , ""));
+						new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show" , ""));
 			} else{
 				facesContext.addMessage( null, 
 						new FacesMessage( FacesMessage.SEVERITY_ERROR, 
@@ -52,7 +52,7 @@ public class OutputValueController {
 		} else {
 			if(f == null){
 				facesContext.addMessage( null, 
-						new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+						new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			} else{
 				facesContext.addMessage( null, 
 						new FacesMessage( FacesMessage.SEVERITY_ERROR, 
@@ -72,7 +72,7 @@ public class OutputValueController {
 		} else {
 			if(f == null){
 				facesContext.addMessage( null, 
-						new FacesMessage( FacesMessage.SEVERITY_WARN, "Nessuna osservazione da mostrare", ""));
+						new FacesMessage( FacesMessage.SEVERITY_WARN, "No observation to show", ""));
 			} else{
 				facesContext.addMessage( null, 
 						new FacesMessage( FacesMessage.SEVERITY_ERROR, 

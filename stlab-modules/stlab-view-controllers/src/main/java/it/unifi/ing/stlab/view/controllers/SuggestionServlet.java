@@ -96,6 +96,6 @@ public class SuggestionServlet extends HttpServlet implements Serializable {
 		if( ClassHelper.instanceOf( result, QualitativeType.class ) )
 			return ClassHelper.cast( result, QualitativeType.class );
 		
-		throw new RuntimeException( "il tipo con id "+ type + " non è qualitativo" );
+		throw new RuntimeException( "type with id "+ type + " is not qualitative" );
 	}
 }

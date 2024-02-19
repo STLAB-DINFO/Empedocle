@@ -106,7 +106,7 @@ public class FactQueryBuilder {
 	public FactQuery get() {
 		adjustResult();
 		
-		if( !canGet() ) throw new RuntimeException( "Impossibile effettuare operazione" );
+		if( !canGet() ) throw new RuntimeException( "Operation cannot be performed" );
 		
 		factQuery.setExpression( resultExpr );
 		return factQuery;
@@ -181,7 +181,7 @@ public class FactQueryBuilder {
 			throw new IllegalArgumentException( "Nessun fenomeno con nome " + phenomenonName + " trovato per l'osservazione "+ typeLink.getTarget() );
 
 		if ( results.size() > 1 )
-			throw new IllegalArgumentException( "Più di un fenomeno con nome " + phenomenonName + " trovato per l'osservazione "+ typeLink.getTarget() );
+			throw new IllegalArgumentException( "More than one phenomenon with name " + phenomenonName + " found for observation "+ typeLink.getTarget() );
 		
 		return (Phenomenon)results.get( 0 );
 		
@@ -221,10 +221,10 @@ public class FactQueryBuilder {
 									.getResultList();
 						
 		if ( results == null || results.size() < 1 )
-			throw new IllegalArgumentException( "Nessuna sotto tipo con nome " + name );
+			throw new IllegalArgumentException( "No subtype with name " + name );
 
 		if ( results.size() > 1 )
-			throw new NonUniqueResultException( "Più di un sotto tipo con nome " + name );
+			throw new NonUniqueResultException( "More than one subtype with name " + name );
 		
 		return (TypeLink)results.get( 0 );
 	}
@@ -238,10 +238,10 @@ public class FactQueryBuilder {
 									.getResultList();
 						
 		if ( results == null || results.size() < 1 )
-			throw new IllegalArgumentException( "Nessuna sotto tipo con nome " + name );
+			throw new IllegalArgumentException( "No subtype with name " + name );
 
 		if ( results.size() > 1 )
-			throw new NonUniqueResultException( "Più di un sotto tipo con nome " + name );
+			throw new NonUniqueResultException( "More than one subtype with name " + name );
 		
 		return (TypeLink)results.get( 0 );
 	}

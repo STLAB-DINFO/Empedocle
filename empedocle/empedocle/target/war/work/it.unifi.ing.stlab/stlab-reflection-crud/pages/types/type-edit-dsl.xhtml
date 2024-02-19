@@ -16,17 +16,17 @@
 		
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>
-					Creazione Tipo
+					Create Type
 					
 					<h:panelGroup layout="block" styleClass="pull-right align-btn" id="btn">
 						<h:commandLink class="btn" action="#{typeEditDsl.cancel()}"
 							immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Annulla
+							<i class="fw-icon-step-backward dist-right"></i> Cancel
 						</h:commandLink>
 						
 						<h:commandLink class="btn btn-info dist-left"
 							action="#{typeEditDsl.validate()}">
-							<i class="fw-icon-ok-circle fw-icon-large dist-right"></i> Valida
+							<i class="fw-icon-ok-circle fw-icon-large dist-right"></i> Validate
 							<f:ajax execute="@this :type-dsl-form:definition" 
 								render=":type-dsl-form:name :type-dsl-form:definition :type-dsl-form:btn :msg"/>
 						</h:commandLink>
@@ -34,17 +34,17 @@
 						<h:commandLink class="btn btn-primary dist-left"
 							action="#{typeEditDsl.save()}"
 							rendered="#{typeEditDsl.canSave()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
 			</h:panelGroup>
 			
 			<div class="control-group">
-				<label class="control-label bold" for="type-dsl-form:name">* Nome</label>
+				<label class="control-label bold" for="type-dsl-form:name">* Name</label>
 				<div class="controls">
 					<h:inputText id="name" value="#{typeEditDsl.name}"
-						required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+						required="true" requiredMessage="'Name' is a required field!"
 						styleClass="wider #{component.valid ? '' : 'vld-error'}">
 			    		<f:ajax execute="@this" render=":type-dsl-form:btn" />
 					</h:inputText>
@@ -52,10 +52,10 @@
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold" for="type-dsl-form:definition">* Definizione</label>
+				<label class="control-label bold" for="type-dsl-form:definition">* Definition</label>
 				<div class="controls">
 			    	<h:inputTextarea id="definition" value="#{typeEditDsl.definition}"
-			    		required="true" requiredMessage="'Definizione' è un campo obbligatorio!"
+			    		required="true" requiredMessage="'Definition' is a required field!"
 			    		styleClass="wider #{component.valid ? '' : 'vld-error'}" rows="20">
 			    		<f:ajax execute="@this" render=":type-dsl-form:btn" />
 			    	</h:inputTextarea>

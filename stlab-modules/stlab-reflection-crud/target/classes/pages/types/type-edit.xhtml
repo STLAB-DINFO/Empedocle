@@ -77,7 +77,7 @@
 
 			<div class="crud-title">
 				<h2>
-					#{typeEdit.edit ? 'Modifica' : 'Creazione'} Tipo 
+					#{typeEdit.edit ? 'Edit' : 'Create'} Type
 
 					<h:panelGroup layout="block" rendered="#{typeEdit.new}">
 						<h:outputText value="Testuale"
@@ -97,12 +97,12 @@
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn" action="#{typeEdit.cancel()}"
 							immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Annulla
+							<i class="fw-icon-step-backward dist-right"></i> Cancel
 						</h:commandLink>
 
 						<h:commandLink class="btn btn-primary dist-left"
 							action="#{typeEdit.save()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -112,7 +112,7 @@
 				<label class="control-label bold" for="type-edit-form:name">* Nome</label>
 				<div class="controls">
 					<h:inputText id="name" value="#{typeEdit.current.type.name}"
-						required="true" requiredMessage="'Nome' è un campo obbligatorio!"
+						required="true" requiredMessage="'Name' is a required field!"
 						styleClass="wider #{component.valid ? '' : 'vld-error'}" />
 				</div>
 			</div>
@@ -270,14 +270,14 @@
 										<h:commandLink class="btn dist-left"
 											action="#{typeEdit.closeSelection}">
 											<f:ajax execute="@this" render=":type-edit-form:sources :type-edit-form:structure-details :type-edit-form:tree-structure"/>									
-											<i class="fw-icon-step-backward dist-right"></i> Chiudi
+											<i class="fw-icon-step-backward dist-right"></i> Close
 										</h:commandLink>								
 									</h:panelGroup>	
 									</h4>	
 								</h:panelGroup>							
 								
 								<h:panelGroup styleClass="control-group" layout="block">
-									<h:outputLabel styleClass="control-label bold" for="tl-name" value="Nome" />
+									<h:outputLabel styleClass="control-label bold" for="tl-name" value="Name" />
 								    <h:panelGroup styleClass="controls" layout="block">
 								    	<h:inputText id="tl-name" value="#{typeEdit.selectedLink.link.name}">
 								    		<a4j:ajax event="change" execute="@this"
@@ -287,20 +287,20 @@
 								</h:panelGroup>
 								
 								<h:panelGroup styleClass="control-group" layout="block">
-									<h:outputLabel styleClass="control-label bold" for="tl-type" value="Tipo" />
+									<h:outputLabel styleClass="control-label bold" for="tl-type" value="Type" />
 								    <h:panelGroup styleClass="controls align-txt" layout="block" id="tl-type">
-								    	<h:outputText value="Testuale" rendered="#{typeEdit.selectedType.isTextual()}" />
-								    	<h:outputText value="Enumerato" rendered="#{typeEdit.selectedType.isEnumerated()}" />
+								    	<h:outputText value="Textual" rendered="#{typeEdit.selectedType.isTextual()}" />
+								    	<h:outputText value="Enumerated" rendered="#{typeEdit.selectedType.isEnumerated()}" />
 								    	<h:outputText value="Queried" rendered="#{typeEdit.selectedType.isQueried()}" />
-								    	<h:outputText value="Quantitativo" rendered="#{typeEdit.selectedType.isQuantitative()}" />
-								    	<h:outputText value="Composito" rendered="#{typeEdit.selectedType.isComposite()}" />
-								    	<h:outputText value="Temporale" rendered="#{typeEdit.selectedType.isTemporal()}" />
-								    	<h:outputText value="Riferimento" rendered="#{empty typeEdit.selectedType}" />
+								    	<h:outputText value="Quantitative" rendered="#{typeEdit.selectedType.isQuantitative()}" />
+								    	<h:outputText value="Composite" rendered="#{typeEdit.selectedType.isComposite()}" />
+								    	<h:outputText value="Temporal" rendered="#{typeEdit.selectedType.isTemporal()}" />
+								    	<h:outputText value="Reference" rendered="#{empty typeEdit.selectedType}" />
 								    </h:panelGroup>
 								</h:panelGroup>								
 							
 								<h:panelGroup styleClass="control-group" layout="block">
-									<h:outputLabel styleClass="control-label bold" for="occurs" value="Occorrenze" />
+									<h:outputLabel styleClass="control-label bold" for="occurs" value="Occurrences" />
 								    <h:panelGroup id="occurs" styleClass="controls align-txt" layout="block">
 										<table class="table table-bordered table-condensed">
 											<thead>

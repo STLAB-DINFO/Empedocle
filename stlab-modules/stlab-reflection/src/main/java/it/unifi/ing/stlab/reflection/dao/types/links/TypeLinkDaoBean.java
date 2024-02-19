@@ -69,10 +69,10 @@ public class TypeLinkDaoBean implements TypeLinkDao {
 				.getResultList();
 						
 		if ( results == null || results.size() < 1 )
-			throw new IllegalArgumentException( "Nessuna sotto tipo con nome " + name );
+			throw new IllegalArgumentException( "No subtype with name " + name );
 
 		if ( results.size() > 1 )
-			throw new NonUniqueResultException( "Più di un sotto tipo con nome " + name );
+			throw new NonUniqueResultException( "More than one subtype with name " + name );
 		
 		return results.get( 0 );
 	}
@@ -89,10 +89,10 @@ public class TypeLinkDaoBean implements TypeLinkDao {
 				.getResultList();
 						
 		if ( results == null || results.size() < 1 )
-			throw new IllegalArgumentException( "Nessuna sotto tipo con nome " + name );
+			throw new IllegalArgumentException( "No subtype with name " + name );
 
 		if ( results.size() > 1 )
-			throw new NonUniqueResultException( "Più di un sotto tipo con nome " + name );
+			throw new NonUniqueResultException( "More than one subtype with name " + name );
 		
 		return results.get( 0 );
 	}

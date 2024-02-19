@@ -89,7 +89,7 @@
 		<h:form id="patient-view-form">
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Cartella clinica di
+					Clinical Record of
 					<span style="text-transform:uppercase;">#{patientView.current.surname}</span>
 					<span class='capitalize'>#{patientView.current.name}</span>
 
@@ -104,14 +104,14 @@
 							<h:commandLink
 								action="#{patientList.delete( patientView.current.id )}"
 								styleClass="btn btn-danger dist-left #{patientList.checkRoleFor( 'delete' ) and patientList.isRemovable( patientView.current.id ) ? '' : 'hide'}"
-								onclick="if(!confirm('Eliminare il paziente selezionato? Clicca Ok per confermare la cancellazione')) {return false;}">
+								onclick="if(!confirm('Delete the selected patient? Click oK to confirm the deletion')) {return false;}">
 								<i class="fw-icon-remove dist-right"></i> Elimina
 							</h:commandLink>	
 							
 							<h:commandLink
 								action="#{patientList.edit( patientView.current.id )}"
 								styleClass="btn btn-warning dist-left #{patientList.checkRoleFor( 'edit' ) ? '' : 'hide'}">
-								<i class="fw-icon-pencil dist-right"></i> Modifica
+								<i class="fw-icon-pencil dist-right"></i> Edit
 							</h:commandLink>				
 						</h:panelGroup>		 
 						
@@ -120,7 +120,7 @@
 								disable="#{empty param.eid}"/>
 							<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" 
 								disable="#{empty javax.enterprise.context.conversation.id}"/>
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:link>						
 					</h:panelGroup>
 				</h2>		
@@ -133,9 +133,9 @@
 			
 			<h:panelGroup layout="block" id="tab">
 				<ul class="nav nav-tabs">
-				  <li><a href="#demographics" data-toggle="tab">Dati anagrafici</a></li>
-				  <li class="active"><a href="#history" data-toggle="tab">Storico visite</a></li>
-				  <li><a href="#fact-panel" data-toggle="tab">Osservazioni rilevanti</a></li>
+				  <li><a href="#demographics" data-toggle="tab">Demographic Data</a></li>
+				  <li class="active"><a href="#history" data-toggle="tab">Visit History</a></li>
+				  <li><a href="#fact-panel" data-toggle="tab">Relevant Observation </a></li>
 				  <!-- <li><a href="#biohumoral-parameters" data-toggle="tab">Parametri bioumorali</a></li>  -->
 				</ul>
 				
@@ -144,31 +144,31 @@
 						<h:panelGroup layout="block" id="demographics-results" class="container-fluid form-horizontal">
 
 							<div class="control-group">
-								<label class="control-label bold">Codice fiscale</label>
+								<label class="control-label bold">Tax Code</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.taxCode}" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Cognome</label>
+								<label class="control-label bold">Surname</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.surname}" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Nome</label>
+								<label class="control-label bold">Name</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.name}" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Sesso</label>
+								<label class="control-label bold">Sex</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.sex}" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Data di nascita</label>
+								<label class="control-label bold">Birthdate</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.birthDate}" >
 										<f:convertDateTime pattern="dd/MM/yyyy" />
@@ -176,43 +176,43 @@
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Luogo di nascita</label>
+								<label class="control-label bold">Birthplace</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.birthPlace}" />
 								</div>
 							</div>														
 							<div class="control-group">
-								<label class="control-label bold">Residenza</label>
+								<label class="control-label bold">Residence</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.residence.place}" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Domicilio</label>
+								<label class="control-label bold">Domicile</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.domicile.place}" />
 								</div>
 							</div>							
 							<div class="control-group">
-								<label class="control-label bold">Nazionalità</label>
+								<label class="control-label bold">Nationality</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.nationality}" />
 								</div>
 							</div>									
 							<div class="control-group">
-								<label class="control-label bold">Telefono</label>
+								<label class="control-label bold">Telephone</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.homePhone}" /> 
 								</div>
 							</div>		
 							<div class="control-group">
-								<label class="control-label bold">Cellulare</label>
+								<label class="control-label bold">Mobile</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.workPhone}" /> 
 								</div>
 							</div>															
 							<div class="control-group">
-								<label class="control-label bold">Regione</label>
+								<label class="control-label bold">Region</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.region}" />
 								</div>
@@ -224,7 +224,7 @@
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label bold">Codice sanitario</label>
+								<label class="control-label bold">NHS Code</label>
 								<div class="controls align-txt">
 									<h:outputText value="#{patientView.current.ssnCode}" />
 								</div>
@@ -238,49 +238,49 @@
 								<li class="#{patientExaminationFilter.isSelectedList( 'ALL' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'ALL' )}"  
-										value="Tutte">
+										value="All">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>
 								<li class="#{patientExaminationFilter.isSelectedList( 'BOOKED' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'BOOKED' )}"  
-										value="Prenotate">
+										value="Booked">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>
 								<li class="#{patientExaminationFilter.isSelectedList( 'ACCEPTED' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'ACCEPTED' )}"  
-										value="Accettate">
+										value="Accepted">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>								
 								<li class="#{patientExaminationFilter.isSelectedList( 'RUNNING' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'RUNNING' )}"  
-										value="In erogazione">
+										value="Running">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>
 								<li class="#{patientExaminationFilter.isSelectedList( 'SUSPENDED' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'SUSPENDED' )}"  
-										value="Sospese">
+										value="Suspended">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>
 								<li class="#{patientExaminationFilter.isSelectedList( 'DONE' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'DONE' )}"  
-										value="Erogate">
+										value="Done">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>
 								<li class="#{patientExaminationFilter.isSelectedList( 'CONCLUDED' ) ? 'active' : ''}">
 									<h:commandLink 
 										action="#{patientExaminationFilter.selectList( 'CONCLUDED' )}"  
-										value="Concluse">
+										value="Concluded">
 										<f:ajax execute="@this" render="results-tab"/>
 									</h:commandLink> 
 								</li>
@@ -298,7 +298,7 @@
 									<h:panelGroup layout="block" id="results">
 										<h:panelGroup rendered="#{empty patientExaminationResults}">
 											<br />
-											<h:outputText styleClass="lead" value="Nessuna visita trovata" />
+											<h:outputText styleClass="lead" value="No visit found" />
 										</h:panelGroup>
 			
 										<h:dataTable
@@ -310,7 +310,7 @@
 											
 											<h:column>
 												<f:facet name="header">
-													Orario
+													Date
 												</f:facet>
 												<h:outputText value="#{examination.appointment.date}" >
 													<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
@@ -328,10 +328,10 @@
 			
 											<h:column>
 												<f:facet name="header">
-													Azioni
+													Actions
 												</f:facet>
 
-												<a4j:commandLink title="Visualizza referto"
+												<a4j:commandLink title="View report"
 														action="#{patientView.initReports( examination.id )}"
 														styleClass="btn btn-primary pull-left dist-right tltip" 
 														rendered="#{patientView.hasReport( examination )}"
@@ -341,7 +341,7 @@
 												</a4j:commandLink>
 
 												<h:link outcome="/pages/patients/examination/examination-view.xhtml" includeViewParams="true"
-													rendered="#{patientView.hasView(examination)}" title="Visualizza visita"
+													rendered="#{patientView.hasView(examination)}" title="View visit"
 													styleClass="btn btn-info pull-left dist-right tltip">
 													<f:param name="id" value="#{examination.id}" />
 													<f:param name="pid" value="#{patientView.current.id}" />
@@ -352,7 +352,7 @@
 														<i class="fw-icon-zoom-in fw-icon-large"></i>
 												</h:link>
 												
-												<h:commandLink title="Avvia"
+												<h:commandLink title="Start"
 													action="#{patientView.run( examination.id )}"
 													styleClass="btn btn-success pull-left tltip"
 													rendered="#{patientView.examinationId eq null and patientView.hasStart( examination ) and not examination.status.name.equals('To do')}">
@@ -360,7 +360,7 @@
 													<i class="fw-icon-large fw-icon-play-sign" />
 												</h:commandLink>																						
 																		
-												<h:commandLink title="Modifica"
+												<h:commandLink title="Edit"
 														action="#{patientView.run( examination.id )}"
 														styleClass="btn btn-info pull-left tltip"
 														rendered="#{patientView.examinationId eq null and patientView.hasModify( examination )}">
@@ -368,7 +368,7 @@
 													<i class="fw-icon-large fw-icon-play-sign"></i>
 												</h:commandLink>
 			
-												<h:commandLink title="Riprendi"
+												<h:commandLink title="Resume"
 														action="#{patientView.run( examination.id )}"
 														styleClass="btn btn-warning pull-left tltip" 
 														rendered="#{patientView.examinationId eq null and patientView.hasResume( examination )}">
@@ -376,7 +376,7 @@
 													<i class="fw-icon-large fw-icon-play-sign"></i>
 												</h:commandLink>
 			
-												<h:commandLink title="Recupera"
+												<h:commandLink title="Recover"
 														action="#{patientView.run( examination.id )}"
 														styleClass="btn btn-danger pull-left tltip" 
 														rendered="#{patientView.examinationId eq null and patientView.hasRecover( examination )}">
@@ -511,13 +511,13 @@
 				<h:form styleClass="form-horizontal" id="report-form">
 
 					<div class="modal-header">
-						<h3>Seleziona Report da stampare
+						<h3>Select Report to print
 						
 							<a4j:commandLink styleClass="btn btn-primary pull-right dist-left"
 								onclick="openMoreThanOne(#{patientView.selection});"
 								execute="@form">
 								<i class="fw-icon-step-forward dist-right"></i>
-								<h:outputText value="Conferma" styleClass="bold" />
+								<h:outputText value="Confirm" styleClass="bold" />
 							</a4j:commandLink>
 						
 							<a4j:commandLink
@@ -528,7 +528,7 @@
 								execute="@this"
 								styleClass="btn pull-right" >
 								<i class="fw-icon-step-backward dist-right"></i>
-								<h:outputText value="Chiudi" styleClass="bold" />
+								<h:outputText value="Close" styleClass="bold" />
 							</a4j:commandLink>
 						</h3>
 					</div>
@@ -565,7 +565,7 @@
 			<div class="modal-content">
 				<h:form styleClass="form-horizontal">
 					<div class="modal-header">
-						<h3>Seleziona Paziente da unire
+						<h3>Select Patient to merge
 							<a4j:commandLink
 								immediate="true"
 								onclick="$('#matching-panel').modal('hide');"
@@ -573,23 +573,23 @@
 								execute="@this"
 								styleClass="btn pull-right" >
 								<i class="fw-icon-step-backward dist-right"></i>
-								<h:outputText value="Chiudi" styleClass="bold" />
+								<h:outputText value="Close" styleClass="bold" />
 							</a4j:commandLink>
 						</h3>
 					</div>
 
 					<div class="modal-body">
-						<h4>Paziente corrente</h4>
+						<h4>Current Patient</h4>
 						<table class="table table-bordered table table-striped"
 							style="width: 100%">
 							<thead>
 								<tr>
-									<th class="taxcode">Codice fiscale</th>
-									<th>Cognome</th>
-									<th>Nome</th>
-									<th class="sex">Sesso</th>
-									<th class="birth-date">Data di nascita</th>
-									<th>Luogo di nascita</th>
+									<th class="taxcode">Tax Code</th>
+									<th>Surname</th>
+									<th>Name</th>
+									<th class="sex">Sex</th>
+									<th class="birth-date">Birthdate</th>
+									<th>Birthplace</th>
 									<th />
 								</tr>
 							</thead>
@@ -610,41 +610,41 @@
 
 						<br />
 
-						<h4>Lista pazienti duplicati</h4>
+						<h4>List of duplicate patients</h4>
 						<h:dataTable value="#{patientView.matchingPatients}" var="_patient"
 							styleClass="table table-striped table-bordered"
 							id="merger-list"
 							columnClasses="taxcode, col, col, sex, birth-date, col, action">
 
 							<h:column>
-								<f:facet name="header">Codice fiscale</f:facet>
+								<f:facet name="header">Tax Code</f:facet>
 								<h:outputText value="#{_patient.taxCode}" />
 							</h:column>
 
 							<h:column>
-								<f:facet name="header">Cognome</f:facet>
+								<f:facet name="header">Surname</f:facet>
 								<h:outputText value="#{_patient.surname}" />
 							</h:column>
 
 							<h:column>
-								<f:facet name="header">Nome</f:facet>
+								<f:facet name="header">Name</f:facet>
 								<h:outputText value="#{_patient.name}" />
 							</h:column>
 
 							<h:column>
-								<f:facet name="header">Sesso</f:facet>
+								<f:facet name="header">Sex</f:facet>
 								<h:outputText value="#{_patient.sex}" />
 							</h:column>
 
 							<h:column>
-								<f:facet name="header">Data di nascita</f:facet>
+								<f:facet name="header">Birthdate</f:facet>
 								<h:outputText value="#{_patient.birthDate}">
 									<f:convertDateTime pattern="dd/MM/yyyy" />
 								</h:outputText>
 							</h:column>
 
 							<h:column>
-								<f:facet name="header">Luogo di nascita</f:facet>
+								<f:facet name="header">Birthplace</f:facet>
 								<h:outputText value="#{_patient.birthPlace}" />
 							</h:column>
 

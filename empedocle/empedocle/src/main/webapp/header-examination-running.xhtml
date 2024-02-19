@@ -18,19 +18,19 @@
 									<f:param name="from" value="#{view.viewId}" />
 									<f:param name="eid" value="#{examinationRunning.id}" />
 									<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
-									<i class="fw-icon-book dist-right fw-icon-large"></i> Cartella clinica
+									<i class="fw-icon-book dist-right fw-icon-large"></i> Clinical Record
 								</h:link>
 							</li>
 							<li class="dropdown" >
 								    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								    <i class="fw-icon-file-text dist-right fw-icon-large"></i> Modulistica
+								    <i class="fw-icon-file-text dist-right fw-icon-large"></i> Forms
 								        <b class="caret"></b>
 								    </a>
 								    <ul class="dropdown-menu">
 										<li>
 											<h:outputLink value="/empedocle/patient-consent" target="_blank">
 												<f:param name="pid" value="#{examinationRunning.lastPatientVersion.id}" />
-												<i class="fw-icon-file-text dist-right fw-icon-large"></i> Consenso al trattamento dati personali
+												<i class="fw-icon-file-text dist-right fw-icon-large"></i> Consent to the processing of personal data
 											</h:outputLink>
 										</li>										
 								    </ul>

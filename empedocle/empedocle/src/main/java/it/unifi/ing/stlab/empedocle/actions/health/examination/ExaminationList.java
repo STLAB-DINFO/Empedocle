@@ -127,7 +127,7 @@ public class ExaminationList extends Navigator {
 		
 		if( !e.getStatus().equals(ExaminationStatus.TODO) ) {
 			sb.append(" ")
-				.append("Autore: ")
+				.append("Author: ")
 				.append(e.getAuthor().getName())
 				.append(" ")
 				.append(e.getAuthor().getSurname());
@@ -198,7 +198,7 @@ public class ExaminationList extends Navigator {
 		facesContext.addMessage(null,
                 new FacesMessage(
                 		FacesMessage.SEVERITY_INFO, 
-                		"Visita cancellata con successo!", null));
+                		"Visit successfully deleted!", null));
 		facesContext.getExternalContext().getFlash().setKeepMessages(true);		
 		
 		return "delete";

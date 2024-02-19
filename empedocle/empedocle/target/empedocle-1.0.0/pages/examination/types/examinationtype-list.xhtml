@@ -16,11 +16,11 @@
 		<h:form id="examType-form">
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Strutture Visita
+					Visit Structure
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
-						<h:commandLink title="Aggiungi" class="btn btn-primary" action="#{examinationTypeList.addNew()}">
-							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						<h:commandLink title="Add" class="btn btn-primary" action="#{examinationTypeList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Add
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -37,7 +37,7 @@
 			<h:panelGroup layout="block" id="results">
 				<h:panelGroup rendered="#{empty examinationTypeResults}">
 					<br/>
-					<h:outputText styleClass="lead" value="Nessuna struttura visita trovata"/>
+					<h:outputText styleClass="lead" value="No visit structure found"/>
 				</h:panelGroup>
 				
 				<h:dataTable styleClass="table table-bordered table-striped table-hover" 
@@ -46,16 +46,16 @@
 					rendered="#{not empty examinationTypeResults}" >
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Nome" styleClass="normal-text"
-								action="#{examinationTypeFilter.toggle('Nome')}">
+							<h:commandLink value="Name" styleClass="normal-text"
+								action="#{examinationTypeFilter.toggle('Name')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":examType-form:results" execute="@none" />
-								<h:panelGroup rendered="#{examinationTypeFilter.isSelected('Nome')}">
-									<i class="#{examinationTypeFilter.isAscending('Nome') ? 
+								<h:panelGroup rendered="#{examinationTypeFilter.isSelected('Name')}">
+									<i class="#{examinationTypeFilter.isAscending('Name') ?
 									'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
 								<h:panelGroup
-									rendered="#{not examinationTypeFilter.isSelected('Nome')}">
+									rendered="#{not examinationTypeFilter.isSelected('Name')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -65,23 +65,23 @@
 					
 					<h:column>
 						<f:facet name="header">
-							Descrizione
+							Description
 						</f:facet>
 						#{examType.description}
 					</h:column>
 
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Tipo" styleClass="normal-text"
-								action="#{examinationTypeFilter.toggle('Tipo')}">
+							<h:commandLink value="Type" styleClass="normal-text"
+								action="#{examinationTypeFilter.toggle('Type')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":examType-form:results" execute="@none" />
-								<h:panelGroup rendered="#{examinationTypeFilter.isSelected('Tipo')}">
-									<i class="#{examinationTypeFilter.isAscending('Tipo') ? 
+								<h:panelGroup rendered="#{examinationTypeFilter.isSelected('Type')}">
+									<i class="#{examinationTypeFilter.isAscending('Type') ?
 									'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
 								<h:panelGroup
-									rendered="#{not examinationTypeFilter.isSelected('Tipo')}">
+									rendered="#{not examinationTypeFilter.isSelected('Type')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -91,23 +91,23 @@
 					
 					<h:column>
 						<f:facet name="header">
-							Azioni
+							Actions
 						</f:facet>
 	
-						<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+						<h:commandLink title="View" class="btn btn-info pull-left tltip"
 							action="#{examinationTypeList.view( examType.id )}" >
 							<i class="fw-icon-large fw-icon-zoom-in"></i>
 						</h:commandLink>
 						
-						<h:commandLink title="Modifica" class="btn btn-warning pull-left dist-left tltip"
+						<h:commandLink title="Edit" class="btn btn-warning pull-left dist-left tltip"
 							action="#{examinationTypeList.edit( examType.id )}" >
 							<i class="fw-icon-pencil fw-icon-large"></i>
 						</h:commandLink>	
 							
-						<h:commandLink title="Elimina" class="btn btn-danger pull-left dist-left tltip"
+						<h:commandLink title="Delete" class="btn btn-danger pull-left dist-left tltip"
 										action="#{examinationTypeList.delete( examType.id )}" 
 										rendered="#{examinationTypeList.isRemovable( examType.id )}"
-										onclick="if(!confirm('Eliminare struttura visita selezionata?')) {return false;}" >
+										onclick="if(!confirm('Delete selected visit structure?')) {return false;}" >
 							<i class="fw-icon-remove fw-icon-large"></i>
 						</h:commandLink>																		
 						
@@ -117,7 +117,7 @@
 							<ul class="dropdown-menu pull-right">
 								<li>
 									<h:commandLink action="#{examinationTypeList.copy( examType.id )}">
-										<i class="fw-icon-copy dist-right"></i> Clona
+										<i class="fw-icon-copy dist-right"></i> Clone
 									</h:commandLink>
 								</li>
 							</ul>

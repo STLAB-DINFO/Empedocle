@@ -19,11 +19,11 @@
 		<h:form id="staff-form">
 			<h:panelGroup id="filters" layout="block" xmlns:filter="http://java.sun.com/jsf/composite/components/filters">
 				<h2>
-					Utenti
+					Users
 					
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
-						<h:commandLink title="Aggiungi" class="btn btn-primary" action="#{staffList.addNew()}">
-							<i class="fw-icon-plus-sign-alt dist-right"></i> Aggiungi
+						<h:commandLink title="Add" class="btn btn-primary" action="#{staffList.addNew()}">
+							<i class="fw-icon-plus-sign-alt dist-right"></i> Add
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -40,7 +40,7 @@
 			<h:panelGroup layout="block" id="results">
 				<h:panelGroup rendered="#{empty staffResults}">
 					<br/>
-					<h:outputText styleClass="lead" value="Nessun utente trovato"/>
+					<h:outputText styleClass="lead" value="No user found"/>
 				</h:panelGroup>
 				
 				
@@ -51,16 +51,16 @@
 					rendered="#{not empty staffResults}" >
 					<h:column>
 						<f:facet name="header">
-							<h:commandLink value="Cognome" styleClass="normal-text"
-								action="#{staffFilter.toggle('Cognome')}">
+							<h:commandLink value="Surname" styleClass="normal-text"
+								action="#{staffFilter.toggle('Surname')}">
 								<f:ajax render="@none" execute="@this" />
 								<f:ajax render=":staff-form:results" execute="@none" />
-								<h:panelGroup rendered="#{staffFilter.isSelected('Cognome')}">
-									<i class="#{staffFilter.isAscending('Cognome') ? 
+								<h:panelGroup rendered="#{staffFilter.isSelected('Surname')}">
+									<i class="#{staffFilter.isAscending('Surname') ?
 									'fw-icon-sort-up' : 'fw-icon-sort-down'}" />
 								</h:panelGroup>
 								<h:panelGroup
-									rendered="#{not staffFilter.isSelected('Cognome')}">
+									rendered="#{not staffFilter.isSelected('Surname')}">
 									<i class="fw-icon-sort" />
 								</h:panelGroup>
 							</h:commandLink>
@@ -70,30 +70,30 @@
 					
 					<h:column>
 						<f:facet name="header">
-							Nome
+							Name
 						</f:facet>
 						<span>#{staff.user.name}</span>
 					</h:column>
 
 					<h:column>
 						<f:facet name="header">
-							Azioni
+							Actions
 						</f:facet>
 	
-						<h:commandLink title="Visualizza" class="btn btn-info pull-left tltip"
+						<h:commandLink title="View" class="btn btn-info pull-left tltip"
 							action="#{staffList.view( staff.id )}" >
 							<i class="fw-icon-large fw-icon-zoom-in"></i>
 						</h:commandLink>
 						
-						<h:commandLink title="Modifica" class="btn btn-warning pull-left dist-left tltip"
+						<h:commandLink title="Edit" class="btn btn-warning pull-left dist-left tltip"
 							action="#{staffList.edit( staff.id )}" >
 							<i class="fw-icon-pencil fw-icon-large"></i>
 						</h:commandLink>	
 							
-						<h:commandLink title="Elimina" class="btn btn-danger pull-left dist-left tltip"
+						<h:commandLink title="Delete" class="btn btn-danger pull-left dist-left tltip"
 										action="#{staffList.delete( staff.id )}" 
 										rendered="#{staffList.isRemovable( staff ) and not staffList.isItMe( staff )}"
-										onclick="if(!confirm('Eliminare utente selezionato?')) {return false;}" >
+										onclick="if(!confirm('Delete selected user?')) {return false;}" >
 							<i class="fw-icon-remove fw-icon-large"></i>
 						</h:commandLink>																		
 						
@@ -103,17 +103,17 @@
 							<ul class="dropdown-menu pull-right">
 								<li>
 									<h:commandLink action="#{staffList.copy( staff.id )}">
-										<i class="fw-icon-copy dist-right"></i> Clona
+										<i class="fw-icon-copy dist-right"></i> Clone
 									</h:commandLink>
 								</li>
 								<li>
 									<h:commandLink action="#{staffList.disable( staff )}"
 										rendered="#{staffList.isActive( staff ) and not staffList.isItMe( staff )}">
-										<i class="fw-icon-lock dist-right dist-more-right"></i> Disattiva
+										<i class="fw-icon-lock dist-right dist-more-right"></i> Deactivate
 									</h:commandLink>
 									<h:commandLink action="#{staffList.enable( staff )}"
 										rendered="#{!staffList.isActive( staff )}">
-										<i class="fw-icon-unlock dist-right"></i> Attiva
+										<i class="fw-icon-unlock dist-right"></i> Activate
 									</h:commandLink>
 								</li>								
 								<li>

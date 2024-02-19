@@ -79,7 +79,7 @@ public class TypeEditDsl {
 			typeDao.save( type );
 
 			utx.commit();
-			message( FacesMessage.SEVERITY_INFO, "Tipo salvato con successo!", true );
+			message( FacesMessage.SEVERITY_INFO, "Type successfully saved!", true );
 		} catch ( RollbackException e ) {
 			Throwable t = e.getCause();
 			
@@ -89,11 +89,11 @@ public class TypeEditDsl {
 			
 			if ( t instanceof ConstraintViolationException ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Impossibile effettuare il salvataggio: nome '" + name + "' già in uso!",
+						"Unable to perform the save: name '" + name + "' already in use!",
 						true );
 			}
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 		}
 		return "save";
 	}
@@ -128,7 +128,7 @@ public class TypeEditDsl {
 
 			type = parser.parse();
 
-			message( FacesMessage.SEVERITY_INFO, "Validazione eseguita con successo!", false );
+			message( FacesMessage.SEVERITY_INFO, "Validation successfully completed!", false );
 		} catch ( Exception e ) {
 			recoverException( e );
 		}

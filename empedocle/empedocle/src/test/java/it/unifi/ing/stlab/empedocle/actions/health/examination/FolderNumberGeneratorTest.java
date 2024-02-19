@@ -53,7 +53,7 @@ public class FolderNumberGeneratorTest extends PersistenceTest {
 		entityManager.persist(e);
 		
 		QuantitativeType t = TypeFactory.createQuantitativeType();
-		t.setName("Numero cartella");
+		t.setName("Clinical record numbero");
 		entityManager.persist(t);
 		
 		Unit u = UnitFactory.createUnit();

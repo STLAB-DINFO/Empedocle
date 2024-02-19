@@ -87,7 +87,7 @@ public class AgendaEdit implements Serializable {
 				agendaDao.update( current );
 			}
 
-			message( FacesMessage.SEVERITY_INFO, "Agenda salvata con successo!", true );
+			message( FacesMessage.SEVERITY_INFO, "Agenda successfully saved!", true );
 		} catch ( EJBTransactionRolledbackException e ) {
 			Throwable t = e.getCause();
 			
@@ -97,12 +97,12 @@ public class AgendaEdit implements Serializable {
 			
 			if ( t instanceof ConstraintViolationException ) {
 				message( FacesMessage.SEVERITY_ERROR,
-						"Impossibile effettuare il salvataggio: codice '" + current.getCode()
-								+ "' già in uso!",
+						"Unable to perform the save: code '" + current.getCode()
+								+ "' already in use!",
 						true );
 			}
 		} catch ( Exception e ) {
-			message( FacesMessage.SEVERITY_ERROR, "Errore durante il salvataggio!", true );
+			message( FacesMessage.SEVERITY_ERROR, "Error during saving!", true );
 		}
 		
 		return "save";

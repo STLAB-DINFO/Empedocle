@@ -13,10 +13,9 @@ import it.unifi.ing.stlab.view.factory.TypeSelectorFactory;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
 
 /**
- * Visitor che recupera i dati dei Fact da visite precedenti.
- * Assume di lavorare con Fact ricorrenti o discendenti di ricorrenti
- * (questo significa che serve un prefiltraggio in tal senso prima di invocare il visitor)
- *
+ * Visitor that retrieves Fact data from previous visits.
+ * Assumes operation with recurring Facts or descendants of recurring Facts
+ * (this means that a pre-filtering in this regard is necessary before invoking the visitor)
  */
 public class FactResumeVisitor implements FactVisitor {
 	

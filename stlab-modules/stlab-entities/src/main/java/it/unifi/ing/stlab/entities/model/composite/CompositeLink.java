@@ -2,14 +2,14 @@ package it.unifi.ing.stlab.entities.model.composite;
 
 
 /**
- * Interfaccia che definisce il link tra due istanze di CompositeEntity,
- * come source e target, attribuendo anche una priorita' al link, utilizzata
- * nell'ordinamento all'interno delle liste di Parents e Children. Solitamente
- * la priorita' e' l'ordine di inserimento nell'albero.
+ * Interface that defines the link between two instances of CompositeEntity,
+ * as source and target, also assigning a priority to the link, used
+ * in the ordering within the lists of Parents and Children. Usually,
+ * the priority is the order of insertion in the tree.
  * @see it.unifi.ing.stlab.entities.implementation.composite.CompositeLinkImpl
  *
- * @param <T> generic che estende CompositeEntity<T,E>
- * @param <E> generic che estende CompositeLink<T,E>
+ * @param <T> generic that extends CompositeEntity<T,E>
+ * @param <E> generic that extends CompositeLink<T,E>
  */
 
 public interface CompositeLink
@@ -20,17 +20,17 @@ public interface CompositeLink
 
 	public T getSource();
 	/**
-	 * Metodo che effettua il set di un Target, inserendolo in ordine
-	 * nelle liste di Ancestors, Descendents e Children.
-	 * @param target istanza di CompositeEntity
+	 * Method that sets a source, inserting it in order
+	 * in the lists of Ancestors, Descendants, and Children.
+	 * @param source instance of CompositeEntity
 	 */
 	public void assignSource( T source );
 	
 	public T getTarget();
 	/**
-	 * Metodo che effettua il set di un Target, inserendolo in ordine
-	 * nelle liste di Ancestors, Descendents e Parents.
-	 * @param target istanza di CompositeEntity
+	 * Method that sets a Target, inserting it in order
+	 * in the lists of Ancestors, Descendants, and Parents.
+	 * @param target instance of CompositeEntity
 	 */
 	public void assignTarget( T target );
 

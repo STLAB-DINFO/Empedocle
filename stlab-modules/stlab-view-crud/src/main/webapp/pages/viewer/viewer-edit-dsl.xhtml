@@ -22,17 +22,17 @@
 	
 				<h:panelGroup layout="block" styleClass="page-title">
 					<h2>
-						Creazione Vista
+						Create Viewer
 						
 						<h:panelGroup layout="block" styleClass="pull-right align-btn" id="view-buttons">
 							<h:commandLink class="btn" action="#{viewerEditDsl.cancel()}"
 								immediate="true">
-								<i class="fw-icon-step-backward dist-right"></i> Annulla
+								<i class="fw-icon-step-backward dist-right"></i> Cancel
 							</h:commandLink>
 	
 							<h:commandLink class="btn btn-info dist-left"
 								action="#{viewerEditDsl.validate()}">
-								<i class="fw-icon-ok-circle fw-icon-large dist-right"></i> Valida
+								<i class="fw-icon-ok-circle fw-icon-large dist-right"></i> Validate
 								<f:ajax execute="@this :viewer-definition-form:definition" 
 									render=":viewer-definition-form:view-name 
 										:viewer-definition-form:definition :viewer-definition-form:view-buttons :msg"/>
@@ -43,14 +43,14 @@
 									action="#{viewerEditDsl.preview( true )}"
 									execute="@this" render="view-root :msg"
 									oncomplete="#{rich:component('preview-popup')}.show()" >
-									<i class="fw-icon-desktop dist-right"></i> Anteprima
+									<i class="fw-icon-desktop dist-right"></i> Preview
 								</a4j:commandLink>
 								<button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
 									<li><h:link target="_blank" outcome="report-preview"
-											value="Anteprima PDF"
+											value="Preview PDF"
 											styleClass="#{not viewerEditDsl.checkPreview() ? 'disabled-link' : ''}"
 											disabled="#{not viewerEditDsl.checkPreview()}">
 											<f:param name="cid"
@@ -65,25 +65,25 @@
 							<h:commandLink class="btn btn-primary dist-left"
 								action="#{viewerEditDsl.save()}"
 								rendered="#{viewerEditDsl.canSave()}">
-								<i class="fw-icon-step-forward dist-right"></i> Salva
+								<i class="fw-icon-step-forward dist-right"></i> Save
 							</h:commandLink>
 						</h:panelGroup>
 					</h2>
 				</h:panelGroup>
 
 				<div class="control-group form-horizontal">
-					<label class="control-label bold" for="viewer-definition-form:view-name">* Nome</label>
+					<label class="control-label bold" for="viewer-definition-form:view-name">* Name</label>
 					<div class="controls">
 						<h:inputText id="view-name" value="#{viewerEditDsl.name}" 
 							styleClass="wider #{not component.valid ? ' vld-error' : ''}" 
-							required="true" requiredMessage="'Nome' è un campo obbligatorio">
+							required="true" requiredMessage="'Name' is a required field">
 				    		<f:ajax execute="@this" render=":viewer-definition-form:view-buttons" />
 						</h:inputText>
 					</div>
 				</div>		
 			
 				<h:panelGroup class="control-group" id="type">
-					<label class="control-label bold" for="viewer-definition-form:type">Applica a</label>
+					<label class="control-label bold" for="viewer-definition-form:type">Apply to</label>
 					<h:panelGroup layout="block" styleClass="controls">
 					
 						<h:panelGroup layout="block" styleClass="row-fluid">
@@ -96,18 +96,18 @@
 							</h:panelGroup>
 	
 							<h:panelGroup class="dropdown span2" layout="block" id="generate-buttons" rendered="#{not empty viewerEditDsl.type}">
-								<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Genera
+								<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Generate
 										<span class="caret"></span>
 									</button>
 									<ul class="dropdown-menu">
 										<li>
-											<a4j:commandLink value="Genera Edit"
+											<a4j:commandLink value="Generate Edit Viewer"
 												action="#{viewerEditDsl.generateEditViewer()}"
 												execute="@this"
 												render=":viewer-definition-form:tab :viewer-definition-form:view-buttons" />
 										</li>
 										<li>
-											<a4j:commandLink value="Genera Output"
+											<a4j:commandLink value="Generate Output Viewer"
 												action="#{viewerEditDsl.generateOutputViewer()}"
 												execute="@this"
 												render=":viewer-definition-form:tab :viewer-definition-form:view-buttons" />
@@ -122,7 +122,7 @@
 					
 				<h:panelGroup layout="block" id="tab">
 					<ul class="nav nav-tabs">
-					  <li class="active bold"><a href="#definition-panel" data-toggle="tab">* Definizione</a></li>
+					  <li class="active bold"><a href="#definition-panel" data-toggle="tab">* Definition</a></li>
 					  <li class="bold"><a href="#css-panel" data-toggle="tab">CSS</a></li>
 					</ul>
 					
@@ -130,7 +130,7 @@
 						<div class="tab-pane active" id="definition-panel">
 							<div>
 								<h:inputTextarea id="definition" required="true"
-									requiredMessage="'Definizione' è un campo obbligatorio"
+									requiredMessage="'Definition' is a required field"
 									styleClass="wider #{not component.valid ? ' vld-error' : ''}"
 									value="#{viewerEditDsl.definition}" rows="20">				
 								</h:inputTextarea>

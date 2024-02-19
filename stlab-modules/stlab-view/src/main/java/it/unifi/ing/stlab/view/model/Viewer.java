@@ -203,20 +203,14 @@ public abstract class Viewer
 	@Transient
 	public ViewerLink getByPriority(Long priority){
 		if(priority == null || priority < 0)
-			throw new IllegalArgumentException(priority + "non è accettabile per il metodo getByPriority");
-		
-		// commentato perchè non aveva molto senso comparare la priorità col size
-		// (e.g. ci possono essere due elementi di priorità 5 e 6 
-		// e se faccio getByPriority(6) non mi deve dare errore)
-//		if(priority > listChildren().size())
-//			throw new IllegalArgumentException("non ci sono "+ priority + " sottoviste");
-		
+			throw new IllegalArgumentException(priority + "it is not acceptable for the method getByPriority");
+
 		for(ViewerLink sv: listChildren()){
 			if(sv.getPriority().equals(priority))
 				return sv;
 		}
 		
-		throw new RuntimeException("elemento di priorità " + priority + " non trovato");
+		throw new RuntimeException("element of priority" + priority + " not found");
 	}
 	
 	public boolean isValidSubViewer(ViewerLink s){

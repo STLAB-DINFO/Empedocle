@@ -246,7 +246,7 @@ public class FactQueryEdit implements Serializable {
 		} catch( Exception e ) {
 			context.addMessage( null, new FacesMessage( 
 											FacesMessage.SEVERITY_ERROR,  
-											"Si è verificato un errore durante il salvataggio, impossibile salvare" , "" ) );
+											"An error occurred during saving, unable to save" , "" ) );
 			rollback();
 			return null;
 		}

@@ -140,10 +140,10 @@ public abstract class BaseTypeParser extends Parser {
 				.getResultList();
 
 		if ( resultList == null || resultList.size() < 1 )
-			throw new IllegalArgumentException("Nessuna unità di misura trovata con nome " + unit);
+			throw new IllegalArgumentException("No unit of measurement with name " + unit);
 
 		if ( resultList.size() > 1 )
-			throw new IllegalArgumentException("Più di un'unità di misura trovata con nome " + unit);
+			throw new IllegalArgumentException("More than one unit of measurement found with name " + unit);
 
 		return (Unit)resultList.get( 0 );
 	}
@@ -157,10 +157,10 @@ public abstract class BaseTypeParser extends Parser {
 				.getResultList();
 
 		if ( resultList == null || resultList.size() < 1 )
-			throw new IllegalArgumentException("Nessun tipo trovato con nome " + type);
+			throw new IllegalArgumentException("No type found with name " + type);
 
 		if ( resultList.size() > 1 )
-			throw new IllegalArgumentException("Più di un tipo trovato con nome " + type);
+			throw new IllegalArgumentException("More than one type found with name " + type);
 
 		return (Type)resultList.get( 0 );
 	}

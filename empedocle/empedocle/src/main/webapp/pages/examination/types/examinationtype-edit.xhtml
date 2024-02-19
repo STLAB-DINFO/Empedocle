@@ -36,33 +36,33 @@
 
 			<div class="crud-title">
 				<h2>
-					#{examinationTypeEdit.edit ? 'Modifica' : 'Creazione'} Struttura visita
+					#{examinationTypeEdit.edit ? 'Edit' : 'Create'} Visit Structure
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn"
 							action="#{examinationTypeEdit.cancel()}" immediate="true">
-							<i class="fw-icon-step-backward dist-right"></i> Annulla
+							<i class="fw-icon-step-backward dist-right"></i> Cancel
 						</h:commandLink>
 						<h:commandLink class="btn btn-primary dist-left"
 							action="#{examinationTypeEdit.save()}">
-							<i class="fw-icon-step-forward dist-right"></i> Salva
+							<i class="fw-icon-step-forward dist-right"></i> Save
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold" for="examtype-edit-form:name">* Nome</label>
+				<label class="control-label bold" for="examtype-edit-form:name">* Name</label>
 				<div class="controls">
 					<h:inputText id="name" value="#{examinationTypeEdit.current.name}"
 						required="true"
-						requiredMessage="'Nome' è un campo obbligatorio!"
+						requiredMessage="'Name' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}" />
 				</div>
 			</div>
 
 			<div class="control-group">
-				<label class="control-label bold" for="examtype-edit-form:description">Descrizione</label>
+				<label class="control-label bold" for="examtype-edit-form:description">Description</label>
 				<div class="controls">
 					<h:inputTextarea id="description" 
 						value="#{examinationTypeEdit.current.description}" styleClass="wider" rows="6"/>
@@ -70,25 +70,25 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label bold" for="examtype-edit-form:time-to-live">* Tempo di chiusura</label>
+				<label class="control-label bold" for="examtype-edit-form:time-to-live">* Time to Live</label>
 				<div class="controls">
 					<h:inputText id="time-to-live"
 						value="#{examinationTypeEdit.current.timeToLive}" required="true"
-						requiredMessage="'Tempo di chiusura' è un campo obbligatorio!"
+						requiredMessage="'Time to Live' is a required field!"
 						styleClass="#{ component.valid ? '' : 'vld-error'}" />
-					<h:outputText value="ore" styleClass="dist-left" />
+					<h:outputText value="hours" styleClass="dist-left" />
 				</div>
 			</div>			
 		
 			<h:panelGroup layout="block" class="control-group" id="select-data-structure">
-				<label class="control-label bold">* Struttura dati</label>
+				<label class="control-label bold">* Data Structure</label>
 				
 				<div class="controls">
 					<emp:suggestionList bean="#{examinationTypeEdit.typeSuggestion}"
 						value="#{examinationTypeEdit.current.type}"
 						suggestion="#{examinationTypeEdit.typeSuggestion.suggestion}"
 						required="true"
-						requiredMessage="'Struttura dati' è un campo obbligatorio!"
+						requiredMessage="'Data structure' is a required field!"
 						converter="#{typeConverter}"
 						render=":examtype-edit-form:select-data-structure" />
 				</div>
@@ -96,7 +96,7 @@
 			
 
 			<div class="control-group">
-				<label class="control-label bold">Agende</label>
+				<label class="control-label bold">Agendas</label>
 				<div class="controls">
 					<h:panelGroup layout="block" id="agenda-lst">
 					
@@ -109,7 +109,7 @@
 										
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Codice" />
+										<h:outputText value="Code" />
 									</f:facet>
 											
 									<h:outputText value="#{_agenda.code}" />
@@ -117,7 +117,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Descrizione" />
+										<h:outputText value="Description" />
 									</f:facet>		
 									
 									<h:outputText value="#{_agenda.description}" />
@@ -126,7 +126,7 @@
 								<h:column>
 									<f:facet name="header" />
 									<h:commandLink action="#{examinationTypeEdit.removeAgenda(_agenda)}"
-										styleClass="tltip" title="Rimuovi">
+										styleClass="tltip" title="Remove">
 										<f:ajax execute="@this" render=":examtype-edit-form:agenda-lst" />
 										<i class="fw-icon-remove" />
 									</h:commandLink>
@@ -145,7 +145,7 @@
 								converter="#{agendaConverter}"
 								render=":examtype-edit-form:select-agenda" />
 							
-							<h:commandLink title="Conferma agenda selezionata" action="#{examinationTypeEdit.confirmAgenda}"
+							<h:commandLink title="Confirm selected agenda" action="#{examinationTypeEdit.confirmAgenda}"
 								styleClass="tltip"
 								rendered="#{not empty examinationTypeEdit.agendaSelection.entity.toString()}">
 								<i class="fw-icon-ok" />
@@ -155,7 +155,7 @@
 						</h:panelGroup>
 						
 						<h:panelGroup layout="block" id="add-agenda">
-							<h:commandLink title="Aggiungi agenda" action="#{examinationTypeEdit.addAgenda()}"
+							<h:commandLink title="Add agenda" action="#{examinationTypeEdit.addAgenda()}"
 									styleClass="tltip align-txt" rendered="#{examinationTypeEdit.renderAddAgenda()}">
 								<i class="fw-icon-plus dist-right" />
 								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
@@ -163,7 +163,7 @@
 							</h:commandLink>
 							
 							<a4j:region>
-								<a4j:commandLink title="Importa agende da altra struttura visita"
+								<a4j:commandLink title="Import agendas from another visit structure"
 									styleClass="tltip align-txt"
 									onclick="#{rich:component('import-popup')}.show()">
 									<i class="fw-icon-mail-reply" />
@@ -176,7 +176,7 @@
 
 
 			<div class="control-group">
-				<label class="control-label bold">Permessi su operazioni</label>
+				<label class="control-label bold">Authorizations on Operations</label>
 				<div class="controls">
 					<h:panelGroup layout="block" id="auth-lst">
 					
@@ -189,7 +189,7 @@
 										
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Operazione" />
+										<h:outputText value="Operation" />
 									</f:facet>
 											
 									<h:outputText value="#{_auth.examOperation.name}" />
@@ -197,7 +197,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Qualifica" />
+										<h:outputText value="Qualification" />
 									</f:facet>		
 									
 									<h:outputText value="#{_auth.qualification}" />
@@ -225,13 +225,13 @@
 
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Operazione" />
+										<h:outputText value="Operation" />
 									</f:facet>
 
 									<h:selectOneMenu value="#{_auth.examOperation}"
 										hideNoSelectionOption="true">
 										<f:selectItem itemValue=""
-											itemLabel="- scegli un tipo di operazione -"
+											itemLabel="- choose a type of operation -"
 											noSelectionOption="true" />
 										<f:selectItems
 											value="#{examinationTypeEdit.examinationOperations}" />
@@ -241,14 +241,14 @@
 
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Qualifica" />
+										<h:outputText value="Qualification" />
 									</f:facet>
 
 									<h:selectOneMenu value="#{_auth.qualification}"
 										converter="#{qualificationConverter}"
 										hideNoSelectionOption="true">
 										<f:selectItem itemValue=""
-											itemLabel="- scegli una qualifica -" noSelectionOption="true" />
+											itemLabel="- choose a qualification -" noSelectionOption="true" />
 										<f:selectItems value="#{examinationTypeEdit.qualifications}" />
 										<f:ajax execute="@this" render=":examtype-edit-form:select-auth"/>
 									</h:selectOneMenu>
@@ -258,7 +258,7 @@
 									<f:facet name="header" />
 									
 									<h:commandLink id="select-auth-confirm" 
-										title="Conferma permesso selezionato" action="#{examinationTypeEdit.confirmAuthorization}"
+										title="Confirm selected authorization" action="#{examinationTypeEdit.confirmAuthorization}"
 										styleClass="tltip"
 										rendered="#{(not empty examinationTypeEdit.authorizationSelection.entity.examOperation) and
 											(not empty examinationTypeEdit.authorizationSelection.entity.qualification)}">
@@ -271,7 +271,7 @@
 						</h:panelGroup>
 						
 						<h:panelGroup layout="block" id="add-auth">
-							<h:commandLink title="Aggiungi permesso" action="#{examinationTypeEdit.addAuthorization()}"
+							<h:commandLink title="Add authorization" action="#{examinationTypeEdit.addAuthorization()}"
 									styleClass="tltip align-txt" rendered="#{examinationTypeEdit.renderAddAuthorization()}">
 								<i class="fw-icon-plus dist-right" />
 								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
@@ -283,7 +283,7 @@
 			</div>		
 			
 			<div class="control-group">
-				<label class="control-label bold">Viste associate a contesti e qualifiche</label>
+				<label class="control-label bold">Viewers associated with contexts and qualifications</label>
 				<div class="controls">
 					<h:panelGroup layout="block" id="viewer-use-lst">
 					
@@ -296,7 +296,7 @@
 										
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Contesto" />
+										<h:outputText value="Contexts" />
 									</f:facet>
 											
 									<h:outputText value="#{_vu.context.name}" />
@@ -304,7 +304,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Qualifica" />
+										<h:outputText value="Qualification" />
 									</f:facet>		
 									
 									<h:outputText value="#{_vu.qualification.name}" />
@@ -312,7 +312,7 @@
 								
 								<h:column>	
 									<f:facet name="header">
-										<h:outputText value="Vista" />
+										<h:outputText value="Viewer" />
 									</f:facet>		
 									
 									<h:outputText value="#{_vu.viewer.name}" />
@@ -340,12 +340,12 @@
 
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Contesto" />
+										<h:outputText value="Context" />
 									</f:facet>
 
 									<h:selectOneMenu value="#{_vu.context}"
 										hideNoSelectionOption="true">
-										<f:selectItem itemValue="" itemLabel="- scegli un contesto -"
+										<f:selectItem itemValue="" itemLabel="- choose a context -"
 											noSelectionOption="true" />
 										<f:selectItems
 											value="#{examinationTypeEdit.examinationContexts}" />
@@ -355,14 +355,14 @@
 
 								<h:column>
 									<f:facet name="header">
-										<h:outputText value="Qualifica" />
+										<h:outputText value="Qualification" />
 									</f:facet>
 
 									<h:selectOneMenu value="#{_vu.qualification}"
 										converter="#{qualificationConverter}"
 										hideNoSelectionOption="true">
 										<f:selectItem itemValue=""
-											itemLabel="- scegli una qualifica -" noSelectionOption="true" />
+											itemLabel="- choose a qualification -" noSelectionOption="true" />
 										<f:selectItems value="#{examinationTypeEdit.qualifications}" />
 										<f:ajax execute="@this" render=":examtype-edit-form:select-viewer-use" />
 									</h:selectOneMenu>
@@ -370,7 +370,7 @@
 								
 								<h:column>
 									<f:facet name="header" >
-										<h:outputText value="Vista"/>
+										<h:outputText value="Viewer"/>
 									</f:facet>
 									
 									<emp:suggestionList
@@ -385,7 +385,7 @@
 									<f:facet name="header" />
 									
 									<h:commandLink id="select-vuse-confirm" 
-										title="Conferma vista selezionata" action="#{examinationTypeEdit.confirmViewerUse}"
+										title="Confirm selected viewer" action="#{examinationTypeEdit.confirmViewerUse}"
 										styleClass="tltip"
 										rendered="#{(not empty examinationTypeEdit.viewerUseSelection.entity.context) and
 											(not empty examinationTypeEdit.viewerUseSelection.entity.qualification) and
@@ -399,7 +399,7 @@
 						</h:panelGroup>
 						
 						<h:panelGroup layout="block" id="add-viewer-use">
-							<h:commandLink title="Aggiungi vista" action="#{examinationTypeEdit.addViewerUse()}"
+							<h:commandLink title="Add viewer" action="#{examinationTypeEdit.addViewerUse()}"
 									styleClass="tltip align-txt" rendered="#{examinationTypeEdit.renderAddViewerUse()}">
 								<i class="fw-icon-plus dist-right" />
 								<f:param name="cid" value="#{javax.enterprise.context.conversation.id}" />
@@ -423,7 +423,7 @@
 	                   	oncomplete="#{rich:component('import-popup')}.hide(); return false;"
 	                   	rendered="#{not empty examinationTypeEdit.importFromExamTypeId}"
 	                   	render=":examtype-edit-form:agenda-lst @form">
-						<i class="fw-icon-step-forward dist-right"></i> Importa
+						<i class="fw-icon-step-forward dist-right"></i> Import
 					</a4j:commandLink>
 					
 					<a4j:commandLink
@@ -431,15 +431,15 @@
 						execute="@this" styleClass="btn pull-right dist-right"
 	                   	oncomplete="#{rich:component('import-popup')}.hide(); return false;"
 	                   	render="@form">
-						<i class="fw-icon-step-backward dist-right"></i> Chiudi
+						<i class="fw-icon-step-backward dist-right"></i> Close
 					</a4j:commandLink>										
 	                   
-	                  <h3>Importa agende da altra Struttura Visita</h3>                                            
+	                  <h3>Import agendas from anothe Visit Structure</h3>
 				</div>		
 								
 				<div class="modal-body">
 					<div class="control-group">
-						<label class="control-label bold">Struttura visita</label>
+						<label class="control-label bold">Visit Structure</label>
 						<div class="controls align-txt">				
 							<h:selectOneMenu value="#{examinationTypeEdit.importFromExamTypeId}" styleClass="autosized">
 								<f:selectItem itemValue="" itemLabel="" noSelectionOption="true"/>
@@ -450,7 +450,7 @@
 					</div>
 
 					<div class="control-group">
-						<label class="control-label bold">Agende</label>
+						<label class="control-label bold">Agendas</label>
 						<div class="controls">		
 							<h:panelGroup id="agenda-lst" layout="block" styleClass="agenda-import-list"
 								rendered="#{not empty examinationTypeEdit.listAgendasFromExamTypeId()}">
@@ -462,14 +462,14 @@
 										
 										<h:column>
 											<f:facet name="header">
-													Codice
+													Code
 												</f:facet>
 											<h:outputText value="#{_agenda.code}" />
 										</h:column>
 										
 										<h:column>
 											<f:facet name="header">
-													Descrizione
+													Description
 												</f:facet>
 											<h:outputText value="#{_agenda.description}" />
 										</h:column>

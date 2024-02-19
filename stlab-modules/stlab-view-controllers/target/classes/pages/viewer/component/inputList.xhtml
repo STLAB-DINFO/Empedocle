@@ -30,7 +30,7 @@
 						</c:forEach>
 						<tr>
 							<td>
-								<a4j:commandLink alt="Aggiungi" title="Aggiungi" styleClass="tltip"
+								<a4j:commandLink alt="Add" title="Add" styleClass="tltip"
 										action="#{persistListener.addChildren(inputListController.getTypeLink(value, selector), inputListController.getFact(value, selector))}"	
 										rendered="#{inputListController.canAddFact(value, selector)}"
 										render="@form">
@@ -63,7 +63,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a4j:commandLink alt="Aggiungi" title="Aggiungi" styleClass="tltip"
+								<a4j:commandLink alt="Add" title="Add" styleClass="tltip"
 										action="#{persistListener.addChildren(inputListController.getTypeLink(value, selector), inputListController.getFact(value, selector))}"
 										rendered="#{inputListController.canAddFact(value, selector)}"
 										render="@form">

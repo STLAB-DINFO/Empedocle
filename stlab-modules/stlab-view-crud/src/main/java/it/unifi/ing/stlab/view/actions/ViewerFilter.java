@@ -68,15 +68,15 @@ public class ViewerFilter extends FilterBean implements QueryBuilder {
 	// private methods
 	//
 	private void initFilters() {
-		addFilterDef( "Nome", FilterType.TEXT, "v.name like :pname", "pname" );
-		addFilterDef( "Tipo", FilterType.TEXT, "v.type.name like :tname", "tname" );
+		addFilterDef( "Name", FilterType.TEXT, "v.name like :pname", "pname" );
+		addFilterDef( "Type", FilterType.TEXT, "v.type.name like :tname", "tname" );
 
 		setFilterDefsOrder( FilterDefsOrder.INSERTION );
 	}
 
 	private void initSorting() {
-		addSort( "Nome", "v.name asc", "v.name desc" );
-		addSort( "Tipo", "v.type.name asc, v.name asc", "v.type.name desc, v.name asc" );
-		toggle( "Nome" );
+		addSort( "Name", "v.name asc", "v.name desc" );
+		addSort( "Type", "v.type.name asc, v.name asc", "v.type.name desc, v.name asc" );
+		toggle( "Name" );
 	}
 }

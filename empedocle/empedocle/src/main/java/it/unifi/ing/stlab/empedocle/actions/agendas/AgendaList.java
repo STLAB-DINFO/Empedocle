@@ -88,7 +88,7 @@ public class AgendaList extends Navigator {
 	public String delete( Long id ) {
 		agendaDao.delete( id );
 
-		message( FacesMessage.SEVERITY_INFO, "Agenda cancellata con successo!", true );
+		message( FacesMessage.SEVERITY_INFO, "Agenda successfully deleted!", true );
 		return "delete";
 	}
 

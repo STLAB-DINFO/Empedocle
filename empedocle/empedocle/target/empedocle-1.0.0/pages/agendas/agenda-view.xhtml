@@ -16,24 +16,24 @@
 		<h:form>
 			<h:panelGroup layout="block" styleClass="page-title">
 				<h2>
-					Dettaglio Agenda
+					Agenda Details
 
 					<h:panelGroup layout="block" styleClass="pull-right align-btn">
 						<h:commandLink class="btn btn-danger"
 							action="#{agendaList.delete( agendaView.current.id )}"
 							rendered="#{agendaList.isRemovable( agendaView.current.id )}"
-							onclick="if(!confirm('Eliminare agenda?')) {return false;}">
-							<i class="fw-icon-remove dist-right"></i> Elimina 
+							onclick="if(!confirm('Delete agenda?')) {return false;}">
+							<i class="fw-icon-remove dist-right"></i> Delete
 						</h:commandLink>
 
 						<h:commandLink class="btn btn-warning dist-left"
 							action="#{agendaList.edit( agendaView.current.id )}">
-							<i class="fw-icon-pencil dist-right"></i> Modifica
+							<i class="fw-icon-pencil dist-right"></i> Edit
 						</h:commandLink>
 
 						<h:commandLink class="btn dist-left"
 							action="#{agendaView.close()}">
-							<i class="fw-icon-step-backward dist-right"></i> Chiudi
+							<i class="fw-icon-step-backward dist-right"></i> Close
 						</h:commandLink>
 					</h:panelGroup>
 				</h2>
@@ -43,13 +43,13 @@
 		<h:panelGroup layout="block"
 			styleClass="container-fluid form-horizontal">
 			<div class="control-group">
-				<label class="control-label bold">Codice</label>
+				<label class="control-label bold">Code</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{agendaView.current.code}" />
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label bold">Descrizione</label>
+				<label class="control-label bold">Description</label>
 				<div class="controls align-txt">
 					<h:outputText value="#{agendaView.current.description}" />
 				</div>
