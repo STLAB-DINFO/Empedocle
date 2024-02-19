@@ -9,7 +9,7 @@ import it.unifi.ing.stlab.empedocle.model.health.ViewerUse;
 
 public class ExaminationTypeCloner {
 
-	private ExaminationType original;
+	private final ExaminationType original;
 	
 	public ExaminationTypeCloner(ExaminationType original) {
 		this.original = original;

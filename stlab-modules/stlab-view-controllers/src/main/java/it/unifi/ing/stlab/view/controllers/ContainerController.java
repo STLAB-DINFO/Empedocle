@@ -30,7 +30,7 @@ public abstract class ContainerController {
 		if(!container.getCollapse())
 			return true;
 		
-		return ( fact != null ? !fact.isEmpty() : false );
+		return (fact != null && !fact.isEmpty());
 	}
 	
 }

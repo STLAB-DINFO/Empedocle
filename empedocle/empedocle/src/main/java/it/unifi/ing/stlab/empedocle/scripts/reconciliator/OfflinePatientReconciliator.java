@@ -1,30 +1,5 @@
 package it.unifi.ing.stlab.empedocle.scripts.reconciliator;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Date;
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.Remove;
-import javax.ejb.Singleton;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
-import javax.persistence.LockModeType;
-import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
-
-import org.apache.log4j.Logger;
-
 import it.unifi.ing.stlab.patients.dao.PatientDao;
 import it.unifi.ing.stlab.patients.factory.PatientFactory;
 import it.unifi.ing.stlab.patients.manager.PatientManager;
@@ -35,6 +10,21 @@ import it.unifi.ing.stlab.patients.model.Sex;
 import it.unifi.ing.stlab.users.dao.UserDao;
 import it.unifi.ing.stlab.users.model.User;
 import it.unifi.ing.stlab.users.model.time.Time;
+import org.apache.log4j.Logger;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
+import javax.ejb.*;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.FlushModeType;
+import javax.persistence.LockModeType;
+import javax.persistence.PersistenceContext;
+import javax.transaction.UserTransaction;
+import java.sql.*;
+import java.util.Date;
+import java.util.List;
 
 //XXX to be tested
 //@Startup
@@ -230,7 +220,7 @@ public class OfflinePatientReconciliator {
 	
 	class MySQLConnector {
 		
-		private Connection connection;
+		private final Connection connection;
 		
 		MySQLConnector( String url,  String user, String password ) {
 			try {

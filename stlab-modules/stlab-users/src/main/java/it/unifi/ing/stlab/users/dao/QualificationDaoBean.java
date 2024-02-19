@@ -1,13 +1,12 @@
 package it.unifi.ing.stlab.users.dao;
 
-import java.util.List;
+import it.unifi.ing.stlab.users.model.Qualification;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-
-import it.unifi.ing.stlab.users.model.Qualification;
+import java.util.List;
 
 @Stateless
 public class QualificationDaoBean implements QualificationDao {
@@ -17,7 +16,7 @@ public class QualificationDaoBean implements QualificationDao {
 	
 	@Override
 	public Qualification findById(Long id) {
-		return (Qualification) entityManager.find( Qualification.class, id );
+		return entityManager.find( Qualification.class, id );
 	}
 	
 	@Override

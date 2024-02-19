@@ -6,7 +6,7 @@ import java.util.UUID;
 
 public class Sorting {
 
-	private Map<String, SortField> fields;
+	private final Map<String, SortField> fields;
 	private SortField selected;
 	private boolean ascending;
 	

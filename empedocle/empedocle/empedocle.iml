@@ -37,6 +37,7 @@
       <excludeFolder url="file://$MODULE_DIR$/${basedir}/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/${basedir}/target/test-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/it/unifi/ing/stlab/empedocle/services/mpi" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -6,6 +6,6 @@ public interface UpdateLink
 	
 	extends CompactLink<T,L> {
 	
-	public L getRefersTo();
-	public void assignRefersTo( L refersTo );
+	L getRefersTo();
+	void assignRefersTo(L refersTo);
 }

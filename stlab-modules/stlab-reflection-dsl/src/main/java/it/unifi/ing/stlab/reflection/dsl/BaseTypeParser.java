@@ -4,34 +4,23 @@ import it.unifi.ing.stlab.reflection.factory.types.PhenomenonFactory;
 import it.unifi.ing.stlab.reflection.factory.types.TypeFactory;
 import it.unifi.ing.stlab.reflection.factory.types.TypeLinkFactory;
 import it.unifi.ing.stlab.reflection.factory.types.UnitUseFactory;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.QueriedType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.reflection.model.types.Unit;
-import it.unifi.ing.stlab.reflection.model.types.UnitUse;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
-
 import org.antlr.runtime.Parser;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.RecognizerSharedState;
 import org.antlr.runtime.TokenStream;
 
+import javax.persistence.EntityManager;
+import javax.persistence.FlushModeType;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public abstract class BaseTypeParser extends Parser {
 
 	private EntityManager entityManager;
-	private List<Exception> errors;
+	private final List<Exception> errors;
 	
 	public BaseTypeParser(TokenStream stream) {
 		super(stream);
@@ -70,7 +59,7 @@ public abstract class BaseTypeParser extends Parser {
 	public String errorReport() {
 		if ( isOk() ) return "OK";
 		
-		StringBuffer result = new StringBuffer( "" );
+		StringBuffer result = new StringBuffer();
 		for ( Exception e : errors ) {
 			result.append( e.toString() ).append( "\n" );
 		}

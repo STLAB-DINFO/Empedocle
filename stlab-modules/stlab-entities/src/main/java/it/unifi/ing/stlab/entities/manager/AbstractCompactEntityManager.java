@@ -114,19 +114,15 @@ public abstract class AbstractCompactEntityManager
 	
 	private boolean canClean( T entity ) {
 		if (!entity.isEmpty() ) return false;
-		
-		if(!entity.listChildren().isEmpty()) {
-			return false;
-		}
+
+        return entity.listChildren().isEmpty();
 		
 //		for ( L link : entity.listChildren() ) {
 //			if (!( ClassHelper.instanceOf( link, RemoveLink.class ))) {
 //				return false;
 //			}
 //		}
-		
-		return true;
-	}
+    }
 	
 	@SuppressWarnings("unchecked")
 	private void cleanChildren( T entity ) {

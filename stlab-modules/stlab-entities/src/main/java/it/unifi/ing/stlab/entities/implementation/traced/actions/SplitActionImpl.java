@@ -68,10 +68,8 @@ public class SplitActionImpl
 		if ( destination != null && !destination.equals( getDelegator())) return false;
 
 		if ( target1 != null && target1.equals( newSource )) return false;
-		if ( target2 != null && target2.equals( newSource )) return false;
-		
-		return true;
-	}
+        return target2 == null || !target2.equals(newSource);
+    }
 	
 	private void clearDestination() {
 		if ( source != null ) {
@@ -123,10 +121,8 @@ public class SplitActionImpl
 			return false;
 
 		if ( source != null && source.equals( newTarget1 )) return false;
-		if ( target2 != null && target2.equals( newTarget1 )) return false;
-		
-		return true;
-	}
+        return target2 == null || !target2.equals(newTarget1);
+    }
 	
 	private void clearOrigin1() {
 		if ( target1 != null ) {
@@ -179,10 +175,8 @@ public class SplitActionImpl
 			return false;
 
 		if ( source != null && source.equals( newTarget2 )) return false;
-		if ( target1 != null && target1.equals( newTarget2 )) return false;
-		
-		return true;
-	}
+        return target1 == null || !target1.equals(newTarget2);
+    }
 	
 	private void clearOrigin2() {
 		if ( target2 != null ) {

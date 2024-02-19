@@ -65,10 +65,8 @@ public class ModifyActionImpl
 		A destination = newSource.getDestination();
 		if ( destination != null && !destination.equals( getDelegator())) return false;
 
-		if ( target != null && target.equals( newSource )) return false;
-		
-		return true;
-	}
+        return target == null || !target.equals(newSource);
+    }
 	
 	private void clearDestination() {
 		if ( source != null ) {
@@ -121,10 +119,8 @@ public class ModifyActionImpl
 		if ( origin != null && !origin.equals( getDelegator() )) 
 			return false;
 
-		if ( source != null && source.equals( newTarget )) return false;
-		
-		return true;
-	}
+        return source == null || !source.equals(newTarget);
+    }
 	
 	private void clearOrigin() {
 		if ( target != null ) {

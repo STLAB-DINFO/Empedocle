@@ -19,17 +19,16 @@ import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NonUniqueResultException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import javax.persistence.EntityManager;
-import javax.persistence.NonUniqueResultException;
-
 public class FactQueryBuilder {
 
-	private FactQuery factQuery;
-	private EntityManager entityManager;
+	private final FactQuery factQuery;
+	private final EntityManager entityManager;
 	
 	private Expression resultExpr;
 	private Expression lastAtomicExpr;

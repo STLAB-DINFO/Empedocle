@@ -9,7 +9,7 @@ public class FakeCompactModifyAction
 	extends FakeCompactAction 
 	implements ModifyAction<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> {
 
-	private ModifyActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> delegate;
+	private final ModifyActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> delegate;
 
 	
 	public FakeCompactModifyAction() {

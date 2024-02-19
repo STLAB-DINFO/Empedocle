@@ -6,8 +6,8 @@ import javax.ejb.Timer;
 @Local
 public interface CloseExamination {
 
-	public void startService();
-	public void stopService();
-	public void timeout( Timer timer );	
+	void startService();
+	void stopService();
+	void timeout(Timer timer);
 	
 }

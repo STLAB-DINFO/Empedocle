@@ -27,7 +27,7 @@ public class GarbageCollector {
 	//
 	// Class methods & attributes
 	//
-	private Set<Object> trash;
+	private final Set<Object> trash;
 	
 	public GarbageCollector() {
 		trash = new HashSet<Object>();

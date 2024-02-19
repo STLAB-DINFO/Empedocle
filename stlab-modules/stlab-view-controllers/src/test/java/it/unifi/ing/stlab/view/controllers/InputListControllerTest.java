@@ -1,15 +1,10 @@
 package it.unifi.ing.stlab.view.controllers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
 import it.unifi.ing.stlab.reflection.factory.types.TypeFactory;
 import it.unifi.ing.stlab.reflection.factory.types.TypeLinkFactory;
 import it.unifi.ing.stlab.reflection.impl.factory.FactFactory;
 import it.unifi.ing.stlab.reflection.impl.factory.FactLinkFactory;
 import it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl;
-import it.unifi.ing.stlab.reflection.impl.model.facts.links.FactLinkImpl;
 import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
 import it.unifi.ing.stlab.reflection.model.facts.Fact;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
@@ -17,14 +12,15 @@ import it.unifi.ing.stlab.reflection.model.types.Type;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 import it.unifi.ing.stlab.test.FieldUtils;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
+import org.junit.Before;
+import org.junit.Test;
 
+import javax.faces.context.FacesContext;
 import java.util.List;
 import java.util.UUID;
 
-import javax.faces.context.FacesContext;
-
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 public class InputListControllerTest {
 
@@ -85,12 +81,12 @@ public class InputListControllerTest {
 		
 		FactLink link1 = factLinkFactory.insertLink((FactImpl)cmp, (FactImpl)fact1);
 		link1.setType(sel.getTypeLink());
-		((FactLinkImpl)link1).setPriority(1l);
+		link1.setPriority(1l);
 		FactLink link2 = factLinkFactory.insertLink((FactImpl)cmp, (FactImpl)fact2);
 		link2.setType(TypeLinkFactory.createLink());
 		FactLink link3 = factLinkFactory.insertLink((FactImpl)cmp, (FactImpl)fact3);
 		link3.setType(sel.getTypeLink());
-		((FactLinkImpl)link3).setPriority(0l);
+		link3.setPriority(0l);
 		
 		List<FactLink> result = controller.getLinks(cmp, sel);
 		

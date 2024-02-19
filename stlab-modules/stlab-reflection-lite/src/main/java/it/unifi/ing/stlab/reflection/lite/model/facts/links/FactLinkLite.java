@@ -9,7 +9,7 @@ import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 public class FactLinkLite 
 		implements FactLink, CompositeLink<FactLite,FactLinkLite> {
 
-	private CompositeLinkImpl<FactLite, FactLinkLite> delegate;
+	private final CompositeLinkImpl<FactLite, FactLinkLite> delegate;
 	private TypeLink type;
 	
 	public FactLinkLite() {

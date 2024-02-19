@@ -1,14 +1,7 @@
 package it.unifi.ing.stlab.empedocle.dao.health;
 
 import it.unifi.ing.stlab.empedocle.model.Agenda;
-import it.unifi.ing.stlab.empedocle.model.health.Authorization;
-import it.unifi.ing.stlab.empedocle.model.health.Examination;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationDetails;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationOperation;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationStatus;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationType;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationTypeContext;
-import it.unifi.ing.stlab.empedocle.model.health.ViewerUse;
+import it.unifi.ing.stlab.empedocle.model.health.*;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.patients.model.Patient;
 import it.unifi.ing.stlab.reflection.dao.types.TypeDao;
@@ -19,10 +12,6 @@ import it.unifi.ing.stlab.reflection.model.facts.Fact;
 import it.unifi.ing.stlab.reflection.model.facts.FactStatus;
 import it.unifi.ing.stlab.view.dao.ViewerDao;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -30,6 +19,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Stateless
 @TransactionAttribute
@@ -145,12 +137,12 @@ public class ExaminationDaoBean implements ExaminationDao {
 		if( patientId == null )
 			throw new IllegalArgumentException("id paziente è nullo");
 		
-		 return ((Long)entityManager.createQuery("select count ( distinct e ) " +
-					" from Examination e " +
-					" join e.appointment.patient.after aa " +
-					" where aa.id = :pid " )						  						
-			.setParameter("pid", patientId)
-			.getSingleResult()).intValue() > 0 ? true : false;
+		 return ((Long) entityManager.createQuery("select count ( distinct e ) " +
+						 " from Examination e " +
+						 " join e.appointment.patient.after aa " +
+						 " where aa.id = :pid ")
+				 .setParameter("pid", patientId)
+				 .getSingleResult()).intValue() > 0;
 	}
 	
 	// FIXME ripulire

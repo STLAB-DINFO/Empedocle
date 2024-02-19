@@ -1,11 +1,5 @@
 package it.unifi.ing.stlab.empedocle.view.controllers.geriatrics;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.model.facts.Fact;
 import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
@@ -14,6 +8,11 @@ import it.unifi.ing.stlab.view.controllers.ContainerController;
 import it.unifi.ing.stlab.view.model.Viewer;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
 import it.unifi.ing.stlab.view.model.links.ViewerLink;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+import java.util.LinkedList;
+import java.util.List;
 
 @Named
 @RequestScoped
@@ -45,7 +44,7 @@ public class SigaretteController extends ContainerController {
 			return "--";
 		} else {	
 			double scoreValue = (numberOfCig.getQuantity().getValue() / 20)*years.getQuantity().getValue();
-			scoreFact.getQuantity().setValue( (double) scoreValue );
+			scoreFact.getQuantity().setValue(scoreValue);
 	
 			return String.valueOf( scoreValue );
 		}
@@ -65,7 +64,6 @@ public class SigaretteController extends ContainerController {
 	private Boolean isFactInizialized( Fact fact ) {
 		QuantitativeFact qf = ClassHelper.cast( fact, QuantitativeFact.class );
 		
-		return ( qf == null || qf.isEmpty() || qf.getQuantity() == null || qf.getQuantity().getValue() == 0 ) ? false
-				: true;
+		return qf != null && !qf.isEmpty() && qf.getQuantity() != null && qf.getQuantity().getValue() != 0;
 	}
 }

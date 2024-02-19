@@ -9,7 +9,7 @@ public class FakeCompactCreateAction
 	extends FakeCompactAction 
 	implements CreateAction<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> {
 
-	private CreateActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> delegate;
+	private final CreateActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> delegate;
 
 	public FakeCompactCreateAction() {
 		delegate = new CreateActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime>();

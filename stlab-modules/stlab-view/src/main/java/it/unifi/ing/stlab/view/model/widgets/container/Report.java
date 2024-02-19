@@ -26,12 +26,9 @@ public class Report extends ViewerContainer {
 	public boolean isValidSubViewer(ViewerLink sv) {
 		if( sv == null || !ClassHelper.instanceOf( sv, SubViewer.class ))
 			return false;
-		
-		if(listChildren().size() > 3)
-			return false;
-		
-		return true;
-	}
+
+        return listChildren().size() <= 3;
+    }
 	
 	
 	@Transient

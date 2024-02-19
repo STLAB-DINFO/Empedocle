@@ -4,12 +4,12 @@ import java.util.Date;
 
 public interface Time extends Comparable<Time> {
 
-	public Date getDate();
+	Date getDate();
 
-	public int hashCode();
-	public boolean equals(Object obj);
+	int hashCode();
+	boolean equals(Object obj);
 
-	public int compareTo(Time other);
+	int compareTo(Time other);
 
-	public boolean isInfinity();
+	boolean isInfinity();
 }

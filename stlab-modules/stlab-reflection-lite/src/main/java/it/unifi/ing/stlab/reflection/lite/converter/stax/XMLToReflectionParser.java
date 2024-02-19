@@ -6,24 +6,10 @@ import it.unifi.ing.stlab.reflection.lite.converter.visitor.PhenomenonFinderVisi
 import it.unifi.ing.stlab.reflection.lite.converter.visitor.UnitFinderVisitor;
 import it.unifi.ing.stlab.reflection.lite.factory.FactFactory;
 import it.unifi.ing.stlab.reflection.lite.factory.FactLinkFactory;
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Fact;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.reflection.model.types.Unit;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
-
-import java.io.StringReader;
-import java.util.Date;
-import java.util.Stack;
 
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.namespace.QName;
@@ -35,16 +21,19 @@ import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
+import java.io.StringReader;
+import java.util.Date;
+import java.util.Stack;
 
 public class XMLToReflectionParser  {
 	
 	private XMLEventReader xmlEventReader;
 	
-	private enum elements {textual, qualitative, quantitative, temporal, composite};
+	private enum elements {textual, qualitative, quantitative, temporal, composite}
+
+	private final FactConverterDao dao;
 	
-	private FactConverterDao dao;
-	
-	private Stack<CompositeFact> compositeStack;
+	private final Stack<CompositeFact> compositeStack;
 	private Fact result;
 	
 	public XMLToReflectionParser( FactConverterDao dao ) {

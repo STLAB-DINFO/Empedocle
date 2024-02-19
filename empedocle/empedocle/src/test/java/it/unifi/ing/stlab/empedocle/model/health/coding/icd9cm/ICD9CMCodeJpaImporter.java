@@ -4,13 +4,12 @@ import it.unifi.ing.stlab.empedocle.factory.health.coding.icd9cm.ICD9CMCodeFacto
 import it.unifi.ing.stlab.reflection.factory.types.PhenomenonFactory;
 import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
 import it.unifi.ing.stlab.test.JpaTest;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class ICD9CMCodeJpaImporter extends JpaTest {
 	
@@ -127,33 +126,21 @@ public class ICD9CMCodeJpaImporter extends JpaTest {
 		if( code_to_check instanceof ICD9CMSubTopicCode ) {
 			String[] split_code = code.split( "-" );
 			String[] split_p_code = p_code.split( "-" );
-			
-			if( split_code[0].compareTo( split_p_code[0] ) >= 0 
-					&& split_code[1].compareTo( split_p_code[1] ) <= 0)
-				return true;
-			else 
-				return false;
+
+            return split_code[0].compareTo(split_p_code[0]) >= 0
+                    && split_code[1].compareTo(split_p_code[1]) <= 0;
 		} else if( code_to_check instanceof ICD9CMCategoryCode ) {
 			String[] split_p_code = p_code.split( "-" );
-			
-			if( code.compareTo( split_p_code[0] ) >= 0 
-					&& code.compareTo( split_p_code[1] ) <= 0)
-				return true;
-			else
-				return false;
+
+            return code.compareTo(split_p_code[0]) >= 0
+                    && code.compareTo(split_p_code[1]) <= 0;
 		} else if( code_to_check instanceof ICD9CMSubCategoryCode ) {
 			code = code.substring(0, code.length() - 2);
-			
-			if( code.compareTo( p_code ) == 0 )
-				return true;
-			else
-				return false;
+
+            return code.compareTo(p_code) == 0;
 		} else if( code_to_check instanceof ICD9CMSubClassificationCode ) {
 			code = code.substring(0, code.length() - 1);
-			if( code.compareTo( p_code ) == 0 )
-				return true;
-			else
-				return false;
+            return code.compareTo(p_code) == 0;
 		} else
 			return false;
 	}

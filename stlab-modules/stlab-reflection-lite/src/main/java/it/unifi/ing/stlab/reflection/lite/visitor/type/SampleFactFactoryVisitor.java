@@ -6,13 +6,7 @@ import it.unifi.ing.stlab.reflection.lite.model.facts.FactLite;
 import it.unifi.ing.stlab.reflection.lite.model.facts.QuantitativeFactLite;
 import it.unifi.ing.stlab.reflection.model.facts.Quantity;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.QueriedType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.TypeVisitor;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 
 public class SampleFactFactoryVisitor implements TypeVisitor {
@@ -71,7 +65,7 @@ public class SampleFactFactoryVisitor implements TypeVisitor {
 					SampleFactFactoryVisitor visitor = new SampleFactFactoryVisitor();
 					if(typeLink.getTarget() != null)
 						typeLink.getTarget().accept(visitor);
-					FactLink factLink = (FactLink)FactLinkFactory.insertLink(fact, visitor.getFact());
+					FactLink factLink = FactLinkFactory.insertLink(fact, visitor.getFact());
 					factLink.setType(typeLink);
 				}
 			}

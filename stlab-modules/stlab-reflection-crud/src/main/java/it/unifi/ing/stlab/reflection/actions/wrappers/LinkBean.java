@@ -3,16 +3,8 @@ package it.unifi.ing.stlab.reflection.actions.wrappers;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.factory.values.FactValueFactory;
 import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.values.FactValue;
-import it.unifi.ing.stlab.reflection.model.facts.values.QualitativeFactValue;
-import it.unifi.ing.stlab.reflection.model.facts.values.QuantitativeFactValue;
-import it.unifi.ing.stlab.reflection.model.facts.values.TemporalFactValue;
-import it.unifi.ing.stlab.reflection.model.facts.values.TextualFactValue;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.Type;
+import it.unifi.ing.stlab.reflection.model.facts.values.*;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 
 import javax.persistence.EntityManager;
@@ -21,7 +13,7 @@ public class LinkBean {
 	
 	private TypeLink link;
 	private FactValue defaultValue;
-	private EntityManager entityManager;
+	private final EntityManager entityManager;
 	
 	public LinkBean(TypeLink link, EntityManager em) {
 		this.link = link;

@@ -39,11 +39,8 @@ public class Grid extends ViewerContainer {
 	@Override
 	public boolean isValidSubViewer(ViewerLink sv) {
 
-		if( sv == null || !ClassHelper.instanceOf( sv, SubViewer.class ))
-			return false;
-		
-		return true;
-	}
+        return sv != null && ClassHelper.instanceOf(sv, SubViewer.class);
+    }
 	
 	@Override
 	public void accept(ViewerVisitor v){

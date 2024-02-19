@@ -9,12 +9,11 @@ import it.unifi.ing.stlab.reflection.model.facts.values.TemporalFactValue;
 import it.unifi.ing.stlab.reflection.model.types.TemporalType;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 
-import java.util.Date;
-
 import javax.persistence.Basic;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
+import java.util.Date;
 
 
 @Entity
@@ -41,10 +40,8 @@ public class TemporalFactImpl extends FactImpl implements TemporalFact {
 
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, TemporalType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, TemporalType.class);
+    }
 	
 	@Basic
 	public Date getDate() {
@@ -61,11 +58,8 @@ public class TemporalFactImpl extends FactImpl implements TemporalFact {
 	@Transient
 	@Override
 	public boolean isEmpty() {
-		if ( date == null )
-			return true;
-		
-		return false;
-	}
+        return date == null;
+    }
 
 	@Override
 	public boolean sameAs(FactImpl obj) {

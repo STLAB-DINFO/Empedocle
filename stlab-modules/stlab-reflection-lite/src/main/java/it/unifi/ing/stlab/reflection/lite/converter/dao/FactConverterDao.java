@@ -8,7 +8,7 @@ import javax.persistence.NoResultException;
 
 public class FactConverterDao {
 
-	private EntityManager entityManager;
+	private final EntityManager entityManager;
 	
 	public FactConverterDao(EntityManager entityManager) {
 		super();

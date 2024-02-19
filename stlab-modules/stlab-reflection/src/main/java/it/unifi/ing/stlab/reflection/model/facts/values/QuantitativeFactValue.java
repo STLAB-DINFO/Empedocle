@@ -31,9 +31,8 @@ public class QuantitativeFactValue extends FactValue {
 	@Transient
 	@Override
 	public boolean isEmpty() {
-		if ( quantity == null || quantity.getValue() == null ) return true;
-		return false;
-	}
+        return quantity == null || quantity.getValue() == null;
+    }
 	
 	@Override
 	public void accept(FactValueVisitor v) {

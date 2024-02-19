@@ -4,7 +4,7 @@ import java.util.Date;
 
 public interface TemporalFact extends Fact {
 
-	public Date getDate();
-	public void setDate(Date date);
+	Date getDate();
+	void setDate(Date date);
 	
 }

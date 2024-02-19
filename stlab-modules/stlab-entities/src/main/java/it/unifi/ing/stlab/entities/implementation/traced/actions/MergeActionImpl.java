@@ -68,10 +68,8 @@ public class MergeActionImpl
 		if ( destination != null && !destination.equals( getDelegator())) return false;
 
 		if ( source2 != null && source2.equals( newSource1 )) return false;
-		if ( target != null && target.equals( newSource1 )) return false;
-		
-		return true;
-	}
+        return target == null || !target.equals(newSource1);
+    }
 	
 	private void clearDestination1() {
 		if ( source1 != null ) {
@@ -123,10 +121,8 @@ public class MergeActionImpl
 		if ( destination != null && !destination.equals( getDelegator())) return false;
 
 		if ( source1 != null && source1.equals( newSource2 )) return false;
-		if ( target != null && target.equals( newSource2 )) return false;
-		
-		return true;
-	}
+        return target == null || !target.equals(newSource2);
+    }
 	
 	private void clearDestination2() {
 		if ( source2 != null ) {
@@ -179,10 +175,8 @@ public class MergeActionImpl
 			return false;
 
 		if ( source1 != null && source1.equals( newTarget )) return false;
-		if ( source2 != null && source2.equals( newTarget )) return false;
-		
-		return true;
-	}
+        return source2 == null || !source2.equals(newTarget);
+    }
 	
 	private void clearOrigin() {
 		if ( target != null ) {

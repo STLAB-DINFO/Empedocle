@@ -20,14 +20,14 @@ public interface Action
 	 U extends Actor,
 	 H extends Time> {
 
-	public void delete();
+	void delete();
 	
-	public U getAuthor();
-	public void setAuthor( U author );
+	U getAuthor();
+	void setAuthor(U author);
 	
-	public H getTime();
-	public void setTime( H time );
+	H getTime();
+	void setTime(H time);
 
-	public boolean isTerminal();  
+	boolean isTerminal();
 	
 }

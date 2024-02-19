@@ -9,27 +9,27 @@ import java.util.Set;
 
 public interface Fact {
 
-	public Type getType();
-	public void assignType(Type type);
+	Type getType();
+	void assignType(Type type);
 	
-	public Set<? extends FactLink> listParents();
+	Set<? extends FactLink> listParents();
 	
-	public Set<? extends FactLink> listChildren();
-	public Set<? extends FactLink> listActiveLinks();
-	public List<? extends FactLink> listChildrenOrdered();
-	public void refreshChildrenOrdered();
+	Set<? extends FactLink> listChildren();
+	Set<? extends FactLink> listActiveLinks();
+	List<? extends FactLink> listChildrenOrdered();
+	void refreshChildrenOrdered();
 	
-	public FactContext getContext();
-	public void setContext(FactContext context);
+	FactContext getContext();
+	void setContext(FactContext context);
 	
-	public FactStatus getStatus();
-	public void setStatus(FactStatus status);
+	FactStatus getStatus();
+	void setStatus(FactStatus status);
 	
-	public boolean isEmpty();
+	boolean isEmpty();
 	
-	public void assignDefaultValue(FactValue value);
-	public void accept(FactVisitor visitor);
+	void assignDefaultValue(FactValue value);
+	void accept(FactVisitor visitor);
 	
-	public void delete();
+	void delete();
 
 }

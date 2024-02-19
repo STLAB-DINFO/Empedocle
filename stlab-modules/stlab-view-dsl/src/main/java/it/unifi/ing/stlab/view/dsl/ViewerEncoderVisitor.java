@@ -1,40 +1,19 @@
 package it.unifi.ing.stlab.view.dsl;
 
-import java.util.Collection;
-
 import it.unifi.ing.stlab.view.model.ViewerVisitor;
 import it.unifi.ing.stlab.view.model.links.Tab;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
 import it.unifi.ing.stlab.view.model.links.ViewerLink;
 import it.unifi.ing.stlab.view.model.widgets.ViewerCustom;
-import it.unifi.ing.stlab.view.model.widgets.container.Box;
-import it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel;
-import it.unifi.ing.stlab.view.model.widgets.container.FactPanel;
-import it.unifi.ing.stlab.view.model.widgets.container.Grid;
-import it.unifi.ing.stlab.view.model.widgets.container.PanelOrientation;
-import it.unifi.ing.stlab.view.model.widgets.container.Paragraph;
-import it.unifi.ing.stlab.view.model.widgets.container.Report;
-import it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel;
-import it.unifi.ing.stlab.view.model.widgets.input.Combo;
-import it.unifi.ing.stlab.view.model.widgets.input.FileUpload;
-import it.unifi.ing.stlab.view.model.widgets.input.InputList;
-import it.unifi.ing.stlab.view.model.widgets.input.InputTemporal;
-import it.unifi.ing.stlab.view.model.widgets.input.InputText;
-import it.unifi.ing.stlab.view.model.widgets.input.Suggestion;
-import it.unifi.ing.stlab.view.model.widgets.input.TextArea;
-import it.unifi.ing.stlab.view.model.widgets.output.Label;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputField;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputImage;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputLink;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputList;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputMeasurementUnit;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputPath;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputType;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputValue;
+import it.unifi.ing.stlab.view.model.widgets.container.*;
+import it.unifi.ing.stlab.view.model.widgets.input.*;
+import it.unifi.ing.stlab.view.model.widgets.output.*;
+
+import java.util.Collection;
 
 public class ViewerEncoderVisitor implements ViewerVisitor {
 
-	private StringBuffer definition;
+	private final StringBuffer definition;
 	private int depth;
 	
 	public ViewerEncoderVisitor(){
@@ -414,7 +393,7 @@ public class ViewerEncoderVisitor implements ViewerVisitor {
 		if(selectorBuffer.length() > 0)
 			selectorBuffer.append( " " );
 		
-		definition.append( selectorBuffer.toString() );
+		definition.append(selectorBuffer);
 	}
 	
 	private void endLine(){

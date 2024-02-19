@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class FakeCompactEntity implements CompactEntity<FakeCompactEntity,FakeCompactLink, FakeCompactAction>{
 
-	private CompactEntityImpl<FakeCompactEntity,FakeCompactLink, FakeCompactAction> delegate;
+	private final CompactEntityImpl<FakeCompactEntity,FakeCompactLink, FakeCompactAction> delegate;
 
 	private String payload;
 	

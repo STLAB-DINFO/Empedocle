@@ -1,15 +1,14 @@
 package it.unifi.ing.stlab.empedocle.dao.staff;
 
-import java.util.List;
+import it.unifi.ing.stlab.commons.query.QueryBuilder;
+import it.unifi.ing.stlab.empedocle.model.Staff;
 
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import it.unifi.ing.stlab.commons.query.QueryBuilder;
-import it.unifi.ing.stlab.empedocle.model.Staff;
+import java.util.List;
 
 @Stateless
 @TransactionAttribute
@@ -61,7 +60,7 @@ public class StaffDaoBean implements StaffDao {
 			return null;
 		}
 
-		return (Staff) results.get( 0 );
+		return results.get( 0 );
 	}
 
 	public Staff fetchById( Long id ) {

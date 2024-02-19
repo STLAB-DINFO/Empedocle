@@ -7,14 +7,13 @@ import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
 import it.unifi.ing.stlab.view.controllers.ContainerController;
 import it.unifi.ing.stlab.view.model.Viewer;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
-
 import javax.enterprise.context.ConversationScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 @Named
 @ConversationScoped
@@ -193,10 +192,6 @@ public class GeneticController extends ContainerController implements Serializab
 				.setParameter("patient", pId).setParameter("currFact", f)
 				.getResultList();
 
-		if (result.size() < 1) {
-			return false;
-		} else {
-			return true;
-		}
+        return result.size() >= 1;
 	}
 }

@@ -1,9 +1,5 @@
 package it.unifi.ing.stlab.empedocle.actions.messages;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
-
 import it.unifi.ing.stlab.empedocle.dao.messages.MessageQueryBuilder;
 import it.unifi.ing.stlab.filters.Filter;
 import it.unifi.ing.stlab.filters.FilterDef;
@@ -11,11 +7,14 @@ import it.unifi.ing.stlab.filters.FilterType;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 // TODO test MessageQueryBuilderImpl
 public class MessageQueryBuilderImpl implements MessageQueryBuilder {
 
-	private MessageFilter messageFilter;
+	private final MessageFilter messageFilter;
 	private Set<Filter> predefinedFilters;
 	
 	public MessageQueryBuilderImpl( MessageFilter messageFilter ) {

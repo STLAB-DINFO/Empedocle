@@ -7,6 +7,6 @@ import javax.ejb.Local;
 @Local
 public interface FolderNumberGenerator {
 	
-	public void generateFolderNumber(Fact f);
+	void generateFolderNumber(Fact f);
 
 }

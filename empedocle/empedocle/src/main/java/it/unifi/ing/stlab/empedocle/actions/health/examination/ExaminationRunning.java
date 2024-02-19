@@ -1,46 +1,10 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.Stateful;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.enterprise.context.Conversation;
-import javax.enterprise.context.ConversationScoped;
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
-import javax.faces.application.FacesMessage.Severity;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.LockModeType;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-import javax.servlet.ServletException;
-import javax.transaction.UserTransaction;
-
-import it.unifi.ing.stlab.empedocle.actions.patients.view.PatientExaminationResults;
-import it.unifi.ing.stlab.empedocle.actions.util.DateUtils;
-import org.apache.log4j.Logger;
-
 import it.unifi.ing.stlab.commons.cdi.HttpParam;
 import it.unifi.ing.stlab.empedocle.actions.util.GarbageCollectorHelper;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationDao;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDao;
-import it.unifi.ing.stlab.empedocle.model.health.Examination;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationDetails;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationOperation;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationStatus;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationType;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationTypeContext;
+import it.unifi.ing.stlab.empedocle.model.health.*;
 import it.unifi.ing.stlab.empedocle.security.LoggedUser;
 import it.unifi.ing.stlab.empedocle.security.LoginBean;
 import it.unifi.ing.stlab.entities.implementation.GarbageCollector;
@@ -64,6 +28,30 @@ import it.unifi.ing.stlab.users.dao.UserDao;
 import it.unifi.ing.stlab.users.model.User;
 import it.unifi.ing.stlab.users.model.time.Time;
 import it.unifi.ing.stlab.view.model.Viewer;
+import org.apache.log4j.Logger;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.ejb.EJB;
+import javax.ejb.Stateful;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
+import javax.enterprise.context.Conversation;
+import javax.enterprise.context.ConversationScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.application.FacesMessage.Severity;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+import javax.servlet.ServletException;
+import javax.transaction.UserTransaction;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 
 @Named
@@ -592,11 +580,7 @@ public class ExaminationRunning implements Serializable {
 			return false;
 		}
 
-		if (examinationTypeDao.findAssociatedViewer(examination.getType().getId(), loggedUser.getUserQualification().getId(), ExaminationTypeContext.REPORT).size()>1) {
-			return true;
-		}
-
-		return false;
+		return examinationTypeDao.findAssociatedViewer(examination.getType().getId(), loggedUser.getUserQualification().getId(), ExaminationTypeContext.REPORT).size() > 1;
 
 	}
 

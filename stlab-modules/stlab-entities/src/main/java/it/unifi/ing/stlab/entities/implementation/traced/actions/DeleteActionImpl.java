@@ -56,10 +56,8 @@ public class DeleteActionImpl
 			return true;
 		
 		A destination = newSource.getDestination();
-		if ( destination != null && !destination.equals( getDelegator())) return false;
-
-		return true;
-	}
+        return destination == null || destination.equals(getDelegator());
+    }
 	
 	private void clearDestination() {
 		if ( source != null ) {

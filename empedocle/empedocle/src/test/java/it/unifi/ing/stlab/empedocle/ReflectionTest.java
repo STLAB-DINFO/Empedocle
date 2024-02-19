@@ -1,16 +1,5 @@
 package it.unifi.ing.stlab.empedocle;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-
-import org.junit.BeforeClass;
-import org.junit.runners.Parameterized.Parameters;
-
 import it.unifi.ing.stlab.empedocle.actions.health.examination.RecurrentFactHelper;
 import it.unifi.ing.stlab.empedocle.actions.util.GarbageCollectorHelper;
 import it.unifi.ing.stlab.empedocle.actions.util.GarbageCollectorHelperBean;
@@ -18,11 +7,7 @@ import it.unifi.ing.stlab.empedocle.dao.health.ExaminationDao;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationDaoBean;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDao;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDaoBean;
-import it.unifi.ing.stlab.empedocle.model.health.Examination;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationDetails;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationStatus;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationType;
-import it.unifi.ing.stlab.empedocle.model.health.ExaminationTypeContext;
+import it.unifi.ing.stlab.empedocle.model.health.*;
 import it.unifi.ing.stlab.entities.implementation.GarbageCollector;
 import it.unifi.ing.stlab.entities.implementation.JpaGarbageAction;
 import it.unifi.ing.stlab.reflection.dao.types.TypeDao;
@@ -32,24 +17,9 @@ import it.unifi.ing.stlab.reflection.impl.dao.FactDaoBean;
 import it.unifi.ing.stlab.reflection.impl.manager.FactManager;
 import it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl;
 import it.unifi.ing.stlab.reflection.impl.visitor.type.FactFactoryVisitor;
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Fact;
-import it.unifi.ing.stlab.reflection.model.facts.FactVisitor;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
-import it.unifi.ing.stlab.reflection.model.types.CompositeType;
-import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
-import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
-import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
-import it.unifi.ing.stlab.reflection.model.types.QueriedType;
-import it.unifi.ing.stlab.reflection.model.types.TemporalType;
-import it.unifi.ing.stlab.reflection.model.types.TextualType;
-import it.unifi.ing.stlab.reflection.model.types.Type;
-import it.unifi.ing.stlab.reflection.model.types.TypeVisitor;
-import it.unifi.ing.stlab.reflection.model.types.UnitUse;
+import it.unifi.ing.stlab.reflection.model.types.*;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 import it.unifi.ing.stlab.reflection.visitor.fact.AssignContextVisitor;
 import it.unifi.ing.stlab.reflection.visitor.fact.FactDefaultInitializerVisitor;
@@ -66,29 +36,19 @@ import it.unifi.ing.stlab.view.model.Viewer;
 import it.unifi.ing.stlab.view.model.ViewerVisitor;
 import it.unifi.ing.stlab.view.model.links.ViewerLink;
 import it.unifi.ing.stlab.view.model.widgets.ViewerCustom;
-import it.unifi.ing.stlab.view.model.widgets.container.Box;
-import it.unifi.ing.stlab.view.model.widgets.container.ConditionalPanel;
-import it.unifi.ing.stlab.view.model.widgets.container.FactPanel;
-import it.unifi.ing.stlab.view.model.widgets.container.Grid;
-import it.unifi.ing.stlab.view.model.widgets.container.Paragraph;
-import it.unifi.ing.stlab.view.model.widgets.container.Report;
-import it.unifi.ing.stlab.view.model.widgets.container.TabbedPanel;
-import it.unifi.ing.stlab.view.model.widgets.input.Combo;
-import it.unifi.ing.stlab.view.model.widgets.input.FileUpload;
-import it.unifi.ing.stlab.view.model.widgets.input.InputList;
-import it.unifi.ing.stlab.view.model.widgets.input.InputTemporal;
-import it.unifi.ing.stlab.view.model.widgets.input.InputText;
-import it.unifi.ing.stlab.view.model.widgets.input.Suggestion;
-import it.unifi.ing.stlab.view.model.widgets.input.TextArea;
-import it.unifi.ing.stlab.view.model.widgets.output.Label;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputField;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputImage;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputLink;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputList;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputMeasurementUnit;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputPath;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputType;
-import it.unifi.ing.stlab.view.model.widgets.output.OutputValue;
+import it.unifi.ing.stlab.view.model.widgets.container.*;
+import it.unifi.ing.stlab.view.model.widgets.input.*;
+import it.unifi.ing.stlab.view.model.widgets.output.*;
+import org.junit.BeforeClass;
+import org.junit.runners.Parameterized.Parameters;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 // TODO Eseguire i seguenti tests (1000 ripetizioni):
 // 1. start-end su visita todo oculistica e cardio
@@ -257,7 +217,7 @@ public class ReflectionTest extends JpaTest {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter( new FileOutputStream( new File( t.getMethod() + ".txt"), true ));
-			writer.println( Long.toString( t.getDuration() ));
+			writer.println(t.getDuration());
 			writer.flush();
 			writer.close();
 		} catch (FileNotFoundException e) {
@@ -269,7 +229,7 @@ public class ReflectionTest extends JpaTest {
 
 class ReflectionFactVisitor implements FactVisitor {
 
-	private ReflectionTypeVisitor typeVisitor;
+	private final ReflectionTypeVisitor typeVisitor;
 	
 	
 	public ReflectionFactVisitor(ReflectionTypeVisitor typeVisitor) {

@@ -6,7 +6,7 @@ import java.text.DecimalFormatSymbols;
 
 public class NumberFormatUtils {
 	
-	private DecimalFormat df;
+	private final DecimalFormat df;
 	
 	public NumberFormatUtils() {
 		DecimalFormatSymbols sym = new DecimalFormatSymbols();

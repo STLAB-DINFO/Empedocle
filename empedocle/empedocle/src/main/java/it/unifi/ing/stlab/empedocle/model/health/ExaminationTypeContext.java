@@ -10,7 +10,7 @@ public enum ExaminationTypeContext {
 	private String id;
 	private String name;
 	
-	private ExaminationTypeContext(String id, String name){
+	ExaminationTypeContext(String id, String name){
 		this.id = id;
 		this.name = name;
 	}

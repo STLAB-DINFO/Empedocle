@@ -7,7 +7,7 @@ public class FakeDeleteAction
 	extends FakeAction 
 	implements DeleteAction<FakeTracedEntity, FakeAction, FakeActor, FakeTime> {
 
-	private DeleteActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime> delegate;
+	private final DeleteActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime> delegate;
 
 	public FakeDeleteAction() {
 		 delegate = new DeleteActionImpl<FakeTracedEntity,FakeAction, FakeActor, FakeTime>();

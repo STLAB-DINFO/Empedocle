@@ -6,10 +6,10 @@ public enum AppointmentStatus {
 	ACCEPTED("accepted", "Accepted"), 
 	CANCELED( "canceled", "Canceled" );
 
-	private String id;
-	private String name;
+	private final String id;
+	private final String name;
 
-	private AppointmentStatus(String id, String name) {
+	AppointmentStatus(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

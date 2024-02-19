@@ -13,7 +13,7 @@ public interface TimedEntity<R extends TimeRange<H>, H extends Time> {
 	 * Method that returns the time range during which the entity is considered valid
 	 * @return R which extends TimeRange<H>
 	 */
-	public R getTimeRange(); 
+    R getTimeRange();
 	
 	/**
 	 * Method that checks if the validity yime range of the TimedEntity
@@ -21,13 +21,13 @@ public interface TimedEntity<R extends TimeRange<H>, H extends Time> {
 	 * @param timedEntity another TimedEntity
 	 * @return true if it is contained, false otherwise
 	 */
-	public boolean isValidReference( TimedEntity<?,?> timedEntity );
+    boolean isValidReference(TimedEntity<?, ?> timedEntity);
 	
 	/**
 	 * Method that indicated whether this entity is valid at the time passed as a parameted
 	 * @param time
 	 * @return true if timeRange contains time.
 	 */
-	public boolean isValidAt( H time );
+    boolean isValidAt(H time);
 
 }

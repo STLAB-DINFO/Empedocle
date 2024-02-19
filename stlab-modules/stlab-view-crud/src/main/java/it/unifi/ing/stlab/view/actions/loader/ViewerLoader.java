@@ -4,5 +4,5 @@ import javax.ejb.Local;
 
 @Local
 public interface ViewerLoader {
-	public void load();
+	void load();
 }

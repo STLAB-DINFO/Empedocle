@@ -13,7 +13,7 @@ public interface CreateAction
 
 	extends Action<T,A,U,H> {
 	
-	public T getTarget();
-	public void assignTarget( T tracedEntity );
+	T getTarget();
+	void assignTarget(T tracedEntity);
 	
 }

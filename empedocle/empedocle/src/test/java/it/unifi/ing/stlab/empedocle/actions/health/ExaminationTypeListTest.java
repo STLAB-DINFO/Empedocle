@@ -1,20 +1,16 @@
 package it.unifi.ing.stlab.empedocle.actions.health;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Matchers.anyObject;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import it.unifi.ing.stlab.empedocle.actions.health.examination.types.ExaminationTypeFilter;
 import it.unifi.ing.stlab.empedocle.actions.health.examination.types.ExaminationTypeList;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeDao;
-import it.unifi.ing.stlab.empedocle.dao.health.ExaminationTypeQueryBuilder;
 import it.unifi.ing.stlab.test.FieldUtils;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Mockito.*;
 
 public class ExaminationTypeListTest {
 
@@ -29,7 +25,7 @@ public class ExaminationTypeListTest {
 
 		examTypeDao = mock( ExaminationTypeDao.class );
 
-		when( examTypeDao.count( (ExaminationTypeQueryBuilder) anyObject() ) )
+		when( examTypeDao.count(anyObject()) )
 				.thenReturn( new Integer( 510 ) );
 
 		FieldUtils.assignField( examTypeList, "examinationTypeDao", examTypeDao );
@@ -47,6 +43,6 @@ public class ExaminationTypeListTest {
 	public void testGetResultList() {
 		examTypeList.getResultList();
 
-		verify( examTypeDao ).find( (ExaminationTypeQueryBuilder) anyObject(), anyInt(), anyInt() );
+		verify( examTypeDao ).find(anyObject(), anyInt(), anyInt() );
 	}
 }

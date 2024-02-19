@@ -18,12 +18,11 @@ import it.unifi.ing.stlab.reflection.visitor.type.ResolveLazyLoadVisitor;
 import it.unifi.ing.stlab.users.model.User;
 import it.unifi.ing.stlab.users.model.time.Time;
 
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Stateless
 @TransactionAttribute
@@ -41,8 +40,8 @@ public class FactDaoBean implements FactDao {
 	public boolean isOwner(Long factId, String userId) {
 		Fact fact = findById( factId );
 		
-		return fact == null ? false : ClassHelper.cast( fact, FactImpl.class )
-												.getOrigin().getAuthor().getUserid().equals(userId);
+		return fact != null && ClassHelper.cast(fact, FactImpl.class)
+				.getOrigin().getAuthor().getUserid().equals(userId);
 	}
 	
 	@Override

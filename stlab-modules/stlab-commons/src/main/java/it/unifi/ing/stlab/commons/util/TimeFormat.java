@@ -12,7 +12,7 @@ public enum TimeFormat {
 	private String name;
 	private String defaultFormat;
 	
-	private TimeFormat(String id, String name, String defaultFormat) {
+	TimeFormat(String id, String name, String defaultFormat) {
 		this.id = id;
 		this.name = name;
 		this.defaultFormat = defaultFormat;

@@ -13,13 +13,13 @@ public interface SplitAction
 	
 	extends Action<T,A,U,H> {
 
-	public T getSource();
-	public void assignSource( T tracedEntity );
+	T getSource();
+	void assignSource(T tracedEntity);
 	
-	public T getTarget1();
-	public void assignTarget1( T tracedEntity );
+	T getTarget1();
+	void assignTarget1(T tracedEntity);
 
-	public T getTarget2();
-	public void assignTarget2( T tracedEntity );
+	T getTarget2();
+	void assignTarget2(T tracedEntity);
 	
 }

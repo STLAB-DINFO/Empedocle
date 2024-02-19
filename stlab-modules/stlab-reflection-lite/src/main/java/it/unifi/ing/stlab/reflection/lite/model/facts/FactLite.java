@@ -8,16 +8,12 @@ import it.unifi.ing.stlab.reflection.model.facts.FactContext;
 import it.unifi.ing.stlab.reflection.model.facts.FactStatus;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class FactLite 
 		implements Fact, CompositeEntity<FactLite, FactLinkLite> {
 
-	private CompositeEntityImpl<FactLite, FactLinkLite> delegate;
+	private final CompositeEntityImpl<FactLite, FactLinkLite> delegate;
 	private List<FactLinkLite> childrenOrdered;
 	private Type type;
 	private FactStatus status;

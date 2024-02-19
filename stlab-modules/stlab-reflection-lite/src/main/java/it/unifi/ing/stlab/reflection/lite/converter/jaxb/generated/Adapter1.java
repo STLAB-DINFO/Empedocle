@@ -16,14 +16,14 @@ public class Adapter1
 
 
     public Float unmarshal(String value) {
-        return ((float)javax.xml.bind.DatatypeConverter.parseFloat(value));
+        return javax.xml.bind.DatatypeConverter.parseFloat(value);
     }
 
     public String marshal(Float value) {
         if (value == null) {
             return null;
         }
-        return (javax.xml.bind.DatatypeConverter.printFloat((float)(float)value));
+        return (javax.xml.bind.DatatypeConverter.printFloat(value));
     }
 
 }

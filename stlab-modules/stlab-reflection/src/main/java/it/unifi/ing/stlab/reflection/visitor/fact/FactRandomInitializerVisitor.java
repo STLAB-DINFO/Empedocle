@@ -2,13 +2,7 @@ package it.unifi.ing.stlab.reflection.visitor.fact;
 
 import it.unifi.ing.stlab.commons.random.RandomGenerator;
 import it.unifi.ing.stlab.reflection.dao.types.PhenomenonDao;
-import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
-import it.unifi.ing.stlab.reflection.model.facts.FactVisitor;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.TemporalFact;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
 import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
 import it.unifi.ing.stlab.reflection.model.types.UnitUse;
@@ -19,7 +13,7 @@ import java.util.Iterator;
 
 public class FactRandomInitializerVisitor implements FactVisitor {
 
-	private RandomGenerator randomGenerator;
+	private final RandomGenerator randomGenerator;
 	private static final String characters = "abcdefghijklmnopqrstuvwxyz";
 	
 	private PhenomenonDao phenomenonDAO;
@@ -35,7 +29,7 @@ public class FactRandomInitializerVisitor implements FactVisitor {
 		StringBuffer buffer = new StringBuffer();
 		for ( int i = 0; i < length; i++ ) {
 			int c = randomGenerator.random( 0, characters.length() -1 );
-			buffer.append( characters.substring( c, c + 1));
+			buffer.append( characters.charAt( c));
 		}
 		
 		oss.setText(buffer.toString());

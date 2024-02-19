@@ -1,12 +1,5 @@
 package it.unifi.ing.stlab.empedocle.view.controllers.geriatrics;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.model.facts.Fact;
 import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
@@ -16,6 +9,12 @@ import it.unifi.ing.stlab.view.controllers.ContainerController;
 import it.unifi.ing.stlab.view.model.Viewer;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
 import it.unifi.ing.stlab.view.model.links.ViewerLink;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 @Named
 @RequestScoped
@@ -86,7 +85,7 @@ public class MMSEController extends ContainerController {
 				int scoreValue = evaluateScore( facts );
 				double adjustedValue = scoreValue + getCorrectionFactor( 
 						ageIntervalFact.getPhenomenon().getName() + " " + educationLevelFact.getPhenomenon().getName() );
-				scoreFact.getQuantity().setValue( (double) adjustedValue );
+				scoreFact.getQuantity().setValue(adjustedValue);
 				
 				return String.valueOf( adjustedValue );
 			} else {

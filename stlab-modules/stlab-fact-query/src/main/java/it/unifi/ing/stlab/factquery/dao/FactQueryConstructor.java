@@ -2,16 +2,15 @@ package it.unifi.ing.stlab.factquery.dao;
 
 import it.unifi.ing.stlab.factquery.model.FactQuery;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
 public abstract class FactQueryConstructor {
 
-	private Map<String, Object> additionalParams; 
+	private final Map<String, Object> additionalParams;
 	
 	protected FactQueryConstructor() {
 		additionalParams = new HashMap<String, Object>();

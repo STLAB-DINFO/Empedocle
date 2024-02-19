@@ -15,32 +15,32 @@ public interface TracedEntity
 	<T extends TracedEntity<T,A>, 
 	 A extends Action<T,A,?,?>> {
 
-	public void init();
-	public void delete();
+	void init();
+	void delete();
 	
 	/**
 	 * Method that returns the list of all previous versions of the entity.
 	 * @return Set<T>, dove T estende TracedEntity
 	 */
-	public Set<T> listBefore();
+    Set<T> listBefore();
 	/**
 	 * Method that returns the list of all subsequent versions of the entity
 	 * @return Set<T>, where T extends TracedEntity
 	 */
-	public Set<T> listAfter();
+    Set<T> listAfter();
 	
 	/**
 	 * Method that returns the Action that links the TracedEntity with its previous version
 	 * @return A which extends Action
 	 */
-	public A getOrigin();
+    A getOrigin();
 	/**
 	 * Method that returns the Action that links the TracedEntity with its subsequent version
 	 * @return A which extends Action
 	 */
-	public A getDestination();
+    A getDestination();
 	
-	public boolean isActive();
+	boolean isActive();
 
 	/**
 	 * Method that verifies whether the entity is empty
@@ -48,19 +48,19 @@ public interface TracedEntity
 	 * is determined locally by the methods that override it).
 	 * @return true if it's empty.
 	 */
-	public boolean isEmpty();
+    boolean isEmpty();
 	/**
 	 * Method that checks if the entity is equal to its previous version.
 	 * (it is merely a default method, the definition of what constitutes 'equal'
 	 * is determined locally by the methods that override it).
 	 * @return true if the entities are equal.
 	 */
-	public boolean sameAs( T entity );
+    boolean sameAs(T entity);
 	/**
 	 * Method that return a copy of the entity passed as a parameter.
 	 * (it is merely a default method, the definition of how to do the copy
 	 * is done locally by the methods that override it).
 	 * @return the copied TracedEntity.
 	 */
-	public T copy();
+    T copy();
 }

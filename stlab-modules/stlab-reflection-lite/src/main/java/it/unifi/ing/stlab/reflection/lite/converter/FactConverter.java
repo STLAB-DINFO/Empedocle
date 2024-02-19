@@ -4,7 +4,7 @@ import it.unifi.ing.stlab.reflection.model.facts.Fact;
 
 public interface FactConverter {
 
-	public String serialize( Fact fact );
-	public Fact deserialize( String content );
+	String serialize(Fact fact);
+	Fact deserialize(String content);
 	
 }

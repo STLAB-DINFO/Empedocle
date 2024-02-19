@@ -52,9 +52,7 @@ public class CompositeFactLite extends FactLite implements CompositeFact {
 
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, CompositeType.class )) return true;	
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, CompositeType.class);
+    }
 	
 }

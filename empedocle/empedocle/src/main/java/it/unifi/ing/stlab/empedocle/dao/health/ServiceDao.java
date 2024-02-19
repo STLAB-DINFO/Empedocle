@@ -7,7 +7,7 @@ import javax.ejb.Local;
 @Local
 public interface ServiceDao {
 	
-	public Service findById( Long id );
-	public Service find( String code, String description, String agendaCode );
+	Service findById(Long id);
+	Service find(String code, String description, String agendaCode);
 
 }

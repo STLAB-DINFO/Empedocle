@@ -10,8 +10,8 @@ import javax.persistence.Query;
 // TODO test TypeQueryBuilderImpl
 public class TypeQueryBuilderImpl implements TypeQueryBuilder {
 
-	private Class<? extends Type> typeClass;
-	private TypeFilter typeFilter;
+	private final Class<? extends Type> typeClass;
+	private final TypeFilter typeFilter;
 	
 	public TypeQueryBuilderImpl(Class<? extends Type> typeClass, TypeFilter typeFilter) {
 		super();

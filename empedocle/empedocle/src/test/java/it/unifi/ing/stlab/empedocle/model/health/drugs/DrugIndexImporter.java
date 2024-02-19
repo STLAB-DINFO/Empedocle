@@ -1,28 +1,23 @@
 package it.unifi.ing.stlab.empedocle.model.health.drugs;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.math.BigDecimal;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.regex.Pattern;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import it.unifi.ing.stlab.empedocle.factory.health.drugs.DrugIndexFactory;
 import it.unifi.ing.stlab.empedocle.model.health.coding.atc.ATCCode;
 import it.unifi.ing.stlab.reflection.factory.types.PhenomenonFactory;
 import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
 import it.unifi.ing.stlab.test.JpaTest;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.net.URL;
+import java.util.*;
+import java.util.regex.Pattern;
 
 public class DrugIndexImporter extends JpaTest {
 	
-	private Map<String, ATCCode> atc_cache = new HashMap<>();
+	private final Map<String, ATCCode> atc_cache = new HashMap<>();
 
 	@BeforeClass
 	public static void setUpClass() {

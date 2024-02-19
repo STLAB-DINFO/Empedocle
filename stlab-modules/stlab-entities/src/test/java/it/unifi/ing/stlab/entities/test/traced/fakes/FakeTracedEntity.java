@@ -89,17 +89,13 @@ public class FakeTracedEntity implements TracedEntity<FakeTracedEntity,FakeActio
 
 	@Override
 	public boolean isEmpty() {
-		if ( payload == null || "".equals( payload.trim() )) return true;
-		
-		return false;
-	}
+        return payload == null || "".equals(payload.trim());
+    }
 
 	@Override
 	public boolean sameAs(FakeTracedEntity entity) {
-		if ( isEmpty() && entity.isEmpty() || payload.equals(entity.getPayload())) return true;
-		
-		return false;
-	}
+        return isEmpty() && entity.isEmpty() || payload.equals(entity.getPayload());
+    }
 
 	@Override
 	public FakeTracedEntity copy() {

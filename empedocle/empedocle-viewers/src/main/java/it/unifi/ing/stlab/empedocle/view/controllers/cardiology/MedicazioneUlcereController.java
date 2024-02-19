@@ -3,11 +3,7 @@ package it.unifi.ing.stlab.empedocle.view.controllers.cardiology;
 import it.unifi.ing.stlab.commons.util.NumberFormatUtils;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 import it.unifi.ing.stlab.reflection.dao.types.PhenomenonDao;
-import it.unifi.ing.stlab.reflection.model.facts.Fact;
-import it.unifi.ing.stlab.reflection.model.facts.QualitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.QuantitativeFact;
-import it.unifi.ing.stlab.reflection.model.facts.Quantity;
-import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
+import it.unifi.ing.stlab.reflection.model.facts.*;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
 import it.unifi.ing.stlab.reflection.model.types.CompositeType;
 import it.unifi.ing.stlab.reflection.model.types.Phenomenon;
@@ -17,16 +13,10 @@ import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 import it.unifi.ing.stlab.view.controllers.ContainerController;
 import it.unifi.ing.stlab.view.model.Viewer;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.*;
 
 // TODO testare medicazione ulcere controller
 @Named
@@ -37,7 +27,7 @@ public class MedicazioneUlcereController extends ContainerController {
 	@Inject
 	private PhenomenonDao phenomenonDao;
 	
-	private NumberFormatUtils numberUtils;
+	private final NumberFormatUtils numberUtils;
 	
 	public MedicazioneUlcereController(){
 		numberUtils = new NumberFormatUtils();

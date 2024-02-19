@@ -9,7 +9,7 @@ public class FakeCompactMergeAction
 	extends FakeCompactAction 
 	implements MergeAction<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> {
 
-	private MergeActionImpl<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> delegate;
+	private final MergeActionImpl<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> delegate;
 
 	
 	public FakeCompactMergeAction() {

@@ -7,13 +7,12 @@ import it.unifi.ing.stlab.empedocle.visitor.factquery.EncodeExpressionBeanVisito
 import it.unifi.ing.stlab.factquery.dao.FactQueryDao;
 import it.unifi.ing.stlab.factquery.model.FactQuery;
 
-import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.enterprise.context.Conversation;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 @Named("queryView")
 @ViewScoped
@@ -31,7 +30,7 @@ public class FactQueryView implements Serializable {
 	private String queryId;
 	
 	private FactQuery current;
-	private List<ExpressionBean> exprBeans;
+	private final List<ExpressionBean> exprBeans;
 	
 	//
 	// Public Methods

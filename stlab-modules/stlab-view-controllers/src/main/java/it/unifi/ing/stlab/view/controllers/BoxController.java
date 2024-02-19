@@ -27,7 +27,7 @@ public class BoxController extends ContainerController{
 			
 		}
 		
-		return ( content != null ? !content.isEmpty() : false );
+		return (content != null && !content.isEmpty());
 	}
 	
 }

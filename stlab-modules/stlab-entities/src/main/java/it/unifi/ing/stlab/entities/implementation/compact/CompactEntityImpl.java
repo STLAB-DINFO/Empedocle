@@ -3,11 +3,7 @@ package it.unifi.ing.stlab.entities.implementation.compact;
 
 import it.unifi.ing.stlab.entities.implementation.composite.CompositeEntityImpl;
 import it.unifi.ing.stlab.entities.implementation.traced.TracedEntityImpl;
-import it.unifi.ing.stlab.entities.model.compact.CompactEntity;
-import it.unifi.ing.stlab.entities.model.compact.CompactLink;
-import it.unifi.ing.stlab.entities.model.compact.InsertLink;
-import it.unifi.ing.stlab.entities.model.compact.RemoveLink;
-import it.unifi.ing.stlab.entities.model.compact.UpdateLink;
+import it.unifi.ing.stlab.entities.model.compact.*;
 import it.unifi.ing.stlab.entities.model.traced.Action;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
 
@@ -24,8 +20,8 @@ public class CompactEntityImpl
 	implements CompactEntity<T,L,A> {
 
 	private T delegator;
-	private TracedEntityImpl<T,A> tracedEntity;
-	private CompositeEntityImpl<T,L> compositeEntity;
+	private final TracedEntityImpl<T,A> tracedEntity;
+	private final CompositeEntityImpl<T,L> compositeEntity;
 	
 	public CompactEntityImpl() {
 		tracedEntity = new TracedEntityImpl<T,A>();

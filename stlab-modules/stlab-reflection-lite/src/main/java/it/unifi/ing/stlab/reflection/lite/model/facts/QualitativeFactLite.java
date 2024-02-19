@@ -41,10 +41,8 @@ public class QualitativeFactLite extends FactLite implements QualitativeFact {
 
 	@Override
 	public boolean isEmpty() {
-		if ( phenomenon == null ) return true;
-
-		return false;
-	}
+        return phenomenon == null;
+    }
 	
 
 	@Override
@@ -66,9 +64,7 @@ public class QualitativeFactLite extends FactLite implements QualitativeFact {
 	
 	private boolean isValidType( Type type ) {
 		if ( type == null ) return true;
-		if ( ClassHelper.instanceOf( type, QualitativeType.class )) return true;
-		
-		return false;
-	}
+        return ClassHelper.instanceOf(type, QualitativeType.class);
+    }
 
 }

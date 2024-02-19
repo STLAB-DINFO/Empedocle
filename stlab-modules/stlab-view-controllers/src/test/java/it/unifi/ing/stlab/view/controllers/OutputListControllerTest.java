@@ -1,32 +1,30 @@
 package it.unifi.ing.stlab.view.controllers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import it.unifi.ing.stlab.reflection.factory.types.TypeLinkFactory;
 import it.unifi.ing.stlab.reflection.impl.factory.FactFactory;
 import it.unifi.ing.stlab.reflection.impl.factory.FactLinkFactory;
 import it.unifi.ing.stlab.reflection.impl.model.facts.FactImpl;
 import it.unifi.ing.stlab.reflection.impl.model.facts.links.FactInsertLink;
-import it.unifi.ing.stlab.reflection.impl.model.facts.links.FactLinkImpl;
 import it.unifi.ing.stlab.reflection.model.facts.CompositeFact;
 import it.unifi.ing.stlab.reflection.model.facts.TextualFact;
 import it.unifi.ing.stlab.reflection.model.facts.links.FactLink;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 import it.unifi.ing.stlab.test.FieldUtils;
 import it.unifi.ing.stlab.view.model.links.TypeSelector;
-
-import java.util.List;
-import java.util.UUID;
+import org.junit.Before;
+import org.junit.Test;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import java.util.List;
+import java.util.UUID;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class OutputListControllerTest {
 
@@ -92,7 +90,7 @@ public class OutputListControllerTest {
 	
 	@Test
 	public void testGetLinksMoreOrdered(){
-		((FactLinkImpl)fl).setPriority(1l);
+		fl.setPriority(1l);
 		
 		TextualFact tf2 = FactFactory.createTextual();
 		FactInsertLink fl2 = (FactInsertLink)linkFactory.insertLink((FactImpl)cf, (FactImpl)tf2);

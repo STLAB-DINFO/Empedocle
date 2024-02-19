@@ -5,7 +5,7 @@ import it.unifi.ing.stlab.entities.model.composite.CompositeLink;
 
 public class FakeCompositeLink implements CompositeLink<FakeCompositeEntity,FakeCompositeLink> {
 
-	private CompositeLinkImpl<FakeCompositeEntity,FakeCompositeLink> delegate;
+	private final CompositeLinkImpl<FakeCompositeEntity,FakeCompositeLink> delegate;
 	
 	public FakeCompositeLink() {
 		delegate = new CompositeLinkImpl<FakeCompositeEntity,FakeCompositeLink>();

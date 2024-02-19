@@ -5,33 +5,32 @@ import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
 import it.unifi.ing.stlab.reflection.model.types.Type;
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 
-import java.util.List;
-
 import javax.ejb.Local;
+import java.util.List;
 
 @Local
 public interface TypeDao {
 
-	public int count( TypeQueryBuilder builder );
+	int count(TypeQueryBuilder builder);
 
-	public Type findById( Long id );
-	public Type findByUuid( String uuid );
-	public Type findByName( String name );
-	public Type findByExaminationType( Long examinationTypeId );
+	Type findById(Long id);
+	Type findByUuid(String uuid);
+	Type findByName(String name);
+	Type findByExaminationType(Long examinationTypeId);
 
-	public Type fetchById( Long id );
-	public Type fetchByIdWithFullHierarchy( Long id );
-	public QuantitativeType fetchWithUnitUses( Long id );
+	Type fetchById(Long id);
+	Type fetchByIdWithFullHierarchy(Long id);
+	QuantitativeType fetchWithUnitUses(Long id);
 
-	public List<Type> find( TypeQueryBuilder builder, int offset, int limit );
-	public List<Type> findBySuggestion( String suggestion, int limit );
+	List<Type> find(TypeQueryBuilder builder, int offset, int limit);
+	List<Type> findBySuggestion(String suggestion, int limit);
 
-	public void save( Type t );
-	public void delete( Long id );
+	void save(Type t);
+	void delete(Long id);
 	
-	public void assignToLink( TypeLink link, Type type );
+	void assignToLink(TypeLink link, Type type);
 
-	public FactValue fetchFactValue( TypeLink tl );
+	FactValue fetchFactValue(TypeLink tl);
 
-	public boolean checkForeignKeyRestrictions( Long id );
+	boolean checkForeignKeyRestrictions(Long id);
 }

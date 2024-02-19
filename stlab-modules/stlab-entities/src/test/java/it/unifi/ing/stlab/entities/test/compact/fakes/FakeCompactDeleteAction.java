@@ -9,7 +9,7 @@ public class FakeCompactDeleteAction
 	extends FakeCompactAction 
 	implements DeleteAction<FakeCompactEntity, FakeCompactAction, FakeActor, FakeTime> {
 
-	private DeleteActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> delegate;
+	private final DeleteActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime> delegate;
 
 	public FakeCompactDeleteAction() {
 		 delegate = new DeleteActionImpl<FakeCompactEntity,FakeCompactAction, FakeActor, FakeTime>();

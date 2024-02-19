@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 
 public class JpaGarbageAction extends GarbageAction {
 
-	private EntityManager entityManager;
+	private final EntityManager entityManager;
 	
 
 	public JpaGarbageAction(EntityManager entityManager) {

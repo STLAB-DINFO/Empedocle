@@ -1,16 +1,15 @@
 package it.unifi.ing.stlab.reflection.actions.wrappers;
 
 import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
+import org.richfaces.model.TreeNodeImpl;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.richfaces.model.TreeNodeImpl;
-
 public class TypeTreeNode extends TreeNodeImpl {
 
-	private TypeLink link;
+	private final TypeLink link;
 	private boolean expanded;
 
     public TypeTreeNode() {

@@ -4,10 +4,10 @@ public enum Operator {
  
 	and("and", "e"), or("or", "o");
 	
-	private String name;
-	private String translatedName;
+	private final String name;
+	private final String translatedName;
 
-	private Operator(String name, String translatedName) {
+	Operator(String name, String translatedName) {
 		this.name = name;
 		this.translatedName = translatedName;
 	}

@@ -7,27 +7,27 @@ public interface EntityView {
 	 * 
 	 * @return true se l'entità è vincolata da FK
 	 */
-	public boolean isUsed();
+    boolean isUsed();
 	
 	/**
 	 * Chiude la vista corrente, tornando alla vista 'list'
 	 * 
 	 * @return navigation-rule
 	 */
-	public String close();
+    String close();
 	
 	/**
 	 * Avvia il caso d'uso 'modifica' per l'entità selezionata
 	 * 
 	 * @return navigation-rule
 	 */
-	public String edit();
+    String edit();
 	
 	/**
 	 * Richiede l'eliminazione dell'entità selezionata
 	 * 
 	 * @return navigation-rule
 	 */
-	public String delete();
+    String delete();
 
 }
