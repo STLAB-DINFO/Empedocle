@@ -2,8 +2,8 @@ package it.unifi.ing.stlab.empedocle.model.health;
 
 public enum ExaminationTypeContext {
 	
-	EDIT ("edit", "Erogazione"),
-	VIEW ("view", "Riepilogo"),
+	EDIT ("edit", "Delivery"),
+	VIEW ("view", "Summary"),
 	REPORT ("report", "Report"),
 	HIGHLIGHTS ("highlights", "Highlights");
 	

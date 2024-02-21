@@ -2,6 +2,5 @@ it/unifi/ing/stlab/reflection/action/TypeBeanTest.class
 it/unifi/ing/stlab/reflection/action/TypeListTest.class
 it/unifi/ing/stlab/reflection/action/PhenomenonBeanTest.class
 it/unifi/ing/stlab/reflection/action/UnitUseBeanTest.class
-it/unifi/ing/stlab/reflection/action/TypeFilterTest.class
-it/unifi/ing/stlab/reflection/action/TypeQueryBuilderTest.class
 it/unifi/ing/stlab/reflection/action/TypeTreeNodeTest.class
+it/unifi/ing/stlab/reflection/action/TypeFilterTest.class

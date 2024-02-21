@@ -1,6 +1,5 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.config;
 
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.visitor.StatisticsDataExtractorVisitor;
 import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.visitor.StatisticsPathGeneratorVisitor;
 
 public abstract class ExcelConfig {
@@ -17,7 +16,7 @@ public abstract class ExcelConfig {
 	
 	public abstract String[] defaultColumns();
 	public abstract StatisticsPathGeneratorVisitor getPathGenerator(String basePath);
-	public abstract StatisticsDataExtractorVisitor getDataExtractor(String basePath);
+	//public abstract StatisticsDataExtractorVisitor getDataExtractor(String basePath);
 
 	public int getDataStartRow() {
 		return dataStartRow;

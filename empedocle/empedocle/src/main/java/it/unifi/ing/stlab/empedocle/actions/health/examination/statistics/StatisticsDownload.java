@@ -1,8 +1,8 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination.statistics;
 
 import it.unifi.ing.stlab.empedocle.actions.health.examination.ExaminationFilter;
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.DataExporter;
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.factory.DataExporterFactory;
+//import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.DataExporter;
+//import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.factory.DataExporterFactory;
 import it.unifi.ing.stlab.empedocle.dao.health.ExaminationDao;
 import it.unifi.ing.stlab.empedocle.dao.staff.StaffDao;
 import it.unifi.ing.stlab.empedocle.model.Staff;
@@ -40,6 +40,7 @@ import org.apache.log4j.Logger;
 @RequestScoped
 @WebServlet(urlPatterns = "/statistics")
 public class StatisticsDownload extends HttpServlet implements Serializable {
+	/*
 
 	private static final long serialVersionUID = 1L;
 	private final int DEFAULT_BUFFER_SIZE = 10240;
@@ -149,5 +150,7 @@ public class StatisticsDownload extends HttpServlet implements Serializable {
             }
         }
     }
+
+	 */
 	
 }

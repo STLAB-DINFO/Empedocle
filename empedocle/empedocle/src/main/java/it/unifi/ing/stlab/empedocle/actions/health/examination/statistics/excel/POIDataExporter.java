@@ -1,13 +1,5 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.excel;
 
-import static it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.excel.POITools.addContent;
-import static it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.excel.POITools.buildSheetName;
-import static it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.excel.POITools.createRow;
-import static it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.excel.POITools.initSheet;
-import it.unifi.ing.stlab.commons.util.FileUtils;
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.config.BaseExcelConfig;
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.datamodel.FactDataPath;
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.visitor.StatisticsDataExtractorVisitor;
 import it.unifi.ing.stlab.empedocle.actions.util.DateUtils;
 import it.unifi.ing.stlab.empedocle.model.health.Examination;
 import it.unifi.ing.stlab.entities.utils.ClassHelper;
@@ -27,7 +19,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class POIDataExporter extends ExcelDataExporter {
+public class POIDataExporter {
+	/*
 	
 	private Workbook workbook;
 	private Map<String, Map<String, Integer>> structures;
@@ -146,4 +139,6 @@ public class POIDataExporter extends ExcelDataExporter {
 		return fileWithPath;
 	}
 
+
+	 */
 }

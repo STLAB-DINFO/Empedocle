@@ -126,8 +126,8 @@ function addNavigatorListeners() {
 		console.log('offline');
 		$('.conn-notify').empty()
 					.html('<div class="alert alert-error">'+
-							'<strong>Attenzione!</strong> Sembra che la connessione alla rete sia assente.<br/>'+
-							'I dati inseriti potrebbero andare persi. Si consiglia di attendere la riconnessione.'+
+							'<strong>Warning!</strong> It seems that the network connection is absent.<br/>'+
+							'Entered data may be lost. It is advisable to wait for reconnection.'+
 							'</div>');
 		
 	}, false);

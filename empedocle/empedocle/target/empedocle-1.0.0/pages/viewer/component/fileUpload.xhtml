@@ -41,7 +41,7 @@
 				<a4j:region>
 					<rich:fileUpload
 						maxFilesQuantity="1" acceptedTypes="#{viewer.acceptedTypes}"
-						ontyperejected="alert('Attenzione! Sono consentiti solo file con estensione: #{viewer.acceptedTypes}');"
+						ontyperejected="alert('Warning! Allowed only file with extension: #{viewer.acceptedTypes}');"
 						fileUploadListener="#{fileUploadController.upload}"					
 						immediateUpload="true"
 						styleClass="btn btn-link"

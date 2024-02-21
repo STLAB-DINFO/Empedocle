@@ -9,7 +9,6 @@ it/unifi/ing/stlab/empedocle/model/StaffTest.class
 it/unifi/ing/stlab/empedocle/model/health/coding/atc/ATCCodeJpaImporter.class
 it/unifi/ing/stlab/empedocle/dao/health/ExaminationDaoResumeFactTest.class
 it/unifi/ing/stlab/empedocle/actions/health/examination/FolderNumberGeneratorTest.class
-it/unifi/ing/stlab/empedocle/actions/health/examination/statistics/export/visitor/StatisticsPathGeneratorTest.class
 it/unifi/ing/stlab/empedocle/actions/JpaGarbageActionTest.class
 it/unifi/ing/stlab/empedocle/actions/health/ExaminationTypeClonerTest.class
 it/unifi/ing/stlab/empedocle/model/health/drugs/DrugIndexImporter.class
@@ -21,7 +20,6 @@ it/unifi/ing/stlab/empedocle/actions/health/ExaminationTypeEditTest.class
 it/unifi/ing/stlab/empedocle/model/health/ExaminationJpaTest.class
 it/unifi/ing/stlab/empedocle/visitor/factquery/EncodeExpressionBeanVisitorTest.class
 it/unifi/ing/stlab/empedocle/actions/factquery/ExaminationFactQueryConstructorTest.class
-it/unifi/ing/stlab/empedocle/actions/health/examination/ExaminationFilterTest.class
 it/unifi/ing/stlab/empedocle/dao/health/ExaminationFindByIdTest.class
 it/unifi/ing/stlab/empedocle/ReflectionViewerVisitor.class
 it/unifi/ing/stlab/empedocle/actions/health/ExaminationTypeFilterTest.class
@@ -37,7 +35,6 @@ it/unifi/ing/stlab/empedocle/security/LoginBeanTest.class
 it/unifi/ing/stlab/empedocle/dao/health/ExaminationDaoTest.class
 it/unifi/ing/stlab/empedocle/model/health/ExaminationTypeJpaTest.class
 it/unifi/ing/stlab/empedocle/model/AgendaJpaTest.class
-it/unifi/ing/stlab/empedocle/actions/health/examination/statistics/export/visitor/StatisticsDataExtractorVisitorTest.class
 it/unifi/ing/stlab/empedocle/visitor/fact/FactResumeVisitorPersistenceTest.class
 it/unifi/ing/stlab/empedocle/actions/health/examination/BasicFactTest.class
 it/unifi/ing/stlab/empedocle/TreeMapTest$AgendaValueComparator.class
@@ -50,7 +47,6 @@ it/unifi/ing/stlab/empedocle/actions/converter/PlusSignConverterTest.class
 it/unifi/ing/stlab/empedocle/actions/health/ExaminationTypeListTest.class
 it/unifi/ing/stlab/empedocle/actions/health/examination/statistics/export/visitor/BaseStatisticsTest.class
 it/unifi/ing/stlab/empedocle/visitor/fact/tools/EmptyFactVisitor.class
-it/unifi/ing/stlab/empedocle/actions/health/examination/ExaminationListTest.class
 it/unifi/ing/stlab/empedocle/actions/health/examination/RecurrentFactHelperTest.class
 it/unifi/ing/stlab/empedocle/actions/viewers/FieldRetrieverTest.class
 it/unifi/ing/stlab/empedocle/model/health/coding/atc/ATCCodeTest.class

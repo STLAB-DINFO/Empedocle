@@ -2,8 +2,8 @@ package it.unifi.ing.stlab.empedocle.model.health;
 
 public enum ExaminationOperation {
 
-	END_EXAMINATION("end_examination", "fine visita");
-	
+	END_EXAMINATION("end_examination", "end examination");
+
 	private String id;
 	private String name;
 	

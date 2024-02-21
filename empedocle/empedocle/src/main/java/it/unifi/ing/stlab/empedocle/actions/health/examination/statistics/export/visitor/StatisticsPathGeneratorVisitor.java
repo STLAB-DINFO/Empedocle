@@ -1,6 +1,5 @@
 package it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.export.visitor;
 
-import it.unifi.ing.stlab.empedocle.actions.health.examination.statistics.tools.PathTools;
 import it.unifi.ing.stlab.reflection.model.types.CompositeType;
 import it.unifi.ing.stlab.reflection.model.types.EnumeratedType;
 import it.unifi.ing.stlab.reflection.model.types.QuantitativeType;
@@ -14,7 +13,8 @@ import it.unifi.ing.stlab.reflection.model.types.links.TypeLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatisticsPathGeneratorVisitor implements TypeVisitor {
+public class StatisticsPathGeneratorVisitor  {
+	/*
 	
 	private List<String> paths;
 	private String basePath;
@@ -107,4 +107,6 @@ public class StatisticsPathGeneratorVisitor implements TypeVisitor {
 		return paths;
 	}
 
+
+	 */
 }
