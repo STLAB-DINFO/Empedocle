@@ -21,6 +21,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class ExaminationRandomInitializer {
+	/*
 
 	public FactContext initNewExamination(){
 		Examination examination = ExaminationFactory.createExamination();
@@ -105,4 +106,6 @@ public class ExaminationRandomInitializer {
 		return user;
 	}
 
+
+	 */
 }
